@@ -4,6 +4,9 @@ import os
 import json
 from fhir_spec import SPECS
 
+# TODO: support parsing path wild card path
+# e.g. Extension.value[x]
+
 DATE_RE = re.compile(r'-?([1-9][0-9]{3}|0[0-9]{3})(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?)?')
 DATETIME_RE = re.compile(r'-?([1-9][0-9]{3}|0[0-9]{3})(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01])(T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?|(24:00:00(\.0+)?))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?)?)?)?')
 ID_RE = re.compile(r'[a-z0-9\-\.]{1,36}')
@@ -11,15 +14,6 @@ INSTANT_RE = re.compile(r'[1-9][0-9]{3}-.+T[^.]+(Z|[+-].+)')
 OID_RE = re.compile(r'urn:oid:\d+\.\d+\.\d+\.\d+')
 UUID_RE = re.compile(r'urn:uuid:[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}')
 URI_RE = re.compile(r'''(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))''')
-
-# ignore theses types
-TYPES_TO_IGNORE = (
-    'Resource',
-    'Type',
-    'Extension',
-    'xhtml',
-    'code')
-
 
 def validate_by_regex(regex):
     return lambda data: regex.match(str(data)) is not None

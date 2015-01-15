@@ -35,11 +35,13 @@ def _xml_to_json(root):
         else:
             jsondict[tag_name] = [tag_val, json_element]
 
+    jsondict.update(root.attrib)
     return jsondict
 
 
 def xml_to_json(root, resource_type):
-    root.attrib['xlmns'] = ''
+    if 'xlmns' in root.attrib:
+        del root.attrib['xlmns']
     jsondict = _xml_to_json(root)
     jsondict['resourceType'] = resource_type
     return jsondict
