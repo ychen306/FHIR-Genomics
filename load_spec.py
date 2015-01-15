@@ -75,7 +75,7 @@ def init(spec_dir):
                 resources.append(name)
                 reference_types[name] = resource_reference_types
 
-            print 'Loaded %s\' profile' % name
+            print 'Loaded %s\'s profile' % name
 
     with open('fhir_spec.py', 'w') as spec_target:
         spec_target.write("'''\n%s\n'''" % WARNING)
