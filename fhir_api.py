@@ -24,238 +24,254 @@ NOT_ALLOWED = Response(status='405')
 BAD_REQUEST = Response(status='400')
 NO_CONTENT = Response(status='204')
 
+
 def find_latest_resource(resource_type, resource_id):
-	return Resource.query.filter_by(
-				resource_type=resource_type,
-				resource_id=resource_id).order_by(Resource.version.desc()).first()
+    return Resource.query.filter_by(
+        resource_type=resource_type,
+        resource_id=resource_id).order_by(Resource.version.desc()).first()
+
 
 class FHIRRequest(object):
-	'''
-	represent a request in FHIR's RESTful framework
-	'''
-	def __init__(self, request, is_resource=True):
-		self.args = request.args
-		self.format = self.args.get('_format', 'xml')
-		self.api_base = request.api_base
-		self.url = request.url
-		self.base_url = request.base_url
-		# paging params
-		self.count = int(self.args.get('_count', PAGE_SIZE))
-		self.offset = int(self.args.get('_offset', 0))
 
-		if request.method in ('POST', 'PUT'):
-			# process data as a dictionary
-			if self.format == 'xml':
-				dataroot = etree.fromstring(request.data)
-				resource_type = dataroot.tag.split('}')[-1]
-				self.data = fhir_util.xml_to_json(dataroot, resource_type)
-			else:
-				self.data = json.loads(request.data)	
+    '''
+    represent a request in FHIR's RESTful framework
+    '''
 
-	def _get_url(self, is_prev):
-		'''
-		helper function for generating paged links
-		'''
-		args = self.args.to_dict(flat=False)
-		if is_prev:
-			new_offset = self.offset - self.count
-		else:
-			new_offset = self.offset + self.count
+    def __init__(self, request, is_resource=True):
+        self.args = request.args
+        self.format = self.args.get('_format', 'xml')
+        self.api_base = request.api_base
+        self.url = request.url
+        self.base_url = request.base_url
+        # paging params
+        self.count = int(self.args.get('_count', PAGE_SIZE))
+        self.offset = int(self.args.get('_offset', 0))
 
-		args.update({'_offset': new_offset})
+        if request.method in ('POST', 'PUT'):
+            # process data as a dictionary
+            if self.format == 'xml':
+                dataroot = etree.fromstring(request.data)
+                resource_type = dataroot.tag.split('}')[-1]
+                self.data = fhir_util.xml_to_json(dataroot, resource_type)
+            else:
+                self.data = json.loads(request.data)
 
-		return "%s?%s"% (self.base_url, urlencode(args, doseq=True))
+    def _get_url(self, is_prev):
+        '''
+        helper function for generating paged links
+        '''
+        args = self.args.to_dict(flat=False)
+        if is_prev:
+            new_offset = self.offset - self.count
+        else:
+            new_offset = self.offset + self.count
 
-	def get_next_url(self):
-		'''
-		return the url of next page
-		'''
-		return self._get_url(is_prev=True)
+        args.update({'_offset': new_offset})
 
-	def get_prev_url(self):
-		'''
-		return the url of previous page
-		'''
-		return self._get_url(is_prev=False)
+        return "%s?%s" % (self.base_url, urlencode(args, doseq=True))
+
+    def get_next_url(self):
+        '''
+        return the url of next page
+        '''
+        return self._get_url(is_prev=True)
+
+    def get_prev_url(self):
+        '''
+        return the url of previous page
+        '''
+        return self._get_url(is_prev=False)
+
 
 class FHIRBundle(object):
-	'''
-	Represent a bundle in FHIR
-	'''
-	def __init__(self, query, request, version_specific=False):
-		self.api_base = request.api_base
-		self.request_url = request.url
-		self.data_format = request.format
-		self.version_specific = version_specific
-		self.update_time = datetime.now().isoformat()
 
-		self.resources = query.limit(request.count).offset(request.offset).all()
-		self.resource_count = query.count()
+    '''
+    Represent a bundle in FHIR
+    '''
 
-		self.next_url = (request.get_next_url()
-			if len(self.resources) + request.offset < self.resource_count
-			else None)
+    def __init__(self, query, request, version_specific=False):
+        self.api_base = request.api_base
+        self.request_url = request.url
+        self.data_format = request.format
+        self.version_specific = version_specific
+        self.update_time = datetime.now().isoformat()
 
-		self.prev_url = (request.get_prev_url()
-			if request.offset - request.count > 0
-			else None)
-	
-	def _make_bundle(self):
-		'''
-		helper function for creating a bundle as a dictionary
-		'''
-		bundle = {}
-		
-		entries = []
-		for resource in self.resources:
+        self.resources = query.limit(
+            request.count).offset(request.offset).all()
+        self.resource_count = query.count()
 
-			relative_resource_url = resource.get_url(self.version_specific)
-			resource_url = urljoin(self.api_base, relative_resource_url)
-			resource_content = json.loads(resource.data)
-			if self.data_format == 'xml':
-				resource_content = fhir_util.json_to_xml(resource_content)
+        self.next_url = (request.get_next_url()
+                         if len(self.resources) + request.offset < self.resource_count
+                         else None)
 
-			entries.append({
-				'content': resource_content,
-				'created': resource.create_time.isoformat(),
-				'updated': resource.update_time.isoformat(),
-				'id': resource_url,
-				'title': relative_resource_url
-			})
+        self.prev_url = (request.get_prev_url()
+                         if request.offset - request.count > 0
+                         else None)
 
-		bundle['entry'] = entries
+    def _make_bundle(self):
+        '''
+        helper function for creating a bundle as a dictionary
+        '''
+        bundle = {}
 
-		links = [{'rel': 'self', 'href': self.request_url}]
-		if self.next_url is not None:
-			links.append({
-				'rel': 'next',
-				'href': self.next_url
-			})
-		if self.prev_url is not None:
-			links.append({
-				'rel': 'previous',
-				'href': self.prev_url
-			})
+        entries = []
+        for resource in self.resources:
 
-		bundle['link'] = links	
-		bundle['totalResults'] = self.resource_count
-		bundle['updated'] = self.update_time
-		bundle['title'] = BUNDLE_TITLE
-		bundle['id'] = self.request_url
-		return bundle
+            relative_resource_url = resource.get_url(self.version_specific)
+            resource_url = urljoin(self.api_base, relative_resource_url)
+            resource_content = json.loads(resource.data)
+            if self.data_format == 'xml':
+                resource_content = fhir_util.json_to_xml(resource_content)
 
-	def as_response(self):
-		'''
-		return a bundle as a response
-		'''
-		bundle_dict = self._make_bundle()
+            entries.append({
+                'content': resource_content,
+                'created': resource.create_time.isoformat(),
+                'updated': resource.update_time.isoformat(),
+                'id': resource_url,
+                'title': relative_resource_url
+            })
 
-		if	self.data_format == 'json':
-			response = json_response()
-			response.data = json.dumps(bundle_dict)
-		else:
-			response = xml_bundle_response()
-			response.data = render_template('bundle.xml', **bundle_dict)
+        bundle['entry'] = entries
 
-		return response
+        links = [{'rel': 'self', 'href': self.request_url}]
+        if self.next_url is not None:
+            links.append({
+                'rel': 'next',
+                'href': self.next_url
+            })
+        if self.prev_url is not None:
+            links.append({
+                'rel': 'previous',
+                'href': self.prev_url
+            })
+
+        bundle['link'] = links
+        bundle['totalResults'] = self.resource_count
+        bundle['updated'] = self.update_time
+        bundle['title'] = BUNDLE_TITLE
+        bundle['id'] = self.request_url
+        return bundle
+
+    def as_response(self):
+        '''
+        return a bundle as a response
+        '''
+        bundle_dict = self._make_bundle()
+
+        if self.data_format == 'json':
+            response = json_response()
+            response.data = json.dumps(bundle_dict)
+        else:
+            response = xml_bundle_response()
+            response.data = render_template('bundle.xml', **bundle_dict)
+
+        return response
+
 
 def handle_create(request, resource_type):
-	'''
-	handle FHIR create operation
-	'''
-	correctible = (request.format == 'xml')
-	valid, search_elements = fhir_parser.parse_resource(resource_type, request.data, correctible)
-	if not valid:
-		return BAD_REQUEST
+    '''
+    handle FHIR create operation
+    '''
+    correctible = (request.format == 'xml')
+    valid, search_elements = fhir_parser.parse_resource(
+        resource_type, request.data, correctible)
+    if not valid:
+        return BAD_REQUEST
 
-	resource = Resource(resource_type, request.data)	
-	index_search_elements(resource, search_elements)
-	db.session.add(resource)
-	db.session.commit()
+    resource = Resource(resource_type, request.data)
+    index_search_elements(resource, search_elements)
+    db.session.add(resource)
+    db.session.commit()
 
-	return resource.as_response(request, created=True)
+    return resource.as_response(request, created=True)
+
 
 def handle_read(request, resource_type, resource_id):
-	'''
-	handle FHIR read operation
-	'''
-	resource = find_latest_resource(resource_type, resource_id)
-	
-	if resource is None:
-		return NOT_FOUND
-	elif not resource.visible:
-		return GONE
-		
-	return resource.as_response(request)
+    '''
+    handle FHIR read operation
+    '''
+    resource = find_latest_resource(resource_type, resource_id)
+
+    if resource is None:
+        return NOT_FOUND
+    elif not resource.visible:
+        return GONE
+
+    return resource.as_response(request)
+
 
 def handle_update(request, resource_type, resource_id):
-	'''
-	handle FHIR update operation
-	'''
-	old = find_latest_resource(resource_type, resource_id)
-	if old is None:
-		return NOT_ALLOWED
+    '''
+    handle FHIR update operation
+    '''
+    old = find_latest_resource(resource_type, resource_id)
+    if old is None:
+        return NOT_ALLOWED
 
-	correctible = (request.format == 'xml')
-	valid, search_elements = fhir_parser.parse_resource(resource_type, request.data, correctible)
-	if not valid:
-		return BAD_REQUEST
+    correctible = (request.format == 'xml')
+    valid, search_elements = fhir_parser.parse_resource(
+        resource_type, request.data, correctible)
+    if not valid:
+        return BAD_REQUEST
 
-	new = old.update(request.data)
-	index_search_elements(new, search_elements)
-	db.session.add(old)
-	db.session.add(new)
-	db.session.commit()
+    new = old.update(request.data)
+    index_search_elements(new, search_elements)
+    db.session.add(old)
+    db.session.add(new)
+    db.session.commit()
 
-	return new.as_response(request)
+    return new.as_response(request)
+
 
 def handle_search(request, resource_type):
-	'''
-	handle FHIR search operation
-	'''
-	try:
-		search_query = build_query(resource_type, request.args)
-	except InvalidQuery:
-		return BAD_REQUEST
-	resp_bundle = FHIRBundle(search_query, request)
-	return resp_bundle.as_response()
+    '''
+    handle FHIR search operation
+    '''
+    try:
+        search_query = build_query(resource_type, request.args)
+    except InvalidQuery:
+        return BAD_REQUEST
+    resp_bundle = FHIRBundle(search_query, request)
+    return resp_bundle.as_response()
+
 
 def handle_delete(request, resource_type, resource_id):
-	'''
-	handle FHIR delete operation
-	'''
-	resource = find_latest_resource(resource_type, resource_id)
-	if resource.visible:
-		resource.visible = False
-		db.session.add(resource)
-		db.session.commit()
-		return NO_CONTENT
-	else:
-		return NOT_FOUND
+    '''
+    handle FHIR delete operation
+    '''
+    resource = find_latest_resource(resource_type, resource_id)
+    if resource.visible:
+        resource.visible = False
+        db.session.add(resource)
+        db.session.commit()
+        return NO_CONTENT
+    else:
+        return NOT_FOUND
+
 
 def handle_history(request, resource_type, resource_id, version):
-	'''
-	handle FHIR history operation
-	'''
-	query_args = []
-	if version is not None:
-		query_args.append(Resource.version == version)
-	if resource_type is not None:
-		query_args.append(Resource.resource_type == resource_type)
-	if resource_id is not None:
-		query_args.append(Resource.resource_id == resource_id)
+    '''
+    handle FHIR history operation
+    '''
+    query_args = []
+    if version is not None:
+        query_args.append(Resource.version == version)
+    if resource_type is not None:
+        query_args.append(Resource.resource_type == resource_type)
+    if resource_id is not None:
+        query_args.append(Resource.resource_id == resource_id)
 
-	hist_query = Resource.query.filter(*query_args)
+    hist_query = Resource.query.filter(*query_args)
 
-	if version is not None:
-		# corresponds to GET [api base]/[resource]/[resource_id]/_history/[version]
-		# don't render as a bundle in this case
-		resource = hist_query.first()
-		if resource is None:
-			return NOT_FOUND
-		else:
-			return resource.as_response(request)
-	
-	resp_bundle = FHIRBundle(hist_query, request, version_specific=True)
+    if version is not None:
+        # corresponds to GET [api base]/[resource]/[resource_id]/_history/[version]
+        # don't render as a bundle in this case
+        resource = hist_query.first()
+        if resource is None:
+            return NOT_FOUND
+        else:
+            return resource.as_response(request)
 
-	return resp_bundle.as_response()
+    resp_bundle = FHIRBundle(hist_query, request, version_specific=True)
+
+    return resp_bundle.as_response()

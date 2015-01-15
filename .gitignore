@@ -2,6 +2,7 @@
 config.py
 *.db
 *.swp
+fhir_spec.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
