@@ -3,7 +3,7 @@ from functools import partial
 from itertools import repeat
 import dateutil.parser
 from models import db, Resource, SearchParam
-from fhir_spec import SPECS
+from fhir_spec import SPECS, REFERENCE_TYPES
 from fhir_util import iterdict
 
 PARAM_RE = re.compile(r'(?P<param>[^\.:]+)(?::(?P<modifier>[^\.:]+))?(?:\.(?P<chained_param>.+))?')
@@ -14,6 +14,7 @@ QUANTITY_RE = re.compile(r'%s?(?P<quantity>\d+(?:\.\d+)?)' % COMPARATOR_RE)
 DATE_RE = re.compile(r'%s?(?P<date>.+)' % COMPARATOR_RE)
 SELECT_FROM_SEARCH_PARAM = db.select([SearchParam.resource_id]).select_from(SearchParam)
 
+NON_TYPE_MODIFIERS = ['missing', 'text', 'exact']
 
 class InvalidQuery(Exception):
     pass
@@ -26,27 +27,33 @@ def make_reference_pred(param_data, param_val, resource_type):
     :param param_val: value of the param
     :param resource_type: type of resource of the root of the reference element
     '''
+    modifier = param_data['modifier']
+    possible_reference_types = REFERENCE_TYPES[resource_type][param_data['param']]
+    if modifier not in possible_reference_types and (
+        possible_reference_types[0] == 'Any' or
+        len(possible_reference_types) > 0):
+        # can't deduct type of the referenced resource
+        # or invalid type
+        raise InvalidQuery
+
+    referenced_type = (modifier
+                    if modifier is not None and modifier not in NON_TYPE_MODIFIERS
+                    else possible_reference_types[0])
+
     chained_param = param_data['chained_param']
     if chained_param is not None:
         # chained query
-        modifier = param_data['modifier']
-        possible_reference_types = REFERENCE_TYPES[
-            resource_type][param_data['param']]
-        if (modifier not in possible_reference_types or
-            possible_reference_types[0] == 'Any'):
-            # can't deduct type of the referenced resource
-            # or invalid type
-            raise InvalidQuery
-        referenced_type = modifier if modifier is not None else possible_reference_types[0]
         chained_query = {chained_param: param_val}
         # make a subquery that finds referenced resoruce that fits the
         # description
+        reference_query = build_query(referenced_type,
+                                     chained_query,
+                                     id_only=True)
         pred = db.and_(SearchParam.referenced_type == referenced_type,
-                       SearchParam.referenced_id == build_query(referenced_type,
-                                                                chained_query,
-                                                                id_only=True).subquery())
+                       SearchParam.referenced_id.in_(reference_query.subquery()))
     else:
-        pred = (SearchParam.referenced_url == param_val)
+        pred = db.and_(SearchParam.referenced_id == param_val,
+                        SearchParam.referenced_type == referenced_type)
 
     return pred
 

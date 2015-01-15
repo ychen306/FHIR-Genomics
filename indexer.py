@@ -72,11 +72,9 @@ def index_reference(index, element):
         reference = REFERENCE_RE.match(reference_url)
         index['referenced_url'] = reference_url
         if reference.group('extern_base') is None:
-            # reference is internal reference, we want to link the reference to
-            # a Resource
+            # reference is internal reference, we want to link the reference to a Resource
             index['referenced'] = Resource.query.filter_by(resource_type=reference.group('resource_type'),
-                                                           resource_id=reference.group(
-                                                               'resource_id'),
+                                                           resource_id=reference.group('resource_id'),
                                                            visible=True).first()
 
     return index
