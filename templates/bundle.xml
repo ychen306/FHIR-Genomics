@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>{{ title }}</title>
+	<id>{{ id }}</id>
+	{% for _link in link %}
+	<link rel="{{ _link.rel|safe }}" href="{{ _link.href|safe }}"/>
+	{% endfor %}
+	<totalResults xmlns:os="http://a9.com/-/spec/opensearch/1.1/">{{ totalResults }}</totalResults>
+	<updated>{{ updated }}</updated>	
+	{% for _entry in entry %}
+	<entry>	
+		<title>{{ _entry.title }}</title>
+		<id>{{ _entry.id }}</id>
+		<created>{{ _entry.created }}</created>
+		<updated>{{ _entry.updated }}</updated>
+		<content type="text/xml">
+			{{ _entry.content|safe }}
+		</content>	
+	</entry>
+	{% endfor %}
+</feed>
