@@ -1,4 +1,5 @@
 from models import db, Resource, SearchParam
+from query_builder import REFERENCE_RE
 import dateutil.parser
 
 
