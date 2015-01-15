@@ -1,6 +1,7 @@
 # project specific stuff
 config.py
 *.db
+*.swp
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
