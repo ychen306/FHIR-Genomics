@@ -131,6 +131,9 @@ class FHIRElement(object):
                 self._push_ancestors(ancestor, path_elems, elem_ancestors)
 
         for parent in elem_parents:
+            if not isinstance(parent, dict):
+                return False
+
             elem = parent.get(elem_name)
 
             if elem is None:

@@ -50,7 +50,7 @@ def make_reference_pred(param_data, param_val, resource_type):
                                      chained_query,
                                      id_only=True)
         pred = db.and_(SearchParam.referenced_type == referenced_type,
-                       SearchParam.referenced_id.in_(reference_query.subquery()))
+                       SearchParam.referenced_id.in_(reference_query))
     else:
         pred = db.and_(SearchParam.referenced_id == param_val,
                         SearchParam.referenced_type == referenced_type)
@@ -148,8 +148,7 @@ def make_pred_from_param(param_and_val, possible_param_types, resource_type):
     if param not in possible_param_types:
         return None
 
-    param_type = possible_param_types[
-        param] if modifier != 'text' else 'string'
+    param_type = possible_param_types[param] if modifier != 'text' else 'string'
     if modifier == 'missing':
         pred = ((SearchParam.missing == True)
                 if param_val == 'true'
@@ -174,7 +173,7 @@ def make_pred_from_param(param_and_val, possible_param_types, resource_type):
 
 def intersect_predicates(predicates):
     return db.intersect(*[SELECT_FROM_SEARCH_PARAM.where(pred)
-                          for pred in predicates])
+                          for pred in predicates]).alias()
 
 # TODO: rewrite this using JOIN or (and) EXISTS
 
@@ -192,16 +191,14 @@ def build_query(resource_type, params, id_only=False):
 
     if len(predicates) > 0:
         query_args.append(
-            Resource.resource_id.in_(
-                    db.session.query(intersect_predicates(predicates))
-                    .subquery()))
+            Resource.resource_id.in_(intersect_predicates(predicates)))
 
     if '_id' in params:
         query_args.append(Resource.resource_id == params.get('_id'))
 
     if id_only:
-        return db.session.query(db.select([Resource.resource_id]).
-                                select_from(Resource).
-                                where(db.and_(*query_args)))
+        return db.select([Resource.resource_id]).\
+                                select_from(Resource).\
+                                where(db.and_(*query_args)).alias()
 
     return Resource.query.filter(*query_args)
