@@ -57,17 +57,3 @@ def read_history(resource_type, resource_id, version):
     request.api_base = urljoin(request.url_root, API_URL_PREFIX) + '/'
     fhir_request = fhir_api.FHIRRequest(request)
     return fhir_api.handle_history(fhir_request, resource_type, resource_id, version)
-
-
-@api.route('/test')
-def test():
-    from flask import request
-    for i in request.args.iteritems():
-        print i
-    from models import *
-    criteria = db.session.query(db.select([SearchParam.resource_id]).select_from(SearchParam).where(
-        db.and_(SearchParam.name == "status", SearchParam.code == "final"))).subquery()
-    resources = Resource.query.filter(
-        Resource.resource_id == criteria).all()
-    print resources
-    return 'hello, world!'

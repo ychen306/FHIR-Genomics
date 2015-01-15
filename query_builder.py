@@ -6,16 +6,13 @@ from models import db, Resource, SearchParam
 from fhir_spec import SPECS
 from fhir_util import iterdict
 
-PARAM_RE = re.compile(
-    r'(?P<param>[^\.:]+)(?::(?P<modifier>[^\.:]+))?(?:\.(?P<chained_param>.+))?')
+PARAM_RE = re.compile(r'(?P<param>[^\.:]+)(?::(?P<modifier>[^\.:]+))?(?:\.(?P<chained_param>.+))?')
 COMPARATOR_RE = r'(?P<comparator><|<=|>|>=)'
-REFERENCE_RE = re.compile(
-    r'(?:(?P<extern_base>.+)/)?(?P<resource_type>.+)/(?P<resource_id>.+)')
+REFERENCE_RE = re.compile(r'(?:(?P<extern_base>.+)/)?(?P<resource_type>.+)/(?P<resource_id>.+)')
 TOKEN_RE = re.compile(r'(?:(?P<system>.*)?\|)?(?P<code>.+)')
 QUANTITY_RE = re.compile(r'%s?(?P<quantity>\d+(?:\.\d+)?)' % COMPARATOR_RE)
 DATE_RE = re.compile(r'%s?(?P<date>.+)' % COMPARATOR_RE)
-SELECT_FROM_SEARCH_PARAM = db.select(
-    [SearchParam.resource_id]).select_from(SearchParam)
+SELECT_FROM_SEARCH_PARAM = db.select([SearchParam.resource_id]).select_from(SearchParam)
 
 
 class InvalidQuery(Exception):
@@ -39,8 +36,7 @@ def make_reference_pred(param_data, param_val, resource_type):
             # can't deduct type of the referenced resource
             # or invalid type
             raise InvalidQuery
-        referenced_type = modifier if modifier is not None else possible_reference_types[
-            0]
+        referenced_type = modifier if modifier is not None else possible_reference_types[0]
         chained_query = {chained_param: param_val}
         # make a subquery that finds referenced resoruce that fits the
         # description
@@ -188,7 +184,9 @@ def build_query(resource_type, params, id_only=False):
 
     if len(predicates) > 0:
         query_args.append(
-            Resource.resource_id.in_(db.session.query(intersect_predicates(predicates)).subquery()))
+            Resource.resource_id.in_(
+                    db.session.query(intersect_predicates(predicates))
+                    .subquery()))
 
     if '_id' in params:
         query_args.append(Resource.resource_id == params.get('_id'))
