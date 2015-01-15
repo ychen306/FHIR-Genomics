@@ -32,7 +32,8 @@ def make_reference_pred(param_data, param_val, resource_type):
         modifier = param_data['modifier']
         possible_reference_types = REFERENCE_TYPES[
             resource_type][param_data['param']]
-        if modifier not in possible_reference_types:
+        if (modifier not in possible_reference_types or
+            possible_reference_types[0] == 'Any'):
             # can't deduct type of the referenced resource
             # or invalid type
             raise InvalidQuery

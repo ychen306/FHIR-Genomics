@@ -3,8 +3,7 @@ import os
 import sys
 import json
 
-PROFILE_F_RE = re.compile(
-    r'^type-(?P<datatype>\w+).profile.json$|^(?P<resource>\w+).profile.json$')
+PROFILE_F_RE = re.compile(r'^type-(?P<datatype>\w+).profile.json$|^(?P<resource>\w+).profile.json$')
 WARNING = 'WARNING: this is auto generated. Change it at your risk.'
 
 
