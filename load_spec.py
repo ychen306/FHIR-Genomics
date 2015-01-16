@@ -2,6 +2,7 @@ import re
 import os
 import sys
 import json
+from genomics import sequence_resource, sequence_reference_types
 
 PROFILE_F_RE = re.compile(r'^type-(?P<datatype>\w+).profile.json$|^(?P<resource>\w+).profile.json$')
 WARNING = 'WARNING: this is auto generated. Change it at your risk.'
@@ -25,8 +26,7 @@ def process_profile(profile):
     search_params = {param['xpath'].replace('f:', '').replace('/', '.'): param
                      for param in profile['structure'][0].get('searchParam', [])
                      if 'xpath' in param}
-    # mapping between a search parameter of type ResourceReference and
-    # possible resource types
+    # mapping between a search parameter of type ResourceReference and possible resource types
     reference_types = {}
     for element in elements:
         path = element['path']
@@ -75,6 +75,11 @@ def init(spec_dir):
                 reference_types[name] = resource_reference_types
 
             print 'Loaded %s\'s profile' % name
+    # manually load sequence spec
+    specs['Sequence'] = sequence_resource
+    reference_types['Sequence'] = sequence_reference_types
+    resources.append('Sequence')
+    print 'manually added Sequence resource for genomic support.'
 
     with open('fhir_spec.py', 'w') as spec_target:
         spec_target.write("'''\n%s\n'''" % WARNING)

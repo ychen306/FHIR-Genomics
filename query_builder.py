@@ -12,6 +12,7 @@ REFERENCE_RE = re.compile(r'(?:(?P<extern_base>.+)/)?(?P<resource_type>.+)/(?P<r
 TOKEN_RE = re.compile(r'(?:(?P<system>.*)?\|)?(?P<code>.+)')
 QUANTITY_RE = re.compile(r'%s?(?P<quantity>\d+(?:\.\d+)?)' % COMPARATOR_RE)
 DATE_RE = re.compile(r'%s?(?P<date>.+)' % COMPARATOR_RE)
+COORD_RE = re.compile(r'(?P<chrom>.+):(?P<start>\d+)-(?P<end>\d+)')
 SELECT_FROM_SEARCH_PARAM = db.select([SearchParam.resource_id]).select_from(SearchParam)
 
 NON_TYPE_MODIFIERS = ['missing', 'text', 'exact']
@@ -19,6 +20,32 @@ NON_TYPE_MODIFIERS = ['missing', 'text', 'exact']
 class InvalidQuery(Exception):
     pass
 
+def intersect_predicates(predicates):
+    return db.intersect(*[SELECT_FROM_SEARCH_PARAM.where(pred)
+                          for pred in predicates])
+
+def make_coord_preds(coord_str):
+    coord = COORD_RE.match(coord_str)
+    if coord is None:
+        raise InvalidQuery
+    chrom = coord.group('chrom')
+    start = coord.group('start')
+    end = coord.group('end')
+    right_chrom = db.and_(SearchParam.text == ('::%s::'% chrom),
+                        SearchParam.name == 'chromosome',
+                        SearchParam.resource_type == 'Sequence')
+    # query end >= start
+    right_start = db.and_(SearchParam.quantity <= end,
+                        SearchParam.name == 'start-position',
+                        SearchParam.resource_type == 'Sequence')
+    # query start <= end
+    right_end = db.and_(SearchParam.quantity >= start,
+                        SearchParam.name == 'end-position',
+                        SearchParam.resource_type == 'Sequence')
+
+    return [right_chrom, right_start, right_end]
+
+    
 
 def make_reference_pred(param_data, param_val, resource_type):
     '''	
@@ -66,7 +93,7 @@ def make_quantity_pred(param_data, param_val):
         value = float(quantity.group('quantity'))
         comparator = quantity.group('comparator')
 
-        if comparator is not None:
+        if comparator is None:
             pred = (SearchParam.quantity == value)
         elif comparator == '<':
             pred = (SearchParam.quantity < value)
@@ -138,7 +165,7 @@ PRED_MAKERS = {
 
 
 def make_pred_from_param(param_and_val, possible_param_types, resource_type):
-    raw_param, param_val = param_and_val
+    raw_param, param_val = param_and_val 
     matched_param = PARAM_RE.match(raw_param)
     if matched_param is None:
         return None
@@ -155,9 +182,7 @@ def make_pred_from_param(param_and_val, possible_param_types, resource_type):
                 else (SearchParam.missing == False))
     else:
         if param_type == 'reference':
-            #pred = make_reference_pred(param_data, param_val, resource_type)
-            pred_maker = partial(
-                make_reference_pred, resource_type=resource_type)
+            pred_maker = partial(make_reference_pred, resource_type=resource_type)
         else:
             pred_maker = PRED_MAKERS[param_type]
             if pred_maker is None:
@@ -170,14 +195,7 @@ def make_pred_from_param(param_and_val, possible_param_types, resource_type):
                    SearchParam.name == param,
                    SearchParam.param_type == possible_param_types[param])
 
-
-def intersect_predicates(predicates):
-    return db.intersect(*[SELECT_FROM_SEARCH_PARAM.where(pred)
-                          for pred in predicates]).alias()
-
 # TODO: rewrite this using JOIN or (and) EXISTS
-
-
 def build_query(resource_type, params, id_only=False):
     query_args = [Resource.visible == True,
                   Resource.resource_type == resource_type]
@@ -189,9 +207,12 @@ def build_query(resource_type, params, id_only=False):
     predicates = filter(lambda p: p is not None,
                         map(make_pred, iterdict(params)))
 
+    if 'coordinate' in params and resource_type == 'Sequence':
+        predicates.extend(make_coord_preds(params['coordinate']))
+
     if len(predicates) > 0:
         query_args.append(
-            Resource.resource_id.in_(intersect_predicates(predicates)))
+            Resource.resource_id.in_(intersect_predicates(predicates).alias()))
 
     if '_id' in params:
         query_args.append(Resource.resource_id == params.get('_id'))

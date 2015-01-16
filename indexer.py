@@ -32,7 +32,7 @@ def index_token(index, element):
     Note: this only indexes the first Coding if it's a CodeableConcept
     '''
     # element is a code
-    if isinstance(element, str):
+    if isinstance(element, basestring):
         index['code'] = element
         return index
 
