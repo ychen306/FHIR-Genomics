@@ -207,7 +207,9 @@ def build_query(resource_type, params, id_only=False):
     predicates = filter(lambda p: p is not None,
                         map(make_pred, iterdict(params)))
 
+    # customized coordinate query
     if 'coordinate' in params and resource_type == 'Sequence':
+        # TODO: support union (e.g. something like coordinate=chr1:123-234,chr2:234-345)
         predicates.extend(make_coord_preds(params['coordinate']))
 
     if len(predicates) > 0:

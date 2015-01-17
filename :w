@@ -6,7 +6,6 @@ from uuid import uuid4
 from urlparse import urljoin
 import fhir_util
 from fhir_util import json_response, xml_response
-from util import hash_password
 
 
 class Resource(db.Model):
@@ -129,14 +128,11 @@ class User(db.Model):
     email = db.Column(db.String(500), primary_key=True)
     hashed_password = db.Column(db.String(500))
     salt = db.Column(db.String(500))
-    app_id = db.Column(db.String(100))
-    app_secret = db.Column(db.String(100))
-    app_name = db.Column(db.String(100))
-    redirect_url = db.Column(db.String(100))
+    app_id = db.Column(db.String(100), nullable=True)
+    app_secret = db.Column(db.String(100), nullable=True)
 
-    def check_password(self, password):
-        hashed, _ = hash_password(password, self.salt)        
-        return hashed == self.hashed_password
+    def check_password(password):
+            
 
 
 class Session(db.Model):
