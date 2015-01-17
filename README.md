@@ -3,7 +3,7 @@ Reference API server of SMART Genomics
 ## How to use it
 1. Change the application settings in `config.py`, including what SQL database you would like to use.
 3. Load FHIR's spec with the script `load_spec.py`
-4. Get the WSGI app with
+4. Run the server locally with
 ```
 $ python app.py
 ```
