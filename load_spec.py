@@ -2,7 +2,7 @@ import re
 import os
 import sys
 import json
-from genomics import sequence_resource, sequence_reference_types
+from sequence import sequence_resource, sequence_reference_types
 
 PROFILE_F_RE = re.compile(r'^type-(?P<datatype>\w+).profile.json$|^(?P<resource>\w+).profile.json$')
 WARNING = 'WARNING: this is auto generated. Change it at your risk.'
