@@ -1,5 +1,5 @@
 '''
-Blueprint taking care of dev regiserring and basic app dashboard
+Blueprint taking care of dev registerring and basic app dashboard
 '''
 from flask.blueprints import Blueprint
 from flask import request, render_template, redirect, Response
@@ -10,6 +10,7 @@ import uuid
 
 ui = Blueprint('/', __name__)
 
+DEFAULT_REDIRECT_URL = 'http://localhost:8000'
 
 def log_in(user):
     session_id = str(uuid.uuid4())
@@ -103,10 +104,12 @@ def signup():
         if message is not None:
             return render_template('signup.html', message=message)
         else:
+            # TODO: refactor this to a new function
+            # TODO: give user to access public test data
             hashed, salt = hash_password(request.form['password'])
             new_user = User(email=request.form['email'],
                             app_name=request.form['appname'],
-                            redirect_url='http://localhost:8000',
+                            redirect_url=DEFAULT_REDIRECT_URL,
                             hashed_password=hashed,
                             app_id=rand_app_id(),
                             app_secret=str(uuid.uuid4()),

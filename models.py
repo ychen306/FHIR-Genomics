@@ -1,4 +1,5 @@
 import re
+from sqlalchemy.ext.declarative import declarative_base
 from database import db
 from datetime import datetime
 import json
@@ -133,6 +134,9 @@ class User(db.Model):
     app_secret = db.Column(db.String(100))
     app_name = db.Column(db.String(100))
     redirect_url = db.Column(db.String(100))
+    # a user is a "client" that has permanent access
+    client_id = db.Column(db.String, db.ForeignKey('Client.client_id'))
+    client = db.relationship('Client')
 
     def check_password(self, password):
         hashed, _ = hash_password(password, self.salt)        
@@ -140,6 +144,34 @@ class User(db.Model):
 
 
 class Session(db.Model):
+    __tablename__ = 'Session'
+
     id = db.Column(db.String(500), primary_key=True)
     user_id = db.Column(db.String(500), db.ForeignKey('User.email'))
     user = db.relationship('User')
+
+
+class Access(db.Model):
+    '''
+    this represents a client's read/write access to a resource
+    '''
+    __tablename__ = 'Access'
+
+    id = db.Column(db.Integer, primary_key=True) 
+    client_id = db.Column(db.String(100), db.ForeignKey('Client.client_id'))
+    resource_id = db.Column(db.String(100), db.ForeignKey('resource.resource_id'))
+    resource_type = db.Column(db.String(100), db.ForeignKey('resource.resource_type'))
+    # read or write
+    access_type = db.Column(db.String(10))
+
+
+class Client(db.Model):
+    __tablename__ = 'Client'
+    
+    client_id = db.Column(db.String(100), primary_key=True)
+    client_secret = db.Column(db.String(100))
+    access_token = db.Column(db.String(100), nullable=True) 
+    authorized = db.Column(db.Boolean)
+    expire_at = db.Column(db.DateTime)
+    # true for User false for app client
+    can_expire = db.Column(db.Boolean)
