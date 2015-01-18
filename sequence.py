@@ -142,13 +142,6 @@ sequence_resource = {
                 'max': '*',
                 'type': [{'code': 'string'}]
             }
-        }, {
-            'path': 'Sequence.reference',
-            'definition': {
-                'min': 0,
-                'max': '1',
-                'type': [{'code': 'string'}]
-            }
         }
     ],
     'searchParams': {}

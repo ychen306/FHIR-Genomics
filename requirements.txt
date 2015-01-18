@@ -2,3 +2,5 @@ flask
 flask-sqlalchemy
 python-dateutil
 lxml
+pyvcf
+names

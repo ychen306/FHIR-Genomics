@@ -3,4 +3,7 @@ APP_CONFIG = {
 }
 
 FHIR_SPEC_DIR = ''
+# the example resource parser right now is still pretty slow
+# so if the vcf file is too large, it's gonna take decades
+MAX_SEQ_PER_FILE = 1000
 

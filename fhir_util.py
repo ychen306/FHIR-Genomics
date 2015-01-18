@@ -4,9 +4,9 @@ from functools import partial
 import json
 from werkzeug.datastructures import MultiDict
 
-FHIR_JSON_MIMETYPE = 'application/json+fhir'
-FHIR_XML_MIMETYPE = 'application/xml+fhir'
-FHIR_BUNDLE_MIMETYPE = 'application/atom+fhir'
+FHIR_JSON_MIMETYPE = 'application/json'
+FHIR_XML_MIMETYPE = 'application/xml'
+FHIR_BUNDLE_MIMETYPE = 'application/xml'
 
 FHIR_XLMNS = 'http://hl7.org/fhir'
 XHTML_XLMNS = 'http://www.w3.org/1999/xhtml'

@@ -52,6 +52,7 @@ def parse(datatype, data, correctible):
     if datatype in SPECS:
         elements = [FHIRElement(element_spec, correctible)
                     for element_spec in SPECS[datatype]['elements']]
+
         search_elements = [element.get_search_elements()
                            for element in elements if element.validate(data)]
         if len(elements) != len(search_elements):

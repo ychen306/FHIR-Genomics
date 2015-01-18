@@ -1,18 +1,33 @@
 import re
 from sqlalchemy.ext.declarative import declarative_base
 from database import db
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 from uuid import uuid4
 from urlparse import urljoin
 import fhir_util
 from fhir_util import json_response, xml_response
+from fhir_spec import RESOURCES
 from util import hash_password
 
 
+# an oauth client can only keep access token for 1800 seconds
+EXPIRE_TIME = 1800
+
+
 class Resource(db.Model):
+    '''
+    a Resource is either public or has an `owner`.
+    upon sign up, all public resources are copied and asign an owner - the new user.
+    this is how we manage the sandbox. The user can do what ever he wants to that set of 
+    resources, and since resources are replicated, what a user does to a resource won't
+    affect that of another user.
+    '''
     __tablename__ = 'resource'
 
+    # upon app startup, we create a resource whose owner's email is 'super', which is impossible
+    # for a real user, who has to use a syntatically valid email address
+    owner_id = db.Column(db.String, db.ForeignKey('User.email'), primary_key=True)
     resource_id = db.Column(db.String, primary_key=True)
     resource_type = db.Column(db.String(50), primary_key=True)
     update_time = db.Column(db.DateTime, primary_key=True)
@@ -21,7 +36,9 @@ class Resource(db.Model):
     version = db.Column(db.Integer)
     visible = db.Column(db.Boolean)
 
-    def __init__(self, resource_type, data):
+    owner = db.relationship('User')
+
+    def __init__(self, resource_type, data, owner_id):
         '''
         data is a json dictionary of a resource
         '''
@@ -31,6 +48,7 @@ class Resource(db.Model):
         self.data = json.dumps(data)
         self.version = 1
         self.visible = True
+        self.owner_id = owner_id
 
     def update(self, data):
         '''
@@ -70,6 +88,9 @@ class Resource(db.Model):
             url_elements.extend(('_history', str(self.version)))
         return '/'.join(url_elements)
 
+    def get_reference(self):
+        return {'reference': self.get_url()}
+
 
 class SearchParam(db.Model):
 
@@ -80,8 +101,8 @@ class SearchParam(db.Model):
 
     __table_args__ = (
         db.ForeignKeyConstraint(
-            ['resource_id', 'resource_type', 'update_time'],
-            ['resource.resource_id', 'resource.resource_type', 'resource.update_time']),
+            ['owner_id', 'resource_id', 'resource_type', 'update_time'],
+            ['resource.owner_id', 'resource.resource_id', 'resource.resource_type', 'resource.update_time']),
         db.ForeignKeyConstraint(
             ['referenced_id', 'referenced_type', 'referenced_update_time'],
             ['resource.resource_id', 'resource.resource_type', 'resource.update_time']),
@@ -91,6 +112,7 @@ class SearchParam(db.Model):
     # type of param (reference|date|string|token)
     param_type = db.Column(db.String(10))
     # foreign key reference to `Resource`
+    owner_id = db.Column(db.String)
     resource_id = db.Column(db.String)
     resource_type = db.Column(db.String(50))
     update_time = db.Column(db.DateTime)
@@ -117,7 +139,8 @@ class SearchParam(db.Model):
     resource = db.relationship('Resource',
                                foreign_keys=[resource_id,
                                              resource_type,
-                                             update_time])
+                                             update_time,
+                                             owner_id])
 
     referenced = db.relationship('Resource',
                                  foreign_keys=[referenced_id,
@@ -134,13 +157,17 @@ class User(db.Model):
     app_secret = db.Column(db.String(100))
     app_name = db.Column(db.String(100))
     redirect_url = db.Column(db.String(100))
-    # a user is a "client" that has permanent access
-    client_id = db.Column(db.String, db.ForeignKey('Client.client_id'))
-    client = db.relationship('Client')
 
     def check_password(self, password):
         hashed, _ = hash_password(password, self.salt)        
         return hashed == self.hashed_password
+
+    def authorize_access(self, client, access_type, resource_types=RESOURCES):
+        for resource_type in resource_types:
+            access = Access(client=client,
+                            resource_type=resource_type,
+                            access_type=access_type)
+            db.session.add(access)
 
 
 class Session(db.Model):
@@ -153,15 +180,15 @@ class Session(db.Model):
 
 class Access(db.Model):
     '''
-    this represents a client's read/write access to a resource
+    this represents a client's read/write access to a resource type
     '''
     __tablename__ = 'Access'
 
     id = db.Column(db.Integer, primary_key=True) 
     client_id = db.Column(db.String(100), db.ForeignKey('Client.client_id'))
-    resource_id = db.Column(db.String(100), db.ForeignKey('resource.resource_id'))
-    resource_type = db.Column(db.String(100), db.ForeignKey('resource.resource_type'))
-    # read or write
+    client = db.relationship('Client')
+    resource_type = db.Column(db.String(100))
+    # read, write, or admin (shortcut for read+write)
     access_type = db.Column(db.String(10))
 
 
@@ -170,8 +197,19 @@ class Client(db.Model):
     
     client_id = db.Column(db.String(100), primary_key=True)
     client_secret = db.Column(db.String(100))
-    access_token = db.Column(db.String(100), nullable=True) 
-    authorized = db.Column(db.Boolean)
-    expire_at = db.Column(db.DateTime)
-    # true for User false for app client
-    can_expire = db.Column(db.Boolean)
+    access_token = db.Column(db.String(100), nullable=True)
+    authorizer_id = db.Column(db.String(100), db.ForeignKey('User.email'))
+    authorizer = db.relationship('User')
+    is_user = db.Column(db.Boolean) 
+    expire_at = db.Column(db.DateTime, nullable=True)
+
+    def __init__(self, authorizer, is_user=False):
+        self.client_id = str(uuid4())
+        self.client_secret = str(uuid4())
+        self.authorizer = authorizer
+        self.access_token = str(uuid4())
+        self.is_user = is_user
+        if not is_user:
+            self.expire_at = datetime.now() + timedelta(seconds=EXPIRE_TIME)
+        
+        

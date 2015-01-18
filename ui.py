@@ -4,9 +4,11 @@ Blueprint taking care of dev registerring and basic app dashboard
 from flask.blueprints import Blueprint
 from flask import request, render_template, redirect, Response
 from urllib import urlencode
-from models import db, User, Session
 from util import hash_password
 import uuid
+from models import db, User, Session, Resource, Access, Client, SearchParam
+from fhir_spec import RESOURCES
+from functools import wraps
 
 ui = Blueprint('/', __name__)
 
@@ -20,6 +22,44 @@ def log_in(user):
     return session_id
 
 
+def authorize_public_data(user):
+    # find all resources owned by super user, replicate them,
+    # and set owner to user
+    for resource in Resource.query.filter_by(owner_id='super'):
+        db.make_transient(resource) 
+        resource.owner = user
+        db.session.add(resource)
+    db.session.commit()
+    # find all search param owned by super user and replicate them
+    for sp in SearchParam.query.filter_by(owner_id='super'):
+        db.make_transient(sp)
+        sp.owner_id = user.email
+        sp.id = None
+        db.session.add(sp)
+
+    db.session.commit()
+    user_client = Client(authorizer=user,
+                        is_user=True)
+    user.authorize_access(user_client, access_type='admin')
+    db.session.add(user_client)
+
+
+def create_user(form):
+    hashed, salt = hash_password(form['password'])
+    new_user = User(email=form['email'],
+                    app_name=form['appname'],
+                    redirect_url=DEFAULT_REDIRECT_URL,
+                    hashed_password=hashed,
+                    app_id=rand_app_id(),
+                    app_secret=str(uuid.uuid4()),
+                    salt=salt)
+    # give user access to public data
+    authorize_public_data(new_user)
+    db.session.add(new_user)
+    db.session.commit()
+    return new_user
+
+
 def rand_app_id():
     app_id = str(uuid.uuid4())
     while User.query.filter_by(app_id=app_id).first() is not None:
@@ -28,14 +68,15 @@ def rand_app_id():
 
 
 def require_login(view):
-    def protected_view(*args, **kwargs):
+    @wraps(view)
+    def logged_in_view(*args, **kwargs):
         # check if user is logged in
         if  (request.session is None or
             request.session.user is None):
             return redirect('/')
         return view(*args, **kwargs) 
 
-    return protected_view
+    return logged_in_view
 
 
 @ui.before_request
@@ -86,6 +127,9 @@ def login():
 
 @ui.route('/logout')
 def logout():
+    if request.cookies.get('session_id'):
+        session_id = request.cookies['session_id']
+        session = Session.query.get(session_id).query.delete()
     resp = redirect('/')
     resp.set_cookie('session_id', expires=0)
     return resp
@@ -101,21 +145,12 @@ def signup():
             message = "Confirm password doesn't match."
         elif User.query.filter_by(email=request.form['email']).first() is not None:
             message = "Email has been used by other user."
+        # if there's an error, we ask the user to redo the form
         if message is not None:
             return render_template('signup.html', message=message)
+        # otherwise we create a new user in the database given the form
         else:
-            # TODO: refactor this to a new function
-            # TODO: give user to access public test data
-            hashed, salt = hash_password(request.form['password'])
-            new_user = User(email=request.form['email'],
-                            app_name=request.form['appname'],
-                            redirect_url=DEFAULT_REDIRECT_URL,
-                            hashed_password=hashed,
-                            app_id=rand_app_id(),
-                            app_secret=str(uuid.uuid4()),
-                            salt=salt)
-            db.session.add(new_user)
-            db.session.commit()
+            new_user = create_user(request.form)
             session_id = log_in(new_user)
             resp = redirect('/')
             resp.set_cookie('session_id', session_id)

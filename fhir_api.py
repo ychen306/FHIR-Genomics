@@ -5,7 +5,7 @@ import fhir_parser
 import fhir_util
 from fhir_util import json_response, xml_response, xml_bundle_response
 from fhir_spec import SPECS, REFERENCE_TYPES
-from query_builder import build_query, InvalidQuery
+from query_builder import QueryBuilder, InvalidQuery
 from indexer import index_search_elements
 import json
 from urlparse import urljoin
@@ -25,24 +25,24 @@ BAD_REQUEST = Response(status='400')
 NO_CONTENT = Response(status='204')
 
 
-def find_latest_resource(resource_type, resource_id):
+def find_latest_resource(resource_type, resource_id, owner):
     return Resource.query.filter_by(
         resource_type=resource_type,
-        resource_id=resource_id).order_by(Resource.version.desc()).first()
+        resource_id=resource_id,
+        owner_id=owner.email).order_by(Resource.version.desc()).first()
 
 
 class FHIRRequest(object):
-
     '''
     represent a request in FHIR's RESTful framework
     '''
-
     def __init__(self, request, is_resource=True):
         self.args = request.args
         self.format = self.args.get('_format', 'xml')
         self.api_base = request.api_base
         self.url = request.url
         self.base_url = request.base_url
+        self.authorizer = request.authorizer
         # paging params
         self.count = int(self.args.get('_count', PAGE_SIZE))
         self.offset = int(self.args.get('_offset', 0))
@@ -74,13 +74,13 @@ class FHIRRequest(object):
         '''
         return the url of next page
         '''
-        return self._get_url(is_prev=True)
+        return self._get_url(is_prev=False)
 
     def get_prev_url(self):
         '''
         return the url of previous page
         '''
-        return self._get_url(is_prev=False)
+        return self._get_url(is_prev=True)
 
 
 class FHIRBundle(object):
@@ -105,7 +105,7 @@ class FHIRBundle(object):
                          else None)
 
         self.prev_url = (request.get_prev_url()
-                         if request.offset - request.count > 0
+                         if request.offset - request.count >= 0
                          else None)
 
     def _make_bundle(self):
@@ -178,7 +178,7 @@ def handle_create(request, resource_type):
     if not valid:
         return BAD_REQUEST
 
-    resource = Resource(resource_type, request.data)
+    resource = Resource(resource_type, request.data, owner_id=request.authorizer.email)
     index_search_elements(resource, search_elements)
     db.session.add(resource)
     db.session.commit()
@@ -190,7 +190,7 @@ def handle_read(request, resource_type, resource_id):
     '''
     handle FHIR read operation
     '''
-    resource = find_latest_resource(resource_type, resource_id)
+    resource = find_latest_resource(resource_type, resource_id, owner_id=request.authorizer.email)
 
     if resource is None:
         return NOT_FOUND
@@ -204,7 +204,7 @@ def handle_update(request, resource_type, resource_id):
     '''
     handle FHIR update operation
     '''
-    old = find_latest_resource(resource_type, resource_id)
+    old = find_latest_resource(resource_type, resource_id, owner=request.authorizer)
     if old is None:
         return NOT_ALLOWED
 
@@ -228,7 +228,8 @@ def handle_search(request, resource_type):
     handle FHIR search operation
     '''
     try:
-        search_query = build_query(resource_type, request.args)
+        query_builder = QueryBuilder(request.authorizer)
+        search_query = query_builder.build_query(resource_type, request.args)
     except InvalidQuery:
         return BAD_REQUEST
     resp_bundle = FHIRBundle(search_query, request)

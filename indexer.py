@@ -1,6 +1,7 @@
 from models import db, Resource, SearchParam
 from query_builder import REFERENCE_RE
 import dateutil.parser
+from functools import partial
 
 
 def get_text(data):
@@ -23,9 +24,8 @@ def index_string(index, element):
     index['text'] = '::%s::' % (text,)
     return index
 
+
 # TODO: index all Coding if it's a CodeableConcept
-
-
 def index_token(index, element):
     '''
     index a CodeableConcept, Coding, and code
@@ -60,7 +60,7 @@ def index_token(index, element):
 # determine if the reference is internal
 
 
-def index_reference(index, element):
+def index_reference(index, element, owner_id):
     '''
     index a reference
     '''
@@ -75,6 +75,7 @@ def index_reference(index, element):
             # reference is internal reference, we want to link the reference to a Resource
             index['referenced'] = Resource.query.filter_by(resource_type=reference.group('resource_type'),
                                                            resource_id=reference.group('resource_id'),
+                                                           owner_id=owner_id,
                                                            visible=True).first()
 
     return index
@@ -124,7 +125,7 @@ def get_search_spec_args(resource, spec):
     return {
         'resource': resource,
         'param_type': spec['type'],
-        'name': spec['name']
+        'name': spec['name'],
     }
 
 
@@ -136,8 +137,11 @@ def index_search_elements(resource, search_elements):
             db.session.add(SearchParam(missing=True, **spec_args))
         else:
             for element in elements:
-                index_func = SEARCH_INDEX_FUNCS[spec_args['param_type']]
+                if spec_args['param_type'] == 'reference':
+                    index_func = partial(index_reference, owner_id=resource.owner_id)
+                else:
+                    index_func = SEARCH_INDEX_FUNCS[spec_args['param_type']]
                 if index_func is None:
                     continue
-                search_index = index_func(dict(spec_args), element)
+                search_index = index_func(dict(spec_args), element) 
                 db.session.add(SearchParam(missing=False, **search_index))

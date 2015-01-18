@@ -4,7 +4,7 @@
 	<title>{{ title }}</title>
 	<id>{{ id }}</id>
 	{% for _link in link %}
-	<link rel="{{ _link.rel|safe }}" href="{{ _link.href|safe }}"/>
+	<link rel="{{ _link.rel }}" href="{{ _link.href }}"/>
 	{% endfor %}
 	<totalResults xmlns:os="http://a9.com/-/spec/opensearch/1.1/">{{ totalResults }}</totalResults>
 	<updated>{{ updated }}</updated>	
