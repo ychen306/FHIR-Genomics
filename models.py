@@ -180,7 +180,8 @@ class Session(db.Model):
 
 class Access(db.Model):
     '''
-    this represents a client's read/write access to a resource type
+    this represents a client's read/write access to a resource type,
+    note that an access can be rescricted to a patient's resources
     '''
     __tablename__ = 'Access'
 
@@ -188,8 +189,12 @@ class Access(db.Model):
     client_id = db.Column(db.String(100), db.ForeignKey('Client.client_id'))
     client = db.relationship('Client')
     resource_type = db.Column(db.String(100))
+    patient_id = db.Column(db.String(500),
+                    db.ForeignKey('resource.resource_id'),
+                    nullable=True)
     # read, write, or admin (shortcut for read+write)
     access_type = db.Column(db.String(10))
+    
 
 
 class Client(db.Model):
