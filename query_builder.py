@@ -205,6 +205,9 @@ class QueryBuilder(object):
     
     # TODO: rewrite this using JOIN or (and) EXISTS
     def build_query(self, resource_type, params, id_only=False):
+        '''
+        If `id_only` is true, a SQL query that selects `resource_id` will be returned
+        '''
         query_args = [Resource.visible == True,
                       Resource.resource_type == resource_type,
                       Resource.owner_id == self.owner_id]

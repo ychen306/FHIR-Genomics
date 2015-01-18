@@ -25,11 +25,11 @@ BAD_REQUEST = Response(status='400')
 NO_CONTENT = Response(status='204')
 
 
-def find_latest_resource(resource_type, resource_id, owner):
+def find_latest_resource(resource_type, resource_id, owner_id):
     return Resource.query.filter_by(
         resource_type=resource_type,
         resource_id=resource_id,
-        owner_id=owner.email).order_by(Resource.version.desc()).first()
+        owner_id=owner_id).order_by(Resource.version.desc()).first()
 
 
 class FHIRRequest(object):

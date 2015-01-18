@@ -43,6 +43,26 @@ FHIR_PRIMITIVE_INIT = {
     'integer': int
 }
 
+ASSESED_TRAIT_EXTENSION_URL = 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#assesedTrait'
+
+ASSESSED_TRAIT_SPEC = {
+    'type': 'token',
+    'name': 'assesed-trait'
+}
+
+def get_assesed_trait(observation, correctable):
+    '''
+    extract assesed trait from a Observation extended with "GeneticObservation"
+    '''
+    #TODO: validate extension if it's extended with GeneticObservation
+    for extension in observation.get('extension', []):
+        if extension.get('url') == ASSESED_TRAIT_EXTENSION_URL:
+            traitCode = extension.get('valueCodeableConcept')            
+            if isinstance(traitCode, dict):
+                valid, _ = parse('CodeableConcept', traitCode, correctable)
+                if valid:
+                    return traitCode
+
 
 def parse(datatype, data, correctible):
     '''
@@ -57,8 +77,17 @@ def parse(datatype, data, correctible):
                            for element in elements if element.validate(data)]
         if len(elements) != len(search_elements):
             return False, None
-        search_elements = filter(
-            lambda x: x.get('spec') is not None, search_elements)
+        search_elements = filter(lambda x: x.get('spec') is not None,
+                        search_elements)
+
+    # extract element for SMART Genomics' custom search param - assesed-trait
+    if datatype == 'Observation':
+        assessedTrait = get_assesed_trait(data, correctible)
+        if assessedTrait is not None:
+            search_elements.append({
+                    'spec': ASSESSED_TRAIT_SPEC,
+                    'elements': [assessedTrait]})
+
     return True, search_elements
 
 

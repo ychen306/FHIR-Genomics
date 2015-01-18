@@ -7,6 +7,7 @@ from sequence import sequence_resource, sequence_reference_types
 PROFILE_F_RE = re.compile(r'^type-(?P<datatype>\w+).profile.json$|^(?P<resource>\w+).profile.json$')
 WARNING = 'WARNING: this is auto generated. Change it at your risk.'
 
+# customed search param on Observation with GeneticObservation extension
 
 def get_resource_profile_loc(spec_dir, resource):
     return os.path.join(spec_dir, "%s.profile.json" % resource.lower())
@@ -65,6 +66,10 @@ def init(spec_dir):
             elements, resource_search_params, resource_reference_types = load_and_process_profile(
                 profile_loc)
             name = elements[0]['path']
+            # manually add assesed-trait into list of serach params
+            if name == 'Observation':
+                resource_search_params['assesed-trait'] = 'token'
+
             specs[name] = {
                 'elements': elements,
                 'searchParams': resource_search_params
