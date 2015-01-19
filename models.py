@@ -185,7 +185,7 @@ class Access(db.Model):
     '''
     __tablename__ = 'Access'
 
-    # read, write, or admin (shortcut for read+write) 
+    # read or write
     access_type = db.Column(db.String(10), primary_key=True)
     client_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
     resource_type = db.Column(db.String(100), primary_key=True)

@@ -3,13 +3,17 @@ from flask import request, Response
 import fhir_api
 from fhir_api import NOT_FOUND
 from fhir_spec import RESOURCES
+from models import Access
 from urlparse import urljoin
 from models import Session, Client
 from functools import partial, wraps
+from datetime import datetime
+import re
 
 API_URL_PREFIX = 'api'
 api = Blueprint(API_URL_PREFIX, __name__)
 
+AUTH_HEADER_RE = re.compile(r'Bearer (?P<access_token>.+)')
 FORBIDDEN = Response(status='403')
 
 def verify_access(request, resource_type, access_type):
@@ -18,7 +22,12 @@ def verify_access(request, resource_type, access_type):
         return True
     elif request.client is not None:
         request.authorizer = request.client.authorizer
-        return True
+        if datetime.now() > request.client.expire_at:
+            return False
+        accesses = Access.query.filter_by(client_code=request.client.code,
+                                            access_type=access_type,
+                                            resource_type=resource_type)
+        return accesses.count() > 0
     else:
         return False
 
@@ -42,7 +51,14 @@ def get_client():
     session_id = request.cookies.get('session_id') 
     request.session = Session.query.filter_by(id=session_id).first()
     request.client = None
-
+    auth_header = AUTH_HEADER_RE.match(request.headers.get('authorization', ''))
+    if auth_header is not None:
+        request.client = Client.query.\
+                    filter_by(
+                        access_token=auth_header.group('access_token'),
+                        authorized=True).\
+                    first()
+        
 
 @api.route('/<resource_type>', methods=['GET', 'POST'])
 @protected
