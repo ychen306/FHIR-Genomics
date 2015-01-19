@@ -36,21 +36,12 @@ sequence_resource = {
             'path': 'Sequence.quantity',
             'definition': {
                 'min': 0,
-                'max': '1'
-            }
-        }, {
-            'path': 'Sequence.quantity.logScaleBase',
-            'definition': {
-                'min': 1,
                 'max': '1',
-                'type': [{'code': 'integer'}]
-            }
-        }, {
-            'path': 'Sequence.quantity.value',
-            'definition': {
-                'min': 1,
-                'max': '1',
-                'type': [{'code': 'decimal'}]
+                'type': [{'code': 'Quantity'}]
+            },
+            'searchParam': {
+                'name': 'quantity',
+                'type': 'quantity'
             }
         }, {
             'path': 'Sequence.quality',
@@ -90,6 +81,20 @@ sequence_resource = {
             'searchParam': {
                 'name': 'lab',
                 'type': 'reference'
+            }
+        }, {
+            'path': 'Sequence.cigar',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'string'}]
+            }
+        }, {
+            'path': 'Sequence.reference',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'string'}]
             }
         }, {
             'path': 'Sequence.chromosome',
