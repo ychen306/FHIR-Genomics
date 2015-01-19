@@ -8,6 +8,7 @@ from random import random
 from functools import partial
 from config import MAX_SEQ_PER_FILE
 import os
+from os import path
 
 
 def save_resource(resource_type, resource_data):
@@ -131,7 +132,6 @@ def init_superuser():
 
 
 def load_examples():
-    from os import path
     basedir = path.dirname(path.abspath(__file__))
     init_superuser()
     for example_file in os.listdir(path.join(basedir, 'examples/vcf')):

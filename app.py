@@ -18,9 +18,14 @@ def create_app():
     app.config.update(APP_CONFIG)
     register_blueprints(app)
     db.init_app(app)
+    with app.app_context():
+        db.create_all()
     return app
                 
-def setup_db(app):
+def load_sample_data(app):
+    '''
+    re-create all tables and load sample data
+    '''
     with app.app_context():
         db.drop_all()
         db.create_all()
@@ -31,7 +36,7 @@ if __name__ == "__main__":
     from sys import argv
     app = create_app()
     if len(argv) > 1 and argv[1] == 'reload':
-        setup_db(app)
+        load_sample_data(app)
     else:
         app.run(debug=True)
 
