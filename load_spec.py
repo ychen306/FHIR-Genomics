@@ -7,16 +7,6 @@ from sequence import sequence_resource, sequence_reference_types
 PROFILE_F_RE = re.compile(r'^type-(?P<datatype>\w+).profile.json$|^(?P<resource>\w+).profile.json$')
 WARNING = 'WARNING: this is auto generated. Change it at your risk.'
 
-# customed search param on Observation with GeneticObservation extension
-
-def get_resource_profile_loc(spec_dir, resource):
-    return os.path.join(spec_dir, "%s.profile.json" % resource.lower())
-
-
-def get_datatype_profile_loc(spec_dir, datatype):
-    return os.path.join(spec_dir, "type-%s.profile.json" % datatype)
-
-
 def load_and_process_profile(profile_loc):
     with open(profile_loc) as profile_f:
         return process_profile(json.loads(profile_f.read()))
