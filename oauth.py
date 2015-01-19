@@ -115,7 +115,7 @@ def authorize():
 def exchange_token():
     if request.form['grant_type'] != 'authorization_code':
         raise BadRequest
-    client_id= request.form['client_id']
+    client_id = request.form['client_id']
     client_secret = request.form['client_secret']
     code = request.form['code']
     redirect_uri = request.form['redirect_uri']

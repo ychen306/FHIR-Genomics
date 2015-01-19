@@ -150,6 +150,7 @@ class FHIRBundle(object):
         bundle['updated'] = self.update_time
         bundle['title'] = BUNDLE_TITLE
         bundle['id'] = self.request_url
+        bundle['resourceType'] = 'Bundle'
         return bundle
 
     def as_response(self):
