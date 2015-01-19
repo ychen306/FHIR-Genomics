@@ -187,7 +187,7 @@ class Access(db.Model):
 
     # read, write, or admin (shortcut for read+write) 
     access_type = db.Column(db.String(10), primary_key=True)
-    clien_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
+    client_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
     resource_type = db.Column(db.String(100), primary_key=True)
     patient_id = db.Column(db.String(500),
                     db.ForeignKey('resource.resource_id'),
@@ -225,6 +225,4 @@ class Client(db.Model):
         return {
             'access_token': self.access_token,
             'token_type': 'bearer',
-            'expires_in': 3600}
-        
-        
+            'expires_in': 3600} 
