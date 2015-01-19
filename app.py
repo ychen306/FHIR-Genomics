@@ -147,8 +147,8 @@ def load_vcf_example(vcf_file):
 def load_examples():
     from os import path
     basedir = path.dirname(path.abspath(__file__))
-    for example_file in os.listdir(path.join(basedir, 'examples')):
-        load_vcf_example(path.join(basedir, 'examples', example_file))
+    for example_file in os.listdir(path.join(basedir, 'examples/vcf')):
+        load_vcf_example(path.join(basedir, 'examples/vcf', example_file))
 
 
 def init_superuser():

@@ -1,0 +1,11 @@
+{
+    'resourceType': 'Condition',
+    'code': {
+        'text': 'Alcoholism',
+        'coding': [{
+            'display': 'Alcoholism',
+            'code': '7200002',
+            'system': 'http://snomed.org/sct'
+        }]
+    }
+}

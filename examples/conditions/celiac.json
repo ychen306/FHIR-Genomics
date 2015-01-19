@@ -1,0 +1,11 @@
+{
+    'resourceType': 'Condition',
+    'code': {
+        'text': 'Celiac disease',
+        'coding': [{
+            'display': 'Celiac disease',
+            'code': '396331005',
+            'system': 'http://snomed.org/sct'
+        }]
+    }
+}

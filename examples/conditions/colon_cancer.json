@@ -1,0 +1,11 @@
+{
+    'resourceType': 'Condition',
+    'code': {
+        'text': 'Colon Cancer',
+        'coding': [{
+            'display': 'Malignnant tumor of colon',
+            'code': '363406005',
+            'system': 'http://snomed.org/sct'
+        }]
+    }
+}

@@ -1,0 +1,11 @@
+{
+    'resourceType': 'Condition',
+    'code': {
+        'text': 'Breast cancer',
+        'coding': [{
+            'display': 'Malignant tumor of breast',
+            'code': '254837009',
+            'system': 'http://snomed.org/sct'
+        }]
+    }
+}

@@ -1,0 +1,11 @@
+{
+    'resourceType': 'Condition',
+    'code': {
+        'text': 'Lactose intolerance',
+        'coding': [{
+            'display': 'Lactose intolerance',
+            'code': '267425008',
+            'system': 'http://snomed.org/sct'
+        }]
+    }
+}

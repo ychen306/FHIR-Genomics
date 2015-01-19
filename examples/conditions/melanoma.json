@@ -1,0 +1,11 @@
+{
+    'resourceType': 'Condition',
+    'code': {
+        'text': 'melanoma',
+        'coding': [{
+            'display': 'melanoma',
+            'code': '2092003',
+            'system': 'http://snomed.org/sct'
+        }]
+    }
+}

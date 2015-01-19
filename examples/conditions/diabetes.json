@@ -1,0 +1,11 @@
+{
+    'resourceType': 'Condition',
+    'code': {
+        'text': 'Diabetes mellitus',
+        'coding': [{
+            'display': 'Diabetes mellitus',
+            'code': '73211009',
+            'system': 'http://snomed.org/sct'
+        }]
+    }
+}
