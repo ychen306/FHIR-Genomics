@@ -8,8 +8,8 @@ FHIR_JSON_MIMETYPE = 'application/json'
 FHIR_XML_MIMETYPE = 'application/xml'
 FHIR_BUNDLE_MIMETYPE = 'application/xml'
 
-FHIR_XLMNS = 'http://hl7.org/fhir'
-XHTML_XLMNS = 'http://www.w3.org/1999/xhtml'
+FHIR_XMLNS = 'http://hl7.org/fhir'
+XHTML_XMLNS = 'http://www.w3.org/1999/xhtml'
 
 json_response = partial(Response, mimetype=FHIR_JSON_MIMETYPE)
 xml_response = partial(Response, mimetype=FHIR_XML_MIMETYPE)
@@ -40,8 +40,8 @@ def _xml_to_json(root):
 
 
 def xml_to_json(root, resource_type):
-    if 'xlmns' in root.attrib:
-        del root.attrib['xlmns']
+    if 'xmlns' in root.attrib:
+        del root.attrib['xmlns']
     jsondict = _xml_to_json(root)
     jsondict['resourceType'] = resource_type
     return jsondict
@@ -67,7 +67,7 @@ def _json_to_xml(jsondict, root):
             if k == 'div' and isinstance(v, basestring):
                 try:
                     narrative = etree.fromstring(v)
-                    narrative.set('xlmns', XHTML_XLMNS)
+                    narrative.set('xmlns', XHTML_XMLNS)
                     root.append(narrative)
                     continue
                 except:
@@ -80,7 +80,7 @@ def json_to_xml(jsondict):
     resource_type = jsondict['resourceType']
     del jsondict['resourceType']
     root = etree.Element(resource_type)
-    root.set('xlmns', FHIR_XLMNS)
+    root.set('xmlns', FHIR_XMLNS)
     _json_to_xml(jsondict, root)
     return etree.tostring(root)
 
