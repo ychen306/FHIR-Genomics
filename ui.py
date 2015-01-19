@@ -9,6 +9,7 @@ import uuid
 from models import db, User, Session, Resource, Access, Client, SearchParam
 from fhir_spec import RESOURCES
 from functools import wraps
+from urllib import urlencode
 
 ui = Blueprint('/', __name__)
 
@@ -29,19 +30,13 @@ def authorize_public_data(user):
         db.make_transient(resource) 
         resource.owner = user
         db.session.add(resource)
-    db.session.commit()
     # find all search param owned by super user and replicate them
     for sp in SearchParam.query.filter_by(owner_id='super'):
         db.make_transient(sp)
         sp.owner_id = user.email
         sp.id = None
         db.session.add(sp)
-
     db.session.commit()
-    user_client = Client(authorizer=user,
-                        is_user=True)
-    user.authorize_access(user_client, access_type='admin')
-    db.session.add(user_client)
 
 
 def create_user(form):
@@ -73,7 +68,11 @@ def require_login(view):
         # check if user is logged in
         if  (request.session is None or
             request.session.user is None):
-            return redirect('/')
+            if request.method != 'GET':
+                return Response(status='403')
+            else:
+                redirect_arg = {'redirect': request.url}
+                return redirect('/?%s'% urlencode(redirect_arg))
         return view(*args, **kwargs) 
 
     return logged_in_view
@@ -94,9 +93,10 @@ def index():
     app_id = None
     app_secret = None
     app_name = None
-    redirect_url = None
+    app_redirect_url = None
     email = request.args.get('email')
     message = request.args.get('message')
+    redirect_url = request.args.get('redirect', '/')
 
     if request.session is not None:
         logged_in = True
@@ -104,23 +104,25 @@ def index():
         app_id = user.app_id
         app_secret = user.app_secret
         app_name = user.app_name 
-        redirect_url = user.redirect_url
-
+        app_redirect_url = user.redirect_url
+    
     return render_template('index.html', **locals())
 
 
 @ui.route('/login', methods=['POST'])
 def login():
+    print request.form
     password = request.form['password']
     email = request.form['email']
     user = User.query.filter_by(email=email).first()
-    resp = redirect('/')
     if user is not None and user.check_password(password):
         session_id = log_in(user)
+        resp = redirect(request.form['redirect_url'])
         resp.set_cookie('session_id', session_id)
     else:
         redirect_args = {'email':email,
-                        'message': 'Incorrect email or password'}
+                        'message': 'Incorrect email or password',
+                        'redirect': request.form['redirect_url']}
         resp = redirect('/?%s'% urlencode(redirect_args))
     return resp
 
@@ -129,7 +131,11 @@ def login():
 def logout():
     if request.cookies.get('session_id'):
         session_id = request.cookies['session_id']
-        session = Session.query.get(session_id).query.delete()
+        session = Session.query.get(session_id)
+        if session is not None:
+            db.session.delete(session)
+            db.session.commit()
+
     resp = redirect('/')
     resp.set_cookie('session_id', expires=0)
     return resp

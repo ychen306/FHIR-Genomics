@@ -13,10 +13,14 @@ api = Blueprint(API_URL_PREFIX, __name__)
 FORBIDDEN = Response(status='403')
 
 def verify_access(request, resource_type, access_type):
-    if request.accessor is None:
+    if request.session is not None:
+        request.authorizer = request.session.user
+        return True
+    elif request.client is not None:
+        request.authorizer = request.client.authorizer
+        return True
+    else:
         return False
-    request.authorizer = request.accessor.authorizer
-    return True
 
 def protected(view):
     @wraps(view)
@@ -34,14 +38,10 @@ def protected(view):
 
 
 @api.before_request
-def get_accessor():
+def get_client():
     session_id = request.cookies.get('session_id') 
-    session = Session.query.filter_by(id=session_id).first()
-    if session is not None:
-        request.accessor = Client.query.filter_by(is_user=True,
-                                                authorizer=session.user).first()
-    else:
-        request.accessor = None
+    request.session = Session.query.filter_by(id=session_id).first()
+    request.client = None
 
 
 @api.route('/<resource_type>', methods=['GET', 'POST'])

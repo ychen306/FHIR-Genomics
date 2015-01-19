@@ -18,7 +18,7 @@ from functools import partial
 
 def register_blueprints(app):
     app.register_blueprint(api, url_prefix='/api')
-    app.register_blueprint(api, url_prefix='/auth')
+    app.register_blueprint(oauth, url_prefix='/auth')
     app.register_blueprint(ui)
 
 
@@ -153,18 +153,7 @@ def load_examples():
 
 def init_superuser():
     superuser = User(email='super')
-    user_client = Client(authorizer=superuser,
-                        is_user=True)
-    superuser.authorize_access(user_client, access_type='admin')
-    db.session.add(user_client)
     db.session.add(superuser)
-
-    for resource_type in RESOURCES:
-        access = Access(client=user_client,
-                        resource_type=resource_type,
-                        access_type='admin')
-        db.session.add(access)
-
     global test_resource
     test_resource = partial(Resource, owner_id=superuser.email)  
 

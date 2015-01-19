@@ -185,36 +185,46 @@ class Access(db.Model):
     '''
     __tablename__ = 'Access'
 
-    id = db.Column(db.Integer, primary_key=True) 
-    client_id = db.Column(db.String(100), db.ForeignKey('Client.client_id'))
-    client = db.relationship('Client')
-    resource_type = db.Column(db.String(100))
+    # read, write, or admin (shortcut for read+write) 
+    access_type = db.Column(db.String(10), primary_key=True)
+    clien_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
+    resource_type = db.Column(db.String(100), primary_key=True)
     patient_id = db.Column(db.String(500),
                     db.ForeignKey('resource.resource_id'),
                     nullable=True)
-    # read, write, or admin (shortcut for read+write)
-    access_type = db.Column(db.String(10))
-    
+    client = db.relationship('Client')
 
 
 class Client(db.Model):
     __tablename__ = 'Client'
     
-    client_id = db.Column(db.String(100), primary_key=True)
-    client_secret = db.Column(db.String(100))
-    access_token = db.Column(db.String(100), nullable=True)
+    code = db.Column(db.String, primary_key=True)
+    client_id = db.Column(db.String(100), db.ForeignKey('User.app_id'), nullable=True)
+    client_secret = db.Column(db.String(100), db.ForeignKey('User.app_secret'), nullable=True)
+    state = db.Column(db.String(500), nullable=True)
+    access_token = db.Column(db.String(100), unique=True)
     authorizer_id = db.Column(db.String(100), db.ForeignKey('User.email'))
-    authorizer = db.relationship('User')
-    is_user = db.Column(db.Boolean) 
+    authorized = db.Column(db.Boolean)
     expire_at = db.Column(db.DateTime, nullable=True)
 
-    def __init__(self, authorizer, is_user=False):
-        self.client_id = str(uuid4())
-        self.client_secret = str(uuid4())
-        self.authorizer = authorizer
+    authorizer = db.relationship('User', foreign_keys=[authorizer_id])
+
+    def __init__(self, authorizer, client, state):
+        self.client_id = client.app_id
+        self.client_secret = client.app_secret
         self.access_token = str(uuid4())
-        self.is_user = is_user
-        if not is_user:
-            self.expire_at = datetime.now() + timedelta(seconds=EXPIRE_TIME)
+        self.code = str(uuid4())
+        self.authorizer = authorizer
+        self.authorized = False
+        self.state = state
+
+    # TODO: add scope in response
+    def grant_access_token(self):
+        self.expire_at = datetime.now() + timedelta(seconds=3600)
+        db.session.commit()
+        return {
+            'access_token': self.access_token,
+            'token_type': 'bearer',
+            'expires_in': 3600}
         
         

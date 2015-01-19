@@ -2,6 +2,7 @@
 {% block main %}
 {% if not logged_in %}
 <form class="form-signin" action="/login" method="POST">
+  <input name="redirect_url" value="{{ redirect_url }}" type="hidden"/>
   <h3 class="form-signin-heading">Sign in here</h3>
   {% if message %}
   <span class="label label-danger" style="padding: 2px;">{{ message }}</span><br/>
@@ -31,7 +32,7 @@
     </tr>
     <tr>
       <th scope="row">Redirect url</th>
-      <td><input name="redirect_url" value="{{ redirect_url }}" class="form-control"></input></td>
+      <td><input name="redirect_url" value="{{ app_redirect_url }}" class="form-control"></input></td>
     </tr>
   </table>
   <button class="btn btn-primary" type="submit">Update</button>
