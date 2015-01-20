@@ -1,11 +1,12 @@
 {
-    'resourceType': 'Condition',
-    'code': {
-        'text': 'Color blind',
-        'coding': [{
-            'display': 'internal blind',
-            'code': '41079005',
-            'system': 'http://snomed.org/sct'
+    "resourceType": "Condition",
+    "code": {
+        "text": "Color blind",
+        "coding": [{
+            "display": "internal blind",
+            "code": "41079005",
+            "system": "http://snomed.org/sct"
         }]
-    }
+    },
+    "status": "confirmed"
 }

@@ -6,7 +6,8 @@ Reference API server of SMART Genomics
 You don't need to do this unless you have your own FHIR spec.
 4. Setup database and load sample data with
 ```
-$ python app.py syncdb
+# note that this will also clear the database
+$ python app.py reload
 ```
 5. Run the server locally with
 ```

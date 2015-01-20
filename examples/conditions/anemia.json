@@ -1,0 +1,12 @@
+{
+    "resourceType": "Condition",
+    "code": {
+        "text": "Anemia",
+        "coding": [{
+            "display": "Anemia",
+            "code": "271737000",
+            "system": "http://snomed.org/sct"
+        }]
+    },
+    "status": "confirmed"
+}

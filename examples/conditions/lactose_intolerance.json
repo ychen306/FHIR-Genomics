@@ -1,10 +1,10 @@
 {
     "resourceType": "Condition",
     "code": {
-        "text": "Colon Cancer",
+        "text": "Lactose intolerance",
         "coding": [{
-            "display": "Malignnant tumor of colon",
-            "code": "363406005",
+            "display": "Lactose intolerance",
+            "code": "267425008",
             "system": "http://snomed.org/sct"
         }]
     },

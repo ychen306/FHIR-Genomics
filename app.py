@@ -21,7 +21,8 @@ def create_app():
     with app.app_context():
         db.create_all()
     return app
-                
+
+
 def load_sample_data(app):
     '''
     re-create all tables and load sample data
@@ -31,6 +32,7 @@ def load_sample_data(app):
         db.create_all()
         example_loader.load_examples()
         db.session.commit()
+
 
 if __name__ == "__main__":
     from sys import argv
