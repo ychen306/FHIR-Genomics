@@ -89,6 +89,7 @@ def authorize():
         # security is being taken care of by marking the authorized client as un authorized
         for scope in scopes:
             scope.get_access_from_user(request.session.user, client)
+        db.session.add(client)
         db.session.commit()
         return render_template('authorization.html',
                     appname=client_user.app_name,
