@@ -45,7 +45,7 @@ class Resource(db.Model):
         self.update_time = self.create_time = datetime.now()
         self.resource_type = resource_type
         self.resource_id = str(uuid4())
-        self.data = json.dumps(data)
+        self.data = json.dumps(data, separators=(',', ':'))
         self.version = 1
         self.visible = True
         self.owner_id = owner_id
