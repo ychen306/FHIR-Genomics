@@ -44,7 +44,7 @@ class OAuthScope(object):
         if self.is_wildcard:
             resource = ''
         else:
-            resource = self.resource + ' '
+            resource = '<b>%s</b> '% self.resource
         readable['desc'] = self.__class__.desc_tmpl% (
                                         self.access_type,
                                         resource)

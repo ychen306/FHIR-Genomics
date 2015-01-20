@@ -164,10 +164,10 @@ class User(db.Model):
 
     def authorize_access(self, client, access_type, resource_types=RESOURCES):
         for resource_type in resource_types:
-            access = Access(client=client,
+            access = Access(client_code=client.code,
                             resource_type=resource_type,
                             access_type=access_type)
-            db.session.add(access)
+            db.session.merge(access)
 
 
 class Session(db.Model):
@@ -192,7 +192,6 @@ class Access(db.Model):
     patient_id = db.Column(db.String(500),
                     db.ForeignKey('resource.resource_id'),
                     nullable=True)
-    client = db.relationship('Client')
 
 
 class Client(db.Model):

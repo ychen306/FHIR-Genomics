@@ -6,7 +6,7 @@
     <ul class="list-group">
       {% for access in accesses %}
       <li style="font-size: 18px;" class="list-group-item {% if access.is_write %} list-group-item-warning {% else %} list-group-item-success {% endif %}">
-        {{ access.desc }}
+        {{ access.desc|safe }}
       </li>
       {% endfor %}
     </ul>
