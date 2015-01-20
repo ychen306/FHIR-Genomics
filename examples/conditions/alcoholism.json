@@ -7,5 +7,6 @@
             "code": "7200002",
             "system": "http://snomed.org/sct"
         }]
-    }
+    },
+    "status": "confirmed"
 }

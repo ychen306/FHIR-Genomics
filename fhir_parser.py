@@ -43,25 +43,24 @@ FHIR_PRIMITIVE_INIT = {
     'integer': int
 }
 
-ASSESED_TRAIT_EXTENSION_URL = 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#assesedTrait'
+ASSESED_TRAIT_EXTENSION_URL = 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#assessedCondition'
 
 ASSESSED_TRAIT_SPEC = {
-    'type': 'token',
-    'name': 'assesed-trait'
+    'type': 'reference',
+    'name': 'assessed-condition'
 }
 
-def get_assesed_trait(observation, correctable):
+def get_assessed_condition(observation, correctable):
     '''
-    extract assesed trait from a Observation extended with "GeneticObservation"
+    extract assesed condition from a Observation extended with "GeneticObservation"
     '''
-    #TODO: validate extension if it's extended with GeneticObservation
     for extension in observation.get('extension', []):
         if extension.get('url') == ASSESED_TRAIT_EXTENSION_URL:
-            traitCode = extension.get('valueCodeableConcept')            
-            if isinstance(traitCode, dict):
-                valid, _ = parse('CodeableConcept', traitCode, correctable)
+            condition_ref = extension.get('valueReference')            
+            if isinstance(condition_ref, dict):
+                valid, _ = parse('ResourceReference', condition_ref, correctable)
                 if valid:
-                    return traitCode
+                    return condition_ref
 
 
 def parse(datatype, data, correctible):
@@ -80,13 +79,15 @@ def parse(datatype, data, correctible):
         search_elements = filter(lambda x: x.get('spec') is not None,
                         search_elements)
 
-    # extract element for SMART Genomics' custom search param - assesed-trait
+    # extract element for SMART Genomics' custom search param - assesed-condition
     if datatype == 'Observation':
-        assessedTrait = get_assesed_trait(data, correctible)
-        if assessedTrait is not None:
-            search_elements.append({
-                    'spec': ASSESSED_TRAIT_SPEC,
-                    'elements': [assessedTrait]})
+        condition = get_assessed_condition(data, correctible)
+        customed_search_param = {
+            'spec': ASSESSED_TRAIT_SPEC,
+            'elements': []}
+        if condition is not None:
+            customed_search_param['elements'].append(condition)
+        search_elements.append(customed_search_param)
 
     return True, search_elements
 

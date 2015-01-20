@@ -115,6 +115,7 @@ def rand_conditions(patient):
                             random.randint(0, len(available_conditions)))
     ret = []
     for cond_tmpl in conditions:
+        print cond_tmpl['code']['text']
         condition = dict(cond_tmpl)
         condition['subject'] = patient.get_reference()
         ret.append(save_resource('Condition', condition))
@@ -127,7 +128,7 @@ def make_observation(condition, sequence, patient, seq_id):
         'resourceType': 'Observation',
         'extension': [
             {
-                'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#assesedCondition',
+                'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#assessedCondition',
                 'valueReference': condition.get_reference()
             }, {
                 'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#variantGenotype',
@@ -151,6 +152,7 @@ def make_observation(condition, sequence, patient, seq_id):
                 'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#variantId',
                 'valueString': seq_id
         })
+
     print 'Created Observation (Genetic Observation)'
     return save_resource('Observation', observation)
 
@@ -168,6 +170,7 @@ def load_vcf_example(vcf_file):
     labs = load_labs_by_patients(patients)
     db.session.commit()
     conditions = load_conditions_by_patients(patients)
+    db.session.commit()
     count = 0
     for record in reader:
         sequence_tmpl = {
