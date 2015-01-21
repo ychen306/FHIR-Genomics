@@ -111,7 +111,6 @@ def index():
 
 @ui.route('/login', methods=['POST'])
 def login():
-    print request.form
     password = request.form['password']
     email = request.form['email']
     user = User.query.filter_by(email=email).first()
