@@ -188,7 +188,7 @@ class Access(db.Model):
 
     # read or write
     access_type = db.Column(db.String(10), primary_key=True)
-    client_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
+    client_code = db.Column(db.String(100), primary_key=True)
     resource_type = db.Column(db.String(100), primary_key=True)
     patient_id = db.Column(db.String(500), nullable=True)
 
