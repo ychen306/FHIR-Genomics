@@ -188,7 +188,7 @@ class Access(db.Model):
 
     # read or write
     access_type = db.Column(db.String(10), primary_key=True)
-    client_code = db.Column(db.String(100), primary_key=True)
+    client_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
     resource_type = db.Column(db.String(100), primary_key=True)
     patient_id = db.Column(db.String(500), nullable=True)
 
@@ -205,7 +205,7 @@ class Client(db.Model):
     authorized = db.Column(db.Boolean)
     expire_at = db.Column(db.DateTime, nullable=True)
 
-    authorizer = db.relationship('User', foreign_keys=[authorizer_id])
+    authorizer = db.relationship('User')
 
     def __init__(self, authorizer, client, state):
         self.client_id = client.app_id

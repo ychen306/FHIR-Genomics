@@ -82,6 +82,7 @@ def authorize():
         client = Client(request.session.user,
                         client_user,
                         request.args.get('state'))
+        db.session.add(client)
         # parse requested scopes
         scopes = map(OAuthScope, request.args['scope'].split(' '))
         accesses = map(OAuthScope.to_readable, scopes)  
@@ -89,7 +90,6 @@ def authorize():
         # security is being taken care of by marking the authorized client as un authorized
         for scope in scopes:
             scope.get_access_from_user(request.session.user, client)
-        db.session.add(client)
         db.session.commit()
         return render_template('authorization.html',
                     appname=client_user.app_name,
