@@ -104,8 +104,8 @@ class SearchParam(db.Model):
             ['owner_id', 'resource_id', 'resource_type', 'update_time'],
             ['resource.owner_id', 'resource.resource_id', 'resource.resource_type', 'resource.update_time']),
         db.ForeignKeyConstraint(
-            ['referenced_id', 'referenced_type', 'referenced_update_time'],
-            ['resource.resource_id', 'resource.resource_type', 'resource.update_time']),
+            ['owner_id', 'referenced_id', 'referenced_type', 'referenced_update_time'],
+            ['resource.owner_id', 'resource.resource_id', 'resource.resource_type', 'resource.update_time']),
         {})
 
     id = db.Column(db.Integer, primary_key=True)
@@ -137,13 +137,14 @@ class SearchParam(db.Model):
     code = db.Column(db.String(100), nullable=True)
 
     resource = db.relationship('Resource',
-                               foreign_keys=[resource_id,
+                               foreign_keys=[owner_id,
+                                             resource_id,
                                              resource_type,
-                                             update_time,
-                                             owner_id])
+                                             update_time])
 
     referenced = db.relationship('Resource',
-                                 foreign_keys=[referenced_id,
+                                 foreign_keys=[owner_id,
+                                               referenced_id,
                                                referenced_type,
                                                referenced_update_time])
 
@@ -189,17 +190,15 @@ class Access(db.Model):
     access_type = db.Column(db.String(10), primary_key=True)
     client_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
     resource_type = db.Column(db.String(100), primary_key=True)
-    patient_id = db.Column(db.String(500),
-                    db.ForeignKey('resource.resource_id'),
-                    nullable=True)
+    patient_id = db.Column(db.String(500), nullable=True)
 
 
 class Client(db.Model):
     __tablename__ = 'Client'
     
     code = db.Column(db.String, primary_key=True)
-    client_id = db.Column(db.String(100), db.ForeignKey('User.app_id'), nullable=True)
-    client_secret = db.Column(db.String(100), db.ForeignKey('User.app_secret'), nullable=True)
+    client_id = db.Column(db.String(100), nullable=True)
+    client_secret = db.Column(db.String(100), nullable=True)
     state = db.Column(db.String(500), nullable=True)
     access_token = db.Column(db.String(100), unique=True)
     authorizer_id = db.Column(db.String(100), db.ForeignKey('User.email'))
