@@ -81,9 +81,9 @@ def index_reference(index, element, owner_id):
     return index
 
 
-def index_quantity(index, element):
+def index_number(index, element):
     '''
-    index a quantity (i.e. numerical)
+    index a number (i.e. numerical)
     '''
     index['quantity'] = float(element)
     return index
@@ -113,7 +113,7 @@ SEARCH_INDEX_FUNCS = {
     'string': index_string,
     'token': index_token,
     'reference': index_reference,
-    'quantity': index_quantity,
+    'number': index_number,
     'date': index_date
 }
 

@@ -132,6 +132,7 @@ class SearchParam(db.Model):
     end_date = db.Column(db.DateTime, nullable=True)
     # quantity param
     quantity = db.Column(db.Float, nullable=True)
+    comparator = db.Column(db.String(2), nullable=True)
     # token param
     system = db.Column(db.String(500), nullable=True)
     code = db.Column(db.String(100), nullable=True)

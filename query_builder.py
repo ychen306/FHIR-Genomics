@@ -10,7 +10,7 @@ PARAM_RE = re.compile(r'(?P<param>[^\.:]+)(?::(?P<modifier>[^\.:]+))?(?:\.(?P<ch
 COMPARATOR_RE = r'(?P<comparator><|<=|>|>=)'
 REFERENCE_RE = re.compile(r'(?:(?P<extern_base>.+)/)?(?P<resource_type>.+)/(?P<resource_id>.+)')
 TOKEN_RE = re.compile(r'(?:(?P<system>.*)?\|)?(?P<code>.+)')
-QUANTITY_RE = re.compile(r'%s?(?P<quantity>\d+(?:\.\d+)?)' % COMPARATOR_RE)
+NUMBER_RE = re.compile(r'%s?(?P<number>\d+(?:\.\d+)?)' % COMPARATOR_RE)
 DATE_RE = re.compile(r'%s?(?P<date>.+)' % COMPARATOR_RE)
 COORD_RE = re.compile(r'(?P<chrom>.+):(?P<start>\d+)-(?P<end>\d+)')
 SELECT_FROM_SEARCH_PARAM = db.select([SearchParam.resource_id]).select_from(SearchParam)
@@ -48,13 +48,13 @@ def make_coord_preds(coord_str):
     return [right_chrom, right_start, right_end]
 
     
-def make_quantity_pred(param_data, param_val):
-    quantity = QUANTITY_RE.match(param_val)
-    if not quantity:
+def make_number_pred(param_data, param_val):
+    number = QUANTITY_RE.match(param_val)
+    if not number:
         raise InvalidQuery
     try:
-        value = float(quantity.group('quantity'))
-        comparator = quantity.group('comparator')
+        value = float(number.group('number'))
+        comparator = number.group('comparator')
 
         if comparator is None:
             pred = (SearchParam.quantity == value)
@@ -119,7 +119,7 @@ def make_date_pred(param_data, param_val):
         raise InvalidQuery
 
 PRED_MAKERS = {
-    'quantity': make_quantity_pred,
+    'number': make_number_pred,
     'token': make_token_pred,
     'date': make_date_pred,
     'string': make_string_pred

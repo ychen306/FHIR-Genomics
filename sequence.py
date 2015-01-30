@@ -52,7 +52,7 @@ sequence_resource = {
             },
             'searchParam': {
                 'name': 'quality',
-                'type': 'quantity'
+                'type': 'number'
             }
         }, {
             'path': 'Sequence.source',
@@ -116,7 +116,7 @@ sequence_resource = {
             },
             'searchParam': {
                 'name': 'start-position',
-                'type': 'quantity'
+                'type': 'number'
             }
         }, {
             'path': 'Sequence.endPosition',
@@ -127,7 +127,7 @@ sequence_resource = {
             },
             'searchParam': {
                 'name': 'end-position',
-                'type': 'quantity'
+                'type': 'number'
             }
         }, {
             'path': 'Sequence.assembly',
