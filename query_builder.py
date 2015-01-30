@@ -10,7 +10,8 @@ PARAM_RE = re.compile(r'(?P<param>[^\.:]+)(?::(?P<modifier>[^\.:]+))?(?:\.(?P<ch
 COMPARATOR_RE = r'(?P<comparator><|<=|>|>=)'
 REFERENCE_RE = re.compile(r'(?:(?P<extern_base>.+)/)?(?P<resource_type>.+)/(?P<resource_id>.+)')
 TOKEN_RE = re.compile(r'(?:(?P<system>.*)?\|)?(?P<code>.+)')
-NUMBER_RE = re.compile(r'%s?(?P<number>\d+(?:\.\d+)?)' % COMPARATOR_RE)
+NUMBER_RE = re.compile(r'%s?(?P<number>\d+(?:\.\d+)?)'% COMPARATOR_RE)
+QUANTITY_RE = re.compile(r'%s\|(?P<system>.+)?\|(?P<code>.+)?'% NUMBER_RE.pattern)
 DATE_RE = re.compile(r'%s?(?P<date>.+)' % COMPARATOR_RE)
 COORD_RE = re.compile(r'(?P<chrom>.+):(?P<start>\d+)-(?P<end>\d+)')
 SELECT_FROM_SEARCH_PARAM = db.select([SearchParam.resource_id]).select_from(SearchParam)
@@ -21,10 +22,10 @@ class InvalidQuery(Exception):
     pass
 
 
-
 def intersect_predicates(predicates):
     return db.intersect(*[SELECT_FROM_SEARCH_PARAM.where(pred)
                           for pred in predicates])
+
 
 def make_coord_preds(coord_str):
     coord = COORD_RE.match(coord_str)
@@ -49,7 +50,7 @@ def make_coord_preds(coord_str):
 
     
 def make_number_pred(param_data, param_val):
-    number = QUANTITY_RE.match(param_val)
+    number = NUMBER_RE.match(param_val)
     if not number:
         raise InvalidQuery
     try:
@@ -73,6 +74,45 @@ def make_number_pred(param_data, param_val):
         raise InvalidQuery
 
 
+def make_quantity_pred(param_data, param_val):
+    quantity = QUANTITY_RE.match(param_val)
+    if quantity is None:
+        raise InvalidQuery
+
+    preds = []
+
+    if quantity.group('code') is not None:
+        preds.append(SearchParam.code == quantity.group('code'))
+    if quantity.group('system') is not None:
+        preds.append(SearchParam.system == quantity.group('system'))
+
+    # tough stuff here... because quantity stored in the database can also have comparator
+    # we have to build the query base off the comparators in search and db
+    value = quantity.group('number') 
+    comparator = quantity.group('comparator') 
+    if comparator is None:
+        comparator = '=' 
+
+    val_preds = []
+    if '<' in comparator:
+        val_preds = [
+            SearchParam.comparator.in_('<', '<='),
+            SearchParam.comparator.quantity < value]
+    elif '>' in comparison:
+        val_preds = [
+            SearchParam.comparator.in_('>', '>='),
+            SearchParam.comparator.quantity > value]
+
+    if '=' in comparator:
+        val_preds.append(db.and_(
+                            SearchParam.comparator.in_(None, '<=', '>='),
+                            SearchParam.quantity == value))
+
+    preds.append(db.or_(*val_preds))
+
+    return db.and_(*preds)
+
+
 def make_token_pred(param_data, param_val):
     token = TOKEN_RE.match(param_val)
     if not token:
@@ -93,10 +133,9 @@ def make_string_pred(param_data, param_val):
                  for text in param_val.split()]
         return db.or_(*preds)
 
+
 # FIXME: this is a hack that approximates any iso8601s datetime as its closest instant
 # and hence doesn't have very high accuracy for range based date comparison
-
-
 def make_date_pred(param_data, param_val):
     date = DATE_RE.match(param_val)
     if date is None:
@@ -119,6 +158,7 @@ def make_date_pred(param_data, param_val):
         raise InvalidQuery
 
 PRED_MAKERS = {
+    'quantity': make_quantity_pred,
     'number': make_number_pred,
     'token': make_token_pred,
     'date': make_date_pred,

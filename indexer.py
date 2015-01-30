@@ -56,10 +56,9 @@ def index_token(index, element):
     index['text'] = '::%s::' % ('::'.join(text_elements), )
     return index
 
+
 # TODO: compare the api base of the reference with the api base of the server
 # determine if the reference is internal
-
-
 def index_reference(index, element, owner_id):
     '''
     index a reference
@@ -81,9 +80,19 @@ def index_reference(index, element, owner_id):
     return index
 
 
+def index_quantity(index, element):
+    '''
+    index a quantity
+    '''
+    index['code'] = element.get('code')
+    index['system'] = element.get('system')
+    index['quantity'] = element.get('value')
+    index['comparator'] = element.get('comparator', '=')
+    return index
+
 def index_number(index, element):
     '''
-    index a number (i.e. numerical)
+    index a number
     '''
     index['quantity'] = float(element)
     return index
@@ -112,7 +121,7 @@ def index_date(index, element):
 SEARCH_INDEX_FUNCS = {
     'string': index_string,
     'token': index_token,
-    'reference': index_reference,
+    'quantity': index_quantity,
     'number': index_number,
     'date': index_date
 }
