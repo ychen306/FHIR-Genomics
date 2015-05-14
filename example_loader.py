@@ -46,8 +46,8 @@ def save_resource(resource_type, resource_data):
     valid, search_elements = parse_resource(resource_type, resource_data)
     assert valid
     resource = test_resource(resource_type, resource_data) 
-    index_search_elements(resource, search_elements)
     db.session.add(resource)
+    index_search_elements(resource, search_elements)
     return resource
 
 

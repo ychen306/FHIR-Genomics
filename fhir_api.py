@@ -180,8 +180,8 @@ def handle_create(request, resource_type):
         return BAD_REQUEST
 
     resource = Resource(resource_type, request.data, owner_id=request.authorizer.email)
-    index_search_elements(resource, search_elements)
     db.session.add(resource)
+    index_search_elements(resource, search_elements)
     db.session.commit()
 
     return resource.as_response(request, created=True)
@@ -216,9 +216,9 @@ def handle_update(request, resource_type, resource_id):
         return BAD_REQUEST
 
     new = old.update(request.data)
-    index_search_elements(new, search_elements)
     db.session.add(old)
     db.session.add(new)
+    index_search_elements(new, search_elements)
     db.session.commit()
 
     return new.as_response(request)
