@@ -1,3 +1,4 @@
+from flask import g
 import re
 from sqlalchemy.ext.declarative import declarative_base
 from database import db
@@ -10,12 +11,63 @@ from fhir_util import json_response, xml_response
 from fhir_spec import RESOURCES
 from util import hash_password
 
-
 # an oauth client can only keep access token for 1800 seconds
 EXPIRE_TIME = 1800
 
 
-class Resource(db.Model):
+def commit_buffers(g): 
+    from models import SearchParam
+    for model, buf in g._nodep_buffers.iteritems():
+        model.core_insert(buf) 
+
+
+def save_buffer(g, model, b):
+    g._nodep_buffers.setdefault(model, []).append(b)
+
+
+class SimpleInsert(object): 
+    '''
+    Use this as a mixin (maybe there's another word for it), anyway
+    Combine this with a ORM class you get to use SqlAlc's core inesrt easily.
+    ''' 
+    _relationships = None
+
+    def __init__(self):
+        raise NotImplementedError
+
+    def _populate(self):
+        if self.__class__._relationships is None:
+            self.__class__._relationships = {
+                    rel.key: rel
+                    for rel in self.__mapper__.relationships
+                    }
+        relationships = self.__class__._relationships
+        update = {}
+        for k, v in self.__dict__.iteritems():
+            rel = relationships.get(k)
+            if rel is not None:
+                for loc, rem in rel.local_remote_pairs:
+                    update[loc.name] = v.__dict__.get(rem.name)
+
+        self.__dict__.update(update) 
+
+    def get_insert_params(self):
+        self._populate()
+        return {col.name: self.__dict__.get(col.name)
+                for col in self.__table__.columns
+                # ensure non-null primary_key
+                if not col.primary_key or self.__dict__.get(col.name) is not None} 
+
+    def add_and_commit(self):
+        db.session.commit()
+        self.__class__.core_insert([self.get_insert_params()])
+
+    @classmethod
+    def core_insert(cls, objs):
+        db.engine.execute(cls.__table__.insert(), objs)
+
+
+class Resource(db.Model, SimpleInsert):
     '''
     a Resource is either public or has an `owner`.
     upon sign up, all public resources are copied and asign an owner - the new user.
@@ -92,7 +144,7 @@ class Resource(db.Model):
         return {'reference': self.get_url()}
 
 
-class SearchParam(db.Model):
+class SearchParam(db.Model, SimpleInsert):
 
     '''
     represents a FHIR search param of type reference
@@ -148,6 +200,7 @@ class SearchParam(db.Model):
                                                referenced_id,
                                                referenced_type,
                                                referenced_update_time])
+
 
 class User(db.Model):
     __tablename__ = 'User'

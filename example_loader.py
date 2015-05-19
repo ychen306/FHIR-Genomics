@@ -1,5 +1,6 @@
-from models import db, Resource, User, Client
-from indexer import index_search_elements
+from flask import g
+from models import db, Resource, User, Client, commit_buffers
+from indexer import index_resource
 from fhir_parser import parse_resource
 from fhir_spec import RESOURCES
 import names
@@ -12,6 +13,12 @@ import os
 
 
 BASEDIR = os.path.dirname(os.path.abspath(__file__))
+
+class MockG(object):
+    def __init__(self):
+        self._nodep_buffers = {}
+
+BUF = MockG()
 
 RELIABILITIES = ['questionable', 'ongoing', 'ok', 'calibrating', 'early']
 INTERPRETATIONS = [
@@ -46,8 +53,7 @@ def save_resource(resource_type, resource_data):
     valid, search_elements = parse_resource(resource_type, resource_data)
     assert valid
     resource = test_resource(resource_type, resource_data) 
-    db.session.add(resource)
-    index_search_elements(resource, search_elements)
+    index_resource(resource, search_elements, g=BUF)
     return resource
 
 
@@ -167,11 +173,8 @@ def load_conditions_by_patients(patients):
 def load_vcf_example(vcf_file):
     reader = VCFReader(filename=vcf_file)
     patients = load_patients_by_samples(reader.samples)
-    db.session.commit()
     labs = load_labs_by_patients(patients)
-    db.session.commit()
     conditions = load_conditions_by_patients(patients)
-    db.session.commit()
     count = 0
     for record in reader:
         sequence_tmpl = {
@@ -248,3 +251,4 @@ def load_examples():
     init_conditions()
     for example_file in os.listdir(os.path.join(BASEDIR, 'examples/vcf')):
         load_vcf_example(os.path.join(BASEDIR, 'examples/vcf', example_file))
+    commit_buffers(BUF)

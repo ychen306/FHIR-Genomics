@@ -1,7 +1,9 @@
-from models import db, Resource, SearchParam
+from flask import g
+from models import db, Resource, SearchParam, save_buffer
 from query_builder import REFERENCE_RE
 import dateutil.parser
 from functools import partial
+from models import save_buffer
 
 
 def get_text(data):
@@ -90,6 +92,7 @@ def index_quantity(index, element):
     index['comparator'] = element.get('comparator', '=')
     return index
 
+
 def index_number(index, element):
     '''
     index a number
@@ -138,12 +141,14 @@ def get_search_spec_args(resource, spec):
     }
 
 
-def index_search_elements(resource, search_elements):
+def index_resource(resource, search_elements, g=g):
+    resource.add_and_commit()
+    params = []
     for search_param in search_elements:
         spec_args = get_search_spec_args(resource, search_param['spec'])
         elements = search_param['elements']
         if len(elements) == 0:
-            db.session.add(SearchParam(missing=True, **spec_args))
+            save_buffer(g, SearchParam, SearchParam(missing=True, **spec_args).get_insert_params())
         else:
             for element in elements:
                 if spec_args['param_type'] == 'reference':
@@ -153,4 +158,4 @@ def index_search_elements(resource, search_elements):
                 if index_func is None:
                     continue
                 search_index = index_func(dict(spec_args), element) 
-                db.session.add(SearchParam(missing=False, **search_index))
+                save_buffer(g, SearchParam, SearchParam(missing=False, **search_index).get_insert_params())

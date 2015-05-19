@@ -6,7 +6,7 @@ import fhir_util
 from fhir_util import json_response, xml_response, xml_bundle_response
 from fhir_spec import SPECS, REFERENCE_TYPES
 from query_builder import QueryBuilder, InvalidQuery
-from indexer import index_search_elements
+from indexer import index_resource
 import json
 from urlparse import urljoin
 from urllib import urlencode
@@ -180,9 +180,7 @@ def handle_create(request, resource_type):
         return BAD_REQUEST
 
     resource = Resource(resource_type, request.data, owner_id=request.authorizer.email)
-    db.session.add(resource)
-    index_search_elements(resource, search_elements)
-    db.session.commit()
+    index_resource(resource, search_elements)
 
     return resource.as_response(request, created=True)
 
@@ -216,10 +214,7 @@ def handle_update(request, resource_type, resource_id):
         return BAD_REQUEST
 
     new = old.update(request.data)
-    db.session.add(old)
-    db.session.add(new)
-    index_search_elements(new, search_elements)
-    db.session.commit()
+    index_resource(new, search_elements)
 
     return new.as_response(request)
 

@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, g
 from api import api
 from ui import ui
 from oauth import oauth
@@ -19,6 +19,7 @@ def create_app():
     register_blueprints(app)
     db.init_app(app)
     with app.app_context():
+        g._nodep_buffers = {}
         db.create_all()
     return app
 
