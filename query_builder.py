@@ -243,7 +243,6 @@ class QueryBuilder(object):
                        SearchParam.param_type == possible_param_types[param],
                        SearchParam.owner_id == self.owner_id)
     
-    # TODO: rewrite this using JOIN or (and) EXISTS
     def build_query(self, resource_type, params, id_only=False):
         '''
         If `id_only` is true, a SQL query that selects `resource_id` will be returned

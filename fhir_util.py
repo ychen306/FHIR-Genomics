@@ -66,9 +66,7 @@ def _json_to_xml(jsondict, root):
         else:
             if k == 'div' and isinstance(v, basestring):
                 try:
-                    narrative = etree.fromstring(v)
-                    narrative.set('xmlns', XHTML_XMLNS)
-                    root.append(narrative)
+                    root.append(etree.fromstring(v))
                     continue
                 except:
                     pass

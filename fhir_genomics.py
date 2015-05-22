@@ -19,7 +19,6 @@ def create_app():
     register_blueprints(app)
     db.init_app(app)
     with app.app_context():
-        g._nodep_buffers = {}
         db.create_all()
     return app
 
@@ -41,6 +40,4 @@ if __name__ == "__main__":
     if len(argv) > 1 and argv[1] == 'reload':
         load_sample_data(app)
     else:
-        app.run(debug=True)
-
-
+        app.run(debug=True) 

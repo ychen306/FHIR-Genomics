@@ -33,17 +33,6 @@ sequence_resource = {
                 'type': 'token'
             }
         }, {
-            'path': 'Sequence.quantity',
-            'definition': {
-                'min': 0,
-                'max': '1',
-                'type': [{'code': 'Quantity'}]
-            },
-            'searchParam': {
-                'name': 'quantity',
-                'type': 'quantity'
-            }
-        }, {
             'path': 'Sequence.quality',
             'definition': {
                 'min': 0,
@@ -90,7 +79,7 @@ sequence_resource = {
                 'type': [{'code': 'string'}]
             }
         }, {
-            'path': 'Sequence.reference',
+            'path': 'Sequence.referenceSeq',
             'definition': {
                 'min': 0,
                 'max': '1',
@@ -130,22 +119,33 @@ sequence_resource = {
                 'type': 'number'
             }
         }, {
-            'path': 'Sequence.assembly',
+            'path': 'Sequence.genomeBuild',
             'definition': {
                 'min': 1,
                 'max': '1',
                 'type': [{'code': 'string'}]
             },
             'searchParam': {
-                'name': 'assembly',
+                'name': 'genomeBuild',
                 'type': 'string'
             }
         }, {
-            'path': 'Sequence.read',
+            'path': 'Sequence.observedSeq',
             'definition': {
                 'min': 1,
                 'max': '*',
                 'type': [{'code': 'string'}]
+            }
+        }, {
+            'path': 'Sequence.species',
+            'definition': {
+                'min': 1,
+                'max': 1,
+                'type': [{'code': 'CodeableConcept'}]
+            },
+            'searchParam': {
+                'name': 'species',
+                'type': 'token'
             }
         }
     ],

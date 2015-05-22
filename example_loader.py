@@ -184,8 +184,9 @@ def load_vcf_example(vcf_file):
             'chromosome': record.CHROM,
             'startPosition': record.POS,
             'endPosition': record.end,
-            'assembly': 'GRCh37',
-            'source': {'sample': 'somatic'}
+            'genomeBuild': 'GRCh37',
+            'source': {'sample': 'somatic'},
+            'species': { 'text': 'Homo sapiens' }
         }
         for sample in record.samples:
             sample_id = sample.sample
@@ -197,7 +198,7 @@ def load_vcf_example(vcf_file):
             else:
                 delimiter = '.'
             seq_data = dict(sequence_tmpl)
-            seq_data['read'] = reads.split(delimiter)
+            seq_data['observedSeq'] = reads.split(delimiter)
             # get genotype quality 
             if 'GQ' in dir(sample.data):
                 seq_data['quality'] = sample.data.GQ

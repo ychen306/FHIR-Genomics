@@ -1,4 +1,3 @@
-from flask import g
 import re
 from sqlalchemy.ext.declarative import declarative_base
 from database import db
@@ -127,7 +126,8 @@ class Resource(db.Model, SimpleInsert):
             response = xml_response(status=status)
             response.data = fhir_util.json_to_xml(json.loads(self.data))
 
-        response.headers['Location'] = urljoin(request.api_base, '%s/%s/_history/%s' % (
+        loc_header = 'Location' if created else 'Content-Location'
+        response.headers[loc_header] = urljoin(request.api_base, '%s/%s/_history/%s' % (
             self.resource_type,
             self.resource_id,
             self.version))

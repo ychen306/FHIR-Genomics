@@ -1,11 +1,10 @@
 from flask.blueprints import Blueprint
-from flask import request, Response
+from flask import request, Response, g
 import fhir_api
 from fhir_api import NOT_FOUND
 from fhir_spec import RESOURCES
-from models import Access
+from models import Access, Session, Client, commit_buffers
 from urlparse import urljoin
-from models import Session, Client
 from functools import partial, wraps
 from datetime import datetime
 import re
@@ -110,3 +109,12 @@ def read_history(resource_type, resource_id, version):
     request.api_base = urljoin(request.url_root, API_URL_PREFIX) + '/'
     fhir_request = fhir_api.FHIRRequest(request)
     return fhir_api.handle_history(fhir_request, resource_type, resource_id, version)
+
+@api.before_request
+def init_globals():
+    g._nodep_buffers = {}
+
+@api.after_request
+def cleanup(resp):
+    commit_buffers(g)
+    return resp
