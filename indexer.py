@@ -61,7 +61,7 @@ def index_token(index, element):
 
 # TODO: compare the api base of the reference with the api base of the server
 # determine if the reference is internal
-def index_reference(index, element, owner_id):
+def index_reference(index, element, owner_id, g):
     '''
     index a reference
     '''
@@ -72,13 +72,13 @@ def index_reference(index, element, owner_id):
         reference_url = element['reference']
         reference = REFERENCE_RE.match(reference_url)
         index['referenced_url'] = reference_url
-        if reference.group('extern_base') is None:
+        if reference.group('extern_base') is None or reference.group('extern_base') == g.api_base:
             # reference is internal reference, we want to link the reference to a Resource
             index['referenced'] = Resource.query.filter_by(resource_type=reference.group('resource_type'),
                                                            resource_id=reference.group('resource_id'),
                                                            owner_id=owner_id,
                                                            visible=True).first()
-
+            
     return index
 
 
@@ -152,7 +152,7 @@ def index_resource(resource, search_elements, g=g):
         else:
             for element in elements:
                 if spec_args['param_type'] == 'reference':
-                    index_func = partial(index_reference, owner_id=resource.owner_id)
+                    index_func = partial(index_reference, owner_id=resource.owner_id, g=g)
                 else:
                     index_func = SEARCH_INDEX_FUNCS[spec_args['param_type']]
                 if index_func is None:

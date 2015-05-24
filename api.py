@@ -65,7 +65,7 @@ def handle_resource(resource_type):
     if resource_type not in RESOURCES:
         return NOT_FOUND
 
-    request.api_base = urljoin(request.url_root, API_URL_PREFIX) + '/'
+    g.api_base = request.api_base = urljoin(request.url_root, API_URL_PREFIX) + '/'
     fhir_request = fhir_api.FHIRRequest(request)
 
     if request.method == 'GET':
