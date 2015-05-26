@@ -43,7 +43,7 @@ FHIR_PRIMITIVE_INIT = {
     'integer': int
 }
 
-ASSESED_TRAIT_EXTENSION_URL = 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#assessedCondition'
+ASSESED_TRAIT_EXTENSION_URL = 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#AssessedCondition'
 
 ASSESSED_TRAIT_SPEC = {
     'type': 'reference',

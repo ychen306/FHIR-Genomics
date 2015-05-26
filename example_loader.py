@@ -135,10 +135,10 @@ def make_observation(condition, sequence, patient, seq_id):
         'resourceType': 'Observation',
         'extension': [
             {
-                'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#assessedCondition',
+                'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#AssessedCondition',
                 'valueReference': condition.get_reference()
             }, {
-                'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#variantGenotype',
+                'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#SourceSeq',
                 'valueReference': sequence.get_reference()
             }
         ],
@@ -156,8 +156,8 @@ def make_observation(condition, sequence, patient, seq_id):
     }
     if seq_id is not None:
         observation['extension'].append({
-                'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#variantId',
-                'valueString': seq_id
+                'url': 'http://genomics.smartplatforms.org/dictionary/GeneticObservation#VariationId',
+                'valueCondeableConcept': {'display': seq_id}
         })
 
     print 'Created Observation (Genetic Observation)'
