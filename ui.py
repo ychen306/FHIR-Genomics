@@ -46,7 +46,6 @@ def create_user(form):
                     redirect_url=DEFAULT_REDIRECT_URL,
                     hashed_password=hashed,
                     app_id=rand_app_id(),
-                    app_secret=str(uuid.uuid4()),
                     salt=salt)
     # give user access to public data
     authorize_public_data(new_user)
@@ -90,8 +89,6 @@ def index():
     dashboard for app, no fancy stuff
     '''
     logged_in = False
-    app_id = None
-    app_secret = None
     app_name = None
     app_redirect_url = None
     email = request.args.get('email')
@@ -102,7 +99,6 @@ def index():
         logged_in = True
         user = request.session.user
         app_id = user.app_id
-        app_secret = user.app_secret
         app_name = user.app_name 
         app_redirect_url = user.redirect_url
     

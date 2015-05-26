@@ -209,7 +209,6 @@ class User(db.Model):
     hashed_password = db.Column(db.String(500))
     salt = db.Column(db.String(500))
     app_id = db.Column(db.String(100))
-    app_secret = db.Column(db.String(100))
     app_name = db.Column(db.String(100))
     redirect_url = db.Column(db.String(100))
 
@@ -252,7 +251,6 @@ class Client(db.Model):
     
     code = db.Column(db.String, primary_key=True)
     client_id = db.Column(db.String(100), nullable=True)
-    client_secret = db.Column(db.String(100), nullable=True)
     state = db.Column(db.String(500), nullable=True)
     access_token = db.Column(db.String(100), unique=True)
     authorizer_id = db.Column(db.String(100), db.ForeignKey('User.email'))
@@ -263,7 +261,6 @@ class Client(db.Model):
 
     def __init__(self, authorizer, client, state):
         self.client_id = client.app_id
-        self.client_secret = client.app_secret
         self.access_token = str(uuid4())
         self.code = str(uuid4())
         self.authorizer = authorizer
