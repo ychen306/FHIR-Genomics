@@ -2,8 +2,7 @@ from flask import Response, render_template
 from database import db
 from models import Resource, SearchParam
 import fhir_parser
-import fhir_util
-from fhir_util import json_response, xml_response, xml_bundle_response
+from util import json_response, xml_response, xml_bundle_response, xml_to_json, json_to_xml
 from fhir_spec import SPECS, REFERENCE_TYPES
 from query_builder import QueryBuilder, InvalidQuery
 from indexer import index_resource
@@ -52,7 +51,7 @@ class FHIRRequest(object):
             if self.format == 'xml':
                 dataroot = etree.fromstring(request.data)
                 resource_type = dataroot.tag.split('}')[-1]
-                self.data = fhir_util.xml_to_json(dataroot, resource_type)
+                self.data = xml_to_json(dataroot, resource_type)
             else:
                 self.data = json.loads(request.data)
 
@@ -121,7 +120,7 @@ class FHIRBundle(object):
             resource_url = urljoin(self.api_base, relative_resource_url)
             resource_content = json.loads(resource.data)
             if self.data_format == 'xml':
-                resource_content = fhir_util.json_to_xml(resource_content)
+                resource_content = json_to_xml(resource_content)
 
             entries.append({
                 'content': resource_content,

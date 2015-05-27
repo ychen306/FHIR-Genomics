@@ -2,6 +2,8 @@ from flask import Response
 from lxml import etree
 from functools import partial
 import json
+import uuid
+import hashlib
 from werkzeug.datastructures import MultiDict
 
 FHIR_JSON_MIMETYPE = 'application/json'
@@ -91,3 +93,10 @@ def iterdict(d):
     else:
         for k, v in d.iteritems():
             yield k, v
+
+
+def hash_password(password, salt=None):
+    if salt is None:
+        salt = uuid.uuid4().hex
+    hashed = hashlib.sha512(password + salt).hexdigest()
+    return hashed, salt

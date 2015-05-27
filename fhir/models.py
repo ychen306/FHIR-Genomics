@@ -5,10 +5,8 @@ from datetime import datetime, timedelta
 import json
 from uuid import uuid4
 from urlparse import urljoin
-import fhir_util
-from fhir_util import json_response, xml_response
 from fhir_spec import RESOURCES
-from util import hash_password
+from util import json_response, xml_response, json_to_xml, hash_password
 
 # an oauth client can only keep access token for 1800 seconds
 EXPIRE_TIME = 1800
@@ -124,7 +122,7 @@ class Resource(db.Model, SimpleInsert):
             response.data = self.data
         else:
             response = xml_response(status=status)
-            response.data = fhir_util.json_to_xml(json.loads(self.data))
+            response.data = json_to_xml(json.loads(self.data))
 
         loc_header = 'Location' if created else 'Content-Location'
         response.headers[loc_header] = urljoin(request.api_base, '%s/%s/_history/%s' % (

@@ -3,8 +3,7 @@ from api import api
 from ui import ui
 from oauth import oauth
 from database import db
-import example_loader
-from config import APP_CONFIG
+from default_config import APP_CONFIG
 
 
 def register_blueprints(app):
@@ -13,9 +12,9 @@ def register_blueprints(app):
     app.register_blueprint(ui)
 
 
-def create_app():
+def create_app(config):
     app = Flask(__name__)
-    app.config.update(APP_CONFIG)
+    app.config.update(config)
     register_blueprints(app)
     db.init_app(app)
     with app.app_context():
@@ -35,9 +34,5 @@ def load_sample_data(app):
 
 
 if __name__ == "__main__":
-    from sys import argv
-    app = create_app()
-    if len(argv) > 1 and argv[1] == 'reload':
-        load_sample_data(app)
-    else:
-        app.run(debug=True) 
+    app = create_app(default_config.APP_CONFIG)
+    app.run(debug=True) 

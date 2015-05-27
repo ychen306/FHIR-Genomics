@@ -4,7 +4,7 @@ from itertools import repeat
 import dateutil.parser
 from models import db, Resource, SearchParam
 from fhir_spec import SPECS, REFERENCE_TYPES
-from fhir_util import iterdict
+from util import iterdict
 
 PARAM_RE = re.compile(r'(?P<param>[^\.:]+)(?::(?P<modifier>[^\.:]+))?(?:\.(?P<chained_param>.+))?')
 COMPARATOR_RE = r'(?P<comparator><|<=|>|>=)'

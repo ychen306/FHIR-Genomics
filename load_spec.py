@@ -2,7 +2,7 @@ import re
 import os
 import sys
 import json
-from sequence import sequence_resource, sequence_reference_types
+from fhir.sequence import sequence_resource, sequence_reference_types
 
 PROFILE_F_RE = re.compile(r'^type-(?P<datatype>\w+).profile.json$|^(?P<resource>\w+).profile.json$')
 WARNING = 'WARNING: this is auto generated. Change it at your risk.'
@@ -77,7 +77,7 @@ def init(spec_dir):
     resources.append('Sequence')
     print 'manually added Sequence resource for genomic support.'
 
-    with open('fhir_spec.py', 'w') as spec_target:
+    with open('fhir/fhir_spec.py', 'w') as spec_target:
         spec_target.write("'''\n%s\n'''" % WARNING)
         spec_target.write('\n')
         spec_target.write('SPECS=' + str(specs))

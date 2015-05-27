@@ -1,8 +1,8 @@
 from flask import g
-from models import db, Resource, User, Client, commit_buffers
-from indexer import index_resource
-from fhir_parser import parse_resource
-from fhir_spec import RESOURCES
+from fhir.models import db, Resource, User, Client, commit_buffers
+from fhir.indexer import index_resource
+from fhir.fhir_parser import parse_resource
+from fhir.fhir_spec import RESOURCES
 import names
 from vcf import VCFReader
 import random
@@ -12,7 +12,7 @@ import json
 import os
 
 
-BASEDIR = os.path.dirname(os.path.abspath(__file__))
+BASEDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fhir')
 
 class MockG(object):
     def __init__(self):
@@ -247,9 +247,11 @@ def init_superuser():
     test_resource = partial(Resource, owner_id=superuser.email)  
 
 
-def load_examples():
-    init_superuser()
-    init_conditions()
-    for example_file in os.listdir(os.path.join(BASEDIR, 'examples/vcf')):
-        load_vcf_example(os.path.join(BASEDIR, 'examples/vcf', example_file))
-    commit_buffers(BUF)
+if __name__ == '__main__':
+    from server import app
+    with app.app_context():
+        init_superuser()
+        init_conditions()
+        for example_file in os.listdir(os.path.join(BASEDIR, 'examples/vcf')):
+            load_vcf_example(os.path.join(BASEDIR, 'examples/vcf', example_file))
+        commit_buffers(BUF) 
