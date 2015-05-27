@@ -1,5 +1,4 @@
 # project specific stuff
-config.py
 *.db
 *.swp
 .DS_Store
