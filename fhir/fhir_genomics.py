@@ -22,17 +22,6 @@ def create_app(config):
     return app
 
 
-def load_sample_data(app):
-    '''
-    re-create all tables and load sample data
-    '''
-    with app.app_context():
-        db.drop_all()
-        db.create_all()
-        example_loader.load_examples()
-        db.session.commit()
-
-
 if __name__ == "__main__":
-    app = create_app(default_config.APP_CONFIG)
+    app = create_app(APP_CONFIG)
     app.run(debug=True) 

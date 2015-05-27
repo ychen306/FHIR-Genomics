@@ -7,13 +7,14 @@ Reference API server of SMART Genomics
 * Setup database and load sample data with
 ```
 # note that this will also clear the database
-$ python fhir_genomics.py reload
+$ python setup_db.py
+$ python load_example.py
 ```
-* Run the server locally with
+* To run with `gunicorn` do
 ```
-$ python fhir_genomics.py
+$ python server.py
 ```
-* The WSGI objct is located in server.py, which you can use like this
+* Alternatively you can use `flask`'s debug instance like this
 ```
-$ gunicorn server:app 
+$ python fhir/fhir_genomics.py
 ```
