@@ -9,7 +9,7 @@ from util import iterdict
 PARAM_RE = re.compile(r'(?P<param>[^\.:]+)(?::(?P<modifier>[^\.:]+))?(?:\.(?P<chained_param>.+))?')
 COMPARATOR_RE = r'(?P<comparator><|<=|>|>=)'
 REFERENCE_RE = re.compile(r'(?:(?P<extern_base>.+/))?(?P<resource_type>.+)/(?P<resource_id>.+)')
-TOKEN_RE = re.compile(r'(?:(?P<system>.*)?\|)?(?P<code>.+)')
+TOKEN_RE = re.compile(r'(?:(?P<system>.+)?\|)?(?P<code>.+)')
 NUMBER_RE = re.compile(r'%s?(?P<number>\d+(?:\.\d+)?)'% COMPARATOR_RE)
 QUANTITY_RE = re.compile(r'%s\|(?P<system>.+)?\|(?P<code>.+)?'% NUMBER_RE.pattern)
 DATE_RE = re.compile(r'%s?(?P<date>.+)' % COMPARATOR_RE)
