@@ -5,6 +5,7 @@ from flask.blueprints import Blueprint
 from flask import request, render_template, redirect, Response
 from urllib import urlencode
 from util import hash_password
+from ttam.models import TTAMClient
 import uuid
 from models import db, User, Session, Resource, Access, Client, SearchParam
 from fhir_spec import RESOURCES
@@ -101,6 +102,7 @@ def index():
         app_id = user.app_id
         app_name = user.app_name 
         app_redirect_url = user.redirect_url
+        can_import_ttam = TTAMClient.query.get(request.session.user.email) is None
     
     return render_template('index.html', **locals())
 

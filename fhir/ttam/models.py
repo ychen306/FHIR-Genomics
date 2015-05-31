@@ -68,9 +68,13 @@ class TTAMClient(db.Model):
         update_resp = requests.post(TOKEN_URI, data=post_data)
         assert_good_resp(update_resp)
         self._set_tokens(update_resp.json())
+        db.session.add(self)
+        db.session.commit()
+
 
     def has_patient(self, pid):
         return pid in self.profiles.split()
+
 
     def get_snps(self, query, patient=None):
         patients = [patient] if patient is not None else self.profiles.split()
@@ -88,7 +92,7 @@ class TTAMClient(db.Model):
         return {pdata['id']: pdata['genotypes'] for pdata in patient_data}
 
     def get_header(self):
-        return {'Authorization': 'Bearer '+self.access_token}
+        return {'Authorization': 'Bearer '+self.access_token} 
 
     def get_patients(self):
         auth_header = self.get_header()

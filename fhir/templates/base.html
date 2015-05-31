@@ -42,6 +42,9 @@
           <ul class="nav navbar-nav">
             {% if logged_in %}
             <li class="active"><a href="#">Dashboard</a></li>
+            {% if can_import_ttam %}
+            <li><a href="/ttam/import">Import from 23andMe</a></li>
+            {% endif %}
             <li><a href="/logout">logout</a></li>
             {% endif %}
           </ul>
