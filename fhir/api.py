@@ -4,13 +4,15 @@ import fhir_api
 from fhir_api import NOT_FOUND
 from fhir_spec import RESOURCES
 from models import Access, Session, Client, commit_buffers
+import ttam
 from urlparse import urljoin
 from functools import partial, wraps
 from datetime import datetime
 import re
 
 API_URL_PREFIX = 'api'
-api = Blueprint(API_URL_PREFIX, __name__)
+api = Blueprint('api', __name__)
+
 
 AUTH_HEADER_RE = re.compile(r'Bearer (?P<access_token>.+)')
 FORBIDDEN = Response(status='403')
@@ -40,6 +42,7 @@ def protected(view):
         if not verify_access(request, resource_type, access_type):
             return FORBIDDEN
         else:
+            ttam.acquire_client()
             return view(*args, **kwargs)
 
     return protected_view
@@ -118,3 +121,7 @@ def init_globals():
 def cleanup(resp):
     commit_buffers(g)
     return resp
+
+@api.errorhandler(ttam.NoTTAMClient)
+def handle_ttam_no_client(_):
+    return NOT_FOUND

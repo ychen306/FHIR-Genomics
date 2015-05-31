@@ -1,14 +1,20 @@
 # settings for Postgres
 PGUSERNAME = 'smart'
 PGPASSWORD = 'smart'
-DBNAME = 'db'
+DBNAME = 'xyz'
 
 APP_CONFIG = {
         'SQLALCHEMY_DATABASE_URI': "postgresql+psycopg2://%s:%s@localhost/%s"% (
             PGUSERNAME,
             PGPASSWORD,
-            DBNAME)
-
+            DBNAME),
+        'TTAM_CONFIG': {
+            'redirect_uri': 'http://localhost:5000/ttam/recv_redirect',
+            'client_id': 'ae4ae237a6a8a0c7dd27112ad4db2710',
+            'client_secret': '0441a01fb79e5d72f25f6f350ccffe13',
+            'scope': 'basic names genomes',
+            'auth_uri': 'https://api.23andme.com/authorize/'
+        }
 }
 
 # Put Your host name here

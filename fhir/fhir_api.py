@@ -1,4 +1,4 @@
-from flask import Response, render_template
+from flask import Response, render_template, g
 from database import db
 from models import Resource, SearchParam
 import fhir_parser
@@ -6,6 +6,7 @@ from util import json_response, xml_response, xml_bundle_response, xml_to_json, 
 from fhir_spec import SPECS, REFERENCE_TYPES
 from query_builder import QueryBuilder, InvalidQuery
 from indexer import index_resource
+import ttam
 import json
 from urlparse import urljoin
 from urllib import urlencode
@@ -82,30 +83,40 @@ class FHIRRequest(object):
         return self._get_url(is_prev=True)
 
 
-class FHIRBundle(object):
-
+class FHIRBundle(object): 
     '''
     Represent a bundle in FHIR
-    '''
-
-    def __init__(self, query, request, version_specific=False):
+    ''' 
+    def __init__(self, query, request, version_specific=False, ttam_resource=None):
         self.api_base = request.api_base
         self.request_url = request.url
         self.data_format = request.format
         self.version_specific = version_specific
         self.update_time = datetime.now().isoformat()
 
-        self.resources = query.limit(
-            request.count).offset(request.offset).all()
-        self.resource_count = query.count()
-
+        self.resources = query.\
+                limit(request.count).\
+                offset(request.offset).all()
+        self.resource_count = query.count() 
         self.next_url = (request.get_next_url()
                          if len(self.resources) + request.offset < self.resource_count
-                         else None)
-
+                         else None) 
         self.prev_url = (request.get_prev_url()
                          if request.offset - request.count >= 0
                          else None)
+
+        if ttam_resource is not None:
+            # get data from 23and me
+            num_resources = len(self.resources) 
+            ttam_offset = (request.offset - self.resource_count
+                    if request.offset >= self.resource_count
+                    else 0)
+            ttam_limit = request.count - num_resources
+            ttam_resources, ttam_count = ttam.get_many(ttam_resource, request.args, ttam_offset, ttam_limit)
+            self.resource_count += ttam_count 
+            if num_resources < request.count:
+                self.resources.extend(ttam_resources)
+
 
     def _make_bundle(self):
         '''
@@ -188,7 +199,10 @@ def handle_read(request, resource_type, resource_id):
     '''
     handle FHIR read operation
     '''
-    resource = find_latest_resource(resource_type, resource_id, owner_id=request.authorizer.email)
+    if resource_type in ('Patient', 'Sequence') and resource_id.startswith('ttam_'):
+        resource = ttam.get_one(resource_type, resource_id)
+    else:
+        resource = find_latest_resource(resource_type, resource_id, owner_id=request.authorizer.email)
 
     if resource is None:
         return NOT_FOUND
@@ -227,7 +241,11 @@ def handle_search(request, resource_type):
         search_query = query_builder.build_query(resource_type, request.args)
     except InvalidQuery:
         return BAD_REQUEST
-    resp_bundle = FHIRBundle(search_query, request)
+    ttam_resource = None
+    if (resource_type in ('Patient', 'Sequence') and
+            g.ttam_client is not None):
+        ttam_resource = resource_type 
+    resp_bundle = FHIRBundle(search_query, request, ttam_resource=ttam_resource)
     return resp_bundle.as_response()
 
 
