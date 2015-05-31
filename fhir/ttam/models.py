@@ -76,13 +76,14 @@ class TTAMClient(db.Model):
         return pid in self.profiles.split()
 
 
-    def get_snps(self, query, patient=None):
-        patients = [patient] if patient is not None else self.profiles.split()
+    def get_snps(self, query, pids=None):
+        if pids is None:
+            pids = self.get_profiles()
         api_endpoint = urljoin(self.api_base, 'genotypes/')
         snps_str = ' '.join(query)
         args = {'locations': snps_str, 'format': 'embedded'}
         urls = (urljoin(api_endpoint, p)+"?"+urlencode(args)
-                for p in patients)
+                for p in pids)
         auth_header = self.get_header() 
         reqs = (grequests.get(u, headers=auth_header) for u in urls)
         resps = grequests.map(reqs) 
@@ -101,4 +102,7 @@ class TTAMClient(db.Model):
         return resp.json()['profiles']
 
     def count_patients(self):
-        return len(self.profiles.split())
+        return len(self.get_profiles())
+
+    def get_profiles(self):
+        return self.profiles.split()

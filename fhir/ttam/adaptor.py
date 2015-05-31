@@ -2,7 +2,7 @@ from flask import request, g
 from functools import wraps
 from models import TTAMClient, TTAMOAuthError
 from ..models import Resource
-from ..query_builder import COORD_RE
+from ..query_builder import COORD_RE, InvalidQuery
 from util import SNP_TABLE, _slice, get_snps
 
 PREFIX = 'ttam_'
@@ -20,8 +20,7 @@ def require_client(adaptor):
         if g.ttam_client is None:
             raise TTAMOAuthError
         return adaptor(*args, **kwargs)
-    return checked
-
+    return checked 
 
 
 def make_ttam_seq(snp, pid):
@@ -86,6 +85,29 @@ def get_one_patient(pid):
         if patient['id'] == pid:
             return make_ttam_patient(patient)
 
+def parse_coord(query):
+    args = {}
+    if 'coordinate' in query:
+        matched = COORD_RE.match(query['coordinate'])
+        if matched is None:
+            raise InvalidQuery
+        args['chrom'] = str(matched.group('chrom'))
+        args['start'] = int(matched.group('start'))
+        args['end'] = int(matched.group('end'))
+    if 'chromosome' in query:
+        args['chrom'] = str(query['chromosome'])
+    if 'startPosition' in query:
+        args['start'] = int(query['startPosition'])
+    if 'endPosition' in query:
+        args['end'] = int(query['endPosition'])
+    return args
+    
+def extract_pids(query):
+    extern_pids = query['patient'].split(',')
+    return [pid[PREFIX_LEN:]
+            for pid in extern_pids
+            if pid.startswith(PREFIX)]
+
 
 @require_client
 def get_one(resource_type, resource_id):
@@ -100,21 +122,26 @@ def get_one(resource_type, resource_id):
 def get_many(resource_type, query, offset, limit):
     if resource_type == 'Sequence':
         limit /= g.ttam_client.count_patients()
-        # TODO: support search by coord
         args = {'offset': offset, 'limit': limit}
+        args.update(parse_coord(query))
         rsids, num_snps = get_snps(**args)
-        if len(rsids) == 0:
-            # 23andme API needs at least one location
-            rsids = ['rs3094315']
-        snps_data = g.ttam_client.get_snps(rsids) 
+        if num_snps == 0 or len(rsids) == 0:
+            # here either we find no snps
+            # or we find snps but don't have to make any
+            # query because of paging (i.e. limit is 0 or overly large offset)
+            return [], num_snps
+        pids = (extract_pids(query)
+                if 'patient' in query
+                else g.ttam_client.get_profiles())
+        print pids
+        snps_data = g.ttam_client.get_snps(rsids, pids)
         seqs = []
         for pid, snps in snps_data.iteritems():
             for snp in snps:
                 seqs.append(make_ttam_seq(snp, pid)) 
-        return seqs, num_snps*len(snps_data)
+        return seqs, num_snps*len(pids)
     else:
         # patient
         patients = g.ttam_client.get_patients()
         patients, count = _slice(patients, offset, limit)
-        print patients, offset, limit
         return map(make_ttam_patient, patients), count

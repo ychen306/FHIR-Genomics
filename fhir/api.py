@@ -3,6 +3,7 @@ from flask import request, Response, g
 import fhir_api
 from fhir_api import NOT_FOUND
 from fhir_spec import RESOURCES
+from query_builder import InvalidQuery
 from models import Access, Session, Client, commit_buffers
 import ttam
 from urlparse import urljoin
@@ -125,3 +126,7 @@ def cleanup(resp):
 @api.errorhandler(ttam.NoTTAMClient)
 def handle_ttam_no_client(_):
     return NOT_FOUND
+
+@api.errorhandler(InvalidQuery)
+def handle_invalid_query(_):
+    return fhir_api.BAD_REQUEST

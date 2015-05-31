@@ -4,7 +4,7 @@ from models import Resource, SearchParam
 import fhir_parser
 from util import json_response, xml_response, xml_bundle_response, xml_to_json, json_to_xml
 from fhir_spec import SPECS, REFERENCE_TYPES
-from query_builder import QueryBuilder, InvalidQuery
+from query_builder import QueryBuilder
 from indexer import index_resource
 import ttam
 import json
@@ -98,12 +98,6 @@ class FHIRBundle(object):
                 limit(request.count).\
                 offset(request.offset).all()
         self.resource_count = query.count() 
-        self.next_url = (request.get_next_url()
-                         if len(self.resources) + request.offset < self.resource_count
-                         else None) 
-        self.prev_url = (request.get_prev_url()
-                         if request.offset - request.count >= 0
-                         else None)
 
         if ttam_resource is not None:
             # get data from 23and me
@@ -116,6 +110,13 @@ class FHIRBundle(object):
             self.resource_count += ttam_count 
             if num_resources < request.count:
                 self.resources.extend(ttam_resources)
+
+        self.next_url = (request.get_next_url()
+                         if len(self.resources) + request.offset < self.resource_count
+                         else None) 
+        self.prev_url = (request.get_prev_url()
+                         if request.offset - request.count >= 0
+                         else None)
 
 
     def _make_bundle(self):
@@ -236,11 +237,8 @@ def handle_search(request, resource_type):
     '''
     handle FHIR search operation
     '''
-    try:
-        query_builder = QueryBuilder(request.authorizer)
-        search_query = query_builder.build_query(resource_type, request.args)
-    except InvalidQuery:
-        return BAD_REQUEST
+    query_builder = QueryBuilder(request.authorizer)
+    search_query = query_builder.build_query(resource_type, request.args)
     ttam_resource = None
     if (resource_type in ('Patient', 'Sequence') and
             g.ttam_client is not None):

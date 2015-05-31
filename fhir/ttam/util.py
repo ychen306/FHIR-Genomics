@@ -14,8 +14,8 @@ def get_snp_data(*args, **kwargs):
 SNP_TABLE = {snp[SNP_IDX]: (snp[CHROM_IDX], snp[POS_IDX]) for snp in get_snp_data()}
 
 
-def _get_snps(chrom, start, begin): 
-    snps = get_snp_data(chrom, start, begin)
+def _get_snps(chrom, start, end): 
+    snps = get_snp_data(chrom, start, end)
     return {snp[SNP_IDX]: (snp[CHROM_IDX], snp[POS_IDX]) for snp in snps}
 
 
@@ -31,8 +31,8 @@ def _slice(xs, offset, limit):
     return xs[offset:bound], num_items
 
 
-def get_snps(chrom=None, start=None, begin=None, offset=0, limit=100):
-    snps = _get_snps(chrom, start, begin)
+def get_snps(chrom=None, start=None, end=None, offset=0, limit=100):
+    snps = _get_snps(chrom, start, end)
     # can't rely on snps.keys being deterministic
     # TODO: make this faster (with something like OrderedDict)
     ids, count = _slice(sorted(snps.keys()), offset, limit) 
