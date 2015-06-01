@@ -133,7 +133,6 @@ def get_many(resource_type, query, offset, limit):
         pids = (extract_pids(query)
                 if 'patient' in query
                 else g.ttam_client.get_profiles())
-        print pids
         snps_data = g.ttam_client.get_snps(rsids, pids)
         seqs = []
         for pid, snps in snps_data.iteritems():

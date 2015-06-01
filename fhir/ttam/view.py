@@ -36,3 +36,14 @@ def recv_ttam_auth_code():
     db.session.add(ttam_client)
     db.session.commit()
     return redirect('/') 
+
+
+@ttam.route('/clear')
+@require_login
+def clear_ttam_data():
+    ttam_client = TTAMClient.query.get(request.session.user.email)
+    if ttam_client is None:
+        return NOT_ALLOWED
+    db.session.delete(ttam_client)
+    db.session.commit()
+    return redirect('/') 
