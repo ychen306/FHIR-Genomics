@@ -1,9 +1,10 @@
 from flask import request, g
 from functools import wraps
+from itertools import chain
 from models import TTAMClient, TTAMOAuthError
 from ..models import Resource
 from ..query_builder import COORD_RE, InvalidQuery
-from util import SNP_TABLE, _slice, get_snps
+from util import SNP_TABLE, slice_, get_snps
 
 PREFIX = 'ttam_'
 PREFIX_LEN = len(PREFIX)
@@ -89,23 +90,30 @@ def get_one_patient(pid):
         if patient['id'] == pid:
             return make_ttam_patient(patient)
 
-def parse_coord(query):
+def extract_coord(coord):
     args = {}
-    if 'coordinate' in query:
-        matched = COORD_RE.match(query['coordinate'])
-        if matched is None:
-            raise InvalidQuery
-        args['chrom'] = str(matched.group('chrom'))
-        args['start'] = int(matched.group('start'))
-        args['end'] = int(matched.group('end'))
-    if 'chromosome' in query:
-        args['chrom'] = str(query['chromosome'])
-    if 'startPosition' in query:
-        args['start'] = int(query['startPosition'])
-    if 'endPosition' in query:
-        args['end'] = int(query['endPosition'])
+    matched = COORD_RE.match(coord)
+    if matched is None:
+        raise InvalidQuery
+    args['chrom'] = str(matched.group('chrom'))
+    args['start'] = int(matched.group('start'))
+    args['end'] = int(matched.group('end'))
     return args
+
+def parse_coords(query):
+    overwrite_args = {}
+    if 'chromosome' in query:
+        overwrite_args['chrom'] = str(query['chromosome'])
+    if 'startPosition' in query:
+        overwrite_args['start'] = int(query['startPosition'])
+    if 'endPosition' in query:
+        overwrite_args['end'] = int(query['endPosition'])
+    coords = ([dict(overwrite_args)]
+            if 'coordinate' not in query or len(overwrite_args) > 0
+            else map(extract_coord, query['coordinate'].split(',')))
+    return coords
     
+
 def extract_pids(query):
     extern_pids = query['patient'].split(',')
     return [pid[PREFIX_LEN:]
@@ -126,11 +134,11 @@ def get_one(resource_type, resource_id):
 def get_many(resource_type, query, offset, limit):
     if resource_type == 'Sequence':
         limit /= g.ttam_client.count_patients()
-        args = {'offset': offset, 'limit': limit}
-        args.update(parse_coord(query))
-        rsids, num_snps = get_snps(**args)
+        coords = parse_coords(query)
+        snps = list(chain(*[get_snps(**coord) for coord in coords]))
+        rsids, num_snps = slice_(snps, offset, limit)
         if num_snps == 0 or len(rsids) == 0:
-            # here either we find no snps
+            # here we either  find no snps
             # or we find snps but don't have to make any
             # query because of paging (i.e. limit is 0 or overly large offset)
             return [], num_snps
@@ -146,5 +154,5 @@ def get_many(resource_type, query, offset, limit):
     else:
         # patient
         patients = g.ttam_client.get_patients()
-        patients, count = _slice(patients, offset, limit)
+        patients, count = slice_(patients, offset, limit)
         return map(make_ttam_patient, patients), count
