@@ -65,7 +65,11 @@ def make_ttam_patient(profile):
             'status': 'generated',
             'div': narrative
         },
-        'name': {'text': '%s %s'% (first_name, last_name)}
+        'name': [{
+            'use': 'official',
+            'family': [last_name],
+            'given': [first_name]
+         }]
     }
     patient = Resource('Patient', patient_data, owner_id=None)
     patient.resource_id = 'ttam_%s'% profile['id']

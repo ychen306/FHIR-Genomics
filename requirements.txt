@@ -3,4 +3,5 @@ flask-sqlalchemy
 python-dateutil
 lxml
 pyvcf
+pysam
 names
