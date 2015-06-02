@@ -26,8 +26,12 @@ def intersect_predicates(predicates):
     return db.intersect(*[SELECT_FROM_SEARCH_PARAM.where(pred)
                           for pred in predicates])
 
+def union_predicates(predicates):
+    return db.union(*[SELECT_FROM_SEARCH_PARAM.where(pred)
+                          for pred in predicates]) 
 
-def make_coord_preds(coord_str):
+
+def make_coord_pred(coord_str):
     coord = COORD_RE.match(coord_str)
     if coord is None:
         raise InvalidQuery
@@ -46,7 +50,8 @@ def make_coord_preds(coord_str):
                         SearchParam.name == 'end-position',
                         SearchParam.resource_type == 'Sequence')
 
-    return [right_chrom, right_start, right_end]
+    return Resource.resource_id.in_(
+            intersect_predicates([right_chrom, right_start, right_end]).alias())
 
     
 def make_number_pred(param_data, param_val):
@@ -262,7 +267,10 @@ class QueryBuilder(object):
         # customized coordinate query
         if 'coordinate' in params and resource_type == 'Sequence':
             # TODO: support union (e.g. something like coordinate=chr1:123-234,chr2:234-345)
-            predicates.extend(make_coord_preds(params['coordinate']))
+            coords = params['coordinate'].split(',')
+            sub_preds = map(make_coord_pred, coords)
+            query_args.append(
+                    Resource.resource_id.in_(union_predicates(sub_preds).alias()))
     
         if len(predicates) > 0:
             query_args.append(
