@@ -266,7 +266,6 @@ class QueryBuilder(object):
     
         # customized coordinate query
         if 'coordinate' in params and resource_type == 'Sequence':
-            # TODO: support union (e.g. something like coordinate=chr1:123-234,chr2:234-345)
             coords = params['coordinate'].split(',')
             sub_preds = map(make_coord_pred, coords)
             query_args.append(
