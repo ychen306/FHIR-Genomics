@@ -40,8 +40,8 @@ def make_ttam_seq(snp, pid):
         },
         'genomeBuild': 'GRch37', 
         'chromosome': chrom,
-        'startPos': pos,
-        'endPos': pos,
+        'startPosition': pos,
+        'endPosition': pos,
         'observedSeq': list(snp['call']),
         'patient': {'reference': '/Patient/ttam_%s'% pid}
     }
