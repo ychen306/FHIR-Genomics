@@ -11,8 +11,6 @@ def get_snp_data(*args, **kwargs):
     return TabixFile(SNP_FILE, parser=asTuple()).\
             fetch(*args, **kwargs)
 
-SNP_TABLE = {snp[SNP_IDX]: (snp[CHROM_IDX], snp[POS_IDX]) for snp in get_snp_data()}
-
 
 def slice_(xs, offset, limit):
     '''
@@ -28,4 +26,11 @@ def slice_(xs, offset, limit):
 
 def get_snps(chrom=None, start=None, end=None):
     # TODO: make this deterministic
-    return (row[SNP_IDX] for row in get_snp_data(chrom, start, end))
+    return {row[SNP_IDX]: (row[CHROM_IDX], row[POS_IDX]) for row in get_snp_data(chrom, start, end)}
+
+
+def get_coord(snp):
+    for row in get_snp_data():
+        _, rsid, row, pos = row
+        if rsid == snp:
+            return row, pos

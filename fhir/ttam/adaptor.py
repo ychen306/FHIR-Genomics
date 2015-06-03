@@ -4,7 +4,7 @@ from itertools import chain
 from models import TTAMClient, TTAMOAuthError
 from ..models import Resource
 from ..query_builder import COORD_RE, InvalidQuery
-from util import SNP_TABLE, slice_, get_snps
+from util import slice_, get_snps, get_coord
 
 PREFIX = 'ttam_'
 PREFIX_LEN = len(PREFIX)
@@ -24,11 +24,11 @@ def require_client(adaptor):
     return checked 
 
 
-def make_ttam_seq(snp, pid):
+def make_ttam_seq(snp, coord, pid):
     '''
     convert 23andMe snp into a Sequence Resource
     '''
-    chrom, pos = SNP_TABLE[snp['location']]
+    chrom, pos = coord
     narrative = '<div xmlns="http://www.w3.org/1999/xhtml">Genotype of %s is %s</div>'% (
             snp['location'],
             snp['call'])
@@ -80,9 +80,10 @@ def make_ttam_patient(profile):
 def get_one_snp(internal_id):
     #23andMe Sequence id = {rsid}|{profile id}
     rsid, pid = internal_id.split('|')
-    data_set = g.ttam_client.get_snps([rsid], pid)
+    data_set = g.ttam_client.get_snps([rsid], [pid])
     pid, snps = next(data_set.iteritems())
-    return make_ttam_seq(snps[0], pid)
+    snp = snps[0]
+    return make_ttam_seq(snp, get_coord(snp['location']), pid)
 
 
 def get_one_patient(pid):
@@ -135,8 +136,10 @@ def get_many(resource_type, query, offset, limit):
     if resource_type == 'Sequence':
         limit /= g.ttam_client.count_patients()
         coords = parse_coords(query)
-        snps = list(chain(*[get_snps(**coord) for coord in coords]))
-        rsids, num_snps = slice_(snps, offset, limit)
+        snp_table = {}
+        for coord in coords:
+            snp_table.update(get_snps(**coord))
+        rsids, num_snps = slice_(snp_table.keys(), offset, limit)
         if num_snps == 0 or len(rsids) == 0:
             # here we either  find no snps
             # or we find snps but don't have to make any
@@ -149,7 +152,8 @@ def get_many(resource_type, query, offset, limit):
         seqs = []
         for pid, snps in snps_data.iteritems():
             for snp in snps:
-                seqs.append(make_ttam_seq(snp, pid)) 
+                coord = snp_table[snp['location']]
+                seqs.append(make_ttam_seq(snp, coord, pid)) 
         return seqs, num_snps*len(pids)
     else:
         # patient
