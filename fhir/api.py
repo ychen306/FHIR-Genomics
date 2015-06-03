@@ -15,7 +15,7 @@ API_URL_PREFIX = 'api'
 api = Blueprint('api', __name__)
 
 
-AUTH_HEADER_RE = re.compile(r'Bearer (?P<access_token>.+)')
+AUTH_HEADER_RE = re.compile(r'(?:b|B)earer (?P<access_token>.+)')
 FORBIDDEN = Response(status='403')
 
 def verify_access(request, resource_type, access_type):

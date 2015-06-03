@@ -1,9 +1,10 @@
-from ..database import db
+from flask import current_app
 from datetime import datetime, timedelta
 from urlparse import urljoin
 from urllib import urlencode
 import requests
 import grequests
+from ..database import db
 
 TOKEN_URI = 'https://api.23andme.com/token/' 
 API_BASE = 'https://api.23andme.com/1/'
@@ -13,6 +14,16 @@ class TTAMOAuthError(Exception): pass
 def assert_good_resp(resp):
     if resp.status_code != 200:
         raise TTAMOAuthError(resp.text)
+
+
+def api_call(call_func):
+
+    def checked(self, *args, **kwargs):
+        if datetime.now() >= self.expire_at:
+            self.update(current_app.config['TTAM_CONFIG'])
+        return call_func(self, *args, **kwargs)
+
+    return checked
 
 
 class TTAMClient(db.Model): 
@@ -75,7 +86,7 @@ class TTAMClient(db.Model):
     def has_patient(self, pid):
         return pid in self.profiles.split()
 
-
+    @api_call
     def get_snps(self, query, pids=None):
         if pids is None:
             pids = self.get_profiles()
@@ -95,6 +106,7 @@ class TTAMClient(db.Model):
     def get_header(self):
         return {'Authorization': 'Bearer '+self.access_token} 
 
+    @api_call
     def get_patients(self):
         auth_header = self.get_header()
         resp = requests.get(urljoin(self.api_base, 'names/'), headers=auth_header)

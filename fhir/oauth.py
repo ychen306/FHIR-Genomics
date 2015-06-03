@@ -130,8 +130,4 @@ def exchange_token():
     else:
         raise BadRequest
 
-    return jsonify(client.grant_access_token())
-
-
-
-
+    return jsonify(client.grant_access_token()) 
