@@ -134,7 +134,10 @@ def get_one(resource_type, resource_id):
 @require_client
 def get_many(resource_type, query, offset, limit):
     if resource_type == 'Sequence':
-        limit /= g.ttam_client.count_patients()
+        pids = (extract_pids(query)
+                if 'patient' in query
+                else g.ttam_client.get_profiles())
+        limit /= len(pids) 
         coords = parse_coords(query)
         snp_table = {}
         for coord in coords:
@@ -145,9 +148,6 @@ def get_many(resource_type, query, offset, limit):
             # or we find snps but don't have to make any
             # query because of paging (i.e. limit is 0 or overly large offset)
             return [], num_snps
-        pids = (extract_pids(query)
-                if 'patient' in query
-                else g.ttam_client.get_profiles())
         snps_data = g.ttam_client.get_snps(rsids, pids)
         seqs = []
         for pid, snps in snps_data.iteritems():
