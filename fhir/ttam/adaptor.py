@@ -137,6 +137,8 @@ def get_many(resource_type, query, offset, limit):
         pids = (extract_pids(query)
                 if 'patient' in query
                 else g.ttam_client.get_profiles())
+        if len(pids) == 0:
+            return [], 0
         limit /= len(pids) 
         coords = parse_coords(query)
         snp_table = {}
