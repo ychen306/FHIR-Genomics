@@ -16,5 +16,5 @@ $ python server.py run
 ```
 * Alternatively you can use `flask`'s debug instance like this
 ```
-$ python server.py --debug
+$ python server.py run --debug
 ```
