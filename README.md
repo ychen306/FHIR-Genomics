@@ -12,9 +12,9 @@ $ python load_example.py
 ```
 * To run with `gunicorn` do
 ```
-$ python server.py
+$ python server.py run
 ```
 * Alternatively you can use `flask`'s debug instance like this
 ```
-$ python fhir/fhir_genomics.py
+$ python server.py --debug
 ```

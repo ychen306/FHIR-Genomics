@@ -7,3 +7,6 @@ pysam
 names
 gunicorn
 sqlalchemy
+requests
+grequests
+psycopg2
