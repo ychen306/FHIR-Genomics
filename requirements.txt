@@ -5,3 +5,5 @@ lxml
 pyvcf
 pysam
 names
+gunicorn
+sqlalchemy
