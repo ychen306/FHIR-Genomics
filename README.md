@@ -1,6 +1,12 @@
 Reference API server of SMART Genomics
 
 ## How to use it
+* Install dependency with
+```
+# this might require previledge (e.g. sudo)
+# or use virtualenv instead
+$ pip install -r requirements.txt
+```
 * Change the application settings in `config.py` 
 (Currently we use PostgresSQL for development, and our script `setup_db.py` is written specifically for Postgres, you can switch to SQLite by using the proper SQL connection url in `config.py`. MySQL is however not supported right now. Contributions to support MySQL are welcomed).
 * Optional: load your version of FHIR spec with the script `load_spec.py`, which will update `fhir/fhir_spec.py`.
