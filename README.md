@@ -2,6 +2,7 @@ Reference API server of SMART Genomics
 
 ## How to use it
 1. Install dependency with
+
 	```
 	# this might require previledge (e.g. sudo)
 	# or use virtualenv instead
@@ -16,18 +17,22 @@ Currently we use PostgresSQL for development, and our script `setup_db.py` is wr
 	$ python setup_db.py
 	``` 
 5. Load sample data with
+
 	```
 	$ python load_example.py
 	```
 6. To run with `gunicorn` do
+
 	```
 	$ python server.py run
 	```
 7. Alternatively you can use `flask`'s debug instance like this
+
 	```
 	$ python server.py run --debug
 	```
 8. To wipe out the database (for debugging or whatever reason), do
+
 	```
 	$ python server.py clear
 	```
