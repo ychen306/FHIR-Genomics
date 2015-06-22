@@ -7,26 +7,26 @@ Reference API server of SMART Genomics
 # or use virtualenv instead
 $ pip install -r requirements.txt
 ```
-* Rename `config.py.default` as `config.py` and fill in settings as you desire. See comments in `config.py.default` for detailed instructions.
+1. Rename `config.py.default` as `config.py` and fill in settings as you desire. See comments in `config.py.default` for detailed instructions.
 Currently we use PostgresSQL for development, and our script `setup_db.py` is written specifically for Postgres, you can switch to SQLite by using the proper SQL connection url in `config.py`. MySQL is however not supported right now. Contributions to support MySQL are welcomed.
-* Optional: load your version of FHIR spec with the script `load_spec.py`, which will update `fhir/fhir_spec.py`.
-* If you haven't created the database you specified in `config.py`, simply use command below to create it
+2. Optional: load your version of FHIR spec with the script `load_spec.py`, which will update `fhir/fhir_spec.py`.
+3. If you haven't created the database you specified in `config.py`, simply use command below to create it
 ```
 $ python setup_db.py
 ``` 
-* Load sample data with
+4. Load sample data with
 ```
 $ python load_example.py
 ```
-* To run with `gunicorn` do
+5. To run with `gunicorn` do
 ```
 $ python server.py run
 ```
-* Alternatively you can use `flask`'s debug instance like this
+6. Alternatively you can use `flask`'s debug instance like this
 ```
 $ python server.py run --debug
 ```
-* To wipe out the database (for debugging or whatever reason), do
+7. To wipe out the database (for debugging or whatever reason), do
 ```
 $ python server.py clear
 ```
