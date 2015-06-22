@@ -7,6 +7,10 @@ from models import save_buffer
 
 
 def get_text(data):
+    '''
+    Helper function to index a string for search later.
+    See doc. for `index_string`.
+    '''
     if isinstance(data, list):
         return '::'.join(data)
     return str(data)
@@ -16,13 +20,15 @@ def index_string(index, element):
     '''
     produce a '::' delimited string of values within element
     e.g. {'family': ['Chen'], 'given': ['Yishen']} would give "::Chen::Yishen::"
-    The same principle applies to text components of other data types
+    The same principle applies to text components of other data types.
+
+    We do this so in the case of an exact search we can simply do something like
+    this `SELECT ... FROM .. like "::Chen::"
     '''
     if isinstance(element, dict):
         text = '::'.join(map(get_text, element.values()))
     else:
-        text = str(element)
-
+        text = str(element) 
     index['text'] = '::%s::' % (text,)
     return index
 
@@ -59,8 +65,6 @@ def index_token(index, element):
     return index
 
 
-# TODO: compare the api base of the reference with the api base of the server
-# determine if the reference is internal
 def index_reference(index, element, owner_id, g):
     '''
     index a reference
@@ -113,13 +117,15 @@ def index_date(index, element):
         end = dateutil.parser.parse(element.get('end', '9999-1-1'))
     else:
         # date or datetime
-        start = end = dateutil.parser.parse(element)
-
+        # TODO date like this `1776-7-4` is actually a range,
+        # treat it differently than a true instant like `999-1-1:00:00:00`
+        start = end = dateutil.parser.parse(element) 
     index.update({
         'start_date': start,
         'end_date': end
     })
     return index
+
 
 SEARCH_INDEX_FUNCS = {
     'string': index_string,
@@ -130,9 +136,9 @@ SEARCH_INDEX_FUNCS = {
 }
 
 
-def get_search_spec_args(resource, spec):
+def get_search_args(resource, spec):
     '''
-    get init args for SearchParam given the spec of a search parameter
+    get init args for SearchParam given the value of a search parameter
     '''
     return {
         'resource': resource,
@@ -145,17 +151,17 @@ def index_resource(resource, search_elements, g=g):
     resource.add_and_commit()
     params = []
     for search_param in search_elements:
-        spec_args = get_search_spec_args(resource, search_param['spec'])
+        args = get_search_args(resource, search_param['spec'])
         elements = search_param['elements']
         if len(elements) == 0:
-            save_buffer(g, SearchParam, SearchParam(missing=True, **spec_args).get_insert_params())
+            save_buffer(g, SearchParam, SearchParam(missing=True, **args).get_insert_params())
         else:
             for element in elements:
-                if spec_args['param_type'] == 'reference':
+                if args['param_type'] == 'reference':
                     index_func = partial(index_reference, owner_id=resource.owner_id, g=g)
                 else:
-                    index_func = SEARCH_INDEX_FUNCS[spec_args['param_type']]
+                    index_func = SEARCH_INDEX_FUNCS[args['param_type']]
                 if index_func is None:
                     continue
-                search_index = index_func(dict(spec_args), element) 
+                search_index = index_func(dict(args), element) 
                 save_buffer(g, SearchParam, SearchParam(missing=False, **search_index).get_insert_params())

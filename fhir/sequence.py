@@ -1,6 +1,7 @@
 '''
-Add support for Sequence resource
+Specification for Sequence resource
 '''
+# "schema" for Sequence resource
 sequence_resource = {
     'elements': [
         {
@@ -152,6 +153,7 @@ sequence_resource = {
     'searchParams': {}
 }
 
+# collect search parameters of Sequence resource
 for element in sequence_resource['elements']:
     if 'searchParam' not in element:
         continue
@@ -159,6 +161,11 @@ for element in sequence_resource['elements']:
     param_type = element['searchParam']['type']
     sequence_resource['searchParams'][param_name] = param_type 
 
+# this is used to inform the spec loader
+# the exact types of reference search parameters
+# E.g. patient is a search parameter of type Patient.
+# Some parameter can be references to multiple types of resources
+# so it's a list
 sequence_reference_types = {
     'patient': ['Patient'],
     'lab': ['Procedure']

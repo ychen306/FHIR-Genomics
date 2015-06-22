@@ -4,29 +4,38 @@ from urlparse import urljoin
 from urllib import urlencode
 import requests
 import grequests
+from error import TTAMOAuthError
 from ..database import db
 
 TOKEN_URI = 'https://api.23andme.com/token/' 
-API_BASE = 'https://api.23andme.com/1/'
-
-class TTAMOAuthError(Exception): pass
+API_BASE = 'https://api.23andme.com/1/' 
 
 def assert_good_resp(resp):
+    '''
+    assert that an HTTP response from 23andMe is ok
+    '''
     if resp.status_code != 200:
         raise TTAMOAuthError(resp.text)
 
 
 def api_call(call_func):
-
+    '''
+    Decorator of method of TTAMClient that calls 23andme API.
+    Updates token in the case of outdated token.
+    ''' 
     def checked(self, *args, **kwargs):
-        if datetime.now() >= self.expire_at:
+        if self.is_expired():
             self.update(current_app.config['TTAM_CONFIG'])
         return call_func(self, *args, **kwargs)
 
     return checked
 
 
+# TODO test demo data
 class TTAMClient(db.Model): 
+    '''
+    23andme API client
+    '''
     user_id = db.Column(db.String(200), db.ForeignKey('User.email'), primary_key=True)
     access_token = db.Column(db.String(150), nullable=True)
     refresh_token = db.Column(db.String(150), nullable=True)
@@ -36,6 +45,10 @@ class TTAMClient(db.Model):
     profiles = db.Column(db.Text, nullable=True)
     
     def __init__(self, code, user_id, ttam_config): 
+        '''
+        Initialize a 23andme client given an authorization code
+        by exchanging access_token with the code.
+        '''
         post_data = {
             'client_id': ttam_config['client_id'],
             'client_secret': ttam_config['client_secret'],
@@ -54,20 +67,33 @@ class TTAMClient(db.Model):
         self.user_id = user_id 
 
     def set_api_base(self):
+        '''
+        Check if the user has genetic data,
+        if not, use 23andme's demo data
+        '''
         self.api_base = API_BASE
         if len(self.get_patients()) == 0:
             self.api_base = urljoin(API_BASE, 'demo')
 
     def _set_tokens(self, credentials):
+        '''
+        set tokens (access and refresh) and calculate expiration time
+        '''
         self.access_token = credentials['access_token']
         self.refresh_token = credentials['refresh_token']
         # just to be safe, set expire time 100 seconds earlier than acutal expire time
         self.expire_at = datetime.now() + timedelta(seconds=int(credentials['expires_in']-100))
 
     def is_expired(self):
+        '''
+        check if the client's tokens have expired
+        '''
         return datetime.now() > self.expire_at 
 
     def update(self, ttam_config):
+        '''
+        update tokens
+        '''
         post_data = {
             'client_id': ttam_config['client_id'],
             'client_secret': ttam_config['client_secret'],
@@ -82,12 +108,20 @@ class TTAMClient(db.Model):
         db.session.add(self)
         db.session.commit()
 
-
-    def has_patient(self, pid):
-        return pid in self.profiles.split()
-
     @api_call
     def get_snps(self, query, pids=None):
+        '''
+        given a list of rsids, and patients to which queried SNPs belongs to,
+        return a list of SNPs in this format
+        ```
+        {
+            [patient id]: {
+                [rsid]: [genotype],
+                ...
+            }
+        }
+        ```
+        '''
         if pids is None:
             pids = self.get_profiles()
         api_endpoint = urljoin(self.api_base, 'genotypes/')
@@ -95,7 +129,7 @@ class TTAMClient(db.Model):
         args = {'locations': snps_str, 'format': 'embedded'}
         urls = (urljoin(api_endpoint, p)+"?"+urlencode(args)
                 for p in pids)
-        auth_header = self.get_header() 
+        auth_header = self._get_header() 
         reqs = (grequests.get(u, headers=auth_header) for u in urls)
         resps = grequests.map(reqs) 
         if any(resp.status_code != 200 for resp in resps):
@@ -103,18 +137,21 @@ class TTAMClient(db.Model):
         patient_data = (resp.json() for resp in resps) 
         return {pdata['id']: pdata['genotypes'] for pdata in patient_data}
 
-    def get_header(self):
+    def _get_header(self):
+        '''
+        helper functions for getting HTTP Header to make 23andme API call
+        '''
         return {'Authorization': 'Bearer '+self.access_token} 
 
     @api_call
     def get_patients(self):
-        auth_header = self.get_header()
+        '''
+        get all profiles owned by the user who authorized this client
+        '''
+        auth_header = self._get_header()
         resp = requests.get(urljoin(self.api_base, 'names/'), headers=auth_header)
         assert_good_resp(resp)
         return resp.json()['profiles']
-
-    def count_patients(self):
-        return len(self.get_profiles())
 
     def get_profiles(self):
         return self.profiles.split()

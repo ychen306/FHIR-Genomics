@@ -13,7 +13,6 @@ EXPIRE_TIME = 1800
 
 
 def commit_buffers(g): 
-    from models import SearchParam
     for model, buf in g._nodep_buffers.iteritems():
         model.core_insert(buf) 
 
@@ -22,6 +21,8 @@ def save_buffer(g, model, b):
     g._nodep_buffers.setdefault(model, []).append(b)
 
 
+
+# TODO make this more efficient (maybe with a bit of boilerplate...)
 class SimpleInsert(object): 
     '''
     Use this as a mixin (maybe there's another word for it), anyway
@@ -33,6 +34,13 @@ class SimpleInsert(object):
         raise NotImplementedError
 
     def _populate(self):
+        '''
+        populate attributes of a model
+
+        sometimes a model has a relationshiop reflected by foreign key(s)
+        this function finds such relationships and
+        populates values of those foreign fields
+        '''
         if self.__class__._relationships is None:
             self.__class__._relationships = {
                     rel.key: rel
@@ -42,7 +50,7 @@ class SimpleInsert(object):
         update = {}
         for k, v in self.__dict__.iteritems():
             rel = relationships.get(k)
-            if rel is not None:
+            if rel is not None and v is not None:
                 for loc, rem in rel.local_remote_pairs:
                     update[loc.name] = v.__dict__.get(rem.name)
 
@@ -66,9 +74,11 @@ class SimpleInsert(object):
 
 class Resource(db.Model, SimpleInsert):
     '''
-    a Resource is either public or has an `owner`.
-    upon sign up, all public resources are copied and asign an owner - the new user.
-    this is how we manage the sandbox. The user can do what ever he wants to that set of 
+    Representation of a SNAPSHOT of a resource
+
+    A Resource is either owned by a real user or is public and owned by the "super" user.
+    Upon sign up, all public resources are copied and assigned an owner - the new user.
+    this is how we manage the sandbox. The user can do what ever he or she wants to that set of 
     resources, and since resources are replicated, what a user does to a resource won't
     affect that of another user.
     '''
@@ -113,7 +123,7 @@ class Resource(db.Model, SimpleInsert):
 
     def as_response(self, request, created=False):
         '''
-        return the resource as a response
+        return the resource as a HTTP response
         '''
         status = '201' if created else '200'
 
@@ -133,12 +143,18 @@ class Resource(db.Model, SimpleInsert):
         return response
 
     def get_url(self, version_specific=False):
+        '''
+        return the url to the resource
+        '''
         url_elements = [self.resource_type, self.resource_id]
         if version_specific:
             url_elements.extend(('_history', str(self.version)))
         return '/'.join(url_elements)
 
     def get_reference(self):
+        '''
+        return the resource as a FHIR Reference
+        '''
         return {'reference': self.get_url()}
 
 
@@ -187,12 +203,15 @@ class SearchParam(db.Model, SimpleInsert):
     system = db.Column(db.String(500), nullable=True)
     code = db.Column(db.String(100), nullable=True)
 
+    # resource which this parameter belongs to
     resource = db.relationship('Resource',
                                foreign_keys=[owner_id,
                                              resource_id,
                                              resource_type,
                                              update_time])
 
+    # resource this parameter is referencing,
+    # if this a reference search parameter
     referenced = db.relationship('Resource',
                                  foreign_keys=[owner_id,
                                                referenced_id,
@@ -201,6 +220,10 @@ class SearchParam(db.Model, SimpleInsert):
 
 
 class User(db.Model):
+    '''
+    This has nothing to do with FHIR's concepts.
+    Just a user who owns a set of resources.
+    '''
     __tablename__ = 'User'
 
     email = db.Column(db.String(500), primary_key=True)
@@ -223,6 +246,12 @@ class User(db.Model):
 
 
 class Session(db.Model):
+    '''
+    Session management.
+    Having this here because I am too lazy to read documentation of
+    some of Flask's session extension packages and because I don't
+    need much functionality anyway.
+    '''
     __tablename__ = 'Session'
 
     id = db.Column(db.String(500), primary_key=True)
@@ -232,19 +261,26 @@ class Session(db.Model):
 
 class Access(db.Model):
     '''
-    this represents a client's read/write access to a resource type,
-    note that an access can be rescricted to a patient's resources
+    this represents an OAuth-consumer's read/write access to a resource type,
     '''
     __tablename__ = 'Access'
 
-    # read or write
+    # can be read or write
     access_type = db.Column(db.String(10), primary_key=True)
     client_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
     resource_type = db.Column(db.String(100), primary_key=True)
-    patient_id = db.Column(db.String(500), nullable=True)
 
 
+# TODO rename this to be OAuthConsumer to avoid confusion
 class Client(db.Model):
+    '''
+    An OAuth consumer.
+    
+    This is different than an OAuth client.
+    A consumer is a "bearer" of access token.
+    Every user is ONE client, but there can be multiple CONSUMER belonging to 
+    multiples user/client.
+    '''
     __tablename__ = 'Client'
     
     code = db.Column(db.String, primary_key=True)

@@ -8,6 +8,13 @@ from argparse import ArgumentParser
 
 
 def register_blueprints(app):
+    '''
+    Register all blueprints with an app.
+    `api` deals with FHIR's operational logic
+    `oauth` deals with SMART on FHIR's OAuth protocol
+    `ui` deals with user registration, etc
+    `ttam` deals with 23andMe's API
+    '''
     app.register_blueprint(api, url_prefix='/api')
     app.register_blueprint(oauth, url_prefix='/auth')
     app.register_blueprint(ui)
@@ -15,6 +22,10 @@ def register_blueprints(app):
 
 
 def create_app(config):
+    '''
+    Given a configuration object, create a WSGI(Flask) app
+    See `APP_CONFIG` in ../config.py for example configuration.
+    '''
     app = Flask(__name__)
     app.config.update(config)
     register_blueprints(app)
@@ -22,12 +33,3 @@ def create_app(config):
     with app.app_context():
         db.create_all()
     return app 
-
-if __name__ == "__main__":
-    arg_parser = ArgumentParser()
-    args = arg_parser.parse_args()
-    app = create_app(APP_CONFIG)
-    if args.option == 'run':
-        app.run(debug=True) 
-    elif args.option == 'clear':
-        clear_db(app)

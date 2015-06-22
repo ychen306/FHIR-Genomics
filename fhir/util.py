@@ -19,6 +19,11 @@ xml_bundle_response = partial(Response, mimetype=FHIR_BUNDLE_MIMETYPE)
 
 
 def _xml_to_json(root):
+    '''
+    helper function for converting an xml-formated FHIR resource into an json object
+
+    NOTE this can obviously be implemented way more efficient without recursion
+    '''
     if root.tag.split('}')[-1] == 'div':
         return etree.tostring(root)
     elif 'value' in root.attrib:
@@ -42,6 +47,9 @@ def _xml_to_json(root):
 
 
 def xml_to_json(root, resource_type):
+    '''
+    Convert an xml-formated FHIR resource into an json object
+    '''
     if 'xmlns' in root.attrib:
         del root.attrib['xmlns']
     jsondict = _xml_to_json(root)
@@ -50,6 +58,9 @@ def xml_to_json(root, resource_type):
 
 
 def _to_xml(data, root):
+    '''
+    convert a single json element (int, boolean, or object) into corresponding FHIR-XML-encoding
+    '''
     if isinstance(data, dict):
         _json_to_xml(data, root)
     else:
@@ -60,6 +71,9 @@ def _to_xml(data, root):
 
 
 def _json_to_xml(jsondict, root):
+    '''
+    helper function for converting a json-formated FHIR resource into xml
+    '''
     for k, v in jsondict.iteritems():
         if isinstance(v, list):
             for el in v:
@@ -77,6 +91,9 @@ def _json_to_xml(jsondict, root):
 
 
 def json_to_xml(jsondict):
+    '''
+    Convert a json-formated FHIR resource into xml
+    '''
     resource_type = jsondict['resourceType']
     del jsondict['resourceType']
     root = etree.Element(resource_type)
@@ -86,6 +103,15 @@ def json_to_xml(jsondict):
 
 
 def iterdict(d):
+    '''
+    Similar to dict.iteritems
+    for something like {1 : [1,2,3,4]},
+    it yields streams below:
+        1, 1
+        1, 2
+        1, 3
+        1, 4
+    '''
     if isinstance(d, MultiDict):
         for k in d:
             for v in d.getlist(k):
@@ -96,6 +122,10 @@ def iterdict(d):
 
 
 def hash_password(password, salt=None):
+    '''
+    hash a password based on a salt
+    if salt not given, randomly generate one
+    '''
     if salt is None:
         salt = uuid.uuid4().hex
     hashed = hashlib.sha512(password + salt).hexdigest()

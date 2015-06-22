@@ -1,6 +1,3 @@
-'''
-Takes care of oauth stuff here
-'''
 from flask.blueprints import Blueprint
 from flask import request, render_template, Response, redirect, jsonify
 import re
@@ -11,25 +8,37 @@ from ui import require_login
 
 oauth = Blueprint('auth', __name__)
 
+# RE to parse SMART on FHIR's permission (scope), 
+# which looks like this "user/Patient.read"
 PERMISSION_RE = re.compile(r'(?P<scope>user)/(?P<resource_type>(?:\w+)|\*)\.(?P<type>read|write)')
 
+
 class BadRequest(Exception):
+    '''
+    We use this to capture an invalid request during during our OAuth dance
+    '''
     pass
 
 
 class OAuthScope(object):
+    '''
+    Representation of a scope in SMART-on-FHIR
+    '''
     desc_tmpl = '%s access to all of your %s resources'
 
     def __init__(self, permission_str):
+        '''
+        parse a scope
+        '''
         permission = PERMISSION_RE.match(permission_str)
         if permission is None:
             raise BadRequest
         self.scope = permission.group('scope')
-        self.is_wildcard = False
         requested_resource = permission.group('resource_type')
         if requested_resource == '*':
             self.is_wildcard = True
         elif requested_resource in RESOURCES:
+            self.is_wildcard = False
             self.resource = requested_resource
         else:
             raise BadRequest
@@ -38,7 +47,7 @@ class OAuthScope(object):
 
     def to_readable(self):
         '''
-        generate readable content and show it to user
+        generate readable content for showing it to user
         '''
         readable = {'is_write': self.access_type == 'write'}
         if self.is_wildcard:
@@ -51,19 +60,13 @@ class OAuthScope(object):
         return readable
 
     def get_access_from_user(self, user, client):
+        '''
+        Get access from user based on the scope
+        '''
         if self.is_wildcard:
             user.authorize_access(client, self.access_type)
         else:
-            user.authorize_access(client, self.access_type, (self.resource,))
-
-@oauth.before_request
-def get_session():
-    session_id = request.cookies.get('session_id') 
-    request.session = Session.query.filter_by(id=session_id).first()
-
-@oauth.errorhandler(BadRequest)
-def handle_invalid_auth_request(error):
-    return Response(status='400')
+            user.authorize_access(client, self.access_type, [self.resource])
 
 
 @oauth.route('/authorize', methods=['GET', 'POST'])
@@ -78,14 +81,13 @@ def authorize():
                                             redirect_url=request.args['redirect_uri']).first()
         if client_user is None:
             raise BadRequest    
-
         client = Client(request.session.user,
                         client_user,
                         request.args.get('state'))
         db.session.add(client)
         # parse requested scopes
         scopes = map(OAuthScope, request.args['scope'].split(' '))
-        accesses = map(OAuthScope.to_readable, scopes)  
+        readable_accesses = map(OAuthScope.to_readable, scopes)  
         # we grant access despite user's reaction so that we don't have to keep tract of requested scope
         # security is being taken care of by marking the authorized client as un authorized
         for scope in scopes:
@@ -93,9 +95,10 @@ def authorize():
         db.session.commit()
         return render_template('authorization.html',
                     appname=client_user.app_name,
-                    accesses=accesses,
+                    accesses=readable_accesses,
                     auth_code=client.code)
     elif request.form['authorize'] == 'yes':
+        # authorize the client and redirect
         client = Client.query.filter_by(code=request.form['auth_code']).first()
         if client is None:
             raise BadRequest
@@ -114,8 +117,12 @@ def authorize():
 
 @oauth.route('/token', methods=['POST'])
 def exchange_token():
+    '''
+    exchange access token with authorization code
+    '''
     if request.form['grant_type'] != 'authorization_code':
         raise BadRequest
+
     client_id = request.form['client_id']
     code = request.form['code']
     redirect_uri = request.form['redirect_uri']
@@ -131,3 +138,14 @@ def exchange_token():
         raise BadRequest
 
     return jsonify(client.grant_access_token()) 
+
+
+@oauth.before_request
+def get_session():
+    session_id = request.cookies.get('session_id') 
+    request.session = Session.query.filter_by(id=session_id).first()
+
+
+@oauth.errorhandler(BadRequest)
+def handle_invalid_auth_request(error):
+    return Response(status='400')

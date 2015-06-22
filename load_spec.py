@@ -4,25 +4,35 @@ import sys
 import json
 from fhir.sequence import sequence_resource, sequence_reference_types
 
+# RE used to search resource profiles in FHIR's specs. directory
 PROFILE_F_RE = re.compile(r'^type-(?P<datatype>\w+).profile.json$|^(?P<resource>\w+).profile.json$')
 WARNING = 'WARNING: this is auto generated. Change it at your risk.'
 
 def load_and_process_profile(profile_loc):
+    '''
+    load a profile file and prepare it as internal structure for specs. code generation
+    '''
     with open(profile_loc) as profile_f:
-        return process_profile(json.loads(profile_f.read()))
+        return process_profile(json.load(profile_f))
 
 
 def process_profile(profile):
+    '''
+    Process a resource profile (in FHIR's JSON format)
+    as our internal structure for specs. code generation
+    '''
     elements = profile['structure'][0]['element']
     search_params = {param['xpath'].replace('f:', '').replace('/', '.'): param
                      for param in profile['structure'][0].get('searchParam', [])
                      if 'xpath' in param}
-    # mapping between a search parameter of type ResourceReference and possible resource types
+    # `refeence_types` maintains the mapping
+    # between a search parameter of type ResourceReference and possible resource types
     reference_types = {}
     for element in elements:
         path = element['path']
         search_param = search_params.get(path)
         if search_param is not None:
+            # delete elements we don't care about
             del search_param['documentation']
             del search_param['xpath']
             element['searchParam'] = search_param
@@ -45,7 +55,11 @@ def process_profile(profile):
     return elements, search_params, reference_types
 
 
-def init(spec_dir):
+def load_spec(spec_dir):
+    '''
+    Load FHIR specs. given directory of all the profiles
+    (FHIR uses Profile resource to document specs.)
+    '''
     specs = {}
     resources = []
     reference_types = {}
@@ -87,16 +101,19 @@ def init(spec_dir):
         spec_target.write('REFERENCE_TYPES=' + str(reference_types))
 
 if __name__ == '__main__':
-    try:
-        from config import FHIR_SPEC_DIR
-        spec_dir = FHIR_SPEC_DIR
-    except ImportError:
-        if len(sys.argv) == 2:
+    # find out where the specs. directory is.
+    # Should be supplied via either command line or config file
+    if len(sys.argv) == 2: 
+        spec_dir = sys.argv[1]
+    else:
+        try:
+            from config import FHIR_SPEC_DIR
+            spec_dir = FHIR_SPEC_DIR
+        except ImportError:
             print 'Unable to find FHIR spec directory..'
             print 'specify with `FHIR_SPEC_DIR` in `config.py`'
             print 'or do'
-            print '$ python prep_fhir_spec.py [spec dir]'
-            sys.exit(1)
-        spec_dir = sys.argv[1]
-    init(spec_dir)
+            print '$ python load_spec.py [spec dir]'
+            sys.exit(1) 
+    load_spec(spec_dir)
     print 'finished.!'

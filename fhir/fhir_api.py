@@ -2,6 +2,7 @@ from flask import Response, render_template, g
 from database import db
 from models import Resource, SearchParam
 import fhir_parser
+import fhir_error
 from util import json_response, xml_response, xml_bundle_response, xml_to_json, json_to_xml
 from fhir_spec import SPECS, REFERENCE_TYPES
 from query_builder import QueryBuilder
@@ -16,16 +17,13 @@ from lxml import etree
 # TODO: support composite search param
 
 PAGE_SIZE = 50
-BUNDLE_TITLE = 'SMART Genomics Atom Feed'
-
-NOT_FOUND = Response(status='404')
-GONE = Response(status='410')
-NOT_ALLOWED = Response(status='405')
-BAD_REQUEST = Response(status='400')
-NO_CONTENT = Response(status='204')
-
+BUNDLE_TITLE = 'SMART Genomics Atom Feed' 
 
 def find_latest_resource(resource_type, resource_id, owner_id):
+    '''
+    Find the latest resource given it's type, id, and id of it's owner.
+    Requiring owner's id here because we don't want people touching other people's resources 
+    '''
     return Resource.query.filter_by(
         resource_type=resource_type,
         resource_id=resource_id,
@@ -48,9 +46,12 @@ class FHIRRequest(object):
         self.offset = int(self.args.get('_offset', 0))
 
         if request.method in ('POST', 'PUT'):
-            # process data as a dictionary
+            # regardless of format of uploaded data
+            # we process it as a json object (technically a Python Dict) 
             if self.format == 'xml':
                 dataroot = etree.fromstring(request.data)
+                # tag of an etree element = {whatever xmlns value is}[element name]
+                # we only care about `element name` here
                 resource_type = dataroot.tag.split('}')[-1]
                 self.data = xml_to_json(dataroot, resource_type)
             else:
@@ -100,7 +101,14 @@ class FHIRBundle(object):
         self.resource_count = query.count() 
 
         if ttam_resource is not None:
-            # get data from 23and me
+            # 23andMe resource(s) are being requested here.
+            # We need to figure out the paging properties for 23andme resources.
+            # We preserve determinism here by lining all internal resources before
+            # 23andMe resources (
+            # think about it like this ...---, with '.' being internal, and '-' being 23andMe.
+            # Here we have three internal resources and 3 23andMe resources.
+            # So a 4-offset is the same as a 0-offset of 23andMe resources,
+            # and a 1-offset is also a 0-offset of 23andMe. And so forth).  
             num_resources = len(self.resources) 
             ttam_offset = (request.offset - self.resource_count
                     if request.offset >= self.resource_count
@@ -188,7 +196,7 @@ def handle_create(request, resource_type):
     valid, search_elements = fhir_parser.parse_resource(
         resource_type, request.data, correctible)
     if not valid:
-        return BAD_REQUEST
+        return fhir_error.inform_bad_request()
 
     resource = Resource(resource_type, request.data, owner_id=request.authorizer.email)
     index_resource(resource, search_elements)
@@ -206,9 +214,9 @@ def handle_read(request, resource_type, resource_id):
         resource = find_latest_resource(resource_type, resource_id, owner_id=request.authorizer.email)
 
     if resource is None:
-        return NOT_FOUND
+        return fhir_error.inform_not_found() 
     elif not resource.visible:
-        return GONE
+        return fhir_error.inform_gone()
 
     return resource.as_response(request)
 
@@ -219,13 +227,13 @@ def handle_update(request, resource_type, resource_id):
     '''
     old = find_latest_resource(resource_type, resource_id, owner=request.authorizer)
     if old is None:
-        return NOT_ALLOWED
+        return fhir_error.inform_not_allowed()
 
     correctible = (request.format == 'xml')
     valid, search_elements = fhir_parser.parse_resource(
         resource_type, request.data, correctible)
     if not valid:
-        return BAD_REQUEST
+        return fhir_error.inform_bad_request()
 
     new = old.update(request.data)
     index_resource(new, search_elements)
@@ -256,9 +264,9 @@ def handle_delete(request, resource_type, resource_id):
         resource.visible = False
         db.session.add(resource)
         db.session.commit()
-        return NO_CONTENT
+        return fhir_error.inform_no_content()
     else:
-        return NOT_FOUND
+        return fhir_error.inform_not_found()
 
 
 def handle_history(request, resource_type, resource_id, version):
@@ -280,7 +288,7 @@ def handle_history(request, resource_type, resource_id, version):
         # don't render as a bundle in this case
         resource = hist_query.first()
         if resource is None:
-            return NOT_FOUND
+            return fhir_error.inform_not_found()
         else:
             return resource.as_response(request)
 

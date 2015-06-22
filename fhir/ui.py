@@ -17,16 +17,21 @@ ui = Blueprint('/', __name__)
 DEFAULT_REDIRECT_URL = 'http://localhost:8000'
 
 def log_in(user):
+    '''
+    create a new session for a user
+    '''
     session_id = str(uuid.uuid4())
     new_session = Session(user=user, id=session_id)
     db.session.add(new_session)
     db.session.commit()
     return session_id
 
-
+# TODO make this more efficient
 def authorize_public_data(user):
-    # find all resources owned by super user, replicate them,
-    # and set owner to user
+    '''
+    find all resources owned by super user, replicate them,
+    and set owner to user
+    '''
     for resource in Resource.query.filter_by(owner_id='super'):
         db.make_transient(resource) 
         resource.owner = user
@@ -41,6 +46,9 @@ def authorize_public_data(user):
 
 
 def create_user(form):
+    '''
+    Create a new user given registration form
+    '''
     hashed, salt = hash_password(form['password'])
     new_user = User(email=form['email'],
                     app_name=form['appname'],
@@ -56,6 +64,9 @@ def create_user(form):
 
 
 def rand_app_id():
+    '''
+    return a random and unique app id (client_id)
+    '''
     app_id = str(uuid.uuid4())
     while User.query.filter_by(app_id=app_id).first() is not None:
         app_id = str(uuid.uuid4())
@@ -63,6 +74,10 @@ def rand_app_id():
 
 
 def require_login(view):
+    '''
+    Decorator to ensure a route is only accessed by logged in user
+    Prompt the user to login with proper redirect if the user is not loggedin.
+    '''
     @wraps(view)
     def logged_in_view(*args, **kwargs):
         # check if user is logged in
@@ -80,6 +95,9 @@ def require_login(view):
 
 @ui.before_request
 def get_session():
+    '''
+    get associated session from `session_id` cookie
+    '''
     session_id = request.cookies.get('session_id') 
     request.session = Session.query.filter_by(id=session_id).first()
 
@@ -109,6 +127,9 @@ def index():
 
 @ui.route('/login', methods=['POST'])
 def login():
+    '''
+    handle user login here and redirect to proper url after success login
+    '''
     password = request.form['password']
     email = request.form['email']
     user = User.query.filter_by(email=email).first()
@@ -126,6 +147,9 @@ def login():
 
 @ui.route('/logout')
 def logout():
+    '''
+    logout by delete current user session
+    '''
     if request.cookies.get('session_id'):
         session_id = request.cookies['session_id']
         session = Session.query.get(session_id)
@@ -140,6 +164,9 @@ def logout():
 
 @ui.route('/signup', methods=['GET', 'POST'])
 def signup():
+    '''
+    handle user signup here
+    '''
     if request.method == 'GET':
         return render_template('signup.html')
     elif request.method == 'POST':
@@ -163,6 +190,9 @@ def signup():
 @ui.route('/update_app', methods=['POST'])
 @require_login
 def update_app():
+    '''
+    handle app info update here
+    '''
     user = request.session.user
     user.redirect_url = request.form['redirect_url']
     user.app_name = request.form['appname']

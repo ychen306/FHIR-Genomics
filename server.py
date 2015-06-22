@@ -9,6 +9,9 @@ app = create_app(APP_CONFIG)
 
 
 def clear_db(app):
+    '''
+    Wipes the database associated with the app.
+    '''
     with app.app_context():
         db.drop_all()
         db.create_all() 
@@ -24,5 +27,5 @@ if __name__ == '__main__':
         else:
             num_workers = cpu_count() * 2 + 1
             subprocess.call('gunicorn -w %d -b %s -D server:app --log-level error --log-file fhir.log'% (num_workers, HOST), shell=True)
-    else:
+    elif args.option == 'clear':
         clear_db(app)

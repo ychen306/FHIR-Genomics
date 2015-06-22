@@ -8,6 +8,10 @@ CHROM_IDX = 2
 POS_IDX = 3
 
 def get_snp_data(*args, **kwargs):
+    '''
+    proxy for TabixFile.fetch
+    '''
+    kwargs['multiple_iterators'] = True
     return TabixFile(SNP_FILE, parser=asTuple()).\
             fetch(*args, **kwargs)
 
@@ -25,11 +29,16 @@ def slice_(xs, offset, limit):
 
 
 def get_snps(chrom=None, start=None, end=None):
-    # TODO: make this deterministic
+    '''
+    return SNPs given genomic coordinates
+    '''
     return {row[SNP_IDX]: (row[CHROM_IDX], row[POS_IDX]) for row in get_snp_data(chrom, start, end)}
 
 
 def get_coord(snp):
+    '''
+    given a SNP return its genomic coordinate
+    '''
     for row in get_snp_data():
         _, rsid, row, pos = row
         if rsid == snp:

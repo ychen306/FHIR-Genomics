@@ -13,6 +13,9 @@ NOT_ALLOWED = Response(status='405')
 @ttam.route('/import')
 @require_login
 def import_from_ttam():
+    '''
+    redirect user to 23andme and prompt authorization to access his or her data
+    '''
     ttam_client = TTAMClient.query.get(request.session.user.email)
     if ttam_client is not None:
         return NOT_ALLOWED
@@ -28,6 +31,9 @@ def import_from_ttam():
 @ttam.route('/recv_redirect')
 @require_login
 def recv_ttam_auth_code():
+    '''
+    handle redirect from 23andme's OAuth dance and initiate our 23andme client
+    '''
     code = request.args.get('code')
     if code is None:
         return TTAMOAuthError 
@@ -41,6 +47,9 @@ def recv_ttam_auth_code():
 @ttam.route('/clear')
 @require_login
 def clear_ttam_data():
+    '''
+    removed the 23andme client associated with user in session
+    '''
     ttam_client = TTAMClient.query.get(request.session.user.email)
     if ttam_client is None:
         return NOT_ALLOWED

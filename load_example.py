@@ -1,3 +1,6 @@
+'''
+Load randomly generated example data into the database
+'''
 from flask import g
 from fhir.models import db, Resource, User, Client, commit_buffers
 from fhir.indexer import index_resource
