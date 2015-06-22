@@ -1,6 +1,8 @@
 # project specific stuff
 *.db
 *.swp
+config.py
+# mac..
 .DS_Store
 # Byte-compiled / optimized / DLL files
 __pycache__/
