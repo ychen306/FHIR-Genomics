@@ -13,7 +13,7 @@ Currently we use PostgresSQL for development, and our script `setup_db.py` is wr
 3. Optional: load your version of FHIR spec with the script `load_spec.py`, which will update `fhir/fhir_spec.py`.
 4. If you haven't created the database you specified in `config.py`, simply use command below to create it
 	
-	```bash
+	```
 	$ python setup_db.py
 	``` 
 5. Load sample data with
