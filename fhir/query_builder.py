@@ -144,7 +144,7 @@ def make_token_pred(param_data, param_val):
     Compile a token search parameter into a SQL predicate
     '''
     token = TOKEN_RE.match(param_val)
-    if not token:
+    if token is None:
         raise InvalidQuery
 
     pred = (SearchParam.code == token.group('code'))
