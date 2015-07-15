@@ -46,34 +46,6 @@ def union_predicates(predicates):
                           for pred in predicates]) 
 
 
-def make_coord_pred(coord_str):
-    '''
-    Compile a coordinate search parameter
-    (which details a chromosome and a range of positions) into a SQL predicate
-    '''
-    coord = COORD_RE.match(coord_str)
-    if coord is None:
-        raise InvalidQuery
-
-    chrom = coord.group('chrom')
-    start = coord.group('start')
-    end = coord.group('end')
-    right_chrom = db.and_(SearchParam.text == ('::%s::'% chrom),
-                        SearchParam.name == 'chromosome',
-                        SearchParam.resource_type == 'Sequence')
-    # query end >= start
-    right_start = db.and_(SearchParam.quantity <= end,
-                        SearchParam.name == 'start-position',
-                        SearchParam.resource_type == 'Sequence')
-    # query start <= end
-    right_end = db.and_(SearchParam.quantity >= start,
-                        SearchParam.name == 'end-position',
-                        SearchParam.resource_type == 'Sequence')
-
-    return Resource.resource_id.in_(
-            intersect_predicates([right_chrom, right_start, right_end]).alias())
-
-    
 def make_number_pred(param_data, param_val):
     '''
     Compile a number search parameter into a SQL predicate
@@ -206,6 +178,19 @@ PRED_MAKERS = {
     'string': make_string_pred
 }
 
+def make_coord_pred(coord): 
+    coord_match = COORD_RE.match(coord) 
+    if coord_match is None:
+        raise InvalidQuery
+    chrom = coord_match.group('chrom')
+    start = coord_match.group('start')
+    end = coord_match.group('end')
+    return db.and_(
+            Resource.resource_type == 'Sequence',
+            Resource.chromosome == chrom,
+            Resource.start <= end,
+            Resource.end >= start) 
+
 
 class QueryBuilder(object):
     def __init__(self, resource_owner):
@@ -314,10 +299,9 @@ class QueryBuilder(object):
     
         # customized coordinate search parameter
         if 'coordinate' in params and resource_type == 'Sequence':
-            coords = params['coordinate'].split(',')
-            sub_preds = map(make_coord_pred, coords)
-            query_args.append(
-                    Resource.resource_id.in_(union_predicates(sub_preds).alias())) 
+            coords = params['coordinate'].split(',') 
+            coord_preds = map(make_coord_pred, coords)
+            query_args.append(db.or_(*coord_preds))
         if len(predicates) > 0:
             query_args.append(
                 Resource.resource_id.in_(intersect_predicates(predicates).alias())) 

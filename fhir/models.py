@@ -17,8 +17,8 @@ def commit_buffers(g):
         model.core_insert(buf) 
 
 
-def save_buffer(g, model, b):
-    g._nodep_buffers.setdefault(model, []).append(b)
+def save_buffer(g, model, obj):
+    g._nodep_buffers.setdefault(model, []).append(obj.get_insert_params())
 
 
 
@@ -72,6 +72,7 @@ class SimpleInsert(object):
         db.engine.execute(cls.__table__.insert(), objs)
 
 
+# TODO use autoincrment INT for resource_id instead of uuid (string)
 class Resource(db.Model, SimpleInsert):
     '''
     Representation of a SNAPSHOT of a resource
@@ -95,6 +96,11 @@ class Resource(db.Model, SimpleInsert):
     version = db.Column(db.Integer)
     visible = db.Column(db.Boolean)
 
+    # speicalized columns for faster sequence resource query
+    chromosome = db.Column(db.String, nullable=True)
+    start = db.Column(db.Integer, nullable=True)
+    end = db.Column(db.Integer, nullable=True)
+
     owner = db.relationship('User')
 
     def __init__(self, resource_type, data, owner_id):
@@ -108,6 +114,10 @@ class Resource(db.Model, SimpleInsert):
         self.version = 1
         self.visible = True
         self.owner_id = owner_id
+        if resource_type == 'Sequence':
+            self.chromosome = data['chromosome']
+            self.start = data['startPosition']
+            self.end = data['endPosition']
 
     def update(self, data):
         '''
@@ -308,4 +318,6 @@ class Client(db.Model):
         return {
             'access_token': self.access_token,
             'token_type': 'bearer',
-            'expires_in': 3600} 
+            'expires_in': 3600,
+            'state': self.state
+        } 

@@ -138,7 +138,7 @@ SEARCH_INDEX_FUNCS = {
 
 def get_search_args(resource, spec):
     '''
-    get init args for SearchParam given the value of a search parameter
+    get init args for SearchParam given value of a search parameter
     '''
     return {
         'resource': resource,
@@ -154,7 +154,7 @@ def index_resource(resource, search_elements, g=g):
         args = get_search_args(resource, search_param['spec'])
         elements = search_param['elements']
         if len(elements) == 0:
-            save_buffer(g, SearchParam, SearchParam(missing=True, **args).get_insert_params())
+            save_buffer(g, SearchParam, SearchParam(missing=True, **args))
         else:
             for element in elements:
                 if args['param_type'] == 'reference':
@@ -164,4 +164,4 @@ def index_resource(resource, search_elements, g=g):
                 if index_func is None:
                     continue
                 search_index = index_func(dict(args), element) 
-                save_buffer(g, SearchParam, SearchParam(missing=False, **search_index).get_insert_params())
+                save_buffer(g, SearchParam, SearchParam(missing=False, **search_index))
