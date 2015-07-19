@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block main %}
+{% if not logged_in %}
+<form class="form-signin form-signup" action="/create_app" method="POST">
+  <h3 class="form-signin-heading">Application Registration</h3>
+  {% if message %}
+  <span class="label label-danger" style="padding: 2px;">{{ message }}</span><br/>
+  <h3 class="form-signin-heading"></h3>
+  {% endif %}
+  <input class="form-control input-top" placeholder="Application name" name="appname" required autofocus>
+  <input type="url" class="form-control input-mid" placeholder="Redirect URI" name="redirect_uri" required>
+  <input type="url" class="form-control input-bot" placeholder="Launch URI" name="launch_uri" required>
+  <div class="radio">
+    <label><input type="radio" name="client_type" value="public" checked="checked"> Public&nbsp;</label>
+    <label><input type="radio" name="client_type" value="confidential"> Confidential</label>
+  </div>
+  <div class="radio">
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+</form>
+{% else %}
+{% endif %}
+{% endblock %}

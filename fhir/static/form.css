@@ -5,15 +5,15 @@ body {
 }
 
 .form-signin {
-  max-width: 330px;
+  max-width: 400px;
   padding: 15px;
   margin: 0 auto;
 }
 .form-signin .form-signin-heading,
-.form-signin .checkbox {
+.form-signin .radio {
   margin-bottom: 10px;
 }
-.form-signin .checkbox {
+.form-signin .radio {
   font-weight: normal;
 }
 .form-signin .form-control {
@@ -38,22 +38,22 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.form-signup input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signup input[type="password"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signup input[class="confirm-password"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
+.form-signup input[type="email"],
 .form-signup input[name="appname"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signup input[name="password"],
+.form-signup input[name="redirect_uri"]{
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-signup input[name="confirmPassword"],
+.form-signup input[name="launch_uri"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;

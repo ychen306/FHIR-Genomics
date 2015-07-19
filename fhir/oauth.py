@@ -3,7 +3,7 @@ from flask import request, render_template, Response, redirect, jsonify
 import re
 from urllib import urlencode
 from fhir_spec import RESOURCES
-from models import db, Session, User, Client
+from models import db, Session, User, Client, App
 from ui import require_login
 
 oauth = Blueprint('auth', __name__)
@@ -76,14 +76,16 @@ def authorize():
         if request.args['response_type'] != 'code':
             raise BadRequest
 
-        # find dev user whose app requested this authorization
-        client_user = User.query.filter_by(app_id=request.args['client_id'],
-                                            redirect_url=request.args['redirect_uri']).first()
-        if client_user is None:
+        # find app requested this authorization
+        app = App.query.filter_by(
+                client_id=request.args['client_id'],
+                redirect_uri=request.args['redirect_uri']).first()
+        if app is None:
             raise BadRequest    
-        client = Client(request.session.user,
-                        client_user,
-                        request.args.get('state'))
+        client = Client(authorizer=request.session.user,
+                        app=app,
+                        state=request.args.get('state'),
+                        scope=request.args['scope'])
         db.session.add(client)
         # parse requested scopes
         scopes = map(OAuthScope, request.args['scope'].split(' '))
@@ -94,7 +96,7 @@ def authorize():
             scope.get_access_from_user(request.session.user, client)
         db.session.commit()
         return render_template('authorization.html',
-                    appname=client_user.app_name,
+                    appname=app.name,
                     accesses=readable_accesses,
                     auth_code=client.code)
     elif request.form['authorize'] == 'yes':
@@ -104,12 +106,12 @@ def authorize():
             raise BadRequest
         client.authorized = True 
         db.session.commit()
-        client_user = User.query.filter_by(app_id=client.client_id).first()
-        redirect_url = client_user.redirect_url
+        app = App.query.filter_by(client_id=client.client_id).first()
+        redirect_uri = app.redirect_uri
         redirect_args = {'code': request.form['auth_code']}
         if client.state is not None:
             redirect_args['state'] = client.state
-        return redirect('%s?%s'% (redirect_url,
+        return redirect('%s?%s'% (redirect_uri,
                                 urlencode(redirect_args))) 
     else:
         return redirect('/')
@@ -124,15 +126,18 @@ def exchange_token():
         raise BadRequest
 
     client_id = request.form['client_id']
+    client_secret = request.form.get('client_secret')
     code = request.form['code']
     redirect_uri = request.form['redirect_uri']
     client = Client.query.filter_by(code=code,
                                     client_id=client_id,
+                                    client_secret=client_secret,
                                     authorized=True,
                                     expire_at=None).first()
+    print '$$$$$$$$$$$', client
     if client is not None:
-        client_user = User.query.filter_by(app_id=client_id).first()
-        if client_user is None or client_user.redirect_url != redirect_uri:
+        app = App.query.filter_by(client_id=client_id).first()
+        if app is None or app.redirect_uri != redirect_uri:
             raise BadRequest
     else:
         raise BadRequest

@@ -2,19 +2,22 @@
 Blueprint taking care of dev registerring and basic app dashboard
 '''
 from flask.blueprints import Blueprint
-from flask import request, render_template, redirect, Response
+from flask import request, render_template, redirect, Response, url_for
 from urllib import urlencode
 from util import hash_password
 from ttam.models import TTAMClient
 import uuid
-from models import db, User, Session, Resource, Access, Client, SearchParam
+from models import db, User, Session, Resource, Access, Client, SearchParam, App
 from fhir_spec import RESOURCES
 from functools import wraps
 from urllib import urlencode
 
-ui = Blueprint('/', __name__)
+ui = Blueprint('ui', __name__)
 
 DEFAULT_REDIRECT_URL = 'http://localhost:8000'
+UNAUTHORIZED = Response(status='403')
+NOT_FOUND = Response(status='404')
+BAD_REQUEST = Response(status='400')
 
 def log_in(user):
     '''
@@ -25,6 +28,7 @@ def log_in(user):
     db.session.add(new_session)
     db.session.commit()
     return session_id
+
 
 # TODO make this more efficient
 def authorize_public_data(user):
@@ -51,10 +55,8 @@ def create_user(form):
     '''
     hashed, salt = hash_password(form['password'])
     new_user = User(email=form['email'],
-                    app_name=form['appname'],
                     redirect_url=DEFAULT_REDIRECT_URL,
                     hashed_password=hashed,
-                    app_id=rand_app_id(),
                     salt=salt)
     # give user access to public data
     authorize_public_data(new_user)
@@ -63,14 +65,15 @@ def create_user(form):
     return new_user
 
 
-def rand_app_id():
+def rand_client_id():
     '''
-    return a random and unique app id (client_id)
+    return a random and unique client_id
     '''
-    app_id = str(uuid.uuid4())
-    while User.query.filter_by(app_id=app_id).first() is not None:
-        app_id = str(uuid.uuid4())
-    return app_id
+    client_id = str(uuid.uuid4())
+    # make sure it's unique
+    while App.query.filter_by(client_id=client_id).first() is not None:
+        client_id = str(uuid.uuid4())
+    return client_id
 
 
 def require_login(view):
@@ -84,7 +87,7 @@ def require_login(view):
         if  (request.session is None or
             request.session.user is None):
             if request.method != 'GET':
-                return Response(status='403')
+                return UNAUTHORIZED
             else:
                 redirect_arg = {'redirect': request.url}
                 return redirect('/?%s'% urlencode(redirect_arg))
@@ -117,10 +120,9 @@ def index():
     if request.session is not None:
         logged_in = True
         user = request.session.user
-        app_id = user.app_id
-        app_name = user.app_name 
-        app_redirect_url = user.redirect_url
-        can_import_ttam = TTAMClient.query.get(request.session.user.email) is None
+        apps = [{ 'name': app.name, 'client_id': app.client_id }
+            for app in App.query.filter_by(user_id=user.email).all()]
+        can_import_ttam = TTAMClient.query.get(user.email) is None
     
     return render_template('index.html', **locals())
 
@@ -187,15 +189,51 @@ def signup():
             return resp
 
 
-@ui.route('/update_app', methods=['POST'])
+@ui.route('/create_app', methods=['GET', 'POST'])
 @require_login
-def update_app():
+def create_app():
+    if request.method == 'GET':
+        return render_template('create_app.html')
+    else:
+        client_type = request.form['client_type']
+        if client_type not in ('public', 'confidential'):
+            return BAD_REQUEST 
+        client_secret = (str(uuid.uuid4())
+                if client_type == 'confidential'
+                else None)
+        client_id = rand_client_id()
+        app = App(client_id=client_id,
+                client_secret=client_secret, 
+                user=request.session.user,
+                redirect_uri=request.form['redirect_uri'],
+                launch_uri=request.form['launch_uri'],
+                name=request.form['appname'])
+        db.session.add(app)
+        db.session.commit()
+        return redirect(url_for('ui.update_app', client_id=client_id))
+
+
+@ui.route('/update_app/<client_id>', methods=['GET', 'POST'])
+@require_login
+def update_app(client_id):
     '''
     handle app info update here
     '''
+    # make sure the user owns the app
     user = request.session.user
-    user.redirect_url = request.form['redirect_url']
-    user.app_name = request.form['appname']
-    db.session.add(user)
-    db.session.commit()
-    return redirect('/')
+    app = App.query\
+            .filter_by(user_id=user.email, client_id=client_id)\
+            .first()
+    if app is None:
+        return NOT_FOUND
+
+    if request.method == 'GET':
+        return render_template('update_app.html', app=app)
+    else:
+        print app.client_secret
+        app.redirect_uri = request.form['redirect_uri']
+        app.launch_uri = request.form['launch_uri']
+        app.name = request.form['appname']
+        db.session.add(app)
+        db.session.commit()
+        return redirect(url_for('ui.update_app', client_id=app.client_id))

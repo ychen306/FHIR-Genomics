@@ -239,8 +239,6 @@ class User(db.Model):
     email = db.Column(db.String(500), primary_key=True)
     hashed_password = db.Column(db.String(500))
     salt = db.Column(db.String(500))
-    app_id = db.Column(db.String(100))
-    app_name = db.Column(db.String(100))
     redirect_url = db.Column(db.String(100))
 
     def check_password(self, password):
@@ -255,6 +253,23 @@ class User(db.Model):
             db.session.merge(access)
 
 
+class App(db.Model):
+    '''
+    A registered app -- either public or confidential in SMART-on-FHIR's term
+    Has many to one relationship with User. 
+    '''
+    __tablename__ = 'App'
+    client_id = db.Column(db.String(100), primary_key=True)
+    # null if public
+    client_secret = db.Column(db.String(100), nullable=True)
+    redirect_uri = db.Column(db.String(500))
+    launch_uri = db.Column(db.String(500))
+    name = db.Column(db.String(100)) 
+    user_id = db.Column(db.String(500), db.ForeignKey('User.email'))
+
+    user = db.relationship('User')
+
+
 class Session(db.Model):
     '''
     Session management.
@@ -266,6 +281,7 @@ class Session(db.Model):
 
     id = db.Column(db.String(500), primary_key=True)
     user_id = db.Column(db.String(500), db.ForeignKey('User.email'))
+
     user = db.relationship('User')
 
 
@@ -281,10 +297,9 @@ class Access(db.Model):
     resource_type = db.Column(db.String(100), primary_key=True)
 
 
-# TODO rename this to be OAuthConsumer to avoid confusion
 class Client(db.Model):
     '''
-    An OAuth consumer.
+    An API client(OAuth consumer)
     
     This is different than an OAuth client.
     A consumer is a "bearer" of access token.
@@ -294,24 +309,28 @@ class Client(db.Model):
     __tablename__ = 'Client'
     
     code = db.Column(db.String, primary_key=True)
-    client_id = db.Column(db.String(100), nullable=True)
+    client_id = db.Column(db.String(100), db.ForeignKey('App.client_id'), nullable=True)
+    # denormalized so that we can quickly determine if it's a confidential client
+    client_secret = db.Column(db.String(100), nullable=True)
     state = db.Column(db.String(500), nullable=True)
     access_token = db.Column(db.String(100), unique=True)
     authorizer_id = db.Column(db.String(100), db.ForeignKey('User.email'))
     authorized = db.Column(db.Boolean)
     expire_at = db.Column(db.DateTime, nullable=True)
+    scope = db.Column(db.Text, nullable=True)
 
     authorizer = db.relationship('User')
 
-    def __init__(self, authorizer, client, state):
-        self.client_id = client.app_id
+    def __init__(self, authorizer, app, state, scope):
+        self.client_id = app.client_id
+        self.client_secret = app.client_secret
         self.access_token = str(uuid4())
         self.code = str(uuid4())
         self.authorizer = authorizer
         self.authorized = False
         self.state = state
+        self.scope = scope
 
-    # TODO: add scope in response
     def grant_access_token(self):
         self.expire_at = datetime.now() + timedelta(seconds=3600)
         db.session.commit()
@@ -319,5 +338,6 @@ class Client(db.Model):
             'access_token': self.access_token,
             'token_type': 'bearer',
             'expires_in': 3600,
-            'state': self.state
+            'state': self.state,
+            'scope': self.scope
         } 

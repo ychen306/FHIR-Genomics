@@ -8,30 +8,28 @@
   <span class="label label-danger" style="padding: 2px;">{{ message }}</span><br/>
   <h3 class="form-signin-heading"></h3>
   {% endif %}
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input {% if email %}value="{{email}}" {% endif %}type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
+  <input {% if email %}value="{{ email }}" {% endif %}type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
   <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
   <h4 class="form-signin-heading">or sign up <a href="/signup">here</a></h4>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>
 {% else %}
 <form action="/update_app" method="POST">
+  {% if apps %}
+  <h3>Your applications</h3>
   <table class="table">
+      {% for app in apps %}
     <tr>
-      <th scope="row">App id</th>
-      <td>{{ app_id }}</td>
+      <td><a href="/update_app/{{ app.client_id }}" target='_blank' >{{ app.name }}</a></td>
     </tr>
-    <tr>
-      <th scope="row">App name</th>
-      <td><input name="appname" value="{{ app_name }}" class="form-control"></input></td>
-    </tr>
-    <tr>
-      <th scope="row">Redirect url</th>
-      <td><input name="redirect_url" value="{{ app_redirect_url }}" class="form-control"></input></td>
-    </tr>
+      {% endfor %}
   </table>
-  <button class="btn btn-primary" type="submit">Update</button>
+  {% else %}
+  <h3>You haven't registerred any applications yet.</h3>
+  {% endif %}
+  <a href='/create_app' target='_blank' class="btn btn-default">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Register new app
+  </a>
 </form>
 {% endif %}
 {% endblock %}

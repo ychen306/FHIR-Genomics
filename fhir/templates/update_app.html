@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main %}
+{% if not logged_in %}
+<form class="form-signin form-signup" action="/update_app/{{ app.client_id }}" method="POST">
+  <h3 class="form-signin-heading">Manage your application here...</h3>
+  {% if message %}
+  <span class="label label-danger" style="padding: 2px;">{{ message }}</span><br/>
+  <h3 class="form-signin-heading"></h3>
+  {% endif %}
+  <input class="form-control input-top" placeholder="Application name" name="appname" required autofocus
+  value="{{ app.name }}">
+  <input type="url" class="form-control input-mid" placeholder="Redirect URI" name="redirect_uri" required
+  value="{{ app.redirect_uri }}">
+  <input type="url" class="form-control input-bot" placeholder="Launch URI" name="launch_uri" required
+  value="{{ app.launch_uri }}">
+  <p><b>Client ID:</b> {{ app.client_id }}</p>
+  {% if app.client_secret %}
+  <p><b>Client Secret:</b> {{ app.client_secret }}</p>
+  {% endif %}
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+</form>
+{% else %}
+{% endif %}
+{% endblock %}
