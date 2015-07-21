@@ -16,20 +16,21 @@
 {% else %}
 <form action="/update_app" method="POST">
   {% if apps %}
-  <h3>Your applications</h3>
-  <table class="table">
+  <div id="app-list">
+    <ul class="list-group">
       {% for app in apps %}
-    <tr>
-      <td><a href="/update_app/{{ app.client_id }}" target='_blank' >{{ app.name }}</a></td>
-    </tr>
+      <a class="list-group-item" href="/update_app/{{ app.client_id }}">
+        {{ app.name }} 
+      </a>
       {% endfor %}
-  </table>
-  {% else %}
-  <h3>You haven't registerred any applications yet.</h3>
-  {% endif %}
-  <a href='/create_app' target='_blank' class="btn btn-default">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Register new app
-  </a>
+    </ul>
+    {% else %}
+    <div id="no-app">
+    {% endif %}
+    <a href='/create_app' class="btn btn-default">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New App
+    </a>
+  </div>
 </form>
 {% endif %}
 {% endblock %}

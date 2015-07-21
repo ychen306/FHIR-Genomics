@@ -1,6 +1,7 @@
 from flask.blueprints import Blueprint
 from flask import request, render_template, Response, redirect, jsonify
 import re
+import base64 
 from urllib import urlencode
 from fhir_spec import RESOURCES
 from models import db, Session, User, Client, App
@@ -11,6 +12,7 @@ oauth = Blueprint('auth', __name__)
 # RE to parse SMART on FHIR's permission (scope), 
 # which looks like this "user/Patient.read"
 PERMISSION_RE = re.compile(r'(?P<scope>user)/(?P<resource_type>(?:\w+)|\*)\.(?P<type>read|write)')
+BA_RE = re.compile(r'Basic (.+)') 
 
 
 class BadRequest(Exception):
@@ -122,25 +124,30 @@ def exchange_token():
     '''
     exchange access token with authorization code
     '''
-    if request.form['grant_type'] != 'authorization_code':
-        raise BadRequest
+    assert request.form['grant_type'] == 'authorization_code'
 
     client_id = request.form['client_id']
-    client_secret = request.form.get('client_secret')
     code = request.form['code']
     redirect_uri = request.form['redirect_uri']
     client = Client.query.filter_by(code=code,
                                     client_id=client_id,
-                                    client_secret=client_secret,
                                     authorized=True,
                                     expire_at=None).first()
-    print '$$$$$$$$$$$', client
-    if client is not None:
-        app = App.query.filter_by(client_id=client_id).first()
-        if app is None or app.redirect_uri != redirect_uri:
-            raise BadRequest
-    else:
-        raise BadRequest
+    assert client is not None
+    app = App.query.filter_by(client_id=client_id).first()
+    assert app is not None and app.redirect_uri == redirect_uri
+
+    # authenticate confidential client
+    if app.client_secret is not None:
+        auth_header = request.headers.get('Authorization')
+        assert auth_header is not None
+        match = BA_RE.match(auth_header)
+        assert match is not None 
+        pair = base64.b64decode(match.group(1)).split(':')
+        assert len(pair) == 2
+        cid, csecret = pair
+        assert (client.client_id == cid and
+                client.client_secret == csecret) 
 
     return jsonify(client.grant_access_token()) 
 
@@ -151,6 +158,6 @@ def get_session():
     request.session = Session.query.filter_by(id=session_id).first()
 
 
-@oauth.errorhandler(BadRequest)
-def handle_invalid_auth_request(error):
+@oauth.errorhandler(AssertionError)
+def handle_invalid_auth_request(_):
     return Response(status='400')
