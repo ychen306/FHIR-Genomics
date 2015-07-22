@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+<script>
+    var cont_url = "{{ cont_url }}"; 
+    var resources = {{ resources|safe }};
+</script>
+<script src="/static/launch.js"></script>
+{% endblock %}
+{% block main %}
+<!-- click to instantiate a context -->
+<div id="launch-prompt">
+    <!--
+    <ul class="list-group">
+        <a class="list-group-item" href="#" resource-id="123">[resource description]</a>
+    </ul>-->
+</div>
+{% endblock %}

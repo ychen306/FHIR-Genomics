@@ -59,7 +59,8 @@ body {
   border-top-right-radius: 0;
 }
 #app-list,
-#no-app {
+#no-app,
+#launch-prompt {
     position: relative;
     padding-top: 45px;
     padding-right: 15px;
@@ -91,4 +92,14 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     content: "You haven't registered any applications"
+}
+#launch-prompt:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: "Select a resource to launch"
 }

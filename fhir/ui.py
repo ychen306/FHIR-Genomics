@@ -14,7 +14,6 @@ from urllib import urlencode
 
 ui = Blueprint('ui', __name__)
 
-DEFAULT_REDIRECT_URL = 'http://localhost:8000'
 UNAUTHORIZED = Response(status='403')
 NOT_FOUND = Response(status='404')
 BAD_REQUEST = Response(status='400')
@@ -30,12 +29,13 @@ def log_in(user):
     return session_id
 
 
-# TODO make this more efficient
+# TODO make this more efficient using core insert
 def authorize_public_data(user):
     '''
     find all resources owned by super user, replicate them,
     and set owner to user
     '''
+    # find all resources owned by super user and replicate them
     for resource in Resource.query.filter_by(owner_id='super'):
         db.make_transient(resource) 
         resource.owner = user
@@ -55,7 +55,6 @@ def create_user(form):
     '''
     hashed, salt = hash_password(form['password'])
     new_user = User(email=form['email'],
-                    redirect_url=DEFAULT_REDIRECT_URL,
                     hashed_password=hashed,
                     salt=salt)
     # give user access to public data

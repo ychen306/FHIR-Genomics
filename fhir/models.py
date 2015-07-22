@@ -10,6 +10,8 @@ from util import json_response, xml_response, json_to_xml, hash_password
 
 # an oauth client can only keep access token for 1800 seconds
 EXPIRE_TIME = 1800
+# special resources to be launched with
+LAUNCH_RESOURCES = set(['Patient', 'Encounter', 'Location'])
 
 
 def commit_buffers(g): 
@@ -239,7 +241,6 @@ class User(db.Model):
     email = db.Column(db.String(500), primary_key=True)
     hashed_password = db.Column(db.String(500))
     salt = db.Column(db.String(500))
-    redirect_url = db.Column(db.String(100))
 
     def check_password(self, password):
         hashed, _ = hash_password(password, self.salt)        
@@ -297,6 +298,16 @@ class Access(db.Model):
     resource_type = db.Column(db.String(100), primary_key=True)
 
 
+class Context(db.Model):
+    '''
+    this represents SMART-on-FHIR's application launch context
+    '''
+    __tablename__ = 'Context'
+    id = db.Column(db.Integer, primary_key=True)
+    # json representation of launch context
+    context = db.Column(db.String(500), default="{}")
+
+
 class Client(db.Model):
     '''
     An API client(OAuth consumer)
@@ -318,10 +329,12 @@ class Client(db.Model):
     authorized = db.Column(db.Boolean)
     expire_at = db.Column(db.DateTime, nullable=True)
     scope = db.Column(db.Text, nullable=True)
-
+    context_id = db.Column(db.Integer, db.ForeignKey('Context.id'))
+    
+    context = db.relationship('Context') 
     authorizer = db.relationship('User')
 
-    def __init__(self, authorizer, app, state, scope):
+    def __init__(self, authorizer, app, state, scope, context_id):
         self.client_id = app.client_id
         self.client_secret = app.client_secret
         self.access_token = str(uuid4())
@@ -330,14 +343,25 @@ class Client(db.Model):
         self.authorized = False
         self.state = state
         self.scope = scope
+        self.context_id = context_id
 
     def grant_access_token(self):
         self.expire_at = datetime.now() + timedelta(seconds=3600)
         db.session.commit()
-        return {
+        grant = {
             'access_token': self.access_token,
             'token_type': 'bearer',
             'expires_in': 3600,
             'state': self.state,
-            'scope': self.scope
+            'scope': self.scope,
         } 
+        # add content of launch context
+        ctx = Context.query.get(self.context_id)
+        launch_with = json.loads(ctx.context)
+        for resource, resource_id in launch_with.iteritems():
+            if resource in LAUNCH_RESOURCES:
+                grant[resource.lower()] = resource_id
+            else:
+                grant['resource'] = '%s/%s'% (resource, resource_id)
+        print '+++++++++++', grant
+        return grant
