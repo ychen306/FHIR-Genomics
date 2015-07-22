@@ -6,16 +6,16 @@ from fhir_spec import RESOURCES
 from query_builder import InvalidQuery
 from models import Access, Session, Client, commit_buffers
 import ttam
-from urlparse import urljoin
+import util
 from functools import partial, wraps
 from datetime import datetime
 import re
 
-API_URL_PREFIX = 'api'
 api = Blueprint('api', __name__)
 
 
 AUTH_HEADER_RE = re.compile(r'Bearer (?P<access_token>.+)')
+
 
 def verify_access(request, resource_type, access_type):
     '''
@@ -86,7 +86,7 @@ def handle_resource(resource_type):
     if resource_type not in RESOURCES:
         return fhir_error.inform_not_found()
 
-    g.api_base = request.api_base = urljoin(request.url_root, API_URL_PREFIX) + '/'
+    g.api_base = request.api_base = util.get_api_base() 
     fhir_request = fhir_api.FHIRRequest(request)
 
     if request.method == 'GET':
@@ -101,7 +101,7 @@ def handle_resources(resource_type, resource_id):
     if resource_type not in RESOURCES:
         return fhir_error.inform_not_found()
 
-    request.api_base = urljoin(request.url_root, API_URL_PREFIX) + '/'
+    request.api_base = get_api_base() 
     fhir_request = fhir_api.FHIRRequest(request, is_resource=False)
 
     if request.method == 'GET':
@@ -127,7 +127,7 @@ def read_history(resource_type, resource_id, version):
     if resource_type is not None and resource_type not in RESOURCES:
         return fhir_error.inform_not_found()
 
-    request.api_base = urljoin(request.url_root, API_URL_PREFIX) + '/'
+    request.api_base = get_api_base() 
     fhir_request = fhir_api.FHIRRequest(request)
     return fhir_api.handle_history(fhir_request, resource_type, resource_id, version)
 

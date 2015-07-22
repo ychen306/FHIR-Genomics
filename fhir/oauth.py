@@ -165,11 +165,11 @@ def create_context():
         resource_types = [scope.rsplit('/', 1)[1]
                 for scope in requested_scope
                 if scope.startswith('launch/')]
-        resources = Resource\
-                .query\
+        resources = (Resource
+                .query
                 .filter(Resource.owner_id==request.session.user_id,
-                        Resource.resource_type.in_(resource_types))\
-                                .all()
+                    Resource.resource_type.in_(resource_types))
+                .all())
         resources_by_types = {}
         for res in resources:
             content = json.loads(res.data)
@@ -197,9 +197,7 @@ def create_context():
     auth_req_args['scope'] = ' '.join(scope)
     return redirect('%s?%s'% (
         url_for('auth.authorize'),
-        urlencode(auth_req_args)))
-
-    
+        urlencode(auth_req_args))) 
 
 
 @oauth.before_request

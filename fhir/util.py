@@ -1,6 +1,7 @@
-from flask import Response
+from flask import Response, request
 from lxml import etree
 from functools import partial
+from urlparse import urljoin
 import json
 import uuid
 import hashlib
@@ -130,3 +131,6 @@ def hash_password(password, salt=None):
         salt = uuid.uuid4().hex
     hashed = hashlib.sha512(password + salt).hexdigest()
     return hashed, salt
+
+def get_api_base():
+    return urljoin(request.url_root, 'api') + '/' 

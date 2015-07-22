@@ -17,6 +17,11 @@
   {% if app.client_secret %}
   <p><b>Client Secret:</b> {{ app.client_secret }}</p>
   {% endif %}
+  <label>
+    <a href="/launch/{{ app.client_id }}" class="btn btn-default">
+      <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Launch
+    </a>
+  </label>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
 </form>
 {% else %}

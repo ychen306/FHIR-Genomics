@@ -4,13 +4,14 @@ Blueprint taking care of dev registerring and basic app dashboard
 from flask.blueprints import Blueprint
 from flask import request, render_template, redirect, Response, url_for
 from urllib import urlencode
-from util import hash_password
-from ttam.models import TTAMClient
+import json
 import uuid
-from models import db, User, Session, Resource, Access, Client, SearchParam, App
-from fhir_spec import RESOURCES
 from functools import wraps
 from urllib import urlencode
+from util import hash_password, get_api_base
+from ttam.models import TTAMClient
+from models import db, User, Session, Resource, Access, Client, SearchParam, App, Context
+from fhir_spec import RESOURCES
 
 ui = Blueprint('ui', __name__)
 
@@ -220,19 +221,63 @@ def update_app(client_id):
     '''
     # make sure the user owns the app
     user = request.session.user
-    app = App.query\
-            .filter_by(user_id=user.email, client_id=client_id)\
-            .first()
+    app = (App.query
+            .filter_by(user_id=user.email, client_id=client_id)
+            .first())
     if app is None:
         return NOT_FOUND
 
     if request.method == 'GET':
         return render_template('update_app.html', app=app)
     else:
-        print app.client_secret
         app.redirect_uri = request.form['redirect_uri']
         app.launch_uri = request.form['launch_uri']
         app.name = request.form['appname']
         db.session.add(app)
         db.session.commit()
         return redirect(url_for('ui.update_app', client_id=app.client_id))
+
+
+@ui.route('/launch/<client_id>', methods=['GET', 'POST'])
+@require_login
+def launch_app(client_id):
+    # TODO refactor this. No DRY!!!
+    user = request.session.user
+    app = (App.query
+            .filter_by(user_id=user.email, client_id=client_id)
+            .first())
+    if app is None:
+        return NOT_FOUND 
+    if request.method == 'GET':
+        # prompt user to select a patient to launch
+        # TODO make this more readable
+        patients = [{'id': pt.resource_id, 'desc': json.loads(pt.data).get('text', {}).get('div', 'No description available')}
+                for pt in Resource
+                .query
+                .filter_by(
+                    owner_id=user.email,
+                    resource_type='Patient')
+                .all()]
+        if len(patients) > 0:
+            return render_template(
+                    'launch_context.html',
+                    cont_url=request.url,
+                    resources=json.dumps({'Patient': patients}))
+        else:
+            selected_pt = None
+    else:
+        selected_pt = request.form['Patient']
+
+    ctx = Context()
+    if selected_pt is not None:
+        ctx.context = json.dumps({'Patient': selected_pt})
+    db.session.add(ctx)
+    db.session.commit()
+    # launch!
+    launch_args = {
+        'launch': ctx.id,
+        'iss': get_api_base()
+    }
+    return redirect('%s?%s'% (
+        app.launch_uri,
+        urlencode(launch_args)))

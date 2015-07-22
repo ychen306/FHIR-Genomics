@@ -363,5 +363,4 @@ class Client(db.Model):
                 grant[resource.lower()] = resource_id
             else:
                 grant['resource'] = '%s/%s'% (resource, resource_id)
-        print '+++++++++++', grant
         return grant
