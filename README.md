@@ -1,5 +1,8 @@
 Reference API server of SMART Genomics
 
+## Note
+URL for `assessedCondition` in `GeneticObservation` is `http://genomics.smartplatforms.org/dictionary/GeneticObservation#AssessedCondition`. If the URL doesn't match this, the server can't index the resource properly and won't be able to respond to search with parameter `assesed-condition`.
+
 ## How to use it
 1. Install dependency with
 
