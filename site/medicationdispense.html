@@ -1,0 +1,331 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>MedicationDispense - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><b>MedicationDispense</b></li>          <!-- medicationdispense.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="medicationdispense-examples.html">Examples</a></li><li><a href="medicationdispense-definitions.html">Formal Definitions</a></li><li><a href="medicationdispense-mappings.html">Mappings</a></li><li><a href="medicationdispense-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">4.11<a name="4.11"> </a></span> Resource MedicationDispense - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">4.11.1<a name="4.11.1"> </a></span> Scope and Usage</h2>
+<p>
+This resource covers the supply of all medications to a patient.  Examples include dispensing and pick-up from an out-patient pharmacy, 
+dispensing patient-specific medications from in-patient pharmacy to ward as well as issuing a single dose from ward stock to a patient for consumption.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">4.11.2<a name="4.11.2"> </a></span> Boundaries and Relationships</h2>
+<p>
+<b>The Medication domain includes a number of related resources</b>
+</p>
+<table frame="box" cellpadding="1" border="1" cellspacing="2">
+    <tr>
+        <td><a href="medicationprescription.html">MedicationPrescription</a></td>
+        <td>An order for both supply of the medication and the instructions for administration of the medicine to a patient.</td>
+    </tr>
+    <tr>
+        <td>MedicationDispense</td>
+        <td>Provision of a supply of a medication with the intention that it is subsequently consumed by a patient (usually in response to a prescription).  </td>
+    </tr>
+    <tr>
+        <td><a href="medicationadministration.html">MedicationAdministration</a></td>
+        <td>When a patient actually consumes a medicine, or it is otherwise administered to them</td>
+    </tr>
+    <tr>
+        <td><a href="medicationstatement.html">MedicationStatement</a></td>
+        <td>This is a record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient, or another clinician. 
+          A medication statement is not a part of the prescribe-&gt;dispense-&gt;administer sequence but is a report that such a sequence (or at least a part of it) did take place resulting in a belief that the patient has received a particular medication.
+        </td>
+    </tr>
+</table>
+<p>
+This resource does not deal with the supply or transfer of non-medication related items to a patient.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">4.11.3<a name="4.11.3"> </a></span> Background and Context</h2>
+<p>    
+    The supply and the associated administration instructions may not exactly follow the original order (prescription) either because some details were left for completion at this point in the process, or because the dispenser exercised their clinical judgment to make some appropriate modification.
+</p>
+</div>
+    
+
+<a name="resource"/>
+<h2><span class="sectioncount">4.11.4<a name="4.11.4"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="378.0" width="954.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="106.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="260.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="260.0" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="130.0">MedicationDispense<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="6.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.identifier"><title>Identifier assigned by the dispensing facility - this is an identifier assigned outside FHIR (this element modifies the meaning of other elements)</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..1</text><text fill="black" class="diagram-class-detail" y="56.0" x="6.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.status"><title>A code specifying the state of the set of dispense events (this element modifies the meaning of other elements)</title>status</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="medication-dispense-status.html"><title>A code specifying the state of the dispense event.</title>MedicationDispenseStatus</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="70.0" x="6.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.patient"><title>A link to a resource representing the person to whom the medication will be given</title>patient</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="84.0" x="6.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispenser"><title>The individual responsible for dispensing the medication</title>dispenser</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="6.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.authorizingPrescription"><title>Indicates the medication order that is being dispensed against</title>authorizingPrescription</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="medicationprescription.html#MedicationPrescription">MedicationPrescription</a>) 0..*</text><rect height="162.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="224.0" filter="url(#shadow)" rx="4" y="186.0" ry="4" x="18.0"/><line style="stroke:dimgrey;stroke-width:1" y1="214.0" y2="214.0" x2="242.0" x1="18.0"/><text fill="black" class="diagram-class-title" y="206.0" x="130.0">Dispense</text><text fill="black" class="diagram-class-detail" y="228.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.identifier"><title>Identifier assigned by the dispensing facility.   This is an identifier assigned outside FHIR</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..1</text><text fill="black" class="diagram-class-detail" y="242.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.status"><title>A code specifying the state of the dispense event (this element modifies the meaning of other elements)</title>status</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="medication-dispense-status.html"><title>A code specifying the state of the dispense event.</title>MedicationDispenseStatus</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="256.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.type"><title>Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc</title>type</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="v3/vs/ActPharmacySupplyType/index.html"><title>Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.</title>MedicationDispenseType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="270.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.quantity"><title>The amount of medication that has been dispensed. Includes unit of measure</title>quantity</a> : <a xlink:href="datatypes.html#Quantity">Quantity</a> 0..1</text><text fill="black" class="diagram-class-detail" y="284.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.medication"><title>Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications</title>medication</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="medication.html#Medication">Medication</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="298.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.whenPrepared"><title>The time when the dispensed product was packaged and reviewed</title>whenPrepared</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="312.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.whenHandedOver"><title>The time the dispensed product was provided to the patient or their representative</title>whenHandedOver</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="326.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.destination"><title>Identification of the facility/location where the medication was shipped to, as part of the dispense event</title>destination</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="location.html#Location">Location</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="340.0" x="24.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.receiver"><title>Identifies the person who picked up the medication.  This will usually be a patient or their carer, but some cases exist where it can be a healthcare professional</title>receiver</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>|<a xlink:href="practitioner.html#Practitioner">Practitioner</a>) 0..*</text><rect height="162.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="292.0" filter="url(#shadow)" rx="4" y="186.0" ry="4" x="362.0"/><line style="stroke:dimgrey;stroke-width:1" y1="214.0" y2="214.0" x2="654.0" x1="362.0"/><text fill="black" class="diagram-class-title" y="206.0" x="508.0">Dosage</text><text fill="black" class="diagram-class-detail" y="228.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.additionalInstructions"><title>Additional instructions such as &quot;Swallow with plenty of water&quot; which may or may not be coded</title>additionalInstructions</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1</text><text fill="black" class="diagram-class-detail" y="242.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.timing_x_"><title>The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;</title>timing[x]</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a>|<a xlink:href="datatypes.html#Period">Period</a>|<a xlink:href="datatypes.html#Schedule">Schedule</a> 0..1</text><text fill="black" class="diagram-class-detail" y="256.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.asNeeded_x_"><title>If set to true or if specified as a CodeableConcept, indicates that the medication is only taken when needed within the specified schedule rather than at every scheduled dose.  If a CodeableConcept is present, it indicates the pre-condition for taking the Medication</title>asNeeded[x]</a> : <a xlink:href="datatypes.html#boolean">boolean</a>|<a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1</text><text fill="black" class="diagram-class-detail" y="270.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.site"><title>A coded specification of the anatomic site where the medication first enters the body</title>site</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-approach-site-codes.html"><title>A coded concept describing the site location the medicine enters into or onto the body</title>MedicationAdministrationSite</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="284.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.route"><title>A code specifying the route or physiological path of administration of a therapeutic agent into or onto a subject</title>route</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-route-codes.html"><title>A coded concept describing the route or physiological path of administration of a therapeutic agent into or onto the body of a subject.</title>RouteOfAdministration</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="298.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.method"><title>A coded value indicating the method by which the medication is introduced into or onto the body. Most commonly used for injections.  Examples:  Slow Push; Deep IV.
+
+Terminologies used often pre-coordinate this term with the route and or form of administration</title>method</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-administration-method-codes.html"><title>A coded concept describing the technique by which the medicine is administered</title>MedicationAdministrationMethod</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="312.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.quantity"><title>The amount of therapeutic or other substance given at one administration event</title>quantity</a> : <a xlink:href="datatypes.html#Quantity">Quantity</a> 0..1</text><text fill="black" class="diagram-class-detail" y="326.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.rate"><title>Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours</title>rate</a> : <a xlink:href="datatypes.html#Ratio">Ratio</a> 0..1</text><text fill="black" class="diagram-class-detail" y="340.0" x="368.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.maxDosePerPeriod"><title>The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time,  e.g. 1000mg in 24 hours</title>maxDosePerPeriod</a> : <a xlink:href="datatypes.html#Ratio">Ratio</a> 0..1</text><rect height="78.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="288.0" filter="url(#shadow)" rx="4" y="14.0" ry="4" x="380.0"/><line style="stroke:dimgrey;stroke-width:1" y1="42.0" y2="42.0" x2="668.0" x1="380.0"/><text fill="black" class="diagram-class-title" y="34.0" x="524.0">Substitution</text><text fill="black" class="diagram-class-detail" y="56.0" x="386.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.substitution.type"><title>A code signifying whether a different drug was dispensed from what was prescribed</title>type</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 1..1 &lt;&lt;<a xlink:href="v3/vs/ActSubstanceAdminSubstitutionCode/index.html"><title>A coded concept describing whether a different medicinal product may be dispensed other than the product as specified exactly in the prescription</title>MedicationIntendedSubstitutionType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="70.0" x="386.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.substitution.reason"><title>Indicates the reason for the substitution of (or lack of substitution) from what was prescribed</title>reason</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..* &lt;&lt;<a xlink:href="v3/vs/SubstanceAdminSubstitutionReason/index.html"><title>A coded concept describing the reason that a different medication should (or should not) be substituted from what was prescribed.</title>MedicationIntendedSubstitutionReason</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="84.0" x="386.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.substitution.responsibleParty"><title>The person or organization that has primary responsibility for the substitution</title>responsibleParty</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>) 0..*</text><line style="stroke:navy;stroke-width:1" y1="267.0" y2="267.0" x2="362.0" x1="242.0"/><polygon transform="rotate(0.0 242.0 267.0)" style="fill:navy;stroke:navy;stroke-width:1" points="242.0,267.0 248.0,271.0 254.0,267.0 248.0,263.0 242.0,267.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="24.0" y="260.0" x="290.0"/><text fill="black" class="diagram-class-linkage" y="270.0" x="302.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage"><title>Indicates how the medication is to be used by the patient</title>dosage</a></text><text fill="black" class="diagram-class-linkage" y="263.0" x="342.0">0..*</text><line style="stroke:navy;stroke-width:1" y1="106.0" y2="186.0" x2="130.0" x1="130.0"/><polygon transform="rotate(90.0 130.0 106.0)" style="fill:navy;stroke:navy;stroke-width:1" points="130.0,106.0 136.0,110.0 142.0,106.0 136.0,102.0 130.0,106.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="32.0" y="139.0" x="114.0"/><text fill="black" class="diagram-class-linkage" y="149.0" x="130.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.dispense"><title>Indicates the details of the dispense event such as the days supply and quantity of medication dispensed</title>dispense</a></text><text fill="black" class="diagram-class-linkage" y="182.0" x="130.0">0..*</text><line style="stroke:navy;stroke-width:1" y1="53.0" y2="53.0" x2="380.0" x1="260.0"/><polygon transform="rotate(0.0 260.0 53.0)" style="fill:navy;stroke:navy;stroke-width:1" points="260.0,53.0 266.0,57.0 272.0,53.0 266.0,49.0 260.0,53.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="48.0" y="46.0" x="296.0"/><text fill="black" class="diagram-class-linkage" y="56.0" x="320.0"><a xlink:href="medicationdispense-definitions.html#MedicationDispense.substitution"><title>Indicates whether or not substitution was made as part of the dispense.  In some cases substitution will be expected but doesn't happen, in other cases substitution is not expected but does happen.  This block explains what substitition did or did not happen and why</title>substitution</a></text><text fill="black" class="diagram-class-linkage" y="49.0" x="360.0">0..1</text></svg>
+<p>This resource is referenced by <a href="procedure.html">[Procedure]</a></p>
+
+
+<a name="def"> </a>
+<a name="medicationdispense"> </a>
+<a name="MedicationDispense"> </a>
+<pre class="spec">
+&lt;<a title="Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication." class="dict" href="medicationdispense-definitions.html#MedicationDispense"><b>MedicationDispense</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifier assigned by the dispensing facility - this is an identifier assigned outside FHIR (this element modifies the meaning of other elements)" class="dict" href="medicationdispense-definitions.html#MedicationDispense.identifier"><span style="text-decoration: underline"><b>identifier</b></span></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External identifier</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="A code specifying the state of the set of dispense events (this element modifies the meaning of other elements)" class="dict" href="medicationdispense-definitions.html#MedicationDispense.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="medication-dispense-status.html">in progress | on hold | completed | entered in error | stopped</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A link to a resource representing the person to whom the medication will be given." class="dict" href="medicationdispense-definitions.html#MedicationDispense.patient"><b>patient</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who the dispense is for</span><span style="color: Gray"> --&gt;</span>&lt;/patient&gt;
+ &lt;<a title="The individual responsible for dispensing the medication." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispenser"><b>dispenser</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">
+     Practitioner responsible for dispensing medication</span><span style="color: Gray"> --&gt;</span>&lt;/dispenser&gt;
+ &lt;<a title="Indicates the medication order that is being dispensed against." class="dict" href="medicationdispense-definitions.html#MedicationDispense.authorizingPrescription"><b>authorizingPrescription</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="medicationprescription.html#MedicationPrescription">MedicationPrescription</a>)</span> <span style="color: navy">
+     Medication order that authorizes the dispense</span><span style="color: Gray"> --&gt;</span>&lt;/authorizingPrescription&gt;
+ &lt;<a title="Indicates the details of the dispense event such as the days supply and quantity of medication dispensed." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense"><b>dispense</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Details for individual dispensed medicationdetails --&gt;</span>
+  &lt;<a title="Identifier assigned by the dispensing facility.   This is an identifier assigned outside FHIR." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External identifier for individual item</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+  &lt;<a title="A code specifying the state of the dispense event (this element modifies the meaning of other elements)" class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="medication-dispense-status.html">in progress | on hold | completed | entered in error | stopped</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="v3/vs/ActPharmacySupplyType/index.html">Trial fill, partial fill, emergency fill, etc.</a><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="The amount of medication that has been dispensed. Includes unit of measure." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.quantity"><b>quantity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Quantity">Quantity</a></span> <span style="color: navy">Amount dispensed</span><span style="color: Gray"> --&gt;</span>&lt;/quantity&gt;
+  &lt;<a title="Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.medication"><b>medication</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="medication.html#Medication">Medication</a>)</span> <span style="color: navy">What medication was supplied</span><span style="color: Gray"> --&gt;</span>&lt;/medication&gt;
+  &lt;<a title="The time when the dispensed product was packaged and reviewed." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.whenPrepared"><b>whenPrepared</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Dispense processing time</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The time the dispensed product was provided to the patient or their representative." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.whenHandedOver"><b>whenHandedOver</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Handover time</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Identification of the facility/location where the medication was shipped to, as part of the dispense event." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.destination"><b>destination</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">Where the medication was sent</span><span style="color: Gray"> --&gt;</span>&lt;/destination&gt;
+  &lt;<a title="Identifies the person who picked up the medication.  This will usually be a patient or their carer, but some cases exist where it can be a healthcare professional." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.receiver"><b>receiver</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>|<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">Who collected the medication</span><span style="color: Gray"> --&gt;</span>&lt;/receiver&gt;
+  &lt;<a title="Indicates how the medication is to be used by the patient." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage"><b>dosage</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Medicine administration instructions to the patient/carer --&gt;</span>
+   &lt;<a title="Additional instructions such as &quot;Swallow with plenty of water&quot; which may or may not be coded." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.additionalInstructions"><b>additionalInstructions</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">E.g. &quot;Take with food&quot;</span><span style="color: Gray"> --&gt;</span>&lt;/additionalInstructions&gt;
+   &lt;<a title="The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.timing_x_"><b>timing[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a>|<a href="datatypes.html#Period">Period</a>|<a href="datatypes.html#Schedule">Schedule</a></span> <span style="color: navy">When medication should be administered</span><span style="color: Gray"> --&gt;</span>&lt;/timing[x]&gt;
+   &lt;<a title="If set to true or if specified as a CodeableConcept, indicates that the medication is only taken when needed within the specified schedule rather than at every scheduled dose.  If a CodeableConcept is present, it indicates the pre-condition for taking the Medication." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.asNeeded_x_"><b>asNeeded[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a>|<a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Take &quot;as needed&quot; f(or x)</span><span style="color: Gray"> --&gt;</span>&lt;/asNeeded[x]&gt;
+   &lt;<a title="A coded specification of the anatomic site where the medication first enters the body." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.site"><b>site</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-approach-site-codes.html">Body site to administer to</a></span><span style="color: Gray"> --&gt;</span>&lt;/site&gt;
+   &lt;<a title="A code specifying the route or physiological path of administration of a therapeutic agent into or onto a subject." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.route"><b>route</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-route-codes.html">How drug should enter body</a></span><span style="color: Gray"> --&gt;</span>&lt;/route&gt;
+   &lt;<a title="A coded value indicating the method by which the medication is introduced into or onto the body. Most commonly used for injections.  Examples:  Slow Push; Deep IV.
+
+Terminologies used often pre-coordinate this term with the route and or form of administration." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.method"><b>method</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-administration-method-codes.html">Technique for administering medication</a></span><span style="color: Gray"> --&gt;</span>&lt;/method&gt;
+   &lt;<a title="The amount of therapeutic or other substance given at one administration event." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.quantity"><b>quantity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Quantity">Quantity</a></span> <span style="color: navy">Amount of medication per dose</span><span style="color: Gray"> --&gt;</span>&lt;/quantity&gt;
+   &lt;<a title="Identifies the speed with which the substance is introduced into the subject. Typically the rate for an infusion. 200ml in 2 hours." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.rate"><b>rate</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Ratio">Ratio</a></span> <span style="color: navy">Amount of medication per unit of time</span><span style="color: Gray"> --&gt;</span>&lt;/rate&gt;
+   &lt;<a title="The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time,  e.g. 1000mg in 24 hours." class="dict" href="medicationdispense-definitions.html#MedicationDispense.dispense.dosage.maxDosePerPeriod"><b>maxDosePerPeriod</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Ratio">Ratio</a></span> <span style="color: navy">Upper limit on medication per unit of time</span><span style="color: Gray"> --&gt;</span>&lt;/maxDosePerPeriod&gt;
+  &lt;/dosage&gt;
+ &lt;/dispense&gt;
+ &lt;<a title="Indicates whether or not substitution was made as part of the dispense.  In some cases substitution will be expected but doesn't happen, in other cases substitution is not expected but does happen.  This block explains what substitition did or did not happen and why." class="dict" href="medicationdispense-definitions.html#MedicationDispense.substitution"><b>substitution</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Deals with substitution of one medicine for another --&gt;</span>
+  &lt;<a title="A code signifying whether a different drug was dispensed from what was prescribed." class="dict" href="medicationdispense-definitions.html#MedicationDispense.substitution.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="v3/vs/ActSubstanceAdminSubstitutionCode/index.html">Type of substitiution</a><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="Indicates the reason for the substitution of (or lack of substitution) from what was prescribed." class="dict" href="medicationdispense-definitions.html#MedicationDispense.substitution.reason"><b>reason</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="v3/vs/SubstanceAdminSubstitutionReason/index.html">Why was substitution made</a><span style="color: Gray"> --&gt;</span>&lt;/reason&gt;
+  &lt;<a title="The person or organization that has primary responsibility for the substitution." class="dict" href="medicationdispense-definitions.html#MedicationDispense.substitution.responsibleParty"><b>responsibleParty</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">
+      Who is responsible for the substitution</span><span style="color: Gray"> --&gt;</span>&lt;/responsibleParty&gt;
+ &lt;/substitution&gt;
+&lt;/MedicationDispense&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="medicationdispense.xsd">Schema</a>/<a href="medicationdispense.sch">Schematron</a>, 
+<a href="medicationdispense.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">4.11.4.1<a name="4.11.4.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="MedicationDispenseStatus" valign="top">MedicationDispense.status<br/>MedicationDispense.dispense.status </td><td valign="top">A code specifying the state of the dispense event.</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="medication-dispense-status.html">http://hl7.org/fhir/medication-dispense-status</a></td> </tr>
+ <tr><td title="MedicationDispenseType" valign="top">MedicationDispense.dispense.type </td><td valign="top">Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="v3/vs/ActPharmacySupplyType/index.html">http://hl7.org/fhir/v3/vs/ActPharmacySupplyType</a></td> </tr>
+ <tr><td title="MedicationAsNeededReason" valign="top">MedicationDispense.dispense.dosage.asNeeded[x] </td><td valign="top">A coded concept identifying the pre-condition that should hold prior to consuming a medication dose.  For example &quot;pain&quot;, &quot;30 minutes prior to sexual intercourse&quot;, &quot;on flare-up&quot;, etc.</td><td>Unknown</td><td valign="top">No details provided yet</td> </tr>
+ <tr><td title="MedicationAdministrationSite" valign="top">MedicationDispense.dispense.dosage.site </td><td valign="top">A coded concept describing the site location the medicine enters into or onto the body</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-approach-site-codes.html">http://hl7.org/fhir/vs/approach-site-codes</a></td> </tr>
+ <tr><td title="RouteOfAdministration" valign="top">MedicationDispense.dispense.dosage.route </td><td valign="top">A coded concept describing the route or physiological path of administration of a therapeutic agent into or onto the body of a subject.</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-route-codes.html">http://hl7.org/fhir/vs/route-codes</a></td> </tr>
+ <tr><td title="MedicationAdministrationMethod" valign="top">MedicationDispense.dispense.dosage.method </td><td valign="top">A coded concept describing the technique by which the medicine is administered</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-administration-method-codes.html">http://hl7.org/fhir/vs/administration-method-codes</a></td> </tr>
+ <tr><td title="MedicationIntendedSubstitutionType" valign="top">MedicationDispense.substitution.type </td><td valign="top">A coded concept describing whether a different medicinal product may be dispensed other than the product as specified exactly in the prescription</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="v3/vs/ActSubstanceAdminSubstitutionCode/index.html">http://hl7.org/fhir/v3/vs/ActSubstanceAdminSubstitutionCode</a></td> </tr>
+ <tr><td title="MedicationIntendedSubstitutionReason" valign="top">MedicationDispense.substitution.reason </td><td valign="top">A coded concept describing the reason that a different medication should (or should not) be substituted from what was prescribed.</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="v3/vs/SubstanceAdminSubstitutionReason/index.html">http://hl7.org/fhir/v3/vs/SubstanceAdminSubstitutionReason</a></td> </tr>
+</table>
+<p> </p>
+
+
+<h3><span class="sectioncount">4.11.4.2<a name="4.11.4.2"> </a></span> Constraints</h3><ul><li><b title="Formal Invariant Identifier">Inv-1</b>: On MedicationDispense.dispense: whenHandedOver cannot be before whenPrepared (xpath on f:MedicationDispense/f:dispense: <span style="font-family: Courier New, monospace">not(exists(f:whenHandedOver/@value)) or not(exists(f:whenPrepared/@value)) or ( f:whenHandedOver/@value &gt;= f:whenPrepared/@value)</span>)</li></ul>
+
+
+  <!-- insert xhtml content here -->
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">4.11.5<a name="4.11.5"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>destination</td><td><a href="search.html#reference">reference</a></td><td>Return dispenses that should be sent to a secific destination</td><td>MedicationDispense.dispense.destination<br/>(<a href="location.html">Location</a>)</td></tr>
+<tr><td>dispenser</td><td><a href="search.html#reference">reference</a></td><td>Return all dispenses performed by a specific indiividual</td><td>MedicationDispense.dispenser<br/>(<a href="practitioner.html">Practitioner</a>)</td></tr>
+<tr><td>identifier</td><td><a href="search.html#token">token</a></td><td>Return dispenses with this external identity</td><td>MedicationDispense.identifier</td></tr>
+<tr><td>medication</td><td><a href="search.html#reference">reference</a></td><td>Returns dispenses of this medicine</td><td>MedicationDispense.dispense.medication<br/>(<a href="medication.html">Medication</a>)</td></tr>
+<tr><td>patient</td><td><a href="search.html#reference">reference</a></td><td>The identity of a patient to list dispenses  for</td><td>MedicationDispense.patient<br/>(<a href="patient.html">Patient</a>)</td></tr>
+<tr><td>prescription</td><td><a href="search.html#reference">reference</a></td><td>The identity of a prescription to list dispenses from</td><td>MedicationDispense.authorizingPrescription<br/>(<a href="medicationprescription.html">MedicationPrescription</a>)</td></tr>
+<tr><td>responsibleparty</td><td><a href="search.html#reference">reference</a></td><td>Return all dispenses with the specified responsible party</td><td>MedicationDispense.substitution.responsibleParty<br/>(<a href="practitioner.html">Practitioner</a>)</td></tr>
+<tr><td>status</td><td><a href="search.html#token">token</a></td><td>Status of the dispense</td><td>MedicationDispense.dispense.status</td></tr>
+<tr><td>type</td><td><a href="search.html#token">token</a></td><td>Return all dispenses of a specific type</td><td>MedicationDispense.dispense.type</td></tr>
+<tr><td>whenhandedover</td><td><a href="search.html#date">date</a></td><td>Date when medication handed over to patient (outpatient setting), or supplied to ward or clinic (inpatient setting)</td><td>MedicationDispense.dispense.whenHandedOver</td></tr>
+<tr><td>whenprepared</td><td><a href="search.html#date">date</a></td><td>Date when medication prepared</td><td>MedicationDispense.dispense.whenPrepared</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

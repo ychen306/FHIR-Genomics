@@ -1,0 +1,391 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Order - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="administration.html">Administrative</a></li>        <li><b>Order</b></li>          <!-- order.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="order-examples.html">Examples</a></li><li><a href="order-definitions.html">Formal Definitions</a></li><li><a href="order-mappings.html">Mappings</a></li><li><a href="order-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">5.12<a name="5.12"> </a></span> Resource Order - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+A request to perform an action. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">5.12.1<a name="5.12.1"> </a></span> Scope and Usage</h2>
+<p>
+An order resource describes a request that an action be performed. An order is 
+expected to lead to one or more <a href="orderresponse.html">responses</a> that describe 
+the outcome of processing/handling the order. The order resource is focused on
+the process of actually requesting an action be performed; the actual action to 
+be performed  is detailed in a separate resource that contains the details. 
+Note that orders are often called &quot;requests&quot;, but this name is not used here 
+since the word &quot;request&quot; is used differently elsewhere in this specification.
+</p>
+<p>
+Note that there are a variety of processes associated with making and processing 
+orders. Some orders may be handled immediately by automated systems but most require 
+real world actions by one or more humans. Some orders can only be processed when other real 
+world actions happen, such as a patient actually presenting themselves so that 
+the action to be performed can actually be performed. Often these real world dependencies are only 
+implicit in the order details. 
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">5.12.2<a name="5.12.2"> </a></span> Background and Context</h2>
+<h3><span class="sectioncount">5.12.2.1<a name="5.12.2.1"> </a></span> Separation of Order and Order details</h3>
+<p>
+In healthcare, information that a particular action has been requested is often widely 
+disseminated throughout the context of a patient's healthcare. For example, the patient's
+healthcare record will often include a list of prescriptions that have been made for 
+the patient. For this reason, the presence of a prescription record itself is not 
+enough to create an obligation for a dispense to occur. Most other things that can be
+ordered follow this same pattern. 
+</p>
+
+<p>
+For this reason, the information about what is requested is separated from the 
+actual request for an action to be taken. The various workflows around the
+actual order/fulfillment process are associated with this resource and the 
+<a href="orderresponse.html">Order Response</a> resource, while the details
+of what is actually ordered are delegated to other resources.
+</p>
+
+<h3><span class="sectioncount">5.12.2.2<a name="5.12.2.2"> </a></span> Using Orders in a RESTful context</h3>
+
+<p>In a RESTful context, a server functions as a repository of requests. When the 
+server accepts the order, it has only stored the order; there is no direct 
+response to the order. Some other process detects the existence of the order, 
+processes it, and creates one or more responses as the order is processed. 
+Usually, these responses are made available on the same server as the order, so that
+the client can monitor the result of the original order.</p>
+
+<p>A client can determine that an order has not been performed by searching for order resources
+with no matching responses (see below)</p>
+
+<h3><span class="sectioncount">5.12.2.3<a name="5.12.2.3"> </a></span> Using Orders with messaging</h3>
+
+<p>Two message event codes are defined for sending orders: synchronous and asynchronous.</p>
+
+<p>
+In a  <a href="messaging.html#synchronous">synchronous message</a>, an order message (i.e. a <a href="extras.html#bundle">bundle</a> with a
+<a href="messageheader.html">Message Header</a> resource, an order resource and a <i>detail</i> resource for the order - see below) 
+is sent to a system, and it responds with a message that includes the <a href="orderresponse.html">response</a> 
+(a Message Header resource, and Order Response resource, along with additional details as appropriate). This 
+synchronous message exchange is simple, but only useful where there only needs to be one response, and where 
+the response can be made in a timely fashion.
+</p>
+
+<p>
+For more general use, an asynchronous message event code is also defined. With this code, 
+the requesting system sends the order message, and receives a simple acknowledgement message (only 
+a message resource) that acknowledges that the order was received. Then the receiving 
+system sends one or more response messages as the order is processed. Each of these response messages
+is sent back to the originating system, which also acknowledges receipt of these messages with
+an acknowledgement message.
+</p>
+
+<h3><span class="sectioncount">5.12.2.4<a name="5.12.2.4"> </a></span> Using orders in other contexts</h3>
+
+<p>
+There are a wide variety of ways to implement Order/Order Response. The Order and Order Response 
+resources are special resources created to manage behavior in a RESTful or messaging context. 
+In other contexts, such as a Service based environment, there may be alternate methods for 
+managing this behavior that are more appropriate, and there is no need to use Order/Order Response
+in these contexts.
+</p>
+</div>
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">5.12.3<a name="5.12.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="172.0" width="700.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="162.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="192.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="192.0" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="96.0">Order<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="6.0"><a xlink:href="order-definitions.html#Order.identifier"><title>Identifiers assigned to this order by the orderer or by the receiver</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..*</text><text fill="black" class="diagram-class-detail" y="56.0" x="6.0"><a xlink:href="order-definitions.html#Order.date"><title>When the order was made</title>date</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="70.0" x="6.0"><a xlink:href="order-definitions.html#Order.subject"><title>Patient this order is about</title>subject</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="84.0" x="6.0"><a xlink:href="order-definitions.html#Order.source"><title>Who initiated the order</title>source</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="6.0"><a xlink:href="order-definitions.html#Order.target"><title>Who is intended to fulfill the order</title>target</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="organization.html#Organization">Organization</a>|<a xlink:href="device.html#Device">Device</a>|</text><text fill="black" class="diagram-class-detail" y="112.0" x="26.0">     <a xlink:href="practitioner.html#Practitioner">Practitioner</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="126.0" x="6.0"><a xlink:href="order-definitions.html#Order.reason_x_"><title>Text - why the order was made</title>reason[x]</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a>|<a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="140.0" x="6.0"><a xlink:href="order-definitions.html#Order.authority"><title>If required by policy</title>authority</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="154.0" x="6.0"><a xlink:href="order-definitions.html#Order.detail"><title>What action is being ordered</title>detail</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 1..*</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="188.0" filter="url(#shadow)" rx="4" y="49.0" ry="4" x="312.0"/><line style="stroke:dimgrey;stroke-width:1" y1="77.0" y2="77.0" x2="500.0" x1="312.0"/><text fill="black" class="diagram-class-title" y="69.0" x="406.0">When</text><text fill="black" class="diagram-class-detail" y="91.0" x="318.0"><a xlink:href="order-definitions.html#Order.when.code"><title>Code specifies when request should be done. The code may simply be a priority code</title>code</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1</text><text fill="black" class="diagram-class-detail" y="105.0" x="318.0"><a xlink:href="order-definitions.html#Order.when.schedule"><title>A formal schedule</title>schedule</a> : <a xlink:href="datatypes.html#Schedule">Schedule</a> 0..1</text><line style="stroke:navy;stroke-width:1" y1="81.0" y2="81.0" x2="312.0" x1="192.0"/><polygon transform="rotate(0.0 192.0 81.0)" style="fill:navy;stroke:navy;stroke-width:1" points="192.0,81.0 198.0,85.0 204.0,81.0 198.0,77.0 192.0,81.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="16.0" y="74.0" x="244.0"/><text fill="black" class="diagram-class-linkage" y="84.0" x="252.0"><a xlink:href="order-definitions.html#Order.when"><title>When order should be fulfilled</title>when</a></text><text fill="black" class="diagram-class-linkage" y="77.0" x="292.0">0..1</text></svg>
+<p>This resource is referenced by <a href="orderresponse.html">[OrderResponse]</a></p>
+
+
+<a name="def"> </a>
+<a name="order"> </a>
+<a name="Order"> </a>
+<pre class="spec">
+&lt;<a title="A request to perform an action." class="dict" href="order-definitions.html#Order"><b>Order</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifiers assigned to this order by the orderer or by the receiver." class="dict" href="order-definitions.html#Order.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">
+     Identifiers assigned to this order by the orderer or by the receiver</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="When the order was made." class="dict" href="order-definitions.html#Order.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the order was made</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Patient this order is about." class="dict" href="order-definitions.html#Order.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Patient this order is about</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="Who initiated the order." class="dict" href="order-definitions.html#Order.source"><b>source</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">Who initiated the order</span><span style="color: Gray"> --&gt;</span>&lt;/source&gt;
+ &lt;<a title="Who is intended to fulfill the order." class="dict" href="order-definitions.html#Order.target"><b>target</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>|<a href="device.html#Device">Device</a>|<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">
+     Who is intended to fulfill the order</span><span style="color: Gray"> --&gt;</span>&lt;/target&gt;
+ &lt;<a title="Text - why the order was made." class="dict" href="order-definitions.html#Order.reason_x_"><b>reason[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a>|<a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Text - why the order was made</span><span style="color: Gray"> --&gt;</span>&lt;/reason[x]&gt;
+ &lt;<a title="If required by policy." class="dict" href="order-definitions.html#Order.authority"><b>authority</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">If required by policy</span><span style="color: Gray"> --&gt;</span>&lt;/authority&gt;
+ &lt;<a title="When order should be fulfilled." class="dict" href="order-definitions.html#Order.when"><b>when</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> When order should be fulfilled --&gt;</span>
+  &lt;<a title="Code specifies when request should be done. The code may simply be a priority code." class="dict" href="order-definitions.html#Order.when.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Provide a code or a schedule, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">
+      Code specifies when request should be done. The code may simply be a priority code</span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+  &lt;<a title="A formal schedule." class="dict" href="order-definitions.html#Order.when.schedule"><b>schedule</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Provide a code or a schedule, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Schedule">Schedule</a></span> <span style="color: navy">A formal schedule</span><span style="color: Gray"> --&gt;</span>&lt;/schedule&gt;
+ &lt;/when&gt;
+ &lt;<a title="What action is being ordered." class="dict" href="order-definitions.html#Order.detail"><b>detail</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">What action is being ordered</span><span style="color: Gray"> --&gt;</span>&lt;/detail&gt;
+&lt;/Order&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="order.xsd">Schema</a>/<a href="order.sch">Schematron</a>, 
+<a href="order.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">5.12.3.1<a name="5.12.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="RequestedTime" valign="top">Order.when.code </td><td valign="top">When a requested action should be performed.  E.g. STAT, daily, evenings, etc.</td><td>Unknown</td><td valign="top">No details provided yet</td> </tr>
+</table>
+<p> </p>
+
+
+<h3><span class="sectioncount">5.12.3.2<a name="5.12.3.2"> </a></span> Constraints</h3><ul><li><b title="Formal Invariant Identifier">Inv-1</b>: On Order.when: Provide a code or a schedule, but not both (xpath on f:Order/f:when: <span style="font-family: Courier New, monospace">exists(f:code) != exists(f:schedule)</span>)</li></ul>
+
+
+<h2><span class="sectioncount">5.12.4<a name="5.12.4"> </a></span> Processing Order Details</h2>
+
+<p>
+Each request includes one or more <i>detail</i> elements that specify what is being ordered.
+The following kinds of orders have been defined:
+</p>
+<table class="grid">
+  <tr>
+    <th>Description</th>
+	<th>Order Resource</th>
+	<th>Response Resources</th>
+	<th>Notes</th>
+  </tr>
+  <tr>
+    <td>Request for Diagnostic Investigation</td>
+	<td><a href="diagnosticorder.html">DiagnosticOrder</a></td>
+	<td>0..* <a href="diagnosticreport.html">DiagnosticReport</a></td>
+	<td>Local work flow arrangements will determine whether the laboratory handles a request by waiting for a specimen, or for the patient, or by visiting the patient directly to obtain the specimen (i.e. phlebotomy ward round)</td>
+  </tr>
+  <tr>
+    <td>Order to supply a prescription</td>
+	<td><a href="medicationprescription.html">MedicationPrescription</a></td>
+	<td>0..* <a href="medicationadministration.html">MedicationAdministration</a> or <a href="medicationdispense.html">MedicationDispense</a></td>
+	<td/>
+  </tr>
+  <tr>
+    <td>Transfer of care from one practitioner to another</td>
+	<td>Referral (Resource not yet developed)</td>
+	<td>n/a</td>
+	<td/>
+  </tr>
+</table>
+
+<p>
+Note that a resource may only be used for the order details if the definition
+for the resource used in the detail explicitly defines how it is known to be something 
+requested, as opposed to (for instance) something that has happened. For some 
+resources, such as a prescription, this is defined to be always true - it is always an
+instruction/request for something to be done, while other resources may have 
+some kind of status element for this purpose. If the definition of the resource does 
+not explicitly make it clear this, then it cannot be the target of an order (e.g.
+you cannot order a diagnostic report, for example - you have to order a diagnostic 
+order instead).
+</p>
+
+
+<a name="dstu"> </a>
+<blockquote>
+<p>
+DSTU note: This list is only a start - the full list of what can be ordered much longer, and yet to be described. 
+Implementers should expect this list to grow in subsequent versions, and feedback is welcome from implementers 
+who use the Order resource for other kinds of orders.
+</p>
+</blockquote>
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">5.12.5<a name="5.12.5"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>authority</td><td><a href="search.html#reference">reference</a></td><td>If required by policy</td><td>Order.authority<br/>(Any)</td></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>When the order was made</td><td>Order.date</td></tr>
+<tr><td>detail</td><td><a href="search.html#reference">reference</a></td><td>What action is being ordered</td><td>Order.detail<br/>(Any)</td></tr>
+<tr><td>source</td><td><a href="search.html#reference">reference</a></td><td>Who initiated the order</td><td>Order.source<br/>(<a href="practitioner.html">Practitioner</a>)</td></tr>
+<tr><td>subject</td><td><a href="search.html#reference">reference</a></td><td>Patient this order is about</td><td>Order.subject<br/>(<a href="patient.html">Patient</a>)</td></tr>
+<tr><td>target</td><td><a href="search.html#reference">reference</a></td><td>Who is intended to fulfill the order</td><td>Order.target<br/>(<a href="device.html">Device</a>, <a href="organization.html">Organization</a>, <a href="practitioner.html">Practitioner</a>)</td></tr>
+<tr><td>when</td><td><a href="search.html#date">date</a></td><td>A formal schedule</td><td>Order.when.schedule</td></tr>
+<tr><td>when_code</td><td><a href="search.html#token">token</a></td><td>Code specifies when request should be done. The code may simply be a priority code</td><td>Order.when.code</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

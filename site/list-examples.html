@@ -1,0 +1,492 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Resource List - Examples - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><a href="list.html">List</a></li>        <li><b>Examples</b></li>          <!-- list.html / res-Examples -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li><a href="list.html">Content</a></li><li class="active"><a href="#">Examples</a></li><li><a href="list-definitions.html">Formal Definitions</a></li><li><a href="list-mappings.html">Mappings</a></li><li><a href="list-profiles.html">Profiles</a></li></ul>
+
+<h2><span class="sectioncount">6.1.8<a name="6.1.8"> </a></span> Resource List - Examples</h2>
+
+
+  <!-- content goes here -->
+
+
+
+<p>Example Index:</p>
+<table class="list">
+<tr><td><a href="list-example.html">General List Example</a></td><td><a href="list-example.xml.html">XML</a></td><td><a href="list-example.json.html">JSON</a></td></tr><tr><td><a href="list-example-empty.html">Empty List Example</a></td><td><a href="list-example-empty.xml.html">XML</a></td><td><a href="list-example-empty.json.html">JSON</a></td></tr><tr><td><a href="list-example-medlist.html">Exaple Medication Change List</a></td><td><a href="list-example-medlist.xml.html">XML</a></td><td><a href="list-example-medlist.json.html">JSON</a></td></tr></table>
+
+
+<h3><span class="sectioncount">6.1.8.1<a name="6.1.8.1"> </a></span> General</h3>
+<p>XML</p>
+<div class="example">
+<p>General List Example (id = &quot;example&quot;)</p>
+<p><a href="list-example.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;List</span><span class="xmlattr"> xmlns=&quot;<span class="xmlattrvalue">http://hl7.org/fhir</span>&quot;</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">generated</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns=&quot;<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>&quot;</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;table</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;thead</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;th</span><span class="xmltag">&gt;</span><b>Condition</b><span class="xmltag">&lt;/th&gt;</span><b>
+            </b><span class="xmltag">&lt;th</span><span class="xmltag">&gt;</span><b>Severity</b><span class="xmltag">&lt;/th&gt;</span><b>
+            </b><span class="xmltag">&lt;th</span><span class="xmltag">&gt;</span><b>Date</b><span class="xmltag">&lt;/th&gt;</span><b>
+            </b><span class="xmltag">&lt;th</span><span class="xmltag">&gt;</span><b>Location</b><span class="xmltag">&lt;/th&gt;</span><b>
+            </b><span class="xmltag">&lt;th</span><span class="xmltag">&gt;</span><b>Status</b><span class="xmltag">&lt;/th&gt;</span><b>
+          </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;/thead&gt;</span><b>
+        </b><span class="xmltag">&lt;tbody</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>Burnt Ear</b><span class="xmltag">&lt;/td&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>Severe</b><span class="xmltag">&lt;/td&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>24-May 2012</b><span class="xmltag">&lt;/td&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>Left Ear</b><span class="xmltag">&lt;/td&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>deleted</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;/tr&gt;</span><b>
+          </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>Asthma</b><span class="xmltag">&lt;/td&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>Mild</b><span class="xmltag">&lt;/td&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>21-Nov 2012</b><span class="xmltag">&lt;/td&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>--</b><span class="xmltag">&lt;/td&gt;</span><b>
+            </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>added</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;/tbody&gt;</span><b>
+      </b><span class="xmltag">&lt;/table&gt;</span><b>
+    </b><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmlcomment">&lt;!--   This list doesn't have a code. In actual fact, 
+    it's a Condition list produced at the end of an encounter 
+    to a regular primary care practitioner. But the only way
+    to know this is to hunt down the place it is used 
+    and find out   --&gt;</span><b>
+  </b><span class="xmltag">&lt;source</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue"><a href="patient-example.xml.html">Patient/example</a></span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/source&gt;</span><b>
+  </b><span class="xmltag">&lt;date</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">2012-11-25T22:17:00+11:00</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;ordered</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">false</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;mode</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">changes</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;entry</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;flag</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Deleted due to error</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/flag&gt;</span><b>
+    </b><span class="xmltag">&lt;deleted</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">true</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;item</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue"><a href="condition-example.xml.html">Condition/example</a></span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/item&gt;</span><b>
+  </b><span class="xmltag">&lt;/entry&gt;</span><b>
+  </b><span class="xmltag">&lt;entry</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;flag</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Added</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/flag&gt;</span><b>
+    </b><span class="xmltag">&lt;item</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue"><a href="condition-example2.xml.html">Condition/example2</a></span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/item&gt;</span><b>
+  </b><span class="xmltag">&lt;/entry&gt;</span><b>
+</b><span class="xmltag">&lt;/List&gt;</span></pre>
+</div>
+<p>JSON</p>
+<div class="example">
+<p>General List Example</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;List&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;\n      &lt;table&gt;\n        &lt;thead&gt;\n          &lt;tr&gt;\n            &lt;th&gt;Condition&lt;/th&gt;\n            &lt;th&gt;Severity&lt;/th&gt;\n            &lt;th&gt;Date&lt;/th&gt;\n            &lt;th&gt;Location&lt;/th&gt;\n            &lt;th&gt;Status&lt;/th&gt;\n          &lt;/tr&gt;\n        &lt;/thead&gt;\n        &lt;tbody&gt;\n          &lt;tr&gt;\n            &lt;td&gt;Burnt Ear&lt;/td&gt;\n            &lt;td&gt;Severe&lt;/td&gt;\n            &lt;td&gt;24-May 2012&lt;/td&gt;\n            &lt;td&gt;Left Ear&lt;/td&gt;\n            &lt;td&gt;deleted&lt;/td&gt;\n          &lt;/tr&gt;\n          &lt;tr&gt;\n            &lt;td&gt;Asthma&lt;/td&gt;\n            &lt;td&gt;Mild&lt;/td&gt;\n            &lt;td&gt;21-Nov 2012&lt;/td&gt;\n            &lt;td&gt;--&lt;/td&gt;\n            &lt;td&gt;added&lt;/td&gt;\n          &lt;/tr&gt;\n        &lt;/tbody&gt;\n      &lt;/table&gt;\n    &lt;/div&gt;&quot;
+  },
+  &quot;source&quot;: {
+    &quot;reference&quot;: &quot;Patient/example&quot;
+  },
+  &quot;date&quot;: &quot;2012-11-25T22:17:00+11:00&quot;,
+  &quot;ordered&quot;: false,
+  &quot;mode&quot;: &quot;changes&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;flag&quot;: [
+        {
+          &quot;text&quot;: &quot;Deleted due to error&quot;
+        }
+      ],
+      &quot;deleted&quot;: true,
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Condition/example&quot;
+      }
+    },
+    {
+      &quot;flag&quot;: [
+        {
+          &quot;text&quot;: &quot;Added&quot;
+        }
+      ],
+      &quot;item&quot;: {
+        &quot;reference&quot;: &quot;Condition/example2&quot;
+      }
+    }
+  ]
+}
+</pre>
+</div>
+<h3><span class="sectioncount">6.1.8.2<a name="6.1.8.2"> </a></span> Empty List</h3>
+<p>XML</p>
+<div class="example">
+<p>Empty List Example (id = &quot;example-empty&quot;)</p>
+<p><a href="list-example-empty.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;List</span><span class="xmlattr"> xmlns=&quot;<span class="xmlattrvalue">http://hl7.org/fhir</span>&quot;</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">generated</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns=&quot;<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>&quot;</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>The patient is not on any medications</b><span class="xmltag">&lt;/p&gt;</span><b>
+    </b><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmltag">&lt;code</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://snomed.info/sct</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">182836005</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Review of medication</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/coding&gt;</span><b>
+    </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Medication Review</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/code&gt;</span><b>
+  </b><span class="xmltag">&lt;source</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue"><a href="patient-example.xml.html">Patient/example</a></span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/source&gt;</span><b>
+  </b><span class="xmltag">&lt;date</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">2012-11-26T07:30:23+11:00</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;mode</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">snapshot</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+
+  </b><span class="xmltag">&lt;emptyReason</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://hl7.org/fhir/special-values</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">nil known</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Nil Known</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/coding&gt;</span><b>
+    </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">The patient is not on any medications</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/emptyReason&gt;</span><b>
+</b><span class="xmltag">&lt;/List&gt;</span></pre>
+</div>
+<p>JSON</p>
+<div class="example">
+<p>Empty List Example</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;List&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;\n      &lt;p&gt;The patient is not on any medications&lt;/p&gt;\n    &lt;/div&gt;&quot;
+  },
+  &quot;code&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+        &quot;code&quot;: &quot;182836005&quot;,
+        &quot;display&quot;: &quot;Review of medication&quot;
+      }
+    ],
+    &quot;text&quot;: &quot;Medication Review&quot;
+  },
+  &quot;source&quot;: {
+    &quot;reference&quot;: &quot;Patient/example&quot;
+  },
+  &quot;date&quot;: &quot;2012-11-26T07:30:23+11:00&quot;,
+  &quot;mode&quot;: &quot;snapshot&quot;,
+  &quot;emptyReason&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/special-values&quot;,
+        &quot;code&quot;: &quot;nil known&quot;,
+        &quot;display&quot;: &quot;Nil Known&quot;
+      }
+    ],
+    &quot;text&quot;: &quot;The patient is not on any medications&quot;
+  }
+}
+</pre>
+</div>
+<h3><span class="sectioncount">6.1.8.3<a name="6.1.8.3"> </a></span> Med List</h3>
+<p>XML</p>
+<div class="example">
+<p>Exaple Medication Change List (id = &quot;med-list&quot;)</p>
+<p><a href="list-example-medlist.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;List</span><span class="xmlattr"> xmlns=&quot;<span class="xmlattrvalue">http://hl7.org/fhir</span>&quot;</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">generated</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns=&quot;<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>&quot;</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>The patient is not on any medications</b><span class="xmltag">&lt;/p&gt;</span><b>
+    </b><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmltag">&lt;code</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://snomed.info/sct</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">182836005</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Review of medication</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/coding&gt;</span><b>
+    </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Medication Review</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/code&gt;</span><b>
+  </b><span class="xmltag">&lt;source</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue"><a href="patient-example.xml.html">Patient/example</a></span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/source&gt;</span><b>
+  </b><span class="xmltag">&lt;date</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">2013-11-20T23:10:23+11:00</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;mode</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">changes</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmlcomment">&lt;!--   
+      in a real medications list, we'd actually have medication resources.
+      but this an example to demonstrate a changes list, so we'll just use 
+      display   --&gt;</span><b>
+  </b><span class="xmltag">&lt;entry</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmlcomment">&lt;!--   patient was prescribed hydroxocobalamin. the flag marks this 
+       as a prescription. Note that healthcare workers will now get into
+       a long debate the exact implication of &amp;quot;prescribed&amp;quot;. That's why the
+       spec doesn't fix the flag values   --&gt;</span><b>
+    </b><span class="xmltag">&lt;flag</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://nehta.gov.au/codes/medications/changetype</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">02</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Prescribed</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/coding&gt;</span><b>
+    </b><span class="xmltag">&lt;/flag&gt;</span><b>
+    </b><span class="xmltag">&lt;item</span><span class="xmltag">&gt;</span><b> 
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">hydroxocobalamin</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/item&gt;</span><b>
+  </b><span class="xmltag">&lt;/entry&gt;</span><b>  
+  </b><span class="xmlcomment">&lt;!--  
+     on this one, we record that the patient was taken off morphine sulfate.
+     because not every system knows the flags, and the ensure there's no confusion,
+     if the flag implies that something was removed from the list, then the
+     deleted element must also be set 
+    --&gt;</span><b>  
+  </b><span class="xmltag">&lt;entry</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;flag</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://nehta.gov.au/codes/medications/changetype</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">02</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Cancelled</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/coding&gt;</span><b>
+    </b><span class="xmltag">&lt;/flag&gt;</span><b>
+    </b><span class="xmltag">&lt;deleted</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">true</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;item</span><span class="xmltag">&gt;</span><b> 
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Morphine Sulfate</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/item&gt;</span><b>
+  </b><span class="xmltag">&lt;/entry&gt;</span><b>  
+</b><span class="xmltag">&lt;/List&gt;</span></pre>
+</div>
+<p>JSON</p>
+<div class="example">
+<p>Exaple Medication Change List</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;List&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;\n      &lt;p&gt;The patient is not on any medications&lt;/p&gt;\n    &lt;/div&gt;&quot;
+  },
+  &quot;code&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+        &quot;code&quot;: &quot;182836005&quot;,
+        &quot;display&quot;: &quot;Review of medication&quot;
+      }
+    ],
+    &quot;text&quot;: &quot;Medication Review&quot;
+  },
+  &quot;source&quot;: {
+    &quot;reference&quot;: &quot;Patient/example&quot;
+  },
+  &quot;date&quot;: &quot;2013-11-20T23:10:23+11:00&quot;,
+  &quot;mode&quot;: &quot;changes&quot;,
+  &quot;entry&quot;: [
+    {
+      &quot;flag&quot;: [
+        {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://nehta.gov.au/codes/medications/changetype&quot;,
+              &quot;code&quot;: &quot;02&quot;,
+              &quot;display&quot;: &quot;Prescribed&quot;
+            }
+          ]
+        }
+      ],
+      &quot;item&quot;: {
+        &quot;display&quot;: &quot;hydroxocobalamin&quot;
+      }
+    },
+    {
+      &quot;flag&quot;: [
+        {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://nehta.gov.au/codes/medications/changetype&quot;,
+              &quot;code&quot;: &quot;02&quot;,
+              &quot;display&quot;: &quot;Cancelled&quot;
+            }
+          ]
+        }
+      ],
+      &quot;deleted&quot;: true,
+      &quot;item&quot;: {
+        &quot;display&quot;: &quot;Morphine Sulfate&quot;
+      }
+    }
+  ]
+}
+</pre>
+</div>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

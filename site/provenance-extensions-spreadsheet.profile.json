@@ -1,0 +1,34 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre> <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n<span style=\" color: Gray\">&lt;!-- <span style=\"color: Darkviolet\">Extensions</span> --&gt;</span>\r\n&lt;<span title=\"Provides the provenance record associated with the most recent update of the resource.\"><b>extension</b></span>&gt;<a name=\"provenance\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Context: Resource = *</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/extensions/Provenance#provenance</span>&quot;/&gt;\r\n &lt;<span title=\"Provides the provenance record associated with the most recent update of the resource.\"><b>valueResourceReference</b></span>&gt;<span style=\" color: Gray\">&lt;!-- </span> <span style=\"color: brown;\"><b>0..1</b></span>  <span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/references.html#Resource\">Resource</a>(<a href=\"http://hl7.org/fhir/provenance.html#Provenance\">Provenance</a>)</span> <span style=\"color: navy\">Most recent change</span> <span style=\" color: Gray\">--&gt; </span>&lt;/valueResourceReference&gt;\r\n&lt;/extension&gt;\r\n\r\n</pre></div>"
+  },
+  "name": "Provenance HL7 Extensions",
+  "publisher": "HL7",
+  "description": "Defines common extensions used with or related to the Provenance resource",
+  "status": "draft",
+  "extensionDefn": [
+    {
+      "code": "provenance",
+      "display": "Most recent change",
+      "contextType": "resource",
+      "context": [
+        "*"
+      ],
+      "definition": {
+        "short": "Most recent change",
+        "formal": "Provides the provenance record associated with the most recent update of the resource.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Resource(Provenance)"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false
+      }
+    }
+  ]
+}

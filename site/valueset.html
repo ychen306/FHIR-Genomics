@@ -1,0 +1,571 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>ValueSet - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><b>ValueSet</b></li>          <!-- valueset.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="valueset-examples.html">Examples</a></li><li><a href="valueset-definitions.html">Formal Definitions</a></li><li><a href="valueset-mappings.html">Mappings</a></li><li><a href="valueset-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">6.13<a name="6.13"> </a></span> Resource ValueSet - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+A value set specifies a set of codes drawn from one or more code systems. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">6.13.1<a name="6.13.1"> </a></span> Scope and Usage</h2>
+<p>
+Value sets may be constructed in one of two ways:
+</p>
+<ul>
+ <li>A value set can <i>define</i> its own codes, and/or</li>
+ <li>A value set can be <i>composed</i> of codes defined in other code systems, either by listing the codes or by providing a set of selection criteria</li>
+</ul>
+<p>
+A value set can also be &quot;expanded&quot;, where the value set is turned into a simple collection of enumerated codes.
+This operation is performed to produce a collection of codes that are ready to use for data entry or 
+validation. An expanded value set may also contain the original definition as well. 
+</p>
+
+</div>
+<div>
+<h2><span class="sectioncount">6.13.2<a name="6.13.2"> </a></span> Boundaries and Relationships</h2>
+<ul>
+ <li>Value sets are used in <a href="profile.html">Profiles</a>, and <a href="questionnaire.html">Questionnaires</a> to specify the allowable contents for coded elements</li>
+ <li>In addition, a specific <a href="datatypes.html#Coding">Coding</a> can reference the value set it was picked from</li>
+ <li><a href="conceptmap.html">Concept Maps</a> describe mappings between value sets</li>
+</ul>
+
+</div>
+
+<div>
+<h2><span class="sectioncount">6.13.3<a name="6.13.3"> </a></span> Background and Context</h2>
+<p>
+The ValueSet resource design is based on the fundamental definitions found in the 
+<a href="http://www.hl7.org/documentcenter/public/standards/V3/core_principles/infrastructure/coreprinciples/v3modelcoreprinciples.html">HL7 v3 Core Principles</a> document 
+and the functionality described in the <a href="http://www.omg.org/spec/CTS2/1.0/">OMG CTS 2</a> specification. Value set
+resources can be converted to CTS2 value set and code system resources.
+</p>
+
+
+</div>
+
+<a name="resource"/>
+<h2><span class="sectioncount">6.13.4<a name="6.13.4"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="472.0" width="1030.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="190.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="156.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="156.0" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="78.0">ValueSet<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.identifier"><title>The identifier that is used to identify this value set when it is referenced in a specification, model, design or an instance (should be globally unique OID, UUID, or URI)</title>identifier</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="56.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.version"><title>The identifier that is used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp</title>version</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="70.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.name"><title>A free text natural language name describing the value set</title>name</a> : <a xlink:href="datatypes.html#string">string</a> 1..1</text><text fill="black" class="diagram-class-detail" y="84.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.publisher"><title>The name of the individual or organization that published the value set</title>publisher</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.telecom"><title>Contacts of the publisher to assist a user in finding and communicating with the publisher</title>telecom</a> : <a xlink:href="datatypes.html#Contact">Contact</a> 0..*</text><text fill="black" class="diagram-class-detail" y="112.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.description"><title>A free text natural language description of the use of the value set - reason for definition, conditions of use, etc</title>description</a> : <a xlink:href="datatypes.html#string">string</a> 1..1</text><text fill="black" class="diagram-class-detail" y="126.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.copyright"><title>A copyright statement relating to the value set and/or its contents</title>copyright</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="140.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.status"><title>The status of the value set (this element modifies the meaning of other elements)</title>status</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="valueset-status.html"><title>The lifecycle status of a Value Set or Concept Map</title>ValueSetStatus</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="154.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.experimental"><title>This valueset was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage</title>experimental</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 0..1</text><text fill="black" class="diagram-class-detail" y="168.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.extensible"><title>Whether this is intended to be used with an extensible binding or not</title>extensible</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 0..1</text><text fill="black" class="diagram-class-detail" y="182.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.date"><title>The date that the value set status was last changed</title>date</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><rect height="78.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="120.0" filter="url(#shadow)" rx="4" y="230.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="258.0" y2="258.0" x2="120.0" x1="0.0"/><text fill="black" class="diagram-class-title" y="250.0" x="60.0">Define</text><text fill="black" class="diagram-class-detail" y="272.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.define.system"><title>URI to identify the code system</title>system</a> : <a xlink:href="datatypes.html#uri">uri</a> 1..1</text><text fill="black" class="diagram-class-detail" y="286.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.define.version"><title>The version of this code system that defines the codes. Note that the version is optional because a well maintained code system does not suffer from versioning, and therefore the version does not need to be maintained. However many code systems are not well maintained, and the version needs to be defined and tracked</title>version</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="300.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.define.caseSensitive"><title>If code comparison is case sensitive when codes within this system are compared to each other</title>caseSensitive</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 0..1</text><rect height="92.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="104.0" filter="url(#shadow)" rx="4" y="350.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="378.0" y2="378.0" x2="104.0" x1="0.0"/><text fill="black" class="diagram-class-title" y="370.0" x="52.0">Concept</text><text fill="black" class="diagram-class-detail" y="392.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.define.concept.code"><title>Code that identifies concept</title>code</a> : <a xlink:href="datatypes.html#code">code</a> 1..1</text><text fill="black" class="diagram-class-detail" y="406.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.define.concept.abstract"><title>If this code is not for use as a real concept</title>abstract</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 0..1</text><text fill="black" class="diagram-class-detail" y="420.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.define.concept.display"><title>Text to Display to the user</title>display</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="434.0" x="6.0"><a xlink:href="valueset-definitions.html#ValueSet.define.concept.definition"><title>The formal definition of the concept. Formal definitions are not required, because of the prevalence of legacy systems without them, but they are highly recommended, as without them there is no formal meaning associated with the concept</title>definition</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><rect height="50.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="76.0" filter="url(#shadow)" rx="4" y="40.0" ry="4" x="490.0"/><line style="stroke:dimgrey;stroke-width:1" y1="68.0" y2="68.0" x2="566.0" x1="490.0"/><text fill="black" class="diagram-class-title" y="60.0" x="528.0">Compose</text><text fill="black" class="diagram-class-detail" y="82.0" x="496.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.import"><title>Includes the contents of the referenced value set as a part of the contents of this value set</title>import</a> : <a xlink:href="datatypes.html#uri">uri</a> 0..*</text><rect height="78.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="92.0" filter="url(#shadow)" rx="4" y="170.0" ry="4" x="490.0"/><line style="stroke:dimgrey;stroke-width:1" y1="198.0" y2="198.0" x2="582.0" x1="490.0"/><text fill="black" class="diagram-class-title" y="190.0" x="536.0">ConceptSet</text><text fill="black" class="diagram-class-detail" y="212.0" x="496.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.include.system"><title>The code system from which the selected codes come from</title>system</a> : <a xlink:href="datatypes.html#uri">uri</a> 1..1</text><text fill="black" class="diagram-class-detail" y="226.0" x="496.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.include.version"><title>The version of the code system that the codes are selected from</title>version</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="240.0" x="496.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.include.code"><title>Specifies a code or concept to be included or excluded. The list of codes is considered ordered, though the order may not have any particular significance</title>code</a> : <a xlink:href="datatypes.html#code">code</a> 0..*</text><rect height="78.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="140.0" filter="url(#shadow)" rx="4" y="310.0" ry="4" x="490.0"/><line style="stroke:dimgrey;stroke-width:1" y1="338.0" y2="338.0" x2="630.0" x1="490.0"/><text fill="black" class="diagram-class-title" y="330.0" x="560.0">Filter</text><text fill="black" class="diagram-class-detail" y="352.0" x="496.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.include.filter.property"><title>A code that identifies a property defined in the code system</title>property</a> : <a xlink:href="datatypes.html#code">code</a> 1..1</text><text fill="black" class="diagram-class-detail" y="366.0" x="496.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.include.filter.op"><title>The kind of operation to perform as a part of the filter criteria</title>op</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="filter-operator.html"><title>The kind of operation to perform as a part of a property based filter</title>FilterOperator</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="380.0" x="496.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.include.filter.value"><title>The match value may be either a code defined by the system, or a string value which is used a regex match on the literal string of the property value</title>value</a> : <a xlink:href="datatypes.html#code">code</a> 1..1</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="120.0" filter="url(#shadow)" rx="4" y="210.0" ry="4" x="260.0"/><line style="stroke:dimgrey;stroke-width:1" y1="238.0" y2="238.0" x2="380.0" x1="260.0"/><text fill="black" class="diagram-class-title" y="230.0" x="320.0">Expansion</text><text fill="black" class="diagram-class-detail" y="252.0" x="266.0"><a xlink:href="valueset-definitions.html#ValueSet.expansion.identifier"><title>An identifier that uniquely identifies this expansion of the valueset. Systems may re-use the same identifier as long as the expansion and the definition remain the same, but are not required to do so</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..1</text><text fill="black" class="diagram-class-detail" y="266.0" x="266.0"><a xlink:href="valueset-definitions.html#ValueSet.expansion.timestamp"><title>Time valueset expansion happened</title>timestamp</a> : <a xlink:href="datatypes.html#instant">instant</a> 1..1</text><rect height="78.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="92.0" filter="url(#shadow)" rx="4" y="310.0" ry="4" x="260.0"/><line style="stroke:dimgrey;stroke-width:1" y1="338.0" y2="338.0" x2="352.0" x1="260.0"/><text fill="black" class="diagram-class-title" y="330.0" x="306.0">Contains</text><text fill="black" class="diagram-class-detail" y="352.0" x="266.0"><a xlink:href="valueset-definitions.html#ValueSet.expansion.contains.system"><title>System value for the code</title>system</a> : <a xlink:href="datatypes.html#uri">uri</a> 0..1</text><text fill="black" class="diagram-class-detail" y="366.0" x="266.0"><a xlink:href="valueset-definitions.html#ValueSet.expansion.contains.code"><title>Code - if blank, this is not a choosable code</title>code</a> : <a xlink:href="datatypes.html#code">code</a> 0..1</text><text fill="black" class="diagram-class-detail" y="380.0" x="266.0"><a xlink:href="valueset-definitions.html#ValueSet.expansion.contains.display"><title>User display for the concept</title>display</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><line style="stroke:navy;stroke-width:1" y1="371.0" y2="371.0" x2="164.0" x1="104.0"/><line style="stroke:navy;stroke-width:1" y1="371.0" y2="421.0" x2="164.0" x1="164.0"/><line style="stroke:navy;stroke-width:1" y1="421.0" y2="421.0" x2="104.0" x1="164.0"/><polygon transform="rotate(0.0 104.0 371.0)" style="fill:navy;stroke:navy;stroke-width:1" points="104.0,371.0 110.0,375.0 116.0,371.0 110.0,367.0 104.0,371.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="28.0" y="389.0" x="150.0"/><text fill="black" class="diagram-class-linkage" y="399.0" x="164.0"><a xlink:href="valueset-definitions.html#ValueSet.define.concept.concept"><title>Child Concepts (is-a / contains)</title>concept</a></text><text fill="black" class="diagram-class-linkage" y="417.0" x="119.0">0..*</text><line style="stroke:navy;stroke-width:1" y1="308.0" y2="350.0" x2="54.89763779527559" x1="57.54330708661417"/><polygon transform="rotate(93.60442053917572 57.54330708661417 308.0)" style="fill:navy;stroke:navy;stroke-width:1" points="57.54330708661417,308.0 63.54330708661417,312.0 69.54330708661416,308.0 63.54330708661417,304.0 57.54330708661417,308.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="28.0" y="322.0" x="42.0"/><text fill="black" class="diagram-class-linkage" y="332.0" x="56.0"><a xlink:href="valueset-definitions.html#ValueSet.define.concept"><title>Concepts in the code system</title>concept</a></text><text fill="black" class="diagram-class-linkage" y="346.0" x="54.89763779527559">0..*</text><line style="stroke:navy;stroke-width:1" y1="189.9999999999999" y2="230.0" x2="64.0344827586207" x1="68.17241379310346"/><polygon transform="rotate(95.9061411137705 68.17241379310346 189.9999999999999)" style="fill:navy;stroke:navy;stroke-width:1" points="68.17241379310346,189.9999999999999 74.17241379310346,193.9999999999999 80.17241379310346,189.9999999999999 74.17241379310346,185.9999999999999 68.17241379310346,189.9999999999999"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="24.0" y="202.0" x="54.0"/><text fill="black" class="diagram-class-linkage" y="212.0" x="66.0"><a xlink:href="valueset-definitions.html#ValueSet.define"><title>When value set defines its own codes</title>define</a></text><text fill="black" class="diagram-class-linkage" y="226.0" x="64.0344827586207">0..1</text><line style="stroke:navy;stroke-width:1" y1="248.0" y2="310.0" x2="553.3142857142857" x1="542.6857142857143"/><polygon transform="rotate(80.27242144859845 542.6857142857143 248.0)" style="fill:navy;stroke:navy;stroke-width:1" points="542.6857142857143,248.0 548.6857142857143,252.0 554.6857142857143,248.0 548.6857142857143,244.0 542.6857142857143,248.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="24.0" y="272.0" x="536.0"/><text fill="black" class="diagram-class-linkage" y="282.0" x="548.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.include.filter"><title>Select concepts by specify a matching criteria based on the properties (including relationships) defined by the system. If multiple filters are specified, they SHALL all be true</title>filter</a></text><text fill="black" class="diagram-class-linkage" y="306.0" x="553.3142857142857">0..*</text><line style="stroke:navy;stroke-width:1" y1="90.0" y2="170.0" x2="508.83333333333337" x1="504.3888888888889"/><polygon transform="rotate(86.82016988013577 504.3888888888889 90.0)" style="fill:navy;stroke:navy;stroke-width:1" points="504.3888888888889,90.0 510.3888888888889,94.0 516.3888888888889,90.0 510.3888888888889,86.0 504.3888888888889,90.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="28.0" y="123.0" x="492.0"/><text fill="black" class="diagram-class-linkage" y="133.0" x="506.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.include"><title>Include one or more codes from a code system</title>include</a></text><text fill="black" class="diagram-class-linkage" y="166.0" x="508.83333333333337">0..*</text><line style="stroke:navy;stroke-width:1" y1="90.0" y2="170.0" x2="558.8333333333334" x1="554.3888888888889"/><polygon transform="rotate(86.82016988013577 554.3888888888889 90.0)" style="fill:navy;stroke:navy;stroke-width:1" points="554.3888888888889,90.0 560.3888888888889,94.0 566.3888888888889,90.0 560.3888888888889,86.0 554.3888888888889,90.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="28.0" y="137.0" x="542.0"/><text fill="black" class="diagram-class-linkage" y="147.0" x="556.0"><a xlink:href="valueset-definitions.html#ValueSet.compose.exclude"><title>Exclude one or more codes from the value set</title>exclude</a></text><text fill="black" class="diagram-class-linkage" y="166.0" x="558.8333333333334">0..*</text><line style="stroke:navy;stroke-width:1" y1="89.8" y2="67.53333333333333" x2="490.0" x1="156.0"/><polygon transform="rotate(-3.8140748342903548 156.0 89.8)" style="fill:navy;stroke:navy;stroke-width:1" points="156.0,89.8 162.0,93.8 168.0,89.8 162.0,85.8 156.0,89.8"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="28.0" y="71.0" x="309.0"/><text fill="black" class="diagram-class-linkage" y="81.0" x="323.0"><a xlink:href="valueset-definitions.html#ValueSet.compose"><title>When value set includes codes from elsewhere</title>compose</a></text><text fill="black" class="diagram-class-linkage" y="63.53333333333333" x="470.0">0..1</text><line style="stroke:navy;stroke-width:1" y1="324.0" y2="324.0" x2="412.0" x1="352.0"/><line style="stroke:navy;stroke-width:1" y1="324.0" y2="374.0" x2="412.0" x1="412.0"/><line style="stroke:navy;stroke-width:1" y1="374.0" y2="374.0" x2="352.0" x1="412.0"/><polygon transform="rotate(0.0 352.0 324.0)" style="fill:navy;stroke:navy;stroke-width:1" points="352.0,324.0 358.0,328.0 364.0,324.0 358.0,320.0 352.0,324.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="32.0" y="342.0" x="396.0"/><text fill="black" class="diagram-class-linkage" y="352.0" x="412.0"><a xlink:href="valueset-definitions.html#ValueSet.expansion.contains.contains"><title>Codes contained in this concept</title>contains</a></text><text fill="black" class="diagram-class-linkage" y="370.0" x="367.0">0..*</text><line style="stroke:navy;stroke-width:1" y1="274.0" y2="310.0" x2="311.10280373831773" x1="315.8130841121495"/><polygon transform="rotate(97.45429881274848 315.8130841121495 274.0)" style="fill:navy;stroke:navy;stroke-width:1" points="315.8130841121495,274.0 321.8130841121495,278.0 327.8130841121495,274.0 321.8130841121495,270.0 315.8130841121495,274.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="32.0" y="285.0" x="297.0"/><text fill="black" class="diagram-class-linkage" y="295.0" x="313.0"><a xlink:href="valueset-definitions.html#ValueSet.expansion.contains"><title>Codes in the value set</title>contains</a></text><text fill="black" class="diagram-class-linkage" y="306.0" x="311.10280373831773">0..*</text><line style="stroke:navy;stroke-width:1" y1="142.38016528925618" y2="210.0" x2="267.31972789115645" x1="156.0"/><polygon transform="rotate(31.27608657925615 156.0 142.38016528925618)" style="fill:navy;stroke:navy;stroke-width:1" points="156.0,142.38016528925618 162.0,146.38016528925618 168.0,142.38016528925618 162.0,138.38016528925618 156.0,142.38016528925618"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="36.0" y="169.0" x="193.0"/><text fill="black" class="diagram-class-linkage" y="179.0" x="211.0"><a xlink:href="valueset-definitions.html#ValueSet.expansion"><title>When value set is an expansion</title>expansion</a></text><text fill="black" class="diagram-class-linkage" y="206.0" x="267.31972789115645">0..1</text></svg>
+<p>This resource is referenced by <a href="conceptmap.html">ConceptMap</a>, <a href="profile.html">Profile</a> and <a href="questionnaire.html">Questionnaire</a></p>
+
+
+<a name="def"> </a>
+<a name="valueset"> </a>
+<a name="ValueSet"> </a>
+<pre class="spec">
+&lt;<a title="A value set specifies a set of codes drawn from one or more code systems." class="dict" href="valueset-definitions.html#ValueSet"><b>ValueSet</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="The identifier that is used to identify this value set when it is referenced in a specification, model, design or an instance (should be globally unique OID, UUID, or URI)." class="dict" href="valueset-definitions.html#ValueSet.identifier"><b>identifier</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Logical id to reference this value set<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The identifier that is used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp." class="dict" href="valueset-definitions.html#ValueSet.version"><b>version</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Logical id for this version of the value set<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A free text natural language name describing the value set." class="dict" href="valueset-definitions.html#ValueSet.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Informal name for this value set<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The name of the individual or organization that published the value set." class="dict" href="valueset-definitions.html#ValueSet.publisher"><b>publisher</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Name of the publisher (Organization or individual)<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Contacts of the publisher to assist a user in finding and communicating with the publisher." class="dict" href="valueset-definitions.html#ValueSet.telecom"><b>telecom</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Contact">Contact</a></span> <span style="color: navy">Contact information of the publisher<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>&lt;/telecom&gt;
+ &lt;<a title="A free text natural language description of the use of the value set - reason for definition, conditions of use, etc." class="dict" href="valueset-definitions.html#ValueSet.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Human language description of the value set<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A copyright statement relating to the value set and/or its contents." class="dict" href="valueset-definitions.html#ValueSet.copyright"><b>copyright</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">About the value set or its content</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The status of the value set (this element modifies the meaning of other elements)" class="dict" href="valueset-definitions.html#ValueSet.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-status.html">draft | active | retired<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="This valueset was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage." class="dict" href="valueset-definitions.html#ValueSet.experimental"><b>experimental</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">If for testing purposes, not real usage<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Whether this is intended to be used with an extensible binding or not." class="dict" href="valueset-definitions.html#ValueSet.extensible"><b>extensible</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Whether this is intended to be used with an extensible binding</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The date that the value set status was last changed." class="dict" href="valueset-definitions.html#ValueSet.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Date for given status<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="When value set defines its own codes." class="dict" href="valueset-definitions.html#ValueSet.define"><b>define</b></a>&gt;  <span style="color: Gray">&lt;!-- <span title="Inv-5: Value set SHALL contain either a define, a compose, or an expansion element" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> When value set defines its own codes<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span> --&gt;</span>
+  &lt;<a title="URI to identify the code system." class="dict" href="valueset-definitions.html#ValueSet.define.system"><b>system</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">URI to identify the code system<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The version of this code system that defines the codes. Note that the version is optional because a well maintained code system does not suffer from versioning, and therefore the version does not need to be maintained. However many code systems are not well maintained, and the version needs to be defined and tracked." class="dict" href="valueset-definitions.html#ValueSet.define.version"><b>version</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Version of this system<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="If code comparison is case sensitive when codes within this system are compared to each other." class="dict" href="valueset-definitions.html#ValueSet.define.caseSensitive"><b>caseSensitive</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">If code comparison is case sensitive<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Concepts in the code system." class="dict" href="valueset-definitions.html#ValueSet.define.concept"><b>concept</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Concepts in the code system --&gt;</span>
+   &lt;<a title="Code that identifies concept." class="dict" href="valueset-definitions.html#ValueSet.define.concept.code"><b>code</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Code that identifies concept</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="If this code is not for use as a real concept." class="dict" href="valueset-definitions.html#ValueSet.define.concept.abstract"><b>abstract</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">If this code is not for use as a real concept</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Text to Display to the user." class="dict" href="valueset-definitions.html#ValueSet.define.concept.display"><b>display</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Text to Display to the user</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="The formal definition of the concept. Formal definitions are not required, because of the prevalence of legacy systems without them, but they are highly recommended, as without them there is no formal meaning associated with the concept." class="dict" href="valueset-definitions.html#ValueSet.define.concept.definition"><b>definition</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Formal Definition</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Child Concepts (is-a / contains)." class="dict" href="valueset-definitions.html#ValueSet.define.concept.concept"><b>concept</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen">Content as for ValueSet.define.concept</span> <span style="color: navy">Child Concepts (is-a / contains)</span><span style="color: Gray"> --&gt;</span>&lt;/concept&gt;
+  &lt;/concept&gt;
+ &lt;/define&gt;
+ &lt;<a title="When value set includes codes from elsewhere." class="dict" href="valueset-definitions.html#ValueSet.compose"><b>compose</b></a>&gt;  <span style="color: Gray">&lt;!-- <span title="Inv-5: Value set SHALL contain either a define, a compose, or an expansion element" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> When value set includes codes from elsewhere --&gt;</span>
+  &lt;<a title="Includes the contents of the referenced value set as a part of the contents of this value set." class="dict" href="valueset-definitions.html#ValueSet.compose.import"><b>import</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: A value set composition SHALL have an include or an import" style="color: brown"><b><img alt="??" src="lock.png"/> 0..*</b></span> <span style="color: navy">Import the contents of another value set<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Include one or more codes from a code system." class="dict" href="valueset-definitions.html#ValueSet.compose.include"><b>include</b></a>&gt;  <span style="color: Gray">&lt;!-- <span title="Inv-1: A value set composition SHALL have an include or an import" style="color: brown"><b><img alt="??" src="lock.png"/> 0..*</b></span> Include one or more codes from a code system<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span> --&gt;</span>
+   &lt;<a title="The code system from which the selected codes come from." class="dict" href="valueset-definitions.html#ValueSet.compose.include.system"><b>system</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">The system the codes come from<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="The version of the code system that the codes are selected from." class="dict" href="valueset-definitions.html#ValueSet.compose.include.version"><b>version</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Specific version of the code system referred to<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Specifies a code or concept to be included or excluded. The list of codes is considered ordered, though the order may not have any particular significance." class="dict" href="valueset-definitions.html#ValueSet.compose.include.code"><b>code</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: navy">Code or concept from system</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Select concepts by specify a matching criteria based on the properties (including relationships) defined by the system. If multiple filters are specified, they SHALL all be true." class="dict" href="valueset-definitions.html#ValueSet.compose.include.filter"><b>filter</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Select codes/concepts by their properties (including relationships) --&gt;</span>
+    &lt;<a title="A code that identifies a property defined in the code system." class="dict" href="valueset-definitions.html#ValueSet.compose.include.filter.property"><b>property</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">A property defined by the code system</span><span style="color: Gray"> --&gt;</span>
+    &lt;<a title="The kind of operation to perform as a part of the filter criteria." class="dict" href="valueset-definitions.html#ValueSet.compose.include.filter.op"><b>op</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="filter-operator.html">= | is-a | is-not-a | regex | in | not in</a></span><span style="color: Gray"> --&gt;</span>
+    &lt;<a title="The match value may be either a code defined by the system, or a string value which is used a regex match on the literal string of the property value." class="dict" href="valueset-definitions.html#ValueSet.compose.include.filter.value"><b>value</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Code from the system, or regex criteria</span><span style="color: Gray"> --&gt;</span>
+   &lt;/filter&gt;
+  &lt;/include&gt;
+  &lt;<a title="Exclude one or more codes from the value set." class="dict" href="valueset-definitions.html#ValueSet.compose.exclude"><b>exclude</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: A value set with only one import SHALL also have an include and/or an exclude unless the value set defines its own codes" style="color: brown"><b><img alt="??" src="lock.png"/> 0..*</b></span> <span style="color: darkgreen">Content as for ValueSet.compose.include</span> <span style="color: navy">Explicitly exclude codes</span><span style="color: Gray"> --&gt;</span>&lt;/exclude&gt;
+ &lt;/compose&gt;
+ &lt;<a title="When value set is an expansion." class="dict" href="valueset-definitions.html#ValueSet.expansion"><b>expansion</b></a>&gt;  <span style="color: Gray">&lt;!-- <span title="Inv-5: Value set SHALL contain either a define, a compose, or an expansion element" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> When value set is an expansion --&gt;</span>
+  &lt;<a title="An identifier that uniquely identifies this expansion of the valueset. Systems may re-use the same identifier as long as the expansion and the definition remain the same, but are not required to do so." class="dict" href="valueset-definitions.html#ValueSet.expansion.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Uniquely identifies this expansion</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+  &lt;<a title="Time valueset expansion happened." class="dict" href="valueset-definitions.html#ValueSet.expansion.timestamp"><b>timestamp</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#instant">instant</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Time valueset expansion happened</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Codes in the value set." class="dict" href="valueset-definitions.html#ValueSet.expansion.contains"><b>contains</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Codes in the value set --&gt;</span>
+   &lt;<a title="System value for the code." class="dict" href="valueset-definitions.html#ValueSet.expansion.contains.system"><b>system</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">System value for the code</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Code - if blank, this is not a choosable code." class="dict" href="valueset-definitions.html#ValueSet.expansion.contains.code"><b>code</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-6: SHALL have a code or a display" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Code - if blank, this is not a choosable code</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="User display for the concept." class="dict" href="valueset-definitions.html#ValueSet.expansion.contains.display"><b>display</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-6: SHALL have a code or a display" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">User display for the concept</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Codes contained in this concept." class="dict" href="valueset-definitions.html#ValueSet.expansion.contains.contains"><b>contains</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen">Content as for ValueSet.expansion.contains</span> <span style="color: navy">Codes contained in this concept</span><span style="color: Gray"> --&gt;</span>&lt;/contains&gt;
+  &lt;/contains&gt;
+ &lt;/expansion&gt;
+&lt;/ValueSet&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="valueset.xsd">Schema</a>/<a href="valueset.sch">Schematron</a>, 
+<a href="valueset.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">6.13.4.1<a name="6.13.4.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="ValueSetStatus" valign="top">ValueSet.status </td><td valign="top">The lifecycle status of a Value Set or Concept Map</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="valueset-status.html">http://hl7.org/fhir/valueset-status</a></td> </tr>
+ <tr><td title="FilterOperator" valign="top">ValueSet.compose.include.filter.op </td><td valign="top">The kind of operation to perform as a part of a property based filter</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="filter-operator.html">http://hl7.org/fhir/filter-operator</a></td> </tr>
+</table>
+<p> </p>
+
+
+<h3><span class="sectioncount">6.13.4.2<a name="6.13.4.2"> </a></span> Constraints</h3><ul><li><b title="Formal Invariant Identifier">Inv-2</b>: A value set with only one import SHALL also have an include and/or an exclude unless the value set defines its own codes (xpath: <span style="font-family: Courier New, monospace">not(exists(f:compose)) or (count(f:compose/f:import)!=1 or exists(f:compose/f:include) or exists(f:compose/f:exclude) or exists(f:define))</span>)</li><li><b title="Formal Invariant Identifier">Inv-5</b>: Value set SHALL contain either a define, a compose, or an expansion element (xpath: <span style="font-family: Courier New, monospace">exists(f:define) or exists(f:compose) or exists(f:expansion)</span>)</li><li><b title="Formal Invariant Identifier">Inv-7</b>: A defined code system (if present) SHALL have a different identifier to the value set itself (xpath: <span style="font-family: Courier New, monospace">not(exists(f:define)) or (f:define/f:system/@value != f:identifier/@value)</span>)</li><li><b title="Formal Invariant Identifier">Inv-3</b>: On ValueSet.define: Within a code system definition, all the codes SHALL be unique (xpath on f:ValueSet/f:define: <span style="font-family: Courier New, monospace">count(distinct-values(descendant::f:concept/f:code/@value))=count(descendant::f:concept)</span>)</li><li><b title="Formal Invariant Identifier">Inv-8</b>: On ValueSet.define: Codes must be unique (xpath on f:ValueSet/f:define: <span style="font-family: Courier New, monospace">count(descendant::f:concept)=count(distinct-values(descendant::f:concept/f:code/@value))</span>)</li><li><b title="Formal Invariant Identifier">Inv-1</b>: On ValueSet.compose: A value set composition SHALL have an include or an import (xpath on f:ValueSet/f:compose: <span style="font-family: Courier New, monospace">exists(f:include) or exists(f:import)</span>)</li><li><b title="Formal Invariant Identifier">Inv-6</b>: On ValueSet.expansion.contains: SHALL have a code or a display (xpath on f:ValueSet/f:expansion/f:contains: <span style="font-family: Courier New, monospace">exists(f:code) or exists(f:display)</span>)</li></ul>
+
+
+<h2><span class="sectioncount">6.13.5<a name="6.13.5"> </a></span> Identifier and Version</h2>
+<p>
+The <i>identifier</i> and <i>version</i> elements may be used to reference this value set in a design, a profile, a 
+CDA template or V3 message (valueSet and valueSetVersion). These different contexts may make additional restrictions 
+on the possible values of these elements.  These elements are generally not needed when using value sets with FHIR
+implementations as they can make use of the innate identifier and versioning mechanism associated with the resource
+</p>
+
+<h2><span class="sectioncount">6.13.6<a name="6.13.6"> </a></span> Value Sets that define codes</h2>
+
+<p>
+Valuesets can define their own codes. A value set that defines codes automatically includes all 
+the codes it defines, and is useful for simple sets of codes that are highly 
+specific and context-dependent. The value set and the code system are both 
+given URI identifiers by which they may be identified from elsewhere 
+(ValueSet.identifier and ValueSet.define.system). These identifiers SHALL 
+be different.
+</p>
+<ul>
+ <li><i>ValueSet.define.system</i> is the URI that identifies these codes 
+   when used in a <a href="datatypes.html#Coding">Coding</a></li>
+ <li>The usability of the codes is closely linked to the quality of the definitions. 
+   Although a definition is not required for each concept, a good definition SHOULD be provided. In the absence of any definition, there is no formal meaning associated with the concept</li>
+ <li>If concepts contain other concepts, then the contained concepts are &quot;subsumed&quot; by 
+   the containing concept (there is an &quot;is-a&quot; relationship between the codes).</li>
+  <li>An abstract concept SHALL have contained concepts</li>
+</ul>
+<p>
+Note: Value sets only define their own codes when they are not defined elsewhere,
+such as codes defined in SNOMED CT, LOINC, RxNorm etc. To specify a value set that
+is made up of codes from other code systems, see &quot;compose&quot; below. 
+</p>
+
+<a name="versioning"> </a>
+<h3><span class="sectioncount">6.13.6.1<a name="6.13.6.1"> </a></span> Versioning Code Systems</h3>
+<p>
+Most code systems evolve over time, due to corrections, clarifications, and changes to approach or underlying knowledge or reality.
+If these changes lead to the meanings of existing codes changing significantly, then the interpretation of the code system becomes
+version dependent. This significantly complicates implementation based on the code system, to the point where it is not clear that
+safety can be assured, so SHOULD be avoided whenever possible. It is preferable to assign a new identifier to a code system 
+when any concepts in it have a significant change in meaning (for example, the German diagnostic classification code system 
+ICD10GM2009 has a different <i>system</i> to ICD10GM2008), but this also can have substantial impact on implementation, so 
+is often not practical - for instance, <a href="http://loinc.org">LOINC</a> has re-defined the meaning of codes in the past,
+but there is only one identifier for LOINC. 
+</p>
+<p>
+For this reason, a code system MAY provide a version identifer in <i>ValueSet.define.version</i>. The version specific identifier SHOULD be 
+provided whenever there are potentially significant changes in meaning across multiple releases of a code system.
+There is no particular format requirement for the version identifier, though HL7 recommends a date based approach. 
+</p>
+<p>
+When the value set definition of a code system includes a version identifier, the version identifier SHOULD be 
+used in <a href="datatypes.html#coding">Coding</a> instances that refer to the code system. 
+</p>
+
+
+<h2><span class="sectioncount">6.13.7<a name="6.13.7"> </a></span> Value Sets that include codes defined elsewhere</h2>
+
+<p>
+Value sets that include codes defined in some other code system are most useful when 
+dealing with large general code systems such as SNOMED CT, LOINC, RxNorm or various IETF code sets 
+including human language. The value set can be a simple list of included codes or it can be some 
+kind of general selection criteria using the facilities provided by the code system. 
+</p>
+<ul>
+ <li>Within an include or exclude criterion, multiple filters and concept selections are intersected. All the 
+   conditions specified SHALL be true.</li>
+ <li>The value set always includes any codes it defines itself. A typical use for this
+    is when including a set of codes from elsewhere, and adding a few additional codes to cover
+    cases not catered to by the included codes</li>
+ <li>An include statement consists of any enumerated codes and any codes that meet the filter criteria</li>
+ <li>If the system reference is not version specific and filters are present, then the contents of the value set are open and change 
+    over time as the underlying code systems are updated</li>
+ <li>The content of the value set is constructed by unioning of all the import and include statements and then 
+  eliminating any of the 'excluded' codes.</li>
+ <li>A value set needs to do something.  It can't simply include an existing value set without 
+   also including additional content or excluding content</li>
+  <!-- <li>The point of declaring that this value set restricts another is that this value set can then replace the other in a profile 
+without changing the meaning. Declaring this explicitly allows profile tools to reason about the relationship without having 
+to compute the relationship, which might not be possible for a profile tool</li> -->
+ <li>Using the property filters is only possible where the underlying code system defines 
+  appropriate properties. Note that in some cases, the underlying code system defines the 
+  logical concepts but not the syntax for exercising them. In such cases, the literal 
+  definitions may be provided by a third party. See below for notes about its use against common code systems</li>
+</ul>
+
+<h3><span class="sectioncount">6.13.7.1<a name="6.13.7.1"> </a></span> Code systems Note</h3>
+<p>
+How filters are used with various code systems:
+</p>
+<table class="grid">
+ <tr>
+   <th>System</th>    
+   <th>Property Name</th> 
+   <th>Operation</th> 
+   <th>Value</th>        
+   <th>Definition</th>
+   <th>Example</th>
+ </tr>
+ <tr>
+   <td>SNOMED CT</td>          
+   <td>expression</td>
+   <td>=</td>       
+   <td>[expression]</td> 
+   <td>The result of the filter is the result of executing the given SNOMED CT expression 
+    (see the draft <a href="http://www.ihtsdo.org/fileadmin/user_upload/Docs_01/News/SNOMED_CT_Query_Specification_-__v0.08_-_20121213.doc"> SNOMED CT Query Language</a>)</td> 
+   <td>(no example yet)</td>
+ </tr>
+ <tr>
+   <td/> 
+   <td>concept</td>
+   <td>is-a</td>       
+   <td>[concept]</td>    
+   <td>Includes all concept ids that have a transitive is-a relationship with the concept Id provided as the value <br/>The SNOMED CT Query Language expression for this is DescendentsAndSelf([concept])</td> 
+   <td><a href="valueset-administration-method-codes.html">Administation Methods</a></td>
+ </tr>
+ <tr>
+   <td/> 
+   <td>concept</td>
+   <td>in</td>       
+   <td>[concept]</td>    
+   <td>Includes all concept ids that are in the reference set identified by the concept Id provided as the value <br/>The SNOMED CT Query Language expression for this is MembersOf([concept])</td> 
+   <td><a href="valueset-administration-method-codes.html">Administation Methods</a></td>
+ </tr>
+ <tr>
+   <td colspan="4"><hr/></td>
+ </tr>
+ 
+ <tr>
+   <td>LOINC</td> 
+   <td>[property]</td>
+   <td>= / regex</td>       
+   <td>[value]</td>    
+   <td>Includes all codes where the named property has the given value. Valid Property Names are all the names listed in the 
+     &quot;Field Name&quot; column in LOINC Database Structure (Appendix A of the LOINC manual). 
+     Of these, the 6 properties COMPONENT, PROPERTY, TIME_ASPCT, SYSTEM, SCALE_TYP, and METHOD_TYP are most likely to be useful. 
+     In addition, the following 5 property names are defined in the Document Ontology: Document.Kind, Document.TypeOfService, Document.Setting, Document.Role, and Document.SubjectMatterDomain.
+   </td> 
+   <td><a href="valueset-doc-codes.html">Document Codes</a></td>
+ </tr>
+ <tr>
+   <td/>      
+   <td>Type</td>        
+   <td>=</td>       
+   <td>Method</td>       
+   <td>All the LOINC codes for particular methods defined in LOINC</td> 
+   <td><a href="valueset-observation-methods.html">Observation Methods</a></td>
+ </tr>
+ <tr>
+   <td colspan="4"><hr/></td>
+ </tr>
+ 
+ <tr>
+   <td>V3 Code systems</td> 
+   <td>concept</td>
+   <td>is-a</td>       
+   <td>[code]</td>    
+   <td>Includes all codes that have a transitive is-a relationship with the concept identified by the value</td> 
+   <td><a href="valueset-relatedperson-relationshiptype.html">Relationship Type</a></td>
+ </tr>
+ 
+</table>
+
+<a name="expansion"> </a>
+<h2><span class="sectioncount">6.13.8<a name="6.13.8"> </a></span> Value Set Expansion</h2>
+<p>
+A value set can be &quot;expanded&quot;, where the definition of the value set is 
+used to create a simple collection of codes suitable for use for data 
+entry or validation. This is most useful when a value set includes 
+all the children of a code or a set of codes by filter.
+</p>
+<p>
+A resource that represents a value set expansion includes the same
+identification details as the definition of the value set, and MAY
+include the definition of the value set (<i>define</i> and <i>compose</i>
+elements). In addition it has a <i>expansion</i> element which contains
+the list of codes that constitute the value set expansion. If the 
+expansion is heirarchical (codes contain other concepts), there 
+is no implication about the logical relationship between them; this 
+is guidance for helping human user navigate the choice of codes that 
+may or may not relate to the logical definitions of the codes or concepts.
+</p>
+<p>
+In general, the following process should be followed when 
+expanding a value set:
+</p>
+<ul>
+ <li>for each <i>compose.import</i>, find the referenced value set, expand that, and add it to the result set</li>
+ <li>for each <i>compose.include</i>, identify the correct version of the code system, and then:
+  <ul>
+   <li>if there is no codes or filters, add every code in the code system to the result set</li>
+   <li>if codes are listed, add them to the result set</li>
+   <li>if any filters are present, process them in order (as explained above), and add the intersection of their results to the result set</li>
+  </ul>
+ </li>
+ <li>for each <i>compose.exclude</i>, follow the same process as for <i>compose.include</i>, but remove any codes from the result set, instead of adding them</li>
+ <li>add any codes in the <i>define</i> to the result set</li>
+</ul>
+<p>
+The &quot;result set&quot; is then represented in <i>expansion</i>. Note that the expansion structure is inherently ordered, and 
+also provides support for a hierarchical tree of codes. This specification does not fix the meaning of use of either
+of these, and the conceptual approach described should not be understood to prohibit any implementation approach in
+these regards.
+</p>
+<p>
+An application MAY offer to expand value sets for other applications. In this 
+case, the standard way to produce a value set expansion is to perform a 
+<a href="search.html">query</a> on the value set with _query=expand:
+</p>
+<pre>
+  GET [service-url]/ValueSet/?_query=expand&amp;id=:valueSet&amp;...
+</pre>
+<p>
+This is a request to produce a value set expansion for the value set
+with the provided id which is either a logical id, or an absolute reference to a value set. 
+The value set can be identified by other means, such as identifier and version. 
+Servers can define their own additional parameters that influence the expansion 
+process, such in relation to order and hierarchy.
+</p>
+<p>
+The value set expansion returned by this query should be treated 
+as a transient result that will change over time (whether it does or
+not depends on how the value set is specified), so applications 
+should repeat the query each time the value set is used.
+</p>
+<h2><span class="sectioncount">6.13.9<a name="6.13.9"> </a></span> Value Set Validation</h2>
+<p>
+An application may offer to provide code validation services for other 
+applications. In this case, the standard way for an application to 
+ask for validation is to perform a 
+<a href="search.html">query</a> on the value set with _query=validate:
+</p>
+<pre>
+  GET [service-url]/ValueSet/?_query=validate&amp;id=:valueSet&amp;system=:system&amp;version=:version&amp;code=:code&amp;...
+</pre>
+<p>
+The values for system, version, and code are those from the <a href="datatypes.html#Coding">Coding</a> data type.
+Version is optional, and code and system are mandatory. Additionally, the parameter &quot;coding&quot; or &quot;codeableconcept&quot; 
+can be used - the value of these parameters is a URL encoded XML or JSON representation of the two data types
+respectively. An additional boolean parameter &quot;extensible&quot; can be provided to specify whether the
+applicable binding is extensible or not.
+</p>
+<p>
+The result of this query is an <a href="operationoutcome.html">Operation Outcome</a>.
+If there are no errors in the outcome (OperationOutcome.issue.severity), then the code is considered
+to be valid.
+</p>
+
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">6.13.10<a name="6.13.10"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>code</td><td><a href="search.html#token">token</a></td><td>A code defined in the value set</td><td>ValueSet.define.concept.code</td></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>The value set publication date</td><td>ValueSet.date</td></tr>
+<tr><td>description</td><td><a href="search.html#string">string</a></td><td>Text search in the description of the value set</td><td>ValueSet.description</td></tr>
+<tr><td>identifier</td><td><a href="search.html#token">token</a></td><td>The identifier of the value set</td><td>ValueSet.identifier</td></tr>
+<tr><td>name</td><td><a href="search.html#string">string</a></td><td>The name of the value set</td><td>ValueSet.name</td></tr>
+<tr><td>publisher</td><td><a href="search.html#string">string</a></td><td>Name of the publisher of the value set</td><td>ValueSet.publisher</td></tr>
+<tr><td>reference</td><td><a href="search.html#token">token</a></td><td>A code system included or excluded in the value set or an imported value set</td><td>ValueSet.compose.include.system</td></tr>
+<tr><td>status</td><td><a href="search.html#token">token</a></td><td>The status of the value set</td><td>ValueSet.status</td></tr>
+<tr><td>system</td><td><a href="search.html#token">token</a></td><td>The system for any codes defined by this value set</td><td>ValueSet.define.system</td></tr>
+<tr><td>version</td><td><a href="search.html#token">token</a></td><td>The version identifier of the value set</td><td>ValueSet.version</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:17+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
+&lt;<a title="An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient." class="dict" href="encounter-definitions.html#Encounter"><b>Encounter</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifier(s) by which this encounter is known." class="dict" href="encounter-definitions.html#Encounter.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Identifier(s) by which this encounter is known<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="planned | in progress | onleave | finished | cancelled (this element modifies the meaning of other elements)" class="dict" href="encounter-definitions.html#Encounter.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="encounter-state.html">planned | in progress | onleave | finished | cancelled<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="inpatient | outpatient | ambulatory | emergency + (this element modifies the meaning of other elements)" class="dict" href="encounter-definitions.html#Encounter.class"><span style="text-decoration: underline"><b>class</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="encounter-class.html">inpatient | outpatient | ambulatory | emergency +<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation)." class="dict" href="encounter-definitions.html#Encounter.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-type.html">Specific type of encounter<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+ &lt;<a title="The patient present at the encounter." class="dict" href="encounter-definitions.html#Encounter.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">The patient present at the encounter<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="The main practitioner responsible for providing the service." class="dict" href="encounter-definitions.html#Encounter.participant"><b>participant</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> List of participants involved in the encounter<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span> --&gt;</span>
+  &lt;<a title="Role of participant in encounter." class="dict" href="encounter-definitions.html#Encounter.participant.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-participant-type.html">Role of participant in encounter<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="Persons involved in the encounter other than the patient." class="dict" href="encounter-definitions.html#Encounter.participant.individual"><b>individual</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>)</span> <span style="color: navy">
+      Persons involved in the encounter other than the patient<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/individual&gt;
+ &lt;/participant&gt;
+ &lt;<a title="The start and end time of the encounter." class="dict" href="encounter-definitions.html#Encounter.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">The start and end time of the encounter</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+ &lt;<a title="Quantity of time the encounter lasted. This excludes the time during leaves of absence." class="dict" href="encounter-definitions.html#Encounter.length"><b>length</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Duration">Duration</a></span> <span style="color: navy">Quantity of time the encounter lasted</span><span style="color: Gray"> --&gt;</span>&lt;/length&gt;
+ &lt;<a title="Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis." class="dict" href="encounter-definitions.html#Encounter.reason"><b>reason</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-reason.html">Reason the encounter takes place (code)<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/reason&gt;
+ &lt;<a title="Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis." class="dict" href="encounter-definitions.html#Encounter.indication"><b>indication</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Reason the encounter takes place (resource)</span><span style="color: Gray"> --&gt;</span>&lt;/indication&gt;
+ &lt;<a title="Indicates the urgency of the encounter." class="dict" href="encounter-definitions.html#Encounter.priority"><b>priority</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-priority.html">Indicates the urgency of the encounter</a></span><span style="color: Gray"> --&gt;</span>&lt;/priority&gt;
+ &lt;<a title="Details about an admission to a clinic." class="dict" href="encounter-definitions.html#Encounter.hospitalization"><b>hospitalization</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Details about an admission to a clinic --&gt;</span>
+  &lt;<a title="Pre-admission identifier." class="dict" href="encounter-definitions.html#Encounter.hospitalization.preAdmissionIdentifier"><b>preAdmissionIdentifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Pre-admission identifier</span><span style="color: Gray"> --&gt;</span>&lt;/preAdmissionIdentifier&gt;
+  &lt;<a title="The location from which the patient came before admission." class="dict" href="encounter-definitions.html#Encounter.hospitalization.origin"><b>origin</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">
+      The location from which the patient came before admission</span><span style="color: Gray"> --&gt;</span>&lt;/origin&gt;
+  &lt;<a title="From where patient was admitted (physician referral, transfer)." class="dict" href="encounter-definitions.html#Encounter.hospitalization.admitSource"><b>admitSource</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-admit-source.html">From where patient was admitted (physician referral, transfer)</a></span><span style="color: Gray"> --&gt;</span>&lt;/admitSource&gt;
+  &lt;<a title="Period during which the patient was admitted." class="dict" href="encounter-definitions.html#Encounter.hospitalization.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Period during which the patient was admitted</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+  &lt;<a title="Where the patient stays during this encounter." class="dict" href="encounter-definitions.html#Encounter.hospitalization.accomodation"><b>accomodation</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Where the patient stays during this encounter --&gt;</span>
+   &lt;<a title="The bed that is assigned to the patient." class="dict" href="encounter-definitions.html#Encounter.hospitalization.accomodation.bed"><b>bed</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">The bed that is assigned to the patient</span><span style="color: Gray"> --&gt;</span>&lt;/bed&gt;
+   &lt;<a title="Period during which the patient was assigned the bed." class="dict" href="encounter-definitions.html#Encounter.hospitalization.accomodation.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Period during which the patient was assigned the bed</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+  &lt;/accomodation&gt;
+  &lt;<a title="Dietary restrictions for the patient." class="dict" href="encounter-definitions.html#Encounter.hospitalization.diet"><b>diet</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-diet.html">Dietary restrictions for the patient</a></span><span style="color: Gray"> --&gt;</span>&lt;/diet&gt;
+  &lt;<a title="Special courtesies (VIP, board member)." class="dict" href="encounter-definitions.html#Encounter.hospitalization.specialCourtesy"><b>specialCourtesy</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-special-courtesy.html">Special courtesies (VIP, board member)</a></span><span style="color: Gray"> --&gt;</span>&lt;/specialCourtesy&gt;
+  &lt;<a title="Wheelchair, translator, stretcher, etc." class="dict" href="encounter-definitions.html#Encounter.hospitalization.specialArrangement"><b>specialArrangement</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-special-arrangements.html">Wheelchair, translator, stretcher, etc</a></span><span style="color: Gray"> --&gt;</span>&lt;/specialArrangement&gt;
+  &lt;<a title="Location to which the patient is discharged." class="dict" href="encounter-definitions.html#Encounter.hospitalization.destination"><b>destination</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">Location to which the patient is discharged</span><span style="color: Gray"> --&gt;</span>&lt;/destination&gt;
+  &lt;<a title="Category or kind of location after discharge." class="dict" href="encounter-definitions.html#Encounter.hospitalization.dischargeDisposition"><b>dischargeDisposition</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-discharge-disposition.html">Category or kind of location after discharge</a></span><span style="color: Gray"> --&gt;</span>&lt;/dischargeDisposition&gt;
+  &lt;<a title="The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete." class="dict" href="encounter-definitions.html#Encounter.hospitalization.dischargeDiagnosis"><b>dischargeDiagnosis</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">
+      The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete</span><span style="color: Gray"> --&gt;</span>&lt;/dischargeDiagnosis&gt;
+  &lt;<a title="Whether this hospitalization is a readmission." class="dict" href="encounter-definitions.html#Encounter.hospitalization.reAdmission"><b>reAdmission</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Is this hospitalization a readmission?</span><span style="color: Gray"> --&gt;</span>
+ &lt;/hospitalization&gt;
+ &lt;<a title="List of locations at which the patient has been." class="dict" href="encounter-definitions.html#Encounter.location"><b>location</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> List of locations the patient has been at --&gt;</span>
+  &lt;<a title="The location where the encounter takes place." class="dict" href="encounter-definitions.html#Encounter.location.location"><b>location</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">Location the encounter takes place</span><span style="color: Gray"> --&gt;</span>&lt;/location&gt;
+  &lt;<a title="Time period during which the patient was present at the location." class="dict" href="encounter-definitions.html#Encounter.location.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Time period during which the patient was present at the location</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+ &lt;/location&gt;
+ &lt;<a title="Department or team providing care." class="dict" href="encounter-definitions.html#Encounter.serviceProvider"><b>serviceProvider</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Department or team providing care</span><span style="color: Gray"> --&gt;</span>&lt;/serviceProvider&gt;
+ &lt;<a title="Another Encounter of which this encounter is a part of (administratively or in time)." class="dict" href="encounter-definitions.html#Encounter.partOf"><b>partOf</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="encounter.html#Encounter">Encounter</a>)</span> <span style="color: navy">Another Encounter this encounter is part of</span><span style="color: Gray"> --&gt;</span>&lt;/partOf&gt;
+&lt;/Encounter&gt;
+</pre></div>
+  </text>
+  <name value="encounter"/>
+  <publisher value="FHIR Project"/>
+  <description value="Basic Profile. An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."/>
+  <status value="draft"/>
+  <date value="2014-10-08"/>
+  <requirements value="Scope and Usage A patient encounter is further characterized by the setting in which it takes place. Amongst them are ambulatory, emergency, home health, inpatient and virtual encounters. An Encounter encompasses the lifecycle from pre-admission, the actual encounter (for ambulatory encounters), and admission, stay and discharge (for inpatient encounters). During the encounter the patient may move from practitioner to practitioner and location to location. 
+
+Because of the broad scope of Encounter, not all elements will be relevant in all settings. For this reason, admission/discharge related information is kept in a separate Hospitalization component within Encounter. The class element is used to distinguish between these settings, which will guide further validation and application of business rules. 
+
+There is also substantial variance from organization to organization (and between jurisdictions and countries) on which business events translate to the start of a new Encounter, or what level of aggregation is used for Encounter. For example, each single visit of a practitioner during a hospitalization may lead to a new instance of Encounter, but depending on local practice and the systems involved, it may well be that this is aggregated to a single instance for a whole hospitalization. Even more aggregation may occur where jurisdictions introduce groups of Encounters for financial or other reasons. Encounters can be aggregated or grouped under other Encounters using the partOf element. See below for examples. 
+
+Encounter instances may exist before the actual encounter takes place to convey pre-admission information, including using Encounters elements to reflect the planned start date, planned accommodation or planned encounter locations. In this case the status element is set to &#39;planned&#39;."/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <structure>
+    <type value="Encounter"/>
+    <publish value="true"/>
+    <element>
+      <path value="Encounter"/>
+      <definition>
+        <short value="An interaction during which services are provided to the patient"/>
+        <formal value="An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="Encounter[moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.text"/>
+      <definition>
+        <short value="Text summary of the resource, for human interpretation"/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+        <synonym value="narrative"/>
+        <synonym value="html"/>
+        <synonym value="xhtml"/>
+        <synonym value="display"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Narrative"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.contained"/>
+      <definition>
+        <short value="Contained, inline Resources"/>
+        <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+        <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+        <synonym value="inline resources"/>
+        <synonym value="anonymous resources"/>
+        <synonym value="contained resources"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.identifier"/>
+      <definition>
+        <short value="Identifier(s) by which this encounter is known"/>
+        <formal value="Identifier(s) by which this encounter is known."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".id"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-19-visit number"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.status"/>
+      <definition>
+        <short value="planned | in progress | onleave | finished | cancelled"/>
+        <formal value="planned | in progress | onleave | finished | cancelled."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <isModifier value="true"/>
+        <binding>
+          <name value="EncounterState"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-state"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".statusCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="No clear equivalent in V2.x; active/finished could be inferred from PV1-44, PV1-45, PV2-24; inactive could be inferred from PV2-16"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.class"/>
+      <definition>
+        <short value="inpatient | outpatient | ambulatory | emergency +"/>
+        <formal value="inpatient | outpatient | ambulatory | emergency +."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <isModifier value="true"/>
+        <binding>
+          <name value="EncounterClass"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-class"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=LIST].code"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-2-patient class"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.type"/>
+      <definition>
+        <short value="Specific type of encounter"/>
+        <formal value="Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation)."/>
+        <comments value="Since there are many ways to further classify encounters, this element is 0..*."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="EncounterType"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-type"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".code"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-4-admission type"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.subject"/>
+      <definition>
+        <short value="The patient present at the encounter"/>
+        <formal value="The patient present at the encounter."/>
+        <comments value="While the encounter is always about the patient, the patient may not actually be known in all contexts of use."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Patient"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=SBJ]/role[classCode=PAT]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PID-3-patient ID list"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.participant"/>
+      <definition>
+        <short value="List of participants involved in the encounter"/>
+        <formal value="The main practitioner responsible for providing the service."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=PFM]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.participant.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.participant.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.participant.type"/>
+      <definition>
+        <short value="Role of participant in encounter"/>
+        <formal value="Role of participant in encounter."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="ParticipantType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-participant-type"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".functionCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PRT-4-participation"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.participant.individual"/>
+      <definition>
+        <short value="Persons involved in the encounter other than the patient"/>
+        <formal value="Persons involved in the encounter other than the patient."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Practitioner"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/RelatedPerson"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".role"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PRT-5-participation person"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.period"/>
+      <definition>
+        <short value="The start and end time of the encounter"/>
+        <formal value="The start and end time of the encounter."/>
+        <comments value="If not (yet) known, the end of the Period may be omitted."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Period"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".effectiveTime
+(low &amp; high)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.length"/>
+      <definition>
+        <short value="Quantity of time the encounter lasted"/>
+        <formal value="Quantity of time the encounter lasted. This excludes the time during leaves of absence."/>
+        <comments value="May differ from the time the Encounter.period lasted because of leave of absence."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Duration"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".lengthOfStayQuantity"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="(PV1-45 less PV1-44) iff ( (PV1-44 not empty) and (PV1-45 not empty) ); units in minutes"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.reason"/>
+      <definition>
+        <short value="Reason the encounter takes place (code)"/>
+        <formal value="Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="EncounterReason"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-reason"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".reasonCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="EVN-4-event reason code / PV2-3-admit reason (note: PV2-3 is nominally constrained to inpatient admissions; V2.x makes no vocabulary suggestions for PV2-3; would not expect PV2 segment or PV2-3 to be in use in all implementations
+)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.indication"/>
+      <definition>
+        <short value="Reason the encounter takes place (resource)"/>
+        <formal value="Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Any"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=RSON].target"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.priority"/>
+      <definition>
+        <short value="Indicates the urgency of the encounter"/>
+        <formal value="Indicates the urgency of the encounter."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="Priority"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-priority"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".priorityCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV2-25-visit priority code"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization"/>
+      <definition>
+        <short value="Details about an admission to a clinic"/>
+        <formal value="Details about an admission to a clinic."/>
+        <min value="0"/>
+        <max value="1"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=COMP].target[classCode=ENC, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.preAdmissionIdentifier"/>
+      <definition>
+        <short value="Pre-admission identifier"/>
+        <formal value="Pre-admission identifier."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".id"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-5-preadmit number"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.origin"/>
+      <definition>
+        <short value="The location from which the patient came before admission"/>
+        <formal value="The location from which the patient came before admission."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Location"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=ORG].role"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.admitSource"/>
+      <definition>
+        <short value="From where patient was admitted (physician referral, transfer)"/>
+        <formal value="From where patient was admitted (physician referral, transfer)."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="AdmitSource"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-admit-source"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".admissionReferralSourceCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-14-admit source"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.period"/>
+      <definition>
+        <short value="Period during which the patient was admitted"/>
+        <formal value="Period during which the patient was admitted."/>
+        <comments value="May differ from start + length, since length excludes leaves of absence."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Period"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".effectiveTime"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV2-11-actual length of inpatient stay / PV1-44-admit date/time / PV1-45-discharge date/time"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.accomodation"/>
+      <definition>
+        <short value="Where the patient stays during this encounter"/>
+        <formal value="Where the patient stays during this encounter."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=COMP].target[classCode=ACCOM, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.accomodation.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.accomodation.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.accomodation.bed"/>
+      <definition>
+        <short value="The bed that is assigned to the patient"/>
+        <formal value="The bed that is assigned to the patient."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Location"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=LOC].role.player[classCode=PLC, code=BED]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-3-assigned patient location"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.accomodation.period"/>
+      <definition>
+        <short value="Period during which the patient was assigned the bed"/>
+        <formal value="Period during which the patient was assigned the bed."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Period"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".effectiveTime"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.diet"/>
+      <definition>
+        <short value="Dietary restrictions for the patient"/>
+        <formal value="Dietary restrictions for the patient."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="PatientDiet"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-diet"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=COMP].target[classCode=SBADM, moodCode=EVN, code=&quot;diet&quot;]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-38-diet type"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.specialCourtesy"/>
+      <definition>
+        <short value="Special courtesies (VIP, board member)"/>
+        <formal value="Special courtesies (VIP, board member)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="Courtesies"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-special-courtesy"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".specialCourtesiesCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-16-VIP indicator"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.specialArrangement"/>
+      <definition>
+        <short value="Wheelchair, translator, stretcher, etc"/>
+        <formal value="Wheelchair, translator, stretcher, etc."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="Arrangements"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-special-arrangements"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".specialArrangementCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-15-ambulatory status / OBR-30-transportation mode / OBR-43-planned patient transport comment"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.destination"/>
+      <definition>
+        <short value="Location to which the patient is discharged"/>
+        <formal value="Location to which the patient is discharged."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Location"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=DST]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.dischargeDisposition"/>
+      <definition>
+        <short value="Category or kind of location after discharge"/>
+        <formal value="Category or kind of location after discharge."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="DischargeDisp"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/encounter-discharge-disposition"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".dischargeDispositionCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-36-discharge disposition"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.dischargeDiagnosis"/>
+      <definition>
+        <short value="The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete"/>
+        <formal value="The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Any"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=OUT].target[classCode=OBS, moodCode=EVN, code=ASSERTION].value"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.hospitalization.reAdmission"/>
+      <definition>
+        <short value="Is this hospitalization a readmission?"/>
+        <formal value="Whether this hospitalization is a readmission."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="boolean"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="Propose at harmonization"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-13-re-admission indicator"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.location"/>
+      <definition>
+        <short value="List of locations the patient has been at"/>
+        <formal value="List of locations at which the patient has been."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=LOC]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.location.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.location.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.location.location"/>
+      <definition>
+        <short value="Location the encounter takes place"/>
+        <formal value="The location where the encounter takes place."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Location"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".role"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-3-assigned patient location / PV1-6-prior patient location / PV1-11-temporary location / PV1-42-pending location / PV1-43-prior temporary location"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.location.period"/>
+      <definition>
+        <short value="Time period during which the patient was present at the location"/>
+        <formal value="Time period during which the patient was present at the location."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Period"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".time"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.serviceProvider"/>
+      <definition>
+        <short value="Department or team providing care"/>
+        <formal value="Department or team providing care."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Organization"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".particiaption[typeCode=PFM].role"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PV1-10-hospital service / PL.6 Person Location Type &amp; PL.1 Point of Care (note: V2.x definition is &quot;the treatment or type of surgery that the patient is scheduled to receive&quot;; seems slightly out of alignment with the concept name &#39;hospital service&#39;. Would not trust that implementations apply this semantic by default)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Encounter.partOf"/>
+      <definition>
+        <short value="Another Encounter this encounter is part of"/>
+        <formal value="Another Encounter of which this encounter is a part of (administratively or in time)."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Encounter"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=COMP].source[classCode=COMP, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="date"/>
+      <type value="date"/>
+      <documentation value="A date within the period the Encounter lasted"/>
+      <xpath value="f:Encounter/f:period"/>
+    </searchParam>
+    <searchParam>
+      <name value="identifier"/>
+      <type value="token"/>
+      <documentation value="Identifier(s) by which this encounter is known"/>
+      <xpath value="f:Encounter/f:identifier"/>
+    </searchParam>
+    <searchParam>
+      <name value="indication"/>
+      <type value="reference"/>
+      <documentation value="Reason the encounter takes place (resource)"/>
+      <xpath value="f:Encounter/f:indication"/>
+    </searchParam>
+    <searchParam>
+      <name value="length"/>
+      <type value="number"/>
+      <documentation value="Length of encounter in days"/>
+      <xpath value="f:Encounter/f:length"/>
+    </searchParam>
+    <searchParam>
+      <name value="location"/>
+      <type value="reference"/>
+      <documentation value="Location the encounter takes place"/>
+      <xpath value="f:Encounter/f:location/f:location"/>
+    </searchParam>
+    <searchParam>
+      <name value="location-period"/>
+      <type value="date"/>
+      <documentation value="Time period during which the patient was present at the location"/>
+      <xpath value="f:Encounter/f:location/f:period"/>
+    </searchParam>
+    <searchParam>
+      <name value="status"/>
+      <type value="token"/>
+      <documentation value="planned | in progress | onleave | finished | cancelled"/>
+      <xpath value="f:Encounter/f:status"/>
+    </searchParam>
+    <searchParam>
+      <name value="subject"/>
+      <type value="reference"/>
+      <documentation value="The patient present at the encounter"/>
+      <xpath value="f:Encounter/f:subject"/>
+    </searchParam>
+  </structure>
+</Profile>

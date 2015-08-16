@@ -1,0 +1,288 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>ImmunizationRecommendation - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><b>ImmunizationRecommendation</b></li>          <!-- immunizationrecommendation.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="immunizationrecommendation-examples.html">Examples</a></li><li><a href="immunizationrecommendation-definitions.html">Formal Definitions</a></li><li><a href="immunizationrecommendation-mappings.html">Mappings</a></li><li><a href="immunizationrecommendation-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">4.14<a name="4.14"> </a></span> Resource ImmunizationRecommendation - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+A patient's point-of-time immunization status and recommendation with optional supporting justification. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">4.14.1<a name="4.14.1"> </a></span> Scope and Usage</h2>
+<p>
+The ImmunizationRecommendation resource is intended to cover communication of a specified patient's immunization recommendation and status across all healthcare disciplines in all care settings and all regions.
+</p>
+<p>
+Additionally, the ImmunizationRecommendation resource is expected to cover key concepts related to the querying of a patient's immunization recommendation and status. This resource - through consultation with the PHER work group - is believed to meet key use cases and information requirements as defined in the existing HL7 v3 POIZ domain and Immunization Domain Analysis Model.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">4.14.2<a name="4.14.2"> </a></span> Boundaries and Relationships</h2>
+<p>
+This resource references the following resources:
+</p>
+<ul>
+    <li>AdverseReaction</li>
+    <li>Patient</li>
+    <li>Organization</li>
+    <li>Immunization</li>
+    <li>Observation</li>
+</ul>
+<p>
+One of the considerations for this resource is if it is better for this resource to be a profile of the CarePlan resource or if it is more appropriate for this to be a separate resource due to the number of immunization profile-specific data elements.  Please consider this when submitting your ballot comments.
+</p>
+</div>
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">4.14.3<a name="4.14.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="307.0" width="855.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="231.20000000000002" filter="url(#shadow)" rx="4" y="35.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="63.0" y2="63.0" x2="231.20000000000002" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="55.0" x="115.60000000000001">ImmunizationRecommendation<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="77.0" x="6.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.identifier"><title>A unique identifier assigned to this particular recommendation record</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..*</text><text fill="black" class="diagram-class-detail" y="91.0" x="6.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.subject"><title>The patient who is the subject of the profile</title>subject</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>) 1..1</text><rect height="134.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="304.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="351.20000000000005"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="655.2" x1="351.20000000000005"/><text fill="black" class="diagram-class-title" y="20.0" x="503.20000000000005">Recommendation</text><text fill="black" class="diagram-class-detail" y="42.0" x="357.20000000000005"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.date"><title>The date the immunization recommendation was created</title>date</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 1..1</text><text fill="black" class="diagram-class-detail" y="56.0" x="357.20000000000005"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.vaccineType"><title>Vaccine that pertains to the recommendation</title>vaccineType</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 1..1 &lt;&lt;<a xlink:href="v3/vs/VaccineType/index.html"><title>The type of vaccine administered</title>VaccineType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="70.0" x="357.20000000000005"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.doseNumber"><title>This indicates the next recommended dose number (e.g. dose 2 is the next recommended dose)</title>doseNumber</a> : <a xlink:href="datatypes.html#integer">integer</a> 0..1</text><text fill="black" class="diagram-class-detail" y="84.0" x="357.20000000000005"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.forecastStatus"><title>Vaccine administration status</title>forecastStatus</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 1..1 &lt;&lt;<a xlink:href="valueset-immunization-recommendation-status.html"><title>The patient's status with respect to a vaccination protocol</title>ImmunizationRecommendationStatus</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="98.0" x="357.20000000000005"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingImmunization"><title>Immunization event history that supports the status and recommendation</title>supportingImmunization</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="immunization.html#Immunization">Immunization</a>) 0..*</text><text fill="black" class="diagram-class-detail" y="112.0" x="357.20000000000005"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingPatientInformation"><title>Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information</title>supportingPatientInformation</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="observation.html#Observation">Observation</a>|<a xlink:href="adversereaction.html#AdverseReaction">AdverseReaction</a>|</text><text fill="black" class="diagram-class-detail" y="126.0" x="377.20000000000005">     <a xlink:href="allergyintolerance.html#AllergyIntolerance">AllergyIntolerance</a>) 0..*</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="292.0" filter="url(#shadow)" rx="4" y="185.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="213.0" y2="213.0" x2="292.0" x1="0.0"/><text fill="black" class="diagram-class-title" y="205.0" x="146.0">DateCriterion</text><text fill="black" class="diagram-class-detail" y="227.0" x="6.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion.code"><title>Date classification of recommendation - e.g. earliest date to give, latest date to give, etc</title>code</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 1..1 &lt;&lt;<a xlink:href="valueset-immunization-recommendation-date-criterion.html"><title>Classifies date criterion with respect to conveying information about a patient's vaccination status (e.g. due date, latest to give date, etc.)</title>ImmunizationRecommendationDateCriterion</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="241.0" x="6.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion.value"><title>Date recommendation</title>value</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 1..1</text><rect height="92.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="164.0" filter="url(#shadow)" rx="4" y="185.0" ry="4" x="300.0"/><line style="stroke:dimgrey;stroke-width:1" y1="213.0" y2="213.0" x2="464.0" x1="300.0"/><text fill="black" class="diagram-class-title" y="205.0" x="382.0">Protocol</text><text fill="black" class="diagram-class-detail" y="227.0" x="306.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.doseSequence"><title>Indicates the nominal position in a series of the next dose.  This is the recommended dose number as per a specified protocol</title>doseSequence</a> : <a xlink:href="datatypes.html#integer">integer</a> 0..1</text><text fill="black" class="diagram-class-detail" y="241.0" x="306.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.description"><title>Contains the description about the protocol under which the vaccine was administered</title>description</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="255.0" x="306.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.authority"><title>Indicates the authority who published the protocol?  E.g. ACIP</title>authority</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="organization.html#Organization">Organization</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="269.0" x="306.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.series"><title>One possible path to achieve presumed immunity against a disease - within the context of an authority</title>series</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><line style="stroke:navy;stroke-width:1" y1="130.82978723404256" y2="185.0" x2="222.2026666666667" x1="351.20000000000005"/><polygon transform="rotate(157.2208667557316 351.20000000000005 130.82978723404256)" style="fill:navy;stroke:navy;stroke-width:1" points="351.20000000000005,130.82978723404256 357.20000000000005,134.82978723404256 363.20000000000005,130.82978723404256 357.20000000000005,126.82978723404256 351.20000000000005,130.82978723404256"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="52.0" y="150.0" x="260.0"/><text fill="black" class="diagram-class-linkage" y="160.0" x="286.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion"><title>Vaccine date recommendations - e.g. earliest date to administer, latest date to administer, etc</title>dateCriterion</a></text><text fill="black" class="diagram-class-linkage" y="181.0" x="222.2026666666667">0..*</text><line style="stroke:navy;stroke-width:1" y1="134.0" y2="185.0" x2="415.9951219512196" x1="453.6853658536586"/><polygon transform="rotate(126.46530490788855 453.6853658536586 134.0)" style="fill:navy;stroke:navy;stroke-width:1" points="453.6853658536586,134.0 459.6853658536586,138.0 465.6853658536586,134.0 459.6853658536586,130.0 453.6853658536586,134.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="32.0" y="152.0" x="418.0"/><text fill="black" class="diagram-class-linkage" y="162.0" x="434.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol"><title>Contains information about the protocol under which the vaccine was administered</title>protocol</a></text><text fill="black" class="diagram-class-linkage" y="181.0" x="415.9951219512196">0..1</text><line style="stroke:navy;stroke-width:1" y1="67.0" y2="67.0" x2="351.20000000000005" x1="231.20000000000002"/><polygon transform="rotate(0.0 231.20000000000002 67.0)" style="fill:navy;stroke:navy;stroke-width:1" points="231.20000000000002,67.0 237.20000000000002,71.0 243.20000000000002,67.0 237.20000000000002,63.0 231.20000000000002,67.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="56.0" y="60.0" x="263.0"/><text fill="black" class="diagram-class-linkage" y="70.0" x="291.0"><a xlink:href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation"><title>Vaccine administration recommendations</title>recommendation</a></text><text fill="black" class="diagram-class-linkage" y="63.0" x="331.20000000000005">1..*</text></svg>
+<p>This resource is referenced by <a href="procedure.html">[Procedure]</a></p>
+
+
+<a name="def"> </a>
+<a name="immunizationrecommendation"> </a>
+<a name="ImmunizationRecommendation"> </a>
+<pre class="spec">
+&lt;<a title="A patient's point-of-time immunization status and recommendation with optional supporting justification." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation"><b>ImmunizationRecommendation</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="A unique identifier assigned to this particular recommendation record." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Business identifier</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="The patient who is the subject of the profile." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who this profile is for</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="Vaccine administration recommendations." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation"><b>recommendation</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..*</b></span> Vaccine administration recommendations --&gt;</span>
+  &lt;<a title="The date the immunization recommendation was created." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Date recommendation created</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Vaccine that pertains to the recommendation." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.vaccineType"><b>vaccineType</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="v3/vs/VaccineType/index.html">Vaccine recommendation applies to</a><span style="color: Gray"> --&gt;</span>&lt;/vaccineType&gt;
+  &lt;<a title="This indicates the next recommended dose number (e.g. dose 2 is the next recommended dose)." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.doseNumber"><b>doseNumber</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#integer">integer</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Recommended dose number</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Vaccine administration status." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.forecastStatus"><b>forecastStatus</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-immunization-recommendation-status.html">Vaccine administration status</a></span><span style="color: Gray"> --&gt;</span>&lt;/forecastStatus&gt;
+  &lt;<a title="Vaccine date recommendations - e.g. earliest date to administer, latest date to administer, etc." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion"><b>dateCriterion</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Dates governing proposed immunization --&gt;</span>
+   &lt;<a title="Date classification of recommendation - e.g. earliest date to give, latest date to give, etc." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-immunization-recommendation-date-criterion.html">Type of date</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+   &lt;<a title="Date recommendation." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion.value"><b>value</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Recommended date</span><span style="color: Gray"> --&gt;</span>
+  &lt;/dateCriterion&gt;
+  &lt;<a title="Contains information about the protocol under which the vaccine was administered." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol"><b>protocol</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Protocol used by recommendation --&gt;</span>
+   &lt;<a title="Indicates the nominal position in a series of the next dose.  This is the recommended dose number as per a specified protocol." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.doseSequence"><b>doseSequence</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#integer">integer</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Number of dose within sequence</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Contains the description about the protocol under which the vaccine was administered." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Protocol details</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Indicates the authority who published the protocol?  E.g. ACIP." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.authority"><b>authority</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Who is responsible for protocol</span><span style="color: Gray"> --&gt;</span>&lt;/authority&gt;
+   &lt;<a title="One possible path to achieve presumed immunity against a disease - within the context of an authority." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.series"><b>series</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Name of vaccination series</span><span style="color: Gray"> --&gt;</span>
+  &lt;/protocol&gt;
+  &lt;<a title="Immunization event history that supports the status and recommendation." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingImmunization"><b>supportingImmunization</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="immunization.html#Immunization">Immunization</a>)</span> <span style="color: navy">
+      Past immunizations supporting recommendation</span><span style="color: Gray"> --&gt;</span>&lt;/supportingImmunization&gt;
+  &lt;<a title="Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingPatientInformation"><b>supportingPatientInformation</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="observation.html#Observation">Observation</a>|<a href="adversereaction.html#AdverseReaction">AdverseReaction</a>|
+    <a href="allergyintolerance.html#AllergyIntolerance">AllergyIntolerance</a>)</span> <span style="color: navy">Patient observations supporting recommendation</span><span style="color: Gray"> --&gt;</span>&lt;/supportingPatientInformation&gt;
+ &lt;/recommendation&gt;
+&lt;/ImmunizationRecommendation&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="immunizationrecommendation.xsd">Schema</a>/<a href="immunizationrecommendation.sch">Schematron</a>, 
+<a href="immunizationrecommendation.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">4.14.3.1<a name="4.14.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="VaccineType" valign="top">ImmunizationRecommendation.recommendation.vaccineType </td><td valign="top">The type of vaccine administered</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="v3/vs/VaccineType/index.html">http://hl7.org/fhir/v3/vs/VaccineType</a></td> </tr>
+ <tr><td title="ImmunizationRecommendationStatus" valign="top">ImmunizationRecommendation.recommendation.forecastStatus </td><td valign="top">The patient's status with respect to a vaccination protocol</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-immunization-recommendation-status.html">http://hl7.org/fhir/vs/immunization-recommendation-status</a></td> </tr>
+ <tr><td title="ImmunizationRecommendationDateCriterion" valign="top">ImmunizationRecommendation.recommendation.dateCriterion.code </td><td valign="top">Classifies date criterion with respect to conveying information about a patient's vaccination status (e.g. due date, latest to give date, etc.)</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-immunization-recommendation-date-criterion.html">http://hl7.org/fhir/vs/immunization-recommendation-date-criterion</a></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">4.14.4<a name="4.14.4"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>Date recommendation created</td><td>ImmunizationRecommendation.recommendation.date</td></tr>
+<tr><td>dose-number</td><td><a href="search.html#number">number</a></td><td>Recommended dose number</td><td>ImmunizationRecommendation.recommendation.doseNumber</td></tr>
+<tr><td>dose-sequence</td><td><a href="search.html#token">token</a></td><td>Number of dose within sequence</td><td>ImmunizationRecommendation.recommendation.protocol.doseSequence</td></tr>
+<tr><td>identifier</td><td><a href="search.html#token">token</a></td><td>Business identifier</td><td>ImmunizationRecommendation.identifier</td></tr>
+<tr><td>information</td><td><a href="search.html#reference">reference</a></td><td>Patient observations supporting recommendation</td><td>ImmunizationRecommendation.recommendation.supportingPatientInformation<br/>(<a href="allergyintolerance.html">AllergyIntolerance</a>, <a href="observation.html">Observation</a>, <a href="adversereaction.html">AdverseReaction</a>)</td></tr>
+<tr><td>status</td><td><a href="search.html#token">token</a></td><td>Vaccine administration status</td><td>ImmunizationRecommendation.recommendation.forecastStatus</td></tr>
+<tr><td>subject</td><td><a href="search.html#reference">reference</a></td><td>Who this profile is for</td><td>ImmunizationRecommendation.subject<br/>(<a href="patient.html">Patient</a>)</td></tr>
+<tr><td>support</td><td><a href="search.html#reference">reference</a></td><td>Past immunizations supporting recommendation</td><td>ImmunizationRecommendation.recommendation.supportingImmunization<br/>(<a href="immunization.html">Immunization</a>)</td></tr>
+<tr><td>vaccine-type</td><td><a href="search.html#token">token</a></td><td>Vaccine recommendation applies to</td><td>ImmunizationRecommendation.recommendation.vaccineType</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

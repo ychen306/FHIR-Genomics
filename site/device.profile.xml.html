@@ -1,0 +1,655 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Device.profile.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="administration.html">Administrative</a></li>        <li><a href="device.html">Device</a></li>        <li><b>Profile Instance</b></li>        <!-- device.profile.xml.html / profile-instance:resource:Device -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Device.profile.xml</h1>
+
+<div class="example">
+<p>Profile for device</p>
+<p><a href="device.profile.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;Profile</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;pre</span><span class="xmltag">&gt;</span><b>
+&amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device</span>" title="<span class="xmlattrvalue">This resource identifies an instance of a manufactured thing that is used in the provision
+         of healthcare without being substantially changed through that activity. The device may
+         be a machine, an insert, a computer, an application, etc. This includes durable (reusable)
+         medical equipment as well as disposable equipment used for diagnostic, treatment, and
+         research for healthcare and public health.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Device</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt; </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">float: right</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">formats.html</span>" title="<span class="xmlattrvalue">Documentation for this format</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">doco</span>" src="<span class="xmlattrvalue">help.png</span>"</span><span class="xmltag">/&gt;</span><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;!-- from </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">resources.html</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>: </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">extensibility.html</span>"</span><span class="xmltag">&gt;</span><b>extension</b><span class="xmltag">&lt;/a&gt;</span><b>, </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">extensibility.html#modifierExtension</span>"</span><span class="xmltag">&gt;</span><b>modifierExtension</b><span class="xmltag">&lt;/a&gt;</span><b>, language, </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">narrative.html#Narrative</span>"</span><span class="xmltag">&gt;</span><b>text</b><span class="xmltag">&lt;/a&gt;</span><b>, and </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#contained</span>"</span><span class="xmltag">&gt;</span><b>contained</b><span class="xmltag">&lt;/a&gt;</span><b> --&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.identifier</span>" title="<span class="xmlattrvalue">Identifiers assigned to this device by various organizations. The most likely organizations
+         to assign identifiers are the manufacturer and the owner, though regulatory agencies may
+         also assign an identifier. The identifiers identify the particular device, not the kind
+         of device.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>identifier</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Identifier</span>"</span><span class="xmltag">&gt;</span><b>Identifier</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Instance id from manufacturer, owner and others</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/identifier&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.type</span>" title="<span class="xmlattrvalue">A kind of this device.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>type</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">http://hit-testing.nist.gov:13110/rtmms/index.htm.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>What kind of device this is</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/type&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.manufacturer</span>" title="<span class="xmlattrvalue">A name of the manufacturer.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>manufacturer</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#string</span>"</span><span class="xmltag">&gt;</span><b>string</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Name of device manufacturer</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.model</span>" title="<span class="xmlattrvalue">The &amp;quot;model&amp;quot; - an identifier assigned by the manufacturer to identify the product
+         by its type. This number is shared by the all devices sold as the same type.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>model</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#string</span>"</span><span class="xmltag">&gt;</span><b>string</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Model id assigned by the manufacturer</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.version</span>" title="<span class="xmlattrvalue">The version of the device, if the device has multiple releases under the same model, or
+         if the device is software or carries firmware.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>version</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#string</span>"</span><span class="xmltag">&gt;</span><b>string</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Version number (i.e. software)</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.expiry</span>" title="<span class="xmlattrvalue">Date of expiry of this device (if applicable).</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>expiry</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#date</span>"</span><span class="xmltag">&gt;</span><b>date</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Date of expiry of this device (if applicable)</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.udi</span>" title="<span class="xmlattrvalue">FDA Mandated Unique Device Identifier. Use the human readable information (the content
+         that the user sees, which is sometimes different to the exact syntax represented in the
+         barcode)  - see http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentifica
+        tion/default.htm.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>udi</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#string</span>"</span><span class="xmltag">&gt;</span><b>string</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>FDA Mandated Unique Device Identifier</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.lotNumber</span>" title="<span class="xmlattrvalue">Lot number assigned by the manufacturer.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>lotNumber</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#string</span>"</span><span class="xmltag">&gt;</span><b>string</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Lot number of manufacture</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.owner</span>" title="<span class="xmlattrvalue">An organization that is responsible for the provision and ongoing maintenance of the device.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>owner</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">organization.html#Organization</span>"</span><span class="xmltag">&gt;</span><b>Organization</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Organization responsible for device</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/owner&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.location</span>" title="<span class="xmlattrvalue">The resource may be found in a literal location (i.e. GPS coordinates), a logical place
+         (i.e. &amp;quot;in/with the patient&amp;quot;), or a coded location.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>location</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">location.html#Location</span>"</span><span class="xmltag">&gt;</span><b>Location</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Where the resource is found</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/location&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.patient</span>" title="<span class="xmlattrvalue">Patient information, if the resource is affixed to a person.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>patient</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">patient.html#Patient</span>"</span><span class="xmltag">&gt;</span><b>Patient</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>If the resource is affixed to a person</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/patient&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.contact</span>" title="<span class="xmlattrvalue">Contact details for an organization or a particular human that is responsible for the
+         device.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>contact</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Contact</span>"</span><span class="xmltag">&gt;</span><b>Contact</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Details for human/organization for support</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/contact&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">device-definitions.html#Device.url</span>" title="<span class="xmlattrvalue">A network address on which the device may be contacted directly.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>url</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#uri</span>"</span><span class="xmltag">&gt;</span><b>uri</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Network address to contact device</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+&amp;lt;/Device&amp;gt;
+</b><span class="xmltag">&lt;/pre&gt;</span><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">device</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;publisher</span><span class="xmlattr"> value="<span class="xmlattrvalue">FHIR Project</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;description</span><span class="xmlattr"> value="<span class="xmlattrvalue">Basic Profile. This resource identifies an instance of a manufactured thing that is used
+   in the provision of healthcare without being substantially changed through that activity.
+   The device may be a machine, an insert, a computer, an application, etc. This includes
+   durable (reusable) medical equipment as well as disposable equipment used for diagnostic,
+   treatment, and research for healthcare and public health.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">draft</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;date</span><span class="xmlattr"> value="<span class="xmlattrvalue">2014-10-08</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;requirements</span><span class="xmlattr"> value="<span class="xmlattrvalue">Scope and Usage This resource is primarily used for recording which device performed an
+   action and can also be used to track device location. It is also used for prescribing
+   and dispensing devices for patient use. If the device is implanted in a patient, then
+   the patient element will be present, and there would be no location.   Devices that are
+   implanted in a patient differ from medications because they are not &amp;quot;used up&amp;quot;
+   - they remain active in a patient in an ongoing fashion. The Medication resource SHOULD
+   not be used to represent implanted devices.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;uri</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/v3</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">RIM</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+  </b><span class="xmltag">&lt;structure</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;publish</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">An instance of a manufactured thing that is used in the provision of healthcare</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">This resource identifies an instance of a manufactured thing that is used in the provision
+         of healthcare without being substantially changed through that activity. The device may
+         be a machine, an insert, a computer, an application, etc. This includes durable (reusable)
+         medical equipment as well as disposable equipment used for diagnostic, treatment, and
+         research for healthcare and public health.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Resource</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.extension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Additional Content defined by implementations</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource. In order to make the use of extensions safe and manageable, there is
+         a strict governance applied to the definition and use of extensions. Though any implementer
+         is allowed to define an extension, there is a set of requirements that SHALL be met as
+         part of the definition of the extension.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.modifierExtension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extensions that cannot be ignored</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource, and that modifies the understanding of the element that contains it.
+         Usually modifier elements provide negation or qualification. In order to make the use
+         of extensions safe and manageable, there is a strict governance applied to the definition
+         and use of extensions. Though any implementer is allowed to define an extension, there
+         is a set of requirements that SHALL be met as part of the definition of the extension.
+         Applications processing a resource are required to check for modifier extensions.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.text</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Text summary of the resource, for human interpretation</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A human-readable narrative that contains a summary of the resource, and may be used to
+         represent the content of the resource to a human. The narrative need not encode all the
+         structured data, but is required to contain sufficient detail to make it &amp;quot;clinically
+         safe&amp;quot; for a human to just read the narrative. Resource definitions may define what
+         content should be represented in the narrative to ensure clinical safety.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contained resources do not have narrative. Resources that are not contained SHOULD have
+         a narrative.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">narrative</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">html</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">xhtml</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">display</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Narrative</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.contained</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contained, inline Resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">These resources do not have an independent existence apart from the resource that contains
+         them - they cannot be identified independently, and nor can they have their own independent
+         transaction scope.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">This should never be done when the content can be identified properly, as once identification
+         is lost, it is extremely difficult (and context dependent) to restore it again.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">inline resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">anonymous resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">contained resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Resource</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Instance id from manufacturer, owner and others</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifiers assigned to this device by various organizations. The most likely organizations
+         to assign identifiers are the manufacturer and the owner, though regulatory agencies may
+         also assign an identifier. The identifiers identify the particular device, not the kind
+         of device.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">Often fixed to the device as a barcode. May include names given to the device in local
+         usage. Note that some of the barcodes affixed to the device identify it&apos;s type, not it&apos;s
+         instance.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.id</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.type</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">What kind of device this is</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A kind of this device.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">DeviceKind</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">example</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceUri</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hit-testing.nist.gov:13110/rtmms/index.htm</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.code</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.manufacturer</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Name of device manufacturer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A name of the manufacturer.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.playedRole[typeCode=MANU].scoper.name</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.model</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Model id assigned by the manufacturer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The &amp;quot;model&amp;quot; - an identifier assigned by the manufacturer to identify the product
+         by its type. This number is shared by the all devices sold as the same type.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.playedRole[typeCode=MANU].code</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.version</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Version number (i.e. software)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The version of the device, if the device has multiple releases under the same model, or
+         if the device is software or carries firmware.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.softwareName (included as part)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.expiry</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Date of expiry of this device (if applicable)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Date of expiry of this device (if applicable).</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">date</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.expirationTime</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.udi</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">FDA Mandated Unique Device Identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">FDA Mandated Unique Device Identifier. Use the human readable information (the content
+         that the user sees, which is sometimes different to the exact syntax represented in the
+         barcode)  - see http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentifica
+        tion/default.htm.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">The unique identifier may identify an instance of a device uniquely, or it may just identify
+         the type of the device. A portion of the UDI - the DI part - can be extracted from the
+         UDI when required, and used to look up information about the device through the GUDID.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.id[where root is root for UDI]</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.lotNumber</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Lot number of manufacture</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Lot number assigned by the manufacturer.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">Alphanumeric Maximum 20.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.lotNumberText</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.owner</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Organization responsible for device</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">An organization that is responsible for the provision and ongoing maintenance of the device.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Organization</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.playedRole[typeCode=OWN].scoper</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.location</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Where the resource is found</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The resource may be found in a literal location (i.e. GPS coordinates), a logical place
+         (i.e. &amp;quot;in/with the patient&amp;quot;), or a coded location.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Location</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.playedRole[typeCode=LOCE].scoper</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.patient</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">If the resource is affixed to a person</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Patient information, if the resource is affixed to a person.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Patient</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.playedRole[typeCode=USED].scoper.playedRole[typeCode=PAT]</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.contact</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Details for human/organization for support</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contact details for an organization or a particular human that is responsible for the
+         device.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">used for troubleshooting etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contact</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.scopedRole[typeCode=CON].player</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device.url</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Network address to contact device</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A network address on which the device may be contacted directly.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">If the device is running a FHIR server, the network address should  be the root URL from
+         which a conformance statement may be retrieved.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">uri</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.telecom</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">_id</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The logical resource id associated with the resource (must be supported by all servers)</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">_language</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The language of the resource</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Instance id from manufacturer, owner and others</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Device/f:identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">location</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">A location, where the resource is found</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Device/f:location</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">manufacturer</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The manufacturer of the device</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Device/f:manufacturer</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">model</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The model of the device</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Device/f:model</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">organization</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The organization responsible for the device</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Device/f:owner</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">patient</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Patient information, if the resource is affixed to a person</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Device/f:patient</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">type</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The type of the device</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Device/f:type</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">udi</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">FDA Mandated Unique Device Identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Device/f:udi</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+  </b><span class="xmltag">&lt;/structure&gt;</span><b>
+</b><span class="xmltag">&lt;/Profile&gt;</span></pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>patient</b>: Roel
+      </p>
+      <p>
+        <b>status</b>: completed
+      </p>
+      <p>
+        <b>period</b>: 14-Apr 2013 --&gt; 21-Apr 2013
+      </p>
+      <p>
+        <b>modified</b>: 11-Mar 2013
+      </p>
+      <p>
+        <b>concern</b>: Roel&#39;s sepsis
+      </p>
+      <h3>Participants</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Role</b>
+          </td>
+          <td>
+            <b>Member</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 425268008}">Review of care plan</span>
+          </td>
+          <td>Dokter Bronsig</td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 278110001}">Radiographic imaging</span>
+          </td>
+          <td>Luigi Maas</td>
+        </tr>
+      </table>
+      <h3>Goals</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Description</b>
+          </td>
+          <td>
+            <b>Status</b>
+          </td>
+          <td>
+            <b>Notes</b>
+          </td>
+          <td>
+            <b>Concern</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Check whether further treatment of sepsis/pulmonary abcess is required</td>
+          <td>cancelled</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+      <blockquote>
+        <p>
+          <b>activity</b>
+        </p>
+        <p>
+          <b>status</b>: notStarted
+        </p>
+        <p>
+          <b>prohibited</b>: false
+        </p>
+        <h3>Simples</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Category</b>
+            </td>
+            <td>
+              <b>Code</b>
+            </td>
+            <td>
+              <b>Timing[x]</b>
+            </td>
+            <td>
+              <b>Location</b>
+            </td>
+            <td>
+              <b>Performer</b>
+            </td>
+            <td>
+              <b>Product</b>
+            </td>
+            <td>
+              <b>DailyAmount</b>
+            </td>
+            <td>
+              <b>Quantity</b>
+            </td>
+            <td>
+              <b>Details</b>
+            </td>
+          </tr>
+          <tr>
+            <td>observation</td>
+            <td>
+              <span title="Codes: {http://snomed.info/sct 241541005}">High resolution computed tomography of lungs</span>
+            </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </table>
+      </blockquote>
+    </div>
+  </text>
+  <patient><!--  It entails Roel's careplan  -->
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </patient>
+  <status value="completed"/>
+  <period>
+    <start value="2013-04-14"/>
+    <end value="2013-04-21"/>
+  </period>
+  <modified value="2013-03-11"/>
+  <concern>
+    <reference value="Condition/f203"/>
+    <display value="Roel&#39;s sepsis"/>
+  </concern>
+  <participant>
+    <role>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="425268008"/>
+        <display value="Review of care plan"/>
+      </coding>
+    </role>
+    <member>
+      <reference value="Practitioner/f201"/>
+      <display value="Dokter Bronsig"/>
+    </member>
+  </participant>
+  <participant>
+    <role>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="278110001"/>
+        <display value="Radiographic imaging"/>
+      </coding>
+    </role>
+    <member>
+      <reference value="Practitioner/f202"/>
+      <display value="Luigi Maas"/>
+    </member>
+  </participant>
+  <goal>
+    <description value="Check whether further treatment of sepsis/pulmonary abcess is required"/>
+    <status value="cancelled"/>
+  </goal>
+  <activity>
+    <status value="not started"/>
+    <prohibited value="false"/>
+    <simple>
+      <category value="observation"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="241541005"/>
+          <display value="High resolution computed tomography of lungs"/>
+        </coding>
+      </code>
+    </simple>
+  </activity>
+</CarePlan>

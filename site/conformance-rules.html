@@ -1,0 +1,318 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Conformance Rules - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentation.html">Documentation</a></li>        <li><a href="resources.html">Resource Definitions</a></li>        <li><b>Conformance</b></li>          <!-- conformance-rules.html / page -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<a name="conformance"> </a>
+<h2><span class="sectioncount">1.12.1<a name="1.12.1"> </a></span> Conformance</h2>
+
+<p>
+The contents of the resource and the formats used to represent it SHALL
+conform to the rules described in this specification, as defined in the 
+narrative of the specification, and as controlled by the conformance 
+properties defined below.
+</p>
+<p>
+Note: This spec uses the conformance verbs SHALL, SHOULD, and MAY as defined in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.
+</p>
+<p>
+Because of its general nature and wide applicability, the rules made in this specification are generally fairly loose.
+As a consequence (unlike RFC 2119), this specification allows that different applications may not be able to be interoperate 
+because of how they use optional features. To allow applications to manage this, FHIR provides 
+a conformance layer that implementers and  national/regional programs can use to provide a computable statement about 
+how the resources and their exchange paradigms are used to solve particular use cases. 
+The conformance layer itself is implemented using the following resources:
+</p>
+<table class="grid">
+ <tr> <td><a href="valueset.html">Value Set</a></td> <td>Defines a set of coded values (see &quot;<a href="terminologies.html">Using Codes</a>&quot; for more details)</td>  </tr>
+ <tr> <td><a href="profile.html">Profile</a></td> <td>Makes rules about how a resource and it's data elements are used in a particular context. A profile references value sets for the coded elements in a resource</td>  </tr>
+ <tr> <td><a href="conformance.html">Conformance</a></td> <td>A statement of the kinds of resources and operations provided and/or consumed by an application. The conformance resource references profiles to describe specific use of resources by the application</td>  </tr>
+</table>
+<p>
+The specification also provides a number of tools that can assist with enforcing technical conformance 
+to this base specification:
+</p>
+<ul>
+ <li><a href="fhir-all-xsd.zip">Schema &amp; Schematron</a></li>
+ <li><a href="validation.zip">Validator Package - use to check resources against profiles</a></li>
+ <li><a href="downloads.html#refimpl">Reference Platforms (conformant code in various languages)</a></li>
+</ul> 
+<p>
+Note that none of these tools are able to check complete conformance to this specification.
+</p>
+<p>
+Data elements defined in resources and data types have 3 properties that are 
+directly related to conformance: Cardinality, Is-Modifier, and Must-Support.
+These interact to place conformance requirements on implementations. 
+</p>
+
+<a name="cardinality"> </a>
+<h3><span class="sectioncount">1.12.1.1<a name="1.12.1.1"> </a></span> Cardinality</h3>
+<p>
+All elements defined in FHIR have a cardinality as part of their definition - a minimum number 
+of required appearances, and a maximum number. This number specifies the number of times
+the element may appear in any instance of the resource type. This specification
+only defines the following cardinalities: 0..1, 0..*, 1..1, and 1..*. Profiles 
+that describe specific use cases may use other values for cardinality within the limits 
+of the cardinality defined by the resource. 
+</p>
+<p>
+Note that when present, elements cannot be empty - they SHALL have either a value attribute, 
+child elements, or extensions. This means that setting an element to a minimum cardinality
+of 1 does not ensure that valid data will be present; specific XPath constraints are required
+to ensure that the required data will be present.
+</p>
+<p>
+In this specification, very few elements have a minimum cardinality of 1. 
+Resources are used in many contexts, often quite removed from their primary
+use case, and sometimes even basic information is sometimes very incomplete. For this reason,
+the only elements that have a minimum cardinality of 1 are those where they
+are necessary to any understanding of the element that contains them. 
+The minimum cardinalities should not be taken as a guide to what elements
+are expected to be present in any particular use of the resource, including their normal/primary usage purpose.
+This specification may publish additional profiles that define which elements are required in 
+which situation, or alternatively, such profiles might be published by jurisdictions, vendors, or projects.
+</p>
+<p>
+For elements that have cardinality &gt; 1, the order in which they appear may have meaning.
+Unless the element definition (either in this specification or the extension) defines a meaning 
+to the order explicitly, the meaning of the order is not defined, and implementations are allowed 
+to reorder the elements. Note that it is not possible to define a meaning for the order of the elements in 
+a profile. When there is no definition of the meaning of the order, implementations that need 
+to choose a single element from a list of elements for some use SHALL do so based on the semantics 
+of the content of the elements that repeats. Profiles and Implementation guides may often make 
+rules about this selection process.
+</p>
+
+
+<a name="mustUnderstand"> </a>
+<a name="ismodifier"> </a>
+<a name="isModifier"> </a>
+<h3><span class="sectioncount">1.12.1.2<a name="1.12.1.2"> </a></span> Is-modifier</h3>
+<p>
+Is-Modifier is a boolean property that is assigned when an element is defined, either as part of 
+the base resource contents in this specification, or when profiles declare extensions. 
+An element is labeled &quot;Is-Modifier = true&quot; if the value it contains may change the 
+interpretation of the element that contains it (including if the element is the resource as a whole). Typical examples of 
+elements that are labeled &quot;Is-Modifier&quot; are elements such as &quot;status&quot;, &quot;active&quot;, &quot;refuted&quot;, or &quot;certainty&quot;. 
+Whether an element is a modifier cannot be changed when element usage is described in a 
+<a href="profile.html">Resource Profile</a>.
+When an element is labeled as Is-Modifier, the documentation must be clear about why 
+it is a modifier.
+</p>
+<p>
+A typical example of a modifier element is one that negates the element that contains it. For 
+instance, in the following element definition:
+</p>
+<pre class="spec">&lt;<a title="Specific reactions to a substance." class="dict" ok="true"><b>AdverseReaction</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+ &lt;!-- Other information --&gt;
+ &lt;<a title="When the exposure occurred." class="dict" ok="true"><b>exposureDate</b></a> value=&quot;[<span style="color: darkgreen"><a ok="true">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the exposure occurred</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Substance(s) that is presumed to have caused the adverse reaction." class="dict" ok="true"><b>substance</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a ok="true">Resource</a>(<a ok="true">Substance</a>)</span> <span style="color: navy">Presumed to have caused the reaction</span><span style="color: Gray"> --&gt;</span>&lt;/substance&gt;
+ &lt;<a title="To say that a reaction to substance did not occur (this element modifies the meaning of other elements)" class="dict" ok="true"><span style="text-decoration: underline"><b>didNotOccurFlag</b></span></a> value=&quot;[<span style="color: darkgreen"><a ok="true">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">To say that a reaction to substance did not occur</span><span style="color: Gray"> --&gt;</span>
+ &lt;!-- Other information --&gt;
+&lt;/AdverseReaction&gt;
+</pre>
+<p>
+The element &quot;didNotOccurFlag&quot; affects the entire meaning of the resource - if it is set to true, the whole resource must be understood differently, and so it is not safe for implementations to ignore it. 
+</p>
+<p>
+Generally, elements labeled &quot;Is-Modifier = true&quot; also have a minimum cardinality of 1, to introduce
+certainty in their handling. If the value of such an element is not explicit in the instance, or known 
+by the context, the resource cannot be safely understood. Irrespective of the minimum cardinality, 
+implementations producing resources SHALL ensure that appropriate values for isModifier 
+elements are provided. Is-Modifier elements SHALL be represented in the narrative summary 
+of the resource.
+</p>
+<p>
+Implementations processing the data in resources SHALL understand the impact of the element when using the data. 
+Implementations are not required to &quot;support&quot; the element in any meaningful way - they 
+may achieve this understanding by rejecting instances that contain values outside those they support (for instance,
+an application may refuse to accept observations with a reliability != &quot;ok&quot;). Alternatively,
+implementations may be able to be sure, due to their implementation environment, that such values 
+will never occur. However applications SHOULD always check the value irrespective of this.
+</p>
+<p>
+Note that processing the data of a resource typically means
+copying or filtering data out of a resource for use in another 
+context (display to a human, decision support, exchange in another 
+format where not all information is included, or storing it for this kind of use).
+Servers and background processes that simply move whole resources around unchanged 
+are not &quot;processing the data of the resource&quot;, and therefore these applications 
+are not required to check Is-Modifier elements. 
+</p>
+
+<a name="mustSupport"> </a>
+<h3><span class="sectioncount">1.12.1.3<a name="1.12.1.3"> </a></span> Must-Support</h3>
+<p>
+Labelling an element Must-Support means that implementations that produce or consume resources SHALL 
+provide &quot;support&quot; for the element in some meaningful way. Exactly what this means is impossible
+to describe or clarify as part of the FHIR specification.
+</p>
+<p>
+For this reason, the specification itself never labels any elements as must-support. 
+This is done in <a href="profile.html">Resource Profiles</a>, where the profile 
+labels an element as mustSupport=true. When a profile does this, it SHALL also make clear
+exactly what kind of &quot;support&quot; is required, as this can mean many things.
+</p>
+
+<p>
+Note that an element that has the property IsModifier is not necessarily a &quot;key&quot; element (e.g. one of 
+the important elements to make use of the resource), nor is it automatically mustSupport - however both 
+of these things are more likely to be true for IsModifier elements than for other elements.
+</p>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

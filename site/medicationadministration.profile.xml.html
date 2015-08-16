@@ -1,0 +1,1008 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Medicationadministration.profile.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><a href="medicationadministration.html">MedicationAdministration</a></li>        <li><b>Profile Instance</b></li>        <!-- medicationadministration.profile.xml.html / profile-instance:resource:MedicationAdministration -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Medicationadministration.profile.xml</h1>
+
+<div class="example">
+<p>Profile for medicationadministration</p>
+<p><a href="medicationadministration.profile.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;Profile</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;pre</span><span class="xmltag">&gt;</span><b>
+&amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration</span>" title="<span class="xmlattrvalue">Describes the event of a patient being given a dose of a medication.  This may be as simple
+         as swallowing a tablet or it may be a long running infusion.  Related resources tie this
+         event to the authorizing prescription, and the specific encounter between patient and
+         health care practitioner.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>MedicationAdministration</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt; </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">float: right</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">formats.html</span>" title="<span class="xmlattrvalue">Documentation for this format</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">doco</span>" src="<span class="xmlattrvalue">help.png</span>"</span><span class="xmltag">/&gt;</span><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;!-- from </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">resources.html</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>: </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">extensibility.html</span>"</span><span class="xmltag">&gt;</span><b>extension</b><span class="xmltag">&lt;/a&gt;</span><b>, </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">extensibility.html#modifierExtension</span>"</span><span class="xmltag">&gt;</span><b>modifierExtension</b><span class="xmltag">&lt;/a&gt;</span><b>, language, </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">narrative.html#Narrative</span>"</span><span class="xmltag">&gt;</span><b>text</b><span class="xmltag">&lt;/a&gt;</span><b>, and </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#contained</span>"</span><span class="xmltag">&gt;</span><b>contained</b><span class="xmltag">&lt;/a&gt;</span><b> --&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.identifier</span>" title="<span class="xmlattrvalue">External identifier - FHIR will generate its own internal IDs (probably URLs) which do
+         not need to be explicitly managed by the resource.  The identifier here is one that would
+         be used by another non-FHIR system - for example an automated medication pump would provide
+         a record each time it operated; an administration while the patient was off the ward might
+         be made with a different system and entered after the event.  Particularly important if
+         these records have to be updated (this element modifies the meaning of other elements)</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">text-decoration: underline</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>identifier</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Identifier</span>"</span><span class="xmltag">&gt;</span><b>Identifier</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>External identifier</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/identifier&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.status</span>" title="<span class="xmlattrvalue">Will generally be set to show that the administration has been completed.  For some long
+         running administrations such as infusions it is possible for an administration to be started
+         but not completed or it may be paused while some other process is under way (this element
+         modifies the meaning of other elements)</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">text-decoration: underline</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>status</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#code</span>"</span><span class="xmltag">&gt;</span><b>code</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">medication-admin-status.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>in progress | on hold | completed | entered in error | stopped</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.patient</span>" title="<span class="xmlattrvalue">The person or animal to whom the medication was given.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>patient</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">patient.html#Patient</span>"</span><span class="xmltag">&gt;</span><b>Patient</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Who received medication?</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/patient&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.practitioner</span>" title="<span class="xmlattrvalue">The individual who was responsible for giving the medication to the patient.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>practitioner</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">practitioner.html#Practitioner</span>"</span><span class="xmltag">&gt;</span><b>Practitioner</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Who administered substance?</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/practitioner&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.encounter</span>" title="<span class="xmlattrvalue">The visit or admission the or other contact between patient and health care provider the
+         medication administration was performed as part of.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>encounter</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">encounter.html#Encounter</span>"</span><span class="xmltag">&gt;</span><b>Encounter</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Encounter administered as part of</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/encounter&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.prescription</span>" title="<span class="xmlattrvalue">The original request, instruction or authority to perform the administration.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>prescription</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">medicationprescription.html#MedicationPrescription</span>"</span><span class="xmltag">&gt;</span><b>MedicationPrescription</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>
+     Order administration performed against</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/prescription&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.wasNotGiven</span>" title="<span class="xmlattrvalue">Set this to true if the record is saying that the medication was NOT administered (this
+         element modifies the meaning of other elements)</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">text-decoration: underline</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>wasNotGiven</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#boolean</span>"</span><span class="xmltag">&gt;</span><b>boolean</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>True if medication not administered</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.reasonNotGiven</span>" title="<span class="xmlattrvalue">A code indicating why the administration was not performed.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>reasonNotGiven</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>" title="<span class="xmlattrvalue">Inv-2: Reason not given is only permitted if wasNotGiven is true</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">??</span>" src="<span class="xmlattrvalue">lock.png</span>"</span><span class="xmltag">/&gt;</span><b> 0..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">valueset-reason-medication-not-given-codes.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Reason administration not performed</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/reasonNotGiven&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.whenGiven</span>" title="<span class="xmlattrvalue">An interval of time during which the administration took place.  For many administrations,
+         such as swallowing a tablet the lower and upper values of the interval will be the same.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>whenGiven</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Period</span>"</span><span class="xmltag">&gt;</span><b>Period</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Start and end time of administration</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/whenGiven&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.medication</span>" title="<span class="xmlattrvalue">Identifies the medication that was administered. This is either a link to a resource representing
+         the details of the medication or a simple attribute carrying a code that identifies the
+         medication from a known list of medications.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>medication</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">medication.html#Medication</span>"</span><span class="xmltag">&gt;</span><b>Medication</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>What was administered?</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/medication&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.device</span>" title="<span class="xmlattrvalue">The device used in administering the medication to the patient.  E.g. a particular infusion
+         pump.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>device</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">device.html#Device</span>"</span><span class="xmltag">&gt;</span><b>Device</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Device used to administer</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/device&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage</span>" title="<span class="xmlattrvalue">Provides details of how much of the medication was administered.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>dosage</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;  </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!-- </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> Medicine administration instructions to the patient/carer --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage.timing_x_</span>" title="<span class="xmlattrvalue">The timing schedule for giving the medication to the patient.  This may be a single time
+         point (using dateTime) or it may be a start and end dateTime (Period).</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>timing[x]</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#dateTime</span>"</span><span class="xmltag">&gt;</span><b>dateTime</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Period</span>"</span><span class="xmltag">&gt;</span><b>Period</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>When dose(s) were given</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/timing[x]&amp;gt;
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage.asNeeded_x_</span>" title="<span class="xmlattrvalue">If set to true or if specified as a CodeableConcept, indicates that the medication is
+         only taken when needed within the specified schedule rather than at every scheduled dose.
+          If a CodeableConcept is present, it indicates the pre-condition for taking the Medication.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>asNeeded[x]</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#boolean</span>"</span><span class="xmltag">&gt;</span><b>boolean</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Take &amp;quot;as needed&amp;quot; f(or x)</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/asNeeded[x]&amp;gt;
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage.site</span>" title="<span class="xmlattrvalue">A coded specification of the anatomic site where the medication first entered the body.
+          E.g. &amp;quot;left arm&amp;quot;.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>site</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">valueset-approach-site-codes.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Body site administered to</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/site&amp;gt;
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage.route</span>" title="<span class="xmlattrvalue">A code specifying the route or physiological path of administration of a therapeutic agent
+         into or onto the patient.   E.g. topical, intravenous, etc.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>route</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">valueset-route-codes.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Path of substance into body</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/route&amp;gt;
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage.method</span>" title="<span class="xmlattrvalue">A coded value indicating the method by which the medication was introduced into or onto
+         the body. Most commonly used for injections.  Examples:  Slow Push; Deep IV.  Terminologies
+         used often pre-coordinate this term with the route and or form of administration.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>method</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">valueset-administration-method-codes.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>How drug was administered</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/method&amp;gt;
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage.quantity</span>" title="<span class="xmlattrvalue">The amount of the medication given at one administration event.   Use this value when
+         the administration is essentially an instantaneous event such as a swallowing a tablet
+         or giving an injection.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>quantity</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Quantity</span>"</span><span class="xmltag">&gt;</span><b>Quantity</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Amount administered in one dose</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/quantity&amp;gt;
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage.rate</span>" title="<span class="xmlattrvalue">Identifies the speed with which the medication was introduced into the patient. Typically
+         the rate for an infusion e.g. 200ml in 2 hours.  May also expressed as a rate per unit
+         of time such as 100ml per hour - the duration is then not specified, or is specified in
+         the quantity.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>rate</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Ratio</span>"</span><span class="xmltag">&gt;</span><b>Ratio</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Dose quantity per unit of time</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/rate&amp;gt;
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">medicationadministration-definitions.html#MedicationAdministration.dosage.maxDosePerPeriod</span>" title="<span class="xmlattrvalue">The maximum total quantity of a therapeutic substance that was administered to the patient
+         over the specified period of time. E.g. 1000mg in 24 hours.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>maxDosePerPeriod</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Ratio</span>"</span><span class="xmltag">&gt;</span><b>Ratio</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Total dose that was consumed per unit of time</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/maxDosePerPeriod&amp;gt;
+ &amp;lt;/dosage&amp;gt;
+&amp;lt;/MedicationAdministration&amp;gt;
+</b><span class="xmltag">&lt;/pre&gt;</span><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">medicationadministration</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;publisher</span><span class="xmlattr"> value="<span class="xmlattrvalue">FHIR Project</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;description</span><span class="xmlattr"> value="<span class="xmlattrvalue">Basic Profile. Describes the event of a patient being given a dose of a medication.  This
+   may be as simple as swallowing a tablet or it may be a long running infusion.  Related
+   resources tie this event to the authorizing prescription, and the specific encounter between
+   patient and health care practitioner.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">draft</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;date</span><span class="xmlattr"> value="<span class="xmlattrvalue">2014-10-08</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;requirements</span><span class="xmlattr"> value="<span class="xmlattrvalue">Scope and Usage This resource covers the administration of all medications with the exception
+   of vaccines. It will principally be used within inpatient settings to record the capture
+   of medication administrations including self-administrations of oral medications, injections,
+   intra-venous adjustments, etc. It can also be used in out-patient settings to record allergy
+   shots and other non-immunization administrations. In some cases it might be used for home-health
+   reporting, such as recording self-administered or even device-administered insulin.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;uri</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/v3</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">RIM</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+  </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;uri</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/v2</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">HL7 v2</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+  </b><span class="xmltag">&lt;structure</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;publish</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Administration of medication to a patient</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Describes the event of a patient being given a dose of a medication.  This may be as simple
+         as swallowing a tablet or it may be a long running infusion.  Related resources tie this
+         event to the authorizing prescription, and the specific encounter between patient and
+         health care practitioner.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Resource</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;constraint</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;key</span><span class="xmlattr"> value="<span class="xmlattrvalue">2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">Not given reason</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;severity</span><span class="xmlattr"> value="<span class="xmlattrvalue">error</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;human</span><span class="xmlattr"> value="<span class="xmlattrvalue">Reason not given is only permitted if wasNotGiven is true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">not(exists(f:reasonNotGiven)) or f:wasNotGiven=&apos;true&apos;</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/constraint&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">SubstanceAdministration</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.extension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Additional Content defined by implementations</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource. In order to make the use of extensions safe and manageable, there is
+         a strict governance applied to the definition and use of extensions. Though any implementer
+         is allowed to define an extension, there is a set of requirements that SHALL be met as
+         part of the definition of the extension.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.modifierExtension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extensions that cannot be ignored</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource, and that modifies the understanding of the element that contains it.
+         Usually modifier elements provide negation or qualification. In order to make the use
+         of extensions safe and manageable, there is a strict governance applied to the definition
+         and use of extensions. Though any implementer is allowed to define an extension, there
+         is a set of requirements that SHALL be met as part of the definition of the extension.
+         Applications processing a resource are required to check for modifier extensions.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.text</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Text summary of the resource, for human interpretation</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A human-readable narrative that contains a summary of the resource, and may be used to
+         represent the content of the resource to a human. The narrative need not encode all the
+         structured data, but is required to contain sufficient detail to make it &amp;quot;clinically
+         safe&amp;quot; for a human to just read the narrative. Resource definitions may define what
+         content should be represented in the narrative to ensure clinical safety.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contained resources do not have narrative. Resources that are not contained SHOULD have
+         a narrative.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">narrative</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">html</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">xhtml</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">display</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Narrative</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.contained</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contained, inline Resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">These resources do not have an independent existence apart from the resource that contains
+         them - they cannot be identified independently, and nor can they have their own independent
+         transaction scope.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">This should never be done when the content can be identified properly, as once identification
+         is lost, it is extremely difficult (and context dependent) to restore it again.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">inline resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">anonymous resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">contained resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Resource</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">External identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">External identifier - FHIR will generate its own internal IDs (probably URLs) which do
+         not need to be explicitly managed by the resource.  The identifier here is one that would
+         be used by another non-FHIR system - for example an automated medication pump would provide
+         a record each time it operated; an administration while the patient was off the ward might
+         be made with a different system and entered after the event.  Particularly important if
+         these records have to be updated.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">id</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-25-Administered Barcode Identifier? (V2 def&apos;n of RXA-25 refers to the &apos;give&apos; occurrence;
+           appears not to discuss &apos;administer&apos; cardinality which would seem to be 0..*)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.status</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">in progress | on hold | completed | entered in error | stopped</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Will generally be set to show that the administration has been completed.  For some long
+         running administrations such as infusions it is possible for an administration to be started
+         but not completed or it may be paused while some other process is under way.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">code</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministrationStatus</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">required</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceResource</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/medication-admin-status</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/referenceResource&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">statusCode</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-20-Completion Status</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.patient</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who received medication?</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The person or animal to whom the medication was given.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Patient</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">subject-&amp;gt;Patient</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">PID-3-Patient ID List</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.practitioner</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who administered substance?</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The individual who was responsible for giving the medication to the patient.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Practitioner</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">performer-&amp;gt;Role</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-10-Administering Provider / PRT-5-Participation Person: PRT-4-Participation=&apos;AP&apos; (RXA-10
+           is deprecated)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.encounter</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Encounter administered as part of</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The visit or admission the or other contact between patient and health care provider the
+         medication administration was performed as part of.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Encounter</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">component-&amp;gt;EncounterEvent</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">PV1-19-Visit Number</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.prescription</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order administration performed against</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The original request, instruction or authority to perform the administration.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/MedicationPrescription</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">InFullfillmentOf-&amp;gt;SubstanceAdministration</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">ORC-3-Filler Order Number / ORC-2-Placer Order Number</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.wasNotGiven</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">True if medication not administered</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Set this to true if the record is saying that the medication was NOT administered.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">boolean</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">actionNegationInd</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-20-Completion Status=&apos;NA&apos;</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.reasonNotGiven</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Reason administration not performed</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A code indicating why the administration was not performed.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministrationNegationReason</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">example</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceResource</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/reason-medication-not-given-codes</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/referenceResource&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">Reason-&amp;gt;Observation-&amp;gt;Value</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-9-Administration Notes:RXA-20-Completion Status=&apos;NA&apos;</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.whenGiven</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Start and end time of administration</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">An interval of time during which the administration took place.  For many administrations,
+         such as swallowing a tablet the lower and upper values of the interval will be the same.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Period</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">effectiveTime</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-3-Date/Time Start of Administration / RXA-4-Date/Time End of Administration</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.medication</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">What was administered?</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifies the medication that was administered. This is either a link to a resource representing
+         the details of the medication or a simple attribute carrying a code that identifies the
+         medication from a known list of medications.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">Note: do not use Medication.name to describe the administered medication. When the only
+         available information is a text description of the medication, Medication.code.text should
+         be used.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Medication</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">Consumeable-&amp;gt;AdministerableMedication</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-5-Administered Code</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.device</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Device used to administer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The device used in administering the medication to the patient.  E.g. a particular infusion
+         pump.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Device</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">device-&amp;gt;Access  OR device-&amp;gt;AssignedDevice</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">PRT-10-Participation Device</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Medicine administration instructions to the patient/carer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Provides details of how much of the medication was administered.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;constraint</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;key</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">Dose</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;severity</span><span class="xmlattr"> value="<span class="xmlattrvalue">error</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;human</span><span class="xmlattr"> value="<span class="xmlattrvalue">SHALL have at least one of dosage.quantity and dosage.rate</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">exists(f:quantity) or exists(f:rate)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/constraint&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">component-&amp;gt;SubstanceAdministrationEvent</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.extension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Additional Content defined by implementations</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource. In order to make the use of extensions safe and manageable, there is
+         a strict governance applied to the definition and use of extensions. Though any implementer
+         is allowed to define an extension, there is a set of requirements that SHALL be met as
+         part of the definition of the extension.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.modifierExtension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extensions that cannot be ignored</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource, and that modifies the understanding of the element that contains it.
+         Usually modifier elements provide negation or qualification. In order to make the use
+         of extensions safe and manageable, there is a strict governance applied to the definition
+         and use of extensions. Though any implementer is allowed to define an extension, there
+         is a set of requirements that SHALL be met as part of the definition of the extension.
+         Applications processing a resource are required to check for modifier extensions.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.timing[x]</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">When dose(s) were given</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The timing schedule for giving the medication to the patient.  This may be a single time
+         point (using dateTime) or it may be a start and end dateTime (Period).</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">This is generally only relevant if the administration record represents a summary of multiple
+         administrations.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">dateTime</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Period</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">effectiveTime[TS or IVL_TS)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RAS:TQ1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.asNeeded[x]</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Take &amp;quot;as needed&amp;quot; f(or x)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">If set to true or if specified as a CodeableConcept, indicates that the medication is
+         only taken when needed within the specified schedule rather than at every scheduled dose.
+          If a CodeableConcept is present, it indicates the pre-condition for taking the Medication.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">boolean</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAsNeededReason</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">preferred</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;description</span><span class="xmlattr"> value="<span class="xmlattrvalue">A coded concept identifying the pre-condition that should hold prior to consuming a medication
+           dose.  For example &amp;quot;pain&amp;quot;, &amp;quot;30 minutes prior to sexual intercourse&amp;quot;,
+           &amp;quot;on flare-up&amp;quot;, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">boolean: precondition.negationInd (inversed - so negationInd = true means asNeeded=false
+            CodeableConcept: precondition.observationEventCriterion[code=&amp;quot;Assertion&amp;quot;].value</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.site</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Body site administered to</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A coded specification of the anatomic site where the medication first entered the body.
+          E.g. &amp;quot;left arm&amp;quot;.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministrationSite</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">example</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceResource</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/approach-site-codes</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/referenceResource&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">approachSiteCode</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXR-2-Administration Site</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.route</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Path of substance into body</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A code specifying the route or physiological path of administration of a therapeutic agent
+         into or onto the patient.   E.g. topical, intravenous, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">RouteOfAdministration</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">example</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceResource</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/route-codes</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/referenceResource&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">routeCode</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXR-1-Route</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.method</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">How drug was administered</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A coded value indicating the method by which the medication was introduced into or onto
+         the body. Most commonly used for injections.  Examples:  Slow Push; Deep IV.  Terminologies
+         used often pre-coordinate this term with the route and or form of administration.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministrationMethod</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">example</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceResource</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/administration-method-codes</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/referenceResource&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">methodCode</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXR-4-Administration Method</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.quantity</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Amount administered in one dose</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The amount of the medication given at one administration event.   Use this value when
+         the administration is essentially an instantaneous event such as a swallowing a tablet
+         or giving an injection.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">If the administration is not instantaneous (rate is present or timing has a duration),
+         this can be specified to convey the total amount administered over period of time of a
+         single administration (as indicated by schedule).</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Quantity</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">doseQuantity</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-6-Administered Amount / RXA-7.1-Administered Units.code / RXA-7.3-Administered Units.name
+           of coding system (uri&amp;lt;-&amp;gt;code system mapping required)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.rate</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Dose quantity per unit of time</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifies the speed with which the medication was introduced into the patient. Typically
+         the rate for an infusion e.g. 200ml in 2 hours.  May also expressed as a rate per unit
+         of time such as 100ml per hour - the duration is then not specified, or is specified in
+         the quantity.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">If the rate changes over time, each change should be captured as a distinct &amp;quot;dosage&amp;quot;
+         repetition.  This element should *not* be used to convey an average rate.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Ratio</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">rateQuantity</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXA-12-Administered Per (Time Unit)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration.dosage.maxDosePerPeriod</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Total dose that was consumed per unit of time</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The maximum total quantity of a therapeutic substance that was administered to the patient
+         over the specified period of time. E.g. 1000mg in 24 hours.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Ratio</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">maxDoseQuantity</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">RXE-4-Give Amount - Maximum / RXE-5-Give Units</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">_id</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The logical resource id associated with the resource (must be supported by all servers)</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">_language</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The language of the resource</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">device</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Return administrations with this administration device identity</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:device</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">encounter</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Return administrations that share this encounter</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:encounter</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Return administrations with this external identity</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">medication</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Return administrations of this medication</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:medication</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">notgiven</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Administrations that were not made</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:wasNotGiven</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">patient</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The identity of a patient to list administrations  for</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:patient</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">prescription</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The identity of a prescription to list administrations from</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:prescription</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">status</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">MedicationAdministration event status (for example one of active/paused/completed/nullified)</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:status</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">whengiven</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">date</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Date of administration</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:MedicationAdministration/f:whenGiven</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+  </b><span class="xmltag">&lt;/structure&gt;</span><b>
+</b><span class="xmltag">&lt;/Profile&gt;</span></pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

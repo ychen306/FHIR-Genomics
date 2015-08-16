@@ -1,0 +1,463 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Valueset-other-resource-type.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentation.html">Documentation</a></li>        <li><a href="terminologies.html">Using Codes</a></li>        <li><a href="terminologies-valuesets.html">Value Sets</a></li>        <li><a href="valueset-other-resource-type.html">valueset-other-resource-type</a></li>        <li><b>Instance</b></li>        <!-- valueset-other-resource-type.xml.html / valueset-instance -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Valueset-other-resource-type.xml</h1>
+
+<div class="example">
+<p>Definition for Value SetOther Resource Types</p>
+<p><a href="valueset-other-resource-type.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;ValueSet</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;h2</span><span class="xmltag">&gt;</span><b>Other Resource Types</b><span class="xmltag">&lt;/h2&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>This value set defines codes for resources not yet supported by (or which will never be
+         supported by) FHIR.  Many of the codes listed here will eventually be turned into official
+         resources.  However, there is no guarantee that any particular resource will be created
+         nor that the scope will be exactly as defined by the codes presented here.  Codes in this
+         set will be deprecated if/when formal resources are defined that encompass these concepts.</b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>This value set defines its own terms in the system http://hl7.org/fhir/other-resource-type</b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;table</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Code</b><span class="xmltag">&lt;/b&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Display</b><span class="xmltag">&lt;/b&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Definition</b><span class="xmltag">&lt;/b&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>CONSENT
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">CONSENT</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>consent</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>An assertion of permission for an activity or set of activities to occur, possibly subject
+             to particular limitations.  E.g. surgical consent, information disclosure consent, etc.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>REFERRAL
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">REFERRAL</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>referral</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A request that care of a particular type be provided to a patient.  Could involve the
+             transfer of care, a consult, etc.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>SLOT
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">SLOT</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>resource slot</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A bounded time-period when a particular set of resources (practioners, devices and/or
+             locations) is available for the delivery of healthcare services.  Used for scheduling.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>APTMT
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">APTMT</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>appointment</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>An agreement for a particular type of service to occur for a specified patient at a specific
+             time with a particular set of resources (practitioners, devices, locations, etc.)</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>APTMTREQ
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">APTMTREQ</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>appointment request</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A request that a time be scheduled for a type of service for a specified patient, potentially
+             subject to other constraints</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>TRANSFER
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">TRANSFER</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>transfer</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>The transition of a patient or set of material from one location to another</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>DIET
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">DIET</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>diet</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>The specification of a set of food and/or other nutritonal material to be delivered to
+             a patient.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>ADMINACT
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">ADMINACT</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>administrative activity</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>An occurrence of a non-care-related event in the healthcare domain, such as approvals,
+             reviews, etc.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>EXPOSURE
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">EXPOSURE</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>exposure</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>Record of a situation where a subject was exposed to a substance.  Usually of interest
+             to public health.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>INVESTIGATION
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">INVESTIGATION</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>investigation</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A formalized inquiry into the circumstances surrounding a particular unplanned event or
+             potential event for the purposes of identifying possible causes and contributing factors
+             for the event</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>ACCOUNT
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">ACCOUNT</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>account</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A financial instrument used to track costs, charges or other amounts.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>INVOICE
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">INVOICE</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>invoice</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A request for payment for goods and/or services.  Includes the idea of a healthcare insurance
+             claim.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>ADJUDICAT
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">ADJUDICAT</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>invoice adjudication</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>The determination of what will be paid against a particular invoice based on coverage,
+             plan rules, etc.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>PAYMENT
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">PAYMENT</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>payment</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A record of a transfer of funds between accounts and/or individuals</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>PREDETREQ
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">PREDETREQ</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>predetermination request</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A request for a predication of the cost that would be paid under an insurance plan for
+             a hypothetical claim for goods or services</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>PREDETERMINE
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">PREDETERMINE</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>predetermination</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>An adjudication of what would be paid under an insurance plan for a hypothetical claim
+             for goods or services</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>STUDY
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">STUDY</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>study</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>An investigation to determine information about a particular therapy or product</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>PROTOCOL
+            </b><span class="xmltag">&lt;a</span><span class="xmlattr"> name="<span class="xmlattrvalue">PROTOCOL</span>"</span><span class="xmltag">&gt;</span><b> </b><span class="xmltag">&lt;/a&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>protocol</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>A set of (possibly conditional) steps to be taken to achieve some aim.  Includes study
+             protocols, treatment protocols, emergency protocols, etc.</b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+      </b><span class="xmltag">&lt;/table&gt;</span><b>
+    </b><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmltag">&lt;identifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/other-resource-type</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">Other Resource Types</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;publisher</span><span class="xmlattr"> value="<span class="xmlattrvalue">FHIR Project team</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;telecom</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">url</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/telecom&gt;</span><b>
+  </b><span class="xmltag">&lt;description</span><span class="xmlattr"> value="<span class="xmlattrvalue">This value set defines codes for resources not yet supported by (or which will never be
+   supported by) FHIR.  Many of the codes listed here will eventually be turned into official
+   resources.  However, there is no guarantee that any particular resource will be created
+   nor that the scope will be exactly as defined by the codes presented here.  Codes in this
+   set will be deprecated if/when formal resources are defined that encompass these concepts.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">draft</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;define</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/other-resource-type</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CONSENT</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">consent</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">An assertion of permission for an activity or set of activities to occur, possibly subject
+       to particular limitations.  E.g. surgical consent, information disclosure consent, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">REFERRAL</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">referral</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A request that care of a particular type be provided to a patient.  Could involve the
+       transfer of care, a consult, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">SLOT</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">resource slot</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A bounded time-period when a particular set of resources (practioners, devices and/or
+       locations) is available for the delivery of healthcare services.  Used for scheduling.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">APTMT</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">appointment</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">An agreement for a particular type of service to occur for a specified patient at a specific
+       time with a particular set of resources (practitioners, devices, locations, etc.)</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">APTMTREQ</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">appointment request</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A request that a time be scheduled for a type of service for a specified patient, potentially
+       subject to other constraints</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">TRANSFER</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">transfer</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">The transition of a patient or set of material from one location to another</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">DIET</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">diet</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">The specification of a set of food and/or other nutritonal material to be delivered to
+       a patient.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ADMINACT</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">administrative activity</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">An occurrence of a non-care-related event in the healthcare domain, such as approvals,
+       reviews, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">EXPOSURE</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">exposure</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">Record of a situation where a subject was exposed to a substance.  Usually of interest
+       to public health.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">INVESTIGATION</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">investigation</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A formalized inquiry into the circumstances surrounding a particular unplanned event or
+       potential event for the purposes of identifying possible causes and contributing factors
+       for the event</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ACCOUNT</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">account</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A financial instrument used to track costs, charges or other amounts.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">INVOICE</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">invoice</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A request for payment for goods and/or services.  Includes the idea of a healthcare insurance
+       claim.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ADJUDICAT</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">invoice adjudication</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">The determination of what will be paid against a particular invoice based on coverage,
+       plan rules, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">PAYMENT</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">payment</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A record of a transfer of funds between accounts and/or individuals</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">PREDETREQ</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">predetermination request</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A request for a predication of the cost that would be paid under an insurance plan for
+       a hypothetical claim for goods or services</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">PREDETERMINE</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">predetermination</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">An adjudication of what would be paid under an insurance plan for a hypothetical claim
+       for goods or services</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">STUDY</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">study</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">An investigation to determine information about a particular therapy or product</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+    </b><span class="xmltag">&lt;concept</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">PROTOCOL</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">protocol</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmlattr"> value="<span class="xmlattrvalue">A set of (possibly conditional) steps to be taken to achieve some aim.  Includes study
+       protocols, treatment protocols, emergency protocols, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/concept&gt;</span><b>
+  </b><span class="xmltag">&lt;/define&gt;</span><b>
+</b><span class="xmltag">&lt;/ValueSet&gt;</span></pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:17+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

@@ -1,0 +1,245 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Supply - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="administration.html">Administrative</a></li>        <li><a href="supply.html">Supply</a></li>        <li><b>Formal Definitions</b></li>          <!-- supply.html / res-Formal Definitions -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li><a href="supply.html">Content</a></li><li><a href="supply-examples.html">Examples</a></li><li class="active"><a href="#">Formal Definitions</a></li><li><a href="supply-mappings.html">Mappings</a></li><li><a href="supply-profiles.html">Profiles</a></li></ul>
+
+<h2><span class="sectioncount">5.11.6<a name="5.11.6"> </a></span> Resource Supply - Formal Definitions</h2>
+
+<p>Formal definitions for the elements in the Supply resource.</p>
+
+<table class="dict">
+  <tr><td colspan="2" class="structure"><b>Supply</b><a name="Supply"> </a></td></tr>
+  <tr><td>Definition</td><td>A supply - a  request for something, and provision of what is supplied.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.kind</b><a name="Supply.kind"> </a></td></tr>
+  <tr><td>Definition</td><td>Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>SupplyType:  (<a href="valueset-supply-type.html">See http://hl7.org/fhir/vs/supply-type</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.identifier</b><a name="Supply.identifier"> </a></td></tr>
+  <tr><td>Definition</td><td>Unique identifier for this supply request.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td>Comments</td><td>This is assigned by the orderer, and used to refer to this order in other external standards.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.status</b><a name="Supply.status"> </a></td></tr>
+  <tr><td>Definition</td><td>Status of the supply request.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>SupplyStatus: Status of the supply (see <a href="valueset-supply-status.html">http://hl7.org/fhir/valueset-supply-status</a> for values)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.orderedItem</b><a name="Supply.orderedItem"> </a></td></tr>
+  <tr><td>Definition</td><td>The item that is requested to be supplied.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="medication.html">Medication</a> | <a href="substance.html">Substance</a> | <a href="device.html">Device</a>)</td></tr>
+  <tr><td>Comments</td><td>Note that there's a difference between a prescription - an instruction to take a medication, along with a (sometimes) implicit supply, and an explicit request to supply, with no explicit instructions.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.patient</b><a name="Supply.patient"> </a></td></tr>
+  <tr><td>Definition</td><td>A link to a resource representing the person whom the ordered item is for.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="patient.html">Patient</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense</b><a name="Supply.dispense"> </a></td></tr>
+  <tr><td>Definition</td><td>Indicates the details of the dispense event such as the days supply and quantity of a supply dispensed.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.identifier</b><a name="Supply.dispense.identifier"> </a></td></tr>
+  <tr><td>Definition</td><td>Identifier assigned by the dispensing facility when the dispense occurs.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td>Comments</td><td>This is assigned by the dispenser, and used to refer to this order in other external standards.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.status</b><a name="Supply.dispense.status"> </a></td></tr>
+  <tr><td>Definition</td><td>A code specifying the state of the dispense event.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>SupplyDispenseStatus: Status of the dispense (see <a href="valueset-supply-dispense-status.html">http://hl7.org/fhir/valueset-supply-dispense-status</a> for values)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.type</b><a name="Supply.dispense.type"> </a></td></tr>
+  <tr><td>Definition</td><td>Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>SupplyItemType:  (<a href="valueset-supply-item.html">See http://hl7.org/fhir/vs/supply-item</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.quantity</b><a name="Supply.dispense.quantity"> </a></td></tr>
+  <tr><td>Definition</td><td>The amount of supply that has been dispensed. Includes unit of measure.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Quantity">Quantity</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.suppliedItem</b><a name="Supply.dispense.suppliedItem"> </a></td></tr>
+  <tr><td>Definition</td><td>Identifies the medication or substance being dispensed. This is either a link to a resource representing the details of the medication or substance or a simple attribute carrying a code that identifies the medication from a known list of medications.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="medication.html">Medication</a> | <a href="substance.html">Substance</a> | <a href="device.html">Device</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.supplier</b><a name="Supply.dispense.supplier"> </a></td></tr>
+  <tr><td>Definition</td><td>The individual responsible for dispensing the medication.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="practitioner.html">Practitioner</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.whenPrepared</b><a name="Supply.dispense.whenPrepared"> </a></td></tr>
+  <tr><td>Definition</td><td>The time the dispense event occurred.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Period">Period</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.whenHandedOver</b><a name="Supply.dispense.whenHandedOver"> </a></td></tr>
+  <tr><td>Definition</td><td>The time the dispensed item was sent or handed to the patient (or agent).</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Period">Period</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.destination</b><a name="Supply.dispense.destination"> </a></td></tr>
+  <tr><td>Definition</td><td>Identification of the facility/location where the Supply was shipped to, as part of the dispense event.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="location.html">Location</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>Supply.dispense.receiver</b><a name="Supply.dispense.receiver"> </a></td></tr>
+  <tr><td>Definition</td><td>Identifies the person who picked up the Supply.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="practitioner.html">Practitioner</a>)</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

@@ -96,7 +96,7 @@ def load_spec(spec_dir):
         spec_target.write('\n')
         spec_target.write('SPECS=' + str(specs))
         spec_target.write('\n')
-        spec_target.write('RESOURCES=' + str(resources))
+        spec_target.write('RESOURCES=set(%s)'% str(resources))
         spec_target.write('\n')
         spec_target.write('REFERENCE_TYPES=' + str(reference_types))
 

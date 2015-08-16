@@ -8,6 +8,7 @@ from fhir.fhir_parser import parse_resource
 from fhir.fhir_spec import RESOURCES
 import names
 from vcf import VCFReader
+from argparse import ArgumentParser
 import random
 from functools import partial
 from config import MAX_SEQ_PER_FILE, CONDITION_TO_SEQ_RATIO
@@ -173,6 +174,50 @@ def load_conditions_by_patients(patients):
         for sample in patients.keys()}
 
 
+def load_ttam_example(ttam_file):
+    patient = rand_patient()
+    lab = rand_lab(patient)
+    conditions = rand_conditions(patient)
+    with open(ttam_file) as snp_file:
+        snps = [row.strip().split('\t')
+                for row in snp_file if not row.startswith('#')]
+        random.shuffle(snps)
+        count = 0
+        for rsid, chrom, pos_str, genotype in snps:
+            if genotype in ('--', 'II'):
+                continue
+            print 'loading SNP %s' % rsid
+            pos = int(pos_str)
+            sequence = save_resource('Sequence', { 
+                'resourceType': 'Sequence',
+                'text': {
+                    'status': 'generated',
+                    'div': 'Genotype of %s is %s' % (rsid, genotype)
+                },
+                'type': 'dna',
+                'patient': patient.get_reference(),
+                'lab': lab.get_reference(),
+                'observedSequence': list(genotype),
+                'sample': 'germline',
+                'genomeBuild': 'GRCh37',
+                'species': { 'text': 'Homo sapiens' },
+                'startPosition': pos-1,
+                'endPosition': pos,
+                'chromosome': chrom,
+                'species': { 'text': 'Homo sapiens' }
+            })
+            # randomly link a DNA sequence to conditions that the user has
+            if (len(conditions) > 0 and
+                random.random() <= CONDITION_TO_SEQ_RATIO):
+                make_observation(random.choice(conditions),
+                        sequence,
+                        patient,
+                        rsid)
+            count += 1
+            if MAX_SEQ_PER_FILE is not None and count >= MAX_SEQ_PER_FILE:
+                break 
+
+
 def load_vcf_example(vcf_file):
     reader = VCFReader(filename=vcf_file)
     patients = load_patients_by_samples(reader.samples)
@@ -188,7 +233,7 @@ def load_vcf_example(vcf_file):
             'startPosition': record.POS,
             'endPosition': record.end,
             'genomeBuild': 'GRCh37',
-            'source': {'sample': 'somatic'},
+            'sample': 'germline',
             'species': { 'text': 'Homo sapiens' }
         }
         for sample in record.samples:
@@ -201,7 +246,7 @@ def load_vcf_example(vcf_file):
             else:
                 delimiter = '.'
             seq_data = dict(sequence_tmpl)
-            seq_data['observedSeq'] = reads.split(delimiter)
+            seq_data['observedSequence'] = reads.split(delimiter)
             # get genotype quality 
             if 'GQ' in dir(sample.data):
                 seq_data['quality'] = sample.data.GQ
@@ -209,7 +254,7 @@ def load_vcf_example(vcf_file):
             referenced_patient = patients[sample_id]
             referenced_lab = labs[sample_id]
             seq_data['patient'] = referenced_patient.get_reference()
-            seq_data['source']['lab'] = referenced_lab.get_reference()
+            seq_data['lab'] = referenced_lab.get_reference()
             # get name of the variant
             variant_id = record.ID
             variant = variant_id if variant_id is not None else 'anonymous variant'
@@ -221,12 +266,12 @@ def load_vcf_example(vcf_file):
             if (len(conditions[sample_id]) > 0 and
                 random.random() <= CONDITION_TO_SEQ_RATIO):
                 make_observation(random.choice(conditions[sample_id]),
-                                sequence,
-                                referenced_patient,
-                                variant_id)
+                        sequence,
+                        referenced_patient,
+                        variant_id)
             count += 1
 
-        if count >= MAX_SEQ_PER_FILE:
+        if MAX_SEQ_PER_FILE is not None and count >= MAX_SEQ_PER_FILE:
             break
 
 
@@ -252,9 +297,16 @@ def init_superuser():
 
 if __name__ == '__main__':
     from server import app
+    arg_parser = ArgumentParser()
+    arg_parser.add_argument('file_type', help='type of file from which you wish to load genotype data')
+    args = arg_parser.parse_args()
     with app.app_context():
         init_superuser()
         init_conditions()
-        for example_file in os.listdir(os.path.join(BASEDIR, 'examples/vcf')):
-            load_vcf_example(os.path.join(BASEDIR, 'examples/vcf', example_file))
+        if args.file_type == 'vcf':
+            for example_file in os.listdir(os.path.join(BASEDIR, 'examples/vcf')):
+                load_vcf_example(os.path.join(BASEDIR, 'examples/vcf', example_file))
+        elif args.file_type == 'ttam':
+            for example_file in os.listdir(os.path.join(BASEDIR, 'examples/ttam')):
+                load_ttam_example(os.path.join(BASEDIR, 'examples/ttam', example_file))
         commit_buffers(BUF) 

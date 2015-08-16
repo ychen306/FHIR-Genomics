@@ -1,0 +1,358 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Encounter - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="administration.html">Administrative</a></li>        <li><b>Encounter</b></li>          <!-- encounter.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="encounter-examples.html">Examples</a></li><li><a href="encounter-definitions.html">Formal Definitions</a></li><li><a href="encounter-mappings.html">Mappings</a></li><li><a href="encounter-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">5.9<a name="5.9"> </a></span> Resource Encounter - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">5.9.1<a name="5.9.1"> </a></span> Scope and Usage</h2>
+<p> 
+A patient encounter is further characterized by the setting in which it takes place. Amongst them are ambulatory,
+ emergency, home health, inpatient and virtual encounters. An Encounter encompasses the lifecycle from pre-admission, 
+ the actual encounter (for ambulatory encounters), and admission, stay and discharge (for inpatient encounters). 
+During the encounter the patient may move from practitioner to practitioner and location to location.
+</p>
+<p>
+Because of the broad scope of Encounter, not all elements will be relevant in all settings. For this reason, 
+admission/discharge related information is kept in a separate Hospitalization component within Encounter. 
+The <i>class</i> element is used to distinguish between these settings, which will guide further validation and
+application of business rules.
+</p>
+<p>
+There is also substantial variance from organization to organization (and between jurisdictions and countries) 
+on which business events translate to the start of a new Encounter, or what level of aggregation is used for Encounter. For example, each
+single visit of a practitioner during a hospitalization may lead to a new instance of Encounter, but depending on
+local practice and the systems involved, it may well be that this is aggregated to a single instance for a whole hospitalization.
+Even more aggregation may occur where jurisdictions introduce groups of Encounters for financial or other reasons.
+Encounters can be aggregated or grouped under other Encounters using the <i>partOf</i> element. 
+See <a href="#examples">below</a> for examples.
+</p>
+
+<p>
+Encounter instances may exist before the actual encounter takes place to convey pre-admission information, including
+using Encounters elements to reflect the planned start date, planned accommodation or planned encounter locations. In 
+this case the <i>status</i> element is set to 'planned'.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">5.9.2<a name="5.9.2"> </a></span> Boundaries and Relationships</h2>
+<p> 
+Appointment information is out of scope for Encounter, the Appointment resource (yet to be defined) needs to be used for that. 
+Note that in many systems outpatient encounters (which are in scope for Encounter) and Appointment are used 
+concurrently. In FHIR, Appointment is used for establishing a date for the encounter, while Encounter is 
+applicable to information about the actual Encounter, i.e. the patient showing up.
+</p>
+</div>
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">5.9.3<a name="5.9.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="494.0" width="1036.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="204.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="204.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="264.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="468.0" x1="264.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="366.0">Encounter<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.identifier"><title>Identifier(s) by which this encounter is known</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..*</text><text fill="black" class="diagram-class-detail" y="56.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.status"><title>planned | in progress | onleave | finished | cancelled (this element modifies the meaning of other elements)</title>status</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="encounter-state.html"><title>Current state of the encounter</title>EncounterState</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="70.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.class"><title>inpatient | outpatient | ambulatory | emergency + (this element modifies the meaning of other elements)</title>class</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="encounter-class.html"><title>Classification of the encounter</title>EncounterClass</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="84.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.type"><title>Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation)</title>type</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..* &lt;&lt;<a xlink:href="valueset-encounter-type.html"><title>The type of encounter</title>EncounterType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="98.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.subject"><title>The patient present at the encounter</title>subject</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="112.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.period"><title>The start and end time of the encounter</title>period</a> : <a xlink:href="datatypes.html#Period">Period</a> 0..1</text><text fill="black" class="diagram-class-detail" y="126.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.length"><title>Quantity of time the encounter lasted. This excludes the time during leaves of absence</title>length</a> : <a xlink:href="datatypes.html#Duration">Duration</a> 0..1</text><text fill="black" class="diagram-class-detail" y="140.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.reason"><title>Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis</title>reason</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-encounter-reason.html"><title>Reason why the encounter takes place</title>EncounterReason</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="154.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.indication"><title>Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis</title>indication</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="168.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.priority"><title>Indicates the urgency of the encounter</title>priority</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-encounter-priority.html"><title>Indicates the urgency of the encounter</title>Priority</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="182.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.serviceProvider"><title>Department or team providing care</title>serviceProvider</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="organization.html#Organization">Organization</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="196.0" x="270.0"><a xlink:href="encounter-definitions.html#Encounter.partOf"><title>Another Encounter of which this encounter is a part of (administratively or in time)</title>partOf</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="encounter.html#Encounter">Encounter</a>) 0..1</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="224.0" filter="url(#shadow)" rx="4" y="70.0" ry="4" x="588.0"/><line style="stroke:dimgrey;stroke-width:1" y1="98.0" y2="98.0" x2="812.0" x1="588.0"/><text fill="black" class="diagram-class-title" y="90.0" x="700.0">Participant</text><text fill="black" class="diagram-class-detail" y="112.0" x="594.0"><a xlink:href="encounter-definitions.html#Encounter.participant.type"><title>Role of participant in encounter</title>type</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..* &lt;&lt;<a xlink:href="valueset-encounter-participant-type.html"><title>Role of participant in encounter</title>ParticipantType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="126.0" x="594.0"><a xlink:href="encounter-definitions.html#Encounter.participant.individual"><title>Persons involved in the encounter other than the patient</title>individual</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a xlink:href="relatedperson.html#RelatedPerson">RelatedPerson</a>) 0..1</text><rect height="190.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="252.0" filter="url(#shadow)" rx="4" y="284.0" ry="4" x="240.0"/><line style="stroke:dimgrey;stroke-width:1" y1="312.0" y2="312.0" x2="492.0" x1="240.0"/><text fill="black" class="diagram-class-title" y="304.0" x="366.0">Hospitalization</text><text fill="black" class="diagram-class-detail" y="326.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.preAdmissionIdentifier"><title>Pre-admission identifier</title>preAdmissionIdentifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..1</text><text fill="black" class="diagram-class-detail" y="340.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.origin"><title>The location from which the patient came before admission</title>origin</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="location.html#Location">Location</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="354.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.admitSource"><title>From where patient was admitted (physician referral, transfer)</title>admitSource</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-encounter-admit-source.html"><title>From where the patient was admitted</title>AdmitSource</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="368.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.period"><title>Period during which the patient was admitted</title>period</a> : <a xlink:href="datatypes.html#Period">Period</a> 0..1</text><text fill="black" class="diagram-class-detail" y="382.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.diet"><title>Dietary restrictions for the patient</title>diet</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-encounter-diet.html"><title>Medical, cultural or ethical food preferences to help with catering requirements</title>PatientDiet</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="396.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.specialCourtesy"><title>Special courtesies (VIP, board member)</title>specialCourtesy</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..* &lt;&lt;<a xlink:href="valueset-encounter-special-courtesy.html"><title>Special courtesies</title>Courtesies</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="410.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.specialArrangement"><title>Wheelchair, translator, stretcher, etc</title>specialArrangement</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..* &lt;&lt;<a xlink:href="valueset-encounter-special-arrangements.html"><title>Special arrangements</title>Arrangements</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="424.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.destination"><title>Location to which the patient is discharged</title>destination</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="location.html#Location">Location</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="438.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.dischargeDisposition"><title>Category or kind of location after discharge</title>dischargeDisposition</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-encounter-discharge-disposition.html"><title>Discharge Disposition</title>DischargeDisp</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="452.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.dischargeDiagnosis"><title>The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete</title>dischargeDiagnosis</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="466.0" x="246.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.reAdmission"><title>Whether this hospitalization is a readmission</title>reAdmission</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 0..1</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="124.0" filter="url(#shadow)" rx="4" y="347.0" ry="4" x="612.0"/><line style="stroke:dimgrey;stroke-width:1" y1="375.0" y2="375.0" x2="736.0" x1="612.0"/><text fill="black" class="diagram-class-title" y="367.0" x="674.0">Accomodation</text><text fill="black" class="diagram-class-detail" y="389.0" x="618.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.accomodation.bed"><title>The bed that is assigned to the patient</title>bed</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="location.html#Location">Location</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="403.0" x="618.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.accomodation.period"><title>Period during which the patient was assigned the bed</title>period</a> : <a xlink:href="datatypes.html#Period">Period</a> 0..1</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="144.0" filter="url(#shadow)" rx="4" y="70.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="98.0" y2="98.0" x2="144.0" x1="0.0"/><text fill="black" class="diagram-class-title" y="90.0" x="72.0">Location</text><text fill="black" class="diagram-class-detail" y="112.0" x="6.0"><a xlink:href="encounter-definitions.html#Encounter.location.location"><title>The location where the encounter takes place</title>location</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="location.html#Location">Location</a>) 1..1</text><text fill="black" class="diagram-class-detail" y="126.0" x="6.0"><a xlink:href="encounter-definitions.html#Encounter.location.period"><title>Time period during which the patient was present at the location</title>period</a> : <a xlink:href="datatypes.html#Period">Period</a> 1..1</text><line style="stroke:navy;stroke-width:1" y1="102.0" y2="102.0" x2="588.0" x1="468.0"/><polygon transform="rotate(0.0 468.0 102.0)" style="fill:navy;stroke:navy;stroke-width:1" points="468.0,102.0 474.0,106.0 480.0,102.0 474.0,98.0 468.0,102.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="44.0" y="95.0" x="506.0"/><text fill="black" class="diagram-class-linkage" y="105.0" x="528.0"><a xlink:href="encounter-definitions.html#Encounter.participant"><title>The main practitioner responsible for providing the service</title>participant</a></text><text fill="black" class="diagram-class-linkage" y="98.0" x="568.0">0..*</text><line style="stroke:navy;stroke-width:1" y1="379.0" y2="379.0" x2="612.0" x1="492.0"/><polygon transform="rotate(0.0 492.0 379.0)" style="fill:navy;stroke:navy;stroke-width:1" points="492.0,379.0 498.0,383.0 504.0,379.0 498.0,375.0 492.0,379.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="48.0" y="372.0" x="528.0"/><text fill="black" class="diagram-class-linkage" y="382.0" x="552.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization.accomodation"><title>Where the patient stays during this encounter</title>accomodation</a></text><text fill="black" class="diagram-class-linkage" y="375.0" x="592.0">0..*</text><line style="stroke:navy;stroke-width:1" y1="204.0" y2="284.0" x2="366.0" x1="366.0"/><polygon transform="rotate(90.0 366.0 204.0)" style="fill:navy;stroke:navy;stroke-width:1" points="366.0,204.0 372.0,208.0 378.0,204.0 372.0,200.0 366.0,204.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="60.0" y="237.0" x="336.0"/><text fill="black" class="diagram-class-linkage" y="247.0" x="366.0"><a xlink:href="encounter-definitions.html#Encounter.hospitalization"><title>Details about an admission to a clinic</title>hospitalization</a></text><text fill="black" class="diagram-class-linkage" y="280.0" x="366.0">0..1</text><line style="stroke:navy;stroke-width:1" y1="102.0" y2="102.0" x2="144.0" x1="264.0"/><polygon transform="rotate(180.0 264.0 102.0)" style="fill:navy;stroke:navy;stroke-width:1" points="264.0,102.0 270.0,106.0 276.0,102.0 270.0,98.0 264.0,102.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="32.0" y="95.0" x="188.0"/><text fill="black" class="diagram-class-linkage" y="105.0" x="204.0"><a xlink:href="encounter-definitions.html#Encounter.location"><title>List of locations at which the patient has been</title>location</a></text><text fill="black" class="diagram-class-linkage" y="98.0" x="159.0">0..*</text></svg>
+<p>This resource is referenced by <a href="careplan.html">CarePlan</a>, <a href="composition.html">Composition</a>, <a href="condition.html">Condition</a>, <a href="diagnosticorder.html">DiagnosticOrder</a>, <a href="medicationadministration.html">MedicationAdministration</a>, <a href="medicationprescription.html">MedicationPrescription</a>, <a href="procedure.html">Procedure</a> and <a href="questionnaire.html">Questionnaire</a></p>
+
+
+<a name="def"> </a>
+<a name="encounter"> </a>
+<a name="Encounter"> </a>
+<pre class="spec">
+&lt;<a title="An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient." class="dict" href="encounter-definitions.html#Encounter"><b>Encounter</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifier(s) by which this encounter is known." class="dict" href="encounter-definitions.html#Encounter.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Identifier(s) by which this encounter is known<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="planned | in progress | onleave | finished | cancelled (this element modifies the meaning of other elements)" class="dict" href="encounter-definitions.html#Encounter.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="encounter-state.html">planned | in progress | onleave | finished | cancelled<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="inpatient | outpatient | ambulatory | emergency + (this element modifies the meaning of other elements)" class="dict" href="encounter-definitions.html#Encounter.class"><span style="text-decoration: underline"><b>class</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="encounter-class.html">inpatient | outpatient | ambulatory | emergency +<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation)." class="dict" href="encounter-definitions.html#Encounter.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-type.html">Specific type of encounter<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+ &lt;<a title="The patient present at the encounter." class="dict" href="encounter-definitions.html#Encounter.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">The patient present at the encounter<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="The main practitioner responsible for providing the service." class="dict" href="encounter-definitions.html#Encounter.participant"><b>participant</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> List of participants involved in the encounter<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span> --&gt;</span>
+  &lt;<a title="Role of participant in encounter." class="dict" href="encounter-definitions.html#Encounter.participant.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-participant-type.html">Role of participant in encounter<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="Persons involved in the encounter other than the patient." class="dict" href="encounter-definitions.html#Encounter.participant.individual"><b>individual</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>)</span> <span style="color: navy">
+      Persons involved in the encounter other than the patient<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></span><span style="color: Gray"> --&gt;</span>&lt;/individual&gt;
+ &lt;/participant&gt;
+ &lt;<a title="The start and end time of the encounter." class="dict" href="encounter-definitions.html#Encounter.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">The start and end time of the encounter</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+ &lt;<a title="Quantity of time the encounter lasted. This excludes the time during leaves of absence." class="dict" href="encounter-definitions.html#Encounter.length"><b>length</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Duration">Duration</a></span> <span style="color: navy">Quantity of time the encounter lasted</span><span style="color: Gray"> --&gt;</span>&lt;/length&gt;
+ &lt;<a title="Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis." class="dict" href="encounter-definitions.html#Encounter.reason"><b>reason</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-reason.html">Reason the encounter takes place (code)<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> &sect;</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/reason&gt;
+ &lt;<a title="Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis." class="dict" href="encounter-definitions.html#Encounter.indication"><b>indication</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Reason the encounter takes place (resource)</span><span style="color: Gray"> --&gt;</span>&lt;/indication&gt;
+ &lt;<a title="Indicates the urgency of the encounter." class="dict" href="encounter-definitions.html#Encounter.priority"><b>priority</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-priority.html">Indicates the urgency of the encounter</a></span><span style="color: Gray"> --&gt;</span>&lt;/priority&gt;
+ &lt;<a title="Details about an admission to a clinic." class="dict" href="encounter-definitions.html#Encounter.hospitalization"><b>hospitalization</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Details about an admission to a clinic --&gt;</span>
+  &lt;<a title="Pre-admission identifier." class="dict" href="encounter-definitions.html#Encounter.hospitalization.preAdmissionIdentifier"><b>preAdmissionIdentifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Pre-admission identifier</span><span style="color: Gray"> --&gt;</span>&lt;/preAdmissionIdentifier&gt;
+  &lt;<a title="The location from which the patient came before admission." class="dict" href="encounter-definitions.html#Encounter.hospitalization.origin"><b>origin</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">
+      The location from which the patient came before admission</span><span style="color: Gray"> --&gt;</span>&lt;/origin&gt;
+  &lt;<a title="From where patient was admitted (physician referral, transfer)." class="dict" href="encounter-definitions.html#Encounter.hospitalization.admitSource"><b>admitSource</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-admit-source.html">From where patient was admitted (physician referral, transfer)</a></span><span style="color: Gray"> --&gt;</span>&lt;/admitSource&gt;
+  &lt;<a title="Period during which the patient was admitted." class="dict" href="encounter-definitions.html#Encounter.hospitalization.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Period during which the patient was admitted</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+  &lt;<a title="Where the patient stays during this encounter." class="dict" href="encounter-definitions.html#Encounter.hospitalization.accomodation"><b>accomodation</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Where the patient stays during this encounter --&gt;</span>
+   &lt;<a title="The bed that is assigned to the patient." class="dict" href="encounter-definitions.html#Encounter.hospitalization.accomodation.bed"><b>bed</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">The bed that is assigned to the patient</span><span style="color: Gray"> --&gt;</span>&lt;/bed&gt;
+   &lt;<a title="Period during which the patient was assigned the bed." class="dict" href="encounter-definitions.html#Encounter.hospitalization.accomodation.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Period during which the patient was assigned the bed</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+  &lt;/accomodation&gt;
+  &lt;<a title="Dietary restrictions for the patient." class="dict" href="encounter-definitions.html#Encounter.hospitalization.diet"><b>diet</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-diet.html">Dietary restrictions for the patient</a></span><span style="color: Gray"> --&gt;</span>&lt;/diet&gt;
+  &lt;<a title="Special courtesies (VIP, board member)." class="dict" href="encounter-definitions.html#Encounter.hospitalization.specialCourtesy"><b>specialCourtesy</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-special-courtesy.html">Special courtesies (VIP, board member)</a></span><span style="color: Gray"> --&gt;</span>&lt;/specialCourtesy&gt;
+  &lt;<a title="Wheelchair, translator, stretcher, etc." class="dict" href="encounter-definitions.html#Encounter.hospitalization.specialArrangement"><b>specialArrangement</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-special-arrangements.html">Wheelchair, translator, stretcher, etc</a></span><span style="color: Gray"> --&gt;</span>&lt;/specialArrangement&gt;
+  &lt;<a title="Location to which the patient is discharged." class="dict" href="encounter-definitions.html#Encounter.hospitalization.destination"><b>destination</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">Location to which the patient is discharged</span><span style="color: Gray"> --&gt;</span>&lt;/destination&gt;
+  &lt;<a title="Category or kind of location after discharge." class="dict" href="encounter-definitions.html#Encounter.hospitalization.dischargeDisposition"><b>dischargeDisposition</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-encounter-discharge-disposition.html">Category or kind of location after discharge</a></span><span style="color: Gray"> --&gt;</span>&lt;/dischargeDisposition&gt;
+  &lt;<a title="The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete." class="dict" href="encounter-definitions.html#Encounter.hospitalization.dischargeDiagnosis"><b>dischargeDiagnosis</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">
+      The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete</span><span style="color: Gray"> --&gt;</span>&lt;/dischargeDiagnosis&gt;
+  &lt;<a title="Whether this hospitalization is a readmission." class="dict" href="encounter-definitions.html#Encounter.hospitalization.reAdmission"><b>reAdmission</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Is this hospitalization a readmission?</span><span style="color: Gray"> --&gt;</span>
+ &lt;/hospitalization&gt;
+ &lt;<a title="List of locations at which the patient has been." class="dict" href="encounter-definitions.html#Encounter.location"><b>location</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> List of locations the patient has been at --&gt;</span>
+  &lt;<a title="The location where the encounter takes place." class="dict" href="encounter-definitions.html#Encounter.location.location"><b>location</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">Location the encounter takes place</span><span style="color: Gray"> --&gt;</span>&lt;/location&gt;
+  &lt;<a title="Time period during which the patient was present at the location." class="dict" href="encounter-definitions.html#Encounter.location.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Time period during which the patient was present at the location</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+ &lt;/location&gt;
+ &lt;<a title="Department or team providing care." class="dict" href="encounter-definitions.html#Encounter.serviceProvider"><b>serviceProvider</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Department or team providing care</span><span style="color: Gray"> --&gt;</span>&lt;/serviceProvider&gt;
+ &lt;<a title="Another Encounter of which this encounter is a part of (administratively or in time)." class="dict" href="encounter-definitions.html#Encounter.partOf"><b>partOf</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="encounter.html#Encounter">Encounter</a>)</span> <span style="color: navy">Another Encounter this encounter is part of</span><span style="color: Gray"> --&gt;</span>&lt;/partOf&gt;
+&lt;/Encounter&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="encounter.xsd">Schema</a>/<a href="encounter.sch">Schematron</a>, 
+<a href="encounter.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">5.9.3.1<a name="5.9.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="EncounterState" valign="top">Encounter.status </td><td valign="top">Current state of the encounter</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="encounter-state.html">http://hl7.org/fhir/encounter-state</a></td> </tr>
+ <tr><td title="EncounterClass" valign="top">Encounter.class </td><td valign="top">Classification of the encounter</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="encounter-class.html">http://hl7.org/fhir/encounter-class</a></td> </tr>
+ <tr><td title="EncounterType" valign="top">Encounter.type </td><td valign="top">The type of encounter</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-encounter-type.html">http://hl7.org/fhir/vs/encounter-type</a></td> </tr>
+ <tr><td title="ParticipantType" valign="top">Encounter.participant.type </td><td valign="top">Role of participant in encounter</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-encounter-participant-type.html">http://hl7.org/fhir/vs/encounter-participant-type</a></td> </tr>
+ <tr><td title="EncounterReason" valign="top">Encounter.reason </td><td valign="top">Reason why the encounter takes place</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-encounter-reason.html">http://hl7.org/fhir/vs/encounter-reason</a></td> </tr>
+ <tr><td title="Priority" valign="top">Encounter.priority </td><td valign="top">Indicates the urgency of the encounter</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-encounter-priority.html">http://hl7.org/fhir/vs/encounter-priority</a></td> </tr>
+ <tr><td title="AdmitSource" valign="top">Encounter.hospitalization.admitSource </td><td valign="top">From where the patient was admitted</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-encounter-admit-source.html">http://hl7.org/fhir/vs/encounter-admit-source</a></td> </tr>
+ <tr><td title="PatientDiet" valign="top">Encounter.hospitalization.diet </td><td valign="top">Medical, cultural or ethical food preferences to help with catering requirements</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-encounter-diet.html">http://hl7.org/fhir/vs/encounter-diet</a></td> </tr>
+ <tr><td title="Courtesies" valign="top">Encounter.hospitalization.specialCourtesy </td><td valign="top">Special courtesies</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-encounter-special-courtesy.html">http://hl7.org/fhir/vs/encounter-special-courtesy</a></td> </tr>
+ <tr><td title="Arrangements" valign="top">Encounter.hospitalization.specialArrangement </td><td valign="top">Special arrangements</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-encounter-special-arrangements.html">http://hl7.org/fhir/vs/encounter-special-arrangements</a></td> </tr>
+ <tr><td title="DischargeDisp" valign="top">Encounter.hospitalization.dischargeDisposition </td><td valign="top">Discharge Disposition</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-encounter-discharge-disposition.html">http://hl7.org/fhir/vs/encounter-discharge-disposition</a></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+
+<h2><span class="sectioncount">5.9.4<a name="5.9.4"> </a></span> Notes</h2>
+<p>
+<ul>
+<li>The <i>class</i> element describes the setting (in/outpatient etc.) in which the Encounter took place. Since this is important for 
+interpreting the context of the encounter, choosing the appropriate business rules to enforce and for the management of the process, this element
+is required.</li>
+<li>The <i>Location</i> indicates where the patient has been during the encounter (he might visit multiple locations, e.g. to an MRI room
+for examinations, while <i>Accommodation</i> keeps information about the bed in which a patient stays during a hospitalization.</li>
+<li>In future versions of FHIR, some kind of charge posting vehicle (e.g. Account) will be added.</li>
+</ul>
+</p>
+<a name="examples"/>
+<h2><span class="sectioncount">5.9.5<a name="5.9.5"> </a></span> Example usage</h2>
+<p>As stated, Encounter allows a flexible nesting of Encounters using the partOf element. For example:</p>
+<ul>
+<li>A patient is admitted for two weeks - This could be modeled using a single Encounter instance,
+in which the start and length are given for the duration of the whole stay. The admitting doctor and
+the responsible doctor during the stay are specified using the Participant component.</li>
+<li>During the encounter, the patient moves from the admitting department to the Intensive Care unit and back - 
+Three more detailed additional Encounters can be created, one for each location in which the patient stayed.
+Each of these Encounters has a single location (twice the admitting department and once
+the Intensive Care unit) and one or more participants at that location. These Encounters may use the partOf 
+relationship to indicate these movements occurred during the longer overarching Encounter.</li>
+<li>During the last part of the stay, the patient is visited by the members of the multi-disciplinary team that
+treated him for final evaluation - If relevant, for each of these short visits, an Encounter may be created
+with a single participant. Since these took place during the last part of the stay, the partOf element can be
+used to associate these short visits with either the third patient movement or the bigger overall encounter.</li>
+</ul>
+<p>Exactly how the Encounter is used depends on information available in the source system, the relevance of exchange
+of each level of Encounter and demands specific to the communicating partners. The expectation is that for each
+domain of exchange, Profiles are used to limit the flexibility of Encounter to meet the demands of the usecase.</p>
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">5.9.6<a name="5.9.6"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>A date within the period the Encounter lasted</td><td>Encounter.period</td></tr>
+<tr><td>identifier</td><td><a href="search.html#token">token</a></td><td>Identifier(s) by which this encounter is known</td><td>Encounter.identifier</td></tr>
+<tr><td>indication</td><td><a href="search.html#reference">reference</a></td><td>Reason the encounter takes place (resource)</td><td>Encounter.indication<br/>(Any)</td></tr>
+<tr><td>length</td><td><a href="search.html#number">number</a></td><td>Length of encounter in days</td><td>Encounter.length</td></tr>
+<tr><td>location</td><td><a href="search.html#reference">reference</a></td><td>Location the encounter takes place</td><td>Encounter.location.location<br/>(<a href="location.html">Location</a>)</td></tr>
+<tr><td>location-period</td><td><a href="search.html#date">date</a></td><td>Time period during which the patient was present at the location</td><td>Encounter.location.period</td></tr>
+<tr><td>status</td><td><a href="search.html#token">token</a></td><td>planned | in progress | onleave | finished | cancelled</td><td>Encounter.status</td></tr>
+<tr><td>subject</td><td><a href="search.html#reference">reference</a></td><td>The patient present at the encounter</td><td>Encounter.subject<br/>(<a href="patient.html">Patient</a>)</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>subject</b>: P. van de Heuvel
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f003-abscess.html">v6751 (official); finished; outpatient; Patient-initiated encounter; 90 min; Retropharyngeal abscess; Non-urgent ear, nose and throat admission</a>
+      </p>
+      <p>
+        <b>asserter</b>: P. van de Heuvel
+      </p>
+      <p>
+        <b>dateAsserted</b>: 20-Feb 2012
+      </p>
+      <p>
+        <b>code</b>: 
+        <span title="Codes: {http://snomed.info/sct 18099001}">Retropharyngeal abscess</span>
+      </p>
+      <p>
+        <b>category</b>: 
+        <span title="Codes: {http://snomed.info/sct 439401001}">diagnosis</span>
+      </p>
+      <p>
+        <b>status</b>: confirmed
+      </p>
+      <p>
+        <b>severity</b>: 
+        <span title="Codes: {http://snomed.info/sct 371923003}">Mild to moderate</span>
+      </p>
+      <p>
+        <b>onset[x]</b>: 27-Feb 2012
+      </p>
+      <h3>Evidences</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 169068008}">CT of neck</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>Locations</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 280193007}">Entire retropharyngeal area</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f003"/>
+  </encounter>
+  <asserter>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </asserter>
+  <dateAsserted value="2012-02-20"/><!--   first suspected by physician visit   -->
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="18099001"/>
+      <display value="Retropharyngeal abscess"/>
+    </coding>
+  </code>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="439401001"/>
+      <display value="diagnosis"/>
+    </coding>
+  </category>
+  <status value="confirmed"/>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="371923003"/>
+      <display value="Mild to moderate"/>
+    </coding>
+  </severity>
+  <onsetDate value="2012-02-27"/><!--   actual diagnose be E.N.T. specialist   -->
+  <evidence>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="169068008"/>
+        <display value="CT of neck"/>
+      </coding>
+    </code>
+  </evidence>
+  <location>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="280193007"/>
+        <display value="Entire retropharyngeal area"/>
+      </coding>
+    </code>
+  </location>
+</Condition>

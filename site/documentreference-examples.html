@@ -1,0 +1,517 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Resource DocumentReference - Examples - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><a href="documentreference.html">DocumentReference</a></li>        <li><b>Examples</b></li>          <!-- documentreference.html / res-Examples -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li><a href="documentreference.html">Content</a></li><li class="active"><a href="#">Examples</a></li><li><a href="documentreference-definitions.html">Formal Definitions</a></li><li><a href="documentreference-mappings.html">Mappings</a></li><li><a href="documentreference-profiles.html">Profiles</a></li></ul>
+
+<h2><span class="sectioncount">6.4.6<a name="6.4.6"> </a></span> Resource DocumentReference - Examples</h2>
+
+
+  <!-- content goes here -->
+
+
+
+<p>Example Index:</p>
+<table class="list">
+<tr><td><a href="documentreference-example.html">Example of documentreference</a></td><td><a href="documentreference-example.xml.html">XML</a></td><td><a href="documentreference-example.json.html">JSON</a></td></tr></table>
+
+
+<h3><span class="sectioncount">6.4.6.1<a name="6.4.6.1"> </a></span> General</h3>
+<p>XML</p>
+<div class="example">
+<p>Example of documentreference (id = &quot;example&quot;)</p>
+<p><a href="documentreference-example.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;DocumentReference</span><span class="xmlattr"> xmlns=&quot;<span class="xmlattrvalue">http://hl7.org/fhir</span>&quot;</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">generated</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns=&quot;<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>&quot;</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Generated Narrative</b><span class="xmltag">&lt;/b&gt;</span><b>
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>masterIdentifier</b><span class="xmltag">&lt;/b&gt;</span><b>: urn:oid:1.3.6.1.4.1.21367.2005.3.7
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>subject</b><span class="xmltag">&lt;/b&gt;</span><b>: 
+        </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href=&quot;<span class="xmlattrvalue">patient-example-xcda.html</span>&quot;</span><span class="xmltag">&gt;</span><b>MRN = 12345 (usual); Henry Levin ; Male; birthDate: 24-Sep 1932; active</b><span class="xmltag">&lt;/a&gt;</span><b>
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>type</b><span class="xmltag">&lt;/b&gt;</span><b>: 
+        </b><span class="xmltag">&lt;span</span><span class="xmlattr"> title=&quot;<span class="xmlattrvalue">Codes: {http://loinc.org 34108-1}</span>&quot;</span><span class="xmltag">&gt;</span><b>Outpatient Note</b><span class="xmltag">&lt;/span&gt;</span><b>
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>author</b><span class="xmltag">&lt;/b&gt;</span><b>: Sherry Dopplemeyer ; Primary Surgon; Orthopedic, Gerald Smitty ; Attending; Orthopedic
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>created</b><span class="xmltag">&lt;/b&gt;</span><b>: 24-Dec 2005 9:35
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>indexed</b><span class="xmltag">&lt;/b&gt;</span><b>: 24-Dec 2005 9:43
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>status</b><span class="xmltag">&lt;/b&gt;</span><b>: current
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>description</b><span class="xmltag">&lt;/b&gt;</span><b>: Physical
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>confidentiality</b><span class="xmltag">&lt;/b&gt;</span><b>: 
+        </b><span class="xmltag">&lt;span</span><span class="xmlattr"> title=&quot;<span class="xmlattrvalue">Codes: {http://ihe.net/xds/connectathon/confidentialityCodes 1.3.6.1.4.1.21367.2006.7.101}</span>&quot;</span><span class="xmltag">&gt;</span><b>Clinical-Staff</b><span class="xmltag">&lt;/span&gt;</span><b>
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>primaryLanguage</b><span class="xmltag">&lt;/b&gt;</span><b>: en-US
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>mimeType</b><span class="xmltag">&lt;/b&gt;</span><b>: application/hl7-v3+xml
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>size</b><span class="xmltag">&lt;/b&gt;</span><b>: 3654
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>hash</b><span class="xmltag">&lt;/b&gt;</span><b>: da39a3ee5e6b4b0d3255bfef95601890afd80709
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>location</b><span class="xmltag">&lt;/b&gt;</span><b>: 
+        </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href=&quot;<span class="xmlattrvalue">http://example.org/xds/mhd/Binary/@07a6483f-732b-461e-86b6-edb665c45510</span>&quot;</span><span class="xmltag">&gt;</span><b>http://example.org/xds/mhd/Binary/@07a6483f-732b-461e-86b6-edb665c45510</b><span class="xmltag">&lt;/a&gt;</span><b>
+      </b><span class="xmltag">&lt;/p&gt;</span><b>
+      </b><span class="xmltag">&lt;h3</span><span class="xmltag">&gt;</span><b>Contexts</b><span class="xmltag">&lt;/h3&gt;</span><b>
+      </b><span class="xmltag">&lt;table</span><span class="xmlattr"> class=&quot;<span class="xmlattrvalue">grid</span>&quot;</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Event</b><span class="xmltag">&lt;/b&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Period</b><span class="xmltag">&lt;/b&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>FacilityType</b><span class="xmltag">&lt;/b&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+        </b><span class="xmltag">&lt;tr</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;span</span><span class="xmlattr"> title=&quot;<span class="xmlattrvalue">Codes: {http://ihe.net/xds/connectathon/eventCodes T-D8200}</span>&quot;</span><span class="xmltag">&gt;</span><b>Arm</b><span class="xmltag">&lt;/span&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>23-Dec 2004 8:0 --&amp;gt; 23-Dec 2004 8:1</b><span class="xmltag">&lt;/td&gt;</span><b>
+          </b><span class="xmltag">&lt;td</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;span</span><span class="xmlattr"> title=&quot;<span class="xmlattrvalue">Codes: {http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes Outpatient}</span>&quot;</span><span class="xmltag">&gt;</span><b>Outpatient</b><span class="xmltag">&lt;/span&gt;</span><b>
+          </b><span class="xmltag">&lt;/td&gt;</span><b>
+        </b><span class="xmltag">&lt;/tr&gt;</span><b>
+      </b><span class="xmltag">&lt;/table&gt;</span><b>
+    </b><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><span class="xmlcomment">&lt;!--    Many XDS systems do not trak any id for the author. When systems don't do this, 
+    the only option is for the author information to be contained in the Document Reference
+        --&gt;</span><b>
+    </b><span class="xmltag">&lt;Practitioner</span><span class="xmlattr"> id=&quot;<span class="xmlattrvalue">a1</span>&quot;</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;family</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Dopplemeyer</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;given</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Sherry</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;telecom</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">email</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">john.doe@healthcare.example.org</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/telecom&gt;</span><b>
+      </b><span class="xmltag">&lt;organization</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Cleveland Clinic</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/organization&gt;</span><span class="xmlcomment">&lt;!--   
+      &amp;lt;organization&amp;gt;
+        &amp;lt;display value=&amp;quot;Berea Community&amp;quot;/&amp;gt;
+      &amp;lt;/organization&amp;gt;      
+   --&gt;</span><b>
+      </b><span class="xmltag">&lt;role</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Primary Surgon</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/role&gt;</span><b>
+      </b><span class="xmltag">&lt;specialty</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Orthopedic</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/specialty&gt;</span><b>
+    </b><span class="xmltag">&lt;/Practitioner&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;Practitioner</span><span class="xmlattr"> id=&quot;<span class="xmlattrvalue">a2</span>&quot;</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;family</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Smitty</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;given</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Gerald</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;telecom</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">email</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">john.doe@healthcare.example.org</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/telecom&gt;</span><b>
+      </b><span class="xmltag">&lt;organization</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Cleveland Clinic</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/organization&gt;</span><span class="xmlcomment">&lt;!--   
+      &amp;lt;organization&amp;gt;
+        &amp;lt;display value=&amp;quot;Parma Community&amp;quot;/&amp;gt;
+      &amp;lt;/organization&amp;gt;      
+   --&gt;</span><b>
+      </b><span class="xmltag">&lt;role</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Attending</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/role&gt;</span><b>
+      </b><span class="xmltag">&lt;specialty</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Orthopedic</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/specialty&gt;</span><b>
+    </b><span class="xmltag">&lt;/Practitioner&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+  </b><span class="xmltag">&lt;masterIdentifier</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">urn:ietf:rfc:3986</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">urn:oid:1.3.6.1.4.1.21367.2005.3.7</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/masterIdentifier&gt;</span><b>
+  </b><span class="xmltag">&lt;subject</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue"><a href="patient-example-xcda.xml.html">Patient/xcda</a></span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/subject&gt;</span><b>
+  </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://loinc.org</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">34108-1</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Outpatient Note</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/coding&gt;</span><b>
+  </b><span class="xmltag">&lt;/type&gt;</span><b>
+  </b><span class="xmltag">&lt;author</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">#a1</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/author&gt;</span><b>
+  </b><span class="xmltag">&lt;author</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">#a2</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/author&gt;</span><b>
+  </b><span class="xmltag">&lt;created</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">2005-12-24T09:35:00+11:00</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;indexed</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">2005-12-24T09:43:41+11:00</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">current</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;description</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Physical</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;confidentiality</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://ihe.net/xds/connectathon/confidentialityCodes</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">1.3.6.1.4.1.21367.2006.7.101</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Clinical-Staff</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/coding&gt;</span><b>
+  </b><span class="xmltag">&lt;/confidentiality&gt;</span><b>
+  </b><span class="xmltag">&lt;primaryLanguage</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">en-US</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;mimeType</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">application/hl7-v3+xml</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;size</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">3654</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;hash</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">da39a3ee5e6b4b0d3255bfef95601890afd80709</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;location</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://example.org/xds/mhd/Binary/@07a6483f-732b-461e-86b6-edb665c45510</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;context</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;event</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://ihe.net/xds/connectathon/eventCodes</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">T-D8200</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Arm</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/coding&gt;</span><b>
+    </b><span class="xmltag">&lt;/event&gt;</span><b>
+    </b><span class="xmltag">&lt;period</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;start</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">2004-12-23T08:00:00</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;end</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">2004-12-23T08:01:00</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/period&gt;</span><b>
+    </b><span class="xmltag">&lt;facilityType</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Outpatient</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value=&quot;<span class="xmlattrvalue">Outpatient</span>&quot;</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/coding&gt;</span><b>
+    </b><span class="xmltag">&lt;/facilityType&gt;</span><b>
+  </b><span class="xmltag">&lt;/context&gt;</span><b>
+</b><span class="xmltag">&lt;/DocumentReference&gt;</span></pre>
+</div>
+<p>JSON</p>
+<div class="example">
+<p>Example of documentreference</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;DocumentReference&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;\n      &lt;p&gt;\n        &lt;b&gt;Generated Narrative&lt;/b&gt;\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;masterIdentifier&lt;/b&gt;: urn:oid:1.3.6.1.4.1.21367.2005.3.7\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;subject&lt;/b&gt;: \n        &lt;a href=\&quot;patient-example-xcda.html\&quot;&gt;MRN = 12345 (usual); Henry Levin ; Male; birthDate: 24-Sep 1932; active&lt;/a&gt;\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;type&lt;/b&gt;: \n        &lt;span title=\&quot;Codes: {http://loinc.org 34108-1}\&quot;&gt;Outpatient Note&lt;/span&gt;\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;author&lt;/b&gt;: Sherry Dopplemeyer ; Primary Surgon; Orthopedic, Gerald Smitty ; Attending; Orthopedic\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;created&lt;/b&gt;: 24-Dec 2005 9:35\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;indexed&lt;/b&gt;: 24-Dec 2005 9:43\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;status&lt;/b&gt;: current\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;description&lt;/b&gt;: Physical\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;confidentiality&lt;/b&gt;: \n        &lt;span title=\&quot;Codes: {http://ihe.net/xds/connectathon/confidentialityCodes 1.3.6.1.4.1.21367.2006.7.101}\&quot;&gt;Clinical-Staff&lt;/span&gt;\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;primaryLanguage&lt;/b&gt;: en-US\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;mimeType&lt;/b&gt;: application/hl7-v3+xml\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;size&lt;/b&gt;: 3654\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;hash&lt;/b&gt;: da39a3ee5e6b4b0d3255bfef95601890afd80709\n      &lt;/p&gt;\n      &lt;p&gt;\n        &lt;b&gt;location&lt;/b&gt;: \n        &lt;a href=\&quot;http://example.org/xds/mhd/Binary/@07a6483f-732b-461e-86b6-edb665c45510\&quot;&gt;http://example.org/xds/mhd/Binary/@07a6483f-732b-461e-86b6-edb665c45510&lt;/a&gt;\n      &lt;/p&gt;\n      &lt;h3&gt;Contexts&lt;/h3&gt;\n      &lt;table class=\&quot;grid\&quot;&gt;\n        &lt;tr&gt;\n          &lt;td&gt;\n            &lt;b&gt;Event&lt;/b&gt;\n          &lt;/td&gt;\n          &lt;td&gt;\n            &lt;b&gt;Period&lt;/b&gt;\n          &lt;/td&gt;\n          &lt;td&gt;\n            &lt;b&gt;FacilityType&lt;/b&gt;\n          &lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n          &lt;td&gt;\n            &lt;span title=\&quot;Codes: {http://ihe.net/xds/connectathon/eventCodes T-D8200}\&quot;&gt;Arm&lt;/span&gt;\n          &lt;/td&gt;\n          &lt;td&gt;23-Dec 2004 8:0 --&amp;gt; 23-Dec 2004 8:1&lt;/td&gt;\n          &lt;td&gt;\n            &lt;span title=\&quot;Codes: {http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes Outpatient}\&quot;&gt;Outpatient&lt;/span&gt;\n          &lt;/td&gt;\n        &lt;/tr&gt;\n      &lt;/table&gt;\n    &lt;/div&gt;&quot;
+  },
+  &quot;contained&quot;: [
+    {
+      &quot;resourceType&quot;: &quot;Practitioner&quot;,
+      &quot;id&quot;: &quot;a1&quot;,
+      &quot;name&quot;: {
+        &quot;family&quot;: [
+          &quot;Dopplemeyer&quot;
+        ],
+        &quot;given&quot;: [
+          &quot;Sherry&quot;
+        ]
+      },
+      &quot;telecom&quot;: [
+        {
+          &quot;system&quot;: &quot;email&quot;,
+          &quot;value&quot;: &quot;john.doe@healthcare.example.org&quot;
+        }
+      ],
+      &quot;organization&quot;: {
+        &quot;display&quot;: &quot;Cleveland Clinic&quot;
+      },
+      &quot;role&quot;: [
+        {
+          &quot;text&quot;: &quot;Primary Surgon&quot;
+        }
+      ],
+      &quot;specialty&quot;: [
+        {
+          &quot;text&quot;: &quot;Orthopedic&quot;
+        }
+      ]
+    },
+    {
+      &quot;resourceType&quot;: &quot;Practitioner&quot;,
+      &quot;id&quot;: &quot;a2&quot;,
+      &quot;name&quot;: {
+        &quot;family&quot;: [
+          &quot;Smitty&quot;
+        ],
+        &quot;given&quot;: [
+          &quot;Gerald&quot;
+        ]
+      },
+      &quot;telecom&quot;: [
+        {
+          &quot;system&quot;: &quot;email&quot;,
+          &quot;value&quot;: &quot;john.doe@healthcare.example.org&quot;
+        }
+      ],
+      &quot;organization&quot;: {
+        &quot;display&quot;: &quot;Cleveland Clinic&quot;
+      },
+      &quot;role&quot;: [
+        {
+          &quot;text&quot;: &quot;Attending&quot;
+        }
+      ],
+      &quot;specialty&quot;: [
+        {
+          &quot;text&quot;: &quot;Orthopedic&quot;
+        }
+      ]
+    }
+  ],
+  &quot;masterIdentifier&quot;: {
+    &quot;system&quot;: &quot;urn:ietf:rfc:3986&quot;,
+    &quot;value&quot;: &quot;urn:oid:1.3.6.1.4.1.21367.2005.3.7&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/xcda&quot;
+  },
+  &quot;type&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;system&quot;: &quot;http://loinc.org&quot;,
+        &quot;code&quot;: &quot;34108-1&quot;,
+        &quot;display&quot;: &quot;Outpatient Note&quot;
+      }
+    ]
+  },
+  &quot;author&quot;: [
+    {
+      &quot;reference&quot;: &quot;#a1&quot;
+    },
+    {
+      &quot;reference&quot;: &quot;#a2&quot;
+    }
+  ],
+  &quot;created&quot;: &quot;2005-12-24T09:35:00+11:00&quot;,
+  &quot;indexed&quot;: &quot;2005-12-24T09:43:41+11:00&quot;,
+  &quot;status&quot;: &quot;current&quot;,
+  &quot;description&quot;: &quot;Physical&quot;,
+  &quot;confidentiality&quot;: [
+    {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://ihe.net/xds/connectathon/confidentialityCodes&quot;,
+          &quot;code&quot;: &quot;1.3.6.1.4.1.21367.2006.7.101&quot;,
+          &quot;display&quot;: &quot;Clinical-Staff&quot;
+        }
+      ]
+    }
+  ],
+  &quot;primaryLanguage&quot;: &quot;en-US&quot;,
+  &quot;mimeType&quot;: &quot;application/hl7-v3+xml&quot;,
+  &quot;size&quot;: 3654,
+  &quot;hash&quot;: &quot;da39a3ee5e6b4b0d3255bfef95601890afd80709&quot;,
+  &quot;location&quot;: &quot;http://example.org/xds/mhd/Binary/@07a6483f-732b-461e-86b6-edb665c45510&quot;,
+  &quot;context&quot;: {
+    &quot;event&quot;: [
+      {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://ihe.net/xds/connectathon/eventCodes&quot;,
+            &quot;code&quot;: &quot;T-D8200&quot;,
+            &quot;display&quot;: &quot;Arm&quot;
+          }
+        ]
+      }
+    ],
+    &quot;period&quot;: {
+      &quot;start&quot;: &quot;2004-12-23T08:00:00&quot;,
+      &quot;end&quot;: &quot;2004-12-23T08:01:00&quot;
+    },
+    &quot;facilityType&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes&quot;,
+          &quot;code&quot;: &quot;Outpatient&quot;,
+          &quot;display&quot;: &quot;Outpatient&quot;
+        }
+      ]
+    }
+  }
+}
+</pre>
+</div>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

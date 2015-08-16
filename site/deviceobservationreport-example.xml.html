@@ -1,0 +1,528 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Deviceobservationreport-example.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><a href="deviceobservationreport.html">DeviceObservationReport</a></li>        <li><b>Example Instance</b></li>        <!-- deviceobservationreport-example.xml.html / resource-instance:DeviceObservationReport -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Deviceobservationreport-example.xml</h1>
+
+<div class="example">
+<p>Example of deviceobservationreport (id = &quot;example&quot;)</p>
+<p><a href="deviceobservationreport-example.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;DeviceObservationReport</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+
+</b><span class="xmlcomment">&lt;!--  
+
+The device observation examples are based on the example from http://ihe.net/Technical_Framework/upl
+  oad/IHE_PCD_TF_Vol2.pdf:
+
+MSH|^~\&amp;amp;amp;|HL7^080019FFFF4F6AC0^EUI-64|MMS|||20081211144500||ORU^R01^ORU_R01|12d15a9:11df9e613
+  47:7fee:30456965|P|2.6|20081211144500||NE|AL||8859/1|||IHE PCD ORU-R01 2006^HL7^Universal
+   ID^HL7
+PID|||AB60001^^^A^PI||BROOKS^ALBERT^^^^^L
+PV1||E|3 WEST ICU^3001^1
+OBR|1|080019FFFF4F6AFE20081211144657^AwareGateway^080019FFFF4F6AC0^EUI-64|080019FFFF4F6AC02008121114
+  4657^AwareGateway^080019FFFF4F6AC0^EUI-64|126.169.95.2^2000^MDC|||20081211144500
+OBX|1|NM|147842^MDC_ECG_HEART_RATE^MDC|1.6.1.1|60|/min^/min^UCUM|||||R|||||||||
+OBX|2|NM|148065^MDC_ECG_V_P_C_CNT^MDC|1.6.1.2|0|/min^/min^UCUM|||||R|||||||||
+OBX|3|NM|150035^MDC_PRESS_BLD_ART_MEAN^MDC|1.3.1.1|92|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+OBX|4|NM|150033^MDC_PRESS_BLD_ART_SYS^MDC|1.3.1.2|120|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+OBX|5|NM|150034^MDC_PRESS_BLD_ART_DIA^MDC|1.3.1.3|80|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+OBX|6|NM|149522^MDC_BLD_PULS_RATE_INV^MDC|1.2.1.1|60|/min^/min^UCUM|||||R|||||||||
+OBX|7|NM|150047^MDC_PRESS_BLD_ART_PULM_MEAN^MDC|1.4.2.1|14|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+OBX|8|NM|150045^MDC_PRESS_BLD_ART_PULM_SYS^MDC|1.4.2.2|25|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+OBX|9|NM|150046^MDC_PRESS_BLD_ART_PULM_DIA^MDC|1.4.2.3|10|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+
+  --&gt;</span><b>
+
+</b><span class="xmlcomment">&lt;!--  
+For the purposes of this example - principally to have a single file that includes the
+   important 
+parts - the observations are contained within the Device Observation report. 
+
+In production usage, putting the granular observations inside the device observation resource
+means that the individual observations don&apos;t have an identity. Systems that wish to extract
+and use these granular observations have to re-identify them. The Condition for these
+   systems 
+is that this must be done consistently, else there&apos;ll be cloned observations, and the
+   users
+will get confused by spurious copies of the data.
+
+Systems that need to re-identify the granular observations could do so using the 
+Observation.identity element - *if* it&apos;s populated completely and correctly. But 
+must easier to properly identify the observations first rather than making them 
+contained ones (even though this is easier for the sender)
+
+  --&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>example</b><span class="xmltag">&lt;/p&gt;</span><b>
+    </b><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmlcomment">&lt;!--   OBX|1|NM|147842^MDC_ECG_HEART_RATE^MDC|1.6.1.1|60|/min^/min^UCUM|||||R|||||||||   --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o1</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">147842</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_ECG_HEART_RATE</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">60</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">/min</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">/min</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+</b><span class="xmlcomment">&lt;!--   OBX|2|NM|148065^MDC_ECG_V_P_C_CNT^MDC|1.6.1.2|0|/min^/min^UCUM|||||R|||||||||   --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o2</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">148065</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_ECG_V_P_C_CNT</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">/min</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">/min</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+</b><span class="xmlcomment">&lt;!--   OBX|3|NM|150035^MDC_PRESS_BLD_ART_MEAN^MDC|1.3.1.1|92|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+       --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o3</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">150035</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_ECG_HEART_RATE</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">60</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">/min</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">/min</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+</b><span class="xmlcomment">&lt;!--   OBX|4|NM|150033^MDC_PRESS_BLD_ART_SYS^MDC|1.3.1.2|120|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+       --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o4</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">150033</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_PRESS_BLD_ART_SYS</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">120</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmHg</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mm[Hg]</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+</b><span class="xmlcomment">&lt;!--   OBX|5|NM|150034^MDC_PRESS_BLD_ART_DIA^MDC|1.3.1.3|80|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+       --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o5</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">150034</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_PRESS_BLD_ART_DIA</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">80</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmHg</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mm[Hg]</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+</b><span class="xmlcomment">&lt;!--   OBX|6|NM|149522^MDC_BLD_PULS_RATE_INV^MDC|1.2.1.1|60|/min^/min^UCUM|||||R||||||||| 
+      --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o6</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">149522</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_BLD_PULS_RATE_INV</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">60</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">/min</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">/min</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+</b><span class="xmlcomment">&lt;!--   OBX|7|NM|150047^MDC_PRESS_BLD_ART_PULM_MEAN^MDC|1.4.2.1|14|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+       --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o7</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">150047</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_PRESS_BLD_ART_PULM_MEAN</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">14</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmHg</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mm[Hg]</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+</b><span class="xmlcomment">&lt;!--   OBX|8|NM|150045^MDC_PRESS_BLD_ART_PULM_SYS^MDC|1.4.2.2|25|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+       --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o8</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">150045</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_PRESS_BLD_ART_PULM_SYS</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">25</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmHg</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mm[Hg]</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+</b><span class="xmlcomment">&lt;!--   OBX|9|NM|150046^MDC_PRESS_BLD_ART_PULM_DIA^MDC|1.4.2.3|10|mm[Hg]^mm[Hg]^UCUM|||||R|||||||||
+       --&gt;</span><b>
+    </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">o9</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   mdc   --&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">150046</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">MDC_PRESS_BLD_ART_PULM_DIA</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/name&gt;</span><b>
+      </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">10</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmHg</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mm[Hg]</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+      </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">preliminary</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+  </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;Device</span><span class="xmlattr"> id="<span class="xmlattrvalue">d1</span>"</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;identifier</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://goodcare.org/devices/id</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">A23-352</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/identifier&gt;</span><b>
+      </b><span class="xmltag">&lt;identifier</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://gs1.org/gtin</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">04012313012313</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/identifier&gt;</span><b>
+      </b><span class="xmltag">&lt;identifier</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;label</span><span class="xmlattr"> value="<span class="xmlattrvalue">serial number</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://acme.org/au</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">080019FFFF4F6AFE20081211144657</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/identifier&gt;</span><b>
+      </b><span class="xmltag">&lt;identifier</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://standards.ieee.org/develop/regauth/tut/eui64.pdf</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">080019FFFF4F6AFE20081211144657</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/identifier&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">urn:std:iso:11073:10101</span>"</span><span class="xmltag">/&gt;</span><b> 
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">2000</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/coding&gt;</span><b>
+      </b><span class="xmltag">&lt;/type&gt;</span><b>
+      </b><span class="xmltag">&lt;manufacturer</span><span class="xmlattr"> value="<span class="xmlattrvalue">Aware</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;model</span><span class="xmlattr"> value="<span class="xmlattrvalue">AB 45-J</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;lotNumber</span><span class="xmlattr"> value="<span class="xmlattrvalue">43453424</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;contact</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">phone</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">ext 4352</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/contact&gt;</span><b>
+    </b><span class="xmltag">&lt;/Device&gt;</span><b>
+  </b><span class="xmltag">&lt;/contained&gt;</span><b>
+
+  </b><span class="xmltag">&lt;instant</span><span class="xmlattr"> value="<span class="xmlattrvalue">2008-12-11T14:45:00</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;source</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#d1</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/source&gt;</span><b>
+  </b><span class="xmltag">&lt;subject</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue"><a href="patient-example-ihe-pcd.xml.html">Patient/ihe-pcd</a></span>"</span><span class="xmltag">/&gt;</span><b> 
+  </b><span class="xmltag">&lt;/subject&gt;</span><b>
+  
+  </b><span class="xmlcomment">&lt;!--   todo: it doesn&apos;t make sense to break the data up into channels unless 
+     you can describe the virtual devices and channels, and so the codes on 
+     these are mandatroy - but the PCD source message doesn&apos;t have this information   --&gt;</span><b>  
+  </b><span class="xmltag">&lt;virtualDevice</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;channel</span><span class="xmltag">&gt;</span><b>
+    
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+   
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o2</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o3</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o4</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o5</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o6</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o7</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o8</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+
+      </b><span class="xmltag">&lt;metric</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;observation</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#o9</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/observation&gt;</span><b>
+      </b><span class="xmltag">&lt;/metric&gt;</span><b>
+
+   
+    </b><span class="xmltag">&lt;/channel&gt;</span><b>
+  </b><span class="xmltag">&lt;/virtualDevice&gt;</span><b>
+</b><span class="xmltag">&lt;/DeviceObservationReport&gt;</span></pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

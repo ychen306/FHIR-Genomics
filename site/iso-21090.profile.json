@@ -1,0 +1,825 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre> <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n<span style=\" color: Gray\">&lt;!-- <span style=\"color: Darkviolet\">Extensions</span> --&gt;</span>\r\n&lt;<span title=\"If the value is not a proper value, indicates the reason.\"><b>extension</b></span>&gt;<a name=\"nullFlavor\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Context: DataType = Any</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#nullFlavor</span>&quot;/&gt;\r\n &lt;<span title=\"If the value is not a proper value, indicates the reason.\"><b>valueCode</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">NI | OTH | NINF | PINF | UNK | ASKU | NAV | NASK | TRC | MSK | NA</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"A set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type.\"><b>extension</b></span>&gt;<a name=\"name-qualifier\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = HumanName.part</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#name-qualifier</span>&quot;/&gt;\r\n &lt;<span title=\"A set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type.\"><b>valueCode</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">AD | SP | BR | CL | IN | LS | MID | PFX | SFX</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The primary measure of variance/uncertainty of the value (the square root of the sum of the squares of the differences between all data points and the mean).\"><b>extension</b></span>&gt;<a name=\"uncertainty\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Context: DataType = Quantity</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#uncertainty</span>&quot;/&gt;\r\n &lt;<span title=\"The primary measure of variance/uncertainty of the value (the square root of the sum of the squares of the differences between all data points and the mean).\"><b>valueDecimal</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#decimal\">decimal</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">Standard Deviation (same units as the quantity)</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"A code specifying the type of probability distribution for the uncertainty.\"><b>extension</b></span>&gt;<a name=\"uncertaintyType\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Context: DataType = Quantity</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#uncertaintyType</span>&quot;/&gt;\r\n &lt;<span title=\"A code specifying the type of probability distribution for the uncertainty.\"><b>valueCode</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">Probability Distribution Type for uncertainty</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Uses of Addresses - codes not defined as part of Address.use.\"><b>extension</b></span>&gt;<a name=\"address-use\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-use</span>&quot;/&gt;\r\n &lt;<span title=\"Uses of Addresses - codes not defined as part of Address.use.\"><b>valueCode</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">BAD | CONF | HP | HV | DIR | PUB | PHYS | PST</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"This can be a unit designator, such as apartment number, suite number, or floor. There may be several unit designators in an address (e.g., &quot;3rd floor, Appt. 342&quot;). This can also be a designator pointing away from the location, rather than specifying a smaller location within some larger one (e.g., Dutch &quot;t.o.&quot; means &quot;opposite to&quot; for house boats located across the street facing houses).\"><b>extension</b></span>&gt;<a name=\"address-part-additionalLocator\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-additionalLocator</span>&quot;/&gt;\r\n &lt;<span title=\"This can be a unit designator, such as apartment number, suite number, or floor. There may be several unit designators in an address (e.g., &quot;3rd floor, Appt. 342&quot;). This can also be a designator pointing away from the location, rather than specifying a smaller location within some larger one (e.g., Dutch &quot;t.o.&quot; means &quot;opposite to&quot; for house boats located across the street facing houses).\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">additionalLocator</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The number or name of a specific unit contained within a building or complex, as assigned by that building or complex.\"><b>extension</b></span>&gt;<a name=\"address-part-unitID\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-unitID</span>&quot;/&gt;\r\n &lt;<span title=\"The number or name of a specific unit contained within a building or complex, as assigned by that building or complex.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">unitID</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Indicates the type of specific unit contained within a building or complex. E.g. Appartment, Floor.\"><b>extension</b></span>&gt;<a name=\"address-part-unitType\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-unitType</span>&quot;/&gt;\r\n &lt;<span title=\"Indicates the type of specific unit contained within a building or complex. E.g. Appartment, Floor.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">unitType</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"A delivery address line is frequently used instead of breaking out delivery mode, delivery installation, etc. An address generally has only a delivery address line or a street address line, but not both.\"><b>extension</b></span>&gt;<a name=\"address-part-deliveryAddressLine\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-deliveryAddressLine</span>&quot;/&gt;\r\n &lt;<span title=\"A delivery address line is frequently used instead of breaking out delivery mode, delivery installation, etc. An address generally has only a delivery address line or a street address line, but not both.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">deliveryAddressLine</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Indicates the type of delivery installation (the facility to which the mail will be delivered prior to final shipping via the delivery mode.) Example: post office, letter carrier depot, community mail center, station, etc.\"><b>extension</b></span>&gt;<a name=\"address-part-deliveryInstallationType\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-deliveryInstallationType</span>&quot;/&gt;\r\n &lt;<span title=\"Indicates the type of delivery installation (the facility to which the mail will be delivered prior to final shipping via the delivery mode.) Example: post office, letter carrier depot, community mail center, station, etc.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">deliveryInstallationType</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The location of the delivery installation, usually a town or city, and is only required if the area is different from the municipality. Area to which mail delivery service is provided from any postal facility or service such as an individual letter carrier, rural route, or postal route.\"><b>extension</b></span>&gt;<a name=\"address-part-deliveryInstallationArea\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-deliveryInstallationArea</span>&quot;/&gt;\r\n &lt;<span title=\"The location of the delivery installation, usually a town or city, and is only required if the area is different from the municipality. Area to which mail delivery service is provided from any postal facility or service such as an individual letter carrier, rural route, or postal route.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">deliveryInstallationArea</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"A number, letter or name identifying a delivery installation. E.g., for Station A, the delivery installation qualifier would be 'A'.\"><b>extension</b></span>&gt;<a name=\"address-part-deliveryInstallationQualifier\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-deliveryInstallationQualifier</span>&quot;/&gt;\r\n &lt;<span title=\"A number, letter or name identifying a delivery installation. E.g., for Station A, the delivery installation qualifier would be 'A'.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">deliveryInstallationQualifier</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Indicates the type of service offered, method of delivery. For example: post office box, rural route, general delivery, etc.\"><b>extension</b></span>&gt;<a name=\"address-part-deliveryMode\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-deliveryMode</span>&quot;/&gt;\r\n &lt;<span title=\"Indicates the type of service offered, method of delivery. For example: post office box, rural route, general delivery, etc.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">deliveryMode</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Represents the routing information such as a letter carrier route number. It is the identifying number of the designator (the box number or rural route number).\"><b>extension</b></span>&gt;<a name=\"address-part-deliveryModeIdentifier\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-deliveryModeIdentifier</span>&quot;/&gt;\r\n &lt;<span title=\"Represents the routing information such as a letter carrier route number. It is the identifying number of the designator (the box number or rural route number).\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">deliveryModeIdentifier</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Description: A street address line is frequently used instead of breaking out build number, street name, street type, etc. An address generally has only a delivery address line or a street address line, but not both.\"><b>extension</b></span>&gt;<a name=\"address-part-streetAddressLine\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-streetAddressLine</span>&quot;/&gt;\r\n &lt;<span title=\"Description: A street address line is frequently used instead of breaking out build number, street name, street type, etc. An address generally has only a delivery address line or a street address line, but not both.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">streetAddressLine</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The number of a building, house or lot alongside the street. Also known as &quot;primary street number&quot;. This does not number the street but rather the building.\"><b>extension</b></span>&gt;<a name=\"address-part-houseNumber\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-houseNumber</span>&quot;/&gt;\r\n &lt;<span title=\"The number of a building, house or lot alongside the street. Also known as &quot;primary street number&quot;. This does not number the street but rather the building.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">houseNumber</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Any alphabetic character, fraction or other text that may appear after the numeric portion of a building number.\"><b>extension</b></span>&gt;<a name=\"address-part-buildingNumberSuffix\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-buildingNumberSuffix</span>&quot;/&gt;\r\n &lt;<span title=\"Any alphabetic character, fraction or other text that may appear after the numeric portion of a building number.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">buildingNumberSuffix</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"A numbered box located in a post station.\"><b>extension</b></span>&gt;<a name=\"address-part-postBox\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-postBox</span>&quot;/&gt;\r\n &lt;<span title=\"A numbered box located in a post station.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">postBox</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The numeric portion of a building number.\"><b>extension</b></span>&gt;<a name=\"address-part-houseNumberNumeric\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-houseNumberNumeric</span>&quot;/&gt;\r\n &lt;<span title=\"The numeric portion of a building number.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">houseNumberNumeric</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"streetName.\"><b>extension</b></span>&gt;<a name=\"address-part-streetName\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-streetName</span>&quot;/&gt;\r\n &lt;<span title=\"streetName.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">streetName</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The base name of a roadway or artery recognized by a municipality (excluding street type and direction).\"><b>extension</b></span>&gt;<a name=\"address-part-streetNameBase\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-streetNameBase</span>&quot;/&gt;\r\n &lt;<span title=\"The base name of a roadway or artery recognized by a municipality (excluding street type and direction).\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">streetNameBase</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The designation given to the street. (e.g. Street, Avenue, Crescent, etc.).\"><b>extension</b></span>&gt;<a name=\"address-part-streetNameType\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-streetNameType</span>&quot;/&gt;\r\n &lt;<span title=\"The designation given to the street. (e.g. Street, Avenue, Crescent, etc.).\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">streetNameType</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Direction (e.g., N, S, W, E).\"><b>extension</b></span>&gt;<a name=\"address-part-direction\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-direction</span>&quot;/&gt;\r\n &lt;<span title=\"Direction (e.g., N, S, W, E).\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">direction</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The name of the party who will take receipt at the specified address, and will take on responsibility for ensuring delivery to the target recipient.\"><b>extension</b></span>&gt;<a name=\"address-part-careOf\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-careOf</span>&quot;/&gt;\r\n &lt;<span title=\"The name of the party who will take receipt at the specified address, and will take on responsibility for ensuring delivery to the target recipient.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">careOf</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"A geographic sub-unit delineated for demographic purposes.\"><b>extension</b></span>&gt;<a name=\"address-part-censusTract\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-censusTract</span>&quot;/&gt;\r\n &lt;<span title=\"A geographic sub-unit delineated for demographic purposes.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">censusTract</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"A sub-unit of a state or province. (49 of the United States of America use the term &quot;county;&quot; Louisiana uses the term &quot;parish&quot;.).\"><b>extension</b></span>&gt;<a name=\"address-part-county\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-county</span>&quot;/&gt;\r\n &lt;<span title=\"A sub-unit of a state or province. (49 of the United States of America use the term &quot;county;&quot; Louisiana uses the term &quot;parish&quot;.).\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">county</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"Delimiters are printed without framing white space. If no value component is provided, the delimiter appears as a line break.\"><b>extension</b></span>&gt;<a name=\"address-part-delimiter\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-delimiter</span>&quot;/&gt;\r\n &lt;<span title=\"Delimiters are printed without framing white space. If no value component is provided, the delimiter appears as a line break.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">delimiter</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"A subsection of a municipality.\"><b>extension</b></span>&gt;<a name=\"address-part-precinct\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Context: DataType = Address</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/iso-21090#address-part-precinct</span>&quot;/&gt;\r\n &lt;<span title=\"A subsection of a municipality.\"><b>valueString</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">precinct</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n</pre></div>"
+  },
+  "name": "ISO 21090 Data Type Extensions",
+  "publisher": "HL7",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://www.hl7.org"
+    }
+  ],
+  "description": "Extra ISO 21090 features not included in data types because of core design policy",
+  "status": "draft",
+  "date": "2012-06-24",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "extensionDefn": [
+    {
+      "code": "nullFlavor",
+      "display": "NI | OTH | NINF | PINF | UNK | ASKU | NAV | NASK | TRC | MSK | NA",
+      "contextType": "datatype",
+      "context": [
+        "Any"
+      ],
+      "definition": {
+        "short": "NI | OTH | NINF | PINF | UNK | ASKU | NAV | NASK | TRC | MSK | NA",
+        "formal": "If the value is not a proper value, indicates the reason.",
+        "comments": "Considerable care must be used when using nullFlavor in this context of FHIR - more than any other concept, this is tied to the way v3 works, and FHIR is quite different. For instance, there is no notion of a \"proper value\" as opposed to any other value in FHIR. a NullFlavor should be understood to mean, \"why information is missing\", and the nulFlavors OTH, NINF, PINF, and TRC should not be used.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "binding": {
+          "name": "NullFlavor",
+          "isExtensible": true,
+          "referenceResource": {
+            "reference": "http://hl7.org/fhir/vs/null-flavor"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ANY.nullFlavor"
+          },
+          {
+            "identity": "v2",
+            "map": "n/a"
+          }
+        ]
+      }
+    },
+    {
+      "code": "name-qualifier",
+      "display": "AD | SP | BR | CL | IN | LS | MID | PFX | SFX",
+      "contextType": "datatype",
+      "context": [
+        "HumanName.part"
+      ],
+      "definition": {
+        "short": "AD | SP | BR | CL | IN | LS | MID | PFX | SFX",
+        "formal": "A set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type.",
+        "comments": "Used to indicate additional information about the name part and how it should be used.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "binding": {
+          "name": "EntityNamePartQualifier",
+          "isExtensible": true,
+          "referenceResource": {
+            "reference": "http://hl7.org/fhir/vs/name-part-qualifier"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ENXP.qualifier"
+          }
+        ]
+      }
+    },
+    {
+      "code": "uncertainty",
+      "display": "Standard Deviation (same units as the quantity)",
+      "contextType": "datatype",
+      "context": [
+        "Quantity"
+      ],
+      "definition": {
+        "short": "Standard Deviation (same units as the quantity)",
+        "formal": "The primary measure of variance/uncertainty of the value (the square root of the sum of the squares of the differences between all data points and the mean).",
+        "comments": "standardDeviation has the same units as the quantity. It is used to normalize the data for computing the distribution function. Applications that cannot deal with probability distributions can still get an idea about the confidence level by looking at standardDeviation.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "PPD.standardDeviation"
+          }
+        ]
+      }
+    },
+    {
+      "code": "uncertaintyType",
+      "display": "Probability Distribution Type for uncertainty",
+      "contextType": "datatype",
+      "context": [
+        "Quantity"
+      ],
+      "definition": {
+        "short": "Probability Distribution Type for uncertainty",
+        "formal": "A code specifying the type of probability distribution for the uncertainty.",
+        "comments": "This is only meaningful if there is also an uncertainty extension. If there is and uncertainty extension with no type, this means  that the probability distribution type is unknown. In that case, the uncertainty has the meaning of an informal guess.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "binding": {
+          "name": "ProbabilityDistributionType",
+          "isExtensible": true,
+          "referenceResource": {
+            "reference": "http://hl7.org/fhir/vs/probability-distribution-type"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "PPD.distributionType"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-use",
+      "display": "BAD | CONF | HP | HV | DIR | PUB | PHYS | PST",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "BAD | CONF | HP | HV | DIR | PUB | PHYS | PST",
+        "formal": "Uses of Addresses - codes not defined as part of Address.use.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "binding": {
+          "name": "PostalAddressUse",
+          "isExtensible": true,
+          "referenceResource": {
+            "reference": "http://hl7.org/fhir/vs/postal-address-use"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "AD.use"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-additionalLocator",
+      "display": "additionalLocator",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "additionalLocator",
+        "formal": "This can be a unit designator, such as apartment number, suite number, or floor. There may be several unit designators in an address (e.g., \"3rd floor, Appt. 342\"). This can also be a designator pointing away from the location, rather than specifying a smaller location within some larger one (e.g., Dutch \"t.o.\" means \"opposite to\" for house boats located across the street facing houses).",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=ADL]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-unitID",
+      "display": "unitID",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "unitID",
+        "formal": "The number or name of a specific unit contained within a building or complex, as assigned by that building or complex.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=UNID]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-unitType",
+      "display": "unitType",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "unitType",
+        "formal": "Indicates the type of specific unit contained within a building or complex. E.g. Appartment, Floor.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=UNIT]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-deliveryAddressLine",
+      "display": "deliveryAddressLine",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "deliveryAddressLine",
+        "formal": "A delivery address line is frequently used instead of breaking out delivery mode, delivery installation, etc. An address generally has only a delivery address line or a street address line, but not both.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=DAL]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-deliveryInstallationType",
+      "display": "deliveryInstallationType",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "deliveryInstallationType",
+        "formal": "Indicates the type of delivery installation (the facility to which the mail will be delivered prior to final shipping via the delivery mode.) Example: post office, letter carrier depot, community mail center, station, etc.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=DINST]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-deliveryInstallationArea",
+      "display": "deliveryInstallationArea",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "deliveryInstallationArea",
+        "formal": "The location of the delivery installation, usually a town or city, and is only required if the area is different from the municipality. Area to which mail delivery service is provided from any postal facility or service such as an individual letter carrier, rural route, or postal route.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=DINSTA]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-deliveryInstallationQualifier",
+      "display": "deliveryInstallationQualifier",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "deliveryInstallationQualifier",
+        "formal": "A number, letter or name identifying a delivery installation. E.g., for Station A, the delivery installation qualifier would be 'A'.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=DINSTQ]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-deliveryMode",
+      "display": "deliveryMode",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "deliveryMode",
+        "formal": "Indicates the type of service offered, method of delivery. For example: post office box, rural route, general delivery, etc.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=DMOD]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-deliveryModeIdentifier",
+      "display": "deliveryModeIdentifier",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "deliveryModeIdentifier",
+        "formal": "Represents the routing information such as a letter carrier route number. It is the identifying number of the designator (the box number or rural route number).",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=DMODID]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-streetAddressLine",
+      "display": "streetAddressLine",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "streetAddressLine",
+        "formal": "Description: A street address line is frequently used instead of breaking out build number, street name, street type, etc. An address generally has only a delivery address line or a street address line, but not both.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=SAL]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-houseNumber",
+      "display": "houseNumber",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "houseNumber",
+        "formal": "The number of a building, house or lot alongside the street. Also known as \"primary street number\". This does not number the street but rather the building.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=BNR]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-buildingNumberSuffix",
+      "display": "buildingNumberSuffix",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "buildingNumberSuffix",
+        "formal": "Any alphabetic character, fraction or other text that may appear after the numeric portion of a building number.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=BNS]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-postBox",
+      "display": "postBox",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "postBox",
+        "formal": "A numbered box located in a post station.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=POB]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-houseNumberNumeric",
+      "display": "houseNumberNumeric",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "houseNumberNumeric",
+        "formal": "The numeric portion of a building number.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=BNN]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-streetName",
+      "display": "streetName",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "streetName",
+        "formal": "streetName.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=STR]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-streetNameBase",
+      "display": "streetNameBase",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "streetNameBase",
+        "formal": "The base name of a roadway or artery recognized by a municipality (excluding street type and direction).",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=STB]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-streetNameType",
+      "display": "streetNameType",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "streetNameType",
+        "formal": "The designation given to the street. (e.g. Street, Avenue, Crescent, etc.).",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=STTYP]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-direction",
+      "display": "direction",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "direction",
+        "formal": "Direction (e.g., N, S, W, E).",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=DIR]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-careOf",
+      "display": "careOf",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "careOf",
+        "formal": "The name of the party who will take receipt at the specified address, and will take on responsibility for ensuring delivery to the target recipient.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=CAR]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-censusTract",
+      "display": "censusTract",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "censusTract",
+        "formal": "A geographic sub-unit delineated for demographic purposes.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=CEN]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-county",
+      "display": "county",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "county",
+        "formal": "A sub-unit of a state or province. (49 of the United States of America use the term \"county;\" Louisiana uses the term \"parish\".).",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=CPA]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-delimiter",
+      "display": "delimiter",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "delimiter",
+        "formal": "Delimiters are printed without framing white space. If no value component is provided, the delimiter appears as a line break.",
+        "comments": "This really has no rationale use in FHIR.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=DEL]"
+          }
+        ]
+      }
+    },
+    {
+      "code": "address-part-precinct",
+      "display": "precinct",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "definition": {
+        "short": "precinct",
+        "formal": "A subsection of a municipality.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=PRE]"
+          }
+        ]
+      }
+    }
+  ]
+}

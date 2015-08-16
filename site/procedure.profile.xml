@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
+&lt;<a title="An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy." class="dict" href="procedure-definitions.html#Procedure"><b>Procedure</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="This records identifiers associated with this procedure that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)." class="dict" href="procedure-definitions.html#Procedure.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External Ids for this procedure<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="The person on whom the procedure was performed." class="dict" href="procedure-definitions.html#Procedure.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who procedure was performed on<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="The specific procedure that is performed. Use text if the exact nature of the procedure can&#39;t be coded." class="dict" href="procedure-definitions.html#Procedure.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Identification of the procedure<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+ &lt;<a title="Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion." class="dict" href="procedure-definitions.html#Procedure.bodySite"><b>bodySite</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Precise location details<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/bodySite&gt;
+ &lt;<a title="The reason why the procedure was performed. This may be due to a Condition, may be coded entity of some type, or may simply be present as text." class="dict" href="procedure-definitions.html#Procedure.indication"><b>indication</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Reason procedure performed<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/indication&gt;
+ &lt;<a title="Limited to &#39;real&#39; people rather than equipment." class="dict" href="procedure-definitions.html#Procedure.performer"><b>performer</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> The people who performed the procedure<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span> --&gt;</span>
+  &lt;<a title="The practitioner who was involved in the procedure." class="dict" href="procedure-definitions.html#Procedure.performer.person"><b>person</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">The reference to the practitioner<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/person&gt;
+  &lt;<a title="E.g. surgeon, anaethetist, endoscopist." class="dict" href="procedure-definitions.html#Procedure.performer.role"><b>role</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">The role the person was in<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/role&gt;
+ &lt;/performer&gt;
+ &lt;<a title="The dates over which the procedure was performed. Allows a period to support complex procedures that span more that one date, and also allows for the length of the procedure to be captured." class="dict" href="procedure-definitions.html#Procedure.date"><b>date</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">The date the procedure was performed<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/date&gt;
+ &lt;<a title="The encounter during which the procedure was performed." class="dict" href="procedure-definitions.html#Procedure.encounter"><b>encounter</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="encounter.html#Encounter">Encounter</a>)</span> <span style="color: navy">The encounter when procedure performed<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/encounter&gt;
+ &lt;<a title="What was the outcome of the procedure - did it resolve reasons why the procedure was performed?." class="dict" href="procedure-definitions.html#Procedure.outcome"><b>outcome</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">What was result of procedure?<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="This could be a histology result. There could potentially be multiple reports - e.g. if this was a procedure that made multiple biopsies." class="dict" href="procedure-definitions.html#Procedure.report"><b>report</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="diagnosticreport.html#DiagnosticReport">DiagnosticReport</a>)</span> <span style="color: navy">Any report that results from the procedure</span><span style="color: Gray"> --&gt;</span>&lt;/report&gt;
+ &lt;<a title="Any complications that occurred during the procedure, or in the immediate post-operative period. These are generally tracked separately from the notes, which typically will describe the procedure itself rather than any &#39;post procedure&#39; issues." class="dict" href="procedure-definitions.html#Procedure.complication"><b>complication</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Complication following the procedure</span><span style="color: Gray"> --&gt;</span>&lt;/complication&gt;
+ &lt;<a title="If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or potentially could be more complex in which case the CarePlan resource can be used." class="dict" href="procedure-definitions.html#Procedure.followUp"><b>followUp</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Instructions for follow up</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Procedures may be related to other items such as procedures or medications. For example treating wound dehiscence following a previous procedure." class="dict" href="procedure-definitions.html#Procedure.relatedItem"><b>relatedItem</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> A procedure that is related to this one --&gt;</span>
+  &lt;<a title="The nature of the relationship." class="dict" href="procedure-definitions.html#Procedure.relatedItem.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="procedure-relationship-type.html">caused-by | because-of</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The related item - e.g. a procedure." class="dict" href="procedure-definitions.html#Procedure.relatedItem.target"><b>target</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="adversereaction.html#AdverseReaction">AdverseReaction</a>|<a href="allergyintolerance.html#AllergyIntolerance">AllergyIntolerance</a>|<a href="careplan.html#CarePlan">CarePlan</a>|
+    <a href="condition.html#Condition">Condition</a>|<a href="deviceobservationreport.html#DeviceObservationReport">DeviceObservationReport</a>|<a href="diagnosticreport.html#DiagnosticReport">DiagnosticReport</a>|<a href="familyhistory.html#FamilyHistory">FamilyHistory</a>|
+    <a href="imagingstudy.html#ImagingStudy">ImagingStudy</a>|<a href="immunization.html#Immunization">Immunization</a>|<a href="immunizationrecommendation.html#ImmunizationRecommendation">ImmunizationRecommendation</a>|
+    <a href="medicationadministration.html#MedicationAdministration">MedicationAdministration</a>|<a href="medicationdispense.html#MedicationDispense">MedicationDispense</a>|<a href="medicationprescription.html#MedicationPrescription">MedicationPrescription</a>|
+    <a href="medicationstatement.html#MedicationStatement">MedicationStatement</a>|<a href="observation.html#Observation">Observation</a>|<a href="procedure.html#Procedure">Procedure</a>)</span> <span style="color: navy">The related item - e.g. a procedure</span><span style="color: Gray"> --&gt;</span>&lt;/target&gt;
+ &lt;/relatedItem&gt;
+ &lt;<a title="Any other notes about the procedure - e.g. the operative notes." class="dict" href="procedure-definitions.html#Procedure.notes"><b>notes</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Additional information about procedure</span><span style="color: Gray"> --&gt;</span>
+&lt;/Procedure&gt;
+</pre></div>
+  </text>
+  <name value="procedure"/>
+  <publisher value="FHIR Project"/>
+  <description value="Basic Profile. An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy."/>
+  <status value="draft"/>
+  <date value="2014-10-08"/>
+  <requirements value="Scope and Usage This resource is used to record the details of procedures performed on a patient. A procedure is an activity that is performed with or on a patient as part of the provision of care. Examples include surgical procedures, diagnostic procedures, endoscopic procedures, biopsies, and exclude things for which there are specific resources, such as immunizations, drug administrations. 
+
+Note that many diagnostic processes are procedures that generate observations and reports. In many cases, the existence of the procedure is assumed, but where there are details of interest about how the diagnostic procedure was performed, the procedure resource is used to describe the activity."/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <structure>
+    <type value="Procedure"/>
+    <publish value="true"/>
+    <element>
+      <path value="Procedure"/>
+      <definition>
+        <short value="An action that is performed on a patient"/>
+        <formal value="An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="Procedure[moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.text"/>
+      <definition>
+        <short value="Text summary of the resource, for human interpretation"/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+        <synonym value="narrative"/>
+        <synonym value="html"/>
+        <synonym value="xhtml"/>
+        <synonym value="display"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Narrative"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.contained"/>
+      <definition>
+        <short value="Contained, inline Resources"/>
+        <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+        <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+        <synonym value="inline resources"/>
+        <synonym value="anonymous resources"/>
+        <synonym value="contained resources"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.identifier"/>
+      <definition>
+        <short value="External Ids for this procedure"/>
+        <formal value="This records identifiers associated with this procedure that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".id"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.subject"/>
+      <definition>
+        <short value="Who procedure was performed on"/>
+        <formal value="The person on whom the procedure was performed."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Patient"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=SBJ].role"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.type"/>
+      <definition>
+        <short value="Identification of the procedure"/>
+        <formal value="The specific procedure that is performed. Use text if the exact nature of the procedure can&#39;t be coded."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".code"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.bodySite"/>
+      <definition>
+        <short value="Precise location details"/>
+        <formal value="Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".approachSiteCode"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.indication"/>
+      <definition>
+        <short value="Reason procedure performed"/>
+        <formal value="The reason why the procedure was performed. This may be due to a Condition, may be coded entity of some type, or may simply be present as text."/>
+        <comments value="e.g. endoscopy for dilatation and biopsy, combination diagnosis and therapuetic."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".reasonCode"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.performer"/>
+      <definition>
+        <short value="The people who performed the procedure"/>
+        <formal value="Limited to &#39;real&#39; people rather than equipment."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=PFM]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.performer.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.performer.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.performer.person"/>
+      <definition>
+        <short value="The reference to the practitioner"/>
+        <formal value="The practitioner who was involved in the procedure."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Practitioner"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".role"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.performer.role"/>
+      <definition>
+        <short value="The role the person was in"/>
+        <formal value="E.g. surgeon, anaethetist, endoscopist."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".functionCode"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.date"/>
+      <definition>
+        <short value="The date the procedure was performed"/>
+        <formal value="The dates over which the procedure was performed. Allows a period to support complex procedures that span more that one date, and also allows for the length of the procedure to be captured."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Period"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".effectiveTime"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="This should be choice of dateTime|Period"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.encounter"/>
+      <definition>
+        <short value="The encounter when procedure performed"/>
+        <formal value="The encounter during which the procedure was performed."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Encounter"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.outcome"/>
+      <definition>
+        <short value="What was result of procedure?"/>
+        <formal value="What was the outcome of the procedure - did it resolve reasons why the procedure was performed?."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=OUT].target.text"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.report"/>
+      <definition>
+        <short value="Any report that results from the procedure"/>
+        <formal value="This could be a histology result. There could potentially be multiple reports - e.g. if this was a procedure that made multiple biopsies."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/DiagnosticReport"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.complication"/>
+      <definition>
+        <short value="Complication following the procedure"/>
+        <formal value="Any complications that occurred during the procedure, or in the immediate post-operative period. These are generally tracked separately from the notes, which typically will describe the procedure itself rather than any &#39;post procedure&#39; issues."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="Need specialization of OUT for this."/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.followUp"/>
+      <definition>
+        <short value="Instructions for follow up"/>
+        <formal value="If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or potentially could be more complex in which case the CarePlan resource can be used."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=COMP].target[classCode=ACT, moodCode=INT].text"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.relatedItem"/>
+      <definition>
+        <short value="A procedure that is related to this one"/>
+        <formal value="Procedures may be related to other items such as procedures or medications. For example treating wound dehiscence following a previous procedure."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=TRIG and target[classCode=PROC, moodCode=EVN]]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.relatedItem.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.relatedItem.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.relatedItem.type"/>
+      <definition>
+        <short value="caused-by | because-of"/>
+        <formal value="The nature of the relationship."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="ProcedureRelationshipType"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/procedure-relationship-type"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inversionInd"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.relatedItem.target"/>
+      <definition>
+        <short value="The related item - e.g. a procedure"/>
+        <formal value="The related item - e.g. a procedure."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/AdverseReaction"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/AllergyIntolerance"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/CarePlan"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Condition"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/DeviceObservationReport"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/DiagnosticReport"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/FamilyHistory"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/ImagingStudy"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Immunization"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/ImmunizationRecommendation"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/MedicationAdministration"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/MedicationDispense"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/MedicationPrescription"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/MedicationStatement"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Observation"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Procedure"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".target"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Procedure.notes"/>
+      <definition>
+        <short value="Additional information about procedure"/>
+        <formal value="Any other notes about the procedure - e.g. the operative notes."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value"/>
+        </mapping>
+      </definition>
+    </element>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="date"/>
+      <type value="date"/>
+      <documentation value="The date the procedure was performed on"/>
+      <xpath value="f:Procedure/f:date"/>
+    </searchParam>
+    <searchParam>
+      <name value="subject"/>
+      <type value="reference"/>
+      <documentation value="The identity of a patient to list procedures  for"/>
+      <xpath value="f:Procedure/f:subject"/>
+    </searchParam>
+    <searchParam>
+      <name value="type"/>
+      <type value="token"/>
+      <documentation value="Type of procedure"/>
+      <xpath value="f:Procedure/f:type"/>
+    </searchParam>
+  </structure>
+</Profile>

@@ -1,0 +1,327 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Condition - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><a href="condition.html">Condition</a></li>        <li><b>Formal Definitions</b></li>          <!-- condition.html / res-Formal Definitions -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li><a href="condition.html">Content</a></li><li><a href="condition-examples.html">Examples</a></li><li class="active"><a href="#">Formal Definitions</a></li><li><a href="condition-mappings.html">Mappings</a></li><li><a href="condition-profiles.html">Profiles</a></li></ul>
+
+<h2><span class="sectioncount">4.5.5<a name="4.5.5"> </a></span> Resource Condition - Formal Definitions</h2>
+
+<p>Formal definitions for the elements in the Condition resource.</p>
+
+<table class="dict">
+  <tr><td colspan="2" class="structure"><b>Condition</b><a name="Condition"> </a></td></tr>
+  <tr><td>Definition</td><td>Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td>To Do</td><td>* Age is questionable, you might well need a range of Age or even (in practice)
+
+a text like &quot;in their teens&quot;. =&gt; new ballot comment.
+
+* Todo: discuss the applicability of assessing stages
+
+* Change the description: it is circular.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.identifier</b><a name="Condition.identifier"> </a></td></tr>
+  <tr><td>Definition</td><td>This records identifiers associated with this condition that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td>Requirements</td><td>Need to allow connection to a wider workflow.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.subject</b><a name="Condition.subject"> </a></td></tr>
+  <tr><td>Definition</td><td>Indicates the patient who the condition record is associated with.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="patient.html">Patient</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.encounter</b><a name="Condition.encounter"> </a></td></tr>
+  <tr><td>Definition</td><td>Encounter during which the condition was first asserted.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="encounter.html">Encounter</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.asserter</b><a name="Condition.asserter"> </a></td></tr>
+  <tr><td>Definition</td><td>Person who takes responsibility for asserting the existence of the condition as part of the electronic record.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="practitioner.html">Practitioner</a> | <a href="patient.html">Patient</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.dateAsserted</b><a name="Condition.dateAsserted"> </a></td></tr>
+  <tr><td>Definition</td><td>Estimated or actual date the condition/problem/diagnosis was first detected/suspected.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#date">date</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.code</b><a name="Condition.code"> </a></td></tr>
+  <tr><td>Definition</td><td>Identification of the condition, problem or diagnosis.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>ConditionKind:  (<a href="valueset-condition-code.html">See http://hl7.org/fhir/vs/condition-code</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.category</b><a name="Condition.category"> </a></td></tr>
+  <tr><td>Definition</td><td>A category assigned to the condition. E.g. complaint | symptom | finding | diagnosis.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>ConditionCategory:  (<a href="valueset-condition-category.html">See http://hl7.org/fhir/vs/condition-category</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td>The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.status</b><a name="Condition.status"> </a></td></tr>
+  <tr><td>Definition</td><td>The clinical status of the condition.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>ConditionStatus: The clinical status of the Condition or diagnosis (see <a href="condition-status.html">http://hl7.org/fhir/condition-status</a> for values)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.certainty</b><a name="Condition.certainty"> </a></td></tr>
+  <tr><td>Definition</td><td>The degree of confidence that this condition is correct.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>ConditionCertainty:  (<a href="valueset-condition-certainty.html">See http://hl7.org/fhir/vs/condition-certainty</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td><a href="conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td>May be a percentage.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.severity</b><a name="Condition.severity"> </a></td></tr>
+  <tr><td>Definition</td><td>A subjective assessment of the severity of the condition as evaluated by the clinician.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>ConditionSeverity:  (<a href="valueset-condition-severity.html">See http://hl7.org/fhir/vs/condition-severity</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td>Coding of the severity with a terminology is preferred, where possible.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.onset[x]</b><a name="Condition.onset_x_"> </a></td></tr>
+  <tr><td>Definition</td><td>Estimated or actual date the condition began, in the opinion of the clinician.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#date">date</a>|<a href="datatypes.html#Age">Age</a></td></tr>
+  <tr><td>Comments</td><td>Age is generally used when the patient reports an age at which the Condition began to occur.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.abatement[x]</b><a name="Condition.abatement_x_"> </a></td></tr>
+  <tr><td>Definition</td><td>The date or estimated date that the condition resolved or went into remission. This is called &quot;abatement&quot; because of the many overloaded connotations associated with &quot;remission&quot; or &quot;resolution&quot; - Conditions are never really resolved, but they can abate.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#date">date</a>|<a href="datatypes.html#Age">Age</a>|<a href="datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td>Comments</td><td>There is no explicit distinction between resolution and remission because in many cases the distinction is not clear. Age is generally used when the patient reports an age at which the Condition abated.
+
+If there is no abatement element, it is unknown whether the condition has resolved or entered remission; applications and users should generally assume that the condition is still valid.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.stage</b><a name="Condition.stage"> </a></td></tr>
+  <tr><td>Definition</td><td>Clinical stage or grade of a condition. May include formal severity assessments.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">Inv-1</b>: Stage SHALL have summary or assessment (xpath: exists(f:summary) or exists(f:assessment))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.stage.summary</b><a name="Condition.stage.summary"> </a></td></tr>
+  <tr><td>Definition</td><td>A simple summary of the stage such as &quot;Stage 3&quot;. The determination of the stage is disease-specific.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Invariants</td><td><b>Affect this element</b><br/>
+<b>Inv-1</b>: Stage SHALL have summary or assessment (xpath: exists(f:summary) or exists(f:assessment))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.stage.assessment</b><a name="Condition.stage.assessment"> </a></td></tr>
+  <tr><td>Definition</td><td>Reference to a formal record of the evidence on which the staging assessment is based.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html#Any">Any</a>)</td></tr>
+  <tr><td>Invariants</td><td><b>Affect this element</b><br/>
+<b>Inv-1</b>: Stage SHALL have summary or assessment (xpath: exists(f:summary) or exists(f:assessment))</td></tr>
+  <tr><td>To Do</td><td>When an assessment resource / framework is developed, this will be changed from Any to something narrower.</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.evidence</b><a name="Condition.evidence"> </a></td></tr>
+  <tr><td>Definition</td><td>Supporting Evidence / manifestations that are the basis on which this condition is suspected or confirmed.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td>The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both.</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">Inv-2</b>: evidence SHALL have code or details (xpath: exists(f:code) or exists(f:detail))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.evidence.code</b><a name="Condition.evidence.code"> </a></td></tr>
+  <tr><td>Definition</td><td>A manifestation or symptom that led to the recording of this condition.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Invariants</td><td><b>Affect this element</b><br/>
+<b>Inv-2</b>: evidence SHALL have code or details (xpath: exists(f:code) or exists(f:detail))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.evidence.detail</b><a name="Condition.evidence.detail"> </a></td></tr>
+  <tr><td>Definition</td><td>Links to other relevant information, including pathology reports.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html#Any">Any</a>)</td></tr>
+  <tr><td>Invariants</td><td><b>Affect this element</b><br/>
+<b>Inv-2</b>: evidence SHALL have code or details (xpath: exists(f:code) or exists(f:detail))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.location</b><a name="Condition.location"> </a></td></tr>
+  <tr><td>Definition</td><td>The anatomical location where this condition manifests itself.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td>May be a summary code, or a reference to a very precise definition of the location, or both.</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">Inv-3</b>: location SHALL have code or details (xpath: exists(f:code) or exists(f:detail))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.location.code</b><a name="Condition.location.code"> </a></td></tr>
+  <tr><td>Definition</td><td>Code that identifies the structural location.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td>May include laterality.</td></tr>
+  <tr><td>Invariants</td><td><b>Affect this element</b><br/>
+<b>Inv-3</b>: location SHALL have code or details (xpath: exists(f:code) or exists(f:detail))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.location.detail</b><a name="Condition.location.detail"> </a></td></tr>
+  <tr><td>Definition</td><td>Detailed anatomical location information.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Invariants</td><td><b>Affect this element</b><br/>
+<b>Inv-3</b>: location SHALL have code or details (xpath: exists(f:code) or exists(f:detail))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.relatedItem</b><a name="Condition.relatedItem"> </a></td></tr>
+  <tr><td>Definition</td><td>Further conditions, problems, diagnoses, procedures or events that are related in some way to this condition, or the substance that caused/triggered this Condition.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td>Although a condition may be caused by a substance, this is not intended to be used to record allergies/adverse reactions to substances.</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">Inv-4</b>: Relationship SHALL have either a code or a target (xpath: exists(f:code) != exists(f:target))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.relatedItem.type</b><a name="Condition.relatedItem.type"> </a></td></tr>
+  <tr><td>Definition</td><td>The type of relationship that this condition has to the related item.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>ConditionRelationshipType: The type of relationship between a condition and its related item (see <a href="condition-relationship-type.html">http://hl7.org/fhir/condition-relationship-type</a> for values)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.relatedItem.code</b><a name="Condition.relatedItem.code"> </a></td></tr>
+  <tr><td>Definition</td><td>Code that identifies the target of this relationship. The code takes the place of a detailed instance target.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>ConditionKind:  (<a href="valueset-condition-code.html">See http://hl7.org/fhir/vs/condition-code</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Invariants</td><td><b>Affect this element</b><br/>
+<b>Inv-4</b>: Relationship SHALL have either a code or a target (xpath: exists(f:code) != exists(f:target))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.relatedItem.target</b><a name="Condition.relatedItem.target"> </a></td></tr>
+  <tr><td>Definition</td><td>Target of the relationship.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="condition.html">Condition</a> | <a href="procedure.html">Procedure</a> | <a href="medicationadministration.html">MedicationAdministration</a> | <a href="immunization.html">Immunization</a> | <a href="medicationstatement.html">MedicationStatement</a>)</td></tr>
+  <tr><td>Invariants</td><td><b>Affect this element</b><br/>
+<b>Inv-4</b>: Relationship SHALL have either a code or a target (xpath: exists(f:code) != exists(f:target))</td></tr>
+  <tr><td colspan="2" class="structure"><b>Condition.notes</b><a name="Condition.notes"> </a></td></tr>
+  <tr><td>Definition</td><td>Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

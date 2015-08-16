@@ -1,0 +1,1162 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Observation.profile.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><a href="observation.html">Observation</a></li>        <li><b>Profile Instance</b></li>        <!-- observation.profile.xml.html / profile-instance:resource:Observation -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Observation.profile.xml</h1>
+
+<div class="example">
+<p>Profile for observation</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;Profile&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;&lt;pre&gt;\r\n&amp;lt;&lt;a title=\&quot;Measurements and simple assertions made about a patient, device or other subject.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation\&quot;&gt;&lt;b&gt;Observation&lt;/b&gt;&lt;/a&gt; xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt; &lt;span style=\&quot;float: right\&quot;&gt;&lt;a title=\&quot;Documentation for this format\&quot; href=\&quot;formats.html\&quot;&gt;&lt;img alt=\&quot;doco\&quot; src=\&quot;help.png\&quot;/&gt;&lt;/a&gt;&lt;/span&gt;\r\n &amp;lt;!-- from &lt;a href=\&quot;resources.html\&quot;&gt;Resource&lt;/a&gt;: &lt;a href=\&quot;extensibility.html\&quot;&gt;extension&lt;/a&gt;, &lt;a href=\&quot;extensibility.html#modifierExtension\&quot;&gt;modifierExtension&lt;/a&gt;, language, &lt;a href=\&quot;narrative.html#Narrative\&quot;&gt;text&lt;/a&gt;, and &lt;a href=\&quot;references.html#contained\&quot;&gt;contained&lt;/a&gt; --&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Describes what was observed. Sometimes this is called the observation &amp;quot;code&amp;quot;.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.name\&quot;&gt;&lt;b&gt;name&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-observation-codes.html\&quot;&gt;Type of observation (code / type)&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/name&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;The information determined as a result of making the observation, if the information has a simple value.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.value_x_\&quot;&gt;&lt;b&gt;value[x]&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#Quantity\&quot;&gt;Quantity&lt;/a&gt;|&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;|&lt;a href=\&quot;datatypes.html#Attachment\&quot;&gt;Attachment&lt;/a&gt;|&lt;a href=\&quot;datatypes.html#Ratio\&quot;&gt;Ratio&lt;/a&gt;|&lt;a href=\&quot;datatypes.html#Period\&quot;&gt;Period&lt;/a&gt;|\r\n   &lt;a href=\&quot;datatypes.html#SampledData\&quot;&gt;SampledData&lt;/a&gt;|&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Actual result&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/value[x]&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;The assessment made based on the result of the observation.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.interpretation\&quot;&gt;&lt;b&gt;interpretation&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-observation-interpretation.html\&quot;&gt;High, low, normal, etc.&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/interpretation&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;May include statements about significant, unexpected or unreliable values, or information about the source of the value where this may be relevant to the interpretation of the result.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.comments\&quot;&gt;&lt;b&gt;comments&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Comments about result&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n &amp;lt;&lt;a title=\&quot;The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &amp;quot;physiologically relevant time&amp;quot;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.applies_x_\&quot;&gt;&lt;b&gt;applies[x]&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#dateTime\&quot;&gt;dateTime&lt;/a&gt;|&lt;a href=\&quot;datatypes.html#Period\&quot;&gt;Period&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;\r\n     Physiologically Relevant time/time-period for observation&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/applies[x]&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Date/Time this was made available.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.issued\&quot;&gt;&lt;b&gt;issued&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#instant\&quot;&gt;instant&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Date/Time this was made available&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n &amp;lt;&lt;a title=\&quot;The status of the result value (this element modifies the meaning of other elements)\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.status\&quot;&gt;&lt;span style=\&quot;text-decoration: underline\&quot;&gt;&lt;b&gt;status&lt;/b&gt;&lt;/span&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;observation-status.html\&quot;&gt;registered | preliminary | final | amended +&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n &amp;lt;&lt;a title=\&quot;An estimate of the degree to which quality issues have impacted on the value reported (this element modifies the meaning of other elements)\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.reliability\&quot;&gt;&lt;span style=\&quot;text-decoration: underline\&quot;&gt;&lt;b&gt;reliability&lt;/b&gt;&lt;/span&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;observation-reliability.html\&quot;&gt;ok | ongoing | early | questionable | calibrating | error +&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n &amp;lt;&lt;a title=\&quot;Indicates where on the subject's body the observation was made.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.bodySite\&quot;&gt;&lt;b&gt;bodySite&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-body-site.html\&quot;&gt;Observed body part&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/bodySite&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Indicates the mechanism used to perform the observation.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.method\&quot;&gt;&lt;b&gt;method&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-observation-methods.html\&quot;&gt;How it was done&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/method&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;A unique identifier for the simple observation.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.identifier\&quot;&gt;&lt;b&gt;identifier&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#Identifier\&quot;&gt;Identifier&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Unique Id for this particular observation&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/identifier&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;The thing the observation is being made about.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.subject\&quot;&gt;&lt;b&gt;subject&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;references.html#Resource\&quot;&gt;Resource&lt;/a&gt;(&lt;a href=\&quot;patient.html#Patient\&quot;&gt;Patient&lt;/a&gt;|&lt;a href=\&quot;group.html#Group\&quot;&gt;Group&lt;/a&gt;|&lt;a href=\&quot;device.html#Device\&quot;&gt;Device&lt;/a&gt;|&lt;a href=\&quot;location.html#Location\&quot;&gt;Location&lt;/a&gt;)&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Who and/or what this is about&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/subject&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;The specimen that was used when this observation was made.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.specimen\&quot;&gt;&lt;b&gt;specimen&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;references.html#Resource\&quot;&gt;Resource&lt;/a&gt;(&lt;a href=\&quot;specimen.html#Specimen\&quot;&gt;Specimen&lt;/a&gt;)&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Specimen used for this observation&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/specimen&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Who was responsible for asserting the observed value as &amp;quot;true&amp;quot;.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.performer\&quot;&gt;&lt;b&gt;performer&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..*&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;references.html#Resource\&quot;&gt;Resource&lt;/a&gt;(&lt;a href=\&quot;practitioner.html#Practitioner\&quot;&gt;Practitioner&lt;/a&gt;|&lt;a href=\&quot;device.html#Device\&quot;&gt;Device&lt;/a&gt;|&lt;a href=\&quot;organization.html#Organization\&quot;&gt;Organization&lt;/a&gt;)&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Who did the observation&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/performer&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Guidance on how to interpret the value by comparison to a normal or recommended range.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.referenceRange\&quot;&gt;&lt;b&gt;referenceRange&lt;/b&gt;&lt;/a&gt;&amp;gt;  &lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!-- &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..*&lt;/b&gt;&lt;/span&gt; Provides guide for interpretation --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;The value of the low bound of the reference range. If this is omitted, the low bound of the reference range is assumed to be meaningless. E.g. &amp;lt;2.3.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.referenceRange.low\&quot;&gt;&lt;b&gt;low&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span title=\&quot;Inv-3: Must have at least a low or a high (and no comparators)\&quot; style=\&quot;color: brown\&quot;&gt;&lt;b&gt;&lt;img alt=\&quot;??\&quot; src=\&quot;lock.png\&quot;/&gt; 0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#Quantity\&quot;&gt;Quantity&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Low Range, if relevant&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/low&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;The value of the high bound of the reference range. If this is omitted, the high bound of the reference range is assumed to be meaningless. E.g. &amp;gt;5.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.referenceRange.high\&quot;&gt;&lt;b&gt;high&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span title=\&quot;Inv-3: Must have at least a low or a high (and no comparators)\&quot; style=\&quot;color: brown\&quot;&gt;&lt;b&gt;&lt;img alt=\&quot;??\&quot; src=\&quot;lock.png\&quot;/&gt; 0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#Quantity\&quot;&gt;Quantity&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;High Range, if relevant&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/high&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;Code for the meaning of the reference range.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.referenceRange.meaning\&quot;&gt;&lt;b&gt;meaning&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-referencerange-meaning.html\&quot;&gt;Indicates the meaning/use of this range of this range&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/meaning&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.referenceRange.age\&quot;&gt;&lt;b&gt;age&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#Range\&quot;&gt;Range&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Applicable age range, if relevant&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/age&amp;gt;\r\n &amp;lt;/referenceRange&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Related observations - either components, or previous observations, or statements of derivation.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.related\&quot;&gt;&lt;b&gt;related&lt;/b&gt;&lt;/a&gt;&amp;gt;  &lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!-- &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..*&lt;/b&gt;&lt;/span&gt; Observations related to this observation --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;A code specifying the kind of relationship that exists with the target observation.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.related.type\&quot;&gt;&lt;b&gt;type&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;observation-relationshiptypes.html\&quot;&gt;has-component | has-member | derived-from | sequel-to | replaces | qualified-by | interfered-by&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;A reference to the observation that is related to this observation.\&quot; class=\&quot;dict\&quot; href=\&quot;observation-definitions.html#Observation.related.target\&quot;&gt;&lt;b&gt;target&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;references.html#Resource\&quot;&gt;Resource&lt;/a&gt;(&lt;a href=\&quot;observation.html#Observation\&quot;&gt;Observation&lt;/a&gt;)&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Observation that is related to this one&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/target&amp;gt;\r\n &amp;lt;/related&amp;gt;\r\n&amp;lt;/Observation&amp;gt;\r\n&lt;/pre&gt;&lt;/div&gt;&quot;
+  },
+  &quot;name&quot;: &quot;observation&quot;,
+  &quot;publisher&quot;: &quot;FHIR Project&quot;,
+  &quot;description&quot;: &quot;Basic Profile. Measurements and simple assertions made about a patient, device or other subject.&quot;,
+  &quot;status&quot;: &quot;draft&quot;,
+  &quot;date&quot;: &quot;2014-10-08&quot;,
+  &quot;requirements&quot;: &quot;Scope and Usage Observations are a central element in healthcare, used to support diagnosis, monitor progress, determine baselines and patterns and even capture demographic characteristics. Most observations are simple name/value pair assertions with some metadata, but some observations group other observations together logically, or even are multi-component observations. Note that the resources DiagnosticReport and DeviceObservationReport provide a clinical or workflow context for a set of observations. Expected uses for the Observation resource include: \r\n\r\n* Vital signs: temperature, blood pressure, respiration rate\r\n* Laboratory Data and other Diagnostic Measures\r\n* Measurements emitted by Devices\r\n* Clinical assessments such as APGAR\r\n* Personal characteristics: height, weight, eye-color\r\n* Diagnoses (Note: trackable conditions, allergies, adverse reactions and more complex structures are handled elsewhere)\r\n* Social history: tobacco use, family supports, cognitive status\r\n* Core characteristics: pregnancy status, death assertion&quot;,
+  &quot;mapping&quot;: [
+    {
+      &quot;identity&quot;: &quot;rim&quot;,
+      &quot;uri&quot;: &quot;http://hl7.org/v3&quot;,
+      &quot;name&quot;: &quot;RIM&quot;
+    },
+    {
+      &quot;identity&quot;: &quot;v2&quot;,
+      &quot;uri&quot;: &quot;http://hl7.org/v2&quot;,
+      &quot;name&quot;: &quot;HL7 v2&quot;
+    }
+  ],
+  &quot;structure&quot;: [
+    {
+      &quot;type&quot;: &quot;Observation&quot;,
+      &quot;publish&quot;: true,
+      &quot;element&quot;: [
+        {
+          &quot;path&quot;: &quot;Observation&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Measurements and simple assertions&quot;,
+            &quot;formal&quot;: &quot;Measurements and simple assertions made about a patient, device or other subject.&quot;,
+            &quot;comments&quot;: &quot;Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as Lab reports, etc.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Resource&quot;
+              }
+            ],
+            &quot;constraint&quot;: [
+              {
+                &quot;key&quot;: &quot;2&quot;,
+                &quot;name&quot;: &quot;reference range for quantity&quot;,
+                &quot;severity&quot;: &quot;error&quot;,
+                &quot;human&quot;: &quot;Can only have normal range if value is a quantity&quot;,
+                &quot;xpath&quot;: &quot;exists(f:valueQuantity) or not(exists(f:normalRange))&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;Observation[classCode=OBS, moodCode=EVN]&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.text&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Text summary of the resource, for human interpretation&quot;,
+            &quot;formal&quot;: &quot;A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \&quot;clinically safe\&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.&quot;,
+            &quot;comments&quot;: &quot;Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.&quot;,
+            &quot;synonym&quot;: [
+              &quot;narrative&quot;,
+              &quot;html&quot;,
+              &quot;xhtml&quot;,
+              &quot;display&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Narrative&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.contained&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Contained, inline Resources&quot;,
+            &quot;formal&quot;: &quot;These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.&quot;,
+            &quot;comments&quot;: &quot;This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.&quot;,
+            &quot;synonym&quot;: [
+              &quot;inline resources&quot;,
+              &quot;anonymous resources&quot;,
+              &quot;contained resources&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Resource&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.name&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Type of observation (code / type)&quot;,
+            &quot;formal&quot;: &quot;Describes what was observed. Sometimes this is called the observation \&quot;code\&quot;.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;ObservationType&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;example&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/observation-codes&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;code&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-3-observation identifier&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.value[x]&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Actual result&quot;,
+            &quot;formal&quot;: &quot;The information determined as a result of making the observation, if the information has a simple value.&quot;,
+            &quot;comments&quot;: &quot;Normally, an observation will have either a value or a set of related observations. A few observations (e.g. apgar store) may have both a value and related observations (for apgar, the observations from which the measure is derived). If a value is present, the datatype for this element should be determined by Observation.name. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.name defines a coded value. The element, Observation.value[x], has a variable name depending on the type as follows: valueQuantity, valueCodeableConcept, valueRatio, valueChoice, valuePeriod, valueSampleData, or valueString (The name format is \&quot;'value' + the type name\&quot; with a capital on the first letter of the type).&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Quantity&quot;
+              },
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              },
+              {
+                &quot;code&quot;: &quot;Attachment&quot;
+              },
+              {
+                &quot;code&quot;: &quot;Ratio&quot;
+              },
+              {
+                &quot;code&quot;: &quot;Period&quot;
+              },
+              {
+                &quot;code&quot;: &quot;SampledData&quot;
+              },
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;value&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX.2, OBX.5, OBX.6&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.interpretation&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;High, low, normal, etc.&quot;,
+            &quot;formal&quot;: &quot;The assessment made based on the result of the observation.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;ObservationInterpretation&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;preferred&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/observation-interpretation&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;interpretationCode&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-8-interpretation codes&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.comments&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Comments about result&quot;,
+            &quot;formal&quot;: &quot;May include statements about significant, unexpected or unreliable values, or information about the source of the value where this may be relevant to the interpretation of the result.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;subjectOf.observationEvent[code=\&quot;annotation\&quot;].value&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.applies[x]&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Physiologically Relevant time/time-period for observation&quot;,
+            &quot;formal&quot;: &quot;The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the \&quot;physiologically relevant time\&quot;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.&quot;,
+            &quot;comments&quot;: &quot;At least a date should be present unless this observation is a historical report.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;dateTime&quot;
+              },
+              {
+                &quot;code&quot;: &quot;Period&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;effectiveTime&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-14-date/time of the observation, and/or OBX-19 after v2.4  (depends on who observation made)&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.issued&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Date/Time this was made available&quot;,
+            &quot;formal&quot;: &quot;Date/Time this was made available.&quot;,
+            &quot;comments&quot;: &quot;Updated when the result is updated.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;instant&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;participation[typeCode=AUT].time&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBR.22 (or MSH.7), or perhaps OBX-19 (depends on who observation made)&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.status&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;registered | preliminary | final | amended +&quot;,
+            &quot;formal&quot;: &quot;The status of the result value.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: true,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;ObservationStatus&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/observation-status&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;status\n\nAmended &amp; Final are differentiated by whether it is the subject of a ControlAct event with a type of \&quot;revise\&quot;&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-11-observation result status&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.reliability&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;ok | ongoing | early | questionable | calibrating | error +&quot;,
+            &quot;formal&quot;: &quot;An estimate of the degree to which quality issues have impacted on the value reported.&quot;,
+            &quot;comments&quot;: &quot;Note that in most contexts, unreliable results are not recorded, deleted, or otherwise excluded, but it's not always possible to exclude them from the record. Interpreters of a result, whether human or machine, SHALL always either be aware of the status, or prevented from using the observation without being unaware that the reliability is not \&quot;ok\&quot;.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: true,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;ObservationReliability&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/observation-reliability&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;uncertaintyCode&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;Maybe OBX.8/OBX.9&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.bodySite&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Observed body part&quot;,
+            &quot;formal&quot;: &quot;Indicates where on the subject's body the observation was made.&quot;,
+            &quot;comments&quot;: &quot;Only used if not implicit in code found in Observation.name.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;BodySite&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;example&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/body-site&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;targetSiteCode&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-20-observation site&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.method&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;How it was done&quot;,
+            &quot;formal&quot;: &quot;Indicates the mechanism used to perform the observation.&quot;,
+            &quot;comments&quot;: &quot;Only used if not implicit in code for Observation.name.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;ObservationMethod&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;example&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/observation-methods&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;methodCode&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-17-observation method&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.identifier&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Unique Id for this particular observation&quot;,
+            &quot;formal&quot;: &quot;A unique identifier for the simple observation.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Identifier&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;id&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX.21&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.subject&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Who and/or what this is about&quot;,
+            &quot;formal&quot;: &quot;The thing the observation is being made about.&quot;,
+            &quot;comments&quot;: &quot;The only circumstance in which the subject can be missing is when the observation is made by a device that does not know the patient. In this case, the observation SHALL be matched to a patient through some context/channel matching technique, and at this point, the observation should be updated.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Patient&quot;
+              },
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Group&quot;
+              },
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Device&quot;
+              },
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Location&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;participation[typeCode=SBJ]&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;PID-3-patient ID list&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.specimen&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Specimen used for this observation&quot;,
+            &quot;formal&quot;: &quot;The specimen that was used when this observation was made.&quot;,
+            &quot;comments&quot;: &quot;Observations are not made on specimens themselves; they are made on a subject, but usually by the means of a specimen. Note that although specimens are often involved, they are not always tracked and reported explicitly. Also note that observation resources are often used in contexts that track the specimen explicity (e.g. Diagnostic Report).&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Specimen&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;participation[typeCode=SPC].specimen&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.performer&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Who did the observation&quot;,
+            &quot;formal&quot;: &quot;Who was responsible for asserting the observed value as \&quot;true\&quot;.&quot;,
+            &quot;comments&quot;: &quot;This would only be \&quot;Device\&quot; if the device is responsible for the measurement, not to capture the device used by a human to make the measurement.  (The latter could be captured as an extension.).&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Practitioner&quot;
+              },
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Device&quot;
+              },
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Organization&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;participation[typeCode=PRF]&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX.15 / (Practitioner)  OBX-16-responsible observer,  PRT-5-participation person:PRT-4-participation='RO' / \n(Device)  OBX-18-equipment instance identifier , PRT-10-participation device:PRT-4-participation='EQUIP' / (Organization)  OBX-23-performing organization name,  PRT-8-participation organization:PRT-4-participation='PO'&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.referenceRange&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Provides guide for interpretation&quot;,
+            &quot;formal&quot;: &quot;Guidance on how to interpret the value by comparison to a normal or recommended range.&quot;,
+            &quot;comments&quot;: &quot;Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g. specific to the patient's age, gender, weight and other factors), but this may not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;constraint&quot;: [
+              {
+                &quot;key&quot;: &quot;3&quot;,
+                &quot;name&quot;: &quot;reference range&quot;,
+                &quot;severity&quot;: &quot;error&quot;,
+                &quot;human&quot;: &quot;Must have at least a low or a high (and no comparators)&quot;,
+                &quot;xpath&quot;: &quot;(exists(f:low) or exists(f:high)) and not(exists(f:low/f:comparator)) and not(exists(f:high/f:comparator))&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;outboundRelationship[typeCode=REFV]/target[classCode=OBS, moodCode=EVN]&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.referenceRange.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.referenceRange.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.referenceRange.low&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Low Range, if relevant&quot;,
+            &quot;formal&quot;: &quot;The value of the low bound of the reference range. If this is omitted, the low bound of the reference range is assumed to be meaningless. E.g. &lt;2.3.&quot;,
+            &quot;comments&quot;: &quot;Do not use the comparator for &lt; or &gt;.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Quantity&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;value:IVL_PQ.low&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-7-references range&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.referenceRange.high&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;High Range, if relevant&quot;,
+            &quot;formal&quot;: &quot;The value of the high bound of the reference range. If this is omitted, the high bound of the reference range is assumed to be meaningless. E.g. &gt;5.&quot;,
+            &quot;comments&quot;: &quot;Do not use the comparator for &lt; or &gt;.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Quantity&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;value:IVL_PQ.high&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-7-references range&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.referenceRange.meaning&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Indicates the meaning/use of this range of this range&quot;,
+            &quot;formal&quot;: &quot;Code for the meaning of the reference range.&quot;,
+            &quot;comments&quot;: &quot;This SHOULD be populated if there is more than one range.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;ObservationRangeMeaning&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;example&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/referencerange-meaning&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;interpretationCode&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;OBX-10-nature of abnormal test?&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.referenceRange.age&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Applicable age range, if relevant&quot;,
+            &quot;formal&quot;: &quot;The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Range&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;outboundRelationship[typeCode=PRCN].targetObservationCriterion[code=\&quot;age\&quot;].value&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.related&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Observations related to this observation&quot;,
+            &quot;formal&quot;: &quot;Related observations - either components, or previous observations, or statements of derivation.&quot;,
+            &quot;comments&quot;: &quot;Normally, an observation will have either a value or a set of related observations. A few observations (e.g. apgar store) may have both a value and related observations (for apgar, the observations from which the measure is derived).&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;outBoundRelationship&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;Relationships established by OBX-4 usage&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.related.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.related.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.related.type&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;has-component | has-member | derived-from | sequel-to | replaces | qualified-by | interfered-by&quot;,
+            &quot;formal&quot;: &quot;A code specifying the kind of relationship that exists with the target observation.&quot;,
+            &quot;comments&quot;: &quot;A relationship type SHOULD be provided. If the relationship type is \&quot;COMP\&quot; (composed), then the observation should not be displayed/interpreted in the absence of the related observations.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;ObservationRelationshipType&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/observation-relationshiptypes&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.typeCode&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;v2&quot;,
+                &quot;map&quot;: &quot;N/A&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;Observation.related.target&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Observation that is related to this one&quot;,
+            &quot;formal&quot;: &quot;A reference to the observation that is related to this observation.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Observation&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.targetObservation&quot;
+              }
+            ]
+          }
+        }
+      ],
+      &quot;searchParam&quot;: [
+        {
+          &quot;name&quot;: &quot;_id&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The logical resource id associated with the resource (must be supported by all servers)&quot;
+        },
+        {
+          &quot;name&quot;: &quot;_language&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The language of the resource&quot;
+        },
+        {
+          &quot;name&quot;: &quot;date&quot;,
+          &quot;type&quot;: &quot;date&quot;,
+          &quot;documentation&quot;: &quot;Obtained date/time. If the obtained element is a period, a date that falls in the period&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:applies[x]&quot;
+        },
+        {
+          &quot;name&quot;: &quot;name&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The name of the observation type&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:name&quot;
+        },
+        {
+          &quot;name&quot;: &quot;name-value-[x]&quot;,
+          &quot;type&quot;: &quot;composite&quot;,
+          &quot;documentation&quot;: &quot;Both name and one of the value parameters&quot;
+        },
+        {
+          &quot;name&quot;: &quot;performer&quot;,
+          &quot;type&quot;: &quot;reference&quot;,
+          &quot;documentation&quot;: &quot;Who and/or what performed the observation&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:performer&quot;
+        },
+        {
+          &quot;name&quot;: &quot;related&quot;,
+          &quot;type&quot;: &quot;composite&quot;,
+          &quot;documentation&quot;: &quot;Related Observations - search on related-type and related-target together&quot;
+        },
+        {
+          &quot;name&quot;: &quot;related-target&quot;,
+          &quot;type&quot;: &quot;reference&quot;,
+          &quot;documentation&quot;: &quot;Observation that is related to this one&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:related/f:target&quot;
+        },
+        {
+          &quot;name&quot;: &quot;related-type&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;has-component | has-member | derived-from | sequel-to | replaces | qualified-by | interfered-by&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:related/f:type&quot;
+        },
+        {
+          &quot;name&quot;: &quot;reliability&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The reliability of the observation&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:reliability&quot;
+        },
+        {
+          &quot;name&quot;: &quot;specimen&quot;,
+          &quot;type&quot;: &quot;reference&quot;,
+          &quot;documentation&quot;: &quot;Specimen used for this observation&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:specimen&quot;
+        },
+        {
+          &quot;name&quot;: &quot;status&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The status of the observation&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:status&quot;
+        },
+        {
+          &quot;name&quot;: &quot;subject&quot;,
+          &quot;type&quot;: &quot;reference&quot;,
+          &quot;documentation&quot;: &quot;The subject that the observation is about&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:subject&quot;
+        },
+        {
+          &quot;name&quot;: &quot;value-concept&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The value of the observation, if the value is a CodeableConcept&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:value[x]&quot;
+        },
+        {
+          &quot;name&quot;: &quot;value-date&quot;,
+          &quot;type&quot;: &quot;date&quot;,
+          &quot;documentation&quot;: &quot;The value of the observation, if the value is a Period&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:value[x]&quot;
+        },
+        {
+          &quot;name&quot;: &quot;value-quantity&quot;,
+          &quot;type&quot;: &quot;quantity&quot;,
+          &quot;documentation&quot;: &quot;The value of the observation, if the value is a Quantity, or a SampledData (just search on the bounds of the values in sampled data)&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:value[x]&quot;
+        },
+        {
+          &quot;name&quot;: &quot;value-string&quot;,
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;documentation&quot;: &quot;The value of the observation, if the value is a string, and also searches in CodeableConcept.text&quot;,
+          &quot;xpath&quot;: &quot;f:Observation/f:value[x]&quot;
+        }
+      ]
+    }
+  ]
+}
+</pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

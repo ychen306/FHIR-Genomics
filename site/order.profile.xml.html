@@ -1,0 +1,690 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Order.profile.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="administration.html">Administrative</a></li>        <li><a href="order.html">Order</a></li>        <li><b>Profile Instance</b></li>        <!-- order.profile.xml.html / profile-instance:resource:Order -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Order.profile.xml</h1>
+
+<div class="example">
+<p>Profile for order</p>
+<p><a href="order.profile.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;Profile</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;pre</span><span class="xmltag">&gt;</span><b>
+&amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order</span>" title="<span class="xmlattrvalue">A request to perform an action.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Order</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt; </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">float: right</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">formats.html</span>" title="<span class="xmlattrvalue">Documentation for this format</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">doco</span>" src="<span class="xmlattrvalue">help.png</span>"</span><span class="xmltag">/&gt;</span><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;!-- from </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">resources.html</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>: </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">extensibility.html</span>"</span><span class="xmltag">&gt;</span><b>extension</b><span class="xmltag">&lt;/a&gt;</span><b>, </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">extensibility.html#modifierExtension</span>"</span><span class="xmltag">&gt;</span><b>modifierExtension</b><span class="xmltag">&lt;/a&gt;</span><b>, language, </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">narrative.html#Narrative</span>"</span><span class="xmltag">&gt;</span><b>text</b><span class="xmltag">&lt;/a&gt;</span><b>, and </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#contained</span>"</span><span class="xmltag">&gt;</span><b>contained</b><span class="xmltag">&lt;/a&gt;</span><b> --&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.identifier</span>" title="<span class="xmlattrvalue">Identifiers assigned to this order by the orderer or by the receiver.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>identifier</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Identifier</span>"</span><span class="xmltag">&gt;</span><b>Identifier</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>
+     Identifiers assigned to this order by the orderer or by the receiver</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/identifier&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.date</span>" title="<span class="xmlattrvalue">When the order was made.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>date</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#dateTime</span>"</span><span class="xmltag">&gt;</span><b>dateTime</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>When the order was made</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.subject</span>" title="<span class="xmlattrvalue">Patient this order is about.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>subject</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">patient.html#Patient</span>"</span><span class="xmltag">&gt;</span><b>Patient</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Patient this order is about</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/subject&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.source</span>" title="<span class="xmlattrvalue">Who initiated the order.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>source</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">practitioner.html#Practitioner</span>"</span><span class="xmltag">&gt;</span><b>Practitioner</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Who initiated the order</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/source&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.target</span>" title="<span class="xmlattrvalue">Who is intended to fulfill the order.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>target</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">organization.html#Organization</span>"</span><span class="xmltag">&gt;</span><b>Organization</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">device.html#Device</span>"</span><span class="xmltag">&gt;</span><b>Device</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">practitioner.html#Practitioner</span>"</span><span class="xmltag">&gt;</span><b>Practitioner</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>
+     Who is intended to fulfill the order</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/target&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.reason_x_</span>" title="<span class="xmlattrvalue">Text - why the order was made.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>reason[x]</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">resourcelist.html</span>"</span><span class="xmltag">&gt;</span><b>Any</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Text - why the order was made</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/reason[x]&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.authority</span>" title="<span class="xmlattrvalue">If required by policy.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>authority</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">resourcelist.html</span>"</span><span class="xmltag">&gt;</span><b>Any</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>If required by policy</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/authority&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.when</span>" title="<span class="xmlattrvalue">When order should be fulfilled.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>when</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;  </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!-- </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> When order should be fulfilled --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.when.code</span>" title="<span class="xmlattrvalue">Code specifies when request should be done. The code may simply be a priority code.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>code</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>" title="<span class="xmlattrvalue">Inv-1: Provide a code or a schedule, but not both</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">??</span>" src="<span class="xmlattrvalue">lock.png</span>"</span><span class="xmltag">/&gt;</span><b> 0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>
+      Code specifies when request should be done. The code may simply be a priority code</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/code&amp;gt;
+  &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.when.schedule</span>" title="<span class="xmlattrvalue">A formal schedule.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>schedule</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>" title="<span class="xmlattrvalue">Inv-1: Provide a code or a schedule, but not both</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">??</span>" src="<span class="xmlattrvalue">lock.png</span>"</span><span class="xmltag">/&gt;</span><b> 0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Schedule</span>"</span><span class="xmltag">&gt;</span><b>Schedule</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>A formal schedule</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/schedule&amp;gt;
+ &amp;lt;/when&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">order-definitions.html#Order.detail</span>" title="<span class="xmlattrvalue">What action is being ordered.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>detail</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">resourcelist.html</span>"</span><span class="xmltag">&gt;</span><b>Any</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>What action is being ordered</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/detail&amp;gt;
+&amp;lt;/Order&amp;gt;
+</b><span class="xmltag">&lt;/pre&gt;</span><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">order</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;publisher</span><span class="xmlattr"> value="<span class="xmlattrvalue">FHIR Project</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;description</span><span class="xmlattr"> value="<span class="xmlattrvalue">Basic Profile. A request to perform an action.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">draft</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;date</span><span class="xmlattr"> value="<span class="xmlattrvalue">2014-10-08</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;requirements</span><span class="xmlattr"> value="<span class="xmlattrvalue">Scope and Usage An order resource describes a request that an action be performed. An
+   order is expected to lead to one or more responses that describe the outcome of processing/handling
+   the order. The order resource is focused on the process of actually requesting an action
+   be performed; the actual action to be performed is detailed in a separate resource that
+   contains the details. Note that orders are often called &amp;quot;requests&amp;quot;, but this
+   name is not used here since the word &amp;quot;request&amp;quot; is used differently elsewhere
+   in this specification.   Note that there are a variety of processes associated with making
+   and processing orders. Some orders may be handled immediately by automated systems but
+   most require real world actions by one or more humans. Some orders can only be processed
+   when other real world actions happen, such as a patient actually presenting themselves
+   so that the action to be performed can actually be performed. Often these real world dependencies
+   are only implicit in the order details.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;uri</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/v3</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">RIM</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+  </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;uri</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/v2</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">HL7 v2</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+  </b><span class="xmltag">&lt;structure</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;publish</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">A request to perform an action</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A request to perform an action.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Resource</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">ControlAct[classCode=ACTN, moodCode=RQO]</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.extension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Additional Content defined by implementations</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource. In order to make the use of extensions safe and manageable, there is
+         a strict governance applied to the definition and use of extensions. Though any implementer
+         is allowed to define an extension, there is a set of requirements that SHALL be met as
+         part of the definition of the extension.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.modifierExtension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extensions that cannot be ignored</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource, and that modifies the understanding of the element that contains it.
+         Usually modifier elements provide negation or qualification. In order to make the use
+         of extensions safe and manageable, there is a strict governance applied to the definition
+         and use of extensions. Though any implementer is allowed to define an extension, there
+         is a set of requirements that SHALL be met as part of the definition of the extension.
+         Applications processing a resource are required to check for modifier extensions.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.text</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Text summary of the resource, for human interpretation</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A human-readable narrative that contains a summary of the resource, and may be used to
+         represent the content of the resource to a human. The narrative need not encode all the
+         structured data, but is required to contain sufficient detail to make it &amp;quot;clinically
+         safe&amp;quot; for a human to just read the narrative. Resource definitions may define what
+         content should be represented in the narrative to ensure clinical safety.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contained resources do not have narrative. Resources that are not contained SHOULD have
+         a narrative.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">narrative</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">html</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">xhtml</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">display</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Narrative</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.contained</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contained, inline Resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">These resources do not have an independent existence apart from the resource that contains
+         them - they cannot be identified independently, and nor can they have their own independent
+         transaction scope.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">This should never be done when the content can be identified properly, as once identification
+         is lost, it is extremely difficult (and context dependent) to restore it again.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">inline resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">anonymous resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">contained resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Resource</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifiers assigned to this order by the orderer or by the receiver</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifiers assigned to this order by the orderer or by the receiver.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.id</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.date</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">When the order was made</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">When the order was made.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">dateTime</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.participation[typeCode=AUT].time</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">ORC-9</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.subject</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Patient this order is about</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Patient this order is about.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be left blank if the request reference identifies the patient, or if the request is
+         not associated with a patient.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Patient</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.participation[typeCode=SBJ].role[classCode=PAT]</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">PID-3</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.source</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who initiated the order</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who initiated the order.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Practitioner</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.participation[typeCode=AUT].role</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">ORC-12 / OBR-16 / RXO-14 / RXE-13 / PRT-5 (PRT-4-Participation=&apos;OP&apos;)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.target</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who is intended to fulfill the order</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who is intended to fulfill the order.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Organization</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Device</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Practitioner</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.participation[typeCode=PFM].role</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">Unclear: MSH-5 / IPC-7 / BPO-8 / RXO-32 / RXE-40 / RXD-30 / RXG-11 / RXG-27 / PRT-8 (PRT-4-participa
+          tion in { &apos;AP&apos;, &apos;DP&apos;, &apos;PO&apos;, &apos;RT&apos; })</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.reason[x]</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Text - why the order was made</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Text - why the order was made.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Any</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.reasonCode or .outboundRelationship[typeCode=RSON].target</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">ORC-16.2 / OBR-31.2 / BPO-13.2-BP / RXO-20.2 / RXE-27.2 / RXD-21.2 / RXG-22.2 / RXA-19.2</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.authority</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">If required by policy</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">If required by policy.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference will be constrained when suitable targets exist.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Any</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.participation[typeCode=RESP].role</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">if ordering provider, then ORC-12, OBR-16, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.when</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">When order should be fulfilled</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">When order should be fulfilled.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;constraint</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;key</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">Scheduling Details</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;severity</span><span class="xmlattr"> value="<span class="xmlattrvalue">error</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;human</span><span class="xmlattr"> value="<span class="xmlattrvalue">Provide a code or a schedule, but not both</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">exists(f:code) != exists(f:schedule)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/constraint&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.effectiveTime</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">v2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">TQ1, TQ2</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.when.extension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Additional Content defined by implementations</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource. In order to make the use of extensions safe and manageable, there is
+         a strict governance applied to the definition and use of extensions. Though any implementer
+         is allowed to define an extension, there is a set of requirements that SHALL be met as
+         part of the definition of the extension.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.when.modifierExtension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extensions that cannot be ignored</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource, and that modifies the understanding of the element that contains it.
+         Usually modifier elements provide negation or qualification. In order to make the use
+         of extensions safe and manageable, there is a strict governance applied to the definition
+         and use of extensions. Though any implementer is allowed to define an extension, there
+         is a set of requirements that SHALL be met as part of the definition of the extension.
+         Applications processing a resource are required to check for modifier extensions.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.when.code</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Code specifies when request should be done. The code may simply be a priority code</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Code specifies when request should be done. The code may simply be a priority code.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">This is usually a local code agreed in the context of the ordering workflow.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">RequestedTime</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">preferred</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;description</span><span class="xmlattr"> value="<span class="xmlattrvalue">When a requested action should be performed.  E.g. STAT, daily, evenings, etc.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">GTS is a coded value</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.when.schedule</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">A formal schedule</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A formal schedule.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Schedule</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">GTS is a complex schedule</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Order.detail</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">What action is being ordered</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">What action is being ordered.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Any</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.outboundRelationship[typeCode=SUBJ].target</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">_id</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The logical resource id associated with the resource (must be supported by all servers)</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">_language</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The language of the resource</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">authority</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">If required by policy</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Order/f:authority</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">date</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">date</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">When the order was made</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Order/f:date</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">detail</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">What action is being ordered</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Order/f:detail</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">source</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who initiated the order</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Order/f:source</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">subject</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Patient this order is about</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Order/f:subject</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">target</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who is intended to fulfill the order</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Order/f:target</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">when</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">date</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">A formal schedule</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Order/f:when/f:schedule</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">when_code</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Code specifies when request should be done. The code may simply be a priority code</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Order/f:when/f:code</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+  </b><span class="xmltag">&lt;/structure&gt;</span><b>
+</b><span class="xmltag">&lt;/Profile&gt;</span></pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

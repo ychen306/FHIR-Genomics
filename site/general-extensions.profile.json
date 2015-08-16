@@ -1,0 +1,82 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre> <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n<span style=\" color: Gray\">&lt;!-- <span style=\"color: Darkviolet\">Extensions</span> --&gt;</span>\r\n&lt;<span title=\"Provides a reason why the expected value or elements in the element that is extended are missing.\"><b>extension</b></span>&gt;<a name=\"data-absent-reason\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Context: DataType = *</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/general-extensions#data-absent-reason</span>&quot;/&gt;\r\n &lt;<span title=\"Provides a reason why the expected value or elements in the element that is extended are missing.\"><b>valueCode</b></span> value=&quot;[<span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\" color: Gray\">&lt;!-- </span><span style=\"color: navy\">unknown | asked | temp | notasked | masked | unsupported | astext | error</span><span style=\" color: Gray\"> --&gt;</span>\r\n&lt;/extension&gt;\r\n\r\n&lt;<span title=\"The registered place of birth of the patient.\"><b>extension</b></span>&gt;<a name=\"birthPlace\"> </a>&lt;!--  <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Context: Resource = Patient</span> --&gt;\r\n &lt;<b>url</b> value=&quot;<span style=\"color: maroon\">http://hl7.org/fhir/Profile/general-extensions#birthPlace</span>&quot;/&gt;\r\n &lt;<span title=\"The registered place of birth of the patient.\"><b>valueAddress</b></span>&gt;<span style=\" color: Gray\">&lt;!-- </span> <span style=\"color: brown;\"><b>0..1</b></span>  <span style=\"color: darkgreen\"><a href=\"http://hl7.org/fhir/datatypes.html#Address\">Address</a></span> <span style=\"color: navy\">Place of Birth for patient</span> <span style=\" color: Gray\">--&gt; </span>&lt;/valueAddress&gt;\r\n&lt;/extension&gt;\r\n\r\n</pre></div>"
+  },
+  "name": "General Extensions for use by FHIR Implementers",
+  "publisher": "HL7 FHIR project",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "A set of general extensions defined for the convenience of implementers that use FHIR resources",
+  "status": "draft",
+  "date": "2013-12-05",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    }
+  ],
+  "extensionDefn": [
+    {
+      "code": "data-absent-reason",
+      "display": "unknown | asked | temp | notasked | masked | unsupported | astext | error",
+      "contextType": "datatype",
+      "context": [
+        "*"
+      ],
+      "definition": {
+        "short": "unknown | asked | temp | notasked | masked | unsupported | astext | error",
+        "formal": "Provides a reason why the expected value or elements in the element that is extended are missing.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "binding": {
+          "name": "DataAbsentReason",
+          "isExtensible": true,
+          "referenceResource": {
+            "reference": "http://hl7.org/fhir/vs/data-absent-reason"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ANY.nullFlavor"
+          }
+        ]
+      }
+    },
+    {
+      "code": "birthPlace",
+      "display": "Place of Birth for patient",
+      "contextType": "resource",
+      "context": [
+        "Patient"
+      ],
+      "definition": {
+        "short": "Place of Birth for patient",
+        "formal": "The registered place of birth of the patient.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Patient-examples-cypress-template - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="administration.html">Administrative</a></li>        <li><a href="patient.html">Patient</a></li>        <li><b>Example Instance</b></li>        <!-- patient-examples-cypress-template.html / resource-instance:Patient -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Patient-examples-cypress-template</h1>
+
+<p>
+
+This is the narrative for the resource. See also the <a href="patient-examples-cypress-template.xml.html">XML</a> or <a href="patient-examples-cypress-template.json.html">JSON</a> format.
+</p>
+
+<div><div>Fletcher, Brenda. MRN:
+            577390</div><hr/><div>Powell, Kathryn. MRN:
+            577391</div><hr/><div>Cooper, Derrick. MRN:
+            577392</div><hr/><div>Knight, Emily. MRN:
+            577393</div><hr/><div>Ward, Leah. MRN:
+            577394</div><hr/><div>Mckinney, Ross. MRN:
+            577395</div><hr/><div>Meyer, Lucille. MRN:
+            577396</div><hr/><div>Greene, Pamela. MRN:
+            577397</div><hr/><div>Fields, Glenda. MRN:
+            577398</div><hr/><div>Lee, Vera. MRN:
+            577399</div><hr/><div>Peters, Rose. MRN:
+            577400</div><hr/><div>Rivera, Christine. MRN:
+            577401</div><hr/><div>Ryan, Olga. MRN:
+            577402</div><hr/><div>Price, Melanie. MRN:
+            577403</div><hr/><div>Collier, Shelly. MRN:
+            577404</div><hr/><div>Perry, Eric. MRN:
+            577405</div><hr/><div>May, Laurie. MRN:
+            577406</div><hr/><div>Becker, Tara. MRN:
+            577407</div><hr/><div>Rodgers, Clara. MRN:
+            577408</div><hr/><div>Rodriguez, Christopher. MRN:
+            577409</div><hr/><div>Spencer, Dan. MRN:
+            577410</div><hr/><div>Cooper, Ron. MRN:
+            577411</div><hr/><div>Martin, Karen. MRN:
+            577412</div><hr/><div>Holt, Willard. MRN:
+            577413</div><hr/><div>May, Christian. MRN:
+            577414</div><hr/><div>Hawkins, Bryan. MRN:
+            577415</div><hr/><div>George, Jay. MRN:
+            577416</div><hr/><div>Jordan, Roberto. MRN:
+            577417</div><hr/><div>Bridges, Chester. MRN:
+            577418</div><hr/><div>Garrett, Gordon. MRN:
+            577419</div><hr/><div>Lamb, Greg. MRN:
+            577420</div><hr/><div>Garcia, Jessie. MRN:
+            577421</div><hr/><div>Christensen, Donald. MRN:
+            577422</div><hr/><div>Hughes, Teresa. MRN:
+            577423</div><hr/><div>Houston, Daryl. MRN:
+            577424</div><hr/><div>West, James. MRN:
+            577425</div><hr/><div>Nguyen, Glenda. MRN:
+            577426</div><hr/><div>Swanson, Nathaniel. MRN:
+            577427</div><hr/><div>Powers, Vera. MRN:
+            577428</div><hr/><div>Chandler, Perry. MRN:
+            577429</div><hr/><div>Carroll, Alvin. MRN:
+            577430</div><hr/><div>Matthews, Florence. MRN:
+            577431</div><hr/><div>Frazier, Jordan. MRN:
+            577432</div><hr/><div>Patrick, Beth. MRN:
+            577433</div><hr/><div>Fleming, Christopher. MRN:
+            577434</div><hr/><div>Marshall, Howard. MRN:
+            577435</div><hr/><div>Larson, Erika. MRN:
+            577436</div><hr/><div>Day, Carol. MRN:
+            577437</div><hr/><div>Strickland, Veronica. MRN:
+            577438</div><hr/><div>Mckinney, Valerie. MRN:
+            577439</div><hr/><div>Ortiz, Lucille. MRN:
+            577440</div><hr/><div>Alvarez, Mitchell. MRN:
+            577441</div><hr/><div>Dennis, Charles. MRN:
+            577442</div><hr/><div>Schmidt, Lewis. MRN:
+            577443</div><hr/><div>Carr, Rebecca. MRN:
+            577444</div><hr/><div>Greer, Esther. MRN:
+            577445</div><hr/><div>Phillips, Eddie. MRN:
+            577446</div><hr/><div>Sparks, Louise. MRN:
+            577447</div><hr/><div>Holloway, Willie. MRN:
+            577448</div><hr/><div>Foster, Gabriel. MRN:
+            577449</div><hr/><div>Hodges, Sarah. MRN:
+            577450</div><hr/><div>White, Wilma. MRN:
+            577451</div><hr/><div>Drake, Ronald. MRN:
+            577452</div><hr/><div>Phillips, Wanda. MRN:
+            577453</div><hr/><div>Hansen, Chris. MRN:
+            577454</div><hr/><div>Reynolds, Julio. MRN:
+            577455</div><hr/><div>Roberson, Jonathan. MRN:
+            577456</div><hr/><div>Crawford, Carla. MRN:
+            577457</div><hr/><div>Hicks, Ronald. MRN:
+            577458</div><hr/><div>Hughes, Mae. MRN:
+            577459</div><hr/><div>Rice, Loretta. MRN:
+            577460</div><hr/><div>Reese, Naomi. MRN:
+            577461</div><hr/><div>Cox, Jesse. MRN:
+            577462</div><hr/><div>Mccoy, Virgil. MRN:
+            577463</div><hr/><div>Lane, Cory. MRN:
+            577464</div><hr/><div>Harrison, Willie. MRN:
+            577465</div><hr/><div>Palmer, Kim. MRN:
+            577466</div><hr/><div>May, Hilda. MRN:
+            577467</div><hr/><div>Glover, Henry. MRN:
+            577468</div><hr/><div>Austin, Brenda. MRN:
+            577469</div><hr/><div>Phelps, Tara. MRN:
+            577470</div><hr/><div>Floyd, Phillip. MRN:
+            577471</div><hr/><div>Chambers, Darren. MRN:
+            577472</div><hr/><div>Walsh, Catherine. MRN:
+            577473</div><hr/><div>Simon, Gregory. MRN:
+            577474</div><hr/><div>Johnson, Charlene. MRN:
+            577475</div><hr/><div>Burton, Darren. MRN:
+            577476</div><hr/><div>Swanson, Deanna. MRN:
+            577477</div><hr/><div>Roberts, Ben. MRN:
+            577478</div><hr/><div>Little, Dora. MRN:
+            577479</div><hr/><div>Hunt, Zachary. MRN:
+            577480</div><hr/><div>Palmer, Tyler. MRN:
+            577481</div><hr/><div>Marshall, Johnny. MRN:
+            577482</div><hr/><div>Mccarthy, Becky. MRN:
+            577483</div><hr/><div>Ortega, Samuel. MRN:
+            577484</div><hr/><div>Harvey, Andy. MRN:
+            577485</div><hr/><div>Bailey, Ian. MRN:
+            577486</div><hr/><div>Walker, Denise. MRN:
+            577487</div><hr/><div>Brock, Beth. MRN:
+            577488</div><hr/><div>Dennis, Juanita. MRN:
+            577489</div><hr/><div>Brady, Tracey. MRN:
+            577490</div><hr/><div>Hall, Courtney. MRN:
+            577491</div><hr/><div>Copeland, Brian. MRN:
+            577492</div><hr/><div>Graham, Maurice. MRN:
+            577493</div><hr/><div>Curtis, Ivan. MRN:
+            577494</div><hr/><div>Hines, Brett. MRN:
+            577495</div><hr/><div>Robbins, Jerome. MRN:
+            577496</div><hr/><div>Stewart, Michelle. MRN:
+            577497</div><hr/><div>Gilbert, Rachel. MRN:
+            577498</div><hr/><div>Schwartz, Valerie. MRN:
+            577499</div><hr/><div>Doyle, Darlene. MRN:
+            577500</div><hr/><div>Wilson, Bill. MRN:
+            577501</div><hr/><div>Doyle, Esther. MRN:
+            577502</div><hr/><div>Hunter, Micheal. MRN:
+            577503</div><hr/><div>Black, Salvador. MRN:
+            577504</div><hr/><div>Cruz, Melissa. MRN:
+            577505</div><hr/><div>Hubbard, Maureen. MRN:
+            577506</div><hr/><div>Lawrence, Kim. MRN:
+            577507</div><hr/><div>Torres, Dwight. MRN:
+            577508</div><hr/><div>Malone, Ian. MRN:
+            577509</div><hr/><div>Boone, Albert. MRN:
+            577510</div><hr/><div>Valdez, Tracy. MRN:
+            577511</div><hr/><div>Drake, Francis. MRN:
+            577512</div><hr/><div>Perkins, Clifton. MRN:
+            577513</div><hr/><div>Watts, Diane. MRN:
+            577514</div><hr/><div>Hansen, Marcus. MRN:
+            577515</div><hr/><div>Moran, Ramona. MRN:
+            577516</div><hr/><div>Williams, Charlotte. MRN:
+            577517</div><hr/><div>Schneider, Tammy. MRN:
+            577518</div><hr/><div>Guerrero, Kimberly. MRN:
+            577519</div><hr/><div>Wright, Joy. MRN:
+            577520</div><hr/><div>Carpenter, Amy. MRN:
+            577521</div><hr/><div>Brown, Gina. MRN:
+            577522</div><hr/><div>Fields, Amanda. MRN:
+            577523</div><hr/><div>Greer, Dianne. MRN:
+            577524</div><hr/><div>Jones, Alan. MRN:
+            577525</div><hr/><div>Terry, Sergio. MRN:
+            577526</div><hr/><div>White, Raul. MRN:
+            577527</div><hr/><div>Richardson, Jordan. MRN:
+            577528</div><hr/><div>Bates, Joann. MRN:
+            577529</div><hr/><div>Carpenter, Charlotte. MRN:
+            577530</div><hr/><div>Vaughn, Holly. MRN:
+            577531</div><hr/><div>Lane, Stacey. MRN:
+            577532</div><hr/><div>Porter, Lynn. MRN:
+            577533</div><hr/><div>Fernandez, Lawrence. MRN:
+            577534</div><hr/><div>Mcdaniel, Pedro. MRN:
+            577535</div><hr/><div>Barnes, Mario. MRN:
+            577536</div><hr/><div>Carter, Karen. MRN:
+            577537</div><hr/><div>Moore, Robin. MRN:
+            577538</div><hr/><div>Bass, Leon. MRN:
+            577539</div><hr/><div>Thomas, Bruce. MRN:
+            577540</div><hr/><div>Oliver, Gina. MRN:
+            577541</div><hr/><div>Goodman, Francis. MRN:
+            577542</div><hr/><div>Mack, Jonathan. MRN:
+            577543</div><hr/><div>Campbell, Jared. MRN:
+            577544</div><hr/><div>Blake, Jason. MRN:
+            577545</div><hr/><div>Malone, Tyler. MRN:
+            577546</div><hr/><div>Clarke, Christopher. MRN:
+            577547</div><hr/><div>Kennedy, Michele. MRN:
+            577548</div><hr/><div>Edwards, Jonathan. MRN:
+            577549</div><hr/><div>Dennis, Norman. MRN:
+            577550</div><hr/><div>James, Brandon. MRN:
+            577551</div><hr/><div>Manning, Jimmy. MRN:
+            577552</div><hr/><div>Vaughn, Clyde. MRN:
+            577553</div><hr/><div>Bryan, Eugene. MRN:
+            577554</div><hr/><div>Bridges, Keith. MRN:
+            577555</div><hr/><div>Carr, Curtis. MRN:
+            577556</div><hr/><div>Watson, Joshua. MRN:
+            577557</div><hr/><div>Hoffman, Carlos. MRN:
+            577558</div><hr/><div>Chandler, Debra. MRN:
+            577559</div><hr/><div>Gonzalez, Jose. MRN:
+            577560</div><hr/><div>Hamilton, Wendy. MRN:
+            577561</div><hr/><div>Sanders, Dwight. MRN:
+            577562</div><hr/><div>Blair, Diane. MRN:
+            577563</div><hr/><div>Maldonado, Gail. MRN:
+            577564</div><hr/><div>Hammond, Amber. MRN:
+            577565</div><hr/><div>Copeland, Neil. MRN:
+            577566</div><hr/><div>Mills, Lloyd. MRN:
+            577567</div><hr/><div>Henry, Ricky. MRN:
+            577568</div><hr/><div>Byrd, Mitchell. MRN:
+            577569</div><hr/><div>Gilbert, Danielle. MRN:
+            577570</div><hr/><div>Stevens, Terri. MRN:
+            577571</div><hr/><div>Mendoza, Clifford. MRN:
+            577572</div><hr/><div>Craig, Judith. MRN:
+            577573</div><hr/><div>Fleming, Vivian. MRN:
+            577574</div><hr/><div>Smith, Peggy. MRN:
+            577575</div><hr/><div>King, Paula. MRN:
+            577576</div><hr/><div>Phillips, Katherine. MRN:
+            577577</div><hr/><div>Boyd, Erika. MRN:
+            577578</div><hr/><div>Carpenter, Jamie. MRN:
+            577579</div><hr/><div>Hayes, Peggy. MRN:
+            577580</div><hr/><div>Fleming, Jo. MRN:
+            577581</div><hr/><div>Lambert, Clarence. MRN:
+            577582</div><hr/><div>Pena, Marsha. MRN:
+            577583</div><hr/><div>Jefferson, Michele. MRN:
+            577584</div><hr/><div>Pittman, Jimmie. MRN:
+            577585</div><hr/><div>Holland, Beverly. MRN:
+            577586</div><hr/><div>Stone, Lillie. MRN:
+            577587</div><hr/><div>Hopkins, Clayton. MRN:
+            577588</div><hr/><div>Stevens, Patrick. MRN:
+            577589</div><hr/><div>Singleton, Audrey. MRN:
+            577590</div><hr/><div>Wilson, Barry. MRN:
+            577591</div><hr/><div>Hernandez, Renee. MRN:
+            577592</div><hr/><div>Griffith, Darrell. MRN:
+            577593</div><hr/><div>Payne, Jackie. MRN:
+            577594</div><hr/><div>Morrison, Jo. MRN:
+            577595</div><hr/><div>Parker, Francisco. MRN:
+            577596</div><hr/><div>Bennett, Marion. MRN:
+            577597</div><hr/><div>Hammond, Albert. MRN:
+            577598</div><hr/><div>Hunt, Brittany. MRN:
+            577599</div><hr/><div>Gray, Agnes. MRN:
+            577600</div><hr/><div>Butler, Jane. MRN:
+            577601</div><hr/><div>Spencer, Herbert. MRN:
+            577602</div><hr/><div>White, Heidi. MRN:
+            577603</div><hr/><div>Colon, Joyce. MRN:
+            577604</div><hr/><div>Cunningham, Tiffany. MRN:
+            577605</div><hr/><div>Hart, Bessie. MRN:
+            577606</div><hr/><div>Curry, Francis. MRN:
+            577607</div><hr/><div>Hawkins, Kent. MRN:
+            577608</div><hr/><div>Lyons, Christian. MRN:
+            577609</div><hr/><div>Lewis, Marcia. MRN:
+            577610</div><hr/><div>Castro, Peter. MRN:
+            577611</div><hr/><div>Williams, Gerald. MRN:
+            577612</div><hr/><div>Fuller, Dianne. MRN:
+            577613</div><hr/><div>Wheeler, Beverly. MRN:
+            577614</div><hr/></div>
+
+<p>
+<!-- spacer -->
+&nbsp;
+</p>
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

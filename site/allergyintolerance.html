@@ -1,0 +1,322 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>AllergyIntolerance - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><b>AllergyIntolerance</b></li>          <!-- allergyintolerance.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="allergyintolerance-examples.html">Examples</a></li><li><a href="allergyintolerance-definitions.html">Formal Definitions</a></li><li><a href="allergyintolerance-mappings.html">Mappings</a></li><li><a href="allergyintolerance-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">4.2<a name="4.2"> </a></span> Resource AllergyIntolerance - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+Indicates the patient has a susceptibility to an adverse reaction upon exposure to a specified substance. 
+</p>
+
+
+  <!-- also from Russ, consider whether to put somewhere:
+
+I think that is a key concept, that having an allergy list as a distinct and separate element of clinical documentation is typical, even invariant.  And . -->
+<div>
+<h2><span class="sectioncount">4.2.1<a name="4.2.1"> </a></span> Scope and Usage</h2>
+<p>
+Allergy/Intolerance resources are used to provide information about 
+adverse sensitivities to substances that lead to physiologic changes 
+that are clinically observable.  An adverse sensitivity is defined as:
+</p>
+<blockquote>
+  <p>
+  A condition expected to result in undesirable physiologic reaction to an 
+  amount of a substance that would not produce a reaction in most individuals.  
+  The substance is the trigger of an immunologic response that produces the 
+  observed physiologic changes, or in some instances nonimmunologic mechanisms 
+  that produce clinically identical physiologic changes.  The immunologic 
+  response might be considered the actual cause of the reaction, but it is 
+  exposure to the trigger substance that is clinically observable.
+  </p>  
+</blockquote>  
+<p>
+This definition excludes clinically identical episodes that may be caused by 
+physical agents, such as heat, cold, sunlight, or vibration, by exercise activity, 
+or by infectious agents. Those conditions caused by physical agents or infectious 
+would be captured on the problem list (<a href="list.html">List</a>/<a href="condition.html">Condition</a> Resources). The allergy/intolerance list is a list of 
+conditions that represent a propensity unique to this individual for 
+a reaction upon future exposure to a specified substance. 
+</p>
+<p>
+Note that this specification draws a distinction between the 
+patients condition/problem list and an allergy/intolerance list, even 
+though allergies and intolerances are also conditions. This is because the distinction 
+is a long established clinical workflow, even to patients. Asking an individual 
+&quot;if they have any problems&quot; is not going to invoke an account of their past 
+reactions to medications or foods. Instead, they are asked if they &quot;have any allergies&quot;.    
+An allergy/intolerance is also different in that a potential harm from exposure 
+to an external substance that may be ordered by a provider in the course of 
+their care but is not inherent to exposure to that substance for the general 
+population.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">4.2.2<a name="4.2.2"> </a></span> Background and Context</h2>
+<p>
+Most of the details of the sensitivity can be found in the set of 
+<a href="adversereaction.html">reactions</a> that are associated with the resource,
+though these may not be present when the patient has not provided enough
+information. <a href="adversereaction.html">Adverse Reactions</a> do not 
+have to be always associated with an AllergyIntolerance which may appropriate 
+when an single reaction has not provided enough evidence for a meaningful 
+Allergy/Intolerance, or in specific views of events rather than in a general
+clinical record.
+</p>
+</div>
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">4.2.3<a name="4.2.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="186.0" width="296.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="176.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="196.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="196.0" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="98.0">AllergyIntolerance<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.identifier"><title>This records identifiers associated with this allergy/intolerance concern that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..*</text><text fill="black" class="diagram-class-detail" y="56.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.criticality"><title>Criticality of the sensitivity</title>criticality</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="criticality.html"><title>The criticality of an adverse sensitivity</title>Criticality</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="70.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.sensitivityType"><title>Type of the sensitivity</title>sensitivityType</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="sensitivitytype.html"><title>The type of an adverse sensitivity</title>SensitivityType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="84.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.recordedDate"><title>Date when the sensitivity was recorded</title>recordedDate</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.status"><title>Status of the sensitivity (this element modifies the meaning of other elements)</title>status</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="sensitivitystatus.html"><title>The status of the adverse sensitivity</title>SensitivityStatus</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="112.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.subject"><title>The patient who has the allergy or intolerance</title>subject</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>) 1..1</text><text fill="black" class="diagram-class-detail" y="126.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.recorder"><title>Indicates who has responsibility for the record</title>recorder</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a xlink:href="patient.html#Patient">Patient</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="140.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.substance"><title>The substance that causes the sensitivity</title>substance</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="substance.html#Substance">Substance</a>) 1..1</text><text fill="black" class="diagram-class-detail" y="154.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.reaction"><title>Reactions associated with the sensitivity</title>reaction</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="adversereaction.html#AdverseReaction">AdverseReaction</a>) 0..*</text><text fill="black" class="diagram-class-detail" y="168.0" x="6.0"><a xlink:href="allergyintolerance-definitions.html#AllergyIntolerance.sensitivityTest"><title>Observations that confirm or refute the sensitivity</title>sensitivityTest</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="observation.html#Observation">Observation</a>) 0..*</text></svg>
+<p>This resource is referenced by <a href="immunizationrecommendation.html">ImmunizationRecommendation</a> and <a href="procedure.html">Procedure</a></p>
+
+
+<a name="def"> </a>
+<a name="allergyintolerance"> </a>
+<a name="AllergyIntolerance"> </a>
+<pre class="spec">
+&lt;<a title="Indicates the patient has a susceptibility to an adverse reaction upon exposure to a specified substance." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance"><b>AllergyIntolerance</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="This records identifiers associated with this allergy/intolerance concern that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External Ids for this item</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="Criticality of the sensitivity." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.criticality"><b>criticality</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="criticality.html">fatal | high | medium | low</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Type of the sensitivity." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.sensitivityType"><b>sensitivityType</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="sensitivitytype.html">allergy | intolerance | unknown</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Date when the sensitivity was recorded." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.recordedDate"><b>recordedDate</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When recorded</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Status of the sensitivity (this element modifies the meaning of other elements)" class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="sensitivitystatus.html">suspected | confirmed | refuted | resolved</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The patient who has the allergy or intolerance." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who the sensitivity is for</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="Indicates who has responsibility for the record." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.recorder"><b>recorder</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who recorded the sensitivity</span><span style="color: Gray"> --&gt;</span>&lt;/recorder&gt;
+ &lt;<a title="The substance that causes the sensitivity." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.substance"><b>substance</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="substance.html#Substance">Substance</a>)</span> <span style="color: navy">The substance that causes the sensitivity</span><span style="color: Gray"> --&gt;</span>&lt;/substance&gt;
+ &lt;<a title="Reactions associated with the sensitivity." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.reaction"><b>reaction</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="adversereaction.html#AdverseReaction">AdverseReaction</a>)</span> <span style="color: navy">Reactions associated with the sensitivity</span><span style="color: Gray"> --&gt;</span>&lt;/reaction&gt;
+ &lt;<a title="Observations that confirm or refute the sensitivity." class="dict" href="allergyintolerance-definitions.html#AllergyIntolerance.sensitivityTest"><b>sensitivityTest</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="observation.html#Observation">Observation</a>)</span> <span style="color: navy">
+     Observations that confirm or refute</span><span style="color: Gray"> --&gt;</span>&lt;/sensitivityTest&gt;
+&lt;/AllergyIntolerance&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="allergyintolerance.xsd">Schema</a>/<a href="allergyintolerance.sch">Schematron</a>, 
+<a href="allergyintolerance.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">4.2.3.1<a name="4.2.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="Criticality" valign="top">AllergyIntolerance.criticality </td><td valign="top">The criticality of an adverse sensitivity</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="criticality.html">http://hl7.org/fhir/criticality</a></td> </tr>
+ <tr><td title="SensitivityType" valign="top">AllergyIntolerance.sensitivityType </td><td valign="top">The type of an adverse sensitivity</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="sensitivitytype.html">http://hl7.org/fhir/sensitivitytype</a></td> </tr>
+ <tr><td title="SensitivityStatus" valign="top">AllergyIntolerance.status </td><td valign="top">The status of the adverse sensitivity</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="sensitivitystatus.html">http://hl7.org/fhir/sensitivitystatus</a></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+
+    <h2><span class="sectioncount">4.2.4<a name="4.2.4"> </a></span> Notes:</h2>
+    <ul>
+        <li>Criticality vs Severity</li>
+        <p>Criticality is defined as &quot;The potential seriousness of a future reaction.&quot;
+            This represents a clinical judgment about the worst case scenario for a future reaction. 
+            It would be based on the severity of past reactions, the dose and route of exposure that produced past reactions, 
+            and the life-threatening or organ system threatening potential of the reaction type.   
+            Criticality is an attribute of the allergic condition, not the reaction(s).
+        </p>
+        <p>
+            High criticality does not equate to a future severe reaction, 
+            but rather the potential for a severe and life-threatening reaction. 
+            Most reaction types are dose dependent, including anaphylaxis. 
+            Therefore, although they have a sensitivity of high criticality, 
+            exposure to a small dose of the substance to which they are sensitive might result in only a mild reaction.  
+            Severity of the reaction is also dependent on the route of exposure, 
+            but criticality since it applies to the condition, is not.
+        </p>
+    </ul>
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">4.2.5<a name="4.2.5"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>Recorded date/time.</td><td>AllergyIntolerance.recordedDate</td></tr>
+<tr><td>recorder</td><td><a href="search.html#reference">reference</a></td><td>Who recorded the sensitivity</td><td>AllergyIntolerance.recorder<br/>(<a href="patient.html">Patient</a>, <a href="practitioner.html">Practitioner</a>)</td></tr>
+<tr><td>status</td><td><a href="search.html#token">token</a></td><td>The status of the sensitivity</td><td>AllergyIntolerance.status</td></tr>
+<tr><td>subject</td><td><a href="search.html#reference">reference</a></td><td>The subject that the sensitivity is about</td><td>AllergyIntolerance.subject<br/>(<a href="patient.html">Patient</a>)</td></tr>
+<tr><td>substance</td><td><a href="search.html#reference">reference</a></td><td>The name or code of the substance that produces the sensitivity</td><td>AllergyIntolerance.substance<br/>(<a href="substance.html">Substance</a>)</td></tr>
+<tr><td>type</td><td><a href="search.html#token">token</a></td><td>The type of sensitivity</td><td>AllergyIntolerance.sensitivityType</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:17+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

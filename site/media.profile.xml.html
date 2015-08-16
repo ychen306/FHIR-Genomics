@@ -1,0 +1,746 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Media.profile.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><a href="media.html">Media</a></li>        <li><b>Profile Instance</b></li>        <!-- media.profile.xml.html / profile-instance:resource:Media -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Media.profile.xml</h1>
+
+<div class="example">
+<p>Profile for media</p>
+<p><a href="media.profile.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;Profile</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;pre</span><span class="xmltag">&gt;</span><b>
+&amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media</span>" title="<span class="xmlattrvalue">A photo, video, or audio recording acquired or used in healthcare. The actual content
+         may be inline or provided by direct reference.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>Media</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt; </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">float: right</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">formats.html</span>" title="<span class="xmlattrvalue">Documentation for this format</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">doco</span>" src="<span class="xmlattrvalue">help.png</span>"</span><span class="xmltag">/&gt;</span><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;!-- from </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">resources.html</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>: </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">extensibility.html</span>"</span><span class="xmltag">&gt;</span><b>extension</b><span class="xmltag">&lt;/a&gt;</span><b>, </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">extensibility.html#modifierExtension</span>"</span><span class="xmltag">&gt;</span><b>modifierExtension</b><span class="xmltag">&lt;/a&gt;</span><b>, language, </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">narrative.html#Narrative</span>"</span><span class="xmltag">&gt;</span><b>text</b><span class="xmltag">&lt;/a&gt;</span><b>, and </b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#contained</span>"</span><span class="xmltag">&gt;</span><b>contained</b><span class="xmltag">&lt;/a&gt;</span><b> --&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.type</span>" title="<span class="xmlattrvalue">Whether the media is a photo (still image), an audio recording, or a video recording.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>type</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#code</span>"</span><span class="xmltag">&gt;</span><b>code</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">media-type.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>photo | video | audio</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.subtype</span>" title="<span class="xmlattrvalue">Details of the type of the media - usually, how it was acquired (what type of device).
+         If images sourced from a DICOM system, are wrapped in a Media resource, then this is the
+         modality.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>subtype</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">valueset-media-subtype.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>The type of acquisition equipment/process</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/subtype&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.identifier</span>" title="<span class="xmlattrvalue">Identifiers associated with the image - these may include identifiers for the image itself,
+         identifiers for the context of its collection (e.g. series ids) and context ids such as
+         accession numbers or other workflow identifiers.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>identifier</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..*</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Identifier</span>"</span><span class="xmltag">&gt;</span><b>Identifier</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Identifier(s) for the image</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/identifier&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.dateTime</span>" title="<span class="xmlattrvalue">When the media was originally recorded. For video and audio, if the length of the recording
+         is not insignificant, this is the end of the recording.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>dateTime</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#dateTime</span>"</span><span class="xmltag">&gt;</span><b>dateTime</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>When the media was taken/recorded (end)</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.subject</span>" title="<span class="xmlattrvalue">Who/What this Media is a record of.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>subject</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">patient.html#Patient</span>"</span><span class="xmltag">&gt;</span><b>Patient</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">practitioner.html#Practitioner</span>"</span><span class="xmltag">&gt;</span><b>Practitioner</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">group.html#Group</span>"</span><span class="xmltag">&gt;</span><b>Group</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">device.html#Device</span>"</span><span class="xmltag">&gt;</span><b>Device</b><span class="xmltag">&lt;/a&gt;</span><b>|</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">specimen.html#Specimen</span>"</span><span class="xmltag">&gt;</span><b>Specimen</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>
+     Who/What this Media is a record of</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/subject&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.operator</span>" title="<span class="xmlattrvalue">The person who administered the collection of the image.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>operator</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">references.html#Resource</span>"</span><span class="xmltag">&gt;</span><b>Resource</b><span class="xmltag">&lt;/a&gt;</span><b>(</b><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">practitioner.html#Practitioner</span>"</span><span class="xmltag">&gt;</span><b>Practitioner</b><span class="xmltag">&lt;/a&gt;</span><b>)</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>The person who generated the image</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/operator&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.view</span>" title="<span class="xmlattrvalue">The name of the imaging view e.g Lateral or Antero-posterior (AP).</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>view</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#CodeableConcept</span>"</span><span class="xmltag">&gt;</span><b>CodeableConcept</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">valueset-media-view.html</span>" style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Imaging view e.g Lateral or Antero-posterior</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/view&amp;gt;
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.deviceName</span>" title="<span class="xmlattrvalue">The name of the device / manufacturer of the device  that was used to make the recording.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>deviceName</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#string</span>"</span><span class="xmltag">&gt;</span><b>string</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Name of the device/manufacturer</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.height</span>" title="<span class="xmlattrvalue">Height of the image in pixels(photo/video).</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>height</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#integer</span>"</span><span class="xmltag">&gt;</span><b>integer</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>" title="<span class="xmlattrvalue">Inv-1: Height can only be used for a photo or video</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">??</span>" src="<span class="xmlattrvalue">lock.png</span>"</span><span class="xmltag">/&gt;</span><b> 0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Height of the image in pixels(photo/video)</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.width</span>" title="<span class="xmlattrvalue">Width of the image in pixels (photo/video).</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>width</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#integer</span>"</span><span class="xmltag">&gt;</span><b>integer</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>" title="<span class="xmlattrvalue">Inv-2: Width can only be used for a photo or video</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">??</span>" src="<span class="xmlattrvalue">lock.png</span>"</span><span class="xmltag">/&gt;</span><b> 0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Width of the image in pixels (photo/video)</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.frames</span>" title="<span class="xmlattrvalue">The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition
+         context that takes multiple slices in a single image, or an animated gif. If there is
+         more than one frame, this SHALL have a value in order to alert interface software that
+         a multi-frame capable rendering widget is required.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>frames</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#integer</span>"</span><span class="xmltag">&gt;</span><b>integer</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>" title="<span class="xmlattrvalue">Inv-3: Frames can only be used for a photo</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">??</span>" src="<span class="xmlattrvalue">lock.png</span>"</span><span class="xmltag">/&gt;</span><b> 0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Number of frames if &amp;gt; 1 (photo)</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.length</span>" title="<span class="xmlattrvalue">The length of the recording in seconds - for audio and video.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>length</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b> value=&amp;quot;[</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#integer</span>"</span><span class="xmltag">&gt;</span><b>integer</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b>]&amp;quot;/&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>" title="<span class="xmlattrvalue">Inv-4: Length can only be used for an audio or a video</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;img</span><span class="xmlattr"> alt="<span class="xmlattrvalue">??</span>" src="<span class="xmlattrvalue">lock.png</span>"</span><span class="xmltag">/&gt;</span><b> 0..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Length in seconds (audio / video)</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Navy</span>" title="<span class="xmlattrvalue">This element is included in a summary view (See Search/Query)</span>"</span><span class="xmltag">&gt;</span><b> §</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>
+ &amp;lt;</b><span class="xmltag">&lt;a</span><span class="xmlattr"> class="<span class="xmlattrvalue">dict</span>" href="<span class="xmlattrvalue">media-definitions.html#Media.content</span>" title="<span class="xmlattrvalue">The actual content of the media - inline or by direct reference to the media source file.</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>content</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/a&gt;</span><b>&amp;gt;</b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b>&amp;lt;!--</b><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: brown</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;b</span><span class="xmltag">&gt;</span><b>1..1</b><span class="xmltag">&lt;/b&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: darkgreen</span>"</span><span class="xmltag">&gt;</span><span class="xmltag">&lt;a</span><span class="xmlattr"> href="<span class="xmlattrvalue">datatypes.html#Attachment</span>"</span><span class="xmltag">&gt;</span><b>Attachment</b><span class="xmltag">&lt;/a&gt;</span><span class="xmltag">&lt;/span&gt;</span><b> </b><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: navy</span>"</span><span class="xmltag">&gt;</span><b>Actual Media - reference or data</b><span class="xmltag">&lt;/span&gt;</span><span class="xmltag">&lt;span</span><span class="xmlattr"> style="<span class="xmlattrvalue">color: Gray</span>"</span><span class="xmltag">&gt;</span><b> --&amp;gt;</b><span class="xmltag">&lt;/span&gt;</span><b>&amp;lt;/content&amp;gt;
+&amp;lt;/Media&amp;gt;
+</b><span class="xmltag">&lt;/pre&gt;</span><span class="xmltag">&lt;/div&gt;</span><b>
+  </b><span class="xmltag">&lt;/text&gt;</span><b>
+  </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">media</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;publisher</span><span class="xmlattr"> value="<span class="xmlattrvalue">FHIR Project</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;description</span><span class="xmlattr"> value="<span class="xmlattrvalue">Basic Profile. A photo, video, or audio recording acquired or used in healthcare. The
+   actual content may be inline or provided by direct reference.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">draft</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;date</span><span class="xmlattr"> value="<span class="xmlattrvalue">2014-10-08</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;requirements</span><span class="xmlattr"> value="<span class="xmlattrvalue">Scope and Usage The Media resource contains photos, videos, and audio recordings. It is
+   used with media acquired or used as part of the healthcare process. Here are some typical
+   usages:   * Photos of patients and staff for identification purposes * Photos and videos
+   of diagnostic or care provision procedures for recording purposes  * Storing scans and
+   faxes of paper documents where not enough metadata exists to create a DocumentReference
+   * Images on diagnostic reports The Media resource may contain medical images in a DICOM
+   format. While such images may also be accessible through an ImagingStudy resource, the
+   Media resource enables &amp;quot;ready for presentation&amp;quot; access to a specific image.
+   Such images would preferentially be made available in a FHIR ecosystem by the Media.content.url
+   providing a reference to a WADO-RS service to access the image. That WADO-RS service may
+   include rendering the image with annotations and display parameters from an associated
+   DICOM presentation state. Although the Media resource is allowed to contain images collected
+   by a DICOM based system, DICOM images would preferentially be made available in a FHIR
+   ecosystem by provision of a resource with references to a WADO-RS server.</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;uri</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/v3</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">RIM</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+  </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;uri</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://nema.org/dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">DICOM</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+  </b><span class="xmltag">&lt;structure</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;publish</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">A photo, video, or audio recording acquired or used in healthcare. The actual content
+         may be inline or provided by direct reference</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A photo, video, or audio recording acquired or used in healthcare. The actual content
+         may be inline or provided by direct reference.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Resource</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;constraint</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;key</span><span class="xmlattr"> value="<span class="xmlattrvalue">3</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">Frames rule</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;severity</span><span class="xmlattr"> value="<span class="xmlattrvalue">error</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;human</span><span class="xmlattr"> value="<span class="xmlattrvalue">Frames can only be used for a photo</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">(f:type/@value=&apos;photo&apos;) or not(f:frames)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/constraint&gt;</span><b>
+        </b><span class="xmltag">&lt;constraint</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;key</span><span class="xmlattr"> value="<span class="xmlattrvalue">2</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">Width rule</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;severity</span><span class="xmlattr"> value="<span class="xmlattrvalue">error</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;human</span><span class="xmlattr"> value="<span class="xmlattrvalue">Width can only be used for a photo or video</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">not(f:type/@value=&apos;audio&apos;) or not(f:width)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/constraint&gt;</span><b>
+        </b><span class="xmltag">&lt;constraint</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;key</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">Height rule</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;severity</span><span class="xmlattr"> value="<span class="xmlattrvalue">error</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;human</span><span class="xmlattr"> value="<span class="xmlattrvalue">Height can only be used for a photo or video</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">not(f:type/@value=&apos;audio&apos;) or not(f:height)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/constraint&gt;</span><b>
+        </b><span class="xmltag">&lt;constraint</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;key</span><span class="xmlattr"> value="<span class="xmlattrvalue">4</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">Length rule</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;severity</span><span class="xmlattr"> value="<span class="xmlattrvalue">error</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;human</span><span class="xmlattr"> value="<span class="xmlattrvalue">Length can only be used for an audio or a video</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">not(f:type/@value=&apos;photo&apos;) or not(f:length)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/constraint&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">Act[classCode=&amp;quot;DGIMG&amp;quot;, moodCode=&amp;quot;EVN&amp;quot;]</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.extension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Additional Content defined by implementations</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource. In order to make the use of extensions safe and manageable, there is
+         a strict governance applied to the definition and use of extensions. Though any implementer
+         is allowed to define an extension, there is a set of requirements that SHALL be met as
+         part of the definition of the extension.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.modifierExtension</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extensions that cannot be ignored</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">May be used to represent additional information that is not part of the basic definition
+         of the resource, and that modifies the understanding of the element that contains it.
+         Usually modifier elements provide negation or qualification. In order to make the use
+         of extensions safe and manageable, there is a strict governance applied to the definition
+         and use of extensions. Though any implementer is allowed to define an extension, there
+         is a set of requirements that SHALL be met as part of the definition of the extension.
+         Applications processing a resource are required to check for modifier extensions.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">there can be no stigma associated with the use of extensions by any application, project,
+         or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
+          The use of extensions is what allows the FHIR specification to retain a core simplicity
+         for everyone.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">extensions</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">user content</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Extension</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.text</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Text summary of the resource, for human interpretation</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">A human-readable narrative that contains a summary of the resource, and may be used to
+         represent the content of the resource to a human. The narrative need not encode all the
+         structured data, but is required to contain sufficient detail to make it &amp;quot;clinically
+         safe&amp;quot; for a human to just read the narrative. Resource definitions may define what
+         content should be represented in the narrative to ensure clinical safety.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contained resources do not have narrative. Resources that are not contained SHOULD have
+         a narrative.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">narrative</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">html</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">xhtml</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">display</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Narrative</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.contained</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Contained, inline Resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">These resources do not have an independent existence apart from the resource that contains
+         them - they cannot be identified independently, and nor can they have their own independent
+         transaction scope.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">This should never be done when the content can be identified properly, as once identification
+         is lost, it is extremely difficult (and context dependent) to restore it again.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">inline resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">anonymous resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;synonym</span><span class="xmlattr"> value="<span class="xmlattrvalue">contained resources</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Resource</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.type</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">photo | video | audio</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Whether the media is a photo (still image), an audio recording, or a video recording.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">code</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">MediaType</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">required</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceResource</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/media-type</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/referenceResource&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.code</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.subtype</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">The type of acquisition equipment/process</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Details of the type of the media - usually, how it was acquired (what type of device).
+         If images sourced from a DICOM system, are wrapped in a Media resource, then this is the
+         modality.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">MediaSubtype</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">example</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceResource</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/media-subtype</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/referenceResource&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.outboundRelationship[typeCode=&amp;quot;COMP].target[classCode=&amp;quot;LIST&amp;quot;, moodCode=&amp;quot;EVN&amp;quo
+          t;].code</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">0008,0060 | 0008,1032</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifier(s) for the image</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifiers associated with the image - these may include identifiers for the image itself,
+         identifiers for the context of its collection (e.g. series ids) and context ids such as
+         accession numbers or other workflow identifiers.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">The identifier label and use can be used to determine what kind of identifier it is.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">*</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.id</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">0008,0018 | ~0008,0050 | 0020,000D | 0020,000E</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.dateTime</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">When the media was taken/recorded (end)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">When the media was originally recorded. For video and audio, if the length of the recording
+         is not insignificant, this is the end of the recording.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">For an image including multiple frames, this is the start time.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">dateTime</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.effectiveTime</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">0008,0020 + 0008,0030</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.subject</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who/What this Media is a record of</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who/What this Media is a record of.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Patient</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Practitioner</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Group</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Device</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Specimen</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.participation[typeCode=&amp;quot;SUBJ&amp;quot;]…</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">~0010,0020</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.operator</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">The person who generated the image</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The person who administered the collection of the image.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">ResourceReference</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;profile</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/profiles/Practitioner</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.participation[typeCode=&amp;quot;PERF&amp;quot;]…</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">0008,1060?</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.view</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Imaging view e.g Lateral or Antero-posterior</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The name of the imaging view e.g Lateral or Antero-posterior (AP).</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">CodeableConcept</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;binding</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">MediaView</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;isExtensible</span><span class="xmlattr"> value="<span class="xmlattrvalue">true</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;conformance</span><span class="xmlattr"> value="<span class="xmlattrvalue">example</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;referenceResource</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/vs/media-view</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/referenceResource&gt;</span><b>
+        </b><span class="xmltag">&lt;/binding&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">DiagnosticImage.subjectOrientationCode</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.deviceName</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Name of the device/manufacturer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The name of the device / manufacturer of the device  that was used to make the recording.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">string</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.participation[typeCode=&amp;quot;DEV&amp;quot;].role.player.Entity[classCode=&amp;quot;DEV&amp;quot;].name</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">0008,0070</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.height</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Height of the image in pixels(photo/video)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Height of the image in pixels(photo/video).</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">integer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.outboundRelationship[typeCode=&amp;quot;COMP].target[classCode=&amp;quot;OBS&amp;quot;, moodCode=&amp;quot;EVN&amp;quot
+          ;,code=&amp;quot;&amp;lt;CODE&amp;gt;&amp;quot;].value</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">0028,0010</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.width</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Width of the image in pixels (photo/video)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">Width of the image in pixels (photo/video).</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">integer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.outboundRelationship[typeCode=&amp;quot;COMP].target[classCode=&amp;quot;OBS&amp;quot;, moodCode=&amp;quot;EVN&amp;quot
+          ;,code=&amp;quot;&amp;lt;CODE&amp;gt;&amp;quot;].value</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">0028,0011</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.frames</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Number of frames if &amp;gt; 1 (photo)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition
+         context that takes multiple slices in a single image, or an animated gif. If there is
+         more than one frame, this SHALL have a value in order to alert interface software that
+         a multi-frame capable rendering widget is required.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">integer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.outboundRelationship[typeCode=&amp;quot;COMP].target[classCode=&amp;quot;OBS&amp;quot;, moodCode=&amp;quot;EVN&amp;quot
+          ;,code=&amp;quot;&amp;lt;CODE&amp;gt;&amp;quot;].value</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.length</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Length in seconds (audio / video)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The length of the recording in seconds - for audio and video.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">0</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">integer</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.outboundRelationship[typeCode=&amp;quot;COMP].target[classCode=&amp;quot;OBS&amp;quot;, moodCode=&amp;quot;EVN&amp;quot
+          ;,code=&amp;quot;&amp;lt;CODE&amp;gt;&amp;quot;].value</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">dicom</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">~0028,0002</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;element</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;path</span><span class="xmlattr"> value="<span class="xmlattrvalue">Media.content</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;definition</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;short</span><span class="xmlattr"> value="<span class="xmlattrvalue">Actual Media - reference or data</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;formal</span><span class="xmlattr"> value="<span class="xmlattrvalue">The actual content of the media - inline or by direct reference to the media source file.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;comments</span><span class="xmlattr"> value="<span class="xmlattrvalue">Recommended content types: image/jpeg, image/png, image/tiff, video/mpeg, audio/mp4, application/dic
+        om. Application/dicom can contain the transfer syntax as a parameter.</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;min</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;max</span><span class="xmlattr"> value="<span class="xmlattrvalue">1</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;type</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">Attachment</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/type&gt;</span><b>
+        </b><span class="xmltag">&lt;isModifier</span><span class="xmlattr"> value="<span class="xmlattrvalue">false</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;mapping</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;identity</span><span class="xmlattr"> value="<span class="xmlattrvalue">rim</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;map</span><span class="xmlattr"> value="<span class="xmlattrvalue">.text</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/mapping&gt;</span><b>
+      </b><span class="xmltag">&lt;/definition&gt;</span><b>
+    </b><span class="xmltag">&lt;/element&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">_id</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The logical resource id associated with the resource (must be supported by all servers)</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">_language</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The language of the resource</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">date</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">date</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">When the media was taken/recorded (end)</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Media/f:dateTime</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Identifier(s) for the image</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Media/f:identifier</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">operator</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The person who generated the image</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Media/f:operator</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">subject</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">reference</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Who/What this Media is a record of</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Media/f:subject</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">subtype</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">The type of acquisition equipment/process</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Media/f:subtype</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">type</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">photo | video | audio</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Media/f:type</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+    </b><span class="xmltag">&lt;searchParam</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;name</span><span class="xmlattr"> value="<span class="xmlattrvalue">view</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;type</span><span class="xmlattr"> value="<span class="xmlattrvalue">token</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;documentation</span><span class="xmlattr"> value="<span class="xmlattrvalue">Imaging view e.g Lateral or Antero-posterior</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;xpath</span><span class="xmlattr"> value="<span class="xmlattrvalue">f:Media/f:view</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/searchParam&gt;</span><b>
+  </b><span class="xmltag">&lt;/structure&gt;</span><b>
+</b><span class="xmltag">&lt;/Profile&gt;</span></pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

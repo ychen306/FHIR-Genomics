@@ -1,0 +1,531 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Defined-types.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentation.html">Documentation</a></li>        <li><a href="terminologies.html">Using Codes</a></li>        <li><a href="terminologies-valuesets.html">Value Sets</a></li>        <li><a href="defined-types.html">defined-types</a></li>        <li><b>Instance</b></li>        <!-- defined-types.xml.html / valueset-instance -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Defined-types.xml</h1>
+
+<div class="example">
+<p>Definition for Value SetFHIRDefinedType</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;ValueSet&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;&lt;h2&gt;FHIRDefinedType&lt;/h2&gt;&lt;p&gt;Either a resource or a data type&lt;/p&gt;&lt;p&gt;This value set defines its own terms in the system http://hl7.org/fhir/defined-types&lt;/p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Address&lt;a name=\&quot;Address\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;There is a variety of postal address formats defined around the world. This format defines a superset that is the basis for all addresses around the world.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Age&lt;a name=\&quot;Age\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.  If value is present, it SHALL be positive.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Attachment&lt;a name=\&quot;Attachment\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;For referring to data content defined in other formats.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CodeableConcept&lt;a name=\&quot;CodeableConcept\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Coding&lt;a name=\&quot;Coding\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A reference to a code defined by a terminology system.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Contact&lt;a name=\&quot;Contact\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;All kinds of technology mediated contact details for a person or organization, including telephone, email, etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Count&lt;a name=\&quot;Count\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;There SHALL be a code with a value of &amp;quot;1&amp;quot; if there is a value and it SHALL be an expression of length.  If system is present, it SHALL be UCUM.  If present, the value SHALL a whole number.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Distance&lt;a name=\&quot;Distance\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;There SHALL be a code if there is a value and it SHALL be an expression of length.  If system is present, it SHALL be UCUM.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Duration&lt;a name=\&quot;Duration\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Extension&lt;a name=\&quot;Extension\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Optional Extensions Element - found in all resources.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;HumanName&lt;a name=\&quot;HumanName\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A human's name with the ability to identify parts and usage.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Identifier&lt;a name=\&quot;Identifier\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A technical identifier - identifies some entity uniquely and unambiguously.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Money&lt;a name=\&quot;Money\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = &amp;quot;urn:std:iso:4217&amp;quot; - currency).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Narrative&lt;a name=\&quot;Narrative\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A human-readable formatted text, including images.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Period&lt;a name=\&quot;Period\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A time period defined by a start and end date and optionally time.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Quantity&lt;a name=\&quot;Quantity\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Range&lt;a name=\&quot;Range\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A set of ordered Quantities defined by a low and high limit.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ratio&lt;a name=\&quot;Ratio\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A relationship of two Quantity values - expressed as a numerator and a denominator.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ResourceReference&lt;a name=\&quot;ResourceReference\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A reference from one resource to another.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SampledData&lt;a name=\&quot;SampledData\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A series of measurements taken by a device, with upper and lower limits. There may be more than one dimension in the data.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Schedule&lt;a name=\&quot;Schedule\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Specifies an event that may occur multiple times. Schedules are used for to reord when things are expected or requested to occur.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;base64Binary&lt;a name=\&quot;base64Binary\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A stream of bytes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;boolean&lt;a name=\&quot;boolean\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Value of &amp;quot;true&amp;quot; or &amp;quot;false&amp;quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;code&lt;a name=\&quot;code\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;date&lt;a name=\&quot;date\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A date, or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date.  Dates SHALL be valid dates.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;dateTime&lt;a name=\&quot;dateTime\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided but may also be ignored.  Dates SHALL be valid dates.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;decimal&lt;a name=\&quot;decimal\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A rational number with implicit precision&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;id&lt;a name=\&quot;id\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A whole number in the range 0 to 2^64-1, optionally represented in hex, a uuid, an oid or any other combination of lower-case letters a-z, numerals, &amp;quot;-&amp;quot; and &amp;quot;.&amp;quot;, with a length limit of 36 characters&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;instant&lt;a name=\&quot;instant\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;An instant in time - known at least to the second&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;integer&lt;a name=\&quot;integer\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A whole number&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;oid&lt;a name=\&quot;oid\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;An oid represented as a URI&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;string&lt;a name=\&quot;string\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A sequence of Unicode characters&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;uri&lt;a name=\&quot;uri\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;String of characters used to identify a name or a resource&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;uuid&lt;a name=\&quot;uuid\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A UUID, represented as a URI&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;AdverseReaction&lt;a name=\&quot;AdverseReaction\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Records an unexpected reaction suspected to be related to the exposure of the reaction subject to a substance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Alert&lt;a name=\&quot;Alert\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Prospective warnings of potential issues when providing care to the patient.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;AllergyIntolerance&lt;a name=\&quot;AllergyIntolerance\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Indicates the patient has a susceptibility to an adverse reaction upon exposure to a specified substance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CarePlan&lt;a name=\&quot;CarePlan\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Composition&lt;a name=\&quot;Composition\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ConceptMap&lt;a name=\&quot;ConceptMap\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A statement of relationships from one set of concepts to one or more other concept systems.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Condition&lt;a name=\&quot;Condition\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Conformance&lt;a name=\&quot;Conformance\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Device&lt;a name=\&quot;Device\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DeviceObservationReport&lt;a name=\&quot;DeviceObservationReport\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Describes the data produced by a device at a point in time.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DiagnosticOrder&lt;a name=\&quot;DiagnosticOrder\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A request for a diagnostic investigation service to be performed.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DiagnosticReport&lt;a name=\&quot;DiagnosticReport\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DocumentManifest&lt;a name=\&quot;DocumentManifest\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A manifest that defines a set of documents.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;DocumentReference&lt;a name=\&quot;DocumentReference\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A reference to a document.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Encounter&lt;a name=\&quot;Encounter\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FamilyHistory&lt;a name=\&quot;FamilyHistory\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Significant health events and conditions for people related to the subject relevant in the context of care for the subject.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Group&lt;a name=\&quot;Group\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized.  I.e. A collection of entities that isn't an Organization.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ImagingStudy&lt;a name=\&quot;ImagingStudy\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Immunization&lt;a name=\&quot;Immunization\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Immunization event information.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ImmunizationRecommendation&lt;a name=\&quot;ImmunizationRecommendation\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A patient's point-of-time immunization status and recommendation with optional supporting justification.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;List&lt;a name=\&quot;List\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A set of information summarized from a list of other resources.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Location&lt;a name=\&quot;Location\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Media&lt;a name=\&quot;Media\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Medication&lt;a name=\&quot;Medication\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Primarily used for identification and definition of Medication, but also covers ingredients and packaging.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MedicationAdministration&lt;a name=\&quot;MedicationAdministration\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Describes the event of a patient being given a dose of a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.\n\nRelated resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MedicationDispense&lt;a name=\&quot;MedicationDispense\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MedicationPrescription&lt;a name=\&quot;MedicationPrescription\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;An order for both supply of the medication and the instructions for administration of the medicine to a patient.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MedicationStatement&lt;a name=\&quot;MedicationStatement\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient or another clinician.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;MessageHeader&lt;a name=\&quot;MessageHeader\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;The header for a message exchange that is either requesting or responding to an action.  The resource(s) that are the subject of the action as well as other Information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Observation&lt;a name=\&quot;Observation\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Measurements and simple assertions made about a patient, device or other subject.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OperationOutcome&lt;a name=\&quot;OperationOutcome\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A collection of error, warning or information messages that result from a system action.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Order&lt;a name=\&quot;Order\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A request to perform an action.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OrderResponse&lt;a name=\&quot;OrderResponse\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A response to an order.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Organization&lt;a name=\&quot;Organization\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Other&lt;a name=\&quot;Other\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Other is a conformant for handling resource concepts not yet defined for FHIR or outside HL7's scope of interest.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Patient&lt;a name=\&quot;Patient\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Demographics and other administrative information about a person or animal receiving care or other health-related services.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Practitioner&lt;a name=\&quot;Practitioner\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A person who is directly or indirectly involved in the provisioning of healthcare.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Procedure&lt;a name=\&quot;Procedure\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;An action that is performed on a patient. This can be a physical 'thing' like an operation, or less invasive like counseling or hypnotherapy.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Profile&lt;a name=\&quot;Profile\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Provenance&lt;a name=\&quot;Provenance\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Provenance information that describes the activity that led to the creation of a set of resources. This information can be used to help determine their reliability or trace where the information in them came from. The focus of the provenance resource is record keeping, audit and traceability, and not explicit statements of clinical significance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Query&lt;a name=\&quot;Query\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A description of a query with a set of parameters.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Questionnaire&lt;a name=\&quot;Questionnaire\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RelatedPerson&lt;a name=\&quot;RelatedPerson\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SecurityEvent&lt;a name=\&quot;SecurityEvent\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Specimen&lt;a name=\&quot;Specimen\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Sample for analysis.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Substance&lt;a name=\&quot;Substance\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A homogeneous material with a definite composition.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Supply&lt;a name=\&quot;Supply\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A supply - a  request for something, and provision of what is supplied.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ValueSet&lt;a name=\&quot;ValueSet\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A value set specifies a set of codes drawn from one or more code systems.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  },
+  &quot;identifier&quot;: &quot;http://hl7.org/fhir/vs/defined-types&quot;,
+  &quot;name&quot;: &quot;FHIRDefinedType&quot;,
+  &quot;publisher&quot;: &quot;HL7 (FHIR Project)&quot;,
+  &quot;telecom&quot;: [
+    {
+      &quot;system&quot;: &quot;url&quot;,
+      &quot;value&quot;: &quot;http://hl7.org/fhir&quot;
+    },
+    {
+      &quot;system&quot;: &quot;email&quot;,
+      &quot;value&quot;: &quot;fhir@lists.hl7.org&quot;
+    }
+  ],
+  &quot;description&quot;: &quot;Either a resource or a data type&quot;,
+  &quot;status&quot;: &quot;draft&quot;,
+  &quot;date&quot;: &quot;2014-10-08T09:17:44.378+11:00&quot;,
+  &quot;define&quot;: {
+    &quot;system&quot;: &quot;http://hl7.org/fhir/defined-types&quot;,
+    &quot;caseSensitive&quot;: true,
+    &quot;concept&quot;: [
+      {
+        &quot;code&quot;: &quot;Address&quot;,
+        &quot;definition&quot;: &quot;There is a variety of postal address formats defined around the world. This format defines a superset that is the basis for all addresses around the world.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Age&quot;,
+        &quot;definition&quot;: &quot;There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.  If value is present, it SHALL be positive.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Attachment&quot;,
+        &quot;definition&quot;: &quot;For referring to data content defined in other formats.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;CodeableConcept&quot;,
+        &quot;definition&quot;: &quot;A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Coding&quot;,
+        &quot;definition&quot;: &quot;A reference to a code defined by a terminology system.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Contact&quot;,
+        &quot;definition&quot;: &quot;All kinds of technology mediated contact details for a person or organization, including telephone, email, etc.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Count&quot;,
+        &quot;definition&quot;: &quot;There SHALL be a code with a value of \&quot;1\&quot; if there is a value and it SHALL be an expression of length.  If system is present, it SHALL be UCUM.  If present, the value SHALL a whole number.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Distance&quot;,
+        &quot;definition&quot;: &quot;There SHALL be a code if there is a value and it SHALL be an expression of length.  If system is present, it SHALL be UCUM.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Duration&quot;,
+        &quot;definition&quot;: &quot;There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Extension&quot;,
+        &quot;definition&quot;: &quot;Optional Extensions Element - found in all resources.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;HumanName&quot;,
+        &quot;definition&quot;: &quot;A human's name with the ability to identify parts and usage.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Identifier&quot;,
+        &quot;definition&quot;: &quot;A technical identifier - identifies some entity uniquely and unambiguously.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Money&quot;,
+        &quot;definition&quot;: &quot;There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = \&quot;urn:std:iso:4217\&quot; - currency).&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Narrative&quot;,
+        &quot;definition&quot;: &quot;A human-readable formatted text, including images.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Period&quot;,
+        &quot;definition&quot;: &quot;A time period defined by a start and end date and optionally time.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Quantity&quot;,
+        &quot;definition&quot;: &quot;A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Range&quot;,
+        &quot;definition&quot;: &quot;A set of ordered Quantities defined by a low and high limit.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Ratio&quot;,
+        &quot;definition&quot;: &quot;A relationship of two Quantity values - expressed as a numerator and a denominator.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;ResourceReference&quot;,
+        &quot;definition&quot;: &quot;A reference from one resource to another.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;SampledData&quot;,
+        &quot;definition&quot;: &quot;A series of measurements taken by a device, with upper and lower limits. There may be more than one dimension in the data.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Schedule&quot;,
+        &quot;definition&quot;: &quot;Specifies an event that may occur multiple times. Schedules are used for to reord when things are expected or requested to occur.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;base64Binary&quot;,
+        &quot;definition&quot;: &quot;A stream of bytes&quot;
+      },
+      {
+        &quot;code&quot;: &quot;boolean&quot;,
+        &quot;definition&quot;: &quot;Value of \&quot;true\&quot; or \&quot;false\&quot;&quot;
+      },
+      {
+        &quot;code&quot;: &quot;code&quot;,
+        &quot;definition&quot;: &quot;A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents&quot;
+      },
+      {
+        &quot;code&quot;: &quot;date&quot;,
+        &quot;definition&quot;: &quot;A date, or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date.  Dates SHALL be valid dates.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;dateTime&quot;,
+        &quot;definition&quot;: &quot;A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided but may also be ignored.  Dates SHALL be valid dates.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;decimal&quot;,
+        &quot;definition&quot;: &quot;A rational number with implicit precision&quot;
+      },
+      {
+        &quot;code&quot;: &quot;id&quot;,
+        &quot;definition&quot;: &quot;A whole number in the range 0 to 2^64-1, optionally represented in hex, a uuid, an oid or any other combination of lower-case letters a-z, numerals, \&quot;-\&quot; and \&quot;.\&quot;, with a length limit of 36 characters&quot;
+      },
+      {
+        &quot;code&quot;: &quot;instant&quot;,
+        &quot;definition&quot;: &quot;An instant in time - known at least to the second&quot;
+      },
+      {
+        &quot;code&quot;: &quot;integer&quot;,
+        &quot;definition&quot;: &quot;A whole number&quot;
+      },
+      {
+        &quot;code&quot;: &quot;oid&quot;,
+        &quot;definition&quot;: &quot;An oid represented as a URI&quot;
+      },
+      {
+        &quot;code&quot;: &quot;string&quot;,
+        &quot;definition&quot;: &quot;A sequence of Unicode characters&quot;
+      },
+      {
+        &quot;code&quot;: &quot;uri&quot;,
+        &quot;definition&quot;: &quot;String of characters used to identify a name or a resource&quot;
+      },
+      {
+        &quot;code&quot;: &quot;uuid&quot;,
+        &quot;definition&quot;: &quot;A UUID, represented as a URI&quot;
+      },
+      {
+        &quot;code&quot;: &quot;AdverseReaction&quot;,
+        &quot;definition&quot;: &quot;Records an unexpected reaction suspected to be related to the exposure of the reaction subject to a substance.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Alert&quot;,
+        &quot;definition&quot;: &quot;Prospective warnings of potential issues when providing care to the patient.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;AllergyIntolerance&quot;,
+        &quot;definition&quot;: &quot;Indicates the patient has a susceptibility to an adverse reaction upon exposure to a specified substance.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;CarePlan&quot;,
+        &quot;definition&quot;: &quot;Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Composition&quot;,
+        &quot;definition&quot;: &quot;A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;ConceptMap&quot;,
+        &quot;definition&quot;: &quot;A statement of relationships from one set of concepts to one or more other concept systems.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Condition&quot;,
+        &quot;definition&quot;: &quot;Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Conformance&quot;,
+        &quot;definition&quot;: &quot;A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Device&quot;,
+        &quot;definition&quot;: &quot;This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;DeviceObservationReport&quot;,
+        &quot;definition&quot;: &quot;Describes the data produced by a device at a point in time.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;DiagnosticOrder&quot;,
+        &quot;definition&quot;: &quot;A request for a diagnostic investigation service to be performed.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;DiagnosticReport&quot;,
+        &quot;definition&quot;: &quot;The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;DocumentManifest&quot;,
+        &quot;definition&quot;: &quot;A manifest that defines a set of documents.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;DocumentReference&quot;,
+        &quot;definition&quot;: &quot;A reference to a document.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Encounter&quot;,
+        &quot;definition&quot;: &quot;An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;FamilyHistory&quot;,
+        &quot;definition&quot;: &quot;Significant health events and conditions for people related to the subject relevant in the context of care for the subject.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Group&quot;,
+        &quot;definition&quot;: &quot;Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized.  I.e. A collection of entities that isn't an Organization.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;ImagingStudy&quot;,
+        &quot;definition&quot;: &quot;Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Immunization&quot;,
+        &quot;definition&quot;: &quot;Immunization event information.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;ImmunizationRecommendation&quot;,
+        &quot;definition&quot;: &quot;A patient's point-of-time immunization status and recommendation with optional supporting justification.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;List&quot;,
+        &quot;definition&quot;: &quot;A set of information summarized from a list of other resources.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Location&quot;,
+        &quot;definition&quot;: &quot;Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Media&quot;,
+        &quot;definition&quot;: &quot;A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Medication&quot;,
+        &quot;definition&quot;: &quot;Primarily used for identification and definition of Medication, but also covers ingredients and packaging.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;MedicationAdministration&quot;,
+        &quot;definition&quot;: &quot;Describes the event of a patient being given a dose of a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.\n\nRelated resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;MedicationDispense&quot;,
+        &quot;definition&quot;: &quot;Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;MedicationPrescription&quot;,
+        &quot;definition&quot;: &quot;An order for both supply of the medication and the instructions for administration of the medicine to a patient.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;MedicationStatement&quot;,
+        &quot;definition&quot;: &quot;A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient or another clinician.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;MessageHeader&quot;,
+        &quot;definition&quot;: &quot;The header for a message exchange that is either requesting or responding to an action.  The resource(s) that are the subject of the action as well as other Information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Observation&quot;,
+        &quot;definition&quot;: &quot;Measurements and simple assertions made about a patient, device or other subject.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;OperationOutcome&quot;,
+        &quot;definition&quot;: &quot;A collection of error, warning or information messages that result from a system action.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Order&quot;,
+        &quot;definition&quot;: &quot;A request to perform an action.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;OrderResponse&quot;,
+        &quot;definition&quot;: &quot;A response to an order.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Organization&quot;,
+        &quot;definition&quot;: &quot;A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Other&quot;,
+        &quot;definition&quot;: &quot;Other is a conformant for handling resource concepts not yet defined for FHIR or outside HL7's scope of interest.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Patient&quot;,
+        &quot;definition&quot;: &quot;Demographics and other administrative information about a person or animal receiving care or other health-related services.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Practitioner&quot;,
+        &quot;definition&quot;: &quot;A person who is directly or indirectly involved in the provisioning of healthcare.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Procedure&quot;,
+        &quot;definition&quot;: &quot;An action that is performed on a patient. This can be a physical 'thing' like an operation, or less invasive like counseling or hypnotherapy.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Profile&quot;,
+        &quot;definition&quot;: &quot;A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Provenance&quot;,
+        &quot;definition&quot;: &quot;Provenance information that describes the activity that led to the creation of a set of resources. This information can be used to help determine their reliability or trace where the information in them came from. The focus of the provenance resource is record keeping, audit and traceability, and not explicit statements of clinical significance.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Query&quot;,
+        &quot;definition&quot;: &quot;A description of a query with a set of parameters.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Questionnaire&quot;,
+        &quot;definition&quot;: &quot;A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;RelatedPerson&quot;,
+        &quot;definition&quot;: &quot;Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;SecurityEvent&quot;,
+        &quot;definition&quot;: &quot;A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Specimen&quot;,
+        &quot;definition&quot;: &quot;Sample for analysis.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Substance&quot;,
+        &quot;definition&quot;: &quot;A homogeneous material with a definite composition.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;Supply&quot;,
+        &quot;definition&quot;: &quot;A supply - a  request for something, and provision of what is supplied.&quot;
+      },
+      {
+        &quot;code&quot;: &quot;ValueSet&quot;,
+        &quot;definition&quot;: &quot;A value set specifies a set of codes drawn from one or more code systems.&quot;
+      }
+    ]
+  }
+}
+</pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:17+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

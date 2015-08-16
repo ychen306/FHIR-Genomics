@@ -1,0 +1,244 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Example for Profile Core extensions for Questionnaire</title>
+ <link rel="Stylesheet" href="fhir.css" type="text/css" media="screen"/>
+</head>
+<body>
+<p>&nbsp;</p>
+<div class="example">
+<p>Example for Profile Core extensions for Questionnaire</p>
+<p><a href="questionnaire-extensions-example.json">Raw JSON</a></p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;Questionnaire&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;\n      &lt;pre&gt;\n            Comorbidity? YES\n              Cardial Comorbidity? YES\n                Angina? YES\n                MI? NO\n              Vascular Comorbidity?\n                (no answers)\n              ...\n            Histopathology\n              Abdominal\n                pT category: 1\n              ...\n          &lt;/pre&gt;\n    &lt;/div&gt;&quot;
+  },
+  &quot;contained&quot;: [
+    {
+      &quot;resourceType&quot;: &quot;Patient&quot;,
+      &quot;id&quot;: &quot;patsub&quot;,
+      &quot;identifier&quot;: [
+        {
+          &quot;system&quot;: &quot;http://cancer.questionnaire.org/systems/id/patientnr&quot;,
+          &quot;value&quot;: &quot;A34442332&quot;
+        },
+        {
+          &quot;label&quot;: &quot;Dutch BSN&quot;,
+          &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.2.4.6.3&quot;,
+          &quot;value&quot;: &quot;188912345&quot;
+        }
+      ],
+      &quot;gender&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/AdministrativeGender&quot;,
+            &quot;code&quot;: &quot;M&quot;
+          }
+        ]
+      },
+      &quot;birthDate&quot;: &quot;1972-11-30&quot;
+    },
+    {
+      &quot;resourceType&quot;: &quot;Practitioner&quot;,
+      &quot;id&quot;: &quot;questauth&quot;,
+      &quot;identifier&quot;: [
+        {
+          &quot;label&quot;: &quot;AUMC, Den Helder&quot;,
+          &quot;system&quot;: &quot;http://cancer.questionnaire.org/systems/id/org&quot;,
+          &quot;value&quot;: &quot;AUMC&quot;
+        }
+      ]
+    },
+    {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;obs.pt-category&quot;,
+      &quot;name&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+            &quot;code&quot;: &quot;53786006&quot;,
+            &quot;display&quot;: &quot;pT category&quot;
+          }
+        ]
+      },
+      &quot;valueCodeableConcept&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+            &quot;code&quot;: &quot;443357004&quot;,
+            &quot;display&quot;: &quot;pT1a category&quot;
+          }
+        ]
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;reliability&quot;: &quot;unknown&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;authored&quot;: &quot;2013-02-19T14:15:00&quot;,
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;#patsub&quot;
+  },
+  &quot;author&quot;: {
+    &quot;reference&quot;: &quot;#questauth&quot;
+  },
+  &quot;name&quot;: {
+    &quot;text&quot;: &quot;Cancer Quality Forum Questionnaire 2012&quot;
+  },
+  &quot;group&quot;: {
+    &quot;group&quot;: [
+      {
+        &quot;name&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/sections&quot;,
+              &quot;code&quot;: &quot;COMORBIDITY&quot;
+            }
+          ]
+        },
+        &quot;question&quot;: [
+          {
+            &quot;name&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/questions&quot;,
+                  &quot;code&quot;: &quot;COMORB&quot;
+                }
+              ]
+            },
+            &quot;choice&quot;: [
+              {
+                &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/yesno&quot;,
+                &quot;code&quot;: &quot;1&quot;,
+                &quot;display&quot;: &quot;Yes&quot;
+              }
+            ],
+            &quot;group&quot;: [
+              {
+                &quot;name&quot;: {
+                  &quot;coding&quot;: [
+                    {
+                      &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/sections&quot;,
+                      &quot;code&quot;: &quot;CARDIAL&quot;
+                    }
+                  ]
+                },
+                &quot;question&quot;: [
+                  {
+                    &quot;name&quot;: {
+                      &quot;coding&quot;: [
+                        {
+                          &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/questions&quot;,
+                          &quot;code&quot;: &quot;COMORBCAR&quot;
+                        }
+                      ]
+                    },
+                    &quot;choice&quot;: [
+                      {
+                        &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/yesno&quot;,
+                        &quot;code&quot;: &quot;1&quot;
+                      }
+                    ]
+                  },
+                  {
+                    &quot;name&quot;: {
+                      &quot;coding&quot;: [
+                        {
+                          &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/questions&quot;,
+                          &quot;code&quot;: &quot;COMCAR00&quot;,
+                          &quot;display&quot;: &quot;Angina Pectoris&quot;
+                        },
+                        {
+                          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+                          &quot;code&quot;: &quot;194828000&quot;,
+                          &quot;display&quot;: &quot;Angina (disorder)&quot;
+                        }
+                      ]
+                    },
+                    &quot;choice&quot;: [
+                      {
+                        &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/yesno&quot;,
+                        &quot;code&quot;: &quot;1&quot;
+                      }
+                    ]
+                  },
+                  {
+                    &quot;name&quot;: {
+                      &quot;coding&quot;: [
+                        {
+                          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+                          &quot;code&quot;: &quot;22298006&quot;,
+                          &quot;display&quot;: &quot;Myocardial infarction (disorder)&quot;
+                        }
+                      ]
+                    },
+                    &quot;choice&quot;: [
+                      {
+                        &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/yesno&quot;,
+                        &quot;code&quot;: &quot;0&quot;
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                &quot;name&quot;: {
+                  &quot;coding&quot;: [
+                    {
+                      &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/sections&quot;,
+                      &quot;code&quot;: &quot;VASCULAR&quot;
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        &quot;name&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/sections&quot;,
+              &quot;code&quot;: &quot;HISTOPATHOLOGY&quot;
+            }
+          ]
+        },
+        &quot;group&quot;: [
+          {
+            &quot;name&quot;: {
+              &quot;coding&quot;: [
+                {
+                  &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/sections&quot;,
+                  &quot;code&quot;: &quot;ABDOMINAL&quot;
+                }
+              ]
+            },
+            &quot;question&quot;: [
+              {
+                &quot;name&quot;: {
+                  &quot;coding&quot;: [
+                    {
+                      &quot;system&quot;: &quot;http://cancer.questionnaire.org/system/code/questions&quot;,
+                      &quot;code&quot;: &quot;STADPT&quot;,
+                      &quot;display&quot;: &quot;pT category&quot;
+                    }
+                  ]
+                },
+                &quot;dataResource&quot;: {
+                  &quot;reference&quot;: &quot;#obs.pt-category&quot;
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,370 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>List - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><b>List</b></li>          <!-- list.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="list-examples.html">Examples</a></li><li><a href="list-definitions.html">Formal Definitions</a></li><li><a href="list-mappings.html">Mappings</a></li><li><a href="list-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">6.1<a name="6.1"> </a></span> Resource List - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+A set of information summarized from a list of other resources. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">6.1.1<a name="6.1.1"> </a></span> Scope and Usage</h2>
+<p>
+List resources are used in many places, including allergies, medications, alerts, medical history, etc. 
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">6.1.2<a name="6.1.2"> </a></span> Boundaries and Relationships</h2>
+<p>
+There are 2 resources that provide for constructing collections of other resources:
+</p>
+<ul>
+ <li>This List resource - enumerates a collection of resources that are in some list, and provides features for managing the list. The list resource references other resources</li>
+ <li>The <a href="group.html">Group resource</a> - defines a group of specific people, animals, devices, etc. by enumerating them, or by describing qualities that group members have. The group resource refers to other resources, possibly implicitly</li>
+</ul>
+</div>
+
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">6.1.3<a name="6.1.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="158.0" width="728.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="148.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="224.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="224.0" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="112.0">List<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="6.0"><a xlink:href="list-definitions.html#List.identifier"><title>Identifier for the List assigned for business purposes outside the context of FHIR</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..*</text><text fill="black" class="diagram-class-detail" y="56.0" x="6.0"><a xlink:href="list-definitions.html#List.code"><title>This code defines the purpose of the list - why it was created</title>code</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-list-example-codes.html"><title>What the purpose of a list is</title>ListPurpose</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="70.0" x="6.0"><a xlink:href="list-definitions.html#List.subject"><title>The common subject (or patient) of the resources that are in the list, if there is one</title>subject</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>|<a xlink:href="group.html#Group">Group</a>|<a xlink:href="device.html#Device">Device</a>|<a xlink:href="location.html#Location">Location</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="84.0" x="6.0"><a xlink:href="list-definitions.html#List.source"><title>The entity responsible for deciding what the contents of the list were</title>source</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a xlink:href="patient.html#Patient">Patient</a>|<a xlink:href="device.html#Device">Device</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="6.0"><a xlink:href="list-definitions.html#List.date"><title>The date that the list was prepared</title>date</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="112.0" x="6.0"><a xlink:href="list-definitions.html#List.ordered"><title>Whether items in the list have a meaningful order (this element modifies the meaning of other elements)</title>ordered</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 0..1</text><text fill="black" class="diagram-class-detail" y="126.0" x="6.0"><a xlink:href="list-definitions.html#List.mode"><title>How this list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted (this element modifies the meaning of other elements)</title>mode</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="list-mode.html"><title>The processing mode that applies to this list</title>ListMode</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="140.0" x="6.0"><a xlink:href="list-definitions.html#List.emptyReason"><title>If the list is empty, why the list is empty</title>emptyReason</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-list-empty-reason.html"><title>If a list is empty, why it is empty</title>ListEmptyReason</a>&gt;&gt;</text><rect height="92.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="184.0" filter="url(#shadow)" rx="4" y="28.0" ry="4" x="344.0"/><line style="stroke:dimgrey;stroke-width:1" y1="56.0" y2="56.0" x2="528.0" x1="344.0"/><text fill="black" class="diagram-class-title" y="48.0" x="436.0">Entry</text><text fill="black" class="diagram-class-detail" y="70.0" x="350.0"><a xlink:href="list-definitions.html#List.entry.flag"><title>The flag allows the system constructing the list to make one or more statements about the role and significance of the item in the list</title>flag</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..* &lt;&lt;<a xlink:href="valueset-list-item-flag.html"><title>Codes that provide further information about the reason and meaning of the item in the list</title>ListItemFlag</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="84.0" x="350.0"><a xlink:href="list-definitions.html#List.entry.deleted"><title>True if this item is marked as deleted in the list (this element modifies the meaning of other elements)</title>deleted</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 0..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="350.0"><a xlink:href="list-definitions.html#List.entry.date"><title>When this item was added to the list</title>date</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="112.0" x="350.0"><a xlink:href="list-definitions.html#List.entry.item"><title>A reference to the actual resource from which data was derived</title>item</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 1..1</text><line style="stroke:navy;stroke-width:1" y1="74.0" y2="74.0" x2="344.0" x1="224.0"/><polygon transform="rotate(0.0 224.0 74.0)" style="fill:navy;stroke:navy;stroke-width:1" points="224.0,74.0 230.0,78.0 236.0,74.0 230.0,70.0 224.0,74.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="20.0" y="67.0" x="274.0"/><text fill="black" class="diagram-class-linkage" y="77.0" x="284.0"><a xlink:href="list-definitions.html#List.entry"><title>Entries in this list</title>entry</a></text><text fill="black" class="diagram-class-linkage" y="70.0" x="324.0">0..*</text></svg>
+
+
+<a name="def"> </a>
+<a name="list"> </a>
+<a name="List"> </a>
+<pre class="spec">
+&lt;<a title="A set of information summarized from a list of other resources." class="dict" href="list-definitions.html#List"><b>List</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifier for the List assigned for business purposes outside the context of FHIR." class="dict" href="list-definitions.html#List.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Business identifier</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="This code defines the purpose of the list - why it was created." class="dict" href="list-definitions.html#List.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-list-example-codes.html">What the purpose of this list is</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+ &lt;<a title="The common subject (or patient) of the resources that are in the list, if there is one." class="dict" href="list-definitions.html#List.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>|<a href="group.html#Group">Group</a>|<a href="device.html#Device">Device</a>|<a href="location.html#Location">Location</a>)</span> <span style="color: navy">
+     If all resources have the same subject</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="The entity responsible for deciding what the contents of the list were." class="dict" href="list-definitions.html#List.source"><b>source</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="patient.html#Patient">Patient</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">
+     Who and/or what defined the list contents</span><span style="color: Gray"> --&gt;</span>&lt;/source&gt;
+ &lt;<a title="The date that the list was prepared." class="dict" href="list-definitions.html#List.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the list was prepared</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Whether items in the list have a meaningful order (this element modifies the meaning of other elements)" class="dict" href="list-definitions.html#List.ordered"><span style="text-decoration: underline"><b>ordered</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Whether items in the list have a meaningful order</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="How this list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted (this element modifies the meaning of other elements)" class="dict" href="list-definitions.html#List.mode"><span style="text-decoration: underline"><b>mode</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="list-mode.html">working | snapshot | changes</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Entries in this list." class="dict" href="list-definitions.html#List.entry"><b>entry</b></a>&gt;  <span style="color: Gray">&lt;!-- <span title="Inv-1: A list can only have an emptyReason if it is empty" style="color: brown"><b><img alt="??" src="lock.png"/> 0..*</b></span> Entries in the list --&gt;</span>
+  &lt;<a title="The flag allows the system constructing the list to make one or more statements about the role and significance of the item in the list." class="dict" href="list-definitions.html#List.entry.flag"><b>flag</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-list-item-flag.html">Workflow information about this item</a></span><span style="color: Gray"> --&gt;</span>&lt;/flag&gt;
+  &lt;<a title="True if this item is marked as deleted in the list (this element modifies the meaning of other elements)" class="dict" href="list-definitions.html#List.entry.deleted"><span style="text-decoration: underline"><b>deleted</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: The deleted flag can only be used if the mode of the list is &quot;changes&quot;" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">If this item is actually marked as deleted</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="When this item was added to the list." class="dict" href="list-definitions.html#List.entry.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When item added to list</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A reference to the actual resource from which data was derived." class="dict" href="list-definitions.html#List.entry.item"><b>item</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Actual entry</span><span style="color: Gray"> --&gt;</span>&lt;/item&gt;
+ &lt;/entry&gt;
+ &lt;<a title="If the list is empty, why the list is empty." class="dict" href="list-definitions.html#List.emptyReason"><b>emptyReason</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: A list can only have an emptyReason if it is empty" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-list-empty-reason.html">Why list is empty</a></span><span style="color: Gray"> --&gt;</span>&lt;/emptyReason&gt;
+&lt;/List&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="list.xsd">Schema</a>/<a href="list.sch">Schematron</a>, 
+<a href="list.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">6.1.3.1<a name="6.1.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="ListPurpose" valign="top">List.code </td><td valign="top">What the purpose of a list is</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-list-example-codes.html">http://hl7.org/fhir/vs/list-example-codes</a></td> </tr>
+ <tr><td title="ListMode" valign="top">List.mode </td><td valign="top">The processing mode that applies to this list</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="list-mode.html">http://hl7.org/fhir/list-mode</a></td> </tr>
+ <tr><td title="ListItemFlag" valign="top">List.entry.flag </td><td valign="top">Codes that provide further information about the reason and meaning of the item in the list</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-list-item-flag.html">http://hl7.org/fhir/vs/list-item-flag</a></td> </tr>
+ <tr><td title="ListEmptyReason" valign="top">List.emptyReason </td><td valign="top">If a list is empty, why it is empty</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-list-empty-reason.html">http://hl7.org/fhir/vs/list-empty-reason</a></td> </tr>
+</table>
+<p> </p>
+
+
+<h3><span class="sectioncount">6.1.3.2<a name="6.1.3.2"> </a></span> Constraints</h3><ul><li><b title="Formal Invariant Identifier">Inv-1</b>: A list can only have an emptyReason if it is empty (xpath: <span style="font-family: Courier New, monospace">not(exists(f:emptyReason) and exists(f:entry))</span>)</li><li><b title="Formal Invariant Identifier">Inv-2</b>: The deleted flag can only be used if the mode of the list is &quot;changes&quot; (xpath: <span style="font-family: Courier New, monospace">(f:mode/@value = 'changes') or not(exists(f:entry/f:item/f:deleted))</span>)</li></ul>
+
+
+  <!-- insert xhtml content here -->
+<a name="status"> </a>
+<h2><span class="sectioncount">6.1.4<a name="6.1.4"> </a></span> List Mode &amp; Item Deleted</h2>
+
+<p>
+There are several different kinds of uses for a List resource:
+</p>
+<table class="codes">
+ <tr><td>working</td><td>This list is the master list, maintained in an ongoing fashion with regular updates as the real world list it is tracking changes.</td></tr>
+ <tr><td>snapshot</td><td>This list was prepared as a snapshot. It should not be assumed to be current.</td></tr>
+ <tr><td>changes</td><td>The list is prepared as a statement of changes that have been made or recommended.</td></tr>
+</table>
+
+
+<p>
+The final mode - a changes list, may include deleted items. A typical case is a medication
+list in a discharge summary, where the list includes items that have been both added and deleted.
+In order to ensure that the list is safe to process, any item where the flag implies that the 
+item has actually been deleted SHALL have the deleted element set to true. 
+</p>
+<p>
+Note that there is no implication about the status of a resource that has been deleted.
+The only statement that is made is that the resource has been dropped from the list. 
+However applications should ensure that the implication of adding or deleting items
+from the list is consistent with the logical status of the resource and its contents.
+</p>
+<p>
+A proper use of List.mode = &quot;changes&quot; with a deleted resource is in a medications list 
+for a discharge summary. See Example &quot;med-list&quot;. An improper use would be if the list 
+was a working list of patient medications in a clinical tracking system, and list item
+flags were used to implement version tracking history within the resource.
+</p>
+
+<a name="narrative"> </a>
+<h2><span class="sectioncount">6.1.5<a name="6.1.5"> </a></span> Narrative Content</h2>
+
+<p>
+The narrative portion of the List resource should contain a summary 
+of key properties of the items in the list, along with a human-readable 
+summary of their flags (if present).
+</p>
+<p>
+An HTML table is the recommended approach, though this is not required.
+There should be a representation in the narrative for each item in the 
+list, and vice versa, along with clear use of visual hints (borders, 
+lines, bullet marks, etc.) to ensure that human readers do not get 
+confused about which flags belongs with which item on space-poor displays (e.g. to prevent wrapping from separating the flags from the items).
+</p>
+
+<p>
+This means that the narrative content of the list will be limited to the
+version of the contained resources at the time the list was last updated. It may be
+even earlier if the narrative isn't updated to reflect the most recent version
+of all referenced resources at each update.  Best practice for 'working' lists is to update 
+the narrative to reflect the most recent content of all list elements each time the list
+is revised.  Lists should therefore not be
+relied on as a real-time view of the referenced content.  There are a few
+possible approaches to work around this issue:
+</p>
+<ul>
+ <li>Provide minimal information about the listed resources, possibly limited to only a link.  
+ (Not recommended as this severely limits the usefulness of the narrative and is particularly
+ problematic for things like documents where the only attested content might be the List
+ narrative)</li>
+ <li>Include only &quot;generated&quot; narrative, so the retriever can easily generate their own &quot;current&quot;
+ view of the list by retrieving the referenced resources, ignoring the fixed narrative.</li>
+ <li>The server hosting the list can subscribe to all referenced resources and auto-update the
+ narrative each time one of the referenced resources changes (or at least on a semi-frequent basis)</li>
+</ul>
+
+<a name="emptyReason"> </a>
+<h2><span class="sectioncount">6.1.6<a name="6.1.6"> </a></span> Empty Reason</h2>
+
+<p>
+If the list is empty, there could be several different reasons why this is so. For example:
+</p>
+<ul>
+ <li>There are no appropriate entries for the list (i.e. the patient has no known medications/allergies/history)</li>
+ <li>The sender (human or system) deemed that these were not related to this context of patient care (usually for privacy related reasons)</li>
+ <li>The source system doesn't support these type of entries</li>
+ <li>The information to populate the list wasn't gathered - i.e. &quot;Not asked&quot;</li>
+</ul>
+<p>
+Given these possibilities, and the common and significant first case, source systems SHOULD 
+provide an empty reason if the list is empty. Because of the importance of this case, the 
+<a href="special-values.html">special value &quot;nil known&quot;</a> should be used when 
+there are no (significant) entries in this context of care. Note that this concept is 
+sometimes described differently, such as &quot;patient denies taking medications&quot;, or 
+&quot;patient was unable to identify any relevant medical history&quot;.
+</p>
+<p>
+When receiving a list, systems should not assume that the list is complete (some entries may 
+have been withheld for a variety of reasons), unless there are specific trading partner
+arrangements in place or, if the list is empty, that there are actually nil known, 
+unless the &quot;nil known&quot; code is present.
+</p>
+<p>
+If the list is empty, the narrative should contain text equivalent to the empty reason.
+</p>
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">6.1.7<a name="6.1.7"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>code</td><td><a href="search.html#token">token</a></td><td>What the purpose of this list is</td><td>List.code</td></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>When the list was prepared</td><td>List.date</td></tr>
+<tr><td>empty-reason</td><td><a href="search.html#token">token</a></td><td>Why list is empty</td><td>List.emptyReason</td></tr>
+<tr><td>item</td><td><a href="search.html#reference">reference</a></td><td>Actual entry</td><td>List.entry.item<br/>(Any)</td></tr>
+<tr><td>source</td><td><a href="search.html#reference">reference</a></td><td>Who and/or what defined the list contents</td><td>List.source<br/>(<a href="device.html">Device</a>, <a href="patient.html">Patient</a>, <a href="practitioner.html">Practitioner</a>)</td></tr>
+<tr><td>subject</td><td><a href="search.html#reference">reference</a></td><td>If all resources have the same subject</td><td>List.subject<br/>(<a href="device.html">Device</a>, <a href="location.html">Location</a>, <a href="patient.html">Patient</a>, <a href="group.html">Group</a>)</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

@@ -1,0 +1,391 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>SecurityEvent - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><b>SecurityEvent</b></li>          <!-- securityevent.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="securityevent-examples.html">Examples</a></li><li><a href="securityevent-definitions.html">Formal Definitions</a></li><li><a href="securityevent-mappings.html">Mappings</a></li><li><a href="securityevent-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">6.7<a name="6.7"> </a></span> Resource SecurityEvent - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">6.7.1<a name="6.7.1"> </a></span> Scope and Usage</h2>
+<p>
+The security event is based on the ATNA Audit record definitions, originally from <a href="http://tools.ietf.org/html/rfc3881">RFC 3881</a>, and now managed by
+DICOM (see <a href="http://medical.nema.org/DICOM/2011/11_15pu.pdf">DICOM Part 15 Annex A5</a>). This resource is managed collaboratively between HL7, DICOM,
+and IHE for the MHD/mHealth initiatives. 
+</p>
+<p>
+The primary purpose of this resource is the maintenance of audit log information.  However, it can also be used for simple event-based notification or even
+general indexing of resources stored in a variety of repositories.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">6.7.2<a name="6.7.2"> </a></span> Background and Context</h2>
+<p>
+Servers that provide support for Security Event resources should not generally accept update or delete operations on the resources, as this would compromise the integrity of the audit record. 
+</p>
+<p>
+Security Events are created as events occur, to track and audit the events. Security Event resources are often (though not exclusively) created by the application responding to the read/query/create/update etc. event. 
+A <a href="provenance.html">Provenance resource</a> contains overlapping information, but is a record-keeping assertion that gathers information about the context in which the information in a resource was obtained. 
+Provenance resources are prepared by the application that initiates the create/update etc. of the resource.
+</p>
+</div>
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">6.7.3<a name="6.7.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="498.0" width="1086.8" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="36.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="137.60000000000002" filter="url(#shadow)" rx="4" y="200.0" ry="4" x="348.0"/><line style="stroke:dimgrey;stroke-width:1" y1="228.0" y2="228.0" x2="485.6" x1="348.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="220.0" x="416.8">SecurityEvent<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><rect height="120.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="228.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="302.8"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="530.8" x1="302.8"/><text fill="black" class="diagram-class-title" y="20.0" x="416.8">Event</text><text fill="black" class="diagram-class-detail" y="42.0" x="308.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.event.type"><title>Identifier for a family of the event</title>type</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 1..1 &lt;&lt;<a xlink:href="valueset-security-event-type.html"><title>Type of event</title>SecurityEventType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="56.0" x="308.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.event.subtype"><title>Identifier for the category of event</title>subtype</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..* &lt;&lt;<a xlink:href="valueset-security-event-sub-type.html"><title>Sub-type of event</title>SecurityEventSubType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="70.0" x="308.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.event.action"><title>Indicator for type of action performed during the event that generated the audit</title>action</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="security-event-action.html"><title>Indicator for type of action performed during the event that generated the audit.</title>SecurityEventAction</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="84.0" x="308.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.event.dateTime"><title>The time when the event occurred on the source</title>dateTime</a> : <a xlink:href="datatypes.html#instant">instant</a> 1..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="308.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.event.outcome"><title>Indicates whether the event succeeded or failed</title>outcome</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="security-event-outcome.html"><title>Indicates whether the event succeeded or failed</title>SecurityEventOutcome</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="112.0" x="308.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.event.outcomeDesc"><title>A free text description of the outcome of the event</title>outcomeDesc</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><rect height="134.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="224.0" filter="url(#shadow)" rx="4" y="151.0" ry="4" x="4.0"/><line style="stroke:dimgrey;stroke-width:1" y1="179.0" y2="179.0" x2="228.0" x1="4.0"/><text fill="black" class="diagram-class-title" y="171.0" x="116.0">Participant</text><text fill="black" class="diagram-class-detail" y="193.0" x="10.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.role"><title>Specification of the role(s) the user plays when performing the event. Usually the codes used in this element are local codes defined by the role-based access control security system used in the local context</title>role</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..* &lt;&lt;<a xlink:href="valueset-dicm-402-roleid.html"><title>Role(s) the user plays (from RBAC)</title>DICOMRoleId</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="207.0" x="10.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.reference"><title>Direct reference to a resource that identifies the participant</title>reference</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a xlink:href="patient.html#Patient">Patient</a>|<a xlink:href="device.html#Device">Device</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="221.0" x="10.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.userId"><title>Unique identifier for the user actively participating in the event</title>userId</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="235.0" x="10.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.altId"><title>Alternative Participant Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available</title>altId</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="249.0" x="10.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.name"><title>Human-meaningful name for the user</title>name</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="263.0" x="10.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.requestor"><title>Indicator that the user is or is not the requestor, or initiator, for the event being audited</title>requestor</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 1..1</text><text fill="black" class="diagram-class-detail" y="277.0" x="10.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.media"><title>Type of media involved. Used when the event is about exporting/importing onto media</title>media</a> : <a xlink:href="datatypes.html#Coding">Coding</a> 0..1</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="232.0" filter="url(#shadow)" rx="4" y="7.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="35.0" y2="35.0" x2="232.0" x1="0.0"/><text fill="black" class="diagram-class-title" y="27.0" x="116.0">Network</text><text fill="black" class="diagram-class-detail" y="49.0" x="6.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.network.identifier"><title>An identifier for the network access point of the user device for the audit event</title>identifier</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="63.0" x="6.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.network.type"><title>An identifier for the type of network access point that originated the audit event</title>type</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="network-type.html"><title>The type of network access point that originated the audit event</title>SecurityEventParticipantNetworkType</a>&gt;&gt;</text><rect height="78.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="192.0" filter="url(#shadow)" rx="4" y="179.0" ry="4" x="605.6"/><line style="stroke:dimgrey;stroke-width:1" y1="207.0" y2="207.0" x2="797.6" x1="605.6"/><text fill="black" class="diagram-class-title" y="199.0" x="701.6">Source</text><text fill="black" class="diagram-class-detail" y="221.0" x="611.6"><a xlink:href="securityevent-definitions.html#SecurityEvent.source.site"><title>Logical source location within the healthcare enterprise network</title>site</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="235.0" x="611.6"><a xlink:href="securityevent-definitions.html#SecurityEvent.source.identifier"><title>Identifier of the source where the event originated</title>identifier</a> : <a xlink:href="datatypes.html#string">string</a> 1..1</text><text fill="black" class="diagram-class-detail" y="249.0" x="611.6"><a xlink:href="securityevent-definitions.html#SecurityEvent.source.type"><title>Code specifying the type of source where event originated</title>type</a> : <a xlink:href="datatypes.html#Coding">Coding</a> 0..* &lt;&lt;<a xlink:href="valueset-security-source-type.html"><title>Code specifying the type of source where event originated</title>SecurityEventSourceType</a>&gt;&gt;</text><rect height="162.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="284.0" filter="url(#shadow)" rx="4" y="316.0" ry="4" x="274.8"/><line style="stroke:dimgrey;stroke-width:1" y1="344.0" y2="344.0" x2="558.8" x1="274.8"/><text fill="black" class="diagram-class-title" y="336.0" x="416.8">Object</text><text fill="black" class="diagram-class-detail" y="358.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.identifier"><title>Identifies a specific instance of the participant object. The reference should always be version specific</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..1</text><text fill="black" class="diagram-class-detail" y="372.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.reference"><title>Identifies a specific instance of the participant object. The reference should always be version specific</title>reference</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="386.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.type"><title>Object type being audited</title>type</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="object-type.html"><title>Code for the participant object type being audited</title>SecurityEventObjectType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="400.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.role"><title>Code representing the functional application role of Participant Object being audited</title>role</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="object-role.html"><title>Code representing the functional application role of Participant Object being audited</title>SecurityEventObjectRole</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="414.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.lifecycle"><title>Identifier for the data life-cycle stage for the participant object</title>lifecycle</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="object-lifecycle.html"><title>Identifier for the data life-cycle stage for the participant object</title>SecurityEventObjectLifecycle</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="428.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.sensitivity"><title>Denotes policy-defined sensitivity for the Participant Object ID such as VIP, HIV status, mental health status or similar topics</title>sensitivity</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-security-event-sensitivity.html"><title>The sensitivity of an object in a security event resource. May also encompass confidentiality and rudimentary access control</title>SecurityEventObjectSensitivity</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="442.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.name"><title>An instance-specific descriptor of the Participant Object ID audited, such as a person's name</title>name</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="456.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.description"><title>Text that describes the object in more detail</title>description</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="470.0" x="280.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.query"><title>The actual query for a query-type participant object</title>query</a> : <a xlink:href="datatypes.html#base64Binary">base64Binary</a> 0..1</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="108.0" filter="url(#shadow)" rx="4" y="365.0" ry="4" x="678.8"/><line style="stroke:dimgrey;stroke-width:1" y1="393.0" y2="393.0" x2="786.8" x1="678.8"/><text fill="black" class="diagram-class-title" y="385.0" x="732.8">Detail</text><text fill="black" class="diagram-class-detail" y="407.0" x="684.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.detail.type"><title>Name of the property</title>type</a> : <a xlink:href="datatypes.html#string">string</a> 1..1</text><text fill="black" class="diagram-class-detail" y="421.0" x="684.8"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.detail.value"><title>Property value</title>value</a> : <a xlink:href="datatypes.html#base64Binary">base64Binary</a> 1..1</text><line style="stroke:navy;stroke-width:1" y1="199.99999999999997" y2="120.0" x2="416.8" x1="416.8"/><polygon transform="rotate(-90.0 416.8 199.99999999999997)" style="fill:navy;stroke:navy;stroke-width:1" points="416.8,199.99999999999997 422.8,203.99999999999997 428.8,199.99999999999997 422.8,195.99999999999997 416.8,199.99999999999997"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="20.0" y="153.0" x="406.0"/><text fill="black" class="diagram-class-linkage" y="163.0" x="416.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.event"><title>Identifies the name, action type, time, and disposition of the audited event</title>event</a></text><text fill="black" class="diagram-class-linkage" y="134.0" x="416.8">1..1</text><line style="stroke:navy;stroke-width:1" y1="151.0" y2="71.0" x2="116.0" x1="116.0"/><polygon transform="rotate(-90.0 116.0 151.0)" style="fill:navy;stroke:navy;stroke-width:1" points="116.0,151.0 122.0,155.0 128.0,151.0 122.0,147.0 116.0,151.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="28.0" y="104.0" x="102.0"/><text fill="black" class="diagram-class-linkage" y="114.0" x="116.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant.network"><title>Logical network location for application activity, if the activity has a network location</title>network</a></text><text fill="black" class="diagram-class-linkage" y="85.0" x="116.0">0..1</text><line style="stroke:navy;stroke-width:1" y1="218.00000000000003" y2="218.00000000000003" x2="228.0" x1="348.0"/><polygon transform="rotate(180.0 348.0 218.00000000000003)" style="fill:navy;stroke:navy;stroke-width:1" points="348.0,218.00000000000003 354.0,222.00000000000003 360.0,218.00000000000003 354.0,214.00000000000003 348.0,218.00000000000003"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="44.0" y="211.0" x="266.0"/><text fill="black" class="diagram-class-linkage" y="221.0" x="288.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.participant"><title>A person, a hardware device or software process</title>participant</a></text><text fill="black" class="diagram-class-linkage" y="214.00000000000003" x="243.0">1..*</text><line style="stroke:navy;stroke-width:1" y1="218.00000000000003" y2="218.00000000000003" x2="605.6" x1="485.6"/><polygon transform="rotate(0.0 485.6 218.00000000000003)" style="fill:navy;stroke:navy;stroke-width:1" points="485.6,218.00000000000003 491.6,222.00000000000003 497.6,218.00000000000003 491.6,214.00000000000003 485.6,218.00000000000003"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="24.0" y="211.0" x="533.0"/><text fill="black" class="diagram-class-linkage" y="221.0" x="545.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.source"><title>Application systems and processes</title>source</a></text><text fill="black" class="diagram-class-linkage" y="214.00000000000003" x="585.6">1..1</text><line style="stroke:navy;stroke-width:1" y1="397.0" y2="397.0" x2="678.8" x1="558.8"/><polygon transform="rotate(0.0 558.8 397.0)" style="fill:navy;stroke:navy;stroke-width:1" points="558.8,397.0 564.8,401.0 570.8,397.0 564.8,393.0 558.8,397.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="24.0" y="390.0" x="606.0"/><text fill="black" class="diagram-class-linkage" y="400.0" x="618.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.object.detail"><title>Additional Information about the Object</title>detail</a></text><text fill="black" class="diagram-class-linkage" y="393.0" x="658.8">0..*</text><line style="stroke:navy;stroke-width:1" y1="236.0" y2="316.0" x2="416.8" x1="416.8"/><polygon transform="rotate(90.0 416.8 236.0)" style="fill:navy;stroke:navy;stroke-width:1" points="416.8,236.0 422.8,240.0 428.8,236.0 422.8,232.0 416.8,236.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="24.0" y="269.0" x="404.0"/><text fill="black" class="diagram-class-linkage" y="279.0" x="416.0"><a xlink:href="securityevent-definitions.html#SecurityEvent.object"><title>Specific instances of data or objects that have been accessed</title>object</a></text><text fill="black" class="diagram-class-linkage" y="312.0" x="416.8">0..*</text></svg>
+
+
+<a name="def"> </a>
+<a name="securityevent"> </a>
+<a name="SecurityEvent"> </a>
+<pre class="spec">
+&lt;<a title="A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage." class="dict" href="securityevent-definitions.html#SecurityEvent"><b>SecurityEvent</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifies the name, action type, time, and disposition of the audited event." class="dict" href="securityevent-definitions.html#SecurityEvent.event"><b>event</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..1</b></span> What was done --&gt;</span>
+  &lt;<a title="Identifier for a family of the event." class="dict" href="securityevent-definitions.html#SecurityEvent.event.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-type.html">Type/identifier of event</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="Identifier for the category of event." class="dict" href="securityevent-definitions.html#SecurityEvent.event.subtype"><b>subtype</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-sub-type.html">More specific type/id for the event</a></span><span style="color: Gray"> --&gt;</span>&lt;/subtype&gt;
+  &lt;<a title="Indicator for type of action performed during the event that generated the audit." class="dict" href="securityevent-definitions.html#SecurityEvent.event.action"><b>action</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="security-event-action.html">Type of action performed during the event</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The time when the event occurred on the source." class="dict" href="securityevent-definitions.html#SecurityEvent.event.dateTime"><b>dateTime</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#instant">instant</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Time when the event occurred on source</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Indicates whether the event succeeded or failed." class="dict" href="securityevent-definitions.html#SecurityEvent.event.outcome"><b>outcome</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="security-event-outcome.html">Whether the event succeeded or failed</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A free text description of the outcome of the event." class="dict" href="securityevent-definitions.html#SecurityEvent.event.outcomeDesc"><b>outcomeDesc</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Description of the event outcome</span><span style="color: Gray"> --&gt;</span>
+ &lt;/event&gt;
+ &lt;<a title="A person, a hardware device or software process." class="dict" href="securityevent-definitions.html#SecurityEvent.participant"><b>participant</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..*</b></span> A person, a hardware device or software process --&gt;</span>
+  &lt;<a title="Specification of the role(s) the user plays when performing the event. Usually the codes used in this element are local codes defined by the role-based access control security system used in the local context." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.role"><b>role</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-dicm-402-roleid.html">User roles (e.g. local RBAC codes)</a></span><span style="color: Gray"> --&gt;</span>&lt;/role&gt;
+  &lt;<a title="Direct reference to a resource that identifies the participant." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.reference"><b>reference</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: Either a userId or a reference, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="patient.html#Patient">Patient</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">Direct reference to resource</span><span style="color: Gray"> --&gt;</span>&lt;/reference&gt;
+  &lt;<a title="Unique identifier for the user actively participating in the event." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.userId"><b>userId</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: Either a userId or a reference, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Unique identifier for the user</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Alternative Participant Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.altId"><b>altId</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Alternative User id e.g. authentication</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Human-meaningful name for the user." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Human-meaningful name for the user</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Indicator that the user is or is not the requestor, or initiator, for the event being audited." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.requestor"><b>requestor</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Whether user is initiator</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Type of media involved. Used when the event is about exporting/importing onto media." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.media"><b>media</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Coding">Coding</a></span> <span style="color: navy">Type of media</span><span style="color: Gray"> --&gt;</span>&lt;/media&gt;
+  &lt;<a title="Logical network location for application activity, if the activity has a network location." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.network"><b>network</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Logical network location for application activity --&gt;</span>
+   &lt;<a title="An identifier for the network access point of the user device for the audit event." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.network.identifier"><b>identifier</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Identifier for the network access point of the user device</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="An identifier for the type of network access point that originated the audit event." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.network.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="network-type.html">The type of network access point</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;/network&gt;
+ &lt;/participant&gt;
+ &lt;<a title="Application systems and processes." class="dict" href="securityevent-definitions.html#SecurityEvent.source"><b>source</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..1</b></span> Application systems and processes --&gt;</span>
+  &lt;<a title="Logical source location within the healthcare enterprise network." class="dict" href="securityevent-definitions.html#SecurityEvent.source.site"><b>site</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Logical source location within the enterprise</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Identifier of the source where the event originated." class="dict" href="securityevent-definitions.html#SecurityEvent.source.identifier"><b>identifier</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">The id of source where event originated</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Code specifying the type of source where event originated." class="dict" href="securityevent-definitions.html#SecurityEvent.source.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Coding">Coding</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-source-type.html">The type of source where event originated</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+ &lt;/source&gt;
+ &lt;<a title="Specific instances of data or objects that have been accessed." class="dict" href="securityevent-definitions.html#SecurityEvent.object"><b>object</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Specific instances of data or objects that have been accessed --&gt;</span>
+  &lt;<a title="Identifies a specific instance of the participant object. The reference should always be version specific." class="dict" href="securityevent-definitions.html#SecurityEvent.object.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: Either an identifier or a reference, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Specific instance of object (e.g. versioned)</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+  &lt;<a title="Identifies a specific instance of the participant object. The reference should always be version specific." class="dict" href="securityevent-definitions.html#SecurityEvent.object.reference"><b>reference</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: Either an identifier or a reference, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Specific instance of resource (e.g. versioned)</span><span style="color: Gray"> --&gt;</span>&lt;/reference&gt;
+  &lt;<a title="Object type being audited." class="dict" href="securityevent-definitions.html#SecurityEvent.object.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-type.html">Object type being audited</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Code representing the functional application role of Participant Object being audited." class="dict" href="securityevent-definitions.html#SecurityEvent.object.role"><b>role</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-role.html">Functional application role of Object</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Identifier for the data life-cycle stage for the participant object." class="dict" href="securityevent-definitions.html#SecurityEvent.object.lifecycle"><b>lifecycle</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-lifecycle.html">Life-cycle stage for the object</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Denotes policy-defined sensitivity for the Participant Object ID such as VIP, HIV status, mental health status or similar topics." class="dict" href="securityevent-definitions.html#SecurityEvent.object.sensitivity"><b>sensitivity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-sensitivity.html">Policy-defined sensitivity for the object</a></span><span style="color: Gray"> --&gt;</span>&lt;/sensitivity&gt;
+  &lt;<a title="An instance-specific descriptor of the Participant Object ID audited, such as a person's name." class="dict" href="securityevent-definitions.html#SecurityEvent.object.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Either a name or a query (or both)" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Instance-specific descriptor for Object</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Text that describes the object in more detail." class="dict" href="securityevent-definitions.html#SecurityEvent.object.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Descriptive text</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The actual query for a query-type participant object." class="dict" href="securityevent-definitions.html#SecurityEvent.object.query"><b>query</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#base64Binary">base64Binary</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Either a name or a query (or both)" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Actual query for object</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Additional Information about the Object." class="dict" href="securityevent-definitions.html#SecurityEvent.object.detail"><b>detail</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Additional Information about the Object --&gt;</span>
+   &lt;<a title="Name of the property." class="dict" href="securityevent-definitions.html#SecurityEvent.object.detail.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Name of the property</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Property value." class="dict" href="securityevent-definitions.html#SecurityEvent.object.detail.value"><b>value</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#base64Binary">base64Binary</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Property value</span><span style="color: Gray"> --&gt;</span>
+  &lt;/detail&gt;
+ &lt;/object&gt;
+&lt;/SecurityEvent&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="securityevent.xsd">Schema</a>/<a href="securityevent.sch">Schematron</a>, 
+<a href="securityevent.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">6.7.3.1<a name="6.7.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="SecurityEventType" valign="top">SecurityEvent.event.type </td><td valign="top">Type of event</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-security-event-type.html">http://hl7.org/fhir/vs/security-event-type</a></td> </tr>
+ <tr><td title="SecurityEventSubType" valign="top">SecurityEvent.event.subtype </td><td valign="top">Sub-type of event</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-security-event-sub-type.html">http://hl7.org/fhir/vs/security-event-sub-type</a></td> </tr>
+ <tr><td title="SecurityEventAction" valign="top">SecurityEvent.event.action </td><td valign="top">Indicator for type of action performed during the event that generated the audit.</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="security-event-action.html">http://hl7.org/fhir/security-event-action</a></td> </tr>
+ <tr><td title="SecurityEventOutcome" valign="top">SecurityEvent.event.outcome </td><td valign="top">Indicates whether the event succeeded or failed</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="security-event-outcome.html">http://hl7.org/fhir/security-event-outcome</a></td> </tr>
+ <tr><td title="DICOMRoleId" valign="top">SecurityEvent.participant.role </td><td valign="top">Role(s) the user plays (from RBAC)</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-dicm-402-roleid.html">http://hl7.org/fhir/vs/dicm-402-roleid</a></td> </tr>
+ <tr><td title="SecurityEventParticipantNetworkType" valign="top">SecurityEvent.participant.network.type </td><td valign="top">The type of network access point that originated the audit event</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="network-type.html">http://hl7.org/fhir/network-type</a></td> </tr>
+ <tr><td title="SecurityEventSourceType" valign="top">SecurityEvent.source.type </td><td valign="top">Code specifying the type of source where event originated</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-security-source-type.html">http://hl7.org/fhir/vs/security-source-type</a></td> </tr>
+ <tr><td title="SecurityEventObjectType" valign="top">SecurityEvent.object.type </td><td valign="top">Code for the participant object type being audited</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="object-type.html">http://hl7.org/fhir/object-type</a></td> </tr>
+ <tr><td title="SecurityEventObjectRole" valign="top">SecurityEvent.object.role </td><td valign="top">Code representing the functional application role of Participant Object being audited</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="object-role.html">http://hl7.org/fhir/object-role</a></td> </tr>
+ <tr><td title="SecurityEventObjectLifecycle" valign="top">SecurityEvent.object.lifecycle </td><td valign="top">Identifier for the data life-cycle stage for the participant object</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="object-lifecycle.html">http://hl7.org/fhir/object-lifecycle</a></td> </tr>
+ <tr><td title="SecurityEventObjectSensitivity" valign="top">SecurityEvent.object.sensitivity </td><td valign="top">The sensitivity of an object in a security event resource. May also encompass confidentiality and rudimentary access control</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-security-event-sensitivity.html">http://hl7.org/fhir/vs/security-event-sensitivity</a></td> </tr>
+</table>
+<p> </p>
+
+
+<h3><span class="sectioncount">6.7.3.2<a name="6.7.3.2"> </a></span> Constraints</h3><ul><li><b title="Formal Invariant Identifier">Inv-3</b>: On SecurityEvent.participant: Either a userId or a reference, but not both (xpath on f:SecurityEvent/f:participant: <span style="font-family: Courier New, monospace">exists(f:userId) != exists(f:reference)</span>)</li><li><b title="Formal Invariant Identifier">Inv-1</b>: On SecurityEvent.object: Either a name or a query (or both) (xpath on f:SecurityEvent/f:object: <span style="font-family: Courier New, monospace">not(exists(f:name)) or not(exists(f:query))</span>)</li><li><b title="Formal Invariant Identifier">Inv-2</b>: On SecurityEvent.object: Either an identifier or a reference, but not both (xpath on f:SecurityEvent/f:object: <span style="font-family: Courier New, monospace">exists(f:identifier) != exists(f:reference)</span>)</li></ul>
+
+
+<h3><span class="sectioncount">6.7.3.3<a name="6.7.3.3"> </a></span> Using Coded Values</h3>
+<p>
+The security event resource and the ATNA Audit record are used in many contexts through healthcare. 
+The coded values defined in the &quot;extensible&quot; bindings above are those widely used and/or defined by
+DICOM, IHE or ISO, who all defined these codes to meet very specific use cases. These codes should be 
+used when the are suitable, or other codes can be defined. 
+</p>
+<p>
+The set of codes defined for this resource are expected to grow over time, and 
+additional codes may be proposed / requested using the community input link above.
+</p>
+
+<h3><span class="sectioncount">6.7.3.4<a name="6.7.3.4"> </a></span> Event codes for Common Scenarios</h3>
+
+<p>
+This table summarizes common event scenarios, and the codes that should be used for each case.
+</p>
+<table class="grid">
+  <tr><td><b>Scenario</b></td><td><b>type</b></td><td><b>subtype</b></td><td><b>action</b></td><td><b/>Other</td></tr>
+  <tr><td>User Login (<a href="securityevent-examples.html">example</a>)</td><td><a href="valueset-dicom-dcim.html#110114">110114</a> User Authentication</td><td><a href="valueset-dicom-dcim.html#110122">110122</a> User Authentication</td>
+     <td><a href="security-event-action.html">E</a> Execute</td><td>One participant which contains the details of the logged in user</td></tr>
+  <tr><td>OAuth based User Login </td><td><a href="valueset-dicom-dcim.html#110114">110114</a> User Authentication</td><td><a href="valueset-dicom-dcim.html#110122">110122</a> User Authentication</td>
+     <td><a href="security-event-action.html">E</a> Execute</td><td>todo</td></tr>
+  <tr><td>User Logout (<a href="securityevent-examples.html">example</a>)</td><td><a href="valueset-dicom-dcim.html#110114">110114</a> User Authentication</td><td><a href="valueset-dicom-dcim.html#110123">110123</a> User Logout</td>
+     <td><a href="security-event-action.html">E</a> Execute</td><td>One participant which contains the details of the logged out user</td></tr>
+  <tr><td>REST operation logged on server (<a href="securityevent-examples.html">example</a>)</td><td><a href="valueset-security-event-type.html">rest</a> RESTful Operation</td><td><a href="type-restful-operation.html">[code]</a> defined for operation</td>
+     <td><a href="security-event-action.html">*</a> (see below)</td><td>Participant for logged in user, if available, and one object with a reference if at least the type is known as part of the operation. Reference.url should be provided to the granularity known</td></tr>
+</table>
+
+<p>
+Security Event Actions for RESTful operations:
+</p>
+<table class="grid">
+ <tr><td><b>Operation</b></td><td><b>Action</b></td></tr>
+ <tr><td>create  </td><td>C</td></tr>
+ <tr><td>read, vread, tags-get, history-instance, history-type, history-system   </td><td>R</td></tr>
+ <tr><td>update, tags-update </td><td>U</td></tr>
+ <tr><td>delete, tags-delete  </td><td>D</td></tr>
+ <tr><td>search, validate, transaction, conformance, mailbox </td><td>E</td></tr>
+</table>
+  <!-- <h3>Referring to FHIR Resources in Security Events</h3>
+
+<p>
+Because the Audit resource is typically used for auditing many things beyond events
+related to FHIR resources, the <i>object</i> doesn't have a simple reference
+to other resources. Instead, if the target object is a FHIR resource, the 
+object is represented like this:
+</p>
+<div class="example">
+<pre class="xml">
+  &lt;object&gt;
+    &lt;idType&gt;
+	  &lt;system&gt;http://hl7.org/fhir/resource-types&lt;/system&gt;
+	  &lt;code&gt;Person&lt;/code&gt;
+	&lt;/idType&gt;
+	&lt;id&gt;http://acme.org/fhir/person/@34/history/3&lt;/id&gt;
+  &lt;/x&gt;
+</pre>
+</div>
+<p>
+This is the same pattern as a resource reference, but the type becomes extensible to allow referencing other kinds of resources.
+Note that the id reference should be a version specific reference, but is not required to be so. Note that when using 
+RFC 3881 directly, the code system cannot be a URI, so use the OID 2.16.840.1.113883.6.306 in place of http://hl7.org/fhir/resource-types.
+</p>
+
+
+
+<p>
+Things to note about the current design:
+</p>
+<ul>
+  <li>In this resource, the Participant Object Detail from <a href="http://tools.ietf.org/html/rfc3881">RFC 3881</a> is handled as standard FHIR extensions to the <i>object</i> element</li>
+</ul> -->
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">6.7.4<a name="6.7.4"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>action</td><td><a href="search.html#token">token</a></td><td>Type of action performed during the event</td><td>SecurityEvent.event.action</td></tr>
+<tr><td>address</td><td><a href="search.html#token">token</a></td><td>Identifier for the network access point of the user device</td><td>SecurityEvent.participant.network.identifier</td></tr>
+<tr><td>altid</td><td><a href="search.html#token">token</a></td><td>Alternative User id e.g. authentication</td><td>SecurityEvent.participant.altId</td></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>Time when the event occurred on source</td><td>SecurityEvent.event.dateTime</td></tr>
+<tr><td>desc</td><td><a href="search.html#string">string</a></td><td>Instance-specific descriptor for Object</td><td>SecurityEvent.object.name</td></tr>
+<tr><td>identity</td><td><a href="search.html#token">token</a></td><td>Specific instance of object (e.g. versioned)</td><td>SecurityEvent.object.identifier</td></tr>
+<tr><td>name</td><td><a href="search.html#string">string</a></td><td>Human-meaningful name for the user</td><td>SecurityEvent.participant.name</td></tr>
+<tr><td>object-type</td><td><a href="search.html#token">token</a></td><td>Object type being audited</td><td>SecurityEvent.object.type</td></tr>
+<tr><td>patientid</td><td><a href="search.html#token">token</a></td><td>The id of the patient (one of multiple kinds of participations)</td><td/></tr>
+<tr><td>reference</td><td><a href="search.html#reference">reference</a></td><td>Specific instance of resource (e.g. versioned)</td><td>SecurityEvent.object.reference<br/>(Any)</td></tr>
+<tr><td>site</td><td><a href="search.html#token">token</a></td><td>Logical source location within the enterprise</td><td>SecurityEvent.source.site</td></tr>
+<tr><td>source</td><td><a href="search.html#token">token</a></td><td>The id of source where event originated</td><td>SecurityEvent.source.identifier</td></tr>
+<tr><td>subtype</td><td><a href="search.html#token">token</a></td><td>More specific type/id for the event</td><td>SecurityEvent.event.subtype</td></tr>
+<tr><td>type</td><td><a href="search.html#token">token</a></td><td>Type/identifier of event</td><td>SecurityEvent.event.type</td></tr>
+<tr><td>user</td><td><a href="search.html#token">token</a></td><td>Unique identifier for the user</td><td>SecurityEvent.participant.userId</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

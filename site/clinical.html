@@ -1,0 +1,237 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Clinical Resources - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><b>Clinical</b></li>          <!-- clinical.html / page -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h2><span class="sectioncount">4.0<a name="4.0"> </a></span> Clinical Resources</h2>
+ 
+<table class="lines">
+<tr><td colspan="3"><hr/></td></tr>
+<tr><th colspan="3">General<a name="general"> </a></th></tr>
+<tr><td colspan="3">Resources that provide core clinical record keeping - focused on the content of the provider/patient encounter</td></tr>
+
+<tr><td><b>Name</b></td><td><b>Aliases</b></td><td><b>Description</b></td></tr>
+<tr bgcolor="#EFEFEF"><td><a href="adversereaction.html">AdverseReaction</a></td><td/><td>Records an unexpected reaction suspected to be related to the exposure of the reaction subject to a substance.</td></tr>
+
+<tr bgcolor="#FFFFFF"><td><a href="allergyintolerance.html">AllergyIntolerance</a></td><td>Adverse Sensitivity</td><td>Indicates the patient has a susceptibility to an adverse reaction upon exposure to a specified substance.</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="careplan.html">CarePlan</a></td><td>Care Team</td><td>Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions.</td></tr>
+
+<tr bgcolor="#FFFFFF"><td><a href="condition.html">Condition</a></td><td/><td>Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="familyhistory.html">FamilyHistory</a></td><td/><td>Significant health events and conditions for people related to the subject relevant in the context of care for the subject.</td></tr>
+
+<tr bgcolor="#FFFFFF"><td><a href="procedure.html">Procedure</a></td><td/><td>An action that is performed on a patient. This can be a physical 'thing' like an operation, or less invasive like counseling or hypnotherapy.</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="questionnaire.html">Questionnaire</a></td><td>Form</td><td>A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.</td></tr>
+
+
+<tr><td colspan="3"><hr/></td></tr>
+<tr><th colspan="3">Medications &amp; Immunizations<a name="medications&amp;immunizations"> </a></th></tr>
+<tr><td colspan="3">Support the medication &amp; Immunization process</td></tr>
+
+<tr><td><b>Name</b></td><td><b>Aliases</b></td><td><b>Description</b></td></tr>
+<tr bgcolor="#EFEFEF"><td><a href="medication.html">Medication</a></td><td/><td>Primarily used for identification and definition of Medication, but also covers ingredients and packaging.</td></tr>
+
+<tr bgcolor="#FFFFFF"><td><a href="medicationprescription.html">MedicationPrescription</a></td><td/><td>An order for both supply of the medication and the instructions for administration of the medicine to a patient.</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="medicationadministration.html">MedicationAdministration</a></td><td/><td>Describes the event of a patient being given a dose of a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.
+
+Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.</td></tr>
+
+<tr bgcolor="#FFFFFF"><td><a href="medicationdispense.html">MedicationDispense</a></td><td/><td>Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="medicationstatement.html">MedicationStatement</a></td><td/><td>A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient or another clinician.</td></tr>
+
+<tr bgcolor="#FFFFFF"><td><a href="immunization.html">Immunization</a></td><td/><td>Immunization event information.</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="immunizationrecommendation.html">ImmunizationRecommendation</a></td><td/><td>A patient's point-of-time immunization status and recommendation with optional supporting justification.</td></tr>
+
+
+<tr><td colspan="3"><hr/></td></tr>
+<tr><th colspan="3">Diagnostics<a name="diagnostics"> </a></th></tr>
+<tr><td colspan="3">Provider support for diagnostic services - lab, pathology, imaging, etc</td></tr>
+
+<tr><td><b>Name</b></td><td><b>Aliases</b></td><td><b>Description</b></td></tr>
+<tr bgcolor="#EFEFEF"><td><a href="observation.html">Observation</a></td><td>Vital Signs, Measurement, Results</td><td>Measurements and simple assertions made about a patient, device or other subject.</td></tr>
+
+<tr bgcolor="#FFFFFF"><td><a href="diagnosticreport.html">DiagnosticReport</a></td><td>Report, Test, Result, Results, Labs</td><td>The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="diagnosticorder.html">DiagnosticOrder</a></td><td>Report, Test, Result, Results, Labs</td><td>A request for a diagnostic investigation service to be performed.</td></tr>
+
+<tr bgcolor="#FFFFFF"><td><a href="imagingstudy.html">ImagingStudy</a></td><td>Manifest, XDS-I summary</td><td>Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images.</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="specimen.html">Specimen</a></td><td/><td>Sample for analysis.</td></tr>
+
+<tr><td colspan="3"><hr/></td></tr>
+<tr><th colspan="3">Device Interactions<a name="deviceinteractions"> </a></th></tr>
+<tr><td colspan="3">Support for reading measurements made by devices</td></tr>
+
+<tr bgcolor="#EFEFEF"><td><a href="deviceobservationreport.html">DeviceObservationReport</a></td><td/><td>Describes the data produced by a device at a point in time.</td></tr>
+
+
+</table>
+
+<p>
+Additional Resources will be added in the future. A list of hypothesized resources can be found on the 
+<a href="http://wiki.hl7.org/index.php?title=FHIR_Resource_Types">HL7 wiki</a>.  Feel free to add any you think are missing or engage with one 
+of the <a href="http://www.hl7.org/Special/committees/index.cfm">HL7 Work Groups</a> to submit a 
+<a href="http://wiki.hl7.org/index.php?title=Category:FHIR_Resource_Proposal">proposal</a> to define a resource of particular interest.
+</p>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+
+</body>
+</html>

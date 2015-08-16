@@ -1,0 +1,1633 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Securityevent.profile.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><a href="securityevent.html">SecurityEvent</a></li>        <li><b>Profile Instance</b></li>        <!-- securityevent.profile.xml.html / profile-instance:resource:SecurityEvent -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Securityevent.profile.xml</h1>
+
+<div class="example">
+<p>Profile for securityevent</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;Profile&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;&lt;pre&gt;\r\n&amp;lt;&lt;a title=\&quot;A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent\&quot;&gt;&lt;b&gt;SecurityEvent&lt;/b&gt;&lt;/a&gt; xmlns=&amp;quot;http://hl7.org/fhir&amp;quot;&amp;gt; &lt;span style=\&quot;float: right\&quot;&gt;&lt;a title=\&quot;Documentation for this format\&quot; href=\&quot;formats.html\&quot;&gt;&lt;img alt=\&quot;doco\&quot; src=\&quot;help.png\&quot;/&gt;&lt;/a&gt;&lt;/span&gt;\r\n &amp;lt;!-- from &lt;a href=\&quot;resources.html\&quot;&gt;Resource&lt;/a&gt;: &lt;a href=\&quot;extensibility.html\&quot;&gt;extension&lt;/a&gt;, &lt;a href=\&quot;extensibility.html#modifierExtension\&quot;&gt;modifierExtension&lt;/a&gt;, language, &lt;a href=\&quot;narrative.html#Narrative\&quot;&gt;text&lt;/a&gt;, and &lt;a href=\&quot;references.html#contained\&quot;&gt;contained&lt;/a&gt; --&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Identifies the name, action type, time, and disposition of the audited event.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.event\&quot;&gt;&lt;b&gt;event&lt;/b&gt;&lt;/a&gt;&amp;gt;  &lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!-- &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; What was done --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Identifier for a family of the event.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.event.type\&quot;&gt;&lt;b&gt;type&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-security-event-type.html\&quot;&gt;Type/identifier of event&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/type&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;Identifier for the category of event.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.event.subtype\&quot;&gt;&lt;b&gt;subtype&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..*&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-security-event-sub-type.html\&quot;&gt;More specific type/id for the event&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/subtype&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;Indicator for type of action performed during the event that generated the audit.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.event.action\&quot;&gt;&lt;b&gt;action&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;security-event-action.html\&quot;&gt;Type of action performed during the event&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;The time when the event occurred on the source.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.event.dateTime\&quot;&gt;&lt;b&gt;dateTime&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#instant\&quot;&gt;instant&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Time when the event occurred on source&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Indicates whether the event succeeded or failed.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.event.outcome\&quot;&gt;&lt;b&gt;outcome&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;security-event-outcome.html\&quot;&gt;Whether the event succeeded or failed&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;A free text description of the outcome of the event.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.event.outcomeDesc\&quot;&gt;&lt;b&gt;outcomeDesc&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Description of the event outcome&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n &amp;lt;/event&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;A person, a hardware device or software process.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant\&quot;&gt;&lt;b&gt;participant&lt;/b&gt;&lt;/a&gt;&amp;gt;  &lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!-- &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..*&lt;/b&gt;&lt;/span&gt; A person, a hardware device or software process --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Specification of the role(s) the user plays when performing the event. Usually the codes used in this element are local codes defined by the role-based access control security system used in the local context.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.role\&quot;&gt;&lt;b&gt;role&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..*&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-dicm-402-roleid.html\&quot;&gt;User roles (e.g. local RBAC codes)&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/role&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;Direct reference to a resource that identifies the participant.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.reference\&quot;&gt;&lt;b&gt;reference&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span title=\&quot;Inv-3: Either a userId or a reference, but not both\&quot; style=\&quot;color: brown\&quot;&gt;&lt;b&gt;&lt;img alt=\&quot;??\&quot; src=\&quot;lock.png\&quot;/&gt; 0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;references.html#Resource\&quot;&gt;Resource&lt;/a&gt;(&lt;a href=\&quot;practitioner.html#Practitioner\&quot;&gt;Practitioner&lt;/a&gt;|&lt;a href=\&quot;patient.html#Patient\&quot;&gt;Patient&lt;/a&gt;|&lt;a href=\&quot;device.html#Device\&quot;&gt;Device&lt;/a&gt;)&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Direct reference to resource&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/reference&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;Unique identifier for the user actively participating in the event.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.userId\&quot;&gt;&lt;b&gt;userId&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span title=\&quot;Inv-3: Either a userId or a reference, but not both\&quot; style=\&quot;color: brown\&quot;&gt;&lt;b&gt;&lt;img alt=\&quot;??\&quot; src=\&quot;lock.png\&quot;/&gt; 0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Unique identifier for the user&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Alternative Participant Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.altId\&quot;&gt;&lt;b&gt;altId&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Alternative User id e.g. authentication&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Human-meaningful name for the user.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.name\&quot;&gt;&lt;b&gt;name&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Human-meaningful name for the user&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Indicator that the user is or is not the requestor, or initiator, for the event being audited.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.requestor\&quot;&gt;&lt;b&gt;requestor&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#boolean\&quot;&gt;boolean&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Whether user is initiator&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Type of media involved. Used when the event is about exporting/importing onto media.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.media\&quot;&gt;&lt;b&gt;media&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#Coding\&quot;&gt;Coding&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Type of media&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/media&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;Logical network location for application activity, if the activity has a network location.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.network\&quot;&gt;&lt;b&gt;network&lt;/b&gt;&lt;/a&gt;&amp;gt;  &lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!-- &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; Logical network location for application activity --&amp;gt;&lt;/span&gt;\r\n   &amp;lt;&lt;a title=\&quot;An identifier for the network access point of the user device for the audit event.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.network.identifier\&quot;&gt;&lt;b&gt;identifier&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Identifier for the network access point of the user device&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n   &amp;lt;&lt;a title=\&quot;An identifier for the type of network access point that originated the audit event.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.participant.network.type\&quot;&gt;&lt;b&gt;type&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;network-type.html\&quot;&gt;The type of network access point&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;/network&amp;gt;\r\n &amp;lt;/participant&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Application systems and processes.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.source\&quot;&gt;&lt;b&gt;source&lt;/b&gt;&lt;/a&gt;&amp;gt;  &lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!-- &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; Application systems and processes --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Logical source location within the healthcare enterprise network.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.source.site\&quot;&gt;&lt;b&gt;site&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Logical source location within the enterprise&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Identifier of the source where the event originated.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.source.identifier\&quot;&gt;&lt;b&gt;identifier&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;The id of source where event originated&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Code specifying the type of source where event originated.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.source.type\&quot;&gt;&lt;b&gt;type&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..*&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#Coding\&quot;&gt;Coding&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-security-source-type.html\&quot;&gt;The type of source where event originated&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/type&amp;gt;\r\n &amp;lt;/source&amp;gt;\r\n &amp;lt;&lt;a title=\&quot;Specific instances of data or objects that have been accessed.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object\&quot;&gt;&lt;b&gt;object&lt;/b&gt;&lt;/a&gt;&amp;gt;  &lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!-- &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..*&lt;/b&gt;&lt;/span&gt; Specific instances of data or objects that have been accessed --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Identifies a specific instance of the participant object. The reference should always be version specific.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.identifier\&quot;&gt;&lt;b&gt;identifier&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span title=\&quot;Inv-2: Either an identifier or a reference, but not both\&quot; style=\&quot;color: brown\&quot;&gt;&lt;b&gt;&lt;img alt=\&quot;??\&quot; src=\&quot;lock.png\&quot;/&gt; 0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#Identifier\&quot;&gt;Identifier&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Specific instance of object (e.g. versioned)&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/identifier&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;Identifies a specific instance of the participant object. The reference should always be version specific.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.reference\&quot;&gt;&lt;b&gt;reference&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span title=\&quot;Inv-2: Either an identifier or a reference, but not both\&quot; style=\&quot;color: brown\&quot;&gt;&lt;b&gt;&lt;img alt=\&quot;??\&quot; src=\&quot;lock.png\&quot;/&gt; 0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;references.html#Resource\&quot;&gt;Resource&lt;/a&gt;(&lt;a href=\&quot;resourcelist.html\&quot;&gt;Any&lt;/a&gt;)&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Specific instance of resource (e.g. versioned)&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/reference&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;Object type being audited.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.type\&quot;&gt;&lt;b&gt;type&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;object-type.html\&quot;&gt;Object type being audited&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Code representing the functional application role of Participant Object being audited.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.role\&quot;&gt;&lt;b&gt;role&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;object-role.html\&quot;&gt;Functional application role of Object&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Identifier for the data life-cycle stage for the participant object.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.lifecycle\&quot;&gt;&lt;b&gt;lifecycle&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;object-lifecycle.html\&quot;&gt;Life-cycle stage for the object&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Denotes policy-defined sensitivity for the Participant Object ID such as VIP, HIV status, mental health status or similar topics.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.sensitivity\&quot;&gt;&lt;b&gt;sensitivity&lt;/b&gt;&lt;/a&gt;&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;&lt;a style=\&quot;color: navy\&quot; href=\&quot;valueset-security-event-sensitivity.html\&quot;&gt;Policy-defined sensitivity for the object&lt;/a&gt;&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;&amp;lt;/sensitivity&amp;gt;\r\n  &amp;lt;&lt;a title=\&quot;An instance-specific descriptor of the Participant Object ID audited, such as a person's name.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.name\&quot;&gt;&lt;b&gt;name&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span title=\&quot;Inv-1: Either a name or a query (or both)\&quot; style=\&quot;color: brown\&quot;&gt;&lt;b&gt;&lt;img alt=\&quot;??\&quot; src=\&quot;lock.png\&quot;/&gt; 0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Instance-specific descriptor for Object&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Text that describes the object in more detail.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.description\&quot;&gt;&lt;b&gt;description&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Descriptive text&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;The actual query for a query-type participant object.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.query\&quot;&gt;&lt;b&gt;query&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#base64Binary\&quot;&gt;base64Binary&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span title=\&quot;Inv-1: Either a name or a query (or both)\&quot; style=\&quot;color: brown\&quot;&gt;&lt;b&gt;&lt;img alt=\&quot;??\&quot; src=\&quot;lock.png\&quot;/&gt; 0..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Actual query for object&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;&lt;a title=\&quot;Additional Information about the Object.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.detail\&quot;&gt;&lt;b&gt;detail&lt;/b&gt;&lt;/a&gt;&amp;gt;  &lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!-- &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;0..*&lt;/b&gt;&lt;/span&gt; Additional Information about the Object --&amp;gt;&lt;/span&gt;\r\n   &amp;lt;&lt;a title=\&quot;Name of the property.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.detail.type\&quot;&gt;&lt;b&gt;type&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Name of the property&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n   &amp;lt;&lt;a title=\&quot;Property value.\&quot; class=\&quot;dict\&quot; href=\&quot;securityevent-definitions.html#SecurityEvent.object.detail.value\&quot;&gt;&lt;b&gt;value&lt;/b&gt;&lt;/a&gt; value=&amp;quot;[&lt;span style=\&quot;color: darkgreen\&quot;&gt;&lt;a href=\&quot;datatypes.html#base64Binary\&quot;&gt;base64Binary&lt;/a&gt;&lt;/span&gt;]&amp;quot;/&amp;gt;&lt;span style=\&quot;color: Gray\&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=\&quot;color: brown\&quot;&gt;&lt;b&gt;1..1&lt;/b&gt;&lt;/span&gt; &lt;span style=\&quot;color: navy\&quot;&gt;Property value&lt;/span&gt;&lt;span style=\&quot;color: Gray\&quot;&gt; --&amp;gt;&lt;/span&gt;\r\n  &amp;lt;/detail&amp;gt;\r\n &amp;lt;/object&amp;gt;\r\n&amp;lt;/SecurityEvent&amp;gt;\r\n&lt;/pre&gt;&lt;/div&gt;&quot;
+  },
+  &quot;name&quot;: &quot;securityevent&quot;,
+  &quot;publisher&quot;: &quot;FHIR Project&quot;,
+  &quot;description&quot;: &quot;Basic Profile. A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.&quot;,
+  &quot;status&quot;: &quot;draft&quot;,
+  &quot;date&quot;: &quot;2014-10-08&quot;,
+  &quot;requirements&quot;: &quot;Scope and Usage The security event is based on the ATNA Audit record definitions, originally from RFC 3881, and now managed by DICOM (see DICOM Part 15 Annex A5). This resource is managed collaboratively between HL7, DICOM, and IHE for the MHD/mHealth initiatives. \r\n\r\nThe primary purpose of this resource is the maintenance of audit log information. However, it can also be used for simple event-based notification or even general indexing of resources stored in a variety of repositories.&quot;,
+  &quot;mapping&quot;: [
+    {
+      &quot;identity&quot;: &quot;rim&quot;,
+      &quot;uri&quot;: &quot;http://hl7.org/v3&quot;,
+      &quot;name&quot;: &quot;RIM&quot;
+    },
+    {
+      &quot;identity&quot;: &quot;dicom&quot;,
+      &quot;uri&quot;: &quot;http://nema.org/dicom&quot;,
+      &quot;name&quot;: &quot;DICOM&quot;
+    }
+  ],
+  &quot;structure&quot;: [
+    {
+      &quot;type&quot;: &quot;SecurityEvent&quot;,
+      &quot;publish&quot;: true,
+      &quot;element&quot;: [
+        {
+          &quot;path&quot;: &quot;SecurityEvent&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Event record kept for security purposes&quot;,
+            &quot;formal&quot;: &quot;A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.&quot;,
+            &quot;comments&quot;: &quot;Based on ATNA (RFC 3881).&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Resource&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;ControlAct[moodCode=EVN]&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;Message&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.text&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Text summary of the resource, for human interpretation&quot;,
+            &quot;formal&quot;: &quot;A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \&quot;clinically safe\&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.&quot;,
+            &quot;comments&quot;: &quot;Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.&quot;,
+            &quot;synonym&quot;: [
+              &quot;narrative&quot;,
+              &quot;html&quot;,
+              &quot;xhtml&quot;,
+              &quot;display&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Narrative&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.contained&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Contained, inline Resources&quot;,
+            &quot;formal&quot;: &quot;These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.&quot;,
+            &quot;comments&quot;: &quot;This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.&quot;,
+            &quot;synonym&quot;: [
+              &quot;inline resources&quot;,
+              &quot;anonymous resources&quot;,
+              &quot;contained resources&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Resource&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;What was done&quot;,
+            &quot;formal&quot;: &quot;Identifies the name, action type, time, and disposition of the audited event.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;N/A (no nesting in v3)&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;EventIdentification&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event.type&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Type/identifier of event&quot;,
+            &quot;formal&quot;: &quot;Identifier for a family of the event.&quot;,
+            &quot;comments&quot;: &quot;e.g., a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventType&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;preferred&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/security-event-type&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.code (type, subtype and action are pre-coordinated or sent as translations)&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@EventId&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event.subtype&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;More specific type/id for the event&quot;,
+            &quot;formal&quot;: &quot;Identifier for the category of event.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventSubType&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;preferred&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/security-event-sub-type&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.code (type, subtype and action are pre-coordinated or sent as translations)&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@EventTypeCode&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event.action&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Type of action performed during the event&quot;,
+            &quot;formal&quot;: &quot;Indicator for type of action performed during the event that generated the audit.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventAction&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/security-event-action&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.code (type, subtype and action are pre-coordinated or sent as translations)&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@EventActionCode&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event.dateTime&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Time when the event occurred on source&quot;,
+            &quot;formal&quot;: &quot;The time when the event occurred on the source.&quot;,
+            &quot;comments&quot;: &quot;In a distributed system, some sort of common time base, e.g., an NTP [RFC1305] server, is a good implementation tactic.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;instant&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.effectiveTime&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@EventDateTime&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event.outcome&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Whether the event succeeded or failed&quot;,
+            &quot;formal&quot;: &quot;Indicates whether the event succeeded or failed.&quot;,
+            &quot;comments&quot;: &quot;In some cases a \&quot;success\&quot; may be partial, for example, an incomplete or interrupted transfer of a radiological study. For the purpose of establishing accountability, these distinctions are not relevant.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventOutcome&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/security-event-outcome&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.actionNegationInd&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@EventOutcomeIndicator&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.event.outcomeDesc&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Description of the event outcome&quot;,
+            &quot;formal&quot;: &quot;A free text description of the outcome of the event.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.outboundRelationship[typeCode=OUT].target.text&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@EventOutcomeDescription&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;A person, a hardware device or software process&quot;,
+            &quot;formal&quot;: &quot;A person, a hardware device or software process.&quot;,
+            &quot;comments&quot;: &quot;There may be more than one user per event, for example, in cases of actions initiated by one user for other users, or in events that involve more than one user, hardware device, or system process. However, only one user may be the initiator/requestor for the event.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;constraint&quot;: [
+              {
+                &quot;key&quot;: &quot;3&quot;,
+                &quot;name&quot;: &quot;Participant Identification&quot;,
+                &quot;severity&quot;: &quot;error&quot;,
+                &quot;human&quot;: &quot;Either a userId or a reference, but not both&quot;,
+                &quot;xpath&quot;: &quot;exists(f:userId) != exists(f:reference)&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.participation&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;ActiveParticipant&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.role&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;User roles (e.g. local RBAC codes)&quot;,
+            &quot;formal&quot;: &quot;Specification of the role(s) the user plays when performing the event. Usually the codes used in this element are local codes defined by the role-based access control security system used in the local context.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;DICOMRoleId&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;preferred&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/dicm-402-roleid&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.typeCode and/or .functionCode&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;RoleIdCode&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.reference&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Direct reference to resource&quot;,
+            &quot;formal&quot;: &quot;Direct reference to a resource that identifies the participant.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Practitioner&quot;
+              },
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Patient&quot;
+              },
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Device&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.role&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.userId&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Unique identifier for the user&quot;,
+            &quot;formal&quot;: &quot;Unique identifier for the user actively participating in the event.&quot;,
+            &quot;comments&quot;: &quot;a unique value within the Audit Source ID. For node-based authentication -- where only the system hardware or process, but not a human user, is identified -- User ID would be the node name.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.id&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@UserId&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.altId&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Alternative User id e.g. authentication&quot;,
+            &quot;formal&quot;: &quot;Alternative Participant Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.id (distinguish id type by root)&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@AlternativeUserId&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.name&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Human-meaningful name for the user&quot;,
+            &quot;formal&quot;: &quot;Human-meaningful name for the user.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.name&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@UserName&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.requestor&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Whether user is initiator&quot;,
+            &quot;formal&quot;: &quot;Indicator that the user is or is not the requestor, or initiator, for the event being audited.&quot;,
+            &quot;comments&quot;: &quot;There can only be one initiator. If the initiator is not clear, then do not choose any one participant as the initiator.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;boolean&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;If participation.typeCode was author, then true&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@UserIsRequestor&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.media&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Type of media&quot;,
+            &quot;formal&quot;: &quot;Type of media involved. Used when the event is about exporting/importing onto media.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Coding&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.player.description.mediaType&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;MediaType&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.network&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Logical network location for application activity&quot;,
+            &quot;formal&quot;: &quot;Logical network location for application activity, if the activity has a network location.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.player.description.reference&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.network.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.network.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.network.identifier&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Identifier for the network access point of the user device&quot;,
+            &quot;formal&quot;: &quot;An identifier for the network access point of the user device for the audit event.&quot;,
+            &quot;comments&quot;: &quot;This could be a device id, IP address or some other identifier associated with a device.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;pre-coordinated into URL&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@NetworkAccessPointID&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.participant.network.type&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;The type of network access point&quot;,
+            &quot;formal&quot;: &quot;An identifier for the type of network access point that originated the audit event.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventParticipantNetworkType&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/network-type&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;pre-coordinated into URL&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@NetworkAccessPointTypeCode&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.source&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Application systems and processes&quot;,
+            &quot;formal&quot;: &quot;Application systems and processes.&quot;,
+            &quot;comments&quot;: &quot;Since multi-tier, distributed, or composite applications make source identification ambiguous, this collection of fields may repeat for each application or process actively involved in the event. For example, multiple value-sets can identify participating web servers, application processes, and database server threads in an n-tier distributed application. Passive event participants, e.g., low-level network transports, need not be identified.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.participation[typeCode=INF].role[classCode=ASSIGN].player[classCode=DEV, determinerCode=INSTANCE]&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;AuditSourceIdentification&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.source.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.source.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.source.site&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Logical source location within the enterprise&quot;,
+            &quot;formal&quot;: &quot;Logical source location within the healthcare enterprise network.&quot;,
+            &quot;comments&quot;: &quot;a hospital or other provider location within a multi-entity provider group.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.scopedRole[classCode=LOCE].player.desc&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@AuditEnterpriseSiteId&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.source.identifier&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;The id of source where event originated&quot;,
+            &quot;formal&quot;: &quot;Identifier of the source where the event originated.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.id&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@AuditSourceId&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.source.type&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;The type of source where event originated&quot;,
+            &quot;formal&quot;: &quot;Code specifying the type of source where event originated.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Coding&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventSourceType&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;preferred&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/security-source-type&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.code&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;AuditSourceTypeCode&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Specific instances of data or objects that have been accessed&quot;,
+            &quot;formal&quot;: &quot;Specific instances of data or objects that have been accessed.&quot;,
+            &quot;comments&quot;: &quot;required unless the values for Event Identification, Active Participant Identification, and Audit Source Identification are sufficient to document the entire auditable event. Because events may have more than one participant object, this group can be a repeating set of values.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;constraint&quot;: [
+              {
+                &quot;key&quot;: &quot;2&quot;,
+                &quot;name&quot;: &quot;Object Identification&quot;,
+                &quot;severity&quot;: &quot;error&quot;,
+                &quot;human&quot;: &quot;Either an identifier or a reference, but not both&quot;,
+                &quot;xpath&quot;: &quot;exists(f:identifier) != exists(f:reference)&quot;
+              },
+              {
+                &quot;key&quot;: &quot;1&quot;,
+                &quot;name&quot;: &quot;Object Name&quot;,
+                &quot;severity&quot;: &quot;error&quot;,
+                &quot;human&quot;: &quot;Either a name or a query (or both)&quot;,
+                &quot;xpath&quot;: &quot;not(exists(f:name)) or not(exists(f:query))&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.outboundRelationship[typeCode=SUBJ].target\n\nor\n\n.participation[typeCode=SBJ].role&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;ParticipantObjectIdentification&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.identifier&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Specific instance of object (e.g. versioned)&quot;,
+            &quot;formal&quot;: &quot;Identifies a specific instance of the participant object. The reference should always be version specific.&quot;,
+            &quot;comments&quot;: &quot;Identifier details depends on object type.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Identifier&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.id.extension&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@ParticipantObjectID&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.reference&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Specific instance of resource (e.g. versioned)&quot;,
+            &quot;formal&quot;: &quot;Identifies a specific instance of the participant object. The reference should always be version specific.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;ResourceReference&quot;,
+                &quot;profile&quot;: &quot;http://hl7.org/fhir/profiles/Any&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;[self]&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@ParticipantObjectID&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.type&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Object type being audited&quot;,
+            &quot;formal&quot;: &quot;Object type being audited.&quot;,
+            &quot;comments&quot;: &quot;This value is distinct from the user's role or any user relationship to the participant object.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventObjectType&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/object-type&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;[self::Act].code\nor\nrole.player.code&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@ParticipantObjectTypeCode&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.role&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Functional application role of Object&quot;,
+            &quot;formal&quot;: &quot;Code representing the functional application role of Participant Object being audited.&quot;,
+            &quot;comments&quot;: &quot;See RFC 3881 for rules concerning matches between role and type.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventObjectRole&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/object-role&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;role.code\n(not sure what this would mean for an Act)&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@ParticipantObjectTypeCodeRole&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.lifecycle&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Life-cycle stage for the object&quot;,
+            &quot;formal&quot;: &quot;Identifier for the data life-cycle stage for the participant object.&quot;,
+            &quot;comments&quot;: &quot;This can be used to provide an audit trail for data, over time, as it passes through the system.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;code&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventObjectLifecycle&quot;,
+              &quot;isExtensible&quot;: false,
+              &quot;conformance&quot;: &quot;required&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/object-lifecycle&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;target of ObservationEvent[code=\&quot;lifecycle\&quot;].value&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@ParticipantObjectDataLifeCycle&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.sensitivity&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Policy-defined sensitivity for the object&quot;,
+            &quot;formal&quot;: &quot;Denotes policy-defined sensitivity for the Participant Object ID such as VIP, HIV status, mental health status or similar topics.&quot;,
+            &quot;comments&quot;: &quot;Values from ATNA are institution- and implementation-defined text strings (in sensitivity.text). HL7 defines confidentiality codes for records, documents etc. that can also be used here.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;CodeableConcept&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;binding&quot;: {
+              &quot;name&quot;: &quot;SecurityEventObjectSensitivity&quot;,
+              &quot;isExtensible&quot;: true,
+              &quot;conformance&quot;: &quot;example&quot;,
+              &quot;referenceResource&quot;: {
+                &quot;reference&quot;: &quot;http://hl7.org/fhir/vs/security-event-sensitivity&quot;
+              }
+            },
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.confidentialityCode&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@ParticipantObjectSensitivity&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.name&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Instance-specific descriptor for Object&quot;,
+            &quot;formal&quot;: &quot;An instance-specific descriptor of the Participant Object ID audited, such as a person's name.&quot;,
+            &quot;comments&quot;: &quot;This field may be used in a query/report to identify audit events for a specific person, e.g., where multiple synonymous Participant Object IDs (patient number, medical record number, encounter number, etc.) have been used.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.title&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;ParticipantObjectName&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.description&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Descriptive text&quot;,
+            &quot;formal&quot;: &quot;Text that describes the object in more detail.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.text&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;ParticipantObjectDescription&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.query&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Actual query for object&quot;,
+            &quot;formal&quot;: &quot;The actual query for a query-type participant object.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;base64Binary&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;No mapping&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;ParticipantObjectQuery&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.detail&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Information about the Object&quot;,
+            &quot;formal&quot;: &quot;Additional Information about the Object.&quot;,
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.inboundRelationship[typeCode=SUBJ].target[classCode=OBS, moodCode=EVN]&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;ParticipantObjectDetail&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.detail.extension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Additional Content defined by implementations&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.detail.modifierExtension&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Extensions that cannot be ignored&quot;,
+            &quot;formal&quot;: &quot;May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&quot;,
+            &quot;comments&quot;: &quot;there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.&quot;,
+            &quot;synonym&quot;: [
+              &quot;extensions&quot;,
+              &quot;user content&quot;
+            ],
+            &quot;min&quot;: 0,
+            &quot;max&quot;: &quot;*&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;Extension&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.detail.type&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Name of the property&quot;,
+            &quot;formal&quot;: &quot;Name of the property.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;string&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.code&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@type&quot;
+              }
+            ]
+          }
+        },
+        {
+          &quot;path&quot;: &quot;SecurityEvent.object.detail.value&quot;,
+          &quot;definition&quot;: {
+            &quot;short&quot;: &quot;Property value&quot;,
+            &quot;formal&quot;: &quot;Property value.&quot;,
+            &quot;min&quot;: 1,
+            &quot;max&quot;: &quot;1&quot;,
+            &quot;type&quot;: [
+              {
+                &quot;code&quot;: &quot;base64Binary&quot;
+              }
+            ],
+            &quot;isModifier&quot;: false,
+            &quot;mapping&quot;: [
+              {
+                &quot;identity&quot;: &quot;rim&quot;,
+                &quot;map&quot;: &quot;.value&quot;
+              },
+              {
+                &quot;identity&quot;: &quot;dicom&quot;,
+                &quot;map&quot;: &quot;@value&quot;
+              }
+            ]
+          }
+        }
+      ],
+      &quot;searchParam&quot;: [
+        {
+          &quot;name&quot;: &quot;_id&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The logical resource id associated with the resource (must be supported by all servers)&quot;
+        },
+        {
+          &quot;name&quot;: &quot;_language&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The language of the resource&quot;
+        },
+        {
+          &quot;name&quot;: &quot;action&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;Type of action performed during the event&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:event/f:action&quot;
+        },
+        {
+          &quot;name&quot;: &quot;address&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;Identifier for the network access point of the user device&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:participant/f:network/f:identifier&quot;
+        },
+        {
+          &quot;name&quot;: &quot;altid&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;Alternative User id e.g. authentication&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:participant/f:altId&quot;
+        },
+        {
+          &quot;name&quot;: &quot;date&quot;,
+          &quot;type&quot;: &quot;date&quot;,
+          &quot;documentation&quot;: &quot;Time when the event occurred on source&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:event/f:dateTime&quot;
+        },
+        {
+          &quot;name&quot;: &quot;desc&quot;,
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;documentation&quot;: &quot;Instance-specific descriptor for Object&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:object/f:name&quot;
+        },
+        {
+          &quot;name&quot;: &quot;identity&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;Specific instance of object (e.g. versioned)&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:object/f:identifier&quot;
+        },
+        {
+          &quot;name&quot;: &quot;name&quot;,
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;documentation&quot;: &quot;Human-meaningful name for the user&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:participant/f:name&quot;
+        },
+        {
+          &quot;name&quot;: &quot;object-type&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;Object type being audited&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:object/f:type&quot;
+        },
+        {
+          &quot;name&quot;: &quot;patientid&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The id of the patient (one of multiple kinds of participations)&quot;
+        },
+        {
+          &quot;name&quot;: &quot;reference&quot;,
+          &quot;type&quot;: &quot;reference&quot;,
+          &quot;documentation&quot;: &quot;Specific instance of resource (e.g. versioned)&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:object/f:reference&quot;
+        },
+        {
+          &quot;name&quot;: &quot;site&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;Logical source location within the enterprise&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:source/f:site&quot;
+        },
+        {
+          &quot;name&quot;: &quot;source&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;The id of source where event originated&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:source/f:identifier&quot;
+        },
+        {
+          &quot;name&quot;: &quot;subtype&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;More specific type/id for the event&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:event/f:subtype&quot;
+        },
+        {
+          &quot;name&quot;: &quot;type&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;Type/identifier of event&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:event/f:type&quot;
+        },
+        {
+          &quot;name&quot;: &quot;user&quot;,
+          &quot;type&quot;: &quot;token&quot;,
+          &quot;documentation&quot;: &quot;Unique identifier for the user&quot;,
+          &quot;xpath&quot;: &quot;f:SecurityEvent/f:participant/f:userId&quot;
+        }
+      ]
+    }
+  ]
+}
+</pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

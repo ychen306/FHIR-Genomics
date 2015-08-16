@@ -1,0 +1,267 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>DiagnosticOrder - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><a href="diagnosticorder.html">DiagnosticOrder</a></li>        <li><b>Formal Definitions</b></li>          <!-- diagnosticorder.html / res-Formal Definitions -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li><a href="diagnosticorder.html">Content</a></li><li><a href="diagnosticorder-examples.html">Examples</a></li><li class="active"><a href="#">Formal Definitions</a></li><li><a href="diagnosticorder-mappings.html">Mappings</a></li><li><a href="diagnosticorder-profiles.html">Profiles</a></li></ul>
+
+<h2><span class="sectioncount">4.17.7<a name="4.17.7"> </a></span> Resource DiagnosticOrder - Formal Definitions</h2>
+
+<p>Formal definitions for the elements in the DiagnosticOrder resource.</p>
+
+<table class="dict">
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder</b><a name="DiagnosticOrder"> </a></td></tr>
+  <tr><td>Definition</td><td>A request for a diagnostic investigation service to be performed.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td>Aliases</td><td>Report; Test; Result; Results; Labs; Laboratory</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.subject</b><a name="DiagnosticOrder.subject"> </a></td></tr>
+  <tr><td>Definition</td><td>Who or what the investigation is to be performed on. This is usually a human patient, but diagnostic tests can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans).</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="patient.html">Patient</a> | <a href="group.html">Group</a> | <a href="location.html">Location</a> | <a href="device.html">Device</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.orderer</b><a name="DiagnosticOrder.orderer"> </a></td></tr>
+  <tr><td>Definition</td><td>The practitioner that holds legal responsibility for ordering the investigation.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="practitioner.html">Practitioner</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.identifier</b><a name="DiagnosticOrder.identifier"> </a></td></tr>
+  <tr><td>Definition</td><td>Identifiers assigned to this order by the order or by the receiver.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.encounter</b><a name="DiagnosticOrder.encounter"> </a></td></tr>
+  <tr><td>Definition</td><td>An encounter that provides additional informaton about the healthcare context in which this request is made.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="encounter.html">Encounter</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.clinicalNotes</b><a name="DiagnosticOrder.clinicalNotes"> </a></td></tr>
+  <tr><td>Definition</td><td>An explanation or justification for why this diagnostic investigation is being requested.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td>This may be used to decide how the diagnostic investigation will be performed, or even if it will be performed at all.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.specimen</b><a name="DiagnosticOrder.specimen"> </a></td></tr>
+  <tr><td>Definition</td><td>One or more specimens that the diagnostic investigation is about.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="specimen.html">Specimen</a>)</td></tr>
+  <tr><td>Comments</td><td>Many investigation requests will create a need for specimens, but the request itself is not actually about the specimens. This is provided for when the diagnostic investigation is requested on already existing specimens.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.status</b><a name="DiagnosticOrder.status"> </a></td></tr>
+  <tr><td>Definition</td><td>The status of the order.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>DiagnosticOrderStatus: The status of a diagnostic order (see <a href="diagnostic-order-status.html">http://hl7.org/fhir/diagnostic-order-status</a> for values)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td>Typically the system placing the order sets the status to requested. There after, the order is maintained by the receiver that updates the status as the request is handled.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.priority</b><a name="DiagnosticOrder.priority"> </a></td></tr>
+  <tr><td>Definition</td><td>The clinical priority associated with this order.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>DiagnosticOrderPriority: The clinical priority of a diagnostic order (see <a href="diagnostic-order-priority.html">http://hl7.org/fhir/diagnostic-order-priority</a> for values)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td>The Order resource also has a priority. Generally, these should be the same, but they can be different, for instance in the case where the clinician indicates that the order is urgent, but the subsequent workflow process overrule this priority for some reason. The effective default value is &quot;normal&quot;.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.event</b><a name="DiagnosticOrder.event"> </a></td></tr>
+  <tr><td>Definition</td><td>A summary of the events of interest that have occurred as the request is processed. E.g. when the order was made, various processing steps (specimens received), when it was completed.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td>This is not the same as an audit trail - it is a view of the important things that happened in the past. Typically, there would only be one entry for any given status, and systems may not record all the status events.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.event.status</b><a name="DiagnosticOrder.event.status"> </a></td></tr>
+  <tr><td>Definition</td><td>The status for the event.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>DiagnosticOrderStatus: The status of a diagnostic order (see <a href="diagnostic-order-status.html">http://hl7.org/fhir/diagnostic-order-status</a> for values)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.event.description</b><a name="DiagnosticOrder.event.description"> </a></td></tr>
+  <tr><td>Definition</td><td>Additional information about the event that occurred - e.g. if the status remained unchanged.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>DIagnosticOrderEventDescription:  (<a href="valueset-diagnostic-order-event.html">See http://hl7.org/fhir/vs/diagnostic-order-event</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.event.dateTime</b><a name="DiagnosticOrder.event.dateTime"> </a></td></tr>
+  <tr><td>Definition</td><td>The date/time at which the event occurred.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.event.actor</b><a name="DiagnosticOrder.event.actor"> </a></td></tr>
+  <tr><td>Definition</td><td>The person who was responsible for performing or recording the action.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="practitioner.html">Practitioner</a> | <a href="device.html">Device</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.item</b><a name="DiagnosticOrder.item"> </a></td></tr>
+  <tr><td>Definition</td><td>The specific diagnostic investigations that are requested as part of this request. Sometimes, there can only be one item per request, but in most contexts, more than one investigation can be requested.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td>Comments</td><td>There would always be at least one item in normal usage, but this is optional so that a workflow can quote order details without having to list the items.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.item.code</b><a name="DiagnosticOrder.item.code"> </a></td></tr>
+  <tr><td>Definition</td><td>A code that identifies a particular diagnostic investigation, or panel of investigations, that have been requested.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>DiagnosticRequests: LOINC Order Codes (<a href="valueset-diagnostic-requests.html">See http://hl7.org/fhir/vs/diagnostic-requests</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td>Many laboratory tests and radiology tests embed the specimen/organ system in the test name, for example,  serum or serum/plasma glucose, or a chest xray. The specimen may not be recorded separately from the test code.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.item.specimen</b><a name="DiagnosticOrder.item.specimen"> </a></td></tr>
+  <tr><td>Definition</td><td>If the item is related to a specific speciment.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="references.html#Resource">Resource</a>(<a href="specimen.html">Specimen</a>)</td></tr>
+  <tr><td>Comments</td><td>A single specimen should not appear in both DIagnosticOrder.specimen and DiagnosticOrder.item.specimen.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.item.bodySite</b><a name="DiagnosticOrder.item.bodySite"> </a></td></tr>
+  <tr><td>Definition</td><td>Anatomical location where the request test should be performed.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>BodySite: SNOMED CT Body site concepts (<a href="valueset-body-site.html">See http://hl7.org/fhir/vs/body-site</a>)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Aliases</td><td>location</td></tr>
+  <tr><td>To Do</td><td>Is this approach or target site?.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.item.status</b><a name="DiagnosticOrder.item.status"> </a></td></tr>
+  <tr><td>Definition</td><td>The status of this individual item within the order.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="terminologies.html">Binding</a></td><td>DiagnosticOrderStatus: The status of a diagnostic order (see <a href="diagnostic-order-status.html">http://hl7.org/fhir/diagnostic-order-status</a> for values)</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="datatypes.html#code">code</a></td></tr>
+  <tr><td>Comments</td><td>If the request has multiple items that have their own life cycles, then the items will have their own status while the overall diagnostic order is (usually) &quot;in progress&quot;.</td></tr>
+  <tr><td colspan="2" class="structure"><b>DiagnosticOrder.item.event</b><a name="DiagnosticOrder.item.event"> </a></td></tr>
+  <tr><td>Definition</td><td>A summary of the events of interest that have occurred as this item of the request is processed.</td></tr>
+  <tr><td><a href="conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="datatypes.html">Type</a></td><td><a href="#DiagnosticOrder.event">See DiagnosticOrder.event</a></td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

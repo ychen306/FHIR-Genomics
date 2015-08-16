@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>subject</b>: P. van de Heuvel
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f002-lung.html">v3251 (official); finished; outpatient; Patient-initiated encounter; 140 min; Partial lobectomy of lung; Urgent</a>
+      </p>
+      <p>
+        <b>asserter</b>: P. van de Heuvel
+      </p>
+      <p>
+        <b>dateAsserted</b>: 3-Jun 2012
+      </p>
+      <p>
+        <b>code</b>: 
+        <span title="Codes: {http://snomed.info/sct 254637007}">NSCLC - Non-small cell lung cancer</span>
+      </p>
+      <p>
+        <b>category</b>: 
+        <span title="Codes: {http://snomed.info/sct 439401001}">diagnosis</span>
+      </p>
+      <p>
+        <b>status</b>: confirmed
+      </p>
+      <p>
+        <b>severity</b>: 
+        <span title="Codes: {http://snomed.info/sct 24484000}">Severe</span>
+      </p>
+      <p>
+        <b>onset[x]</b>: 5-May 2011
+      </p>
+      <h3>Stages</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Summary</b>
+          </td>
+          <td>
+            <b>Assessment</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 258219007}">stage II</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>Evidences</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 169069000}">CT of thorax</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>Locations</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 51185008}">Thorax</span>
+          </td>
+          <td>lung</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f002"/>
+  </encounter>
+  <asserter>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </asserter>
+  <dateAsserted value="2012-06-03"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="254637007"/>
+      <display value="NSCLC - Non-small cell lung cancer"/>
+    </coding>
+  </code>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="439401001"/>
+      <display value="diagnosis"/>
+    </coding>
+  </category>
+  <status value="confirmed"/>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="24484000"/>
+      <display value="Severe"/>
+    </coding>
+  </severity>
+  <onsetDate value="2011-05-05"/>
+  <stage>
+    <summary>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="258219007"/>
+        <display value="stage II"/>
+      </coding>
+    </summary>
+  </stage>
+  <evidence>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="169069000"/>
+        <display value="CT of thorax"/>
+      </coding>
+    </code>
+  </evidence>
+  <location>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="51185008"/>
+        <display value="Thorax"/>
+      </coding>
+    </code>
+    <detail value="lung"/>
+  </location>
+</Condition>

@@ -1,0 +1,290 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>AdverseReaction - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><b>AdverseReaction</b></li>          <!-- adversereaction.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="adversereaction-examples.html">Examples</a></li><li><a href="adversereaction-definitions.html">Formal Definitions</a></li><li><a href="adversereaction-mappings.html">Mappings</a></li><li><a href="adversereaction-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">4.1<a name="4.1"> </a></span> Resource AdverseReaction - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+Records an unexpected reaction suspected to be related to the exposure of the reaction subject to a substance. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">4.1.1<a name="4.1.1"> </a></span> Scope and Usage</h2>
+<p>
+Adverse Reaction resources are used to provide information about specific 
+reactions to a substance.  These are normally associated with an 
+<a href="allergyintolerance.html">AllergyIntolerance</a> resource,
+but can be reported on their own when no assumption of further reactions 
+is being made, or when specific events are being described.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">4.1.2<a name="4.1.2"> </a></span> Background and Context</h2>
+<p>
+An Adverse Reaction normally has a set of signs or symptoms that are 
+reported in the Symptom class. However, it is possible to convey that 
+an adverse reaction occurred without knowing the specific signs or 
+symptoms that occurred, e.g. <i>Some unknown reaction occurred.</i>
+Similarly, it is possible to convey that an adverse reaction with 
+a set of symptoms occurred but not indicate the substance if it 
+is not known.  e.g. <i>A rash occurred for some unknown reason.</i>
+</p>
+<p>
+The Exposure class is used to indicate a set of exposures 
+that preceded the reaction. There is no assertion of causality, 
+purely a statement of timing. Each exposure can indicate a 
+substance that might be different from the reaction if needed.
+</p>
+</div>
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">4.1.3<a name="4.1.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="202.0" width="736.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="106.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="192.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="192.0" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="96.0">AdverseReaction<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="6.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.identifier"><title>This records identifiers associated with this reaction that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..*</text><text fill="black" class="diagram-class-detail" y="56.0" x="6.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.date"><title>The date (and possibly time) when the reaction began</title>date</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="70.0" x="6.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.subject"><title>The subject of the adverse reaction</title>subject</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>) 1..1</text><text fill="black" class="diagram-class-detail" y="84.0" x="6.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.didNotOccurFlag"><title>If true, indicates that no reaction occurred (this element modifies the meaning of other elements)</title>didNotOccurFlag</a> : <a xlink:href="datatypes.html#boolean">boolean</a> 1..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="6.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.recorder"><title>Identifies the individual responsible for the information in the reaction record</title>recorder</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a xlink:href="patient.html#Patient">Patient</a>) 0..1</text><rect height="64.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="180.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="300.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="480.0" x1="300.0"/><text fill="black" class="diagram-class-title" y="20.0" x="390.0">Symptom</text><text fill="black" class="diagram-class-detail" y="42.0" x="306.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.symptom.code"><title>Indicates the specific sign or symptom that was observed</title>code</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 1..1 &lt;&lt;<a xlink:href="http://apps.who.int/classifications/icd10/browse/2010/en"><title>The type of symptom.</title>SymptomType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="56.0" x="306.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.symptom.severity"><title>The severity of the sign or symptom</title>severity</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="reactionSeverity.html"><title>The severity of an adverse reaction.</title>ReactionSeverity</a>&gt;&gt;</text><rect height="92.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="236.0" filter="url(#shadow)" rx="4" y="90.0" ry="4" x="300.0"/><line style="stroke:dimgrey;stroke-width:1" y1="118.0" y2="118.0" x2="536.0" x1="300.0"/><text fill="black" class="diagram-class-title" y="110.0" x="418.0">Exposure</text><text fill="black" class="diagram-class-detail" y="132.0" x="306.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.exposure.date"><title>Identifies the initial date of the exposure that is suspected to be related to the reaction</title>date</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="146.0" x="306.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.exposure.type"><title>The type of exposure: Drug Administration, Immunization, Coincidental</title>type</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="exposureType.html"><title>The type of exposure that resulted in an adverse reaction</title>ExposureType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="160.0" x="306.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.exposure.causalityExpectation"><title>A statement of how confident that the recorder was that this exposure caused the reaction</title>causalityExpectation</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="causalityExpectation.html"><title>How likely is it that the given exposure caused a reaction</title>CausalityExpectation</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="174.0" x="306.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.exposure.substance"><title>Substance that is presumed to have caused the adverse reaction</title>substance</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="substance.html#Substance">Substance</a>) 0..1</text><line style="stroke:navy;stroke-width:1" y1="46.14285714285714" y2="38.42857142857143" x2="300.0" x1="192.0"/><polygon transform="rotate(-4.085616779974873 192.0 46.14285714285714)" style="fill:navy;stroke:navy;stroke-width:1" points="192.0,46.14285714285714 198.0,50.14285714285714 204.0,46.14285714285714 198.0,42.14285714285714 192.0,46.14285714285714"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="28.0" y="35.0" x="232.0"/><text fill="black" class="diagram-class-linkage" y="45.0" x="246.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.symptom"><title>The signs and symptoms that were observed as part of the reaction</title>symptom</a></text><text fill="black" class="diagram-class-linkage" y="34.42857142857143" x="280.0">0..*</text><line style="stroke:navy;stroke-width:1" y1="77.74534161490683" y2="105.583850931677" x2="300.0" x1="192.0"/><polygon transform="rotate(14.454148380172077 192.0 77.74534161490683)" style="fill:navy;stroke:navy;stroke-width:1" points="192.0,77.74534161490683 198.0,81.74534161490683 204.0,77.74534161490683 198.0,73.74534161490683 192.0,77.74534161490683"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="32.0" y="84.0" x="230.0"/><text fill="black" class="diagram-class-linkage" y="94.0" x="246.0"><a xlink:href="adversereaction-definitions.html#AdverseReaction.exposure"><title>An exposure to a substance that preceded a reaction occurrence</title>exposure</a></text><text fill="black" class="diagram-class-linkage" y="101.583850931677" x="280.0">0..*</text></svg>
+<p>This resource is referenced by <a href="allergyintolerance.html">AllergyIntolerance</a>, <a href="immunization.html">Immunization</a>, <a href="immunizationrecommendation.html">ImmunizationRecommendation</a> and <a href="procedure.html">Procedure</a></p>
+
+
+<a name="def"> </a>
+<a name="adversereaction"> </a>
+<a name="AdverseReaction"> </a>
+<pre class="spec">
+&lt;<a title="Records an unexpected reaction suspected to be related to the exposure of the reaction subject to a substance." class="dict" href="adversereaction-definitions.html#AdverseReaction"><b>AdverseReaction</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="This records identifiers associated with this reaction that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)." class="dict" href="adversereaction-definitions.html#AdverseReaction.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External Ids for this adverse reaction</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="The date (and possibly time) when the reaction began." class="dict" href="adversereaction-definitions.html#AdverseReaction.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the reaction occurred</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The subject of the adverse reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who had the reaction</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="If true, indicates that no reaction occurred (this element modifies the meaning of other elements)" class="dict" href="adversereaction-definitions.html#AdverseReaction.didNotOccurFlag"><span style="text-decoration: underline"><b>didNotOccurFlag</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Indicates lack of reaction</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Identifies the individual responsible for the information in the reaction record." class="dict" href="adversereaction-definitions.html#AdverseReaction.recorder"><b>recorder</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who recorded the reaction</span><span style="color: Gray"> --&gt;</span>&lt;/recorder&gt;
+ &lt;<a title="The signs and symptoms that were observed as part of the reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.symptom"><b>symptom</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> What was reaction? --&gt;</span>
+  &lt;<a title="Indicates the specific sign or symptom that was observed." class="dict" href="adversereaction-definitions.html#AdverseReaction.symptom.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="http://apps.who.int/classifications/icd10/browse/2010/en.html">E.g. Rash, vomiting</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+  &lt;<a title="The severity of the sign or symptom." class="dict" href="adversereaction-definitions.html#AdverseReaction.symptom.severity"><b>severity</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="reactionSeverity.html">severe | serious | moderate | minor</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;/symptom&gt;
+ &lt;<a title="An exposure to a substance that preceded a reaction occurrence." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure"><b>exposure</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Suspected substance --&gt;</span>
+  &lt;<a title="Identifies the initial date of the exposure that is suspected to be related to the reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the exposure occurred</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The type of exposure: Drug Administration, Immunization, Coincidental." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="exposureType.html">drugadmin | immuniz | coincidental</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A statement of how confident that the recorder was that this exposure caused the reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure.causalityExpectation"><b>causalityExpectation</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="causalityExpectation.html">likely | unlikely | confirmed | unknown</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Substance that is presumed to have caused the adverse reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure.substance"><b>substance</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="substance.html#Substance">Substance</a>)</span> <span style="color: navy">Presumed causative substance</span><span style="color: Gray"> --&gt;</span>&lt;/substance&gt;
+ &lt;/exposure&gt;
+&lt;/AdverseReaction&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="adversereaction.xsd">Schema</a>/<a href="adversereaction.sch">Schematron</a>, 
+<a href="adversereaction.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">4.1.3.1<a name="4.1.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="SymptomType" valign="top">AdverseReaction.symptom.code </td><td valign="top">The type of symptom.</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="http://apps.who.int/classifications/icd10/browse/2010/en">ICD-10 Reaction codes</a></td> </tr>
+ <tr><td title="ReactionSeverity" valign="top">AdverseReaction.symptom.severity </td><td valign="top">The severity of an adverse reaction.</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="reactionSeverity.html">http://hl7.org/fhir/reactionSeverity</a></td> </tr>
+ <tr><td title="ExposureType" valign="top">AdverseReaction.exposure.type </td><td valign="top">The type of exposure that resulted in an adverse reaction</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="exposureType.html">http://hl7.org/fhir/exposureType</a></td> </tr>
+ <tr><td title="CausalityExpectation" valign="top">AdverseReaction.exposure.causalityExpectation </td><td valign="top">How likely is it that the given exposure caused a reaction</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="causalityExpectation.html">http://hl7.org/fhir/causalityExpectation</a></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+
+    <h2><span class="sectioncount">4.1.4<a name="4.1.4"> </a></span> Notes:</h2>
+    <ul>
+        <li>Vocabulary Bindings
+            <ul>
+                <li>The vocabulary bindings are tentative at this point.
+                    Further guidance is needed on whether the current bindings are reasonable.</li>
+                <li>ExposureType is currently a code, but if a suitable value set was used, it could (should?)
+                    be changed to a CodeableConcept.</li>
+            </ul>
+        </li>
+    </ul>
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">4.1.5<a name="4.1.5"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>The date of the reaction</td><td>AdverseReaction.date</td></tr>
+<tr><td>subject</td><td><a href="search.html#reference">reference</a></td><td>The subject that the sensitivity is about</td><td>AdverseReaction.subject<br/>(<a href="patient.html">Patient</a>)</td></tr>
+<tr><td>substance</td><td><a href="search.html#reference">reference</a></td><td>The name or code of the substance that produces the sensitivity</td><td>AdverseReaction.exposure.substance<br/>(<a href="substance.html">Substance</a>)</td></tr>
+<tr><td>symptom</td><td><a href="search.html#token">token</a></td><td>One of the symptoms of the reaction</td><td>AdverseReaction.symptom.code</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:17+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

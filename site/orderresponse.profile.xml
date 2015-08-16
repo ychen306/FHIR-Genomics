@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
+&lt;<a title="A response to an order." class="dict" href="orderresponse-definitions.html#OrderResponse"><b>OrderResponse</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifiers assigned to this order. The identifiers are usually assigned by the system responding to the order, but they may be provided or added to by other systems." class="dict" href="orderresponse-definitions.html#OrderResponse.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">
+     Identifiers assigned to this order by the orderer or by the receiver</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="A reference to the order that this is in response to." class="dict" href="orderresponse-definitions.html#OrderResponse.request"><b>request</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="order.html#Order">Order</a>)</span> <span style="color: navy">The order that this is a response to</span><span style="color: Gray"> --&gt;</span>&lt;/request&gt;
+ &lt;<a title="The date and time at which this order response was made (created/posted)." class="dict" href="orderresponse-definitions.html#OrderResponse.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the response was made</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The person, organization, or device credited with making the response." class="dict" href="orderresponse-definitions.html#OrderResponse.who"><b>who</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="organization.html#Organization">Organization</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">Who made the response</span><span style="color: Gray"> --&gt;</span>&lt;/who&gt;
+ &lt;<a title="A reference to an authority policy that is the reason for the response. Usually this is used when the order is rejected, to provide a reason for rejection." class="dict" href="orderresponse-definitions.html#OrderResponse.authority_x_"><b>authority[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a>|<a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">If required by policy</span><span style="color: Gray"> --&gt;</span>&lt;/authority[x]&gt;
+ &lt;<a title="What this response says about the status of the original order (this element modifies the meaning of other elements)" class="dict" href="orderresponse-definitions.html#OrderResponse.code"><span style="text-decoration: underline"><b>code</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="order-outcome-code.html">pending | review | rejected | error | accepted | cancelled | replaced | aborted | complete</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Additional description about the response - e.g. a text description provided by a human user when making decisions about the order." class="dict" href="orderresponse-definitions.html#OrderResponse.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Additional description of the response</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Links to resources that provide details of the outcome of performing the order. E.g. Diagnostic Reports in a response that is made to an order that referenced a diagnostic order." class="dict" href="orderresponse-definitions.html#OrderResponse.fulfillment"><b>fulfillment</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Details of the outcome of performing the order</span><span style="color: Gray"> --&gt;</span>&lt;/fulfillment&gt;
+&lt;/OrderResponse&gt;
+</pre></div>
+  </text>
+  <name value="orderresponse"/>
+  <publisher value="FHIR Project"/>
+  <description value="Basic Profile. A response to an order."/>
+  <status value="draft"/>
+  <date value="2014-10-08"/>
+  <requirements value="Scope and Usage The response to an order indicates the outcome of processing the order itself - whether it was accepted or rejected, or is still in process. The order response resource does not itself convey or represent information that arises as a result of performing the actual order, but it may have references to other resources that do have this information, in order to link between the original order and its outcome."/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <structure>
+    <type value="OrderResponse"/>
+    <publish value="true"/>
+    <element>
+      <path value="OrderResponse"/>
+      <definition>
+        <short value="A response to an order"/>
+        <formal value="A response to an order."/>
+        <comments value="There might be more than one response to an order."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ControlAct[classCode=ACTN, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.text"/>
+      <definition>
+        <short value="Text summary of the resource, for human interpretation"/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+        <synonym value="narrative"/>
+        <synonym value="html"/>
+        <synonym value="xhtml"/>
+        <synonym value="display"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Narrative"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.contained"/>
+      <definition>
+        <short value="Contained, inline Resources"/>
+        <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+        <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+        <synonym value="inline resources"/>
+        <synonym value="anonymous resources"/>
+        <synonym value="contained resources"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.identifier"/>
+      <definition>
+        <short value="Identifiers assigned to this order by the orderer or by the receiver"/>
+        <formal value="Identifiers assigned to this order. The identifiers are usually assigned by the system responding to the order, but they may be provided or added to by other systems."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".id"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.request"/>
+      <definition>
+        <short value="The order that this is a response to"/>
+        <formal value="A reference to the order that this is in response to."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Order"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationships[typeCode=FLFS].target"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="ORC-2 / ORC-3, or OBR-2 | OBR-3"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.date"/>
+      <definition>
+        <short value="When the response was made"/>
+        <formal value="The date and time at which this order response was made (created/posted)."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="dateTime"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=AUT].time"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="ORC-9"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.who"/>
+      <definition>
+        <short value="Who made the response"/>
+        <formal value="The person, organization, or device credited with making the response."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Practitioner"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Organization"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Device"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=AUT].role"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="Practitioner: ORC-19 | PRT / Organization: PRT"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.authority[x]"/>
+      <definition>
+        <short value="If required by policy"/>
+        <formal value="A reference to an authority policy that is the reason for the response. Usually this is used when the order is rejected, to provide a reason for rejection."/>
+        <comments value="reference will be constrained when suitable targets exist."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Any"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationships[typeCode=COVBY].target[classCode=POLICY, moodCode=EVN].code
+
+or
+
+.outboundRelationships[typeCode=COVBY].target[classCode=POLICY, moodCode=EVN]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="Defined in FHIR as &#39;if required by policy&#39;; unclear how this would map to V2 except ORC-19.9-action by.assigning authority or ORC-30-enterer authorization mode, neither of which exactly scales to a resource"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.code"/>
+      <definition>
+        <short value="pending | review | rejected | error | accepted | cancelled | replaced | aborted | complete"/>
+        <formal value="What this response says about the status of the original order."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <isModifier value="true"/>
+        <binding>
+          <name value="OrderOutcomeStatus"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/order-outcome-code"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".code (different trigger events for different outcomes)"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="ORC-1 + ORC-5"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.description"/>
+      <definition>
+        <short value="Additional description of the response"/>
+        <formal value="Additional description about the response - e.g. a text description provided by a human user when making decisions about the order."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".text"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="ORC-16.2-order control code reason.text"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="OrderResponse.fulfillment"/>
+      <definition>
+        <short value="Details of the outcome of performing the order"/>
+        <formal value="Links to resources that provide details of the outcome of performing the order. E.g. Diagnostic Reports in a response that is made to an order that referenced a diagnostic order."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Any"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=SUBJ]/target[moodCode=RQO]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBR+OBX[n] / RXE / RXD / RXG / RXA / BPX / BTX"/>
+        </mapping>
+      </definition>
+    </element>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="code"/>
+      <type value="token"/>
+      <documentation value="pending | review | rejected | error | accepted | cancelled | replaced | aborted | complete"/>
+      <xpath value="f:OrderResponse/f:code"/>
+    </searchParam>
+    <searchParam>
+      <name value="date"/>
+      <type value="date"/>
+      <documentation value="When the response was made"/>
+      <xpath value="f:OrderResponse/f:date"/>
+    </searchParam>
+    <searchParam>
+      <name value="fulfillment"/>
+      <type value="reference"/>
+      <documentation value="Details of the outcome of performing the order"/>
+      <xpath value="f:OrderResponse/f:fulfillment"/>
+    </searchParam>
+    <searchParam>
+      <name value="request"/>
+      <type value="reference"/>
+      <documentation value="The order that this is a response to"/>
+      <xpath value="f:OrderResponse/f:request"/>
+    </searchParam>
+    <searchParam>
+      <name value="who"/>
+      <type value="reference"/>
+      <documentation value="Who made the response"/>
+      <xpath value="f:OrderResponse/f:who"/>
+    </searchParam>
+  </structure>
+</Profile>

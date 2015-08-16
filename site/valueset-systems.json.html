@@ -1,0 +1,754 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Valueset-systems.json - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><a href="valueset.html">ValueSet</a></li>        <li><b>Example Instance</b></li>        <!-- valueset-systems.json.html / resource-instance:ValueSet -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Valueset-systems.json</h1>
+
+<div class="example">
+<p>A list of all the URIs defined in the FHIR spec</p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;ValueSet&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;extensions&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;\n      &lt;table&gt;\n        &lt;tr&gt;&lt;td&gt;&lt;b&gt;URI&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;SNOMED CT: (http://ihtsdo.org)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://loinc.org&lt;/td&gt;&lt;td&gt;LOINC (http://loinc.org)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://unitsofmeasure.org&lt;/td&gt;&lt;td&gt;UCUM: (http://unitsofmeasure.org) Case Sensitive Codes)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10&lt;/td&gt;&lt;td&gt;ICD-10 International (http://www.who.int/classifications/icd/en/)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-9&lt;/td&gt;&lt;td&gt;ICD-9 USA (http://www.cdc.gov/nchs/icd/icd9.htm)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://www.whocc.no/atc&lt;/td&gt;&lt;td&gt;Anatomical Therapeutic Chemical Classification System (http://www.whocc.no/atc/structure_and_principles/)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:std:iso:11073:10101&lt;/td&gt;&lt;td&gt;Medical Device Codes defined in ISO 11073-10101 (http://hit-testing.nist.gov:13110/rtmms/index.htm#rosetta)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://nema.org/dicom/dicm&lt;/td&gt;&lt;td&gt;DICOM Code Definitions (http://nema.org/dicom/dicm)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:ietf:rfc:3986&lt;/td&gt;&lt;td&gt;URIs (As defined by http://www.ietf.org/rfc/rfc3986.txt)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://hl7.org/fhir/sid/us-ssn&lt;/td&gt;&lt;td&gt;SSN (http://www.ssa.gov/ssnumber/)&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.2\t&lt;/td&gt;&lt;td&gt;Alaska Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.1\t&lt;/td&gt;&lt;td&gt;Alabama Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.5\t&lt;/td&gt;&lt;td&gt;Arkansas Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.4\t&lt;/td&gt;&lt;td&gt;Arizona Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.6\t&lt;/td&gt;&lt;td&gt;California Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.8\t&lt;/td&gt;&lt;td&gt;Colorado Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.9\t&lt;/td&gt;&lt;td&gt;Connecticut Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.11\t&lt;/td&gt;&lt;td&gt;DC Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.10\t&lt;/td&gt;&lt;td&gt;Delaware Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.12\t&lt;/td&gt;&lt;td&gt;Florida Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.13\t&lt;/td&gt;&lt;td&gt;Georgia Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.15\t&lt;/td&gt;&lt;td&gt;Hawaii Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.19\t&lt;/td&gt;&lt;td&gt;Iowa Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.16\t&lt;/td&gt;&lt;td&gt;Idaho Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.17\t&lt;/td&gt;&lt;td&gt;Illinois Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.20\t&lt;/td&gt;&lt;td&gt;Kansas Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.21\t&lt;/td&gt;&lt;td&gt;Kentucky Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.22\t&lt;/td&gt;&lt;td&gt;Louisiana Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.25\t&lt;/td&gt;&lt;td&gt;Massachusetts Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.24\t&lt;/td&gt;&lt;td&gt;Maryland Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.23\t&lt;/td&gt;&lt;td&gt;Maine Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.26\t&lt;/td&gt;&lt;td&gt;Michigan Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.27\t&lt;/td&gt;&lt;td&gt;Minnesota Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.29\t&lt;/td&gt;&lt;td&gt;Missouri Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.28\t&lt;/td&gt;&lt;td&gt;Mississippi Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.30\t&lt;/td&gt;&lt;td&gt;Montana Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.36\t&lt;/td&gt;&lt;td&gt;NewYork Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.37\t&lt;/td&gt;&lt;td&gt;NorthCarolina Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.38\t&lt;/td&gt;&lt;td&gt;NorthDakota Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.31\t&lt;/td&gt;&lt;td&gt;Nebraska Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.33\t&lt;/td&gt;&lt;td&gt;NewHampshire Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.34\t&lt;/td&gt;&lt;td&gt;NewJersey Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.35\t&lt;/td&gt;&lt;td&gt;NewMexico Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.32\t&lt;/td&gt;&lt;td&gt;Nevada Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.39\t&lt;/td&gt;&lt;td&gt;Ohio Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.40\t&lt;/td&gt;&lt;td&gt;Oklahoma Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.41\t&lt;/td&gt;&lt;td&gt;Oregon Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.42\t&lt;/td&gt;&lt;td&gt;Pennsylvania Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.44\t&lt;/td&gt;&lt;td&gt;RhodeIsland Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.45\t&lt;/td&gt;&lt;td&gt;SouthCarolina Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.46\t&lt;/td&gt;&lt;td&gt;SouthDakota Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.47\t&lt;/td&gt;&lt;td&gt;Tennessee Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.48\t&lt;/td&gt;&lt;td&gt;Texas Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.49\t&lt;/td&gt;&lt;td&gt;Utah Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.51\t&lt;/td&gt;&lt;td&gt;Virginia Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.50\t&lt;/td&gt;&lt;td&gt;Vermont Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.53\t&lt;/td&gt;&lt;td&gt;Washington Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.55\t&lt;/td&gt;&lt;td&gt;Wisconsin Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.54\t&lt;/td&gt;&lt;td&gt;WestVirginia Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;urn:oid:2.16.840.1.113883.4.3.56\t&lt;/td&gt;&lt;td&gt;Wyoming Driver's License&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;http://hl7.org/fhir/drivers-license&lt;/td&gt;&lt;td&gt;Driver's licenses with no known issuing authority&lt;/td&gt;&lt;/tr&gt;\n      &lt;/table&gt;\n    &lt;/div&gt;&quot;
+  },
+  &quot;identifier&quot;: &quot;http://hl7.org/fhir/valueset-systems&quot;,
+  &quot;version&quot;: &quot;2013-10-12&quot;,
+  &quot;name&quot;: &quot;Explicitly Named systems list for FHIR&quot;,
+  &quot;publisher&quot;: &quot;FHIR project team&quot;,
+  &quot;telecom&quot;: [
+    {
+      &quot;system&quot;: &quot;url&quot;,
+      &quot;value&quot;: &quot;http://hl7.org/fhir&quot;
+    }
+  ],
+  &quot;description&quot;: &quot;This is a list of the explicitly named systems in the FHIR Specification&quot;,
+  &quot;status&quot;: &quot;draft&quot;,
+  &quot;date&quot;: &quot;2013-10-12&quot;,
+  &quot;compose&quot;: {
+    &quot;include&quot;: [
+      {
+        &quot;system&quot;: &quot;urn:ietf:rfc:3986&quot;,
+        &quot;code&quot;: [
+          &quot;http://snomed.info/sct&quot;,
+          &quot;http://loinc.org&quot;,
+          &quot;http://unitsofmeasure.org&quot;,
+          &quot;http://hl7.org/fhir/sid/icd-10&quot;,
+          &quot;http://hl7.org/fhir/sid/icd-9&quot;,
+          &quot;http://www.whocc.no/atc&quot;,
+          &quot;urn:std:iso:11073:10101&quot;,
+          &quot;http://nema.org/dicom/dicm&quot;,
+          &quot;urn:ietf:rfc:3986&quot;,
+          &quot;http://hl7.org/fhir/sid/us-ssn&quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.2 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.1 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.5 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.4 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.6 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.8 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.9 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.11 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.10 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.12 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.13 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.15 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.19 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.16 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.17 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.20 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.21 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.22 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.25 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.24 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.23 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.26 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.27 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.29 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.28 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.30 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.36 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.37 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.38 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.31 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.33 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.34 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.35 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.32 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.39 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.40 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.41 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.42 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.44 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.45 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.46 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.47 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.48 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.49 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.51 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.50 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.53 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.55 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.54 &quot;,
+          &quot;urn:oid:2.16.840.1.113883.4.3.56 &quot;,
+          &quot;http://hl7.org/fhir/drivers-license&quot;
+        ],
+        &quot;_code&quot;: [
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;SNOMED CT: (http://ihtsdo.org)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;LOINC (http://loinc.org)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;UCUM: (http://unitsofmeasure.org) Case Sensitive Codes)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;ICD-10 International (http://www.who.int/classifications/icd/en/)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;ICD-9 USA (http://www.cdc.gov/nchs/icd/icd9.htm)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Anatomical Therapeutic Chemical Classification System (http://www.whocc.no/atc/structure_and_principles/)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Medical Device Codes defined in ISO 11073-10101 (http://hit-testing.nist.gov:13110/rtmms/index.htm#rosetta)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;DICOM Code Definitions (http://nema.org/dicom/dicm)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;URIs (As defined by http://www.ietf.org/rfc/rfc3986.txt)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;SSN (http://www.ssa.gov/ssnumber/)&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Alaska Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Alabama Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Arkansas Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Arizona Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;California Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Colorado Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Connecticut Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;DC Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Delaware Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Florida Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Georgia Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Hawaii Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Iowa Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Idaho Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Illinois Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Kansas Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Kentucky Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Louisiana Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Massachusetts Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Maryland Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Maine Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Michigan Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Minnesota Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Missouri Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Mississippi Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Montana Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;NewYork Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;NorthCarolina Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;NorthDakota Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Nebraska Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;NewHampshire Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;NewJersey Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;NewMexico Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Nevada Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Ohio Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Oklahoma Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Oregon Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Pennsylvania Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;RhodeIsland Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;SouthCarolina Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;SouthDakota Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Tennessee Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Texas Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Utah Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Virginia Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Vermont Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Washington Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Wisconsin Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;WestVirginia Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Wyoming Driver's License&quot;
+              }
+            ]
+          },
+          {
+            &quot;extension&quot;: [
+              {
+                &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;,
+                &quot;valueString&quot;: &quot;Driver's licenses with no known issuing authority&quot;
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+</pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:17+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

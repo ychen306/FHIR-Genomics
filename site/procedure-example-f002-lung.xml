@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Procedure xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>subject</b>: P. van de Heuvel
+      </p>
+      <p>
+        <b>type</b>: 
+        <span title="Codes: {http://snomed.info/sct 359615001}">Partial lobectomy of lung</span>
+      </p>
+      <p>
+        <b>bodySite</b>: 
+        <span title="Codes: {http://snomed.info/sct 39607008}">Lung structure</span>
+      </p>
+      <p>
+        <b>indication</b>: 
+        <span title="Codes: ">Malignant tumor of lung</span>
+      </p>
+      <h3>Performers</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Person</b>
+          </td>
+          <td>
+            <b>Role</b>
+          </td>
+        </tr>
+        <tr>
+          <td>M.I.M. Versteegh</td>
+          <td>
+            <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.000}">Care role</span>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <b>date</b>: 8-Mar 2013 9:0 --&gt; 8-Mar 2013 9:30
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f002-lung.html">v3251 (official); finished; outpatient; Patient-initiated encounter; 140 min; Partial lobectomy of lung; Urgent</a>
+      </p>
+      <p>
+        <b>outcome</b>: improved blood circulation
+      </p>
+      <p>
+        <b>report</b>: Lab results blood test
+      </p>
+      <p>
+        <b>followUp</b>: described in care plan
+      </p>
+    </div>
+  </text>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="359615001"/>
+      <display value="Partial lobectomy of lung"/>
+    </coding>
+  </type>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="39607008"/>
+      <display value="Lung structure"/>
+    </coding>
+  </bodySite>
+  <indication>
+    <text value="Malignant tumor of lung"/>
+  </indication>
+  <performer>
+    <person>
+      <reference value="Practitioner/f003"/>
+      <display value="M.I.M. Versteegh"/>
+    </person>
+    <role>
+      <coding>
+        <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/><!--   "AssignedRoleType" coding system   -->
+        <code value="01.000"/>
+        <display value="Arts"/>
+      </coding>
+      <text value="Care role"/>
+    </role>
+  </performer>
+  <date>
+    <start value="2013-03-08T09:00:10+01:00"/>
+    <end value="2013-03-08T09:30:10+01:00"/>
+  </date>
+  <encounter>
+    <reference value="Encounter/f002"/>
+  </encounter>
+  <outcome value="improved blood circulation"/>
+  <report>
+    <reference value="DiagnosticReport/f001"/>
+    <display value="Lab results blood test"/>
+  </report>
+  <followUp value="described in care plan"/>
+</Procedure>

@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
+&lt;<a title="A patient&#39;s point-of-time immunization status and recommendation with optional supporting justification." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation"><b>ImmunizationRecommendation</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="A unique identifier assigned to this particular recommendation record." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Business identifier</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="The patient who is the subject of the profile." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who this profile is for</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="Vaccine administration recommendations." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation"><b>recommendation</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..*</b></span> Vaccine administration recommendations --&gt;</span>
+  &lt;<a title="The date the immunization recommendation was created." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Date recommendation created</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Vaccine that pertains to the recommendation." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.vaccineType"><b>vaccineType</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="v3/vs/VaccineType/index.html">Vaccine recommendation applies to</a><span style="color: Gray"> --&gt;</span>&lt;/vaccineType&gt;
+  &lt;<a title="This indicates the next recommended dose number (e.g. dose 2 is the next recommended dose)." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.doseNumber"><b>doseNumber</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#integer">integer</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Recommended dose number</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Vaccine administration status." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.forecastStatus"><b>forecastStatus</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-immunization-recommendation-status.html">Vaccine administration status</a></span><span style="color: Gray"> --&gt;</span>&lt;/forecastStatus&gt;
+  &lt;<a title="Vaccine date recommendations - e.g. earliest date to administer, latest date to administer, etc." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion"><b>dateCriterion</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Dates governing proposed immunization --&gt;</span>
+   &lt;<a title="Date classification of recommendation - e.g. earliest date to give, latest date to give, etc." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-immunization-recommendation-date-criterion.html">Type of date</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+   &lt;<a title="Date recommendation." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion.value"><b>value</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Recommended date</span><span style="color: Gray"> --&gt;</span>
+  &lt;/dateCriterion&gt;
+  &lt;<a title="Contains information about the protocol under which the vaccine was administered." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol"><b>protocol</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Protocol used by recommendation --&gt;</span>
+   &lt;<a title="Indicates the nominal position in a series of the next dose.  This is the recommended dose number as per a specified protocol." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.doseSequence"><b>doseSequence</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#integer">integer</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Number of dose within sequence</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Contains the description about the protocol under which the vaccine was administered." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Protocol details</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Indicates the authority who published the protocol?  E.g. ACIP." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.authority"><b>authority</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Who is responsible for protocol</span><span style="color: Gray"> --&gt;</span>&lt;/authority&gt;
+   &lt;<a title="One possible path to achieve presumed immunity against a disease - within the context of an authority." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.series"><b>series</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Name of vaccination series</span><span style="color: Gray"> --&gt;</span>
+  &lt;/protocol&gt;
+  &lt;<a title="Immunization event history that supports the status and recommendation." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingImmunization"><b>supportingImmunization</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="immunization.html#Immunization">Immunization</a>)</span> <span style="color: navy">
+      Past immunizations supporting recommendation</span><span style="color: Gray"> --&gt;</span>&lt;/supportingImmunization&gt;
+  &lt;<a title="Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information." class="dict" href="immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingPatientInformation"><b>supportingPatientInformation</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="observation.html#Observation">Observation</a>|<a href="adversereaction.html#AdverseReaction">AdverseReaction</a>|
+    <a href="allergyintolerance.html#AllergyIntolerance">AllergyIntolerance</a>)</span> <span style="color: navy">Patient observations supporting recommendation</span><span style="color: Gray"> --&gt;</span>&lt;/supportingPatientInformation&gt;
+ &lt;/recommendation&gt;
+&lt;/ImmunizationRecommendation&gt;
+</pre></div>
+  </text>
+  <name value="immunizationrecommendation"/>
+  <publisher value="FHIR Project"/>
+  <description value="Basic Profile. A patient&#39;s point-of-time immunization status and recommendation with optional supporting justification."/>
+  <status value="draft"/>
+  <date value="2014-10-08"/>
+  <requirements value="Scope and Usage The ImmunizationRecommendation resource is intended to cover communication of a specified patient&#39;s immunization recommendation and status across all healthcare disciplines in all care settings and all regions. 
+
+Additionally, the ImmunizationRecommendation resource is expected to cover key concepts related to the querying of a patient&#39;s immunization recommendation and status. This resource - through consultation with the PHER work group - is believed to meet key use cases and information requirements as defined in the existing HL7 v3 POIZ domain and Immunization Domain Analysis Model."/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <structure>
+    <type value="ImmunizationRecommendation"/>
+    <publish value="true"/>
+    <element>
+      <path value="ImmunizationRecommendation"/>
+      <definition>
+        <short value="Immunization profile"/>
+        <formal value="A patient&#39;s point-of-time immunization status and recommendation with optional supporting justification."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="SubstanceAdministration[moodCode=RMD]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="VXU_V04"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.text"/>
+      <definition>
+        <short value="Text summary of the resource, for human interpretation"/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+        <synonym value="narrative"/>
+        <synonym value="html"/>
+        <synonym value="xhtml"/>
+        <synonym value="display"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Narrative"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.contained"/>
+      <definition>
+        <short value="Contained, inline Resources"/>
+        <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+        <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+        <synonym value="inline resources"/>
+        <synonym value="anonymous resources"/>
+        <synonym value="contained resources"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.identifier"/>
+      <definition>
+        <short value="Business identifier"/>
+        <formal value="A unique identifier assigned to this particular recommendation record."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".id"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.subject"/>
+      <definition>
+        <short value="Who this profile is for"/>
+        <formal value="The patient who is the subject of the profile."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Patient"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".partipication[typeCode=SUBJ].role"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PID-3-patient ID list"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation"/>
+      <definition>
+        <short value="Vaccine administration recommendations"/>
+        <formal value="Vaccine administration recommendations."/>
+        <min value="1"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=&#39;COMP&#39;].target[classCode=SBADM, moodCode=RMD]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.date"/>
+      <definition>
+        <short value="Date recommendation created"/>
+        <formal value="The date the immunization recommendation was created."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="dateTime"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".partipication[typeCode=AUTH].time"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-15-date/time of the observation"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.vaccineType"/>
+      <definition>
+        <short value="Vaccine recommendation applies to"/>
+        <formal value="Vaccine that pertains to the recommendation."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="VaccineType"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/v3/vs/VaccineType"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".partipication[typeCode=CSM].role[classCode=ADMM].code"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-5-observation value : OBX-3-observation identifier e { 30956-7 | 38890-0 }"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.doseNumber"/>
+      <definition>
+        <short value="Recommended dose number"/>
+        <formal value="This indicates the next recommended dose number (e.g. dose 2 is the next recommended dose)."/>
+        <comments value="May need other dose concepts such as administered vs. valid."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="integer"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=COMP, .source[classCode=SBADM, moodCode=INT]].sequenceNumber"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-5-observation value : OBX-3-observation identifier = 30973-2"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.forecastStatus"/>
+      <definition>
+        <short value="Vaccine administration status"/>
+        <formal value="Vaccine administration status."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="ImmunizationRecommendationStatus"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/immunization-recommendation-status"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=SUBJ] .source[classCode=OBS, moodCode=EVN, code=&quot;Immunization Forecast Status&quot;].value"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-5-observation value : OBX-3-observation identifier = 59783-1"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.dateCriterion"/>
+      <definition>
+        <short value="Dates governing proposed immunization"/>
+        <formal value="Vaccine date recommendations - e.g. earliest date to administer, latest date to administer, etc."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=&#39;LIMIT&#39;].target[classCode=OBS, moodCode=EVN, isCriterionInd=true]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-3: 30980-7 = Next dose recommended, 59777-3 = Latest next dose should be given, 59778-1 = Dose is overdue"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.dateCriterion.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.dateCriterion.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.dateCriterion.code"/>
+      <definition>
+        <short value="Type of date"/>
+        <formal value="Date classification of recommendation - e.g. earliest date to give, latest date to give, etc."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="ImmunizationRecommendationDateCriterion"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/immunization-recommendation-date-criterion"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".code"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-3-observation identifier"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.dateCriterion.value"/>
+      <definition>
+        <short value="Recommended date"/>
+        <formal value="Date recommendation."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="dateTime"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".value"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-5-observation value"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.protocol"/>
+      <definition>
+        <short value="Protocol used by recommendation"/>
+        <formal value="Contains information about the protocol under which the vaccine was administered."/>
+        <min value="0"/>
+        <max value="1"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=INST].source[classCode=SBADM, moodCode=DEF]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.protocol.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.protocol.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.protocol.doseSequence"/>
+      <definition>
+        <short value="Number of dose within sequence"/>
+        <formal value="Indicates the nominal position in a series of the next dose.  This is the recommended dose number as per a specified protocol."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="integer"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=COMP, .source[classCode=SBADM, moodCode=DEF]].sequenceNumber"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-5-observation value : OBX-3-observation identifier = 30973-2"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.protocol.description"/>
+      <definition>
+        <short value="Protocol details"/>
+        <formal value="Contains the description about the protocol under which the vaccine was administered."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".text"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-5-observation value : OBX-3-observation identifier = 30956-7"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.protocol.authority"/>
+      <definition>
+        <short value="Who is responsible for protocol"/>
+        <formal value="Indicates the authority who published the protocol?  E.g. ACIP."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Organization"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=AUT]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX-5-observation value : OBX-3-observation identifier = 59779-9"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.protocol.series"/>
+      <definition>
+        <short value="Name of vaccination series"/>
+        <formal value="One possible path to achieve presumed immunity against a disease - within the context of an authority."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".title"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="RXA-5-administered code"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.supportingImmunization"/>
+      <definition>
+        <short value="Past immunizations supporting recommendation"/>
+        <formal value="Immunization event history that supports the status and recommendation."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Immunization"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=RSON].target[classCode=SBADM, moodCode=EVN, code=&quot;immunization&quot;]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="? No clear way to associate in V2.x or IG"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="ImmunizationRecommendation.recommendation.supportingPatientInformation"/>
+      <definition>
+        <short value="Patient observations supporting recommendation"/>
+        <formal value="Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Observation"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/AdverseReaction"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/AllergyIntolerance"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=RSON].target[classCode=OBS, moodCode=EVN]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX If OBX is associated with ( RXA : RXA-5-administered code = &#39;998^No vaccine administered^CVX&#39; ), could contain the reason the vaccine was not administered"/>
+        </mapping>
+      </definition>
+    </element>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="date"/>
+      <type value="date"/>
+      <documentation value="Date recommendation created"/>
+      <xpath value="f:ImmunizationRecommendation/f:recommendation/f:date"/>
+    </searchParam>
+    <searchParam>
+      <name value="dose-number"/>
+      <type value="number"/>
+      <documentation value="Recommended dose number"/>
+      <xpath value="f:ImmunizationRecommendation/f:recommendation/f:doseNumber"/>
+    </searchParam>
+    <searchParam>
+      <name value="dose-sequence"/>
+      <type value="token"/>
+      <documentation value="Number of dose within sequence"/>
+      <xpath value="f:ImmunizationRecommendation/f:recommendation/f:protocol/f:doseSequence"/>
+    </searchParam>
+    <searchParam>
+      <name value="identifier"/>
+      <type value="token"/>
+      <documentation value="Business identifier"/>
+      <xpath value="f:ImmunizationRecommendation/f:identifier"/>
+    </searchParam>
+    <searchParam>
+      <name value="information"/>
+      <type value="reference"/>
+      <documentation value="Patient observations supporting recommendation"/>
+      <xpath value="f:ImmunizationRecommendation/f:recommendation/f:supportingPatientInformation"/>
+    </searchParam>
+    <searchParam>
+      <name value="status"/>
+      <type value="token"/>
+      <documentation value="Vaccine administration status"/>
+      <xpath value="f:ImmunizationRecommendation/f:recommendation/f:forecastStatus"/>
+    </searchParam>
+    <searchParam>
+      <name value="subject"/>
+      <type value="reference"/>
+      <documentation value="Who this profile is for"/>
+      <xpath value="f:ImmunizationRecommendation/f:subject"/>
+    </searchParam>
+    <searchParam>
+      <name value="support"/>
+      <type value="reference"/>
+      <documentation value="Past immunizations supporting recommendation"/>
+      <xpath value="f:ImmunizationRecommendation/f:recommendation/f:supportingImmunization"/>
+    </searchParam>
+    <searchParam>
+      <name value="vaccine-type"/>
+      <type value="token"/>
+      <documentation value="Vaccine recommendation applies to"/>
+      <xpath value="f:ImmunizationRecommendation/f:recommendation/f:vaccineType"/>
+    </searchParam>
+  </structure>
+</Profile>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>subject</b>: Roel
+      </p>
+      <p>
+        <b>encounter</b>: Roel&#39;s encounter on March eleventh
+      </p>
+      <p>
+        <b>asserter</b>: 
+        <a href="practitioner-example-f201-ab.html">UZI-nummer = 12345678901 (official); Dokter Bronsig(official); Male; birthDate: 24-Dec 1956; Implementation of planned interventions; Medical oncologist</a>
+      </p>
+      <p>
+        <b>dateAsserted</b>: 11-Mar 2013
+      </p>
+      <p>
+        <b>code</b>: 
+        <span title="Codes: {http://snomed.info/sct 10001005}">Bacterial sepsis</span>
+      </p>
+      <p>
+        <b>category</b>: 
+        <span title="Codes: {http://snomed.info/sct 55607006}, {http://hl7.org/fhir/condition-category finding}">Problem</span>
+      </p>
+      <p>
+        <b>status</b>: confirmed
+      </p>
+      <p>
+        <b>certainty</b>: 
+        <span title="Codes: {http://snomed.info/sct 17162000}">Certain</span>
+      </p>
+      <p>
+        <b>severity</b>: 
+        <span title="Codes: {http://snomed.info/sct 371924009}">Moderate to severe</span>
+      </p>
+      <p>
+        <b>onset[x]</b>: 8-Mar 2013
+      </p>
+      <h3>Evidences</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>Diagnostic report for Roel&#39;s sepsis</td>
+        </tr>
+      </table>
+      <h3>Locations</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 281158006}">Pulmonary vascular structure</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>RelatedItems</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Type</b>
+          </td>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Target</b>
+          </td>
+        </tr>
+        <tr>
+          <td>dueto</td>
+          <td> </td>
+          <td>Staphylococcus Aureus</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <subject><!--  It entails Roel's problem  -->
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f203"/>
+    <display value="Roel&#39;s encounter on March eleventh"/>
+  </encounter>
+  <asserter>
+    <reference value="Practitioner/f201"/>
+  </asserter>
+  <dateAsserted value="2013-03-11"/>
+  <code><!--  The problem is bacterial sepsis  -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="10001005"/>
+      <display value="Bacterial sepsis"/>
+    </coding>
+  </code>
+  <category><!--  Bacterial sepsis is certainly a moderate to severe problem  -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="55607006"/>
+      <display value="Problem"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/condition-category"/>
+      <code value="finding"/>
+    </coding>
+  </category>
+  <status value="confirmed"/>
+  <certainty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="17162000"/>
+      <display value="Certain"/>
+    </coding>
+  </certainty>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="371924009"/>
+      <display value="Moderate to severe"/>
+    </coding>
+  </severity>
+  <onsetDate value="2013-03-08"/>
+  <evidence>
+    <detail>
+      <reference value="DiagnosticReport/f202"/>
+      <display value="Diagnostic report for Roel&#39;s sepsis"/>
+    </detail>
+  </evidence>
+  <location><!--  Location is intravascular pulmonary  -->
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="281158006"/>
+        <display value="Pulmonary vascular structure"/>
+      </coding>
+    </code>
+  </location>
+  <relatedItem><!--  Bacterial sepsis is due to Staphylococcus Aureus  -->
+    <type value="due-to"/>
+    <target>
+      <reference value="Substance/f202"/>
+      <display value="Staphylococcus Aureus"/>
+    </target>
+  </relatedItem>
+</Condition>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>identifier</b>: 738472983 (usual), ?? (usual)
+      </p>
+      <p>
+        <b>name</b>: Pieter van de Heuvel 
+      </p>
+      <p>
+        <b>telecom</b>: ph: 0648352638(mobile), p.heuvel@gmail.com(home)
+      </p>
+      <p>
+        <b>gender</b>: 
+        <span title="Codes: {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>
+      </p>
+      <p>
+        <b>birthDate</b>: 17-Nov 1944
+      </p>
+      <p>
+        <b>deceased[x]</b>: false
+      </p>
+      <p>
+        <b>address</b>: Van Egmondkade 23 Amsterdam 1024 RJ NLD (home)
+      </p>
+      <p>
+        <b>maritalStatus</b>: 
+        <span title="Codes: {http://hl7.org/fhir/v3/MaritalStatus M}">Getrouwd</span>
+      </p>
+      <p>
+        <b>multipleBirth[x]</b>: true
+      </p>
+      <h3>Contacts</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Relationship</b>
+          </td>
+          <td>
+            <b>Name</b>
+          </td>
+          <td>
+            <b>Telecom</b>
+          </td>
+          <td>
+            <b>Address</b>
+          </td>
+          <td>
+            <b>Gender</b>
+          </td>
+          <td>
+            <b>Organization</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://hl7.org/fhir/patient-contact-relationship partner}">Partner</span>
+          </td>
+          <td>Sarah Abels </td>
+          <td>ph: 0690383372(mobile)</td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+      <p>
+        <b>communication</b>: 
+        <span title="Codes: {urn:ietf:bcp:47 nl}">Nederlands</span>
+      </p>
+      <p>
+        <b>managingOrganization</b>: Burgers University Medical Centre
+      </p>
+      <p>
+        <b>active</b>: true
+      </p>
+    </div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/><!--   BSN identification system   -->
+    <value value="738472983"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
+  </identifier><!--   BSN identification system   -->
+  <name>
+    <use value="usual"/>
+    <family value="van de Heuvel"/>
+    <given value="Pieter"/>
+    <suffix value="MSc"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="0648352638"/>
+    <use value="mobile"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="p.heuvel@gmail.com"/>
+    <use value="home"/>
+  </telecom>
+  <gender>
+    <coding>
+      <system value="http://hl7.org/fhir/v3/AdministrativeGender"/>
+      <code value="M"/>
+      <display value="Male"/>
+    </coding>
+  </gender>
+  <birthDate value="1944-11-17"/>
+  <deceasedBoolean value="false"/>
+  <address>
+    <use value="home"/>
+    <line value="Van Egmondkade 23"/>
+    <city value="Amsterdam"/>
+    <zip value="1024 RJ"/>
+    <country value="NLD"/>
+  </address><!--   ISO 3166 Codes (Countries)   -->
+  <maritalStatus>
+    <coding>
+      <system value="http://hl7.org/fhir/v3/MaritalStatus"/>
+      <code value="M"/>
+      <display value="Married"/>
+    </coding>
+    <text value="Getrouwd"/>
+  </maritalStatus>
+  <multipleBirthBoolean value="true"/>
+  <contact>
+    <relationship>
+      <coding>
+        <system value="http://hl7.org/fhir/patient-contact-relationship"/>
+        <code value="partner"/>
+      </coding>
+    </relationship>
+    <name>
+      <use value="usual"/>
+      <family value="Abels"/>
+      <given value="Sarah"/>
+    </name>
+    <telecom>
+      <system value="phone"/>
+      <value value="0690383372"/>
+      <use value="mobile"/>
+    </telecom>
+  </contact>
+  <communication>
+    <coding>
+      <system value="urn:ietf:bcp:47"/><!--   IETF language tag   -->
+      <code value="nl"/>
+      <display value="Dutch"/>
+    </coding>
+    <text value="Nederlands"/>
+  </communication>
+  <managingOrganization>
+    <reference value="Organization/f001"/>
+    <display value="Burgers University Medical Centre"/>
+  </managingOrganization>
+  <active value="true"/>
+</Patient>

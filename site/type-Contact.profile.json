@@ -1,0 +1,248 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><div>Type definition for Contact from <a href=\"http://hl7.org/fhir/datatypes.html#Contact\">FHIR Specification</a></div></div>"
+  },
+  "name": "Basic Profile for Contact",
+  "publisher": "FHIR Specification",
+  "description": "Basic Profile for Contact for validation support",
+  "status": "draft",
+  "date": "2014-10-08",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Contact",
+      "element": [
+        {
+          "path": "Contact",
+          "definition": {
+            "short": "Technology mediated contact details (phone, fax, email, etc)",
+            "formal": "All kinds of technology mediated contact details for a person or organization, including telephone, email, etc.",
+            "min": 1,
+            "max": "1",
+            "type": [
+              {
+                "code": "Structure"
+              }
+            ],
+            "constraint": [
+              {
+                "key": "2",
+                "name": "System is required",
+                "severity": "error",
+                "human": "A system is required if a value is provided.",
+                "xpath": "not(exists(f:value)) or exists(f:system)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "TEL"
+              },
+              {
+                "identity": "v2",
+                "map": "XTN"
+              },
+              {
+                "identity": "servd",
+                "map": "ContactPoint"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Contact.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": 0,
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Contact.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": 0,
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Contact.system",
+          "definition": {
+            "short": "phone | fax | email | url",
+            "formal": "Telecommunications form for contact - what communications system is required to make use of the contact.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "ContactSystem",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/contact-system"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./scheme"
+              },
+              {
+                "identity": "v2",
+                "map": "XTN.3"
+              },
+              {
+                "identity": "servd",
+                "map": "./ContactPointType"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Contact.value",
+          "definition": {
+            "short": "The actual contact details",
+            "formal": "The actual contact details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
+            "comments": "Additional out of band data such as extensions, or notes about use of the contact are sometimes included in the value.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./url"
+              },
+              {
+                "identity": "v2",
+                "map": "XTN.1 (or XTN.12)"
+              },
+              {
+                "identity": "servd",
+                "map": "./Value"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Contact.use",
+          "definition": {
+            "short": "home | work | temp | old | mobile - purpose of this address",
+            "formal": "Identifies the purpose for the address.",
+            "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old contact etc for a current/permanent one. Applications can assume that a contact is current unless it explicitly says that it is temporary or old.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true,
+            "binding": {
+              "name": "ContactUse",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/contact-use"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "unique(./use)"
+              },
+              {
+                "identity": "v2",
+                "map": "XTN.2 - but often indicated by field"
+              },
+              {
+                "identity": "servd",
+                "map": "./ContactPointPurpose"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Contact.period",
+          "definition": {
+            "short": "Time period when the contact was/is in use",
+            "formal": "Time period when the contact was/is in use.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./useablePeriod[type=\"IVL<TS>\"]"
+              },
+              {
+                "identity": "v2",
+                "map": "N/A"
+              },
+              {
+                "identity": "servd",
+                "map": "./StartDate and ./EndDate"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

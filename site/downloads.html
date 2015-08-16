@@ -1,0 +1,252 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Implementation Details - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="implementation.html">Implementation</a></li>        <li><b>Downloads</b></li>          <!-- downloads.html / page -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+
+<h1><span class="sectioncount">2.5<a name="2.5"> </a></span> Downloads</h1>
+
+<table class="lines">
+ 
+  <tr>
+    <td width="200"><a href="fhir-all-xsd.zip">Schema</a></td>
+    <td>All schemas as a .zip (includes support schemas, resource schemas, modular &amp; combined schemas, and Schematrons)</td>
+  </tr>
+
+  <tr>
+    <td><a href="validator.zip">Validation Pack</a></td>
+    <td>The FHIR validator (java jar), along with everything it needs to operate (including the correct version of Saxon)</td>
+  </tr>
+
+  <tr>
+    <td><a href="translations.xml">Translation File</a></td>
+    <td>Translations of common FHIR names and messages into multiple languages (see <a href="http://wiki.hl7.org/index.php?title=FHIR_Implementation_Page">wiki</a> for instructions on how to add to this)</td>
+  </tr>
+
+  <tr>
+    <td><a href="fhir-v0.0.82.epub">FHIR Book</a></td>
+    <td>The FHIR Specification as an e-book for convenient reading. Help for handling epub: 
+    <a href="http://pcsupport.about.com/od/fileextensions/f/epubfile.htm">PC</a>, 
+    <a href="http://support.safaribooksonline.com/view?id=1168">OSX</a>, 
+    <a href="http://ipadacademy.com/2012/01/ipad-tutorial-how-to-load-and-open-epub-pdf-ebooks-on-your-ipad">iOS</a>, 
+    <a href="http://just-ask-kim.com/epub-ebook-android/">Android</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="fhir-spec.zip">FHIR Specification</a></td>
+    <td>The whole specification so that you can host your own local copy (does not include the downloads)</td>
+  </tr>
+
+  <tr>
+    <td><a href="profiles-resources.xml">Combined Resource Profiles</a><a name="profiles"> </a></td>
+    <td>Single combined feed with all resource definitions. The resource profiles may be useful as a starting point for authoring profiles on the resources or for defining conformance statements</td>
+  </tr>
+
+  <tr>
+    <td><a href="all-valuesets.zip">All valuesets</a></td>
+    <td>All the valuesets defined as part of FHIR</td>
+  </tr>
+
+  <tr>
+    <td><a href="examples.zip">XML Examples</a></td>
+    <td>All resource examples as a zip file in XML format</td>
+  </tr>
+
+  <tr>
+    <td><a href="examples-json.zip">JSON Examples</a></td>
+    <td>All resource examples as a zip file in JSON format</td>
+  </tr>
+
+  <tr>
+    <td><a href="icon-pack.zip">Icon Pack</a></td>
+    <td>The FHIR Icon at various resolutions. Any FHIR Implementation created by an organization that has attended a connectathon is allowed to use the FHIR icon in association with the application (this policy will be reviewed in the future).</td>
+  </tr>
+
+  <a name="refimpllist"> </a>
+  <tr>
+    <td colspan="2"><a name="refimpl"> </a><b>Reference Implementations</b><br/> These reference implementations are provided for implementer interest and assistance. 
+They may be used in production instances, although HL7 and the contributors accept no liability for this 
+use.  All these implementations are provided under a standard OSI-approved BSD license (BSD-3-Clause).
+    </td>
+  </tr>
+
+  <tr><td><a href="fhir-0.0.82-Java-0.81.zip">Java</a></td><td>Resource Definitions, XML &amp; Json parsers, &amp; various utilities. This  code is also available via Maven <a href="http://mvnrepository.com/artifact/me.fhir/fhir-dstu1/0.0.82.2943">http://mvnrepository.com/artifact/me.fhir/fhir-dstu1/0.0.82.2943</a>. The Maven repository lists the dependencies for the code. A Java client can be found at <a href="https://github.com/cnanjo/FhirJavaReferenceClient">https://github.com/cnanjo/FhirJavaReferenceClient</a>. HAPI also publishes a java reference implementation at <a href="http://jamesagnew.github.io/hapi-fhir/">http://jamesagnew.github.io/hapi-fhir/</a></td></tr>
+<tr><td><a href="http://www.nuget.org/packages/Hl7.Fhir">csharp</a></td><td>Object models, Parsers/Serialisers, Validators, and a Client. The source code for that compiled .NET library can be found on GitHub at <a href="http://github.com/ewoutkramer/fhir-net-api">http://github.com/ewoutkramer/fhir-net-api</a></td></tr>
+<tr><td><a href="fhir-0.0.82-Pascal-0.80.zip">Pascal</a></td><td>Resource Definitions and XML &amp; JSON parsers. Delphi 5+. Depends on IndySoap (<a href="http://sourceforge.net/projects/indysoap/">http://sourceforge.net/projects/indysoap/</a>). For a full server see <a href="http://github.com/grahamegrieve/fhirserver">http://github.com/grahamegrieve/fhirserver</a></td></tr>
+<tr><td><a href="fhir-0.0.82-Objective-C-0.01.zip">Objective-C</a></td><td>Resource definitions, Preliminary XML &amp; Json parsers</td></tr>
+<tr><td><a href="fhir-0.0.82-XML Tools-0.01.zip">XML Tools</a></td><td>Document Rendering Stylesheet, supplementary implementation schemas</td></tr>
+<tr><td><a href="fhir-0.0.82-JavaScript-0.1.zip">JavaScript</a></td><td>Generates Mongoose models for FHIR resources</td></tr>
+
+  
+</table>
+<hr/>
+<p>
+Note that the reference implementations are generally limited to code for representing the 
+resource contents in their native form and parsing and serializing them as 
+XML and JSON. Some of the implementations provide support for 
+building, using and reasoning with resource definitions. A few implementations include
+a client that conforms to the RESTful API.
+</p>
+<p>
+Full blown open source implementations for FHIR, some of which use these reference implementations, are
+listed on the <a href="http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations">HL7 wiki</a>.
+</p>
+<p>
+It is not necessary to use these particular implementations in order to be conformant. Any other approach 
+may be used, including code generated from the schemas.
+</p>
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>

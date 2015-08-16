@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre> <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+<span style="color: Gray">&lt;!-- <span style="color: Darkviolet">Resources</span> --&gt;</span>
+<span style="color: Gray">&lt;!--<a name="GeneticPedigreeFamilyHistory"> </a><span style="color: Darkviolet">GeneticPedigreeFamilyHistory</span> --&gt;</span>
+&lt;<span title="Information about patient&#39;s relatives, relevant for patient."><b>FamilyHistory</b></span> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+ &lt;!-- from Element: <a href="extensibility.html">extension</a> --&gt;
+ <i class="inherited">&lt;<span title="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."><b>extension</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/extensibility.html#Extension">Extension</a></span> <span style="color: navy">Additional Content defined by implementations</span><span style="color: Gray"> --&gt;</span>&lt;/extension&gt;</i>
+ <i class="inherited">&lt;<span title="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."><b>modifierExtension</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/extensibility.html#Extension">Extension</a></span> <span style="color: navy">Extensions that cannot be ignored</span><span style="color: Gray"> --&gt;</span>&lt;/modifierExtension&gt;</i>
+ <i class="inherited">&lt;<span title="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."><b>text</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/narrative.html#Narrative">Narrative</a></span> <span style="color: navy">Text summary of the resource, for human interpretation</span><span style="color: Gray"> --&gt;</span>&lt;/text&gt;</i>
+ <i class="inherited">&lt;<span title="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."><b>contained</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/references.html#Resource">Resource</a></span> <span style="color: navy">Contained, inline Resources</span><span style="color: Gray"> --&gt;</span>&lt;/contained&gt;</i>
+ <i class="inherited">&lt;<span title="This records identifiers associated with this family history record that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."><b>identifier</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External Id(s) for this record</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;</i>
+ &lt;<span title="Patient history is about."><b>subject</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/references.html#Resource">Resource</a>(<a href="http://hl7.org/fhir/patient.html#Patient">Patient</a>)</span> <span style="color: navy">Patient history is about</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<span title="Additional details not covered elsewhere."><b>note</b></span> value=&quot;[<span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Additional details not covered elsewhere</span><span style="color: Gray"> --&gt;</span>
+ &lt;<span title="Relative described by history (this element must be supported)" style="text-decoration: underline"><b>relation</b></span>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..*</b></span> Relative described by history --&gt;</span>
+  <span style="color: Gray">&lt;!--</span><span style="color: blue">&quot;Parent&quot;:</span>  <span style="color: Gray"> --&gt;</span>
+  &lt;<span title="Additional Content defined by implementations (this element must be supported)" style="text-decoration: underline"><b>extension</b></span>&gt; <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="#relationParent"><span style="color: DarkViolet">@relationParent</span></a></span>  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Additional Content defined by implementations --&gt;</span>
+   <span style="color: Gray">&lt;!--</span><span style="color: blue">&quot;ParentType&quot;:</span>  <span style="color: Gray"> --&gt;</span>
+   &lt;<span title="Additional Content defined by implementations (this element must be supported)" style="text-decoration: underline"><b>extension</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="#relationParent.type"><span style="color: DarkViolet">@relationParent.type</span></a></span> <span style="color: navy">Additional Content defined by implementations</span><span style="color: Gray"> --&gt;</span>&lt;/extension&gt;
+   <span style="color: Gray">&lt;!--</span><span style="color: blue">&quot;ParentIdentifier&quot;:</span>  <span style="color: Gray"> --&gt;</span>
+   &lt;<span title="Additional Content defined by implementations (this element must be supported)" style="text-decoration: underline"><b>extension</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="#relationParent.identifier"><span style="color: DarkViolet">@relationParent.identifier</span></a></span> <span style="color: navy">Additional Content defined by implementations</span><span style="color: Gray"> --&gt;</span>&lt;/extension&gt;
+  &lt;/extension&gt;
+  <span style="color: Gray">&lt;!--</span><span style="color: blue">&quot;Observation&quot;:</span>  <span style="color: Gray"> --&gt;</span>
+  &lt;<span title="Additional Content defined by implementations."><b>extension</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="#relationObservation"><span style="color: DarkViolet">@relationObservation</span></a></span> <span style="color: navy">Additional Content defined by implementations</span><span style="color: Gray"> --&gt;</span>&lt;/extension&gt;
+  <i class="inherited">&lt;<span title="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."><b>modifierExtension</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/extensibility.html#Extension">Extension</a></span> <span style="color: navy">Extensions that cannot be ignored</span><span style="color: Gray"> --&gt;</span>&lt;/modifierExtension&gt;</i>
+  &lt;<span title="The family member described."><b>name</b></span> value=&quot;[<span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">The family member described</span><span style="color: Gray"> --&gt;</span>
+  &lt;<span title="Relationship to the subject (this element must be supported)" style="text-decoration: underline"><b>relationship</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="v3/vs/FamilyMember/index.html">Relationship to the subject</a><span style="color: Gray"> --&gt;</span>&lt;/relationship&gt;
+  &lt;<span title="(approximate) date of birth (this element must be supported)" style="text-decoration: underline"><b>born[x]</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#Period">Period</a>|<a href="http://hl7.org/fhir/datatypes.html#date">date</a>|<a href="http://hl7.org/fhir/datatypes.html#string">string</a></span> <span style="color: navy">(approximate) date of birth</span><span style="color: Gray"> --&gt;</span>&lt;/born[x]&gt;
+  &lt;<span title="Dead? How old/when? (this element must be supported)" style="text-decoration: underline"><b>deceased[x]</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#boolean">boolean</a>|<a href="http://hl7.org/fhir/datatypes.html#Age">Age</a>|<a href="http://hl7.org/fhir/datatypes.html#Range">Range</a>|<a href="http://hl7.org/fhir/datatypes.html#string">string</a></span> <span style="color: navy">Dead? How old/when?</span><span style="color: Gray"> --&gt;</span>&lt;/deceased[x]&gt;
+  &lt;<span title="General note about related person."><b>note</b></span> value=&quot;[<span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">General note about related person</span><span style="color: Gray"> --&gt;</span>
+  &lt;<span title="Condition that the related person had (this element must be supported)" style="text-decoration: underline"><b>condition</b></span>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Condition that the related person had --&gt;</span>
+   <i class="inherited">&lt;<span title="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."><b>extension</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/extensibility.html#Extension">Extension</a></span> <span style="color: navy">Additional Content defined by implementations</span><span style="color: Gray"> --&gt;</span>&lt;/extension&gt;</i>
+   <i class="inherited">&lt;<span title="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."><b>modifierExtension</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/extensibility.html#Extension">Extension</a></span> <span style="color: navy">Extensions that cannot be ignored</span><span style="color: Gray"> --&gt;</span>&lt;/modifierExtension&gt;</i>
+   &lt;<span title="Condition suffered by relation (this element must be supported)" style="text-decoration: underline"><b>type</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Condition suffered by relation</span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+   &lt;<span title="deceased | permanent disability | etc (this element must be supported)" style="text-decoration: underline"><b>outcome</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">deceased | permanent disability | etc.</span><span style="color: Gray"> --&gt;</span>&lt;/outcome&gt;
+   &lt;<span title="When condition first manifested (this element must be supported)" style="text-decoration: underline"><b>onset[x]</b></span>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#Age">Age</a>|<a href="http://hl7.org/fhir/datatypes.html#Range">Range</a>|<a href="http://hl7.org/fhir/datatypes.html#string">string</a></span> <span style="color: navy">When condition first manifested</span><span style="color: Gray"> --&gt;</span>&lt;/onset[x]&gt;
+   &lt;<span title="Extra information about condition."><b>note</b></span> value=&quot;[<span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Extra information about condition</span><span style="color: Gray"> --&gt;</span>
+  &lt;/condition&gt;
+ &lt;/relation&gt;
+&lt;/FamilyHistory&gt;
+
+<span style=" color: Gray">&lt;!-- <span style="color: Darkviolet">Extensions</span> --&gt;</span>
+&lt;<span title="Identifies a parent of the relative."><b>extension</b></span>&gt;<a name="relationParent"> </a>&lt;!--  <span style="color: brown"><b>0..*</b></span> <span style="color: navy">Context: Resource = FamilyHistory.relation</span> --&gt;
+ &lt;<b>url</b> value=&quot;<span style="color: maroon">http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent</span>&quot;/&gt;
+ <span title="Identifies a parent of the relative."><span style=" color: Gray">&lt;!-- </span><span style="color: navy">Extensions: #relationParent.type, #relationParent.identifier</span> <span style=" color: Gray">--&gt; </span></span>
+&lt;/extension&gt;
+
+&lt;<span title="Distinguishes between different types of parental relationships with varying granularity to support capturing the relationship &quot;to the degree known&quot;."><b>extension</b></span>&gt;<a name="relationParent.type"> </a>&lt;!--  <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Context: Extension = http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent</span> --&gt;
+ &lt;<b>url</b> value=&quot;<span style="color: maroon">http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.type</span>&quot;/&gt;
+ &lt;<span title="Distinguishes between different types of parental relationships with varying granularity to support capturing the relationship &quot;to the degree known&quot;."><b>valueCodeableConcept</b></span>&gt;<span style=" color: Gray">&lt;!-- </span> <span style="color: brown;"><b>0..1</b></span>  <span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">mother | father | adoptive mother | etc.</span> <span style=" color: Gray">--&gt; </span>&lt;/valueCodeableConcept&gt;
+&lt;/extension&gt;
+
+&lt;<span title="Points to the &#39;id&#39; attribute on the relation who is the parent of this relation."><b>extension</b></span>&gt;<a name="relationParent.identifier"> </a>&lt;!--  <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Context: Extension = http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent</span> --&gt;
+ &lt;<b>url</b> value=&quot;<span style="color: maroon">http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.identifier</span>&quot;/&gt;
+ &lt;<span title="Points to the &#39;id&#39; attribute on the relation who is the parent of this relation."><b>valueUri</b></span> value=&quot;[<span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style=" color: Gray">&lt;!-- </span><span style="color: navy">Link to parent relative(s)</span><span style=" color: Gray"> --&gt;</span>
+&lt;/extension&gt;
+
+&lt;<span title="Allows capturing risk-relevant observations about the relative that aren&#39;t themselves a specific health condition.  E.g. Certain ethnic ancestries that are disease-relevant, presence of particular genetic markers, etc."><b>extension</b></span>&gt;<a name="relationObservation"> </a>&lt;!--  <span style="color: brown"><b>0..*</b></span> <span style="color: navy">Context: Resource = FamilyHistory.relation</span> --&gt;
+ &lt;<b>url</b> value=&quot;<span style="color: maroon">http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationObservation</span>&quot;/&gt;
+ &lt;<span title="Allows capturing risk-relevant observations about the relative that aren&#39;t themselves a specific health condition.  E.g. Certain ethnic ancestries that are disease-relevant, presence of particular genetic markers, etc."><b>valueResourceReference</b></span>&gt;<span style=" color: Gray">&lt;!-- </span> <span style="color: brown;"><b>0..1</b></span>  <span style="color: darkgreen"><a href="http://hl7.org/fhir/references.html#Resource">Resource</a>(<a href="http://hl7.org/fhir/observation.html#Observation">Observation</a>)</span> <span style="color: navy">Genetic markers, ethnicity, etc.</span> <span style=" color: Gray">--&gt; </span>&lt;/valueResourceReference&gt;
+&lt;/extension&gt;
+
+</pre></div>
+  </text>
+  <name value="Profile to support capturing pedigree within family history for genetics analysis"/>
+  <publisher value="HL7 International - Clinical Genomics WG"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+  </telecom>
+  <description value="Adds additional information to a family history supporting both the capture of mother/father relationships as well as additional observations necessary to enable genetics-based risk analysis for patients"/>
+  <status value="draft"/>
+  <date value="2013-10-02"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <structure>
+    <type value="FamilyHistory"/>
+    <name value="GeneticPedigreeFamilyHistory"/>
+    <publish value="true"/>
+    <element>
+      <path value="FamilyHistory"/>
+      <name value="GeneticPedigreeFamilyHistory"/>
+      <definition>
+        <short value="Information about patient&#39;s relatives, relevant for patient"/>
+        <formal value="Information about patient&#39;s relatives, relevant for patient."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.extension"/>
+      <name value="base extension"/>
+      <slicing>
+        <discriminator value="url"/>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element>
+      <path value="FamilyHistory.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.extension.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.extension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.modifierExtension"/>
+      <name value="base modifierExtension"/>
+      <slicing>
+        <discriminator value="url"/>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element>
+      <path value="FamilyHistory.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.modifierExtension.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.modifierExtension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.text"/>
+      <definition>
+        <short value="Text summary of the resource, for human interpretation"/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+        <synonym value="narrative"/>
+        <synonym value="html"/>
+        <synonym value="xhtml"/>
+        <synonym value="display"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Narrative"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.contained"/>
+      <definition>
+        <short value="Contained, inline Resources"/>
+        <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+        <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+        <synonym value="inline resources"/>
+        <synonym value="anonymous resources"/>
+        <synonym value="contained resources"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.text"/>
+      <definition>
+        <short value="Text summary of the resource, for human interpretation"/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Narrative"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.contained"/>
+      <definition>
+        <short value="Contained, inline Resources"/>
+        <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+        <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.identifier"/>
+      <definition>
+        <short value="External Id(s) for this record"/>
+        <formal value="This records identifiers associated with this family history record that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.subject"/>
+      <definition>
+        <short value="Patient history is about"/>
+        <formal value="Patient history is about."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Patient"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.note"/>
+      <definition>
+        <short value="Additional details not covered elsewhere"/>
+        <formal value="Additional details not covered elsewhere."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation"/>
+      <definition>
+        <short value="Relative described by history"/>
+        <formal value="Relative described by history."/>
+        <min value="1"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension"/>
+      <name value="base extension"/>
+      <slicing>
+        <discriminator value="url"/>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension"/>
+      <name value="Parent"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="Additional Content defined by implementations."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+          <profile value="#relationParent"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.extension"/>
+      <name value="base extension"/>
+      <slicing>
+        <discriminator value="url"/>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.extension"/>
+      <name value="ParentType"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="Additional Content defined by implementations."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Extension"/>
+          <profile value="#relationParent.type"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.extension.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.extension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.extension"/>
+      <name value="ParentIdentifier"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="Additional Content defined by implementations."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Extension"/>
+          <profile value="#relationParent.identifier"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.extension.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.extension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension"/>
+      <name value="Observation"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="Additional Content defined by implementations."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+          <profile value="#relationObservation"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.extension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.modifierExtension"/>
+      <name value="base modifierExtension"/>
+      <slicing>
+        <discriminator value="url"/>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.modifierExtension.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.modifierExtension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.name"/>
+      <definition>
+        <short value="The family member described"/>
+        <formal value="The family member described."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.relationship"/>
+      <definition>
+        <short value="Relationship to the subject"/>
+        <formal value="Relationship to the subject."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="FamilialRelationship"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/v3/vs/FamilyMember"/>
+          </referenceResource>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.born[x]"/>
+      <definition>
+        <short value="(approximate) date of birth"/>
+        <formal value="(approximate) date of birth."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Period"/>
+        </type>
+        <type>
+          <code value="date"/>
+        </type>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.deceased[x]"/>
+      <definition>
+        <short value="Dead? How old/when?"/>
+        <formal value="Dead? How old/when?."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="boolean"/>
+        </type>
+        <type>
+          <code value="Age"/>
+        </type>
+        <type>
+          <code value="Range"/>
+        </type>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.note"/>
+      <definition>
+        <short value="General note about related person"/>
+        <formal value="General note about related person."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition"/>
+      <definition>
+        <short value="Condition that the related person had"/>
+        <formal value="Condition that the related person had."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.extension"/>
+      <name value="base extension"/>
+      <slicing>
+        <discriminator value="url"/>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.extension.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.extension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.modifierExtension"/>
+      <name value="base modifierExtension"/>
+      <slicing>
+        <discriminator value="url"/>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.modifierExtension.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.modifierExtension.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.type"/>
+      <definition>
+        <short value="Condition suffered by relation"/>
+        <formal value="Condition suffered by relation."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.outcome"/>
+      <definition>
+        <short value="deceased | permanent disability | etc."/>
+        <formal value="deceased | permanent disability | etc."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="ConditionOutcome"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <description value="The result of the condition for the patient.  E.g. death, permanent disability, temporary disability, etc."/>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.onset[x]"/>
+      <definition>
+        <short value="When condition first manifested"/>
+        <formal value="When condition first manifested."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Age"/>
+        </type>
+        <type>
+          <code value="Range"/>
+        </type>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="FamilyHistory.relation.condition.note"/>
+      <definition>
+        <short value="Extra information about condition"/>
+        <formal value="Extra information about condition."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </structure>
+  <extensionDefn>
+    <code value="relationParent"/>
+    <display value="Mother(s) &amp; Father(s) - genetic &amp; other"/>
+    <contextType value="resource"/>
+    <context value="FamilyHistory.relation"/>
+    <definition>
+      <short value="Mother(s) &amp; Father(s) - genetic &amp; other"/>
+      <formal value="Identifies a parent of the relative."/>
+      <comments value="Some individuals may have more than two parents (e.g. genetic vs. adoptive parents).  Even non-genetic relationships can be relevant in terms of genetic exposure."/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="player[classCode&lt;LIV, determinerCode=INSTANCE].scopesRole"/>
+      </mapping>
+    </definition>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="relationParent.type"/>
+    <display value="mother | father | adoptive mother | etc."/>
+    <contextType value="extension"/>
+    <context value="http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent"/>
+    <definition>
+      <short value="mother | father | adoptive mother | etc."/>
+      <formal value="Distinguishes between different types of parental relationships with varying granularity to support capturing the relationship &quot;to the degree known&quot;."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <binding>
+        <name value="ParentRelationshipType"/>
+        <isExtensible value="true"/>
+        <referenceResource>
+          <reference value="http://hl7.org/fhir/vs/parent-relationship-codes"/>
+        </referenceResource>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="code"/>
+      </mapping>
+    </definition>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="relationParent.identifier"/>
+    <display value="Link to parent relative(s)"/>
+    <contextType value="extension"/>
+    <context value="http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent"/>
+    <definition>
+      <short value="Link to parent relative(s)"/>
+      <formal value="Points to the &#39;id&#39; attribute on the relation who is the parent of this relation."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="player.id"/>
+      </mapping>
+    </definition>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="relationObservation"/>
+    <display value="Genetic markers, ethnicity, etc."/>
+    <contextType value="resource"/>
+    <context value="FamilyHistory.relation"/>
+    <definition>
+      <short value="Genetic markers, ethnicity, etc."/>
+      <formal value="Allows capturing risk-relevant observations about the relative that aren&#39;t themselves a specific health condition.  E.g. Certain ethnic ancestries that are disease-relevant, presence of particular genetic markers, etc."/>
+      <comments value="This may be extended with additional genomics-specific resources when they are ready."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Resource(Observation)"/>
+      </type>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="inboundRelationship[typeCode=SUBJ].source"/>
+      </mapping>
+    </definition>
+  </extensionDefn>
+</Profile>

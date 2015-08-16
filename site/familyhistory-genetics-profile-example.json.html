@@ -1,0 +1,288 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Example for Profile Profile to support capturing pedigree within family history for genetics analysis</title>
+ <link rel="Stylesheet" href="fhir.css" type="text/css" media="screen"/>
+</head>
+<body>
+<p>&nbsp;</p>
+<div class="example">
+<p>Example for Profile Profile to support capturing pedigree within family history for genetics analysis</p>
+<p><a href="familyhistory-genetics-profile-example.json">Raw JSON</a></p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;FamilyHistory&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt;To do&lt;/div&gt;&quot;
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/example&quot;,
+    &quot;display&quot;: &quot;Peter Patient&quot;
+  },
+  &quot;relation&quot;: [
+    {
+      &quot;id&quot;: &quot;1&quot;,
+      &quot;extension&quot;: [
+        {
+          &quot;extension&quot;: [
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.type&quot;,
+              &quot;valueCodeableConcept&quot;: {
+                &quot;coding&quot;: [
+                  {
+                    &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+                    &quot;code&quot;: &quot;FTH&quot;,
+                    &quot;display&quot;: &quot;father&quot;
+                  }
+                ]
+              }
+            },
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.identifier&quot;,
+              &quot;valueUri&quot;: &quot;#2&quot;
+            }
+          ],
+          &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent&quot;
+        }
+      ],
+      &quot;name&quot;: &quot;Dave&quot;,
+      &quot;relationship&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+            &quot;code&quot;: &quot;FTH&quot;,
+            &quot;display&quot;: &quot;father&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;2&quot;,
+      &quot;relationship&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+            &quot;code&quot;: &quot;GRFTH&quot;,
+            &quot;display&quot;: &quot;grandfather&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;3&quot;,
+      &quot;extension&quot;: [
+        {
+          &quot;extension&quot;: [
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.type&quot;,
+              &quot;valueCodeableConcept&quot;: {
+                &quot;coding&quot;: [
+                  {
+                    &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+                    &quot;code&quot;: &quot;FTH&quot;,
+                    &quot;display&quot;: &quot;father&quot;
+                  }
+                ]
+              }
+            },
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.identifier&quot;,
+              &quot;valueUri&quot;: &quot;#2&quot;
+            }
+          ],
+          &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent&quot;
+        }
+      ],
+      &quot;relationship&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+            &quot;code&quot;: &quot;PUNCLE&quot;,
+            &quot;display&quot;: &quot;paternal uncle&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;4&quot;,
+      &quot;extension&quot;: [
+        {
+          &quot;extension&quot;: [
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.type&quot;,
+              &quot;valueCodeableConcept&quot;: {
+                &quot;coding&quot;: [
+                  {
+                    &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+                    &quot;code&quot;: &quot;FTH&quot;,
+                    &quot;display&quot;: &quot;father&quot;
+                  }
+                ]
+              }
+            },
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.identifier&quot;,
+              &quot;valueUri&quot;: &quot;#2&quot;
+            }
+          ],
+          &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent&quot;
+        }
+      ],
+      &quot;relationship&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+            &quot;code&quot;: &quot;PUNCLE&quot;,
+            &quot;display&quot;: &quot;paternal uncle&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;5&quot;,
+      &quot;extension&quot;: [
+        {
+          &quot;extension&quot;: [
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.type&quot;,
+              &quot;valueCodeableConcept&quot;: {
+                &quot;coding&quot;: [
+                  {
+                    &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+                    &quot;code&quot;: &quot;FTH&quot;,
+                    &quot;display&quot;: &quot;father&quot;
+                  }
+                ]
+              }
+            },
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.identifier&quot;,
+              &quot;valueUri&quot;: &quot;#2&quot;
+            }
+          ],
+          &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent&quot;
+        }
+      ],
+      &quot;name&quot;: &quot;Eve&quot;,
+      &quot;relationship&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+            &quot;code&quot;: &quot;PAUNT&quot;,
+            &quot;display&quot;: &quot;paternal aunt&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;6&quot;,
+      &quot;extension&quot;: [
+        {
+          &quot;extension&quot;: [
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.type&quot;,
+              &quot;valueCodeableConcept&quot;: {
+                &quot;coding&quot;: [
+                  {
+                    &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+                    &quot;code&quot;: &quot;FTH&quot;,
+                    &quot;display&quot;: &quot;father&quot;
+                  }
+                ]
+              }
+            },
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.identifier&quot;,
+              &quot;valueUri&quot;: &quot;#2&quot;
+            }
+          ],
+          &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent&quot;
+        }
+      ],
+      &quot;relationship&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+            &quot;code&quot;: &quot;PAUNT&quot;,
+            &quot;display&quot;: &quot;paternal aunt&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;7&quot;,
+      &quot;extension&quot;: [
+        {
+          &quot;extension&quot;: [
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.type&quot;,
+              &quot;valueCodeableConcept&quot;: {
+                &quot;coding&quot;: [
+                  {
+                    &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+                    &quot;code&quot;: &quot;FTH&quot;,
+                    &quot;display&quot;: &quot;father&quot;
+                  }
+                ]
+              }
+            },
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.identifier&quot;,
+              &quot;valueUri&quot;: &quot;#2&quot;
+            }
+          ],
+          &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent&quot;
+        }
+      ],
+      &quot;relationship&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+            &quot;code&quot;: &quot;PAUNT&quot;,
+            &quot;display&quot;: &quot;paternal aunt&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;8&quot;,
+      &quot;extension&quot;: [
+        {
+          &quot;extension&quot;: [
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.type&quot;,
+              &quot;valueCodeableConcept&quot;: {
+                &quot;coding&quot;: [
+                  {
+                    &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+                    &quot;code&quot;: &quot;MTH&quot;,
+                    &quot;display&quot;: &quot;mother&quot;
+                  }
+                ]
+              }
+            },
+            {
+              &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent.identifier&quot;,
+              &quot;valueUri&quot;: &quot;#5&quot;
+            }
+          ],
+          &quot;url&quot;: &quot;http://hl7.org/fhir/Profile/familyhistory-genetics-pedigree#relationParent&quot;
+        }
+      ],
+      &quot;name&quot;: &quot;Alice&quot;,
+      &quot;relationship&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/v3/RoleCode&quot;,
+            &quot;code&quot;: &quot;PCOUSN&quot;,
+            &quot;display&quot;: &quot;paternal cousin&quot;
+          }
+        ]
+      }
+    }
+  ]
+}
+</pre>
+</div>
+</body>
+</html>

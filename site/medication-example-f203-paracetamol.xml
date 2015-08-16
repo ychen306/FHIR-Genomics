@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>name</b>: Paracetamol
+      </p>
+      <p>
+        <b>code</b>: 
+        <span title="Codes: {http://snomed.info/sct 387517004}">Paracetamol</span>
+      </p>
+      <p>
+        <b>isBrand</b>: false
+      </p>
+      <p>
+        <b>kind</b>: product
+      </p>
+      <blockquote>
+        <p>
+          <b>product</b>
+        </p>
+        <p>
+          <b>form</b>: 
+          <span title="Codes: {http://snomed.info/sct 385055001}">Tablet</span>
+        </p>
+      </blockquote>
+    </div>
+  </text>
+  <name value="Paracetamol"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="387517004"/>
+      <display value="Paracetamol"/>
+    </coding>
+  </code>
+  <isBrand value="false"/>
+  <kind value="product"/>
+  <product>
+    <form>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="385055001"/>
+        <display value="Tablet"/>
+      </coding>
+    </form>
+  </product>
+</Medication>

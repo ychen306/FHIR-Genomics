@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>identifier</b>: BSN = 123456789 (official), BSN = 123456789 (official)
+      </p>
+      <p>
+        <b>name</b>: Roel(official)
+      </p>
+      <p>
+        <b>telecom</b>: ph: +31612345678(mobile), ph: +31201234567(home)
+      </p>
+      <p>
+        <b>gender</b>: 
+        <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>
+      </p>
+      <p>
+        <b>birthDate</b>: 13-Mar 1960
+      </p>
+      <p>
+        <b>deceased[x]</b>: false
+      </p>
+      <p>
+        <b>address</b>: Bos en Lommerplein 280 Amsterdam 1055RW NLD (home)
+      </p>
+      <p>
+        <b>maritalStatus</b>: 
+        <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>
+      </p>
+      <p>
+        <b>multipleBirth[x]</b>: false
+      </p>
+      <p>
+        <b>photo</b>: 
+      </p>
+      <h3>Contacts</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Relationship</b>
+          </td>
+          <td>
+            <b>Name</b>
+          </td>
+          <td>
+            <b>Telecom</b>
+          </td>
+          <td>
+            <b>Address</b>
+          </td>
+          <td>
+            <b>Gender</b>
+          </td>
+          <td>
+            <b>Organization</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 127850001}, {http://hl7.org/fhir/patient-contact-relationship partner}">Wife</span>
+          </td>
+          <td>Ariadne Bor-Jansma</td>
+          <td>ph: +31201234567(home)</td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+      <p>
+        <b>communication</b>: 
+        <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>
+      </p>
+      <p>
+        <b>managingOrganization</b>: AUMC
+      </p>
+      <p>
+        <b>active</b>: true
+      </p>
+    </div>
+  </text>
+  <identifier><!--  The identifier for the person as this patient (fictive)  -->
+    <use value="official"/>
+    <label value="BSN"/>
+    <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
+    <value value="123456789"/>
+  </identifier><!--  Demographics  -->
+  <identifier><!--  The identifier for this individual  -->
+    <use value="official"/>
+    <label value="BSN"/>
+    <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
+    <value value="123456789"/>
+  </identifier>
+  <name><!--  The name associated with the individual (fictive)  -->
+    <use value="official"/>
+    <text value="Roel"/>
+    <family value="Bor"/>
+    <given value="Roelof Olaf"/>
+    <prefix value="Drs."/>
+    <suffix value="PDEng."/>
+  </name>
+  <telecom><!--  The mobile contact detail for the individual  -->
+    <system value="phone"/>
+    <value value="+31612345678"/>
+    <use value="mobile"/>
+  </telecom>
+  <telecom><!--  The home contact detail for the individual  -->
+    <system value="phone"/>
+    <value value="+31201234567"/>
+    <use value="home"/>
+  </telecom>
+  <gender><!--  The gender for administrative purposes  -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="248153007"/>
+      <display value="Male"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/v3/AdministrativeGender"/>
+      <code value="M"/>
+      <display value="Male"/>
+    </coding>
+  </gender>
+  <birthDate value="1960-03-13"/><!--  The date and time of birth for the individual   -->
+  <deceasedBoolean value="false"/><!--  Indicates that the individual is not deceased  -->
+  <address><!--  Home address for the individual  -->
+    <use value="home"/>
+    <line value="Bos en Lommerplein 280"/>
+    <city value="Amsterdam"/>
+    <zip value="1055RW"/>
+    <country value="NLD"/>
+  </address><!--  ISO 3166 3 letter code  -->
+  <maritalStatus><!--  Marital status of the person  -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="36629006"/>
+      <display value="Legally married"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/v3/MaritalStatus"/>
+      <code value="M"/>
+    </coding>
+  </maritalStatus>
+  <multipleBirthBoolean value="false"/>
+  <photo>
+    <contentType value="image/jpeg"/>
+    <url value="binary/@f006"/>
+  </photo>
+  <contact><!--  Contact of the patient  -->
+    <relationship><!--  Indicates that the contact is the patient's wife  -->
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="127850001"/>
+        <display value="Wife"/>
+      </coding>
+      <coding>
+        <system value="http://hl7.org/fhir/patient-contact-relationship"/>
+        <code value="partner"/>
+      </coding>
+    </relationship>
+    <name><!--  The name of the contact  -->
+      <use value="usual"/>
+      <text value="Ariadne Bor-Jansma"/>
+    </name>
+    <telecom><!--  The home contact detail  -->
+      <system value="phone"/>
+      <value value="+31201234567"/>
+      <use value="home"/>
+    </telecom>
+  </contact>
+  <communication>
+    <coding>
+      <system value="urn:std:iso:639-1"/>
+      <code value="nl-NL"/>
+      <display value="Dutch"/>
+    </coding>
+  </communication>
+  <managingOrganization>
+    <reference value="Organization/f201"/>
+    <display value="AUMC"/>
+  </managingOrganization><!--  Indicates that the patient is not part of a multiple birth   -->
+  <active value="true"/>
+</Patient>

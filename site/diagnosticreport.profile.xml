@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
+&lt;<a title="The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport"><b>DiagnosticReport</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="A code or name that describes this diagnostic report." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.name"><b>name</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-report-names.html">Name/Code for this diagnostic report</a></span><span style="color: Gray"> --&gt;</span>&lt;/name&gt;
+ &lt;<a title="The status of the diagnostic report as a whole (this element modifies the meaning of other elements)" class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="diagnostic-report-status.html">registered | partial | final | corrected +<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The date and/or time that this version of the report was released from the source diagnostic service." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.issued"><b>issued</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Date this version was released<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>|<a href="group.html#Group">Group</a>|<a href="device.html#Device">Device</a>|<a href="location.html#Location">Location</a>)</span> <span style="color: navy">
+     The subject of the report, usually, but not always, the patient<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="The diagnostic service that is responsible for issuing the report." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.performer"><b>performer</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Responsible Diagnostic Service<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/performer&gt;
+ &lt;<a title="The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Id for external references to this report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="Details concerning a test requested." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail"><b>requestDetail</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="diagnosticorder.html#DiagnosticOrder">DiagnosticOrder</a>)</span> <span style="color: navy">What was requested</span><span style="color: Gray"> --&gt;</span>&lt;/requestDetail&gt;
+ &lt;<a title="The section of the diagnostic service that performs the examination e.g. biochemistry, hematology, MRI." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.serviceCategory"><b>serviceCategory</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-diagnostic-service-sections.html">Biochemistry, Hematology etc.<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/serviceCategory&gt;
+ &lt;<a title="The time or time-period the observed values are related to. This is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.diagnostic_x_"><b>diagnostic[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a>|<a href="datatypes.html#Period">Period</a></span> <span style="color: navy">
+     Physiologically Relevant time/time-period for report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/diagnostic[x]&gt;
+ &lt;<a title="Details about the specimens on which this Disagnostic report is based." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.specimen"><b>specimen</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="specimen.html#Specimen">Specimen</a>)</span> <span style="color: navy">Specimens this report is based on</span><span style="color: Gray"> --&gt;</span>&lt;/specimen&gt;
+ &lt;<a title="Observations that are part of this diagnostic report. Observations can be simple name/value pairs (e.g. &quot;atomic&quot; results), or they can be grouping observations that include references to other members of the group (e.g. &quot;panels&quot;)." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.result"><b>result</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="observation.html#Observation">Observation</a>)</span> <span style="color: navy">Observations - simple, or complex nested groups</span><span style="color: Gray"> --&gt;</span>&lt;/result&gt;
+ &lt;<a title="One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.imagingStudy"><b>imagingStudy</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="imagingstudy.html#ImagingStudy">ImagingStudy</a>)</span> <span style="color: navy">
+     Reference to full details of imaging associated with the diagnostic report</span><span style="color: Gray"> --&gt;</span>&lt;/imagingStudy&gt;
+ &lt;<a title="A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest)." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.image"><b>image</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Key images associated with this report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span> --&gt;</span>
+  &lt;<a title="A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer&#39;s attention to important features." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.image.comment"><b>comment</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Comment about the image (e.g. explanation)</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Reference to the image source." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.image.link"><b>link</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="media.html#Media">Media</a>)</span> <span style="color: navy">Reference to the image source<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/link&gt;
+ &lt;/image&gt;
+ &lt;<a title="Concise and clinically contextualized narrative interpretation of the diagnostic report." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.conclusion"><b>conclusion</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Clinical Interpretation of test results</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Codes for the conclusion." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.codedDiagnosis"><b>codedDiagnosis</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-clinical-findings.html">Codes for the conclusion</a></span><span style="color: Gray"> --&gt;</span>&lt;/codedDiagnosis&gt;
+ &lt;<a title="Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.presentedForm"><b>presentedForm</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Attachment">Attachment</a></span> <span style="color: navy">Entire Report as issued</span><span style="color: Gray"> --&gt;</span>&lt;/presentedForm&gt;
+&lt;/DiagnosticReport&gt;
+</pre></div>
+  </text>
+  <name value="diagnosticreport"/>
+  <publisher value="FHIR Project"/>
+  <description value="Basic Profile. The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports."/>
+  <status value="draft"/>
+  <date value="2014-10-08"/>
+  <requirements value="Scope and Usage A diagnostic report is the set of information that is typically provided by a diagnostic service when investigations are complete. The information includes a mix of atomic results, text reports, images, and codes. The mix varies depending on the nature of the diagnostic procedure, and sometimes on the nature of the outcomes for a particular investigation. 
+
+The Diagnostic Report Resource is suitable for the following kinds of Diagnostic Reports: 
+
+* Laboratory (Clinical Chemistry, Hematology, Microbiology, etc.)
+* Pathology / Histopathology / related disciplines
+* Imaging Investigations (x-ray, CT, MRI etc.)
+* Other diagnostics - Cardiology, Gastroenterology etc.
+The Diagnostic Report resource is not intended to support cumulative result presentation (tabular presentation of past and present results in the resource). The Diagnostic Report resource does not yet provide full support for detailed structured reports of sequencing; this is planned for a future release."/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <structure>
+    <type value="DiagnosticReport"/>
+    <publish value="true"/>
+    <element>
+      <path value="DiagnosticReport"/>
+      <definition>
+        <short value="A Diagnostic report - a combination of request information, atomic results, images, interpretation, as well as formatted reports"/>
+        <formal value="The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports."/>
+        <comments value="This is intended to capture a single report,and is not suitable for use in displaying summary information that covers multiple reports.  For example, this resource has not been designed for laboratory cumulative reporting formats nor detailed structured reports for sequencing."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="Observation[classCode=OBS, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.text"/>
+      <definition>
+        <short value="Text summary of the resource, for human interpretation"/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+        <synonym value="narrative"/>
+        <synonym value="html"/>
+        <synonym value="xhtml"/>
+        <synonym value="display"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Narrative"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.contained"/>
+      <definition>
+        <short value="Contained, inline Resources"/>
+        <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+        <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+        <synonym value="inline resources"/>
+        <synonym value="anonymous resources"/>
+        <synonym value="contained resources"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.name"/>
+      <definition>
+        <short value="Name/Code for this diagnostic report"/>
+        <formal value="A code or name that describes this diagnostic report."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="DiagnosticReportNames"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/report-names"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="code"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBR-4-Universal Service ID (V2 doesn&#39;t provide an easy way to indicate both the ordered test and the performed panel)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.status"/>
+      <definition>
+        <short value="registered | partial | final | corrected +"/>
+        <formal value="The status of the diagnostic report as a whole."/>
+        <comments value="This is labeled as &quot;Is Modifier&quot; because applications need to take appropriate action if a report is withdrawn."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <isModifier value="true"/>
+        <binding>
+          <name value="DiagnosticReportStatus"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/diagnostic-report-status"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="statusCode
+
+Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type &quot;revise&quot;"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBR-25-Result Status (not 1:1 mapping)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.issued"/>
+      <definition>
+        <short value="Date this version was released"/>
+        <formal value="The date and/or time that this version of the report was released from the source diagnostic service."/>
+        <comments value="May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="dateTime"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="participation[typeCode=VRF or AUT].time"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBR-22-Results Rpt/Status Chng - Date/Time"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.subject"/>
+      <definition>
+        <short value="The subject of the report, usually, but not always, the patient"/>
+        <formal value="The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Patient"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Group"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Device"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Location"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="participation[typeCode=SBJ]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PID-3-Patient ID List (no V2 mapping for Group or Device)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.performer"/>
+      <definition>
+        <short value="Responsible Diagnostic Service"/>
+        <formal value="The diagnostic service that is responsible for issuing the report."/>
+        <comments value="This is not necessarily the source of the atomic data items - it is the entity that takes responsibility for the clinical report."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Practitioner"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Organization"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="participation[typeCode=AUT].role[classCode=ASSIGN].scoper"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="PRT-8-Participation Organization (where this PRT-4-Participation = &quot;PO&quot;)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.identifier"/>
+      <definition>
+        <short value="Id for external references to this report"/>
+        <formal value="The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="id"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBR-51-Observation Group ID (todo: check semantic intent of OBR-51 with OOWG)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail"/>
+      <definition>
+        <short value="What was requested"/>
+        <formal value="Details concerning a test requested."/>
+        <comments value="Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single test result resource. Note that there are also cases where one request leads to multiple reports."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/DiagnosticOrder"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=FLFS].target"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.serviceCategory"/>
+      <definition>
+        <short value="Biochemistry, Hematology etc."/>
+        <formal value="The section of the diagnostic service that performs the examination e.g. biochemistry, hematology, MRI."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="DiagnosticServiceSection"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/diagnostic-service-sections"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBR-24-Diagnostic Service Section ID"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.diagnostic[x]"/>
+      <definition>
+        <short value="Physiologically Relevant time/time-period for report"/>
+        <formal value="The time or time-period the observed values are related to. This is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself."/>
+        <comments value="If the diagnostic procedure was performed on the patient, this is the time it was performed. If there are specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and the exact relationship between the specimens and the diagnostically relevant time is not always automatic."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="dateTime"/>
+        </type>
+        <type>
+          <code value="Period"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="effectiveTime"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBR-7-Observation Date/Time"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.specimen"/>
+      <definition>
+        <short value="Specimens this report is based on"/>
+        <formal value="Details about the specimens on which this Disagnostic report is based."/>
+        <comments value="If the specimen is sufficiently specified with a code in the Test result name, then this additional data may be redundant. If there are multiple specimens, these may be represented per Observation or group."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Specimen"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="participation[typeCode=SBJ]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="SPM"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.result"/>
+      <definition>
+        <short value="Observations - simple, or complex nested groups"/>
+        <formal value="Observations that are part of this diagnostic report. Observations can be simple name/value pairs (e.g. &quot;atomic&quot; results), or they can be grouping observations that include references to other members of the group (e.g. &quot;panels&quot;)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Observation"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=COMP].target"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.imagingStudy"/>
+      <definition>
+        <short value="Reference to full details of imaging associated with the diagnostic report"/>
+        <formal value="One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images."/>
+        <comments value="ImagingStudy and image are somewhat overlapping - typically, an image in the image list will also be found in the imaging study resource. However the imaging study and image lists cater to different types of displays for different types of purposes. Neither, either, or both may be provided."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/ImagingStudy"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=COMP].target[classsCode=DGIMG, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.image"/>
+      <definition>
+        <short value="Key images associated with this report"/>
+        <formal value="A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=COMP].target"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX?"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.image.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.image.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.image.comment"/>
+      <definition>
+        <short value="Comment about the image (e.g. explanation)"/>
+        <formal value="A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer&#39;s attention to important features."/>
+        <comments value="The comment should be displayed with the image. It would be common for the report to include additional discussion of the image contents in other sections such as the conclusion."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.image.link"/>
+      <definition>
+        <short value="Reference to the image source"/>
+        <formal value="Reference to the image source."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Media"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".value.reference"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.conclusion"/>
+      <definition>
+        <short value="Clinical Interpretation of test results"/>
+        <formal value="Concise and clinically contextualized narrative interpretation of the diagnostic report."/>
+        <comments value="Typically, a report is either [all data, no narrative (e.g. Core lab)] or [a mix of data with some concluding narrative (e.g. Structured Pathology Report, Bone Density)], or [all narrative (e.g. typical imaging report, histopathology)]. In all of these cases, the narrative goes in &quot;text&quot;."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=&quot;SPRT&quot;].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.codedDiagnosis"/>
+      <definition>
+        <short value="Codes for the conclusion"/>
+        <formal value="Codes for the conclusion."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="AdjunctDiagnosis"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/clinical-findings"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=SPRT].source[classCode=OBS, moodCode=EVN, code=LOINC:54531-9].value (type=CD)"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.presentedForm"/>
+      <definition>
+        <short value="Entire Report as issued"/>
+        <formal value="Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent."/>
+        <comments value="Application/pdf is recommended as the most reliable and interoperable in this context."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Attachment"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="text (type=ED)"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="OBX"/>
+        </mapping>
+      </definition>
+    </element>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="date"/>
+      <type value="date"/>
+      <documentation value="The clinically relevant time of the report"/>
+      <xpath value="f:DiagnosticReport/f:diagnostic[x]"/>
+    </searchParam>
+    <searchParam>
+      <name value="diagnosis"/>
+      <type value="token"/>
+      <documentation value="A coded diagnosis on the report"/>
+      <xpath value="f:DiagnosticReport/f:codedDiagnosis"/>
+    </searchParam>
+    <searchParam>
+      <name value="identifier"/>
+      <type value="token"/>
+      <documentation value="An identifier for the report"/>
+      <xpath value="f:DiagnosticReport/f:identifier"/>
+    </searchParam>
+    <searchParam>
+      <name value="image"/>
+      <type value="reference"/>
+      <documentation value="Reference to the image source"/>
+      <xpath value="f:DiagnosticReport/f:image/f:link"/>
+    </searchParam>
+    <searchParam>
+      <name value="issued"/>
+      <type value="date"/>
+      <documentation value="When the report was issued"/>
+      <xpath value="f:DiagnosticReport/f:issued"/>
+    </searchParam>
+    <searchParam>
+      <name value="name"/>
+      <type value="token"/>
+      <documentation value="The name of the report (e.g. the code for the report as a whole, as opposed to codes for the atomic results, which are the names on the observation resource referred to from the result)"/>
+      <xpath value="f:DiagnosticReport/f:name"/>
+    </searchParam>
+    <searchParam>
+      <name value="performer"/>
+      <type value="reference"/>
+      <documentation value="Who was the source of the report (organization)"/>
+      <xpath value="f:DiagnosticReport/f:performer"/>
+    </searchParam>
+    <searchParam>
+      <name value="request"/>
+      <type value="reference"/>
+      <documentation value="What was requested"/>
+      <xpath value="f:DiagnosticReport/f:requestDetail"/>
+    </searchParam>
+    <searchParam>
+      <name value="result"/>
+      <type value="reference"/>
+      <documentation value="Link to an atomic result (observation resource)"/>
+      <xpath value="f:DiagnosticReport/f:result"/>
+    </searchParam>
+    <searchParam>
+      <name value="service"/>
+      <type value="token"/>
+      <documentation value="Which diagnostic discipline/department created the report"/>
+      <xpath value="f:DiagnosticReport/f:serviceCategory"/>
+    </searchParam>
+    <searchParam>
+      <name value="specimen"/>
+      <type value="reference"/>
+      <documentation value="The specimen details"/>
+      <xpath value="f:DiagnosticReport/f:specimen"/>
+    </searchParam>
+    <searchParam>
+      <name value="status"/>
+      <type value="token"/>
+      <documentation value="The status of the report"/>
+      <xpath value="f:DiagnosticReport/f:status"/>
+    </searchParam>
+    <searchParam>
+      <name value="subject"/>
+      <type value="reference"/>
+      <documentation value="The subject of the report"/>
+      <xpath value="f:DiagnosticReport/f:subject"/>
+    </searchParam>
+  </structure>
+</Profile>

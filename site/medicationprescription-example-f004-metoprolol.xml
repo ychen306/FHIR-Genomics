@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationPrescription xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>identifier</b>: order9845343 (official)
+      </p>
+      <p>
+        <b>dateWritten</b>: 1-May 2011
+      </p>
+      <p>
+        <b>status</b>: active
+      </p>
+      <p>
+        <b>patient</b>: P. van den Heuvel
+      </p>
+      <p>
+        <b>prescriber</b>: S.M. Heps
+      </p>
+      <p>
+        <b>encounter</b>: encounter who leads to this priscription
+      </p>
+      <p>
+        <b>reason[x]</b>: 
+        <span title="Codes: {http://snomed.info/sct 38341003}">High blood pressure</span>
+      </p>
+      <p>
+        <b>medication</b>: prescribed medication
+      </p>
+      <h3>DosageInstructions</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Text</b>
+          </td>
+          <td>
+            <b>AdditionalInstructions</b>
+          </td>
+          <td>
+            <b>Timing[x]</b>
+          </td>
+          <td>
+            <b>AsNeeded[x]</b>
+          </td>
+          <td>
+            <b>Site</b>
+          </td>
+          <td>
+            <b>Route</b>
+          </td>
+          <td>
+            <b>Method</b>
+          </td>
+          <td>
+            <b>DoseQuantity</b>
+          </td>
+          <td>
+            <b>Rate</b>
+          </td>
+          <td>
+            <b>MaxDosePerPeriod</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td>Starting 1-May 2011 --&gt; (ongoing), Once per 1 days</td>
+          <td> </td>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 181220002}">Entire oral cavity</span>
+          </td>
+          <td>
+            <span title="Codes: {http://snomed.info/sct 386359008}">Administration of drug or medicament via oral route</span>
+          </td>
+          <td> </td>
+          <td>50 mg</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>Dispenses</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Medication</b>
+          </td>
+          <td>
+            <b>ValidityPeriod</b>
+          </td>
+          <td>
+            <b>NumberOfRepeatsAllowed</b>
+          </td>
+          <td>
+            <b>Quantity</b>
+          </td>
+          <td>
+            <b>ExpectedSupplyDuration</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>1-May 2011 --&gt; (ongoing)</td>
+          <td> </td>
+          <td>90 46992007</td>
+          <td> </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://www.bmc.nl/portal/prescriptions"/>
+    <value value="order9845343"/>
+  </identifier>
+  <dateWritten value="2011-05-01"/>
+  <status value="active"/>
+  <patient><!--   Linked to the resource patient who needs the medication   -->
+    <reference value="Patient/f001"/>
+    <display value="P. van den Heuvel"/>
+  </patient>
+  <prescriber><!--   Linked to the practitioner who treats patient   -->
+    <reference value="Practitioner/f007"/>
+    <display value="S.M. Heps"/>
+  </prescriber>
+  <encounter><!--   Linked to a resource Encounter between patient and practitioner  -->
+    <reference value="Encounter/f001"/>
+    <display value="encounter who leads to this priscription"/>
+  </encounter>
+  <reasonCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="38341003"/>
+      <display value="High blood pressure"/>
+    </coding>
+  </reasonCodeableConcept>
+  <medication><!--   Linked to a RESOURCE Medication   -->
+    <reference value="Medication/f004"/>
+    <display value="prescribed medication"/>
+  </medication>
+  <dosageInstruction>
+    <timingSchedule>
+      <event>
+        <start value="2011-05-01"/>
+      </event>
+      <repeat>
+        <frequency value="1"/>
+        <duration value="1"/>
+        <units value="d"/>
+      </repeat>
+    </timingSchedule>
+    <site>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="181220002"/>
+        <display value="Entire oral cavity"/>
+      </coding>
+    </site>
+    <route>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="386359008"/>
+        <display value="Administration of drug or medicament via oral route"/>
+      </coding>
+    </route>
+    <doseQuantity>
+      <value value="50"/>
+      <units value="mg"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mg"/>
+    </doseQuantity>
+  </dosageInstruction>
+  <dispense>
+    <validityPeriod>
+      <start value="2011-05-01"/>
+    </validityPeriod>
+    <quantity>
+      <value value="90"/>
+      <system value="http://snomed.info/sct"/>
+      <code value="46992007"/>
+    </quantity>
+  </dispense>
+</MedicationPrescription>

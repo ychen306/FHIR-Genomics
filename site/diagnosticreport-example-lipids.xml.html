@@ -1,0 +1,352 @@
+﻿<!DOCTYPE HTML>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Diagnosticreport-example-lipids.xml - FHIR v0.0.82</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="http://hl7.org/fhir"/>
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="./assets/css/project.css" rel="stylesheet"/>
+  <link href="./assets/css/pygments-manni.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment"><!-- segment-header -->	
+		<div class="container"><!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img src="./assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img src="./assets/images/hl7-logo.png" width="42" height="50" alt="visit the hl7 website"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container"><!-- container -->
+	</div></div><!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment"><!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container"><!-- container -->
+ <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a href="index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</nav><!-- /.navbar -->
+      		
+				
+<!-- /HEADER CONTENT -->				
+		</div><!-- /container -->
+	</div><!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment"><!-- segment-breadcrumb -->
+		<div class="container"><!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="implementation.html">Implementation</a></li>        <li><a href="profilelist.html">Profile List</a></li>        <li><b>Profile</b></li>        <!-- diagnosticreport-example-lipids.xml.html / profile-instance:example -->
+
+			</ul>	
+		</div><!-- /container -->
+	</div><!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment"><!-- segment-content -->
+	<div class="container"><!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+<!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<h1>Diagnosticreport-example-lipids.xml</h1>
+
+<div class="example">
+<p>Example for Profile Example Lipid Profile</p>
+<p><a href="diagnosticreport-example-lipids.xml">Raw XML</a></p>
+<pre class="xml">
+<span class="xmltag">&lt;DiagnosticReport</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://hl7.org/fhir</span>"</span><span class="xmltag">&gt;</span><b>
+  </b><span class="xmltag">&lt;text</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">generated</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;div</span><span class="xmlattr"> xmlns="<span class="xmlattrvalue">http://www.w3.org/1999/xhtml</span>"</span><span class="xmltag">&gt;</span><b> 
+      </b><span class="xmltag">&lt;h3</span><span class="xmltag">&gt;</span><b>Lipid Report for Wile. E. COYOTE (MRN: 23453) issued 3-Mar 2009 14:26</b><span class="xmltag">&lt;/h3&gt;</span><b>            
+</b><span class="xmlcomment">&lt;!--   you could use ab html table here, but laboratories are still 
+ using fixed text tables, and this will take decades to change...   --&gt;</span><b>
+            </b><span class="xmltag">&lt;pre</span><span class="xmltag">&gt;</span><b>
+Test                  Units       Value       Reference Range
+Cholesterol           mmol/L      6.3         &amp;lt;4.5
+Triglyceride          mmol/L      1.3         &amp;lt;2.0
+HDL Cholesterol       mmol/L      1.3         &amp;gt;1.5
+LDL Chol. (calc)      mmol/L      4.2         &amp;lt;3.0
+      </b><span class="xmltag">&lt;/pre&gt;</span><b>
+            </b><span class="xmltag">&lt;p</span><span class="xmltag">&gt;</span><b>Acme Laboratory, Inc signed: Dr Pete Pathologist</b><span class="xmltag">&lt;/p&gt;</span><b>
+        </b><span class="xmltag">&lt;/div&gt;</span><b>
+    </b><span class="xmltag">&lt;/text&gt;</span><b>
+    </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmlcomment">&lt;!--   
+    all the data items (= Observations) are contained 
+    in this diagnostic report. It would be equally 
+      valid - and normal - for them to be separate trackable
+      items. However for the purposes of this example, it&apos;s
+    more convenient to have them here. For more discussion,
+    see under &amp;quot;Contained Resources&amp;quot; on the Resource Definitions
+    topic page   --&gt;</span><b>
+    </b><span class="xmlcomment">&lt;!--   for users steeped in v2, each observation roughly corresponds with an 
+      OBX, and the Diagnostic Report with an ORU_R01 message   --&gt;</span><b>
+      </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">cholesterol</span>"</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://loinc.org</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">35200-5</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/coding&gt;</span><b>
+          </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value="<span class="xmlattrvalue">Cholesterol</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/name&gt;</span><b>
+        </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">6.3</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+        </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">final</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;referenceRange</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;high</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">4.5</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/high&gt;</span><b>
+        </b><span class="xmltag">&lt;/referenceRange&gt;</span><b>
+      </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+    </b><span class="xmltag">&lt;/contained&gt;</span><b> 
+    </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>  
+      </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">triglyceride</span>"</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://loinc.org</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">35217-9</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/coding&gt;</span><b>
+          </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value="<span class="xmlattrvalue">Triglyceride</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/name&gt;</span><b>
+        </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">1.3</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+        </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">final</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;referenceRange</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;high</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">2.0</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/high&gt;</span><b>
+        </b><span class="xmltag">&lt;/referenceRange&gt;</span><b>
+      </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+    </b><span class="xmltag">&lt;/contained&gt;</span><b> 
+    </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>  
+      </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">hdlcholesterol</span>"</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://loinc.org</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">2085-9</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/coding&gt;</span><b>
+          </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value="<span class="xmlattrvalue">Cholesterol in HDL</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/name&gt;</span><b>
+        </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">1.3</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+        </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">final</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;referenceRange</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;low</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">1.5</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/low&gt;</span><b>
+        </b><span class="xmltag">&lt;/referenceRange&gt;</span><b>
+      </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+    </b><span class="xmltag">&lt;/contained&gt;</span><b> 
+    </b><span class="xmltag">&lt;contained</span><span class="xmltag">&gt;</span><b>  
+      </b><span class="xmltag">&lt;Observation</span><span class="xmlattr"> id="<span class="xmlattrvalue">ldlcholesterol</span>"</span><span class="xmltag">&gt;</span><b>
+        </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://loinc.org</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">13457-7</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/coding&gt;</span><b>
+          </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value="<span class="xmlattrvalue">LDL Chol. (Calc)</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/name&gt;</span><b>
+        </b><span class="xmltag">&lt;valueQuantity</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">4.6</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;/valueQuantity&gt;</span><b>
+        </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">final</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;reliability</span><span class="xmlattr"> value="<span class="xmlattrvalue">ok</span>"</span><span class="xmltag">/&gt;</span><b>
+        </b><span class="xmltag">&lt;referenceRange</span><span class="xmltag">&gt;</span><b>
+          </b><span class="xmltag">&lt;high</span><span class="xmltag">&gt;</span><b>
+            </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">3.0</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;units</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://unitsofmeasure.org</span>"</span><span class="xmltag">/&gt;</span><b>
+            </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">mmol/L</span>"</span><span class="xmltag">/&gt;</span><b>
+          </b><span class="xmltag">&lt;/high&gt;</span><b>
+        </b><span class="xmltag">&lt;/referenceRange&gt;</span><b>
+      </b><span class="xmltag">&lt;/Observation&gt;</span><b>
+    </b><span class="xmltag">&lt;/contained&gt;</span><b> 
+  </b><span class="xmlcomment">&lt;!--   first, various administrative/context stuff   --&gt;</span><b>
+  </b><span class="xmltag">&lt;name</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://loinc.org</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">57698-3</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">Lipid panel with direct LDL - Serum or Plasma</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/coding&gt;</span><b>
+    </b><span class="xmltag">&lt;text</span><span class="xmlattr"> value="<span class="xmlattrvalue">Lipid Panel</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/name&gt;</span><b>
+  </b><span class="xmltag">&lt;status</span><span class="xmlattr"> value="<span class="xmlattrvalue">final</span>"</span><span class="xmltag">/&gt;</span><b> </b><span class="xmlcomment">&lt;!--   all this report is final   --&gt;</span><b>
+  </b><span class="xmltag">&lt;issued</span><span class="xmlattr"> value="<span class="xmlattrvalue">2013-01-27T11:45:33+11:00</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;subject</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue"><a href="patient-example-b.xml.html">Patient/pat2</a></span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/subject&gt;</span><b>
+  </b><span class="xmltag">&lt;performer</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue"><a href="organization-example-lab.xml.html">Organization/1832473e-2fe0-452d-abe9-3cdb9879522f</a></span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;display</span><span class="xmlattr"> value="<span class="xmlattrvalue">Acme Laboratory, Inc</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/performer&gt;</span><b>
+  </b><span class="xmltag">&lt;identifier</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://acme.com/lab/reports</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;value</span><span class="xmlattr"> value="<span class="xmlattrvalue">5234342</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/identifier&gt;</span><b>
+  </b><span class="xmltag">&lt;serviceCategory</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;coding</span><span class="xmltag">&gt;</span><b>
+      </b><span class="xmltag">&lt;system</span><span class="xmlattr"> value="<span class="xmlattrvalue">http://hl7.org/fhir/v2/0074</span>"</span><span class="xmltag">/&gt;</span><b>
+      </b><span class="xmltag">&lt;code</span><span class="xmlattr"> value="<span class="xmlattrvalue">HM</span>"</span><span class="xmltag">/&gt;</span><b>
+    </b><span class="xmltag">&lt;/coding&gt;</span><b>
+  </b><span class="xmltag">&lt;/serviceCategory&gt;</span><b>
+  </b><span class="xmltag">&lt;diagnosticDateTime</span><span class="xmlattr"> value="<span class="xmlattrvalue">2011-03-04T08:30:00+11:00</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmlcomment">&lt;!--   now the atomic results   --&gt;</span><b>
+  </b><span class="xmltag">&lt;result</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#cholesterol</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/result&gt;</span><b>  
+  </b><span class="xmltag">&lt;result</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#triglyceride</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/result&gt;</span><b>
+  </b><span class="xmltag">&lt;result</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#hdlcholesterol</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/result&gt;</span><b>
+  </b><span class="xmltag">&lt;result</span><span class="xmltag">&gt;</span><b>
+    </b><span class="xmltag">&lt;reference</span><span class="xmlattr"> value="<span class="xmlattrvalue">#ldlcholesterol</span>"</span><span class="xmltag">/&gt;</span><b>
+  </b><span class="xmltag">&lt;/result&gt;</span><b>
+</b><span class="xmltag">&lt;/DiagnosticReport&gt;</span></pre>
+</div>
+
+
+
+</div>
+
+
+				</div><!-- /inner-wrapper -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+        
+    </div><!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment"><!-- segment-footer -->
+		<div class="container"><!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        © HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100. <!-- <a href="qa.html">QA Report</a> --> <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img src="cc0.png" style="border-style: none;" alt="CC0"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div><!-- /inner-wrapper -->
+		</div><!-- /container -->
+	</div><!-- /segment-footer -->
+<!-- disqus thread -->
+<!--disqus-->
+<!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden"><!-- segment-post-footer -->
+		<div class="container"><!-- container -->
+		</div><!-- /container -->
+	</div><!-- /segment-post-footer -->
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>   <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

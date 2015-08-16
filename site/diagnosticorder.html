@@ -1,0 +1,323 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>DiagnosticOrder - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clinical.html">Clinical</a></li>        <li><b>DiagnosticOrder</b></li>          <!-- diagnosticorder.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="diagnosticorder-examples.html">Examples</a></li><li><a href="diagnosticorder-definitions.html">Formal Definitions</a></li><li><a href="diagnosticorder-mappings.html">Mappings</a></li><li><a href="diagnosticorder-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">4.17<a name="4.17"> </a></span> Resource DiagnosticOrder - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+A request for a diagnostic investigation service to be performed. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">4.17.1<a name="4.17.1"> </a></span> Scope and Usage</h2>
+<p>
+A <i>Diagnostic Order</i> is a record of a request for a set of diagnostic investigations to be performed. 
+The investigation will lead to a <a href="diagnosticreport.html">Diagnostic Report</a> that summarizes the 
+outcome of the investigation, and includes any useful data and/or images that are relevant to the 
+treatment/management of the subject.
+</p>
+<p>
+The principal intention of the <i>Diagnostic Order</i> is to support ordering diagnostic investigations
+on patients (which includes non-human patients in veterinary medicine). However in many contexts, 
+healthcare related processes include performing diagnostic  investigations on groups of subjects, 
+devices involved in the provision of healthcare, and even environmental locations such as ducts, 
+bodies of water, etc. The <i>Diagnostic Order</i> supports all these usages.
+</p>
+<p>
+The general work flow that this resource facilitates is that a clinical system creates a diagnostic
+order. The diagnostic order is then exchanged, perhaps via intermediaries, with a system that 
+represents a diagnostic service that can perform the investigation as a request to do so. 
+The diagnostic service will update the request as the work is performed, and then finally
+issue a report that references the requests that it fulfills.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">4.17.2<a name="4.17.2"> </a></span> Boundaries and Relationships</h2>
+<p>
+Note that the Diagnostic Order itself is not a request to perform the 
+investigation - it is just a record of the fact that a request was made. 
+To actually request that a diagnostic procedure be performed, additional
+workflow beyond sumply the existence of a Diagnostic Order is required. 
+This can be achieved by using an <a href="order.html">Order</a> resource,
+with the Diagnostic Order referenced from the <i>Order.details</i>, or
+by using the Diagnostic Order resource in the context of of an 
+messaging or service workflow where the request is explicit or implicit.
+</p>
+
+</div>
+
+  <!-- profiles? -->
+
+<a name="resource"/>
+<h2><span class="sectioncount">4.17.3<a name="4.17.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="340.0" width="784.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="148.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="224.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="32.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="256.0" x1="32.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="144.0">DiagnosticOrder<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="38.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.subject"><title>Who or what the investigation is to be performed on. This is usually a human patient, but diagnostic tests can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans)</title>subject</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="patient.html#Patient">Patient</a>|<a xlink:href="group.html#Group">Group</a>|<a xlink:href="location.html#Location">Location</a>|<a xlink:href="device.html#Device">Device</a>) 1..1</text><text fill="black" class="diagram-class-detail" y="56.0" x="38.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.orderer"><title>The practitioner that holds legal responsibility for ordering the investigation</title>orderer</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="70.0" x="38.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.identifier"><title>Identifiers assigned to this order by the order or by the receiver</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..*</text><text fill="black" class="diagram-class-detail" y="84.0" x="38.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.encounter"><title>An encounter that provides additional informaton about the healthcare context in which this request is made</title>encounter</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="encounter.html#Encounter">Encounter</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="98.0" x="38.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.clinicalNotes"><title>An explanation or justification for why this diagnostic investigation is being requested</title>clinicalNotes</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="112.0" x="38.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.specimen"><title>One or more specimens that the diagnostic investigation is about</title>specimen</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="specimen.html#Specimen">Specimen</a>) 0..*</text><text fill="black" class="diagram-class-detail" y="126.0" x="38.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.status"><title>The status of the order</title>status</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="diagnostic-order-status.html"><title>The status of a diagnostic order</title>DiagnosticOrderStatus</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="140.0" x="38.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.priority"><title>The clinical priority associated with this order</title>priority</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="diagnostic-order-priority.html"><title>The clinical priority of a diagnostic order</title>DiagnosticOrderPriority</a>&gt;&gt;</text><rect height="92.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="288.0" filter="url(#shadow)" rx="4" y="228.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="256.0" y2="256.0" x2="288.0" x1="0.0"/><text fill="black" class="diagram-class-title" y="248.0" x="144.0">Event</text><text fill="black" class="diagram-class-detail" y="270.0" x="6.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.event.status"><title>The status for the event</title>status</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="diagnostic-order-status.html"><title>The status of a diagnostic order</title>DiagnosticOrderStatus</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="284.0" x="6.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.event.description"><title>Additional information about the event that occurred - e.g. if the status remained unchanged</title>description</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-diagnostic-order-event.html"><title>Additional information about an event that occurred to a diagnostic order - e.g. if the status remained unchanged</title>DIagnosticOrderEventDescription</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="298.0" x="6.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.event.dateTime"><title>The date/time at which the event occurred</title>dateTime</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 1..1</text><text fill="black" class="diagram-class-detail" y="312.0" x="6.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.event.actor"><title>The person who was responsible for performing or recording the action</title>actor</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a xlink:href="device.html#Device">Device</a>) 0..1</text><rect height="92.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="208.0" filter="url(#shadow)" rx="4" y="28.0" ry="4" x="376.0"/><line style="stroke:dimgrey;stroke-width:1" y1="56.0" y2="56.0" x2="584.0" x1="376.0"/><text fill="black" class="diagram-class-title" y="48.0" x="480.0">Item</text><text fill="black" class="diagram-class-detail" y="70.0" x="382.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.item.code"><title>A code that identifies a particular diagnostic investigation, or panel of investigations, that have been requested</title>code</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 1..1 &lt;&lt;<a xlink:href="valueset-diagnostic-requests.html"><title>Codes for tests/services that can be performed by diagnostic services</title>DiagnosticRequests</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="84.0" x="382.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.item.specimen"><title>If the item is related to a specific speciment</title>specimen</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="specimen.html#Specimen">Specimen</a>) 0..*</text><text fill="black" class="diagram-class-detail" y="98.0" x="382.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.item.bodySite"><title>Anatomical location where the request test should be performed</title>bodySite</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a> 0..1 &lt;&lt;<a xlink:href="valueset-body-site.html"><title>Codes describing anatomical locations. May include laterality</title>BodySite</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="112.0" x="382.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.item.status"><title>The status of this individual item within the order</title>status</a> : <a xlink:href="datatypes.html#code">code</a> 0..1 &lt;&lt;<a xlink:href="diagnostic-order-status.html"><title>The status of a diagnostic order</title>DiagnosticOrderStatus</a>&gt;&gt;</text><line style="stroke:navy;stroke-width:1" y1="148.0" y2="228.0" x2="144.0" x1="144.0"/><polygon transform="rotate(90.0 144.0 148.0)" style="fill:navy;stroke:navy;stroke-width:1" points="144.0,148.0 150.0,152.0 156.0,148.0 150.0,144.0 144.0,148.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="20.0" y="181.0" x="134.0"/><text fill="black" class="diagram-class-linkage" y="191.0" x="144.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.event"><title>A summary of the events of interest that have occurred as the request is processed. E.g. when the order was made, various processing steps (specimens received), when it was completed</title>event</a></text><text fill="black" class="diagram-class-linkage" y="224.0" x="144.0">0..*</text><line style="stroke:navy;stroke-width:1" y1="120.0" y2="228.0" x2="221.28000000000003" x1="402.72"/><polygon transform="rotate(149.2372804657611 402.72 120.0)" style="fill:navy;stroke:navy;stroke-width:1" points="402.72,120.0 408.72,124.0 414.72,120.0 408.72,116.0 402.72,120.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="20.0" y="167.0" x="302.0"/><text fill="black" class="diagram-class-linkage" y="177.0" x="312.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.item.event"><title>A summary of the events of interest that have occurred as this item of the request is processed</title>event</a></text><text fill="black" class="diagram-class-linkage" y="224.0" x="221.28000000000003">0..*</text><line style="stroke:navy;stroke-width:1" y1="74.0" y2="74.0" x2="376.0" x1="256.0"/><polygon transform="rotate(0.0 256.0 74.0)" style="fill:navy;stroke:navy;stroke-width:1" points="256.0,74.0 262.0,78.0 268.0,74.0 262.0,70.0 256.0,74.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="16.0" y="67.0" x="308.0"/><text fill="black" class="diagram-class-linkage" y="77.0" x="316.0"><a xlink:href="diagnosticorder-definitions.html#DiagnosticOrder.item"><title>The specific diagnostic investigations that are requested as part of this request. Sometimes, there can only be one item per request, but in most contexts, more than one investigation can be requested</title>item</a></text><text fill="black" class="diagram-class-linkage" y="70.0" x="356.0">0..*</text></svg>
+<p>This resource is referenced by <a href="careplan.html">CarePlan</a>, <a href="diagnosticreport.html">DiagnosticReport</a> and <a href="imagingstudy.html">ImagingStudy</a></p>
+
+
+<a name="def"> </a>
+<a name="diagnosticorder"> </a>
+<a name="DiagnosticOrder"> </a>
+<pre class="spec">
+&lt;<a title="A request for a diagnostic investigation service to be performed." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder"><b>DiagnosticOrder</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Who or what the investigation is to be performed on. This is usually a human patient, but diagnostic tests can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans)." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>|<a href="group.html#Group">Group</a>|<a href="location.html#Location">Location</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">Who and/or what test is about</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="The practitioner that holds legal responsibility for ordering the investigation." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.orderer"><b>orderer</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">Who ordered the test</span><span style="color: Gray"> --&gt;</span>&lt;/orderer&gt;
+ &lt;<a title="Identifiers assigned to this order by the order or by the receiver." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Identifiers assigned to this order</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="An encounter that provides additional informaton about the healthcare context in which this request is made." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.encounter"><b>encounter</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="encounter.html#Encounter">Encounter</a>)</span> <span style="color: navy">
+     The encounter that this diagnostic order is associated with</span><span style="color: Gray"> --&gt;</span>&lt;/encounter&gt;
+ &lt;<a title="An explanation or justification for why this diagnostic investigation is being requested." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.clinicalNotes"><b>clinicalNotes</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Explanation/Justification for test</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="One or more specimens that the diagnostic investigation is about." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.specimen"><b>specimen</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="specimen.html#Specimen">Specimen</a>)</span> <span style="color: navy">If the whole order relates to specific specimens</span><span style="color: Gray"> --&gt;</span>&lt;/specimen&gt;
+ &lt;<a title="The status of the order." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.status"><b>status</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="diagnostic-order-status.html">requested | received | accepted | in progress | review | completed | suspended | rejected | failed</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The clinical priority associated with this order." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.priority"><b>priority</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="diagnostic-order-priority.html">routine | urgent | stat | asap</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A summary of the events of interest that have occurred as the request is processed. E.g. when the order was made, various processing steps (specimens received), when it was completed." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.event"><b>event</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> A list of events of interest in the lifecycle --&gt;</span>
+  &lt;<a title="The status for the event." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.event.status"><b>status</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="diagnostic-order-status.html">requested | received | accepted | in progress | review | completed | suspended | rejected | failed</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Additional information about the event that occurred - e.g. if the status remained unchanged." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.event.description"><b>description</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-diagnostic-order-event.html">More information about the event and it's context</a></span><span style="color: Gray"> --&gt;</span>&lt;/description&gt;
+  &lt;<a title="The date/time at which the event occurred." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.event.dateTime"><b>dateTime</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">The date at which the event happened</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The person who was responsible for performing or recording the action." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.event.actor"><b>actor</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">Who recorded or did this</span><span style="color: Gray"> --&gt;</span>&lt;/actor&gt;
+ &lt;/event&gt;
+ &lt;<a title="The specific diagnostic investigations that are requested as part of this request. Sometimes, there can only be one item per request, but in most contexts, more than one investigation can be requested." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.item"><b>item</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> The items the orderer requested --&gt;</span>
+  &lt;<a title="A code that identifies a particular diagnostic investigation, or panel of investigations, that have been requested." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.item.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-diagnostic-requests.html">Code to indicate the item (test or panel) being ordered</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+  &lt;<a title="If the item is related to a specific speciment." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.item.specimen"><b>specimen</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="specimen.html#Specimen">Specimen</a>)</span> <span style="color: navy">If this item relates to specific specimens</span><span style="color: Gray"> --&gt;</span>&lt;/specimen&gt;
+  &lt;<a title="Anatomical location where the request test should be performed." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.item.bodySite"><b>bodySite</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-body-site.html">Location of requested test (if applicable)</a></span><span style="color: Gray"> --&gt;</span>&lt;/bodySite&gt;
+  &lt;<a title="The status of this individual item within the order." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.item.status"><b>status</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="diagnostic-order-status.html">requested | received | accepted | in progress | review | completed | suspended | rejected | failed</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A summary of the events of interest that have occurred as this item of the request is processed." class="dict" href="diagnosticorder-definitions.html#DiagnosticOrder.item.event"><b>event</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen">Content as for DiagnosticOrder.event</span> <span style="color: navy">Events specific to this item</span><span style="color: Gray"> --&gt;</span>&lt;/event&gt;
+ &lt;/item&gt;
+&lt;/DiagnosticOrder&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="diagnosticorder.xsd">Schema</a>/<a href="diagnosticorder.sch">Schematron</a>, 
+<a href="diagnosticorder.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">4.17.3.1<a name="4.17.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="DiagnosticOrderStatus" valign="top">DiagnosticOrder.status<br/>DiagnosticOrder.event.status<br/>DiagnosticOrder.item.status </td><td valign="top">The status of a diagnostic order</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="diagnostic-order-status.html">http://hl7.org/fhir/diagnostic-order-status</a></td> </tr>
+ <tr><td title="DiagnosticOrderPriority" valign="top">DiagnosticOrder.priority </td><td valign="top">The clinical priority of a diagnostic order</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="diagnostic-order-priority.html">http://hl7.org/fhir/diagnostic-order-priority</a></td> </tr>
+ <tr><td title="DIagnosticOrderEventDescription" valign="top">DiagnosticOrder.event.description </td><td valign="top">Additional information about an event that occurred to a diagnostic order - e.g. if the status remained unchanged</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-diagnostic-order-event.html">http://hl7.org/fhir/vs/diagnostic-order-event</a></td> </tr>
+ <tr><td title="DiagnosticRequests" valign="top">DiagnosticOrder.item.code </td><td valign="top">Codes for tests/services that can be performed by diagnostic services</td><td><a href="terminologies.html#incomplete">Incomplete</a></td><td valign="top"><a href="valueset-diagnostic-requests.html">http://hl7.org/fhir/vs/diagnostic-requests</a></td> </tr>
+ <tr><td title="BodySite" valign="top">DiagnosticOrder.item.bodySite </td><td valign="top">Codes describing anatomical locations. May include laterality</td><td><a href="terminologies.html#example">Example</a></td><td valign="top"><a href="valueset-body-site.html">http://hl7.org/fhir/vs/body-site</a></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+
+<h2><span class="sectioncount">4.17.4<a name="4.17.4"> </a></span> 
+Notes:
+</h2>
+<ul>
+ <li>In normal practice, there would always be at least one item in a request (no point requesting nothing), but the minimum cardinality is 0 so that a workflow can quote order details (identifiers, requester) without having to list the items</li>
+ <li>Typically the system placing the order sets the status to requested. There after, the order is maintained by the receiver that updates the status as the request is processed</li>
+ <li>If the request has multiple items that have their own life cycles, then the items will have their own status while the overall diagnostic order is (usually) &quot;in progress&quot;</li>
+ <li>The event list is not the same as an audit trail - it is a view of the important things that happened in the past. Typically, there would only be one entry for any given status, and systems may not record all the status events</li>
+ <li>Many investigation requests will create a need for specimens, but in these cases, the request itself is not actually about the specimens. 
+  This specimen elements in this resource are provided for when the diagnostic investigation is requested on already existing specimens</li>
+ <li>A single specimen should not appear in both DiagnosticOrder.specimen and DiagnosticOrder.item.specimen - DiagnosticOrder.specimen sjhould only be used when the entire order relates to a single specimen, and then there is no need to repeat it for each item</li>
+ <li>The clinical notes may be used to decide how the diagnostic investigation will be performed, or even if it will be performed at all</li>
+</ul>
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">4.17.5<a name="4.17.5"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>actor</td><td><a href="search.html#reference">reference</a></td><td>Who recorded or did this</td><td>DiagnosticOrder.event.actor, DiagnosticOrder.item.event.actor<br/>(<a href="device.html">Device</a>, <a href="practitioner.html">Practitioner</a>)</td></tr>
+<tr><td>bodysite</td><td><a href="search.html#token">token</a></td><td>Location of requested test (if applicable)</td><td>DiagnosticOrder.item.bodySite</td></tr>
+<tr><td>code</td><td><a href="search.html#token">token</a></td><td>Code to indicate the item (test or panel) being ordered</td><td>DiagnosticOrder.item.code</td></tr>
+<tr><td>encounter</td><td><a href="search.html#reference">reference</a></td><td>The encounter that this diagnostic order is associated with</td><td>DiagnosticOrder.encounter<br/>(<a href="encounter.html">Encounter</a>)</td></tr>
+<tr><td>event-date</td><td><a href="search.html#date">date</a></td><td>The date at which the event happened</td><td>DiagnosticOrder.event.dateTime</td></tr>
+<tr><td>event-status</td><td><a href="search.html#token">token</a></td><td>requested | received | accepted | in progress | review | completed | suspended | rejected | failed</td><td>DiagnosticOrder.event.status</td></tr>
+<tr><td>event-status-date</td><td><a href="search.html#composite">composite</a></td><td>A combination of past-status and date</td><td/></tr>
+<tr><td>identifier</td><td><a href="search.html#token">token</a></td><td>Identifiers assigned to this order</td><td>DiagnosticOrder.identifier</td></tr>
+<tr><td>item-date</td><td><a href="search.html#date">date</a></td><td>The date at which the event happened</td><td>DiagnosticOrder.item.event.dateTime</td></tr>
+<tr><td>item-past-status</td><td><a href="search.html#token">token</a></td><td>requested | received | accepted | in progress | review | completed | suspended | rejected | failed</td><td>DiagnosticOrder.item.event.status</td></tr>
+<tr><td>item-status</td><td><a href="search.html#token">token</a></td><td>requested | received | accepted | in progress | review | completed | suspended | rejected | failed</td><td>DiagnosticOrder.item.status</td></tr>
+<tr><td>item-status-date</td><td><a href="search.html#composite">composite</a></td><td>A combination of item-past-status and item-date</td><td/></tr>
+<tr><td>orderer</td><td><a href="search.html#reference">reference</a></td><td>Who ordered the test</td><td>DiagnosticOrder.orderer<br/>(<a href="practitioner.html">Practitioner</a>)</td></tr>
+<tr><td>specimen</td><td><a href="search.html#reference">reference</a></td><td>If the whole order relates to specific specimens</td><td>DiagnosticOrder.specimen, DiagnosticOrder.item.specimen<br/>(<a href="specimen.html">Specimen</a>)</td></tr>
+<tr><td>status</td><td><a href="search.html#token">token</a></td><td>requested | received | accepted | in progress | review | completed | suspended | rejected | failed</td><td>DiagnosticOrder.status</td></tr>
+<tr><td>subject</td><td><a href="search.html#reference">reference</a></td><td>Who and/or what test is about</td><td>DiagnosticOrder.subject<br/>(<a href="device.html">Device</a>, <a href="location.html">Location</a>, <a href="patient.html">Patient</a>, <a href="group.html">Group</a>)</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

@@ -1,0 +1,194 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Example for Profile Example Lipid Profile</title>
+ <link rel="Stylesheet" href="fhir.css" type="text/css" media="screen"/>
+</head>
+<body>
+<p>&nbsp;</p>
+<div class="example">
+<p>Example for Profile Example Lipid Profile</p>
+<p><a href="diagnosticreport-example-lipids.json">Raw JSON</a></p>
+<pre class="json">
+{
+  &quot;resourceType&quot;: &quot;DiagnosticReport&quot;,
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div&gt; \n      &lt;h3&gt;Lipid Report for Wile. E. COYOTE (MRN: 23453) issued 3-Mar 2009 14:26&lt;/h3&gt;            \n\n            &lt;pre&gt;\nTest                  Units       Value       Reference Range\nCholesterol           mmol/L      6.3         &amp;lt;4.5\nTriglyceride          mmol/L      1.3         &amp;lt;2.0\nHDL Cholesterol       mmol/L      1.3         &amp;gt;1.5\nLDL Chol. (calc)      mmol/L      4.2         &amp;lt;3.0\n      &lt;/pre&gt;\n            &lt;p&gt;Acme Laboratory, Inc signed: Dr Pete Pathologist&lt;/p&gt;\n        &lt;/div&gt;&quot;
+  },
+  &quot;contained&quot;: [
+    {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;cholesterol&quot;,
+      &quot;name&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://loinc.org&quot;,
+            &quot;code&quot;: &quot;35200-5&quot;
+          }
+        ],
+        &quot;text&quot;: &quot;Cholesterol&quot;
+      },
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 6.3,
+        &quot;units&quot;: &quot;mmol/L&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;mmol/L&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;reliability&quot;: &quot;ok&quot;,
+      &quot;referenceRange&quot;: [
+        {
+          &quot;high&quot;: {
+            &quot;value&quot;: 4.5,
+            &quot;units&quot;: &quot;mmol/L&quot;,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mmol/L&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;triglyceride&quot;,
+      &quot;name&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://loinc.org&quot;,
+            &quot;code&quot;: &quot;35217-9&quot;
+          }
+        ],
+        &quot;text&quot;: &quot;Triglyceride&quot;
+      },
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 1.3,
+        &quot;units&quot;: &quot;mmol/L&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;mmol/L&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;reliability&quot;: &quot;ok&quot;,
+      &quot;referenceRange&quot;: [
+        {
+          &quot;high&quot;: {
+            &quot;value&quot;: 2.0,
+            &quot;units&quot;: &quot;mmol/L&quot;,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mmol/L&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;hdlcholesterol&quot;,
+      &quot;name&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://loinc.org&quot;,
+            &quot;code&quot;: &quot;2085-9&quot;
+          }
+        ],
+        &quot;text&quot;: &quot;Cholesterol in HDL&quot;
+      },
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 1.3,
+        &quot;units&quot;: &quot;mmol/L&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;mmol/L&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;reliability&quot;: &quot;ok&quot;,
+      &quot;referenceRange&quot;: [
+        {
+          &quot;low&quot;: {
+            &quot;value&quot;: 1.5,
+            &quot;units&quot;: &quot;mmol/L&quot;,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mmol/L&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;resourceType&quot;: &quot;Observation&quot;,
+      &quot;id&quot;: &quot;ldlcholesterol&quot;,
+      &quot;name&quot;: {
+        &quot;coding&quot;: [
+          {
+            &quot;system&quot;: &quot;http://loinc.org&quot;,
+            &quot;code&quot;: &quot;13457-7&quot;
+          }
+        ],
+        &quot;text&quot;: &quot;LDL Chol. (Calc)&quot;
+      },
+      &quot;valueQuantity&quot;: {
+        &quot;value&quot;: 4.6,
+        &quot;units&quot;: &quot;mmol/L&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;mmol/L&quot;
+      },
+      &quot;status&quot;: &quot;final&quot;,
+      &quot;reliability&quot;: &quot;ok&quot;,
+      &quot;referenceRange&quot;: [
+        {
+          &quot;high&quot;: {
+            &quot;value&quot;: 3.0,
+            &quot;units&quot;: &quot;mmol/L&quot;,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mmol/L&quot;
+          }
+        }
+      ]
+    }
+  ],
+  &quot;name&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;system&quot;: &quot;http://loinc.org&quot;,
+        &quot;code&quot;: &quot;57698-3&quot;,
+        &quot;display&quot;: &quot;Lipid panel with direct LDL - Serum or Plasma&quot;
+      }
+    ],
+    &quot;text&quot;: &quot;Lipid Panel&quot;
+  },
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;issued&quot;: &quot;2013-01-27T11:45:33+11:00&quot;,
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/pat2&quot;
+  },
+  &quot;performer&quot;: {
+    &quot;reference&quot;: &quot;Organization/1832473e-2fe0-452d-abe9-3cdb9879522f&quot;,
+    &quot;display&quot;: &quot;Acme Laboratory, Inc&quot;
+  },
+  &quot;identifier&quot;: {
+    &quot;system&quot;: &quot;http://acme.com/lab/reports&quot;,
+    &quot;value&quot;: &quot;5234342&quot;
+  },
+  &quot;serviceCategory&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;system&quot;: &quot;http://hl7.org/fhir/v2/0074&quot;,
+        &quot;code&quot;: &quot;HM&quot;
+      }
+    ]
+  },
+  &quot;diagnosticDateTime&quot;: &quot;2011-03-04T08:30:00+11:00&quot;,
+  &quot;result&quot;: [
+    {
+      &quot;reference&quot;: &quot;#cholesterol&quot;
+    },
+    {
+      &quot;reference&quot;: &quot;#triglyceride&quot;
+    },
+    {
+      &quot;reference&quot;: &quot;#hdlcholesterol&quot;
+    },
+    {
+      &quot;reference&quot;: &quot;#ldlcholesterol&quot;
+    }
+  ]
+}
+</pre>
+</div>
+</body>
+</html>

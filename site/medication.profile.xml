@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
+&lt;<a title="Primarily used for identification and definition of Medication, but also covers ingredients and packaging." class="dict" href="medication-definitions.html#Medication"><b>Medication</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="The common/commercial name of the medication absent information such as strength, form, etc.  E.g. Acetaminophen, Tylenol 3, etc.  The fully coordinated name is communicated as the display of Medication.code." class="dict" href="medication-definitions.html#Medication.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Common / Commercial name<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A code (or set of codes) that identify this medication.   Usage note: This could be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT code, etc. It could also be a local formulary code, optionally with translations to the standard drug codes." class="dict" href="medication-definitions.html#Medication.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-medication-codes.html">Codes that identify this medication<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+ &lt;<a title="Set to true if the item is attributable to a specific manufacturer (even if we don&#39;t know who that is)." class="dict" href="medication-definitions.html#Medication.isBrand"><b>isBrand</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">True if a brand<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Describes the details of the manufacturer." class="dict" href="medication-definitions.html#Medication.manufacturer"><b>manufacturer</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Manufacturer of the item<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/manufacturer&gt;
+ &lt;<a title="Medications are either a single administrable product or a package that contains one or more products." class="dict" href="medication-definitions.html#Medication.kind"><b>kind</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="medication-kind.html">product | package<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Information that only applies to products (not packages)." class="dict" href="medication-definitions.html#Medication.product"><b>product</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Administrable medication details --&gt;</span>
+  &lt;<a title="Describes the form of the item.  Powder; tables; carton." class="dict" href="medication-definitions.html#Medication.product.form"><b>form</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-medication-form-codes.html">powder | tablets | carton +</a></span><span style="color: Gray"> --&gt;</span>&lt;/form&gt;
+  &lt;<a title="Identifies a particular constituent of interest in the product." class="dict" href="medication-definitions.html#Medication.product.ingredient"><b>ingredient</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Active or inactive ingredient --&gt;</span>
+   &lt;<a title="The actual ingredient - either a substance (simple ingredient) or another medication." class="dict" href="medication-definitions.html#Medication.product.ingredient.item"><b>item</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="substance.html#Substance">Substance</a>|<a href="medication.html#Medication">Medication</a>)</span> <span style="color: navy">The product contained</span><span style="color: Gray"> --&gt;</span>&lt;/item&gt;
+   &lt;<a title="Specifies how many (or how much) of the items there are in this Medication.  E.g. 250 mg per tablet." class="dict" href="medication-definitions.html#Medication.product.ingredient.amount"><b>amount</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Ratio">Ratio</a></span> <span style="color: navy">How much ingredient in product</span><span style="color: Gray"> --&gt;</span>&lt;/amount&gt;
+  &lt;/ingredient&gt;
+ &lt;/product&gt;
+ &lt;<a title="Information that only applies to packages (not products)." class="dict" href="medication-definitions.html#Medication.package"><b>package</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Details about packaged medications --&gt;</span>
+  &lt;<a title="The kind of container that this package comes as." class="dict" href="medication-definitions.html#Medication.package.container"><b>container</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-medication-package-form-codes.html">E.g. box, vial, blister-pack</a></span><span style="color: Gray"> --&gt;</span>&lt;/container&gt;
+  &lt;<a title="A set of components that go to make up the described item." class="dict" href="medication-definitions.html#Medication.package.content"><b>content</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> What is  in the package? --&gt;</span>
+   &lt;<a title="Identifies one of the items in the package." class="dict" href="medication-definitions.html#Medication.package.content.item"><b>item</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="medication.html#Medication">Medication</a>)</span> <span style="color: navy">A product in the package</span><span style="color: Gray"> --&gt;</span>&lt;/item&gt;
+   &lt;<a title="The amount of the product that is in the package." class="dict" href="medication-definitions.html#Medication.package.content.amount"><b>amount</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Quantity">Quantity</a></span> <span style="color: navy">How many are in the package?</span><span style="color: Gray"> --&gt;</span>&lt;/amount&gt;
+  &lt;/content&gt;
+ &lt;/package&gt;
+&lt;/Medication&gt;
+</pre></div>
+  </text>
+  <name value="medication"/>
+  <publisher value="FHIR Project"/>
+  <description value="Basic Profile. Primarily used for identification and definition of Medication, but also covers ingredients and packaging."/>
+  <status value="draft"/>
+  <date value="2014-10-08"/>
+  <requirements value="Scope and Usage Representing Medication in the majority of healthcare settings is a matter of identifying an item from a list and then conveying a reference for the item selected either into a patient related resource or to other applications. Additional information about the medication is frequently provided for human verification but a full representation of the details of composition and efficacy of the medicine is conveyed by referring to drug dictionaries by means of the codes they define. There are some occasions where it is necessary to identify slightly more detail, such as when dispensing a package containing a particular medicine requires identification both of the medicine and the package at once. There are also some occasions (e.g. custom formulations) where the composition of a medicine must be represented. In these cases the ingredients of the medicine have to be specified together with the amount contained, though the medication resource does not provide full details. 
+
+The medication resource allows for medications to be characterised as either a product or a package; this classification is important because it affects the interpretation of a prescribed amount. For instance, is the prescribed amount 20 tablets, or 20 packages of 50 tablets each? However the kind element is not required because not all contexts of use are involved with prescription (medication statements, for instance). Typically, however, profiles describing the use of the medication resource in a prescribing environment will make the kind element required. 
+
+Depending on whether the medication is a product or a package, further details about the composition can be provided. A product has a form (tablet, suspension, etc.) and a list of ingredients with quantities. The ingredients may be other medications or substances. A package has a container (vacuum packed box, jar, etc.) and a list of the products or other packages that are in the package."/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <structure>
+    <type value="Medication"/>
+    <publish value="true"/>
+    <element>
+      <path value="Medication"/>
+      <definition>
+        <short value="Definition of a Medication"/>
+        <formal value="Primarily used for identification and definition of Medication, but also covers ingredients and packaging."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ManufacturedProduct[classCode=ADMM]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.text"/>
+      <definition>
+        <short value="Text summary of the resource, for human interpretation"/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+        <synonym value="narrative"/>
+        <synonym value="html"/>
+        <synonym value="xhtml"/>
+        <synonym value="display"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Narrative"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.contained"/>
+      <definition>
+        <short value="Contained, inline Resources"/>
+        <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+        <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+        <synonym value="inline resources"/>
+        <synonym value="anonymous resources"/>
+        <synonym value="contained resources"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Resource"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.name"/>
+      <definition>
+        <short value="Common / Commercial name"/>
+        <formal value="The common/commercial name of the medication absent information such as strength, form, etc.  E.g. Acetaminophen, Tylenol 3, etc.  The fully coordinated name is communicated as the display of Medication.code."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".name"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="RXO-1.2-Requested Give Code.text / RXE-2.2-Give Code.text / RXD-2.2-Dispense/Give Code.text / RXG-4.2-Give Code.text / RXA-5.2-Administered Code.text"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.code"/>
+      <definition>
+        <short value="Codes that identify this medication"/>
+        <formal value="A code (or set of codes) that identify this medication.   Usage note: This could be a standard drug code such as a drug regulator code, RxNorm code, SNOMED CT code, etc. It could also be a local formulary code, optionally with translations to the standard drug codes."/>
+        <comments value="When defining a medication, the code is the &quot;identifying&quot; code for the medication. All the codings provided should be at the same level in the hierarchy (generic, formulation, generic strength, etc.). Codes that relate the medication across the hierarchy should be conveyed using the relationships inherent in Medication.package and Medication.product."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="MedicationFormalRepresentation"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/medication-codes"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".code"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="RXO-1.1-Requested Give Code.code / RXE-2.1-Give Code.code / RXD-2.1-Dispense/Give Code.code / RXG-4.1-Give Code.code /RXA-5.1-Administered Code.code"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.isBrand"/>
+      <definition>
+        <short value="True if a brand"/>
+        <formal value="Set to true if the item is attributable to a specific manufacturer (even if we don&#39;t know who that is)."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="boolean"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="true if .player.scopingRole[typeCode=MANU] exists"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.manufacturer"/>
+      <definition>
+        <short value="Manufacturer of the item"/>
+        <formal value="Describes the details of the manufacturer."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Organization"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".player.scopingRole[typeCode=MANU].scoper"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="RXD-20-Substance Manufacturer Name / RXG-21-Substance Manufacturer Name / RXA-17-Substance Manufacturer Name"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.kind"/>
+      <definition>
+        <short value="product | package"/>
+        <formal value="Medications are either a single administrable product or a package that contains one or more products."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="MedicationKind"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/medication-kind"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".player.classCode
+(CONT or not)"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product"/>
+      <definition>
+        <short value="Administrable medication details"/>
+        <formal value="Information that only applies to products (not packages)."/>
+        <min value="0"/>
+        <max value="1"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".player [classCode != CONT]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product.form"/>
+      <definition>
+        <short value="powder | tablets | carton +"/>
+        <formal value="Describes the form of the item.  Powder; tables; carton."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="MedicationForm"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/medication-form-codes"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".formCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="RXO-5-Requested Dosage Form / RXE-6-Give Dosage Form / RXD-6-Actual Dosage Form / RXG-8-Give Dosage Form / RXA-8-Administered Dosage Form"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product.ingredient"/>
+      <definition>
+        <short value="Active or inactive ingredient"/>
+        <formal value="Identifies a particular constituent of interest in the product."/>
+        <comments value="The ingredients need not be a complete list; usually only active ingredients are listed."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".scopesRole[typeCode=INGR]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product.ingredient.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product.ingredient.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product.ingredient.item"/>
+      <definition>
+        <short value="The product contained"/>
+        <formal value="The actual ingredient - either a substance (simple ingredient) or another medication."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Substance"/>
+        </type>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Medication"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".player"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="if substance: RXC-2-Component Code
+if medication: RXO-1-Requested Give Code / RXE-2-Give Code / RXD-2-Dispense/Give Code / RXG-4-Give Code / RXA-5-Administered Code"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.product.ingredient.amount"/>
+      <definition>
+        <short value="How much ingredient in product"/>
+        <formal value="Specifies how many (or how much) of the items there are in this Medication.  E.g. 250 mg per tablet."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Ratio"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".quantity"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="if substance: RXC-3-Component Amount &amp; RXC-4-Component Units
+if medication: RXO-2-Requested Give Amount - Minimum &amp; RXO-4-Requested Give Units / RXO-3-Requested Give Amount - Maximum &amp; RXO-4-Requested Give Units / RXO-11-Requested Dispense Amount &amp; RXO-12-Requested Dispense Units / RXE-3-Give Amount - Minimum &amp; RXE-5-Give Units / RXE-4-Give Amount - Maximum &amp; RXE-5-Give Units / RXE-10-Dispense Amount &amp; RXE-10-Dispense Units"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package"/>
+      <definition>
+        <short value="Details about packaged medications"/>
+        <formal value="Information that only applies to packages (not products)."/>
+        <min value="0"/>
+        <max value="1"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".player[classCode=CONT]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package.container"/>
+      <definition>
+        <short value="E.g. box, vial, blister-pack"/>
+        <formal value="The kind of container that this package comes as."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="MedicationContainer"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/medication-package-form-codes"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".code"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package.content"/>
+      <definition>
+        <short value="What is  in the package?"/>
+        <formal value="A set of components that go to make up the described item."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".scopesRole[typeCode=CONT]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package.content.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package.content.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package.content.item"/>
+      <definition>
+        <short value="A product in the package"/>
+        <formal value="Identifies one of the items in the package."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="ResourceReference"/>
+          <profile value="http://hl7.org/fhir/profiles/Medication"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".player"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Medication.package.content.amount"/>
+      <definition>
+        <short value="How many are in the package?"/>
+        <formal value="The amount of the product that is in the package."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Quantity"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".quantity"/>
+        </mapping>
+      </definition>
+    </element>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="code"/>
+      <type value="token"/>
+      <documentation value="Codes that identify this medication"/>
+      <xpath value="f:Medication/f:code"/>
+    </searchParam>
+    <searchParam>
+      <name value="container"/>
+      <type value="token"/>
+      <documentation value="E.g. box, vial, blister-pack"/>
+      <xpath value="f:Medication/f:package/f:container"/>
+    </searchParam>
+    <searchParam>
+      <name value="content"/>
+      <type value="reference"/>
+      <documentation value="A product in the package"/>
+      <xpath value="f:Medication/f:package/f:content/f:item"/>
+    </searchParam>
+    <searchParam>
+      <name value="form"/>
+      <type value="token"/>
+      <documentation value="powder | tablets | carton +"/>
+      <xpath value="f:Medication/f:product/f:form"/>
+    </searchParam>
+    <searchParam>
+      <name value="ingredient"/>
+      <type value="reference"/>
+      <documentation value="The product contained"/>
+      <xpath value="f:Medication/f:product/f:ingredient/f:item"/>
+    </searchParam>
+    <searchParam>
+      <name value="manufacturer"/>
+      <type value="reference"/>
+      <documentation value="Manufacturer of the item"/>
+      <xpath value="f:Medication/f:manufacturer"/>
+    </searchParam>
+    <searchParam>
+      <name value="name"/>
+      <type value="string"/>
+      <documentation value="Common / Commercial name"/>
+      <xpath value="f:Medication/f:name"/>
+    </searchParam>
+  </structure>
+</Profile>

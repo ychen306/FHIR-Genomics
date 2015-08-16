@@ -1,0 +1,265 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>OrderResponse - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="administration.html">Administrative</a></li>        <li><b>OrderResponse</b></li>          <!-- orderresponse.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="orderresponse-examples.html">Examples</a></li><li><a href="orderresponse-definitions.html">Formal Definitions</a></li><li><a href="orderresponse-mappings.html">Mappings</a></li><li><a href="orderresponse-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">5.13<a name="5.13"> </a></span> Resource OrderResponse - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+A response to an order. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">5.13.1<a name="5.13.1"> </a></span> Scope and Usage</h2>
+<p>
+The response to an order indicates the outcome of processing the order itself - whether it 
+was accepted or rejected, or is still in process. The order response resource does not itself convey 
+or represent information that arises as a result of performing the actual order, but it may have 
+references to other resources that do have this information, in order to link between the original
+order and its outcome.
+</p>
+</div>
+
+<div>
+<h2><span class="sectioncount">5.13.2<a name="5.13.2"> </a></span> Background and Context</h2>
+<p>
+There may be multiple responses for a given order. For some requests, a responding system
+may issue a sequence of responses, where each response replaces previous responses as the original
+order is processed/performed. In these cases, each response should have the same logical identity, and 
+the multiple responses are different versions of the same overall response. 
+</p>
+<p>
+If there are multiple systems responding to the request, or if there request may have multiple
+different responses, then the different logical responses should have different logical ids.
+</p>
+</div>
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">5.13.3<a name="5.13.3"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="172.0" width="304.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="162.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="204.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="204.0" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="20.0" x="102.0">OrderResponse<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><text fill="black" class="diagram-class-detail" y="42.0" x="6.0"><a xlink:href="orderresponse-definitions.html#OrderResponse.identifier"><title>Identifiers assigned to this order. The identifiers are usually assigned by the system responding to the order, but they may be provided or added to by other systems</title>identifier</a> : <a xlink:href="datatypes.html#Identifier">Identifier</a> 0..*</text><text fill="black" class="diagram-class-detail" y="56.0" x="6.0"><a xlink:href="orderresponse-definitions.html#OrderResponse.request"><title>A reference to the order that this is in response to</title>request</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="order.html#Order">Order</a>) 1..1</text><text fill="black" class="diagram-class-detail" y="70.0" x="6.0"><a xlink:href="orderresponse-definitions.html#OrderResponse.date"><title>The date and time at which this order response was made (created/posted)</title>date</a> : <a xlink:href="datatypes.html#dateTime">dateTime</a> 0..1</text><text fill="black" class="diagram-class-detail" y="84.0" x="6.0"><a xlink:href="orderresponse-definitions.html#OrderResponse.who"><title>The person, organization, or device credited with making the response</title>who</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="practitioner.html#Practitioner">Practitioner</a>|<a xlink:href="organization.html#Organization">Organization</a>|</text><text fill="black" class="diagram-class-detail" y="98.0" x="26.0">     <a xlink:href="device.html#Device">Device</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="112.0" x="6.0"><a xlink:href="orderresponse-definitions.html#OrderResponse.authority_x_"><title>A reference to an authority policy that is the reason for the response. Usually this is used when the order is rejected, to provide a reason for rejection</title>authority[x]</a> : <a xlink:href="datatypes.html#CodeableConcept">CodeableConcept</a>|<a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 0..1</text><text fill="black" class="diagram-class-detail" y="126.0" x="6.0"><a xlink:href="orderresponse-definitions.html#OrderResponse.code"><title>What this response says about the status of the original order (this element modifies the meaning of other elements)</title>code</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="order-outcome-code.html"><title>The status of the response to an order</title>OrderOutcomeStatus</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="140.0" x="6.0"><a xlink:href="orderresponse-definitions.html#OrderResponse.description"><title>Additional description about the response - e.g. a text description provided by a human user when making decisions about the order</title>description</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="154.0" x="6.0"><a xlink:href="orderresponse-definitions.html#OrderResponse.fulfillment"><title>Links to resources that provide details of the outcome of performing the order. E.g. Diagnostic Reports in a response that is made to an order that referenced a diagnostic order</title>fulfillment</a> : <a xlink:href="references.html#Resource">Resource</a>(<a xlink:href="resourcelist.html#Any">Any</a>) 0..*</text></svg>
+
+
+<a name="def"> </a>
+<a name="orderresponse"> </a>
+<a name="OrderResponse"> </a>
+<pre class="spec">
+&lt;<a title="A response to an order." class="dict" href="orderresponse-definitions.html#OrderResponse"><b>OrderResponse</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifiers assigned to this order. The identifiers are usually assigned by the system responding to the order, but they may be provided or added to by other systems." class="dict" href="orderresponse-definitions.html#OrderResponse.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">
+     Identifiers assigned to this order by the orderer or by the receiver</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="A reference to the order that this is in response to." class="dict" href="orderresponse-definitions.html#OrderResponse.request"><b>request</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="order.html#Order">Order</a>)</span> <span style="color: navy">The order that this is a response to</span><span style="color: Gray"> --&gt;</span>&lt;/request&gt;
+ &lt;<a title="The date and time at which this order response was made (created/posted)." class="dict" href="orderresponse-definitions.html#OrderResponse.date"><b>date</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the response was made</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The person, organization, or device credited with making the response." class="dict" href="orderresponse-definitions.html#OrderResponse.who"><b>who</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="organization.html#Organization">Organization</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">Who made the response</span><span style="color: Gray"> --&gt;</span>&lt;/who&gt;
+ &lt;<a title="A reference to an authority policy that is the reason for the response. Usually this is used when the order is rejected, to provide a reason for rejection." class="dict" href="orderresponse-definitions.html#OrderResponse.authority_x_"><b>authority[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a>|<a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">If required by policy</span><span style="color: Gray"> --&gt;</span>&lt;/authority[x]&gt;
+ &lt;<a title="What this response says about the status of the original order (this element modifies the meaning of other elements)" class="dict" href="orderresponse-definitions.html#OrderResponse.code"><span style="text-decoration: underline"><b>code</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="order-outcome-code.html">pending | review | rejected | error | accepted | cancelled | replaced | aborted | complete</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Additional description about the response - e.g. a text description provided by a human user when making decisions about the order." class="dict" href="orderresponse-definitions.html#OrderResponse.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Additional description of the response</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Links to resources that provide details of the outcome of performing the order. E.g. Diagnostic Reports in a response that is made to an order that referenced a diagnostic order." class="dict" href="orderresponse-definitions.html#OrderResponse.fulfillment"><b>fulfillment</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Details of the outcome of performing the order</span><span style="color: Gray"> --&gt;</span>&lt;/fulfillment&gt;
+&lt;/OrderResponse&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="orderresponse.xsd">Schema</a>/<a href="orderresponse.sch">Schematron</a>, 
+<a href="orderresponse.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">5.13.3.1<a name="5.13.3.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="OrderOutcomeStatus" valign="top">OrderResponse.code </td><td valign="top">The status of the response to an order</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="order-outcome-code.html">http://hl7.org/fhir/order-outcome-code</a></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">5.13.4<a name="5.13.4"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+<tr><td>code</td><td><a href="search.html#token">token</a></td><td>pending | review | rejected | error | accepted | cancelled | replaced | aborted | complete</td><td>OrderResponse.code</td></tr>
+<tr><td>date</td><td><a href="search.html#date">date</a></td><td>When the response was made</td><td>OrderResponse.date</td></tr>
+<tr><td>fulfillment</td><td><a href="search.html#reference">reference</a></td><td>Details of the outcome of performing the order</td><td>OrderResponse.fulfillment<br/>(Any)</td></tr>
+<tr><td>request</td><td><a href="search.html#reference">reference</a></td><td>The order that this is a response to</td><td>OrderResponse.request<br/>(<a href="order.html">Order</a>)</td></tr>
+<tr><td>who</td><td><a href="search.html#reference">reference</a></td><td>Who made the response</td><td>OrderResponse.who<br/>(<a href="device.html">Device</a>, <a href="organization.html">Organization</a>, <a href="practitioner.html">Practitioner</a>)</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

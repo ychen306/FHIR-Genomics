@@ -1,0 +1,259 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><div>Type definition for Coding from <a href=\"http://hl7.org/fhir/datatypes.html#Coding\">FHIR Specification</a></div></div>"
+  },
+  "name": "Basic Profile for Coding",
+  "publisher": "FHIR Specification",
+  "description": "Basic Profile for Coding for validation support",
+  "status": "draft",
+  "date": "2014-10-08",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Coding",
+      "element": [
+        {
+          "path": "Coding",
+          "definition": {
+            "short": "A reference to a code defined by a terminology system",
+            "formal": "A reference to a code defined by a terminology system.",
+            "comments": "Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED CT - see the V3 Core Principles for more information.",
+            "min": 1,
+            "max": "1",
+            "type": [
+              {
+                "code": "Type"
+              }
+            ],
+            "constraint": [
+              {
+                "key": "1",
+                "name": "Value set doesn't substitute for system",
+                "severity": "error",
+                "human": "If a valueSet is provided, a system URI Is required",
+                "xpath": "not (exists(f:valueSet) and exists(f:code)) or exists(f:system)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CV"
+              },
+              {
+                "identity": "v2",
+                "map": "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": 0,
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Coding.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": 0,
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Coding.system",
+          "definition": {
+            "short": "Identity of the terminology system",
+            "formal": "The identification of the code system that defines the meaning of the symbol in the code.",
+            "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "uri"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./codeSystem"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.3"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.version",
+          "definition": {
+            "short": "Version of the system - if relevant",
+            "formal": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and When the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./codeSystemVersion"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.7"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.code",
+          "definition": {
+            "short": "Symbol in syntax defined by the system",
+            "formal": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./code"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.1"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.display",
+          "definition": {
+            "short": "Representation defined by the system",
+            "formal": "A representation of the meaning of the code in the system, following the rules of the system.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CV.displayName"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.2 - but note this is not well followed"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.primary",
+          "definition": {
+            "short": "If this code was chosen directly by the user",
+            "formal": "Indicates that this code was chosen by a user directly - i.e. off a pick list of available items (codes or displays).",
+            "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "boolean"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CD.codingRationale"
+              },
+              {
+                "identity": "v2",
+                "map": "Sometimes implied by being first"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.valueSet",
+          "definition": {
+            "short": "Set this coding was chosen from",
+            "formal": "The set of possible coded values this coding was chosen from or constrained by.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "ResourceReference",
+                "profile": "http://hl7.org/fhir/profiles/ValueSet"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CD.valueSet / CD.valueSetVersion"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.16 - .19"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

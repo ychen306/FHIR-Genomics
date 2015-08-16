@@ -1,0 +1,280 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>OperationOutcome - FHIR v0.0.82</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>DSTU 1 (v0.0.82)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			<div id="hl7-search"> </div>
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>        <li><b>OperationOutcome</b></li>          <!-- operationoutcome.html / resource -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="operationoutcome-examples.html">Examples</a></li><li><a href="operationoutcome-definitions.html">Formal Definitions</a></li><li><a href="operationoutcome-mappings.html">Mappings</a></li><li><a href="operationoutcome-profiles.html">Profiles</a></li></ul>
+
+<h1><span class="sectioncount">6.10<a name="6.10"> </a></span> Resource OperationOutcome - Content</h1>
+  <!-- <p class="status">Status: null</p> -->
+
+<p> 
+A collection of error, warning or information messages that result from a system action. 
+</p>
+
+
+<div>
+<h2><span class="sectioncount">6.10.1<a name="6.10.1"> </a></span> Scope and Usage</h2>
+<p>
+Operation Outcomes are sets of error, warning and information messages that provide detailed information about the outcome of some attempted system operation.  
+They are provided as a direct system response, or component of one, where they provide information about the outcome of the operation.
+</p>
+
+<p>
+Specifically, OperationOutcomes are used in the following circumstances:
+</p>
+<ul>
+ <li>When an <a href="http.html#operations">RESTful operation</a> fails</li>
+ <li>As the response on a <a href="http.html#validate">validation operation</a>, to provide information about the outcomes</li>
+ <li>As part of a message response, usually when the message has not been processed correctly</li>
+</ul>
+</div>
+
+
+<a name="resource"/>
+<h2><span class="sectioncount">6.10.2<a name="6.10.2"> </a></span> 
+Resource Content
+</h2>
+<a name="uml"> </a>
+<svg height="112.0" width="639.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">  <defs>
+    <filter id="shadow" height="200%" width="200%" y="0" x="0">
+      <feOffset result="offOut" dx="3" dy="3" in="SourceGraphic"/>
+      <feColorMatrix result="matrixOut" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" type="matrix" in="offOut"/>
+      <feGaussianBlur result="blurOut" stdDeviation="2" in="matrixOut"/>
+      <feBlend in2="blurOut" in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs><rect height="36.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="159.2" filter="url(#shadow)" rx="4" y="28.0" ry="4" x="0.0"/><line style="stroke:dimgrey;stroke-width:1" y1="56.0" y2="56.0" x2="159.2" x1="0.0"/><text fill="black" class="diagram-class-title  diagram-class-resource" y="48.0" x="79.6">OperationOutcome<tspan class="diagram-class-title-link"> (<a class="diagram-class-reference" xlink:href="resources.html">Resource</a>)</tspan></text><rect height="92.0" style="fill:#f0f8ff;stroke:black;stroke-width:1" width="160.0" filter="url(#shadow)" rx="4" y="0.0" ry="4" x="279.2"/><line style="stroke:dimgrey;stroke-width:1" y1="28.0" y2="28.0" x2="439.2" x1="279.2"/><text fill="black" class="diagram-class-title" y="20.0" x="359.2">Issue</text><text fill="black" class="diagram-class-detail" y="42.0" x="285.2"><a xlink:href="operationoutcome-definitions.html#OperationOutcome.issue.severity"><title>Indicates whether the issue indicates a variation from successful processing (this element modifies the meaning of other elements)</title>severity</a> : <a xlink:href="datatypes.html#code">code</a> 1..1 &lt;&lt;<a xlink:href="issue-severity.html"><title>How the issue affects the success of the action</title>IssueSeverity</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="56.0" x="285.2"><a xlink:href="operationoutcome-definitions.html#OperationOutcome.issue.type"><title>A code indicating the type of error, warning or information message</title>type</a> : <a xlink:href="datatypes.html#Coding">Coding</a> 0..1 &lt;&lt;<a xlink:href="issue-type.html"><title>A coded expression of the type of issue</title>IssueType</a>&gt;&gt;</text><text fill="black" class="diagram-class-detail" y="70.0" x="285.2"><a xlink:href="operationoutcome-definitions.html#OperationOutcome.issue.details"><title>Additional description of the issue</title>details</a> : <a xlink:href="datatypes.html#string">string</a> 0..1</text><text fill="black" class="diagram-class-detail" y="84.0" x="285.2"><a xlink:href="operationoutcome-definitions.html#OperationOutcome.issue.location"><title>A simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised</title>location</a> : <a xlink:href="datatypes.html#string">string</a> 0..*</text><line style="stroke:navy;stroke-width:1" y1="46.0" y2="46.0" x2="279.2" x1="159.2"/><polygon transform="rotate(0.0 159.2 46.0)" style="fill:navy;stroke:navy;stroke-width:1" points="159.2,46.0 165.2,50.0 171.2,46.0 165.2,42.0 159.2,46.0"/><rect height="18.0" style="fill:white;stroke:black;stroke-width:0" width="20.0" y="39.0" x="209.0"/><text fill="black" class="diagram-class-linkage" y="49.0" x="219.0"><a xlink:href="operationoutcome-definitions.html#OperationOutcome.issue"><title>An error, warning or information message that results from a system action</title>issue</a></text><text fill="black" class="diagram-class-linkage" y="42.0" x="259.2">1..*</text></svg>
+<p>This resource is referenced by <a href="messageheader.html">[MessageHeader]</a></p>
+
+
+<a name="def"> </a>
+<a name="operationoutcome"> </a>
+<a name="OperationOutcome"> </a>
+<pre class="spec">
+&lt;<a title="A collection of error, warning or information messages that result from a system action." class="dict" href="operationoutcome-definitions.html#OperationOutcome"><b>OperationOutcome</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="An error, warning or information message that results from a system action." class="dict" href="operationoutcome-definitions.html#OperationOutcome.issue"><b>issue</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..*</b></span> A single issue associated with the action --&gt;</span>
+  &lt;<a title="Indicates whether the issue indicates a variation from successful processing (this element modifies the meaning of other elements)" class="dict" href="operationoutcome-definitions.html#OperationOutcome.issue.severity"><span style="text-decoration: underline"><b>severity</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="issue-severity.html">fatal | error | warning | information</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A code indicating the type of error, warning or information message." class="dict" href="operationoutcome-definitions.html#OperationOutcome.issue.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Coding">Coding</a></span> <span style="color: navy"><a style="color: navy" href="issue-type.html">Error or warning code</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="Additional description of the issue." class="dict" href="operationoutcome-definitions.html#OperationOutcome.issue.details"><b>details</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Additional description of the issue</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised." class="dict" href="operationoutcome-definitions.html#OperationOutcome.issue.location"><b>location</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: navy">XPath of element(s) related to issue</span><span style="color: Gray"> --&gt;</span>
+ &lt;/issue&gt;
+&lt;/OperationOutcome&gt;
+</pre>
+
+
+<p>Alternate definitions: <a href="operationoutcome.xsd">Schema</a>/<a href="operationoutcome.sch">Schematron</a>, 
+<a href="operationoutcome.profile.xml.html">Resource Profile</a></p>
+
+<a name="tx"> </a>
+<h3><span class="sectioncount">6.10.2.1<a name="6.10.2.1"> </a></span> 
+Terminology Bindings
+</h3>
+<table class="grid">
+ <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
+ <tr><td title="IssueSeverity" valign="top">OperationOutcome.issue.severity </td><td valign="top">How the issue affects the success of the action</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="issue-severity.html">http://hl7.org/fhir/issue-severity</a></td> </tr>
+ <tr><td title="IssueType" valign="top">OperationOutcome.issue.type </td><td valign="top">A coded expression of the type of issue</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="issue-type.html">http://hl7.org/fhir/issue-type</a></td> </tr>
+</table>
+<p> </p>
+
+
+
+
+
+  <!-- Grahame's OAuth extensions:
+<extension url="http://www.healthintersections.com.au/fhir/extensions#oauth-reference">
+  <extension url="http://www.healthintersections.com.au/fhir/extensions#oauth-name">
+    <valueUri value="Google+"/>
+  </extension>
+  <extension url="http://www.healthintersections.com.au/fhir/extensions#oauth-img-src">
+    <valueUri value="https://developers.google.com/accounts/images/sign-in-with-google.png"/>
+  </extension>
+  <extension url="http://www.healthintersections.com.au/fhir/extensions#oauth-link">
+    <valueUri value="https://accounts.google.com/o/oauth2/auth?client_id=..."/>
+  </extension>
+</extension> -->
+
+<h2><span class="sectioncount">6.10.3<a name="6.10.3"> </a></span> Using Operation Outcome Resources</h2>
+<p>
+On the RESTful interface, operation outcome resources are only relevant when a level of computable detail is required that is more granular than that provided by the HTTP response codes.
+This granularity could include:
+</p>
+<ul>
+<li>more detail about the location of an issue</li>
+<li>the ability to identify multiple distinct issues</li>
+<li>provision of finer error codes that connect to known business failure states</li>
+</ul>
+
+<p>
+Operation outcomes returned SHOULD be in alignment with the HTTP response code.  For example, if the HTTP code indicates a failure (300+), at least
+one of the issues should have a severity of &quot;error&quot;, indicating the reason for the failure.
+</p>
+
+
+
+<a name="search"> </a>
+<h2><span class="sectioncount">6.10.4<a name="6.10.4"> </a></span> Search Parameters</h2>
+<p>Search parameters for this resource. The standard parameters also apply. See <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list">
+<tr><td><b>Name</b></td><td><b>Type</b></td><td><b>Description</b></td><td><b>Paths</b></td></tr>
+<tr><td>_id</td><td><a href="search.html#token">token</a></td><td>The logical resource id associated with the resource (must be supported by all servers)</td><td/></tr>
+<tr><td>_language</td><td><a href="search.html#token">token</a></td><td>The language of the resource</td><td/></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011+. FHIR DSTU (v0.0.82.2943) generated on Wed, Oct 8, 2014 09:18+1100.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: 
+          <a href="dstu.html">What's a DSTU?</a> | 
+          <a href="history.html">Version History</a> | 
+          <a rel="license" href="license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> | 
+          <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

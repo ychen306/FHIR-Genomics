@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FamilyHistory xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative</b>
+      </p>
+      <p>
+        <b>subject</b>: Roel
+      </p>
+      <p>
+        <b>note</b>: Both parents, both brothers and both children (twin) are still alive.
+      </p>
+      <blockquote>
+        <p>
+          <b>relation</b>
+        </p>
+        <p>
+          <b>relationship</b>: 
+          <span title="Codes: {http://snomed.info/sct 72705000}">Mother</span>
+        </p>
+        <p>
+          <b>deceased[x]</b>: false
+        </p>
+        <h3>Conditions</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Type</b>
+            </td>
+            <td>
+              <b>Outcome</b>
+            </td>
+            <td>
+              <b>Onset[x]</b>
+            </td>
+            <td>
+              <b>Note</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span title="Codes: {http://snomed.info/sct 39839004}">Diaphragmatic hernia</span>
+            </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </table>
+      </blockquote>
+      <blockquote>
+        <p>
+          <b>relation</b>
+        </p>
+        <p>
+          <b>relationship</b>: 
+          <span title="Codes: {http://snomed.info/sct 38048003}">Uncle</span>
+        </p>
+        <p>
+          <b>deceased[x]</b>: true
+        </p>
+        <h3>Conditions</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Type</b>
+            </td>
+            <td>
+              <b>Outcome</b>
+            </td>
+            <td>
+              <b>Onset[x]</b>
+            </td>
+            <td>
+              <b>Note</b>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span title="Codes: {http://snomed.info/sct 115665000}">Atopy</span>
+            </td>
+            <td>
+              <span title="Codes: {http://snomed.info/sct 419099009}">Died</span>
+            </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </table>
+      </blockquote>
+    </div>
+  </text>
+  <subject>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <note value="Both parents, both brothers and both children (twin) are still alive."/><!--  Other relatives  -->
+  <relation><!--  ROB's Mother has a hernia  -->
+    <relationship>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="72705000"/>
+        <display value="Mother"/>
+      </coding>
+    </relationship>
+    <deceasedBoolean value="false"/>
+    <condition>
+      <type>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="39839004"/>
+          <display value="Diaphragmatic hernia"/>
+        </coding>
+      </type>
+    </condition>
+  </relation>
+  <relation><!--  ROB's uncle from mother's side died from cancer  -->
+    <relationship>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="38048003"/>
+        <display value="Uncle"/>
+      </coding>
+    </relationship>
+    <deceasedBoolean value="true"/>
+    <condition>
+      <type>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="115665000"/>
+          <display value="Atopy"/>
+        </coding>
+      </type>
+      <outcome>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="419099009"/>
+          <display value="Died"/>
+        </coding>
+      </outcome>
+    </condition>
+  </relation>
+</FamilyHistory>
