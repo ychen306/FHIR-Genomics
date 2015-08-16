@@ -27,14 +27,15 @@ def verify_access(request, resource_type, access_type):
         request.authorizer = request.session.user
         return True
     elif request.client is not None:
-        # not a user but a OAuth consumer
+        # not a user but an OAuth consumer
         # check database and verify if the consumer has access
         request.authorizer = request.client.authorizer
         if datetime.now() > request.client.expire_at:
             return False
-        accesses = Access.query.filter_by(client_code=request.client.code,
-                                            access_type=access_type,
-                                            resource_type=resource_type)
+        accesses = Access.query.filter_by(
+                client_code=request.client.code,
+                access_type=access_type,
+                resource_type=resource_type)
         return accesses.count() > 0
     else:
         return False
@@ -42,7 +43,7 @@ def verify_access(request, resource_type, access_type):
 
 def protected(view):
     '''
-    Decorator to make sure a view a request is only handled as requested
+    Decorator to make sure a request is only handled
     when it has proper access.
     '''
     @wraps(view)
@@ -74,10 +75,11 @@ def get_client():
     request.client = None
     auth_header = AUTH_HEADER_RE.match(request.headers.get('authorization', ''))
     if auth_header is not None:
-        request.client = Client.query.\
-                    filter_by(access_token=auth_header.group('access_token'),
-                        authorized=True).\
-                    first()
+        request.client = (Client
+                .query
+                .filter_by(access_token=auth_header.group('access_token'),
+                    authorized=True)
+                .first())
         
 
 @api.route('/<resource_type>', methods=['GET', 'POST'])
@@ -101,7 +103,7 @@ def handle_resources(resource_type, resource_id):
     if resource_type not in RESOURCES:
         return fhir_error.inform_not_found()
 
-    request.api_base = get_api_base() 
+    request.api_base = util.get_api_base() 
     fhir_request = fhir_api.FHIRRequest(request, is_resource=False)
 
     if request.method == 'GET':
@@ -127,7 +129,7 @@ def read_history(resource_type, resource_id, version):
     if resource_type is not None and resource_type not in RESOURCES:
         return fhir_error.inform_not_found()
 
-    request.api_base = get_api_base() 
+    request.api_base = util.get_api_base() 
     fhir_request = fhir_api.FHIRRequest(request)
     return fhir_api.handle_history(fhir_request, resource_type, resource_id, version)
 

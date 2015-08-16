@@ -20,9 +20,9 @@ class OAuthScope(object):
     '''
     Representation of a scope in SMART-on-FHIR
     '''
-    desc_tmpl = '%s access to all of your %s resources'
+    desc_tmpl = '%s access to all of %s %s resources'
 
-    def __init__(self, permission_str):
+    def __init__(self, permission_str, patient_id):
         '''
         parse a scope
         '''
@@ -39,6 +39,7 @@ class OAuthScope(object):
             self.resource = requested_resource
         
         self.access_type = permission.group('type')
+        self.patient_id = patient_id
 
     def to_readable(self):
         '''
@@ -50,18 +51,28 @@ class OAuthScope(object):
         else:
             resource = '<b>%s</b> '% self.resource
         readable['desc'] = self.__class__.desc_tmpl% (
-                                        self.access_type,
-                                        resource)
+                self.access_type,
+                'your'
+                if self.scope == 'user'
+                else 'selected patient\'s',
+                resource)
         return readable
 
     def get_access_from_user(self, user, client):
         '''
         Get access from user based on the scope
         '''
-        if self.is_wildcard:
-            user.authorize_access(client, self.access_type)
-        else:
-            user.authorize_access(client, self.access_type, [self.resource])
+        resource_types = ([self.resource]
+                if not self.is_wildcard
+                else RESOURCES)
+        patient_id = (None
+                if self.scope == 'User'
+                else self.patient_id)
+        user.authorize_access(
+                client,
+                self.access_type,
+                resource_types,
+                patient_id)
 
 
 @oauth.route('/authorize', methods=['GET', 'POST'])
@@ -92,8 +103,11 @@ def authorize():
                         scope=request.args['scope'],
                         context_id=context_id)
         db.session.add(client)
+        ctx = Context.query.get(context_id)
+        # id of patient selected in launch time, could be none
+        pid = json.loads(ctx.context).get('Patient')
         # parse requested scopes
-        scopes = map(OAuthScope, resource_scopes)
+        scopes = [OAuthScope(scp_str, pid) for scp_str in resource_scopes]
         readable_accesses = map(OAuthScope.to_readable, scopes)  
         # we grant access despite user's reaction so that we don't have to keep tract of requested scope
         # security is being taken care of by marking the authorized client as un authorized

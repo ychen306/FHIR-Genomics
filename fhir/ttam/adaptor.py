@@ -56,7 +56,7 @@ def make_ttam_seq(snp, coord, pid):
         'chromosome': chrom,
         'startPosition': int(pos),
         'endPosition': int(pos),
-        'observedSeq': list(snp['call']),
+        'observedSequence': list(snp['call']),
         'patient': {'reference': '/Patient/ttam_%s'% pid}
     }
     # we don't really care about the owner here

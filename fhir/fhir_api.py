@@ -3,7 +3,7 @@ from database import db
 from models import Resource, SearchParam
 import fhir_parser
 import fhir_error
-from util import json_response, xml_response, xml_bundle_response, xml_to_json, json_to_xml
+from util import json_response, xml_response, xml_bundle_response, xml_to_json, json_to_xml, get_api_base
 from fhir_spec import SPECS, REFERENCE_TYPES
 from query_builder import QueryBuilder
 from indexer import index_resource
@@ -24,10 +24,14 @@ def find_latest_resource(resource_type, resource_id, owner_id):
     Find the latest resource given it's type, id, and id of it's owner.
     Requiring owner's id here because we don't want people touching other people's resources 
     '''
-    return Resource.query.filter_by(
-        resource_type=resource_type,
-        resource_id=resource_id,
-        owner_id=owner_id).order_by(Resource.version.desc()).first()
+    return (Resource
+            .query
+            .filter_by(
+                resource_type=resource_type,
+                resource_id=resource_id,
+                owner_id=owner_id)
+            .order_by(Resource.version.desc())
+            .first())
 
 
 class FHIRRequest(object):
@@ -37,7 +41,7 @@ class FHIRRequest(object):
     def __init__(self, request, is_resource=True):
         self.args = request.args
         self.format = self.args.get('_format', 'xml')
-        self.api_base = request.api_base
+        self.api_base = get_api_base()
         self.url = request.url
         self.base_url = request.base_url
         self.authorizer = request.authorizer
@@ -89,7 +93,7 @@ class FHIRBundle(object):
     Represent a bundle in FHIR
     ''' 
     def __init__(self, query, request, version_specific=False, ttam_resource=None):
-        self.api_base = request.api_base
+        self.api_base = get_api_base()
         self.request_url = request.url
         self.data_format = request.format
         self.version_specific = version_specific
@@ -255,20 +259,6 @@ def handle_search(request, resource_type):
     return resp_bundle.as_response()
 
 
-def handle_delete(request, resource_type, resource_id):
-    '''
-    handle FHIR delete operation
-    '''
-    resource = find_latest_resource(resource_type, resource_id)
-    if resource.visible:
-        resource.visible = False
-        db.session.add(resource)
-        db.session.commit()
-        return fhir_error.inform_no_content()
-    else:
-        return fhir_error.inform_not_found()
-
-
 def handle_history(request, resource_type, resource_id, version):
     '''
     handle FHIR history operation
@@ -284,7 +274,7 @@ def handle_history(request, resource_type, resource_id, version):
     hist_query = Resource.query.filter(*query_args)
 
     if version is not None:
-        # corresponds to GET [api base]/[resource]/[resource_id]/_history/[version]
+        # request = GET [api base]/[resource]/[resource_id]/_history/[version]
         # don't render as a bundle in this case
         resource = hist_query.first()
         if resource is None:

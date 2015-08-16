@@ -4,6 +4,7 @@ from query_builder import REFERENCE_RE
 import dateutil.parser
 from functools import partial
 from models import save_buffer
+from util import get_api_base
 
 
 def get_text(data):
@@ -76,7 +77,7 @@ def index_reference(index, element, owner_id, g):
         reference_url = element['reference']
         reference = REFERENCE_RE.match(reference_url)
         index['referenced_url'] = reference_url
-        if reference.group('extern_base') is None or reference.group('extern_base') == g.api_base:
+        if reference.group('extern_base') is None or reference.group('extern_base') == get_api_base():
             # reference is internal reference, we want to link the reference to a Resource
             index['referenced'] = Resource.query.filter_by(resource_type=reference.group('resource_type'),
                                                            resource_id=reference.group('resource_id'),

@@ -45,13 +45,7 @@ sequence_resource = {
                 'type': 'number'
             }
         }, {
-            'path': 'Sequence.source',
-            'definition': {
-                'min': 0,
-                'max': '1',
-            }
-        }, {
-            'path': 'Sequence.source.sample',
+            'path': 'Sequence.sample',
             'definition': {
                 'min': 1,
                 'max': '1',
@@ -62,7 +56,7 @@ sequence_resource = {
                 'type': 'token'
             }
         }, {
-            'path': 'Sequence.source.lab',
+            'path': 'Sequence.lab',
             'definition': {
                 'min': 0,
                 'max': '1',
@@ -80,7 +74,7 @@ sequence_resource = {
                 'type': [{'code': 'string'}]
             }
         }, {
-            'path': 'Sequence.referenceSeq',
+            'path': 'Sequence.referenceSequence',
             'definition': {
                 'min': 0,
                 'max': '1',
@@ -131,7 +125,7 @@ sequence_resource = {
                 'type': 'string'
             }
         }, {
-            'path': 'Sequence.observedSeq',
+            'path': 'Sequence.observedSequence',
             'definition': {
                 'min': 1,
                 'max': '*',

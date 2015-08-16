@@ -132,5 +132,6 @@ def hash_password(password, salt=None):
     hashed = hashlib.sha512(password + salt).hexdigest()
     return hashed, salt
 
+
 def get_api_base():
     return urljoin(request.url_root, 'api') + '/' 

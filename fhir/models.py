@@ -246,11 +246,12 @@ class User(db.Model):
         hashed, _ = hash_password(password, self.salt)        
         return hashed == self.hashed_password
 
-    def authorize_access(self, client, access_type, resource_types=RESOURCES):
+    def authorize_access(self, client, access_type, resource_types, patient_id):
         for resource_type in resource_types:
             access = Access(client_code=client.code,
                             resource_type=resource_type,
-                            access_type=access_type)
+                            access_type=access_type,
+                            patient_id=patient_id)
             db.session.merge(access)
 
 
@@ -288,7 +289,7 @@ class Session(db.Model):
 
 class Access(db.Model):
     '''
-    this represents an OAuth-consumer's read/write access to a resource type,
+    this represents an OAuth-consumer's read/write access to a resource type
     '''
     __tablename__ = 'Access'
 
@@ -296,6 +297,8 @@ class Access(db.Model):
     access_type = db.Column(db.String(10), primary_key=True)
     client_code = db.Column(db.String(100), db.ForeignKey('Client.code'), primary_key=True)
     resource_type = db.Column(db.String(100), primary_key=True)
+    # e.g. "patient/*.read"
+    patient_id = db.Column(db.String(500), nullable=True)
 
 
 class Context(db.Model):
