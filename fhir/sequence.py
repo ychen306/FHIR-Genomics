@@ -12,6 +12,17 @@ sequence_resource = {
                 'type': [{'code': 'Resource'}]
             }
         }, {
+            'path': 'Sequence.type',
+            'definition': {
+                'min': 1,
+                'max': '1',
+                'type': [{'code': 'code'}]
+            },
+            'searchParam': {
+                'name': 'type',
+                'type': 'token'
+             }
+        }, {
             'path': 'Sequence.patient',
             'definition': {
                 'min': 1,
@@ -23,124 +34,186 @@ sequence_resource = {
                 'type': 'reference'
              }
         }, {
-            'path': 'Sequence.type',
-            'definition': {
-                'min': 1,
-                'max': '1',
-                'type': [{'code': 'code'}]
-            },
-            'searchParam': {
-                'name': 'type',
-                'type': 'token'
-            }
-        }, {
-            'path': 'Sequence.quality',
+            'path': 'Sequence.timeDetermined',
             'definition': {
                 'min': 0,
                 'max': '1',
-                'type': [{'code': 'decimal'}]
+                'type': [{'code': 'dateTime'}]
             },
             'searchParam': {
-                'name': 'quality',
-                'type': 'number'
+                'name': 'time-determined',
+                'type': 'date'
+             }
+        }, {
+            'path': 'Sequence.variation',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            },
+            'searchParam': {
+                'name': 'variation',
+                'type': 'token'
+             }
+        }, {
+            'path': 'Sequence.variationType',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            },
+            'searchParam': {
+                'name': 'variation-type',
+                'type': 'token'
+             }
+        }, {
+            'path': 'Sequence.region',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
             }
         }, {
-            'path': 'Sequence.sample',
+            'path': 'Sequence.gene',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            },
+        }, {
+            'path': 'Sequence.species',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            }
+        }, {
+            'path': 'Sequence.chromosome',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            },
+            'searchParam': {
+                'name': 'chromosome',
+                'type': 'token'
+             }
+        }, {
+            'path': 'Sequence.genomeBuild',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            }
+        }, {
+            'path': 'Sequence.start',
             'definition': {
                 'min': 1,
                 'max': '1',
-                'type': [{'code': 'code'}]
+                'type': [{'code': 'integer'}]
             },
             'searchParam': {
-                'name': 'sample',
-                'type': 'token'
-            }
+                'name': 'start',
+                'type': 'number'
+             }
         }, {
-            'path': 'Sequence.lab',
+            'path': 'Sequence.end',
+            'definition': {
+                'min': 1,
+                'max': '1',
+                'type': [{'code': 'integer'}]
+            },
+            'searchParam': {
+                'name': 'end',
+                'type': 'number'
+             }
+        }, {
+            'path': 'Sequence.source',
+            'definition': {
+                'min': 1,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            },
+            'searchParam': {
+                'name': 'source',
+                'type': 'token'
+             }
+        }, {
+            'path': 'Sequence.request',
             'definition': {
                 'min': 0,
                 'max': '1',
                 'type': [{'code': 'Resource'}]
             },
             'searchParam': {
-                'name': 'lab',
+                'name': 'request',
                 'type': 'reference'
+             }
+        }, {
+            'path': 'Sequence.analysis',
+            'definition': {
+                'min': 0,
+                'max': '*',
             }
         }, {
-            'path': 'Sequence.cigar',
+            'path': 'Sequence.analysis.target',
+            'definition': {
+                'min': 1,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            },
+            'searchParam': {
+                'name': 'analysis-target',
+                'type': 'token'
+             }
+        }, {
+            'path': 'Sequence.analysis.type',
+            'definition': {
+                'min': 1,
+                'max': '1',
+                'type': [{'code': 'CodeableConcpet'}]
+            }
+        }, {
+            'path': 'Sequence.analysis.interpretation',
             'definition': {
                 'min': 0,
                 'max': '1',
-                'type': [{'code': 'string'}]
+                'type': [{'code': 'CodeableConcpet'}]
             }
         }, {
-            'path': 'Sequence.referenceSequence',
+            'path': 'Sequence.analysis.confidence',
+            'definition': {
+                'min': 1,
+                'max': '1',
+                'type': [{'code': 'code'}]
+            }
+        }, {
+            'path': 'Sequence.gaRepository',
             'definition': {
                 'min': 0,
                 'max': '1',
-                'type': [{'code': 'string'}]
+                'type': [{'code': 'uri'}]
             }
         }, {
-            'path': 'Sequence.chromosome',
+            'path': 'Sequence.gaVariantSet',
             'definition': {
-                'min': 1,
-                'max': '1',
-                'type': [{'code': 'string'}]
-            },
-            'searchParam': {
-                'name': 'chromosome',
-                'type': 'string'
-            }
-        }, {
-            'path': 'Sequence.startPosition',
-            'definition': {
-                'min': 1,
-                'max': '1',
-                'type': [{'code': 'integer'}]
-            },
-            'searchParam': {
-                'name': 'start-position',
-                'type': 'number'
-            }
-        }, {
-            'path': 'Sequence.endPosition',
-            'definition': {
-                'min': 1,
-                'max': '1',
-                'type': [{'code': 'integer'}]
-            },
-            'searchParam': {
-                'name': 'end-position',
-                'type': 'number'
-            }
-        }, {
-            'path': 'Sequence.genomeBuild',
-            'definition': {
-                'min': 1,
-                'max': '1',
-                'type': [{'code': 'string'}]
-            },
-            'searchParam': {
-                'name': 'genomeBuild',
-                'type': 'string'
-            }
-        }, {
-            'path': 'Sequence.observedSequence',
-            'definition': {
-                'min': 1,
+                'min': 0,
                 'max': '*',
                 'type': [{'code': 'string'}]
             }
         }, {
-            'path': 'Sequence.species',
+            'path': 'Sequence.gaCallSet',
             'definition': {
-                'min': 1,
-                'max': 1,
-                'type': [{'code': 'CodeableConcept'}]
-            },
-            'searchParam': {
-                'name': 'species',
-                'type': 'token'
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'string'}]
+            }
+        }, {
+            'path': 'Sequence.ReadGroup',
+            'definition': {
+                'min': 0,
+                'max': '1',
+                'type': [{'code': 'string'}]
             }
         }
     ],
